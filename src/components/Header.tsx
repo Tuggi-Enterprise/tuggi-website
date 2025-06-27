@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Globe, ChevronDown } from 'lucide-react';
 import { getLanguageFlag, getLanguageName } from '../utils/routing';
+import TuggiLogo from './TuggiLogo';
 
 interface HeaderProps {
   currentLanguage?: string;
@@ -118,137 +119,142 @@ const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-neutral-100' 
-          : 'bg-white/90 backdrop-blur-sm'
-      }`}
-      role="banner"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-18">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <button 
-              onClick={() => handleNavClick('home')}
-              className="flex items-center space-x-3 group"
-              aria-label={`Tuggi Home - ${currentLang.label}`}
-            >
-              <div className="w-9 h-9 bg-gradient-to-br from-tuggi-primary to-tuggi-secondary rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform duration-200 shadow-sm">
-                <span className="text-white font-bold text-lg">T</span>
-              </div>
-              <span className="text-2xl font-bold text-neutral-800 group-hover:text-tuggi-primary transition-colors duration-200">
-                Tuggi
-              </span>
-            </button>
-          </div>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-1" role="navigation" aria-label="Main navigation">
-            {navigationItems.map((item) => (
-              <button
-                key={item.page}
-                onClick={() => handleNavClick(item.page)}
-                className={`px-4 py-2 font-medium transition-all duration-200 relative group rounded-lg hover:bg-tuggi-primary/5 ${
-                  currentPage === item.page
-                    ? 'text-tuggi-primary'
-                    : 'text-neutral-700 hover:text-tuggi-primary'
-                }`}
-                aria-current={currentPage === item.page ? 'page' : undefined}
+    <>
+      {/* Beta Badge */}
+      <div className="bg-tuggi-secondary text-white text-center py-2 px-4 text-sm font-medium">
+        🧪 Beta – Working with selected fleet partners
+      </div>
+      
+      <header 
+        className={`fixed top-8 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled 
+            ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-neutral-100' 
+            : 'bg-white/90 backdrop-blur-sm'
+        }`}
+        role="banner"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16 lg:h-18">
+            {/* Logo */}
+            <div className="flex-shrink-0">
+              <button 
+                onClick={() => handleNavClick('home')}
+                className="group"
+                aria-label={`Tuggi Home - ${currentLang.label}`}
               >
-                {item.label}
-                <span className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-tuggi-primary transition-all duration-200 rounded-full ${
-                  currentPage === item.page ? 'w-6' : 'w-0 group-hover:w-6'
-                }`}></span>
+                <TuggiLogo 
+                  size="md" 
+                  className="group-hover:scale-105 transition-transform duration-200"
+                />
               </button>
-            ))}
-          </nav>
-
-          {/* Language Selector & Mobile Menu */}
-          <div className="flex items-center space-x-3">
-            {/* Language Selector */}
-            <div className="relative language-selector">
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setIsLanguageOpen(!isLanguageOpen);
-                }}
-                className="flex items-center space-x-2 px-3 py-2 rounded-lg border border-neutral-200 hover:border-tuggi-primary hover:bg-tuggi-primary/5 transition-all duration-200 min-w-[80px]"
-                aria-label={`Select Language - Current: ${currentLang.label}`}
-                aria-expanded={isLanguageOpen}
-                aria-haspopup="true"
-              >
-                <span className="text-lg" role="img" aria-label={`${currentLang.label} flag`}>
-                  {currentLang.flag}
-                </span>
-                <span className="text-sm font-medium text-neutral-700 hidden sm:inline">
-                  {currentLang.code}
-                </span>
-                <ChevronDown className={`w-4 h-4 text-neutral-600 transition-transform duration-200 ${isLanguageOpen ? 'rotate-180' : ''}`} />
-              </button>
-              
-              {isLanguageOpen && (
-                <div className="absolute right-0 mt-2 py-2 w-48 bg-white rounded-xl shadow-xl border border-neutral-200 z-20 animate-fade-in">
-                  {languages.map((lang) => (
-                    <button
-                      key={lang.code}
-                      onClick={() => handleLanguageClick(lang.code)}
-                      className={`flex items-center space-x-3 w-full text-left px-4 py-3 text-sm transition-colors duration-150 ${
-                        currentLanguage === lang.code
-                          ? 'bg-tuggi-primary/10 text-tuggi-primary'
-                          : 'text-neutral-700 hover:bg-tuggi-primary/5 hover:text-tuggi-primary'
-                      }`}
-                      aria-current={currentLanguage === lang.code ? 'true' : undefined}
-                    >
-                      <span className="text-lg" role="img" aria-label={`${lang.label} flag`}>
-                        {lang.flag}
-                      </span>
-                      <span className="font-medium">{lang.label}</span>
-                      {currentLanguage === lang.code && (
-                        <div className="ml-auto w-2 h-2 bg-tuggi-primary rounded-full"></div>
-                      )}
-                    </button>
-                  ))}
-                </div>
-              )}
             </div>
 
-            {/* Mobile menu button */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden p-2 rounded-lg text-neutral-700 hover:bg-neutral-100 hover:text-tuggi-primary transition-all duration-200"
-              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={isMenuOpen}
-            >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-neutral-200 animate-fade-in">
-            <nav className="flex flex-col space-y-1" role="navigation" aria-label="Mobile navigation">
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex items-center space-x-1" role="navigation" aria-label="Main navigation">
               {navigationItems.map((item) => (
                 <button
                   key={item.page}
                   onClick={() => handleNavClick(item.page)}
-                  className={`text-left font-medium py-3 px-4 rounded-lg transition-all duration-200 ${
+                  className={`px-4 py-2 font-medium transition-all duration-200 relative group rounded-lg hover:bg-tuggi-primary/5 ${
                     currentPage === item.page
-                      ? 'text-tuggi-primary bg-tuggi-primary/5'
-                      : 'text-neutral-700 hover:text-tuggi-primary hover:bg-tuggi-primary/5'
+                      ? 'text-tuggi-primary'
+                      : 'text-neutral-700 hover:text-tuggi-primary'
                   }`}
                   aria-current={currentPage === item.page ? 'page' : undefined}
                 >
                   {item.label}
+                  <span className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-tuggi-primary transition-all duration-200 rounded-full ${
+                    currentPage === item.page ? 'w-6' : 'w-0 group-hover:w-6'
+                  }`}></span>
                 </button>
               ))}
             </nav>
+
+            {/* Language Selector & Mobile Menu */}
+            <div className="flex items-center space-x-3">
+              {/* Language Selector */}
+              <div className="relative language-selector">
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setIsLanguageOpen(!isLanguageOpen);
+                  }}
+                  className="flex items-center space-x-2 px-3 py-2 rounded-lg border border-neutral-200 hover:border-tuggi-primary hover:bg-tuggi-primary/5 transition-all duration-200 min-w-[80px]"
+                  aria-label={`Select Language - Current: ${currentLang.label}`}
+                  aria-expanded={isLanguageOpen}
+                  aria-haspopup="true"
+                >
+                  <span className="text-lg" role="img" aria-label={`${currentLang.label} flag`}>
+                    {currentLang.flag}
+                  </span>
+                  <span className="text-sm font-medium text-neutral-700 hidden sm:inline">
+                    {currentLang.code}
+                  </span>
+                  <ChevronDown className={`w-4 h-4 text-neutral-600 transition-transform duration-200 ${isLanguageOpen ? 'rotate-180' : ''}`} />
+                </button>
+                
+                {isLanguageOpen && (
+                  <div className="absolute right-0 mt-2 py-2 w-48 bg-white rounded-xl shadow-xl border border-neutral-200 z-20 animate-fade-in">
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => handleLanguageClick(lang.code)}
+                        className={`flex items-center space-x-3 w-full text-left px-4 py-3 text-sm transition-colors duration-150 ${
+                          currentLanguage === lang.code
+                            ? 'bg-tuggi-primary/10 text-tuggi-primary'
+                            : 'text-neutral-700 hover:bg-tuggi-primary/5 hover:text-tuggi-primary'
+                        }`}
+                        aria-current={currentLanguage === lang.code ? 'true' : undefined}
+                      >
+                        <span className="text-lg" role="img" aria-label={`${lang.label} flag`}>
+                          {lang.flag}
+                        </span>
+                        <span className="font-medium">{lang.label}</span>
+                        {currentLanguage === lang.code && (
+                          <div className="ml-auto w-2 h-2 bg-tuggi-primary rounded-full"></div>
+                        )}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Mobile menu button */}
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="lg:hidden p-2 rounded-lg text-neutral-700 hover:bg-neutral-100 hover:text-tuggi-primary transition-all duration-200"
+                aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+                aria-expanded={isMenuOpen}
+              >
+                {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
           </div>
-        )}
-      </div>
-    </header>
+
+          {/* Mobile Navigation */}
+          {isMenuOpen && (
+            <div className="lg:hidden py-4 border-t border-neutral-200 animate-fade-in">
+              <nav className="flex flex-col space-y-1" role="navigation" aria-label="Mobile navigation">
+                {navigationItems.map((item) => (
+                  <button
+                    key={item.page}
+                    onClick={() => handleNavClick(item.page)}
+                    className={`text-left font-medium py-3 px-4 rounded-lg transition-all duration-200 ${
+                      currentPage === item.page
+                        ? 'text-tuggi-primary bg-tuggi-primary/5'
+                        : 'text-neutral-700 hover:text-tuggi-primary hover:bg-tuggi-primary/5'
+                    }`}
+                    aria-current={currentPage === item.page ? 'page' : undefined}
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </nav>
+            </div>
+          )}
+        </div>
+      </header>
+    </>
   );
 };
 

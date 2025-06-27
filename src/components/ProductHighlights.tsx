@@ -16,7 +16,7 @@ const ProductHighlights: React.FC<ProductHighlightsProps> = ({
       EN: {
         badge: '✨ Product Highlights',
         title: 'Powerful Features for Modern Transportation',
-        subtitle: 'Transform every ride into an engaging cultural journey with our cutting-edge travel-tech platform designed for professional drivers and transportation companies.',
+        subtitle: 'Start delivering cultural journeys with cutting-edge technology — now available for selected partners in early rollout.',
         seeAllFeatures: 'See All Features',
         technicalDocs: 'Technical Documentation',
         features: [
@@ -53,7 +53,7 @@ const ProductHighlights: React.FC<ProductHighlightsProps> = ({
       PT: {
         badge: '✨ Destaques do Produto',
         title: 'Recursos Poderosos para Transporte Moderno',
-        subtitle: 'Transforme cada viagem em uma jornada cultural envolvente com nossa plataforma de tecnologia de viagem de ponta projetada para motoristas profissionais e empresas de transporte.',
+        subtitle: 'Comece a entregar jornadas culturais com tecnologia de ponta — agora disponível para parceiros selecionados em lançamento inicial.',
         seeAllFeatures: 'Ver Todos os Recursos',
         technicalDocs: 'Documentação Técnica',
         features: [
@@ -90,7 +90,7 @@ const ProductHighlights: React.FC<ProductHighlightsProps> = ({
       ES: {
         badge: '✨ Características del Producto',
         title: 'Características Poderosas para Transporte Moderno',
-        subtitle: 'Transforme cada viaje en un recorrido cultural atractivo con nuestra plataforma de tecnología de viajes de vanguardia diseñada para conductores profesionales y empresas de transporte.',
+        subtitle: 'Comience a entregar viajes culturales con tecnología de vanguardia — ahora disponible para socios seleccionados en lanzamiento inicial.',
         seeAllFeatures: 'Ver Todas las Características',
         technicalDocs: 'Documentación Técnica',
         features: [
@@ -159,6 +159,11 @@ const ProductHighlights: React.FC<ProductHighlightsProps> = ({
               key={index}
               className={`group relative ${feature.bgColor} ${feature.borderColor} border-2 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2`}
             >
+              {/* Early Access Badge */}
+              <div className="absolute top-4 left-4 bg-tuggi-secondary/20 text-tuggi-secondary-dark px-3 py-1 rounded-full text-xs font-bold border border-tuggi-secondary/30">
+                🧪 Early Access
+              </div>
+
               {/* Icon */}
               <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
                 {index === 0 && <MapPin className="w-8 h-8 text-white" />}

@@ -12,6 +12,7 @@ const TrustSection: React.FC<TrustSectionProps> = ({ currentLanguage = 'EN' }) =
       EN: {
         badge: '🛡️ Enterprise Trust & Security',
         title: 'Built for Enterprise Trust & Scale',
+        fleetOnboarding: 'Our infrastructure and standards are ready — we\'re currently onboarding first fleet partners.',
         subtitle: 'Your business deserves technology that meets the highest standards of security, compliance, and reliability.',
         trustTags: [
           {
@@ -57,6 +58,7 @@ const TrustSection: React.FC<TrustSectionProps> = ({ currentLanguage = 'EN' }) =
       PT: {
         badge: '🛡️ Confiança e Segurança Empresarial',
         title: 'Construído para Confiança e Escala Empresarial',
+        fleetOnboarding: 'Nossa infraestrutura e padrões estão prontos — estamos atualmente integrando os primeiros parceiros de frota.',
         subtitle: 'Seu negócio merece tecnologia que atende aos mais altos padrões de segurança, conformidade e confiabilidade.',
         trustTags: [
           {
@@ -102,7 +104,8 @@ const TrustSection: React.FC<TrustSectionProps> = ({ currentLanguage = 'EN' }) =
       ES: {
         badge: '🛡️ Confianza y Seguridad Empresarial',
         title: 'Construido para Confianza y Escala Empresarial',
-        subtitle: 'Su negocio merece tecnología que cumple con los más altos estándares de seguridad, cumplimiento y confiabilidad.',
+        fleetOnboarding: 'Nuestra infraestructura y estándares están listos — actualmente estamos incorporando los primeros socios de flota.',
+        subtitle: 'Su negócio merece tecnología que cumple con los más altos estándares de seguridad, cumplimiento y confiabilidad.',
         trustTags: [
           {
             title: 'Construido para B2B',
@@ -163,6 +166,9 @@ const TrustSection: React.FC<TrustSectionProps> = ({ currentLanguage = 'EN' }) =
           <h2 className="text-3xl lg:text-5xl font-bold text-neutral-900 mb-6">
             {content.title}
           </h2>
+          <p className="text-lg text-tuggi-primary font-medium mb-4">
+            {content.fleetOnboarding}
+          </p>
           <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
             {content.subtitle}
           </p>

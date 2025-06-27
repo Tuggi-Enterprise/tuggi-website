@@ -14,11 +14,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   const getLocalizedContent = (language: string) => {
     const content: Record<string, any> = {
       EN: {
-        badge: '🚗 Introducing Tuggi Drive',
-        title: 'Tuggi Drive: Transform trips into memorable experiences with innovation and trust',
+        badge: '🧪 Early Access Program',
+        title: 'Be one of the first to turn trips into memorable experiences with Tuggi Drive',
+        subtitle: 'We\'re selecting transportation companies to join our early access program.',
         quote: '"At Tuggi, we believe that every journey can be more than just getting from point A to point B — it can be a cultural immersion, a story told at the pace of the road."',
-        requestDemo: 'Request a Demo',
-        learnMore: 'Learn More',
+        requestDemo: 'Request Demo',
+        joinPilot: 'Join the Pilot',
         trustIndicator: 'Trusted by leading transportation companies',
         companies: ['TRANSPORT', 'LOGISTICS', 'TRAVEL', 'FLEET'],
         features: {
@@ -33,11 +34,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         }
       },
       PT: {
-        badge: '🚗 Apresentando o Tuggi Drive',
-        title: 'Tuggi Drive: Transforme viagens em experiências memoráveis com inovação e confiança',
+        badge: '🧪 Programa de Acesso Antecipado',
+        title: 'Seja um dos primeiros a transformar viagens em experiências memoráveis com o Tuggi Drive',
+        subtitle: 'Estamos selecionando empresas de transporte para participar do nosso programa de acesso antecipado.',
         quote: '"Na Tuggi, acreditamos que cada jornada pode ser mais do que apenas ir do ponto A ao ponto B — pode ser uma imersão cultural, uma história contada no ritmo da estrada."',
         requestDemo: 'Solicitar Demo',
-        learnMore: 'Saiba Mais',
+        joinPilot: 'Participar do Piloto',
         trustIndicator: 'Confiado por empresas líderes de transporte',
         companies: ['TRANSPORTE', 'LOGÍSTICA', 'VIAGEM', 'FROTA'],
         features: {
@@ -52,11 +54,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         }
       },
       ES: {
-        badge: '🚗 Presentando Tuggi Drive',
-        title: 'Tuggi Drive: Transforme viajes en experiencias memorables con innovación y confianza',
+        badge: '🧪 Programa de Acceso Temprano',
+        title: 'Sé uno de los primeros en convertir viajes en experiencias memorables con Tuggi Drive',
+        subtitle: 'Estamos seleccionando empresas de transporte para unirse a nuestro programa de acceso temprano.',
         quote: '"En Tuggi, creemos que cada viaje puede ser más que solo ir del punto A al punto B — puede ser una inmersión cultural, una historia contada al ritmo del camino."',
         requestDemo: 'Solicitar Demo',
-        learnMore: 'Saber Más',
+        joinPilot: 'Unirse al Piloto',
         trustIndicator: 'Confiado por empresas líderes de transporte',
         companies: ['TRANSPORTE', 'LOGÍSTICA', 'VIAJES', 'FLOTA'],
         features: {
@@ -99,6 +102,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               {content.title}
             </h1>
             
+            <p className="text-xl text-neutral-600 mb-6 font-medium">
+              {content.subtitle}
+            </p>
+            
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 mb-8 border border-neutral-200 shadow-sm">
               <p className="text-lg text-neutral-700 leading-relaxed italic">
                 {content.quote}
@@ -116,11 +123,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               </button>
               
               <button 
-                onClick={() => handleCTAClick('learn_more_hero')}
+                onClick={() => handleCTAClick('join_pilot_hero')}
                 className="border-2 border-neutral-300 hover:border-tuggi-primary text-neutral-700 hover:text-tuggi-primary px-8 py-4 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center space-x-2 group bg-white/80 backdrop-blur-sm"
               >
                 <Play className="w-5 h-5" />
-                <span>{content.learnMore}</span>
+                <span>{content.joinPilot}</span>
               </button>
             </div>
 

@@ -332,24 +332,24 @@ function App() {
   const getLocalizedText = (key: string, language: string): string => {
     const translations: Record<string, Record<string, string>> = {
       final_cta_title: {
-        EN: 'Ready to Transform Every Journey?',
-        PT: 'Pronto para Transformar Cada Jornada?',
-        ES: '¿Listo para Transformar Cada Viaje?'
+        EN: 'Ready to Help Shape the Future of Passenger Experiences?',
+        PT: 'Pronto para Ajudar a Moldar o Futuro das Experiências de Passageiros?',
+        ES: '¿Listo para Ayudar a Dar Forma al Futuro de las Experiencias de Pasajeros?'
       },
       final_cta_description: {
-        EN: 'Join leading transportation companies worldwide who trust Tuggi Drive to create memorable experiences for their passengers.',
-        PT: 'Junte-se às principais empresas de transporte mundiais que confiam no Tuggi Drive para criar experiências memoráveis para seus passageiros.',
-        ES: 'Únete a las principales empresas de transporte mundiales que confían en Tuggi Drive para crear experiencias memorables para sus pasajeros.'
+        EN: 'Join the visionary companies shaping the Tuggi Drive experience with us.',
+        PT: 'Junte-se às empresas visionárias moldando a experiência Tuggi Drive conosco.',
+        ES: 'Únete a las empresas visionarias que dan forma a la experiencia Tuggi Drive con nosotros.'
       },
       request_demo: {
-        EN: 'Request a Demo',
+        EN: 'Request Demo',
         PT: 'Solicitar Demo',
         ES: 'Solicitar Demo'
       },
       learn_more: {
-        EN: 'Learn More',
-        PT: 'Saiba Mais',
-        ES: 'Saber Más'
+        EN: 'Join the Early Access Program',
+        PT: 'Participar do Programa de Acesso Antecipado',
+        ES: 'Unirse al Programa de Acceso Temprano'
       },
       contact_specialists: {
         EN: 'Questions? Speak with our travel-tech specialists',
@@ -362,9 +362,9 @@ function App() {
         ES: 'Solicitar una demostración de Tuggi Drive'
       },
       learn_more_aria: {
-        EN: 'Learn more about Tuggi Drive',
-        PT: 'Saiba mais sobre o Tuggi Drive',
-        ES: 'Saber más sobre Tuggi Drive'
+        EN: 'Join the Early Access Program for Tuggi Drive',
+        PT: 'Participar do Programa de Acesso Antecipado do Tuggi Drive',
+        ES: 'Unirse al Programa de Acceso Temprano de Tuggi Drive'
       },
       email_specialists_aria: {
         EN: 'Email our travel-tech specialists',

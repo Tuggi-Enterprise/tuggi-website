@@ -25,7 +25,7 @@ const RoadmapSection: React.FC<RoadmapSectionProps> = ({
           {
             title: 'Tuggi Drive',
             status: 'live',
-            description: 'AI-powered storytelling for professional drivers and transportation companies',
+            description: 'Now being activated with selected transportation companies — bring Tuggi Drive to your fleet before the public launch.',
             features: ['Location-based narration', 'Multi-language support', 'Navigation integration', 'Fleet management'],
             color: 'from-tuggi-primary to-blue-600',
             statusColor: 'bg-green-500',
@@ -73,7 +73,7 @@ const RoadmapSection: React.FC<RoadmapSectionProps> = ({
           {
             title: 'Tuggi Drive',
             status: 'live',
-            description: 'Narrativa com IA para motoristas profissionais e empresas de transporte',
+            description: 'Agora sendo ativado com empresas de transporte selecionadas — traga o Tuggi Drive para sua frota antes do lançamento público.',
             features: ['Narração baseada em localização', 'Suporte multi-idioma', 'Integração navegação', 'Gestão de frota'],
             color: 'from-tuggi-primary to-blue-600',
             statusColor: 'bg-green-500',
@@ -121,7 +121,7 @@ const RoadmapSection: React.FC<RoadmapSectionProps> = ({
           {
             title: 'Tuggi Drive',
             status: 'live',
-            description: 'Narrativa con IA para conductores profesionales y empresas de transporte',
+            description: 'Ahora siendo activado con empresas de transporte seleccionadas — traiga Tuggi Drive a su flota antes del lanzamiento público.',
             features: ['Narración basada en ubicación', 'Soporte multi-idioma', 'Integración navegación', 'Gestión de flotas'],
             color: 'from-tuggi-primary to-blue-600',
             statusColor: 'bg-green-500',
@@ -296,6 +296,21 @@ const RoadmapSection: React.FC<RoadmapSectionProps> = ({
               className="border-2 border-tuggi-secondary text-tuggi-secondary hover:bg-tuggi-secondary hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200"
             >
               {content.joinWaitlist}
+            </button>
+          </div>
+        </div>
+
+        {/* Early Access Program CTA */}
+        <div className="text-center mt-12 pt-8 border-t border-neutral-200">
+          <div className="inline-flex items-center space-x-2 text-tuggi-primary font-bold text-lg mb-2">
+            <span>🔐</span>
+            <span>Want to be part of our early launch?</span>
+            <span>→</span>
+            <button 
+              onClick={() => handleCTAClick('join_early_access_program')}
+              className="text-tuggi-primary hover:text-tuggi-primary-dark underline hover:no-underline transition-all duration-200"
+            >
+              Join Early Access Program
             </button>
           </div>
         </div>

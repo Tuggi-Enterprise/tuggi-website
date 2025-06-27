@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Linkedin, Instagram, Globe, ChevronDown } from 'lucide-react';
 import { getLanguageFlag, getLanguageName, getLocaleCode } from '../utils/routing';
+import TuggiLogo from './TuggiLogo';
 
 interface FooterProps {
   currentLanguage?: string;
@@ -355,11 +356,11 @@ const Footer: React.FC<FooterProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-12">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <div className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-tuggi-primary to-tuggi-secondary rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-lg">T</span>
-              </div>
-              <span className="text-2xl font-bold text-white">Tuggi</span>
+            <div className="mb-6">
+              <TuggiLogo 
+                size="lg" 
+                className=""
+              />
             </div>
             
             <p className="text-neutral-400 mb-6 leading-relaxed text-sm">
