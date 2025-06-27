@@ -14,14 +14,14 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
   const getLocalizedContent = (language: string) => {
     const content: Record<string, any> = {
       EN: {
-        badge: 'Products',
-        title: 'Tuggi Drive: Smart Cultural Storytelling for Professional Drivers',
-        subtitle: 'Transform every ride into an engaging cultural journey with AI-powered, location-based storytelling designed specifically for commercial transportation.',
-        requestDemo: 'Request Live Demo',
-        watchDemo: 'Watch Product Demo',
+        badge: '🧪 Beta Products',
+        title: 'Built for the Road Ahead: Cultural Storytelling Powered by AI',
+        subtitle: 'We\'re co-creating Tuggi Drive with visionary partners to redefine how people experience cities — one ride at a time. Currently in beta with selected fleets.',
+        requestDemo: 'Request Early Access',
+        watchDemo: 'Join the Beta Program',
         trustIndicators: {
-          text: 'Trusted by leading transportation companies',
-          items: ['500+ FLEETS', '50+ CITIES', '2M+ RIDES']
+          text: 'Co-developing with selected transportation partners',
+          items: ['Selected Beta Partners', '10+ Test Cities', 'Early Access Phase']
         },
         interfaceLabels: {
           activeRoute: 'Active Route',
@@ -45,6 +45,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
           {
             title: 'Automatic & Accurate Narration',
             description: 'AI-powered storytelling that automatically activates at tourist landmarks, delivering precise cultural insights and historical narratives based on GPS coordinates.',
+            comingSoon: false,
             details: [
               'GPS-triggered content delivery',
               'Curated by local cultural experts',
@@ -55,6 +56,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
           {
             title: 'Seamless Navigation Integration',
             description: 'Works flawlessly with Google Maps, Waze, Apple Maps, and other navigation platforms without interrupting turn-by-turn directions.',
+            comingSoon: false,
             details: [
               'Background operation mode',
               'No interference with GPS navigation',
@@ -65,6 +67,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
           {
             title: 'Advanced Multilingual Support',
             description: 'Dynamic language switching supporting Portuguese, English, Spanish, French, German, and more, with native speaker narration.',
+            comingSoon: true,
             details: [
               'Real-time language switching',
               'Native speaker recordings',
@@ -75,6 +78,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
           {
             title: 'Built for Commercial B2B Use',
             description: 'Enterprise-grade solution designed for transportation companies, taxi fleets, tour operators, and professional drivers.',
+            comingSoon: false,
             details: [
               'Fleet management dashboard',
               'Driver performance analytics',
@@ -131,8 +135,20 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
             icon: '💼'
           }
         ],
+        comingQ4: 'Coming Q4 2024',
+        roadmapTitle: 'What\'s Next on the Roadmap',
+        roadmapSubtitle: 'We\'re just getting started. Here are key milestones on our development journey:',
+        roadmapItems: [
+          '🌍 Expanded multilingual narration (10+ languages)',
+          '🎙️ More voice styles and local accents',
+          '🛰️ Offline mode for navigation zones',
+          '📈 Fleet analytics dashboard (v2)',
+          '🔗 Open API for custom integration',
+          '🧠 AI Copilot suggestions for passengers'
+        ],
+        roadmapCta: 'Want to help shape the future of Tuggi Drive? Join our early partners program.',
         tuggiWalkTitle: 'Tuggi Walk: Smart City Exploration',
-        tuggiWalkSubtitle: 'The next evolution in travel technology. Immersive walking tours with augmented reality and cultural storytelling for tourists exploring cities on foot.',
+        tuggiWalkSubtitle: 'Currently in research & design phase. Be the first to explore immersive walking tours powered by AI and AR. Launching in Q4 2024.',
         tuggiWalkFeatures: [
           {
             title: 'AR-Enhanced Discovery',
@@ -150,8 +166,8 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
             icon: '📱'
           }
         ],
-        comingSoon: 'Coming Soon',
-        launchingQ2: 'Launching Q2 2024',
+        comingSoon: 'Research Phase',
+        launchingQ2: 'Launching Q4 2024',
         joinWaitlist: 'Join Waitlist',
         walkDescription: 'Be the first to offer immersive walking experiences to your customers.',
         finalCtaTitle: 'Ready to Transform Your Fleet?',
@@ -163,14 +179,14 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
         phone: '+1 (555) TUGGI-01'
       },
       PT: {
-        badge: 'Produtos',
-        title: 'Tuggi Drive: Narrativa Cultural Inteligente para Motoristas Profissionais',
-        subtitle: 'Transforme cada viagem em uma jornada cultural envolvente com narrativa baseada em localização e IA projetada especificamente para transporte comercial.',
-        requestDemo: 'Solicitar Demo ao Vivo',
-        watchDemo: 'Assistir Demo do Produto',
+        badge: '🧪 Produtos Beta',
+        title: 'Construído para o Futuro: Narrativa Cultural Impulsionada por IA',
+        subtitle: 'Estamos co-criando o Tuggi Drive com parceiros visionários para redefinir como as pessoas experimentam as cidades — uma viagem de cada vez. Atualmente em beta com frotas selecionadas.',
+        requestDemo: 'Solicitar Acesso Antecipado',
+        watchDemo: 'Entrar no Programa Beta',
         trustIndicators: {
-          text: 'Confiado por empresas líderes de transporte',
-          items: ['500+ FROTAS', '50+ CIDADES', '2M+ VIAGENS']
+          text: 'Co-desenvolvendo com parceiros de transporte selecionados',
+          items: ['Parceiros Beta Selecionados', '10+ Cidades de Teste', 'Fase de Acesso Antecipado']
         },
         interfaceLabels: {
           activeRoute: 'Rota Ativa',
@@ -194,6 +210,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
           {
             title: 'Narração Automática e Precisa',
             description: 'Narrativa com IA que ativa automaticamente em marcos turísticos, entregando insights culturais precisos e narrativas históricas baseadas em coordenadas GPS.',
+            comingSoon: false,
             details: [
               'Entrega de conteúdo ativada por GPS',
               'Curado por especialistas culturais locais',
@@ -204,6 +221,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
           {
             title: 'Integração Perfeita com Navegação',
             description: 'Funciona perfeitamente com Google Maps, Waze, Apple Maps e outras plataformas de navegação sem interromper direções passo a passo.',
+            comingSoon: false,
             details: [
               'Modo de operação em segundo plano',
               'Sem interferência com navegação GPS',
@@ -214,6 +232,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
           {
             title: 'Suporte Multilíngue Avançado',
             description: 'Troca dinâmica de idiomas suportando português, inglês, espanhol, francês, alemão e mais, com narração de falantes nativos.',
+            comingSoon: true,
             details: [
               'Troca de idioma em tempo real',
               'Gravações de falantes nativos',
@@ -224,6 +243,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
           {
             title: 'Construído para Uso Comercial B2B',
             description: 'Solução de nível empresarial projetada para empresas de transporte, frotas de táxi, operadores de turismo e motoristas profissionais.',
+            comingSoon: false,
             details: [
               'Painel de gestão de frota',
               'Análises de desempenho do motorista',
@@ -280,8 +300,20 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
             icon: '💼'
           }
         ],
+        comingQ4: 'Chegando em Q4 2024',
+        roadmapTitle: 'Próximos Passos no Roadmap',
+        roadmapSubtitle: 'Estamos apenas começando. Aqui estão os marcos importantes em nossa jornada de desenvolvimento:',
+        roadmapItems: [
+          '🌍 Narração multilíngue expandida (10+ idiomas)',
+          '🎙️ Mais estilos de voz e sotaques locais',
+          '🛰️ Modo offline para zonas de navegação',
+          '📈 Painel de análise de frota (v2)',
+          '🔗 API aberta para integração personalizada',
+          '🧠 Sugestões de IA Copilot para passageiros'
+        ],
+        roadmapCta: 'Quer ajudar a moldar o futuro do Tuggi Drive? Junte-se ao nosso programa de parceiros iniciais.',
         tuggiWalkTitle: 'Tuggi Walk: Exploração Inteligente da Cidade',
-        tuggiWalkSubtitle: 'A próxima evolução em tecnologia de viagem. Tours a pé imersivos com realidade aumentada e narrativa cultural para turistas explorando cidades a pé.',
+        tuggiWalkSubtitle: 'Atualmente em fase de pesquisa e design. Seja o primeiro a explorar tours imersivos a pé com IA e AR. Lançamento em Q4 2024.',
         tuggiWalkFeatures: [
           {
             title: 'Descoberta Aprimorada com AR',
@@ -299,8 +331,8 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
             icon: '📱'
           }
         ],
-        comingSoon: 'Em Breve',
-        launchingQ2: 'Lançamento Q2 2024',
+        comingSoon: 'Fase de Pesquisa',
+        launchingQ2: 'Lançamento Q4 2024',
         joinWaitlist: 'Entrar na Lista de Espera',
         walkDescription: 'Seja o primeiro a oferecer experiências de caminhada imersivas aos seus clientes.',
         finalCtaTitle: 'Pronto para Transformar Sua Frota?',
@@ -312,14 +344,14 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
         phone: '+1 (555) TUGGI-01'
       },
       ES: {
-        badge: 'Productos',
-        title: 'Tuggi Drive: Narrativa Cultural Inteligente para Conductores Profesionales',
-        subtitle: 'Transforme cada viaje en un recorrido cultural atractivo con narrativa basada en ubicación e IA diseñada específicamente para transporte comercial.',
-        requestDemo: 'Solicitar Demo en Vivo',
-        watchDemo: 'Ver Demo del Producto',
+        badge: '🧪 Productos Beta',
+        title: 'Construido para el Futuro: Narrativa Cultural Impulsada por IA',
+        subtitle: 'Estamos co-creando Tuggi Drive con socios visionarios para redefinir cómo las personas experimentan las ciudades — un viaje a la vez. Actualmente en beta con flotas seleccionadas.',
+        requestDemo: 'Solicitar Acceso Temprano',
+        watchDemo: 'Unirse al Programa Beta',
         trustIndicators: {
-          text: 'Confiado por empresas líderes de transporte',
-          items: ['500+ FLOTAS', '50+ CIUDADES', '2M+ VIAJES']
+          text: 'Co-desarrollando con socios de transporte seleccionados',
+          items: ['Socios Beta Seleccionados', '10+ Ciudades de Prueba', 'Fase de Acceso Temprano']
         },
         interfaceLabels: {
           activeRoute: 'Ruta Activa',
@@ -343,6 +375,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
           {
             title: 'Narración Automática y Precisa',
             description: 'Narrativa con IA que se activa automáticamente en hitos turísticos, entregando perspectivas culturales precisas y narrativas históricas basadas en coordenadas GPS.',
+            comingSoon: false,
             details: [
               'Entrega de contenido activada por GPS',
               'Curado por expertos culturales locales',
@@ -353,6 +386,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
           {
             title: 'Integración Perfecta con Navegación',
             description: 'Funciona perfectamente con Google Maps, Waze, Apple Maps y otras plataformas de navegación sin interrumpir direcciones paso a paso.',
+            comingSoon: false,
             details: [
               'Modo de operación en segundo plano',
               'Sin interferencia con navegación GPS',
@@ -363,6 +397,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
           {
             title: 'Soporte Multilingüe Avanzado',
             description: 'Cambio dinámico de idiomas soportando portugués, inglés, español, francés, alemán y más, con narración de hablantes nativos.',
+            comingSoon: true,
             details: [
               'Cambio de idioma en tiempo real',
               'Grabaciones de hablantes nativos',
@@ -373,6 +408,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
           {
             title: 'Construido para Uso Comercial B2B',
             description: 'Solución de nivel empresarial diseñada para empresas de transporte, flotas de taxis, operadores de turismo y conductores profesionales.',
+            comingSoon: false,
             details: [
               'Panel de gestión de flotas',
               'Análisis de rendimiento del conductor',
@@ -429,8 +465,20 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
             icon: '💼'
           }
         ],
+        comingQ4: 'Llegando en Q4 2024',
+        roadmapTitle: 'Próximos Pasos en la Hoja de Ruta',
+        roadmapSubtitle: 'Apenas estamos comenzando. Aquí están los hitos clave en nuestro viaje de desarrollo:',
+        roadmapItems: [
+          '🌍 Narración multilingüe expandida (10+ idiomas)',
+          '🎙️ Más estilos de voz y acentos locales',
+          '🛰️ Modo offline para zonas de navegación',
+          '📈 Panel de análisis de flota (v2)',
+          '🔗 API abierta para integración personalizada',
+          '🧠 Sugerencias de IA Copilot para pasajeros'
+        ],
+        roadmapCta: '¿Quieres ayudar a dar forma al futuro de Tuggi Drive? Únete a nuestro programa de socios tempranos.',
         tuggiWalkTitle: 'Tuggi Walk: Exploración Inteligente de la Ciudad',
-        tuggiWalkSubtitle: 'La próxima evolución en tecnología de viajes. Tours a pie inmersivos con realidad aumentada y narrativa cultural para turistas explorando ciudades a pie.',
+        tuggiWalkSubtitle: 'Actualmente en fase de investigación y diseño. Sé el primero en explorar tours inmersivos a pie con IA y AR. Lanzamiento en Q4 2024.',
         tuggiWalkFeatures: [
           {
             title: 'Descubrimiento Mejorado con AR',
@@ -448,10 +496,10 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
             icon: '📱'
           }
         ],
-        comingSoon: 'Próximamente',
-        launchingQ2: 'Lanzamiento Q2 2024',
+        comingSoon: 'Fase de Investigación',
+        launchingQ2: 'Lanzamiento Q4 2024',
         joinWaitlist: 'Unirse a Lista de Espera',
-        walkDescription: 'Sea el primero en ofrecer experiencias de caminata inmersivas a sus clientes.',
+        walkDescription: 'Sé el primero en ofrecer experiencias de caminata inmersivas a tus clientes.',
         finalCtaTitle: '¿Listo para Transformar Su Flota?',
         finalCtaSubtitle: 'Únase a cientos de empresas de transporte mundialmente que confían en Tuggi Drive para crear experiencias memorables para sus pasajeros.',
         startTrial: 'Iniciar Prueba Gratuita',
@@ -498,7 +546,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
 
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
                 <button 
-                  onClick={() => handleCTAClick('request_live_demo')}
+                  onClick={() => handleCTAClick('request_early_access')}
                   className="bg-tuggi-primary hover:bg-tuggi-primary-dark text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center space-x-2 group"
                 >
                   <span>{content.requestDemo}</span>
@@ -506,7 +554,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
                 </button>
                 
                 <button 
-                  onClick={() => handleCTAClick('watch_product_demo')}
+                  onClick={() => handleCTAClick('join_beta_program')}
                   className="border-2 border-tuggi-primary text-tuggi-primary hover:bg-tuggi-primary hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center space-x-2"
                 >
                   <Play className="w-5 h-5" />
@@ -640,9 +688,16 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
                   {index === 3 && <Building2 className="w-8 h-8 text-white" />}
                 </div>
 
-                <h3 className="text-2xl lg:text-3xl font-bold text-neutral-900 mb-4 group-hover:text-tuggi-primary transition-colors duration-300">
-                  {feature.title}
-                </h3>
+                <div className="flex items-start justify-between mb-4">
+                  <h3 className="text-2xl lg:text-3xl font-bold text-neutral-900 group-hover:text-tuggi-primary transition-colors duration-300">
+                    {feature.title}
+                  </h3>
+                  {feature.comingSoon && (
+                    <div className="bg-tuggi-secondary/20 text-tuggi-secondary px-3 py-1 rounded-full text-sm font-semibold whitespace-nowrap ml-4">
+                      {content.comingQ4}
+                    </div>
+                  )}
+                </div>
                 
                 <p className="text-neutral-600 leading-relaxed mb-6">
                   {feature.description}
@@ -662,8 +717,45 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
         </div>
       </section>
 
+      {/* Roadmap Highlights */}
+      <section className="py-20 lg:py-24 bg-gradient-to-br from-tuggi-primary/5 to-tuggi-secondary/5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-5xl font-bold text-neutral-900 mb-6">
+              {content.roadmapTitle}
+            </h2>
+            <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+              {content.roadmapSubtitle}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {content.roadmapItems.map((item: string, index: number) => (
+              <div key={index} className="bg-white rounded-xl p-6 border border-neutral-200 hover:border-tuggi-primary/30 hover:shadow-lg transition-all duration-300">
+                <div className="text-lg font-medium text-neutral-800">
+                  {item}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <p className="text-lg text-neutral-600 mb-6">
+              {content.roadmapCta}
+            </p>
+            <button 
+              onClick={() => handleCTAClick('join_early_partners_program')}
+              className="bg-tuggi-primary hover:bg-tuggi-primary-dark text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center space-x-2"
+            >
+              <span>🔐 Join Early Access Program</span>
+              <ArrowRight className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* Business Benefits */}
-      <section className="py-20 lg:py-24 bg-gradient-to-br from-neutral-50 to-white">
+      {/* <section className="py-20 lg:py-24 bg-gradient-to-br from-neutral-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-6">
@@ -696,7 +788,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Use Cases */}
       <section className="py-20 lg:py-24 bg-white">

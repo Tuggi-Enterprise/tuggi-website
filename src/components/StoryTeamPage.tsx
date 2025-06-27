@@ -16,12 +16,13 @@ const StoryTeamPage: React.FC<StoryTeamPageProps> = ({
       EN: {
         badge: 'Our Story & Team',
         title: 'The People Behind Travel Innovation',
-        subtitle: 'Meet the experienced team of travel-tech pioneers, cultural experts, and business leaders transforming how the world experiences journeys.',
+        subtitle: 'Meet our small but passionate founding team building the future of cultural travel experiences.',
         storyTitle: 'Our Story',
         storyParagraphs: [
-          'Tuggi was born from a simple observation: millions of people travel every day, but most journeys are just about getting from point A to point B. We saw an opportunity to transform these routine trips into meaningful cultural experiences.',
-          'Our founders, with deep backgrounds in travel technology and cultural preservation, recognized that transportation companies were uniquely positioned to become cultural ambassadors. Every taxi ride, bus journey, or shuttle trip could become a window into local history, traditions, and stories.',
-          'Today, we\'re proud to partner with transportation companies worldwide, helping them differentiate their services while creating memorable experiences for millions of travelers. Our technology doesn\'t just move people — it connects them to the soul of every destination.'
+          'Tuggi was born from a simple belief: that every journey can be more than just transportation.',
+          'As travel enthusiasts and technology builders, we saw an opportunity to transform everyday rides into engaging cultural moments — using AI-powered storytelling and geolocation.',
+          'Today, we\'re a small but passionate team co-creating Tuggi Drive with selected transportation companies. We\'re focused on validating our solution in real environments and learning directly from our partners before scaling globally.',
+          'Our mission is just beginning, but the vision is clear: to turn every ride into a cultural experience worth remembering.'
         ],
         companyValues: [
           {
@@ -39,100 +40,53 @@ const StoryTeamPage: React.FC<StoryTeamPageProps> = ({
         ],
         milestones: [
           {
-            year: '2020',
-            title: 'Foundation',
-            description: 'Tuggi was founded with a vision to transform transportation into cultural experiences.'
-          },
-          {
-            year: '2021',
-            title: 'First Product Launch',
-            description: 'Tuggi Drive launched with initial partnerships in major metropolitan areas.'
-          },
-          {
-            year: '2022',
-            title: 'International Expansion',
-            description: 'Expanded to serve transportation companies across three continents.'
-          },
-          {
             year: '2024',
-            title: 'Innovation Leadership',
-            description: 'Leading the travel-tech industry with AI-powered cultural storytelling.'
+            title: 'Beta Co-Creation',
+            description: 'Tuggi Drive begins development in partnership with selected transportation fleets to test and refine cultural storytelling technology.'
           }
         ],
-        leadershipTitle: 'Leadership Team',
-        leadershipSubtitle: 'Industry veterans and cultural experts united by a shared vision to transform travel experiences through technology.',
+        leadershipTitle: 'Meet Our Founding Team',
+        leadershipSubtitle: 'A small but dedicated team passionate about transforming travel experiences through technology.',
         teamMembers: [
           {
-            name: 'Sarah Chen',
-            title: 'Chief Executive Officer',
-            expertise: 'Travel Technology & Business Strategy',
-            bio: 'Former VP of Innovation at leading travel platform. 15+ years transforming how people experience destinations through technology.',
-            image: '👩‍💼',
+            name: 'Leandro Ramos',
+            title: 'Founder & Head of Product',
+            expertise: 'Travel Technology & Growth Strategy',
+            bio: 'Travel tech and e-commerce veteran leading product vision and growth strategy.',
+            image: '👨‍💼',
             background: 'from-tuggi-primary to-blue-600'
           },
           {
-            name: 'Marcus Rodriguez',
-            title: 'Chief Technology Officer',
-            expertise: 'AI & Location-Based Services',
-            bio: 'Ex-Google Maps engineer specializing in location intelligence. Pioneer in contextual storytelling algorithms.',
+            name: 'Partner Developer',
+            title: 'Mobile Developer',
+            expertise: 'React Native & Full-Stack Development',
+            bio: 'Full-stack React Native engineer contributing to early MVP development.',
             image: '👨‍💻',
             background: 'from-tuggi-secondary to-orange-600'
-          },
-          {
-            name: 'Elena Kowalski',
-            title: 'VP of Product',
-            expertise: 'User Experience & Cultural Content',
-            bio: 'Former cultural consultant for UNESCO. Expert in creating authentic, respectful cultural narratives for global audiences.',
-            image: '👩‍🎨',
-            background: 'from-purple-500 to-violet-600'
-          },
-          {
-            name: 'David Park',
-            title: 'VP of Business Development',
-            expertise: 'B2B Partnerships & Fleet Integration',
-            bio: 'Transportation industry veteran with 20+ years building partnerships with major fleet operators worldwide.',
-            image: '👨‍💼',
-            background: 'from-green-500 to-emerald-600'
-          },
-          {
-            name: 'Dr. Amara Okafor',
-            title: 'Head of Research',
-            expertise: 'Cultural Anthropology & AI Ethics',
-            bio: 'PhD in Cultural Anthropology. Ensures our technology respects and celebrates cultural diversity authentically.',
-            image: '👩‍🔬',
-            background: 'from-pink-500 to-rose-600'
-          },
-          {
-            name: 'James Thompson',
-            title: 'VP of Operations',
-            expertise: 'Enterprise Solutions & Scalability',
-            bio: 'Former operations director at major SaaS company. Specializes in scaling B2B solutions for global enterprises.',
-            image: '👨‍⚖️',
-            background: 'from-indigo-500 to-blue-600'
           }
         ],
         cultureTitle: 'Our Culture',
         cultureParagraphs: [
-          'We\'re a diverse, global team united by our passion for travel, technology, and cultural understanding. Our remote-first culture enables us to work with the best talent worldwide while staying connected to local cultures everywhere.',
-          'Innovation drives everything we do. We encourage experimentation, celebrate learning from failures, and constantly push the boundaries of what\'s possible in travel technology.',
-          'Our commitment to cultural sensitivity and authenticity means every team member contributes to ensuring our technology respects and celebrates the diversity of human experience.'
+          'We\'re a remote-first startup, passionate about travel, storytelling, and technology.',
+          'Even as a small team, we believe in cultural sensitivity, local context, and using technology to create meaningful moments.',
+          'We\'re currently building Tuggi Drive step-by-step, working directly with transportation providers, adapting fast, and constantly learning from the field.'
         ],
         growingTitle: 'We\'re Growing',
         growingDescription: 'Join our mission to transform travel experiences. We\'re always looking for passionate individuals who share our vision.',
         viewPositions: 'View Open Positions',
         companyStats: [
-          { value: '50+', label: 'Team Members', description: 'Across 12 countries' },
-          { value: '15+', label: 'Languages', description: 'Spoken by our team' },
-          { value: '4', label: 'Years', description: 'Of innovation' },
-          { value: '24/7', label: 'Support', description: 'Global coverage' }
+          { value: '2-3', label: 'Core Team', description: 'Passionate founders' },
+          { value: '3+', label: 'Languages', description: 'Supported in beta' },
+          { value: '2024', label: 'Founded', description: 'Early-stage development' },
+          { value: '🌎', label: 'Remote-First', description: 'Global mindset' }
         ],
-        advisoryTitle: 'Advisory Board',
-        advisorySubtitle: 'Industry leaders and cultural experts who guide our strategic vision and ensure we stay at the forefront of travel innovation.',
+        advisoryTitle: 'Friends, Not Just Advisors',
+        advisorySubtitle: 'We\'re fortunate to be supported by industry experts, local drivers, travel professionals, and cultural researchers who offer feedback and help shape our path.',
         advisors: [
-          { name: 'Dr. Maria Gonzalez', role: 'Former UNESCO Director', expertise: 'Cultural Heritage' },
-          { name: 'Robert Kim', role: 'Ex-Uber VP', expertise: 'Transportation Tech' },
-          { name: 'Lisa Chen', role: 'Travel Industry Veteran', expertise: 'Tourism Strategy' },
-          { name: 'Ahmed Hassan', role: 'AI Research Leader', expertise: 'Machine Learning' }
+          { name: 'Travel Industry', role: 'Professionals', expertise: 'Tourism Strategy' },
+          { name: 'Local Drivers', role: 'Field Experts', expertise: 'Real-world Experience' },
+          { name: 'Cultural Researchers', role: 'Content Advisors', expertise: 'Cultural Authenticity' },
+          { name: 'Transportation', role: 'Partners', expertise: 'Fleet Integration' }
         ],
         ctaTitle: 'Ready to Partner with Industry Leaders?',
         ctaSubtitle: 'Connect with our experienced team to discuss how Tuggi can transform your transportation business.',
@@ -141,18 +95,19 @@ const StoryTeamPage: React.FC<StoryTeamPageProps> = ({
         contactInfo: 'Questions about our team or company background?',
         email: 'team@tuggi.com',
         phone: '+1 (555) TUGGI-01',
-        location: 'San Francisco, CA',
+        location: 'São Paulo, Brazil',
         available: 'Available'
       },
       PT: {
         badge: 'Nossa História e Equipe',
         title: 'As Pessoas Por Trás da Inovação em Viagens',
-        subtitle: 'Conheça a equipe experiente de pioneiros em tecnologia de viagem, especialistas culturais e líderes empresariais transformando como o mundo experimenta jornadas.',
+        subtitle: 'Conheça nossa pequena mas apaixonada equipe fundadora construindo o futuro das experiências culturais de viagem.',
         storyTitle: 'Nossa História',
         storyParagraphs: [
-          'Tuggi nasceu de uma observação simples: milhões de pessoas viajam todos os dias, mas a maioria das jornadas é apenas sobre ir do ponto A ao ponto B. Vimos uma oportunidade de transformar essas viagens rotineiras em experiências culturais significativas.',
-          'Nossos fundadores, com profundos conhecimentos em tecnologia de viagem e preservação cultural, reconheceram que empresas de transporte estavam posicionadas de forma única para se tornarem embaixadores culturais. Cada viagem de táxi, jornada de ônibus ou viagem de shuttle poderia se tornar uma janela para história local, tradições e histórias.',
-          'Hoje, temos orgulho de fazer parceria com empresas de transporte mundialmente, ajudando-as a diferenciar seus serviços enquanto criam experiências memoráveis para milhões de viajantes. Nossa tecnologia não apenas move pessoas — ela as conecta à alma de cada destino.'
+          'Tuggi nasceu de uma crença simples: que cada jornada pode ser mais do que apenas transporte.',
+          'Como entusiastas de viagens e construtores de tecnologia, vimos uma oportunidade de transformar viagens cotidianas em momentos culturais envolventes — usando narrativa com IA e geolocalização.',
+          'Hoje, somos uma equipe pequena mas apaixonada co-criando Tuggi Drive com empresas de transporte selecionadas. Estamos focados em validar nossa solução em ambientes reais e aprender diretamente com nossos parceiros antes de escalar globalmente.',
+          'Nossa missão está apenas começando, mas a visão é clara: transformar cada viagem em uma experiência cultural digna de ser lembrada.'
         ],
         companyValues: [
           {
@@ -170,100 +125,53 @@ const StoryTeamPage: React.FC<StoryTeamPageProps> = ({
         ],
         milestones: [
           {
-            year: '2020',
-            title: 'Fundação',
-            description: 'Tuggi foi fundada com uma visão de transformar transporte em experiências culturais.'
-          },
-          {
-            year: '2021',
-            title: 'Primeiro Lançamento de Produto',
-            description: 'Tuggi Drive lançado com parcerias iniciais em grandes áreas metropolitanas.'
-          },
-          {
-            year: '2022',
-            title: 'Expansão Internacional',
-            description: 'Expandiu para servir empresas de transporte em três continentes.'
-          },
-          {
             year: '2024',
-            title: 'Liderança em Inovação',
-            description: 'Liderando a indústria de tecnologia de viagem com narrativa cultural com IA.'
+            title: 'Co-Criação Beta',
+            description: 'Tuggi Drive inicia desenvolvimento em parceria com frotas de transporte selecionadas para testar e refinar tecnologia de narrativa cultural.'
           }
         ],
-        leadershipTitle: 'Equipe de Liderança',
-        leadershipSubtitle: 'Veteranos da indústria e especialistas culturais unidos por uma visão compartilhada de transformar experiências de viagem através da tecnologia.',
+        leadershipTitle: 'Conheça Nossa Equipe Fundadora',
+        leadershipSubtitle: 'Uma equipe pequena mas dedicada, apaixonada por transformar experiências de viagem através da tecnologia.',
         teamMembers: [
           {
-            name: 'Sarah Chen',
-            title: 'Diretora Executiva',
-            expertise: 'Tecnologia de Viagem e Estratégia Empresarial',
-            bio: 'Ex-VP de Inovação em plataforma líder de viagens. 15+ anos transformando como pessoas experimentam destinos através da tecnologia.',
-            image: '👩‍💼',
+            name: 'Leandro Ramos',
+            title: 'Fundador e Líder de Produto',
+            expertise: 'Tecnologia de Viagem e Estratégia de Crescimento',
+            bio: 'Veterano em tecnologia de viagem e e-commerce liderando visão de produto e estratégia de crescimento.',
+            image: '👨‍💼',
             background: 'from-tuggi-primary to-blue-600'
           },
           {
-            name: 'Marcus Rodriguez',
-            title: 'Diretor de Tecnologia',
-            expertise: 'IA e Serviços Baseados em Localização',
-            bio: 'Ex-engenheiro do Google Maps especializado em inteligência de localização. Pioneiro em algoritmos de narrativa contextual.',
+            name: 'Desenvolvedor Parceiro',
+            title: 'Desenvolvedor Mobile',
+            expertise: 'React Native e Desenvolvimento Full-Stack',
+            bio: 'Engenheiro full-stack React Native contribuindo para desenvolvimento do MVP inicial.',
             image: '👨‍💻',
             background: 'from-tuggi-secondary to-orange-600'
-          },
-          {
-            name: 'Elena Kowalski',
-            title: 'VP de Produto',
-            expertise: 'Experiência do Usuário e Conteúdo Cultural',
-            bio: 'Ex-consultora cultural para UNESCO. Especialista em criar narrativas culturais autênticas e respeitosas para audiências globais.',
-            image: '👩‍🎨',
-            background: 'from-purple-500 to-violet-600'
-          },
-          {
-            name: 'David Park',
-            title: 'VP de Desenvolvimento de Negócios',
-            expertise: 'Parcerias B2B e Integração de Frotas',
-            bio: 'Veterano da indústria de transporte com 20+ anos construindo parcerias com grandes operadores de frota mundialmente.',
-            image: '👨‍💼',
-            background: 'from-green-500 to-emerald-600'
-          },
-          {
-            name: 'Dra. Amara Okafor',
-            title: 'Chefe de Pesquisa',
-            expertise: 'Antropologia Cultural e Ética de IA',
-            bio: 'PhD em Antropologia Cultural. Garante que nossa tecnologia respeita e celebra a diversidade cultural autenticamente.',
-            image: '👩‍🔬',
-            background: 'from-pink-500 to-rose-600'
-          },
-          {
-            name: 'James Thompson',
-            title: 'VP de Operações',
-            expertise: 'Soluções Empresariais e Escalabilidade',
-            bio: 'Ex-diretor de operações em grande empresa SaaS. Especializa em escalar soluções B2B para empresas globais.',
-            image: '👨‍⚖️',
-            background: 'from-indigo-500 to-blue-600'
           }
         ],
         cultureTitle: 'Nossa Cultura',
         cultureParagraphs: [
-          'Somos uma equipe diversa e global unida por nossa paixão por viagens, tecnologia e compreensão cultural. Nossa cultura remota-primeiro nos permite trabalhar com os melhores talentos mundialmente enquanto permanecemos conectados às culturas locais em todos os lugares.',
-          'Inovação dirige tudo que fazemos. Encorajamos experimentação, celebramos aprender com falhas e constantemente empurramos os limites do que é possível em tecnologia de viagem.',
-          'Nosso compromisso com sensibilidade cultural e autenticidade significa que cada membro da equipe contribui para garantir que nossa tecnologia respeita e celebra a diversidade da experiência humana.'
+          'Somos uma startup remota-primeiro, apaixonada por viagens, narrativa e tecnologia.',
+          'Mesmo sendo uma equipe pequena, acreditamos em sensibilidade cultural, contexto local e usar tecnologia para criar momentos significativos.',
+          'Estamos atualmente construindo Tuggi Drive passo a passo, trabalhando diretamente com provedores de transporte, nos adaptando rapidamente e constantemente aprendendo no campo.'
         ],
         growingTitle: 'Estamos Crescendo',
         growingDescription: 'Junte-se à nossa missão de transformar experiências de viagem. Sempre procuramos indivíduos apaixonados que compartilham nossa visão.',
         viewPositions: 'Ver Vagas Abertas',
         companyStats: [
-          { value: '50+', label: 'Membros da Equipe', description: 'Em 12 países' },
-          { value: '15+', label: 'Idiomas', description: 'Falados por nossa equipe' },
-          { value: '4', label: 'Anos', description: 'De inovação' },
-          { value: '24/7', label: 'Suporte', description: 'Cobertura global' }
+          { value: '2-3', label: 'Equipe Central', description: 'Fundadores apaixonados' },
+          { value: '3+', label: 'Idiomas', description: 'Suportados no beta' },
+          { value: '2024', label: 'Fundada', description: 'Desenvolvimento inicial' },
+          { value: '🌎', label: 'Remoto-Primeiro', description: 'Mentalidade global' }
         ],
-        advisoryTitle: 'Conselho Consultivo',
-        advisorySubtitle: 'Líderes da indústria e especialistas culturais que guiam nossa visão estratégica e garantem que permaneçamos na vanguarda da inovação em viagens.',
+        advisoryTitle: 'Amigos, Não Apenas Conselheiros',
+        advisorySubtitle: 'Temos a sorte de ser apoiados por especialistas da indústria, motoristas locais, profissionais de viagem e pesquisadores culturais que oferecem feedback e ajudam a moldar nosso caminho.',
         advisors: [
-          { name: 'Dra. Maria Gonzalez', role: 'Ex-Diretora UNESCO', expertise: 'Patrimônio Cultural' },
-          { name: 'Robert Kim', role: 'Ex-VP Uber', expertise: 'Tecnologia Transporte' },
-          { name: 'Lisa Chen', role: 'Veterana Indústria Viagem', expertise: 'Estratégia Turismo' },
-          { name: 'Ahmed Hassan', role: 'Líder Pesquisa IA', expertise: 'Aprendizado de Máquina' }
+          { name: 'Indústria de Viagens', role: 'Profissionais', expertise: 'Estratégia de Turismo' },
+          { name: 'Motoristas Locais', role: 'Especialistas de Campo', expertise: 'Experiência Real' },
+          { name: 'Pesquisadores Culturais', role: 'Conselheiros de Conteúdo', expertise: 'Autenticidade Cultural' },
+          { name: 'Parceiros de Transporte', role: 'Parceiros', expertise: 'Integração de Frota' }
         ],
         ctaTitle: 'Pronto para Fazer Parceria com Líderes da Indústria?',
         ctaSubtitle: 'Conecte-se com nossa equipe experiente para discutir como Tuggi pode transformar seu negócio de transporte.',
@@ -272,18 +180,19 @@ const StoryTeamPage: React.FC<StoryTeamPageProps> = ({
         contactInfo: 'Dúvidas sobre nossa equipe ou histórico da empresa?',
         email: 'team@tuggi.com',
         phone: '+1 (555) TUGGI-01',
-        location: 'San Francisco, CA',
+        location: 'São Paulo, Brasil',
         available: 'Disponível'
       },
       ES: {
         badge: 'Nuestra Historia y Equipo',
         title: 'Las Personas Detrás de la Innovación en Viajes',
-        subtitle: 'Conozca al equipo experimentado de pioneros en tecnología de viajes, expertos culturales y líderes empresariales transformando cómo el mundo experimenta viajes.',
+        subtitle: 'Conozca nuestro pequeño pero apasionado equipo fundador construyendo el futuro de las experiencias culturales de viaje.',
         storyTitle: 'Nuestra Historia',
         storyParagraphs: [
-          'Tuggi nació de una observación simple: millones de personas viajan todos los días, pero la mayoría de los viajes son solo sobre ir del punto A al punto B. Vimos una oportunidad de transformar estos viajes rutinarios en experiencias culturales significativas.',
-          'Nuestros fundadores, con profundos antecedentes en tecnología de viajes y preservación cultural, reconocieron que las empresas de transporte estaban posicionadas de manera única para convertirse en embajadores culturales. Cada viaje en taxi, recorrido en autobús o viaje en shuttle podría convertirse en una ventana a la historia local, tradiciones e historias.',
-          'Hoy, estamos orgullosos de asociarnos con empresas de transporte mundialmente, ayudándolas a diferenciar sus servicios mientras crean experiencias memorables para millones de viajeros. Nuestra tecnología no solo mueve personas — las conecta al alma de cada destino.'
+          'Tuggi nació de una creencia simple: que cada viaje puede ser más que solo transporte.',
+          'Como entusiastas de viajes y constructores de tecnología, vimos una oportunidad de transformar viajes cotidianos en momentos culturales atractivos — usando narrativa con IA y geolocalización.',
+          'Hoy, somos un equipo pequeño pero apasionado co-creando Tuggi Drive con empresas de transporte seleccionadas. Estamos enfocados en validar nuestra solución en ambientes reales y aprender directamente de nuestros socios antes de escalar globalmente.',
+          'Nuestra misión apenas está comenzando, pero la visión es clara: convertir cada viaje en una experiencia cultural digna de recordar.'
         ],
         companyValues: [
           {
@@ -301,100 +210,53 @@ const StoryTeamPage: React.FC<StoryTeamPageProps> = ({
         ],
         milestones: [
           {
-            year: '2020',
-            title: 'Fundación',
-            description: 'Tuggi fue fundada con una visión de transformar transporte en experiencias culturales.'
-          },
-          {
-            year: '2021',
-            title: 'Primer Lanzamiento de Producto',
-            description: 'Tuggi Drive lanzado con asociaciones iniciales en grandes áreas metropolitanas.'
-          },
-          {
-            year: '2022',
-            title: 'Expansión Internacional',
-            description: 'Expandió para servir empresas de transporte en tres continentes.'
-          },
-          {
             year: '2024',
-            title: 'Liderazgo en Innovación',
-            description: 'Liderando la industria de tecnología de viajes con narrativa cultural con IA.'
+            title: 'Co-Creación Beta',
+            description: 'Tuggi Drive comienza desarrollo en asociación con flotas de transporte seleccionadas para probar y refinar tecnología de narrativa cultural.'
           }
         ],
-        leadershipTitle: 'Equipo de Liderazgo',
-        leadershipSubtitle: 'Veteranos de la industria y expertos culturales unidos por una visión compartida de transformar experiencias de viajes a través de la tecnología.',
+        leadershipTitle: 'Conozca Nuestro Equipo Fundador',
+        leadershipSubtitle: 'Un equipo pequeño pero dedicado, apasionado por transformar experiencias de viaje a través de la tecnología.',
         teamMembers: [
           {
-            name: 'Sarah Chen',
-            title: 'Directora Ejecutiva',
-            expertise: 'Tecnología de Viajes y Estrategia Empresarial',
-            bio: 'Ex-VP de Innovación en plataforma líder de viajes. 15+ años transformando cómo las personas experimentan destinos a través de la tecnología.',
-            image: '👩‍💼',
+            name: 'Leandro Ramos',
+            title: 'Fundador y Líder de Producto',
+            expertise: 'Tecnología de Viajes y Estrategia de Crecimiento',
+            bio: 'Veterano en tecnología de viajes y e-commerce liderando visión de producto y estrategia de crecimiento.',
+            image: '👨‍💼',
             background: 'from-tuggi-primary to-blue-600'
           },
           {
-            name: 'Marcus Rodriguez',
-            title: 'Director de Tecnología',
-            expertise: 'IA y Servicios Basados en Ubicación',
-            bio: 'Ex-ingeniero de Google Maps especializado en inteligencia de ubicación. Pionero en algoritmos de narrativa contextual.',
+            name: 'Desarrollador Socio',
+            title: 'Desarrollador Móvil',
+            expertise: 'React Native y Desarrollo Full-Stack',
+            bio: 'Ingeniero full-stack React Native contribuyendo al desarrollo del MVP inicial.',
             image: '👨‍💻',
             background: 'from-tuggi-secondary to-orange-600'
-          },
-          {
-            name: 'Elena Kowalski',
-            title: 'VP de Producto',
-            expertise: 'Experiencia del Usuario y Contenido Cultural',
-            bio: 'Ex-consultora cultural para UNESCO. Experta en crear narrativas culturales auténticas y respetuosas para audiencias globales.',
-            image: '👩‍🎨',
-            background: 'from-purple-500 to-violet-600'
-          },
-          {
-            name: 'David Park',
-            title: 'VP de Desarrollo de Negocios',
-            expertise: 'Asociaciones B2B e Integración de Flotas',
-            bio: 'Veterano de la industria de transporte con 20+ años construyendo asociaciones con grandes operadores de flotas mundialmente.',
-            image: '👨‍💼',
-            background: 'from-green-500 to-emerald-600'
-          },
-          {
-            name: 'Dra. Amara Okafor',
-            title: 'Jefe de Investigación',
-            expertise: 'Antropología Cultural y Ética de IA',
-            bio: 'PhD en Antropología Cultural. Asegura que nuestra tecnología respeta y celebra la diversidad cultural auténticamente.',
-            image: '👩‍🔬',
-            background: 'from-pink-500 to-rose-600'
-          },
-          {
-            name: 'James Thompson',
-            title: 'VP de Operaciones',
-            expertise: 'Soluciones Empresariales y Escalabilidad',
-            bio: 'Ex-director de operaciones en gran empresa SaaS. Se especializa en escalar soluciones B2B para empresas globales.',
-            image: '👨‍⚖️',
-            background: 'from-indigo-500 to-blue-600'
           }
         ],
         cultureTitle: 'Nuestra Cultura',
         cultureParagraphs: [
-          'Somos un equipo diverso y global unido por nuestra pasión por los viajes, tecnología y comprensión cultural. Nuestra cultura remota-primero nos permite trabajar con los mejores talentos mundialmente mientras permanecemos conectados a culturas locales en todas partes.',
-          'La innovación impulsa todo lo que hacemos. Alentamos la experimentación, celebramos aprender de las fallas y constantemente empujamos los límites de lo que es posible en tecnología de viajes.',
-          'Nuestro compromiso con la sensibilidad cultural y autenticidad significa que cada miembro del equipo contribuye a asegurar que nuestra tecnología respeta y celebra la diversidad de la experiencia humana.'
+          'Somos una startup remota-primero, apasionada por los viajes, narrativa y tecnología.',
+          'Aunque somos un equipo pequeño, creemos en la sensibilidad cultural, contexto local y usar tecnología para crear momentos significativos.',
+          'Actualmente estamos construyendo Tuggi Drive paso a paso, trabajando directamente con proveedores de transporte, adaptándonos rápidamente y constantemente aprendiendo en el campo.'
         ],
         growingTitle: 'Estamos Creciendo',
         growingDescription: 'Únase a nuestra misión de transformar experiencias de viajes. Siempre buscamos individuos apasionados que compartan nuestra visión.',
         viewPositions: 'Ver Posiciones Abiertas',
         companyStats: [
-          { value: '50+', label: 'Miembros del Equipo', description: 'En 12 países' },
-          { value: '15+', label: 'Idiomas', description: 'Hablados por nuestro equipo' },
-          { value: '4', label: 'Años', description: 'De innovación' },
-          { value: '24/7', label: 'Soporte', description: 'Cobertura global' }
+          { value: '2-3', label: 'Equipo Central', description: 'Fundadores apasionados' },
+          { value: '3+', label: 'Idiomas', description: 'Soportados en beta' },
+          { value: '2024', label: 'Fundada', description: 'Desarrollo inicial' },
+          { value: '🌎', label: 'Remota-Primero', description: 'Mentalidad global' }
         ],
-        advisoryTitle: 'Consejo Asesor',
-        advisorySubtitle: 'Líderes de la industria y expertos culturales que guían nuestra visión estratégica y aseguran que permanezcamos a la vanguardia de la innovación en viajes.',
+        advisoryTitle: 'Amigos, No Solo Asesores',
+        advisorySubtitle: 'Tenemos la fortuna de ser apoyados por expertos de la industria, conductores locales, profesionales de viajes e investigadores culturales que ofrecen retroalimentación y ayudan a dar forma a nuestro camino.',
         advisors: [
-          { name: 'Dra. Maria Gonzalez', role: 'Ex-Directora UNESCO', expertise: 'Patrimonio Cultural' },
-          { name: 'Robert Kim', role: 'Ex-VP Uber', expertise: 'Tecnología Transporte' },
-          { name: 'Lisa Chen', role: 'Veterana Industria Viajes', expertise: 'Estrategia Turismo' },
-          { name: 'Ahmed Hassan', role: 'Líder Investigación IA', expertise: 'Aprendizaje Automático' }
+          { name: 'Industria de Viajes', role: 'Profesionales', expertise: 'Estrategia de Turismo' },
+          { name: 'Conductores Locales', role: 'Expertos de Campo', expertise: 'Experiencia Real' },
+          { name: 'Investigadores Culturales', role: 'Asesores de Contenido', expertise: 'Autenticidad Cultural' },
+          { name: 'Socios de Transporte', role: 'Socios', expertise: 'Integración de Flota' }
         ],
         ctaTitle: '¿Listo para Asociarse con Líderes de la Industria?',
         ctaSubtitle: 'Conéctese con nuestro equipo experimentado para discutir cómo Tuggi puede transformar su negocio de transporte.',
@@ -403,7 +265,7 @@ const StoryTeamPage: React.FC<StoryTeamPageProps> = ({
         contactInfo: '¿Preguntas sobre nuestro equipo o antecedentes de la empresa?',
         email: 'team@tuggi.com',
         phone: '+1 (555) TUGGI-01',
-        location: 'San Francisco, CA',
+        location: 'São Paulo, Brasil',
         available: 'Disponible'
       }
     };
@@ -488,10 +350,7 @@ const StoryTeamPage: React.FC<StoryTeamPageProps> = ({
                 {content.milestones.map((milestone: any, index: number) => (
                   <div key={index} className="relative flex items-start space-x-6">
                     <div className="w-16 h-16 bg-white border-4 border-tuggi-primary rounded-full flex items-center justify-center shadow-lg z-10">
-                      {index === 0 && <Lightbulb className="w-7 h-7 text-tuggi-primary" />}
-                      {index === 1 && <Globe className="w-7 h-7 text-tuggi-primary" />}
-                      {index === 2 && <Award className="w-7 h-7 text-tuggi-primary" />}
-                      {index === 3 && <Users className="w-7 h-7 text-tuggi-primary" />}
+                      <Lightbulb className="w-7 h-7 text-tuggi-primary" />
                     </div>
                     <div className="flex-1 bg-white rounded-xl p-6 shadow-lg border border-neutral-200">
                       <div className="flex items-center space-x-3 mb-3">
@@ -608,7 +467,7 @@ const StoryTeamPage: React.FC<StoryTeamPageProps> = ({
       </section>
 
       {/* Advisory Board */}
-      <section className="py-20 lg:py-24 bg-gradient-to-br from-tuggi-primary/5 to-tuggi-secondary/5">
+      {/* <section className="py-20 lg:py-24 bg-gradient-to-br from-tuggi-primary/5 to-tuggi-secondary/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-6">
@@ -632,7 +491,7 @@ const StoryTeamPage: React.FC<StoryTeamPageProps> = ({
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Call to Action */}
       <section className="py-20 lg:py-24 bg-gradient-to-br from-tuggi-primary to-tuggi-primary-dark">

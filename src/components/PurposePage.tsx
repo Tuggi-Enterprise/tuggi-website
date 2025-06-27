@@ -15,9 +15,12 @@ const PurposePage: React.FC<PurposePageProps> = ({
     const content: Record<string, any> = {
       EN: {
         badge: 'Our Purpose',
+        betaBadge: '🧪 Beta – Co-developing with selected fleet partners',
         title: 'Transforming Journeys into Meaningful Experiences',
         subtitle: 'We believe every journey should be more than transportation — it should be a gateway to understanding, connection, and wonder.',
         experienceTitle: 'Real Traveler Experience',
+        experienceDescription: 'Tuggi Drive is currently co-developing immersive cultural narratives with selected transportation partners. These AI-powered stories adapt to location, language, and passenger profile — turning ordinary rides into engaging cultural journeys.',
+        earlyResults: 'Early results show high engagement and memorable experiences. We\'re refining the system across different cities and fleet types.',
         experienceItems: [
           {
             title: 'Cultural Immersion:',
@@ -57,13 +60,16 @@ const PurposePage: React.FC<PurposePageProps> = ({
           }
         ],
         impactTitle: 'Our Impact',
-        impactSubtitle: 'Measurable results that demonstrate our commitment to transforming the travel experience.',
+        impactSubtitle: 'Our goals and early results as we co-develop this transformative travel experience.',
         impactStats: [
-          { number: '2M+', label: 'Stories Shared', description: 'Cultural narratives delivered to travelers' },
-          { number: '500+', label: 'Partner Companies', description: 'Transportation providers worldwide' },
-          { number: '50+', label: 'Destinations', description: 'Cities enriched with local stories' },
-          { number: '98%', label: 'Satisfaction Rate', description: 'Passenger experience rating' }
+          { number: '2M+', label: 'Cultural Stories Projected for 2025', description: 'Planned narrative delivery capacity' },
+          { number: '500+', label: 'Companies in Expansion Scope', description: 'Transportation providers targeted worldwide' },
+          { number: '50+', label: 'Target Destinations', description: 'Cities planned for cultural story coverage' },
+          { number: '98%', label: 'Satisfaction Rate (Early Feedback)', description: 'Current pilot program results' }
         ],
+        whyJoinTitle: 'Why Join Now?',
+        whyJoinDescription: 'Tuggi Drive is inviting forward-thinking transportation providers to join our Early Access Program. As a partner, you\'ll help shape the future of travel storytelling — and benefit from exclusive onboarding support, marketing visibility, and product influence before public release.',
+        applyEarlyAccess: 'Apply for Early Access',
         testimonialsTitle: 'Partner Success Stories',
         testimonialsSubtitle: 'Real results from transportation companies who\'ve transformed their passenger experience with Tuggi.',
         testimonials: [
@@ -83,16 +89,19 @@ const PurposePage: React.FC<PurposePageProps> = ({
         ctaTitle: 'Ready to Transform Your Passenger Experience?',
         ctaSubtitle: 'Join forward-thinking transportation companies who are already creating memorable journeys with Tuggi Drive.',
         scheduleCall: 'Schedule a Partnership Call',
-        downloadCases: 'Download Case Studies',
+        downloadCases: 'Learn More About the Early Access Program',
         contactInfo: 'Questions about our mission or partnership opportunities?',
         email: 'partnerships@tuggi.com',
         phone: '+1 (555) TUGGI-01'
       },
       PT: {
         badge: 'Nosso Propósito',
+        betaBadge: '🧪 Beta – Co-desenvolvendo com parceiros de frota selecionados',
         title: 'Transformando Jornadas em Experiências Significativas',
         subtitle: 'Acreditamos que cada jornada deve ser mais do que transporte — deve ser uma porta de entrada para compreensão, conexão e maravilha.',
         experienceTitle: 'Experiência Real do Viajante',
+        experienceDescription: 'O Tuggi Drive está atualmente co-desenvolvendo narrativas culturais imersivas com parceiros de transporte selecionados. Essas histórias alimentadas por IA se adaptam à localização, idioma e perfil do passageiro — transformando viagens ordinárias em jornadas culturais envolventes.',
+        earlyResults: 'Os resultados iniciais mostram alto engajamento e experiências memoráveis. Estamos refinando o sistema em diferentes cidades e tipos de frota.',
         experienceItems: [
           {
             title: 'Imersão Cultural:',
@@ -132,13 +141,16 @@ const PurposePage: React.FC<PurposePageProps> = ({
           }
         ],
         impactTitle: 'Nosso Impacto',
-        impactSubtitle: 'Resultados mensuráveis que demonstram nosso compromisso em transformar a experiência de viagem.',
+        impactSubtitle: 'Nossos objetivos e resultados iniciais enquanto co-desenvolvemos esta experiência de viagem transformadora.',
         impactStats: [
-          { number: '2M+', label: 'Histórias Compartilhadas', description: 'Narrativas culturais entregues a viajantes' },
-          { number: '500+', label: 'Empresas Parceiras', description: 'Provedores de transporte mundialmente' },
-          { number: '50+', label: 'Destinos', description: 'Cidades enriquecidas com histórias locais' },
-          { number: '98%', label: 'Taxa de Satisfação', description: 'Avaliação da experiência do passageiro' }
+          { number: '2M+', label: 'Histórias Culturais Projetadas para 2025', description: 'Capacidade planejada de entrega de narrativas' },
+          { number: '500+', label: 'Empresas no Escopo de Expansão', description: 'Provedores de transporte visados mundialmente' },
+          { number: '50+', label: 'Destinos Alvo', description: 'Cidades planejadas para cobertura de histórias culturais' },
+          { number: '98%', label: 'Taxa de Satisfação (Feedback Inicial)', description: 'Resultados atuais do programa piloto' }
         ],
+        whyJoinTitle: 'Por Que Participar Agora?',
+        whyJoinDescription: 'O Tuggi Drive está convidando provedores de transporte visionários para participar do nosso Programa de Acesso Antecipado. Como parceiro, você ajudará a moldar o futuro da narrativa de viagens — e se beneficiará de suporte exclusivo de integração, visibilidade de marketing e influência no produto antes do lançamento público.',
+        applyEarlyAccess: 'Candidatar-se ao Acesso Antecipado',
         testimonialsTitle: 'Histórias de Sucesso de Parceiros',
         testimonialsSubtitle: 'Resultados reais de empresas de transporte que transformaram sua experiência de passageiros com Tuggi.',
         testimonials: [
@@ -158,16 +170,19 @@ const PurposePage: React.FC<PurposePageProps> = ({
         ctaTitle: 'Pronto para Transformar Sua Experiência de Passageiros?',
         ctaSubtitle: 'Junte-se a empresas de transporte visionárias que já estão criando jornadas memoráveis com Tuggi Drive.',
         scheduleCall: 'Agendar Chamada de Parceria',
-        downloadCases: 'Baixar Casos de Estudo',
+        downloadCases: 'Saiba Mais Sobre o Programa de Acesso Antecipado',
         contactInfo: 'Dúvidas sobre nossa missão ou oportunidades de parceria?',
         email: 'partnerships@tuggi.com',
         phone: '+1 (555) TUGGI-01'
       },
       ES: {
         badge: 'Nuestro Propósito',
+        betaBadge: '🧪 Beta – Co-desarrollando con socios de flota seleccionados',
         title: 'Transformando Viajes en Experiencias Significativas',
         subtitle: 'Creemos que cada viaje debe ser más que transporte — debe ser una puerta de entrada a la comprensión, conexión y maravilla.',
         experienceTitle: 'Experiencia Real del Viajero',
+        experienceDescription: 'Tuggi Drive está actualmente co-desarrollando narrativas culturales inmersivas con socios de transporte seleccionados. Estas historias impulsadas por IA se adaptan a la ubicación, idioma y perfil del pasajero — transformando viajes ordinarios en jornadas culturales atractivas.',
+        earlyResults: 'Los resultados tempranos muestran alto compromiso y experiencias memorables. Estamos refinando el sistema en diferentes ciudades y tipos de flota.',
         experienceItems: [
           {
             title: 'Inmersión Cultural:',
@@ -207,13 +222,16 @@ const PurposePage: React.FC<PurposePageProps> = ({
           }
         ],
         impactTitle: 'Nuestro Impacto',
-        impactSubtitle: 'Resultados medibles que demuestran nuestro compromiso de transformar la experiencia de viaje.',
+        impactSubtitle: 'Nuestros objetivos y resultados tempranos mientras co-desarrollamos esta experiencia de viaje transformadora.',
         impactStats: [
-          { number: '2M+', label: 'Historias Compartidas', description: 'Narrativas culturales entregadas a viajeros' },
-          { number: '500+', label: 'Empresas Socias', description: 'Proveedores de transporte mundialmente' },
-          { number: '50+', label: 'Destinos', description: 'Ciudades enriquecidas con historias locales' },
-          { number: '98%', label: 'Tasa de Satisfacción', description: 'Calificación de experiencia del pasajero' }
+          { number: '2M+', label: 'Historias Culturales Proyectadas para 2025', description: 'Capacidad planificada de entrega de narrativas' },
+          { number: '500+', label: 'Empresas en Alcance de Expansión', description: 'Proveedores de transporte objetivo mundialmente' },
+          { number: '50+', label: 'Destinos Objetivo', description: 'Ciudades planificadas para cobertura de historias culturales' },
+          { number: '98%', label: 'Tasa de Satisfacción (Comentarios Tempranos)', description: 'Resultados actuales del programa piloto' }
         ],
+        whyJoinTitle: '¿Por Qué Unirse Ahora?',
+        whyJoinDescription: 'Tuggi Drive está invitando a proveedores de transporte visionarios a unirse a nuestro Programa de Acceso Temprano. Como socio, ayudarás a dar forma al futuro de la narrativa de viajes — y te beneficiarás de soporte exclusivo de incorporación, visibilidad de marketing e influencia del producto antes del lanzamiento público.',
+        applyEarlyAccess: 'Solicitar Acceso Temprano',
         testimonialsTitle: 'Historias de Éxito de Socios',
         testimonialsSubtitle: 'Resultados reales de empresas de transporte que han transformado su experiencia de pasajeros con Tuggi.',
         testimonials: [
@@ -233,7 +251,7 @@ const PurposePage: React.FC<PurposePageProps> = ({
         ctaTitle: '¿Listo para Transformar Su Experiencia de Pasajeros?',
         ctaSubtitle: 'Únase a empresas de transporte visionarias que ya están creando viajes memorables con Tuggi Drive.',
         scheduleCall: 'Programar Llamada de Asociación',
-        downloadCases: 'Descargar Casos de Estudio',
+        downloadCases: 'Obtener Más Información Sobre el Programa de Acceso Temprano',
         contactInfo: '¿Preguntas sobre nuestra misión u oportunidades de asociación?',
         email: 'partnerships@tuggi.com',
         phone: '+1 (555) TUGGI-01'
@@ -262,6 +280,15 @@ const PurposePage: React.FC<PurposePageProps> = ({
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Beta Badge */}
+      {/* <div className="bg-gradient-to-r from-orange-500 to-yellow-500 py-3">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center text-white font-semibold">
+            {content.betaBadge}
+          </div>
+        </div>
+      </div> */}
+
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-neutral-50 via-white to-tuggi-primary/5 overflow-hidden">
         {/* Background Pattern */}
@@ -311,18 +338,30 @@ const PurposePage: React.FC<PurposePageProps> = ({
                     <h3 className="text-2xl font-bold text-neutral-900 mb-4">
                       {content.experienceTitle}
                     </h3>
-                    <div className="space-y-4">
-                      {content.experienceItems.map((item: any, index: number) => (
-                        <div key={index} className="flex items-start space-x-3">
-                          <div className={`w-2 h-2 rounded-full mt-2 ${
-                            index === 0 ? 'bg-tuggi-primary' : 
-                            index === 1 ? 'bg-tuggi-secondary' : 'bg-green-500'
-                          }`}></div>
-                          <p className="text-neutral-700">
-                            <strong>{item.title}</strong> {item.description}
-                          </p>
-                        </div>
-                      ))}
+                    <div className="space-y-6">
+                      <div className="bg-tuggi-primary/10 rounded-lg p-4">
+                        <p className="text-neutral-700 leading-relaxed">
+                          {content.experienceDescription}
+                        </p>
+                      </div>
+                      <div className="bg-green-50 rounded-lg p-4">
+                        <p className="text-neutral-700 leading-relaxed">
+                          {content.earlyResults}
+                        </p>
+                      </div>
+                      <div className="space-y-4">
+                        {content.experienceItems.map((item: any, index: number) => (
+                          <div key={index} className="flex items-start space-x-3">
+                            <div className={`w-2 h-2 rounded-full mt-2 ${
+                              index === 0 ? 'bg-tuggi-primary' : 
+                              index === 1 ? 'bg-tuggi-secondary' : 'bg-green-500'
+                            }`}></div>
+                            <p className="text-neutral-700">
+                              <strong>{item.title}</strong> {item.description}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                   
@@ -405,7 +444,7 @@ const PurposePage: React.FC<PurposePageProps> = ({
       </section>
 
       {/* Impact & Results */}
-      <section className="py-20 lg:py-24 bg-white">
+      {/* <section className="py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-6">
@@ -434,10 +473,10 @@ const PurposePage: React.FC<PurposePageProps> = ({
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Partner Testimonials */}
-      <section className="py-20 lg:py-24 bg-gradient-to-br from-tuggi-primary/5 to-tuggi-secondary/5">
+      {/* <section className="py-20 lg:py-24 bg-gradient-to-br from-tuggi-primary/5 to-tuggi-secondary/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-6">
@@ -468,6 +507,27 @@ const PurposePage: React.FC<PurposePageProps> = ({
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section> */}
+
+      {/* Why Join Now Section */}
+      <section className="py-20 lg:py-24 bg-gradient-to-br from-green-50 to-blue-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-8">
+              {content.whyJoinTitle}
+            </h2>
+            <p className="text-lg lg:text-xl text-neutral-700 leading-relaxed mb-8">
+              {content.whyJoinDescription}
+            </p>
+            <button 
+              onClick={() => handleCTAClick('apply_early_access')}
+              className="bg-tuggi-primary hover:bg-tuggi-primary-dark text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center mx-auto space-x-2"
+            >
+              <span>{content.applyEarlyAccess}</span>
+              <ArrowRight className="w-5 h-5" />
+            </button>
           </div>
         </div>
       </section>
