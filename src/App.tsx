@@ -31,13 +31,14 @@ function App() {
     setCurrentPage(page);
     
     // Initialize Google Analytics with enhanced multilingual tracking
-    initializeAnalytics('G-XXXXXXXXXX'); // Replace with actual GA4 Measurement ID
+    const measurementId = import.meta.env.VITE_GA4_MEASUREMENT_ID || 'G-FFFFFFFFF'; // Replace with actual GA4 Measurement ID
+    initializeAnalytics(measurementId);
     
     // Initialize performance monitoring
     trackPerformanceMetrics();
     
     // Track initial page view
-    trackPageView(page, language);
+    trackPageView(page, language, measurementId);
     
     // Set up intersection observer for scroll animations
     const observerOptions = {
@@ -88,7 +89,7 @@ function App() {
     trackLanguageChange(lang, previousLanguage, currentPage);
     
     // Track page view for new language
-    trackPageView(currentPage, lang);
+    trackPageView(currentPage, lang, import.meta.env.VITE_GA4_MEASUREMENT_ID || 'G-XXXXXXXXXX');
     
     console.log(`Language changed from ${previousLanguage} to ${lang}, URL: ${newUrl}`);
   };
@@ -128,7 +129,7 @@ function App() {
     }
     
     // Track page view for new page
-    trackPageView(page, currentLanguage);
+    trackPageView(page, currentLanguage, import.meta.env.VITE_GA4_MEASUREMENT_ID || 'G-XXXXXXXXXX');
   };
 
   // Handle browser back/forward navigation
@@ -152,14 +153,14 @@ function App() {
             });
           }
           
-          trackPageView(page, language);
+          trackPageView(page, language, import.meta.env.VITE_GA4_MEASUREMENT_ID || 'G-XXXXXXXXXX');
         }
       } else {
         // Fallback: parse URL if no state
         const { language, page } = parseUrlPath(window.location.pathname);
         setCurrentPage(page);
         setCurrentLanguage(language);
-        trackPageView(page, language);
+        trackPageView(page, language, import.meta.env.VITE_GA4_MEASUREMENT_ID || 'G-XXXXXXXXXX');
       }
     };
     

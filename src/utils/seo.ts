@@ -523,7 +523,7 @@ export const updatePageSEO = (seoConfig: SEOConfig) => {
 };
 
 // Enhanced Google Analytics tracking with multilingual support
-export const trackPageView = (page: string, language: string) => {
+export const trackPageView = (page: string, language: string, measurementId?: string) => {
   if (typeof window !== 'undefined' && (window as any).gtag) {
     const locale = getLocaleCode(language);
     
@@ -593,19 +593,21 @@ export const trackPageView = (page: string, language: string) => {
     };
 
     // Enhanced page view tracking with multilingual context
-    (window as any).gtag('config', 'GA_MEASUREMENT_ID', {
-      page_title: document.title,
-      page_location: window.location.href,
-      language: language,
-      locale: locale,
-      custom_map: {
-        custom_parameter_1: 'language',
-        custom_parameter_2: 'page_type',
-        custom_parameter_3: 'locale',
-        custom_parameter_4: 'user_engagement',
-        custom_parameter_5: 'conversion_funnel'
-      }
-    });
+    if (measurementId) {
+      (window as any).gtag('config', measurementId, {
+        page_title: document.title,
+        page_location: window.location.href,
+        language: language,
+        locale: locale,
+        custom_map: {
+          custom_parameter_1: 'language',
+          custom_parameter_2: 'page_type',
+          custom_parameter_3: 'locale',
+          custom_parameter_4: 'user_engagement',
+          custom_parameter_5: 'conversion_funnel'
+        }
+      });
+    }
 
     (window as any).gtag('event', 'page_view', {
       language: language,
@@ -987,8 +989,8 @@ export const trackPerformanceMetrics = () => {
             dns_time: Math.round(perfData.domainLookupEnd - perfData.domainLookupStart),
             connect_time: Math.round(perfData.connectEnd - perfData.connectStart),
             response_time: Math.round(perfData.responseEnd - perfData.requestStart),
-            dom_load_time: Math.round(perfData.domContentLoadedEventEnd - perfData.navigationStart),
-            window_load_time: Math.round(perfData.loadEventEnd - perfData.navigationStart),
+            dom_load_time: Math.round(perfData.domContentLoadedEventEnd - perfData.fetchStart),
+            window_load_time: Math.round(perfData.loadEventEnd - perfData.fetchStart),
             page_type: window.location.pathname.split('/').pop() || 'home',
             language: language,
             locale: getLocaleCode(language),
