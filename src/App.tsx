@@ -31,7 +31,7 @@ function App() {
     setCurrentPage(page);
     
     // Initialize Google Analytics with enhanced multilingual tracking
-    const measurementId = import.meta.env.VITE_GA4_MEASUREMENT_ID || 'G-FFFFFFFFF'; // Replace with actual GA4 Measurement ID
+    const measurementId = import.meta.env.VITE_GA4_MEASUREMENT_ID || 'G-LFFNJDG7TJ'; // Replace with actual GA4 Measurement ID
     initializeAnalytics(measurementId);
     
     // Initialize performance monitoring
