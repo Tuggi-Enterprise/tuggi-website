@@ -42,14 +42,14 @@ const ContactPage: React.FC<ContactPageProps> = ({
           {
             title: 'Email Us',
             description: 'Get in touch for demos, partnerships, or technical support',
-            contact: 'hello@tuggi.com',
-            href: 'mailto:hello@tuggi.com'
+            contact: 'hello@tuggi.app',
+            href: 'mailto:hello@tuggi.app'
           },
           {
             title: 'Call Us',
             description: 'Speak directly with our business development team',
-            contact: '+1 (555) TUGGI-01',
-            href: 'tel:+1-555-TUGGI-01'
+            contact: '+55 (11) 9.9471-8809',
+            href: 'tel:+55 (11) 9.9471-8809'
           },
           {
             title: 'Visit Us',
@@ -79,7 +79,7 @@ const ContactPage: React.FC<ContactPageProps> = ({
           },
           phone: {
             label: 'Phone Number *',
-            placeholder: '+1 (555) 123-4567',
+            placeholder: '+55 (11) 9.9471-8809',
             error: 'Phone number is required'
           },
           country: {
@@ -101,17 +101,17 @@ const ContactPage: React.FC<ContactPageProps> = ({
           {
             title: 'Business Development',
             description: 'Partnerships, enterprise sales, and custom solutions',
-            email: 'business@tuggi.com'
+            email: 'hello@tuggi.app'
           },
           {
             title: 'Technical Support',
             description: 'Implementation help, troubleshooting, and technical questions',
-            email: 'support@tuggi.com'
+            email: 'hello@tuggi.app'
           },
           {
             title: 'International Expansion',
             description: 'Regional partnerships and market entry opportunities',
-            email: 'international@tuggi.com'
+            email: 'hello@tuggi.app'
           }
         ],
         supportTitle: 'Specialized Support',
@@ -166,14 +166,14 @@ const ContactPage: React.FC<ContactPageProps> = ({
           {
             title: 'Envie Email',
             description: 'Entre em contato para demos, parcerias ou suporte técnico',
-            contact: 'hello@tuggi.com',
-            href: 'mailto:hello@tuggi.com'
+            contact: 'hello@tuggi.app',
+            href: 'mailto:hello@tuggi.app'
           },
           {
             title: 'Ligue para Nós',
             description: 'Fale diretamente com nossa equipe de desenvolvimento de negócios',
-            contact: '+1 (555) TUGGI-01',
-            href: 'tel:+1-555-TUGGI-01'
+            contact: '+55 (11) 9.9471-8809',
+            href: 'tel:+55 (11) 9.9471-8809'
           },
           {
             title: 'Visite-nos',
@@ -225,17 +225,17 @@ const ContactPage: React.FC<ContactPageProps> = ({
           {
             title: 'Desenvolvimento de Negócios',
             description: 'Parcerias, vendas empresariais e soluções personalizadas',
-            email: 'business@tuggi.com'
+            email: 'hello@tuggi.app'
           },
           {
             title: 'Suporte Técnico',
             description: 'Ajuda com implementação, solução de problemas e questões técnicas',
-            email: 'support@tuggi.com'
+            email: 'hello@tuggi.app'
           },
           {
             title: 'Expansão Internacional',
             description: 'Parcerias regionais e oportunidades de entrada no mercado',
-            email: 'international@tuggi.com'
+            email: 'hello@tuggi.app'
           }
         ],
         supportTitle: 'Suporte Especializado',
@@ -290,14 +290,14 @@ const ContactPage: React.FC<ContactPageProps> = ({
           {
             title: 'Envíenos Email',
             description: 'Póngase en contacto para demos, asociaciones o soporte técnico',
-            contact: 'hello@tuggi.com',
-            href: 'mailto:hello@tuggi.com'
+            contact: 'hello@tuggi.app',
+            href: 'mailto:hello@tuggi.app'
           },
           {
             title: 'Llámenos',
             description: 'Hable directamente con nuestro equipo de desarrollo de negocios',
-            contact: '+1 (555) TUGGI-01',
-            href: 'tel:+1-555-TUGGI-01'
+            contact: '+55 (11) 9.9471-8809',
+            href: 'tel:+55 (11) 9.9471-8809'
           },
           {
             title: 'Visítenos',
@@ -349,17 +349,17 @@ const ContactPage: React.FC<ContactPageProps> = ({
           {
             title: 'Desarrollo de Negocios',
             description: 'Asociaciones, ventas empresariales y soluciones personalizadas',
-            email: 'business@tuggi.com'
+            email: 'hello@tuggi.app'
           },
           {
             title: 'Soporte Técnico',
             description: 'Ayuda con implementación, solución de problemas y preguntas técnicas',
-            email: 'support@tuggi.com'
+            email: 'hello@tuggi.app'
           },
           {
             title: 'Expansión Internacional',
             description: 'Asociaciones regionales y oportunidades de entrada al mercado',
-            email: 'international@tuggi.com'
+            email: 'hello@tuggi.app'
           }
         ],
         supportTitle: 'Soporte Especializado',

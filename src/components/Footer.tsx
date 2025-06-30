@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, MapPin, ChevronDown, Globe } from 'lucide-react';
 import { getLanguageFlag, getLanguageName, getLocaleCode } from '../utils/routing';
-import TuggiLogo from './TuggiLogo';
 
 interface FooterProps {
   currentLanguage?: string;
@@ -163,10 +162,7 @@ const Footer: React.FC<FooterProps> = ({
           {/* About Tuggi */}
           <div className="lg:col-span-2">
             <div className="mb-6">
-              <TuggiLogo 
-                size="lg" 
-                className=""
-              />
+              <img src="/logo-tuggi-white.png" alt="Tuggi Logo" className="h-10 lg:h-12 w-auto" />
             </div>
             
             <h3 className="text-white font-semibold text-base mb-4">
@@ -184,10 +180,10 @@ const Footer: React.FC<FooterProps> = ({
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-tuggi-primary flex-shrink-0" />
                 <a 
-                  href="mailto:hello@tuggi.com" 
+                  href="mailto:hello@tuggi.app" 
                   className="text-sm hover:text-tuggi-primary transition-colors duration-200"
                 >
-                  hello@tuggi.com
+                  hello@tuggi.app
                 </a>
               </div>
               <div className="flex items-center space-x-3">
@@ -270,7 +266,7 @@ const Footer: React.FC<FooterProps> = ({
             </div>
 
             {/* Newsletter */}
-            <div>
+            {/* <div>
               <h3 className="text-white font-semibold text-base mb-3">
                 {content.newsletterTitle}
               </h3>
@@ -294,7 +290,7 @@ const Footer: React.FC<FooterProps> = ({
                   {content.subscribe}
                 </button>
               </form>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

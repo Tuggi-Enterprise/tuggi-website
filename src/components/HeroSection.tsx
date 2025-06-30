@@ -113,7 +113,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+            <div className="flex flex-col sm:flex-row gap-4 mb-4">
               <button 
                 onClick={() => handleCTAClick('request_demo_hero')}
                 className="bg-tuggi-primary hover:bg-tuggi-primary-dark text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center space-x-2 group"
@@ -132,14 +132,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             </div>
 
             {/* Trust Indicators */}
-            <div className="pt-8 border-t border-neutral-200">
+            {/* <div className="pt-8 border-t border-neutral-200">
               <p className="text-sm text-neutral-500 mb-4">{content.trustIndicator}</p>
               <div className="flex items-center space-x-8 opacity-60">
                 {content.companies.map((company: string, index: number) => (
                   <div key={index} className="text-xl font-bold text-neutral-400">{company}</div>
                 ))}
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Professional Driver Image Mockup */}

@@ -263,7 +263,7 @@ function App() {
                 <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
                   {getLocalizedText('final_cta_title', currentLanguage)}
                 </h2>
-                <p className="text-xl text-tuggi-primary-light max-w-3xl mx-auto mb-8">
+                <p className="text-xl text-white max-w-3xl mx-auto mb-8">
                   {getLocalizedText('final_cta_description', currentLanguage)}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -285,12 +285,12 @@ function App() {
                 
                 {/* Contact Info with Localized Content */}
                 <div className="mt-12 pt-8 border-t border-tuggi-primary-light/30">
-                  <p className="text-tuggi-primary-light mb-4">
+                  <p className="text-white mb-4">
                     {getLocalizedText('contact_specialists', currentLanguage)}
                   </p>
                   <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-8 text-white">
                     <a 
-                      href="mailto:drive@tuggi.com" 
+                      href="mailto:hello@tuggi.app" 
                       className="hover:text-tuggi-primary-light transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-tuggi-primary rounded-lg px-2 py-1"
                       onClick={() => {
                         if (typeof window !== 'undefined' && (window as any).gtag) {
@@ -305,10 +305,10 @@ function App() {
                       }}
                       aria-label={getLocalizedText('email_specialists_aria', currentLanguage)}
                     >
-                      📧 drive@tuggi.com
+                      📧 hello@tuggi.app
                     </a>
                     <a 
-                      href="tel:+1-555-TUGGI-01" 
+                      href="tel:+55 (11) 9.9471-8809" 
                       className="hover:text-tuggi-primary-light transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-tuggi-primary rounded-lg px-2 py-1"
                       onClick={() => {
                         if (typeof window !== 'undefined' && (window as any).gtag) {
@@ -323,7 +323,7 @@ function App() {
                       }}
                       aria-label={getLocalizedText('call_specialists_aria', currentLanguage)}
                     >
-                      📞 +1 (555) TUGGI-01
+                      📞 +55 (11) 9.9471-8809
                     </a>
                   </div>
                 </div>

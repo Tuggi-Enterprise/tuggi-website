@@ -176,7 +176,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
         scheduleDemo: 'Schedule Demo Call',
         contactInfo: 'Questions about implementation or pricing?',
         email: 'sales@tuggi.com',
-        phone: '+1 (555) TUGGI-01'
+        phone: '+55 (11) 9.9471-8809'
       },
       PT: {
         badge: '🧪 Produtos Beta',
@@ -341,7 +341,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
         scheduleDemo: 'Agendar Chamada de Demo',
         contactInfo: 'Dúvidas sobre implementação ou preços?',
         email: 'sales@tuggi.com',
-        phone: '+1 (555) TUGGI-01'
+        phone: '+55 (11) 9.9471-8809'
       },
       ES: {
         badge: '🧪 Productos Beta',
@@ -506,7 +506,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
         scheduleDemo: 'Programar Llamada de Demo',
         contactInfo: '¿Preguntas sobre implementación o precios?',
         email: 'sales@tuggi.com',
-        phone: '+1 (555) TUGGI-01'
+        phone: '+55 (11) 9.9471-8809'
       }
     };
     return content[language] || content['EN'];
@@ -879,7 +879,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
           <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
             {content.finalCtaTitle}
           </h2>
-          <p className="text-xl text-tuggi-primary-light max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-white max-w-3xl mx-auto mb-8">
             {content.finalCtaSubtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -900,7 +900,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
           
           {/* Contact Info */}
           <div className="mt-12 pt-8 border-t border-tuggi-primary-light/30">
-            <p className="text-tuggi-primary-light mb-4">
+            <p className="text-white mb-4">
               {content.contactInfo}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-8 text-white">

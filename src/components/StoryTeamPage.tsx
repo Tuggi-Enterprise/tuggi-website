@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, Award, Globe, Lightbulb, ArrowRight, MapPin, Calendar, Briefcase } from 'lucide-react';
+import { Users, Award, Globe, Lightbulb, ArrowRight, MapPin, Calendar, Briefcase, ExternalLink } from 'lucide-react';
 
 interface StoryTeamPageProps {
   currentLanguage?: string;
@@ -40,7 +40,17 @@ const StoryTeamPage: React.FC<StoryTeamPageProps> = ({
         ],
         milestones: [
           {
-            year: '2024',
+            year: '2024 / Q3',
+            title: 'Simple Idea',
+            description: 'We started developing Tuggi, with a simple idea to change the way people travel, helping them to understand the culture of the places they are visiting.'
+          },
+          {
+            year: '2025 / Q1',
+            title: 'Beta Co-Creation',
+            description: 'We refine and change the way we work, to create a better product for our partners.'
+          },
+          {
+            year: '2025 / Q2',
             title: 'Beta Co-Creation',
             description: 'Tuggi Drive begins development in partnership with selected transportation fleets to test and refine cultural storytelling technology.'
           }
@@ -50,19 +60,33 @@ const StoryTeamPage: React.FC<StoryTeamPageProps> = ({
         teamMembers: [
           {
             name: 'Leandro Ramos',
-            title: 'Founder & Head of Product',
+            title: 'Co-founder',
             expertise: 'Travel Technology & Growth Strategy',
             bio: 'Travel tech and e-commerce veteran leading product vision and growth strategy.',
-            image: '👨‍💼',
-            background: 'from-tuggi-primary to-blue-600'
+            image: 'https://media.licdn.com/dms/image/v2/D4D03AQH-bEaamrzCXA/profile-displayphoto-scale_200_200/B4DZejQhgZGYAY-/0/1750790709225?e=1756944000&v=beta&t=iNqm9T-OjtExkqPRhk1FN7gpHtclLzDZskzuEjPQ9ek',
+            background: 'from-tuggi-primary to-blue-600',
+            linkedin: 'https://www.linkedin.com/in/lrsleramos/',
+            location: 'São Paulo, Brazil'
           },
           {
-            name: 'Partner Developer',
+            name: 'Matheus Brito',
+            title: 'Co-founder',
+            expertise: 'Business Strategy & Operations',
+            bio: 'Strategic visionary focused on business development and operational excellence.',
+            image: 'https://media.licdn.com/dms/image/v2/D4E03AQEJeNNOOfrXCg/profile-displayphoto-shrink_200_200/B4EZWU2cFeHgAg-/0/1741959054678?e=1756944000&v=beta&t=396xfTzLGRomTqhV73zj6j_YsUoet38LbVctPEHxi9Q',
+            background: 'from-tuggi-secondary to-orange-600',
+            linkedin: 'https://www.linkedin.com/in/despossivel/',
+            location: 'Barcelona, Spain'
+          },
+          {
+            name: 'Mateus Castro',
             title: 'Mobile Developer',
             expertise: 'React Native & Full-Stack Development',
-            bio: 'Full-stack React Native engineer contributing to early MVP development.',
-            image: '👨‍💻',
-            background: 'from-tuggi-secondary to-orange-600'
+            bio: 'Full-stack React Native engineer building the core technology platform.',
+            image: 'https://media.licdn.com/dms/image/v2/D4D03AQGikX6e1rUUkw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1730468694477?e=1756944000&v=beta&t=Q5cseZK6Pf7gZzPpSHHVPl0wPN-djLnnad8HuY_pZ_s',
+            background: 'from-blue-500 to-indigo-600',
+            linkedin: 'https://www.linkedin.com/in/mateus-castro-b49559169/',
+            location: 'Minas Gerais, Brazil'
           }
         ],
         cultureTitle: 'Our Culture',
@@ -75,7 +99,7 @@ const StoryTeamPage: React.FC<StoryTeamPageProps> = ({
         growingDescription: 'Join our mission to transform travel experiences. We\'re always looking for passionate individuals who share our vision.',
         viewPositions: 'View Open Positions',
         companyStats: [
-          { value: '2-3', label: 'Core Team', description: 'Passionate founders' },
+          { value: '3', label: 'Core Team', description: 'Passionate founders & developer' },
           { value: '3+', label: 'Languages', description: 'Supported in beta' },
           { value: '2024', label: 'Founded', description: 'Early-stage development' },
           { value: '🌎', label: 'Remote-First', description: 'Global mindset' }
@@ -93,8 +117,8 @@ const StoryTeamPage: React.FC<StoryTeamPageProps> = ({
         meetTeam: 'Meet Our Team',
         scheduleCall: 'Schedule a Call',
         contactInfo: 'Questions about our team or company background?',
-        email: 'team@tuggi.com',
-        phone: '+1 (555) TUGGI-01',
+        email: 'hello@tuggi.app',
+        phone: '+55 (11) 9.9471-8809',
         location: 'São Paulo, Brazil',
         available: 'Available'
       },
@@ -125,9 +149,19 @@ const StoryTeamPage: React.FC<StoryTeamPageProps> = ({
         ],
         milestones: [
           {
-            year: '2024',
-            title: 'Co-Criação Beta',
-            description: 'Tuggi Drive inicia desenvolvimento em parceria com frotas de transporte selecionadas para testar e refinar tecnologia de narrativa cultural.'
+            year: '2024 / Q3',
+            title: 'Uma ideia simples',
+            description: 'Começamos a desenvolver o Tuggi com uma ideia simples: mudar a maneira como as pessoas viajam, ajudando-as a entender a cultura dos lugares que estão visitando.'
+          },
+          {
+            year: '2025 / Q1',
+            title: 'Nos reinventamos',
+            description: 'Refinamos e mudamos a maneira como trabalhamos para criar um produto melhor para nossos parceiros.'
+          },
+          {
+            year: '2025 / Q3',
+            title: 'Co-criação Beta',
+            description: 'A Tuggi Drive inicia o desenvolvimento em parceria com frotas de transporte selecionadas para testar e refinar a tecnologia de narrativa cultural.'
           }
         ],
         leadershipTitle: 'Conheça Nossa Equipe Fundadora',
@@ -135,19 +169,33 @@ const StoryTeamPage: React.FC<StoryTeamPageProps> = ({
         teamMembers: [
           {
             name: 'Leandro Ramos',
-            title: 'Fundador e Líder de Produto',
+            title: 'Co-fundador',
             expertise: 'Tecnologia de Viagem e Estratégia de Crescimento',
             bio: 'Veterano em tecnologia de viagem e e-commerce liderando visão de produto e estratégia de crescimento.',
-            image: '👨‍💼',
-            background: 'from-tuggi-primary to-blue-600'
+            image: 'https://media.licdn.com/dms/image/v2/D4D03AQH-bEaamrzCXA/profile-displayphoto-scale_200_200/B4DZejQhgZGYAY-/0/1750790709225?e=1756944000&v=beta&t=iNqm9T-OjtExkqPRhk1FN7gpHtclLzDZskzuEjPQ9ek',
+            background: 'from-tuggi-primary to-blue-600',
+            linkedin: 'https://www.linkedin.com/in/lrsleramos/',
+            location: 'São Paulo, Brasil'
           },
           {
-            name: 'Desenvolvedor Parceiro',
+            name: 'Matheus Brito',
+            title: 'Co-fundador',
+            expertise: 'Estratégia de Negócios e Operações',
+            bio: 'Visionário estratégico focado em desenvolvimento de negócios e excelência operacional.',
+            image: 'https://media.licdn.com/dms/image/v2/D4E03AQEJeNNOOfrXCg/profile-displayphoto-shrink_200_200/B4EZWU2cFeHgAg-/0/1741959054678?e=1756944000&v=beta&t=396xfTzLGRomTqhV73zj6j_YsUoet38LbVctPEHxi9Q',
+            background: 'from-tuggi-secondary to-orange-600',
+            linkedin: 'https://www.linkedin.com/in/despossivel/',
+            location: 'Barcelona, Espanha'
+          },
+          {
+            name: 'Mateus Castro',
             title: 'Desenvolvedor Mobile',
             expertise: 'React Native e Desenvolvimento Full-Stack',
-            bio: 'Engenheiro full-stack React Native contribuindo para desenvolvimento do MVP inicial.',
-            image: '👨‍💻',
-            background: 'from-tuggi-secondary to-orange-600'
+            bio: 'Engenheiro full-stack React Native construindo a plataforma tecnológica central.',
+            image: 'https://media.licdn.com/dms/image/v2/D4D03AQGikX6e1rUUkw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1730468694477?e=1756944000&v=beta&t=Q5cseZK6Pf7gZzPpSHHVPl0wPN-djLnnad8HuY_pZ_s',
+            background: 'from-blue-500 to-indigo-600',
+            linkedin: 'https://www.linkedin.com/in/mateus-castro-b49559169/',
+            location: 'São Paulo, Brasil'
           }
         ],
         cultureTitle: 'Nossa Cultura',
@@ -160,7 +208,7 @@ const StoryTeamPage: React.FC<StoryTeamPageProps> = ({
         growingDescription: 'Junte-se à nossa missão de transformar experiências de viagem. Sempre procuramos indivíduos apaixonados que compartilham nossa visão.',
         viewPositions: 'Ver Vagas Abertas',
         companyStats: [
-          { value: '2-3', label: 'Equipe Central', description: 'Fundadores apaixonados' },
+          { value: '3', label: 'Equipe Central', description: 'Fundadores apaixonados e desenvolvedor' },
           { value: '3+', label: 'Idiomas', description: 'Suportados no beta' },
           { value: '2024', label: 'Fundada', description: 'Desenvolvimento inicial' },
           { value: '🌎', label: 'Remoto-Primeiro', description: 'Mentalidade global' }
@@ -178,8 +226,8 @@ const StoryTeamPage: React.FC<StoryTeamPageProps> = ({
         meetTeam: 'Conheça Nossa Equipe',
         scheduleCall: 'Agendar uma Chamada',
         contactInfo: 'Dúvidas sobre nossa equipe ou histórico da empresa?',
-        email: 'team@tuggi.com',
-        phone: '+1 (555) TUGGI-01',
+        email: 'hello@tuggi.app',
+        phone: '+55 (11) 9.9471-8809',
         location: 'São Paulo, Brasil',
         available: 'Disponível'
       },
@@ -210,9 +258,19 @@ const StoryTeamPage: React.FC<StoryTeamPageProps> = ({
         ],
         milestones: [
           {
-            year: '2024',
-            title: 'Co-Creación Beta',
-            description: 'Tuggi Drive comienza desarrollo en asociación con flotas de transporte seleccionadas para probar y refinar tecnología de narrativa cultural.'
+            year: '2024 / Q3',
+            title: 'Idea sencilla',
+            description: 'Comenzamos a desarrollar Tuggi con una idea simple: cambiar la forma en que las personas viajan, ayudándolas a comprender la cultura de los lugares que visitan.'
+          },
+          {
+            year: '2025 / Q1',
+            title: 'Nos reinventamos',
+            description: 'Refinamos y cambiamos la forma en que trabajamos, para crear un mejor producto para nuestros socios.'
+          },
+          {
+            year: '2025 / Q3',
+            title: 'Beta Co-Creation',
+            description: 'Tuggi Drive comienza su desarrollo en asociación con flotas de transporte seleccionadas para probar y perfeccionar la tecnología de narración cultural.'
           }
         ],
         leadershipTitle: 'Conozca Nuestro Equipo Fundador',
@@ -220,19 +278,33 @@ const StoryTeamPage: React.FC<StoryTeamPageProps> = ({
         teamMembers: [
           {
             name: 'Leandro Ramos',
-            title: 'Fundador y Líder de Producto',
+            title: 'Co-fundador',
             expertise: 'Tecnología de Viajes y Estrategia de Crecimiento',
             bio: 'Veterano en tecnología de viajes y e-commerce liderando visión de producto y estrategia de crecimiento.',
-            image: '👨‍💼',
-            background: 'from-tuggi-primary to-blue-600'
+            image: 'https://media.licdn.com/dms/image/v2/D4D03AQH-bEaamrzCXA/profile-displayphoto-scale_200_200/B4DZejQhgZGYAY-/0/1750790709225?e=1756944000&v=beta&t=iNqm9T-OjtExkqPRhk1FN7gpHtclLzDZskzuEjPQ9ek',
+            background: 'from-tuggi-primary to-blue-600',
+            linkedin: 'https://www.linkedin.com/in/lrsleramos/',
+            location: 'São Paulo, Brasil'
           },
           {
-            name: 'Desarrollador Socio',
-            title: 'Desarrollador Móvil',
+            name: 'Matheus Brito',
+            title: 'Co-fundador',
+            expertise: 'Estrategia de Negocios y Operaciones',
+            bio: 'Visionario estratégico enfocado en desarrollo de negocios y excelencia operacional.',
+            image: 'https://media.licdn.com/dms/image/v2/D4E03AQEJeNNOOfrXCg/profile-displayphoto-shrink_200_200/B4EZWU2cFeHgAg-/0/1741959054678?e=1756944000&v=beta&t=396xfTzLGRomTqhV73zj6j_YsUoet38LbVctPEHxi9Q',
+            background: 'from-tuggi-secondary to-orange-600',
+            linkedin: 'https://www.linkedin.com/in/despossivel/',
+            location: 'Barcelona, España'
+          },
+          {
+            name: 'Mateus Castro',
+            title: 'Desarrollador Mobile',
             expertise: 'React Native y Desarrollo Full-Stack',
-            bio: 'Ingeniero full-stack React Native contribuyendo al desarrollo del MVP inicial.',
-            image: '👨‍💻',
-            background: 'from-tuggi-secondary to-orange-600'
+            bio: 'Ingeniero full-stack React Native construyendo la plataforma tecnológica central.',
+            image: 'https://media.licdn.com/dms/image/v2/D4D03AQGikX6e1rUUkw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1730468694477?e=1756944000&v=beta&t=Q5cseZK6Pf7gZzPpSHHVPl0wPN-djLnnad8HuY_pZ_s',
+            background: 'from-blue-500 to-indigo-600',
+            linkedin: 'https://www.linkedin.com/in/mateus-castro-b49559169/',
+            location: 'São Paulo, Brasil'
           }
         ],
         cultureTitle: 'Nuestra Cultura',
@@ -245,7 +317,7 @@ const StoryTeamPage: React.FC<StoryTeamPageProps> = ({
         growingDescription: 'Únase a nuestra misión de transformar experiencias de viajes. Siempre buscamos individuos apasionados que compartan nuestra visión.',
         viewPositions: 'Ver Posiciones Abiertas',
         companyStats: [
-          { value: '2-3', label: 'Equipo Central', description: 'Fundadores apasionados' },
+          { value: '3', label: 'Equipo Central', description: 'Fundadores apasionados y desarrollador' },
           { value: '3+', label: 'Idiomas', description: 'Soportados en beta' },
           { value: '2024', label: 'Fundada', description: 'Desarrollo inicial' },
           { value: '🌎', label: 'Remota-Primero', description: 'Mentalidad global' }
@@ -263,8 +335,8 @@ const StoryTeamPage: React.FC<StoryTeamPageProps> = ({
         meetTeam: 'Conocer Nuestro Equipo',
         scheduleCall: 'Programar una Llamada',
         contactInfo: '¿Preguntas sobre nuestro equipo o antecedentes de la empresa?',
-        email: 'team@tuggi.com',
-        phone: '+1 (555) TUGGI-01',
+        email: 'hello@tuggi.app',
+        phone: '+55 (11) 9.9471-8809',
         location: 'São Paulo, Brasil',
         available: 'Disponible'
       }
@@ -386,7 +458,17 @@ const StoryTeamPage: React.FC<StoryTeamPageProps> = ({
                 <div className={`bg-gradient-to-br ${member.background} p-8 text-center relative overflow-hidden`}>
                   <div className="absolute inset-0 bg-black/10"></div>
                   <div className="relative z-10">
-                    <div className="text-6xl mb-4">{member.image}</div>
+                    <div className="mb-4">
+                      {member.image.startsWith('http') ? (
+                        <img 
+                          src={member.image} 
+                          alt={member.name}
+                          className="w-20 h-20 rounded-full mx-auto object-cover border-4 border-white/20"
+                        />
+                      ) : (
+                        <div className="text-6xl">{member.image}</div>
+                      )}
+                    </div>
                     <h3 className="text-xl font-bold text-white mb-2">{member.name}</h3>
                     <p className="text-white/90 font-medium">{member.title}</p>
                   </div>
@@ -406,11 +488,19 @@ const StoryTeamPage: React.FC<StoryTeamPageProps> = ({
                   <div className="flex items-center justify-between pt-4 border-t border-neutral-200">
                     <div className="flex items-center space-x-2 text-xs text-neutral-500">
                       <MapPin className="w-3 h-3" />
-                      <span>{content.location}</span>
+                      <span>{member.location}</span>
                     </div>
-                    <div className="flex items-center space-x-1">
-                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                      <span className="text-xs text-neutral-500">{content.available}</span>
+                    <div className="flex items-center space-x-2">
+                      <a 
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => handleCTAClick(`linkedin_${member.name.toLowerCase().replace(' ', '_')}`)}
+                        className="flex items-center space-x-1 text-xs text-tuggi-primary hover:text-tuggi-primary-dark transition-colors duration-200"
+                      >
+                        <ExternalLink className="w-3 h-3" />
+                        <span>LinkedIn</span>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -438,7 +528,7 @@ const StoryTeamPage: React.FC<StoryTeamPageProps> = ({
                 ))}
               </div>
 
-              <div className="mt-8 bg-gradient-to-r from-tuggi-primary/5 to-tuggi-secondary/5 rounded-2xl p-6 border border-tuggi-primary/10">
+              {/* <div className="mt-8 bg-gradient-to-r from-tuggi-primary/5 to-tuggi-secondary/5 rounded-2xl p-6 border border-tuggi-primary/10">
                 <h3 className="text-xl font-bold text-neutral-900 mb-3">{content.growingTitle}</h3>
                 <p className="text-neutral-700 mb-4">
                   {content.growingDescription}
@@ -449,7 +539,7 @@ const StoryTeamPage: React.FC<StoryTeamPageProps> = ({
                 >
                   {content.viewPositions}
                 </button>
-              </div>
+              </div> */}
             </div>
 
             {/* Company Stats */}
@@ -499,7 +589,7 @@ const StoryTeamPage: React.FC<StoryTeamPageProps> = ({
           <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
             {content.ctaTitle}
           </h2>
-          <p className="text-xl text-tuggi-primary-light max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-white max-w-3xl mx-auto mb-8">
             {content.ctaSubtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -520,7 +610,7 @@ const StoryTeamPage: React.FC<StoryTeamPageProps> = ({
           
           {/* Contact Info */}
           <div className="mt-12 pt-8 border-t border-tuggi-primary-light/30">
-            <p className="text-tuggi-primary-light mb-4">
+            <p className="text-white mb-4">
               {content.contactInfo}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-8 text-white">

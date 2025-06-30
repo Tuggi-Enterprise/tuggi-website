@@ -255,7 +255,7 @@ export const generateStructuredData = (page: string, language: string, baseUrl: 
       "@type": "ContactPoint",
       "telephone": "+1-555-123-4567",
       "contactType": "customer service",
-      "email": "hello@tuggi.com",
+      "email": "hello@tuggi.app",
       "availableLanguage": ["English", "Portuguese", "Spanish"]
     },
     "sameAs": [

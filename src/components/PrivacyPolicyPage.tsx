@@ -98,7 +98,7 @@ We may use services like Supabase or OpenAI with whom we maintain contractual re
         contact: {
           title: 'Contact',
           content: `For questions or requests:
-📧 hello@tuggi.com`
+📧 hello@tuggi.app`
         },
         updates: {
           title: 'Updates',
@@ -196,7 +196,7 @@ Podemos usar serviços como Supabase ou OpenAI, com quem mantemos relação cont
         contact: {
           title: 'Contato',
           content: `Para dúvidas ou solicitações:
-📧 hello@tuggi.com`
+📧 hello@tuggi.app`
         },
         updates: {
           title: 'Atualizações',
@@ -294,7 +294,7 @@ Podemos usar servicios como Supabase o OpenAI, con quienes mantenemos relaciones
         contact: {
           title: 'Contacto',
           content: `Para preguntas o solicitudes:
-📧 hello@tuggi.com`
+📧 hello@tuggi.app`
         },
         updates: {
           title: 'Actualizaciones',
@@ -477,7 +477,7 @@ Podemos usar servicios como Supabase o OpenAI, con quienes mantenemos relaciones
             Contact us for any questions or concerns about your data.
           </p>
           <a
-            href="mailto:hello@tuggi.com"
+            href="mailto:hello@tuggi.app"
             className="bg-tuggi-primary hover:bg-tuggi-primary-dark text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center space-x-2"
           >
             <Mail className="w-5 h-5" />

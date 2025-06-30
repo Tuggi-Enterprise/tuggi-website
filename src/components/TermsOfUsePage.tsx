@@ -12,6 +12,12 @@ const TermsOfUsePage: React.FC<TermsOfUsePageProps> = ({ currentLanguage = 'EN' 
       EN: {
         title: 'Terms of Use',
         lastUpdated: 'Last updated: June 2025',
+        badge: 'Terms of Use',
+        ctaSection: {
+          title: 'Questions About These Terms?',
+          subtitle: 'We\'re here to help clarify anything about our Terms of Use.',
+          buttonText: 'Contact Us'
+        },
         introduction: {
           title: 'Introduction',
           content: `Welcome to Tuggi! We're an early-stage travel-tech startup building AI-powered cultural storytelling for transportation.
@@ -24,7 +30,7 @@ Please note that some features may still be under development, and your experien
           title: 'User Agreement',
           content: `By accessing or using Tuggi, you agree to comply with these Terms of Use.
 
-The app is designed for personal, non-commercial use. If you're interested in commercial partnerships or enterprise use, please contact us at hello@tuggi.com.
+The app is designed for personal, non-commercial use. If you're interested in commercial partnerships or enterprise use, please contact us at hello@tuggi.app.
 
 Your use of Tuggi is voluntary, and you can stop using the service at any time.`
         },
@@ -89,7 +95,7 @@ We'll do our best to communicate significant changes in advance.`
           title: 'Contact Us',
           content: `Questions about these terms or need help?
 
-📧 hello@tuggi.com
+📧 hello@tuggi.app
 
 We're a small team, but we'll do our best to respond promptly to your inquiries.`
         }
@@ -97,6 +103,12 @@ We're a small team, but we'll do our best to respond promptly to your inquiries.
       PT: {
         title: 'Termos de Uso',
         lastUpdated: 'Última atualização: Junho de 2025',
+        badge: 'Termos de Uso',
+        ctaSection: {
+          title: 'Dúvidas Sobre Estes Termos?',
+          subtitle: 'Estamos aqui para ajudar a esclarecer qualquer coisa sobre nossos Termos de Uso.',
+          buttonText: 'Entre em Contato'
+        },
         introduction: {
           title: 'Introdução',
           content: `Bem-vindo ao Tuggi! Somos uma startup de travel-tech em estágio inicial construindo narrativas culturais com IA para transporte.
@@ -109,7 +121,7 @@ Note que algumas funcionalidades podem ainda estar em desenvolvimento, e sua exp
           title: 'Acordo do Usuário',
           content: `Ao acessar ou usar o Tuggi, você concorda em cumprir estes Termos de Uso.
 
-O app é projetado para uso pessoal e não comercial. Se você tem interesse em parcerias comerciais ou uso empresarial, entre em contato conosco em hello@tuggi.com.
+O app é projetado para uso pessoal e não comercial. Se você tem interesse em parcerias comerciais ou uso empresarial, entre em contato conosco em hello@tuggi.app.
 
 Seu uso do Tuggi é voluntário, e você pode parar de usar o serviço a qualquer momento.`
         },
@@ -174,7 +186,7 @@ Faremos o nosso melhor para comunicar mudanças significativas com antecedência
           title: 'Entre em Contato',
           content: `Dúvidas sobre estes termos ou precisa de ajuda?
 
-📧 hello@tuggi.com
+📧 hello@tuggi.app
 
 Somos uma equipe pequena, mas faremos o nosso melhor para responder prontamente às suas consultas.`
         }
@@ -182,6 +194,12 @@ Somos uma equipe pequena, mas faremos o nosso melhor para responder prontamente 
       ES: {
         title: 'Términos de Uso',
         lastUpdated: 'Última actualización: Junio de 2025',
+        badge: 'Términos de Uso',
+        ctaSection: {
+          title: '¿Preguntas Sobre Estos Términos?',
+          subtitle: 'Estamos aquí para ayudar a aclarar cualquier cosa sobre nuestros Términos de Uso.',
+          buttonText: 'Contáctanos'
+        },
         introduction: {
           title: 'Introducción',
           content: `¡Bienvenido a Tuggi! Somos una startup de travel-tech en etapa inicial construyendo narrativas culturales con IA para transporte.
@@ -194,7 +212,7 @@ Ten en cuenta que algunas funcionalidades pueden estar aún en desarrollo, y tu 
           title: 'Acuerdo del Usuario',
           content: `Al acceder o usar Tuggi, aceptas cumplir con estos Términos de Uso.
 
-La app está diseñada para uso personal y no comercial. Si tienes interés en asociaciones comerciales o uso empresarial, contáctanos en hello@tuggi.com.
+La app está diseñada para uso personal y no comercial. Si tienes interés en asociaciones comerciales o uso empresarial, contáctanos en hello@tuggi.app.
 
 Tu uso de Tuggi es voluntario, y puedes dejar de usar el servicio en cualquier momento.`
         },
@@ -259,7 +277,7 @@ Haremos nuestro mejor esfuerzo para comunicar cambios significativos con anticip
           title: 'Contáctanos',
           content: `¿Preguntas sobre estos términos o necesitas ayuda?
 
-📧 hello@tuggi.com
+📧 hello@tuggi.app
 
 Somos un equipo pequeño, pero haremos nuestro mejor esfuerzo para responder prontamente a tus consultas.`
         }
@@ -279,7 +297,7 @@ Somos un equipo pequeño, pero haremos nuestro mejor esfuerzo para responder pro
           <div className="text-center mb-8">
             <div className="inline-flex items-center px-4 py-2 bg-tuggi-primary/10 rounded-full mb-6">
               <FileText className="w-5 h-5 text-tuggi-primary mr-2" />
-              <span className="text-tuggi-primary font-semibold text-sm">Terms of Use</span>
+              <span className="text-tuggi-primary font-semibold text-sm">{content.badge}</span>
             </div>
             
             <h1 className="text-3xl lg:text-5xl font-bold text-neutral-900 mb-6">
@@ -411,17 +429,17 @@ Somos un equipo pequeño, pero haremos nuestro mejor esfuerzo para responder pro
       <section className="py-16 bg-gradient-to-br from-tuggi-primary/5 to-tuggi-secondary/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl lg:text-3xl font-bold text-neutral-900 mb-6">
-            Questions About These Terms?
+            {content.ctaSection.title}
           </h2>
           <p className="text-xl text-neutral-600 mb-8">
-            We're here to help clarify anything about our Terms of Use.
+            {content.ctaSection.subtitle}
           </p>
           <a
-            href="mailto:hello@tuggi.com"
+            href="mailto:hello@tuggi.app"
             className="bg-tuggi-primary hover:bg-tuggi-primary-dark text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center space-x-2"
           >
             <Mail className="w-5 h-5" />
-            <span>Contact Us</span>
+            <span>{content.ctaSection.buttonText}</span>
           </a>
         </div>
       </section>

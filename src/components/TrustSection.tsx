@@ -212,7 +212,7 @@ const TrustSection: React.FC<TrustSectionProps> = ({ currentLanguage = 'EN' }) =
         </div>
 
         {/* Certifications Bar */}
-        <div className="bg-white rounded-2xl shadow-lg border border-neutral-200 p-8">
+        {/* <div className="bg-white rounded-2xl shadow-lg border border-neutral-200 p-8">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-neutral-900 mb-2">
               {content.certificationsTitle}
@@ -233,17 +233,17 @@ const TrustSection: React.FC<TrustSectionProps> = ({ currentLanguage = 'EN' }) =
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Stats */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+        {/* <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
           {content.stats.map((stat: any, index: number) => (
             <div key={index} className="text-center">
               <div className="text-3xl lg:text-4xl font-bold text-tuggi-primary mb-2">{stat.value}</div>
               <div className="text-neutral-600 font-medium">{stat.label}</div>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );

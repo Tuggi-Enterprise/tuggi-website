@@ -208,8 +208,8 @@ We regularly review our third-party providers to ensure they maintain adequate d
           content: `For questions about our cookie usage or to exercise your rights:
 
 **Data Protection Officer**
-Email: privacy@tuggi.com
-Phone: +1 (555) 123-4567
+Email: hello@tuggi.app
+Phone: +55 (11) 9.9471-8809
 
 **Mailing Address:**
 Tuggi Technologies
@@ -435,8 +435,8 @@ Revisamos regularmente nossos provedores terceirizados para garantir que mantenh
           content: `Para perguntas sobre nosso uso de cookies ou para exercer seus direitos:
 
 **Encarregado de Proteção de Dados**
-Email: privacy@tuggi.com
-Telefone: +1 (555) 123-4567
+Email: privacy@tuggi.app
+Telefone: +55 (11) 9.9471-8809
 
 **Endereço para Correspondência:**
 Tuggi Technologies
@@ -446,7 +446,7 @@ San Francisco, CA 94105
 Estados Unidos
 
 **Representante na UE:**
-Para residentes da UE: eu-privacy@tuggi.com
+Para residentes da UE: eu-privacy@tuggi.app
 
 Responderemos às suas solicitações dentro de 30 dias.`
         },
@@ -662,8 +662,8 @@ Revisamos regularmente nuestros proveedores terceros para asegurar que mantengan
           content: `Para preguntas sobre nuestro uso de cookies o para ejercer sus derechos:
 
 **Oficial de Protección de Datos**
-Email: privacy@tuggi.com
-Teléfono: +1 (555) 123-4567
+Email: privacy@tuggi.app
+Teléfono: +55 (11) 9.9471-8809
 
 **Dirección Postal:**
 Tuggi Technologies
@@ -673,7 +673,7 @@ San Francisco, CA 94105
 Estados Unidos
 
 **Representante en la UE:**
-Para residentes de la UE: eu-privacy@tuggi.com
+Para residentes de la UE: eu-privacy@tuggi.app
 
 Responderemos a sus solicitudes dentro de 30 días.`
         },

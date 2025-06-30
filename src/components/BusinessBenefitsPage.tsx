@@ -171,8 +171,8 @@ const BusinessBenefitsPage: React.FC<BusinessBenefitsPageProps> = ({
         getStarted: 'Get Started Today',
         scheduleConsultation: 'Schedule Consultation',
         contactInfo: 'Questions about ROI or implementation?',
-        email: 'business@tuggi.com',
-        phone: '+1 (555) TUGGI-01'
+        email: 'hello@tuggi.app',
+        phone: '+55 (11) 9.9471-8809'
       },
       PT: {
         badge: '🧪 Programa Beta',
@@ -332,8 +332,8 @@ const BusinessBenefitsPage: React.FC<BusinessBenefitsPageProps> = ({
         getStarted: 'Começar Hoje',
         scheduleConsultation: 'Agendar Consulta',
         contactInfo: 'Dúvidas sobre ROI ou implementação?',
-        email: 'business@tuggi.com',
-        phone: '+1 (555) TUGGI-01'
+        email: 'hello@tuggi.app',
+        phone: '+55 (11) 9.9471-8809'
       },
       ES: {
         badge: '🧪 Programa Beta',
@@ -493,8 +493,8 @@ const BusinessBenefitsPage: React.FC<BusinessBenefitsPageProps> = ({
         getStarted: 'Comenzar Hoy',
         scheduleConsultation: 'Programar Consulta',
         contactInfo: '¿Preguntas sobre ROI o implementación?',
-        email: 'business@tuggi.com',
-        phone: '+1 (555) TUGGI-01'
+        email: 'hello@tuggi.app',
+        phone: '+55 (11) 9.9471-8809'
       }
     };
     return content[language] || content['EN'];
@@ -805,7 +805,7 @@ const BusinessBenefitsPage: React.FC<BusinessBenefitsPageProps> = ({
           <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
             {content.finalCtaTitle}
           </h2>
-          <p className="text-xl text-tuggi-primary-light max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-white max-w-3xl mx-auto mb-8">
             {content.finalCtaSubtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -826,7 +826,7 @@ const BusinessBenefitsPage: React.FC<BusinessBenefitsPageProps> = ({
           
           {/* Contact Info */}
           <div className="mt-12 pt-8 border-t border-tuggi-primary-light/30">
-            <p className="text-tuggi-primary-light mb-4">
+            <p className="text-white mb-4">
               {content.contactInfo}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-8 text-white">

@@ -160,9 +160,9 @@ const ProductHighlights: React.FC<ProductHighlightsProps> = ({
               className={`group relative ${feature.bgColor} ${feature.borderColor} border-2 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2`}
             >
               {/* Early Access Badge */}
-              <div className="absolute top-4 left-4 bg-tuggi-secondary/20 text-tuggi-secondary-dark px-3 py-1 rounded-full text-xs font-bold border border-tuggi-secondary/30">
+              {/* <div className="absolute top-4 left-4 bg-tuggi-secondary/20 text-tuggi-secondary-dark px-3 py-1 rounded-full text-xs font-bold border border-tuggi-secondary/30">
                 🧪 Early Access
-              </div>
+              </div> */}
 
               {/* Icon */}
               <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>

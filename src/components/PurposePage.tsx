@@ -91,8 +91,8 @@ const PurposePage: React.FC<PurposePageProps> = ({
         scheduleCall: 'Schedule a Partnership Call',
         downloadCases: 'Learn More About the Early Access Program',
         contactInfo: 'Questions about our mission or partnership opportunities?',
-        email: 'partnerships@tuggi.com',
-        phone: '+1 (555) TUGGI-01'
+        email: 'hello@tuggi.com',
+        phone: '+55 (11) 9.9471-8809'
       },
       PT: {
         badge: 'Nosso Propósito',
@@ -172,8 +172,8 @@ const PurposePage: React.FC<PurposePageProps> = ({
         scheduleCall: 'Agendar Chamada de Parceria',
         downloadCases: 'Saiba Mais Sobre o Programa de Acesso Antecipado',
         contactInfo: 'Dúvidas sobre nossa missão ou oportunidades de parceria?',
-        email: 'partnerships@tuggi.com',
-        phone: '+1 (555) TUGGI-01'
+        email: 'hello@tuggi.com',
+        phone: '+55 (11) 9.9471-8809'
       },
       ES: {
         badge: 'Nuestro Propósito',
@@ -253,8 +253,8 @@ const PurposePage: React.FC<PurposePageProps> = ({
         scheduleCall: 'Programar Llamada de Asociación',
         downloadCases: 'Obtener Más Información Sobre el Programa de Acceso Temprano',
         contactInfo: '¿Preguntas sobre nuestra misión u oportunidades de asociación?',
-        email: 'partnerships@tuggi.com',
-        phone: '+1 (555) TUGGI-01'
+        email: 'hello@tuggi.app',
+        phone: '+55 (11) 9.9471-8809'
       }
     };
     return content[language] || content['EN'];
@@ -538,7 +538,7 @@ const PurposePage: React.FC<PurposePageProps> = ({
           <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
             {content.ctaTitle}
           </h2>
-          <p className="text-xl text-tuggi-primary-light max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-white max-w-3xl mx-auto mb-8">
             {content.ctaSubtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -559,7 +559,7 @@ const PurposePage: React.FC<PurposePageProps> = ({
           
           {/* Contact Info */}
           <div className="mt-12 pt-8 border-t border-tuggi-primary-light/30">
-            <p className="text-tuggi-primary-light mb-4">
+            <p className="text-white mb-4">
               {content.contactInfo}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-8 text-white">
