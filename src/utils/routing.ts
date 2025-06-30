@@ -30,6 +30,10 @@ export const VALID_PAGES = [
   'privacy-policy',
   'politica-de-privacidade',
   'politica-de-privacidad',
+  'terms',
+  'terms-of-use',
+  'termos-de-uso',
+  'terminos-de-uso',
   'cookies',
   'cookie-policy',
   'politica-de-cookies'
@@ -41,6 +45,11 @@ export const PAGE_URL_MAPPINGS: Record<string, Record<string, string>> = {
     'EN': 'privacy-policy',
     'PT': 'politica-de-privacidade',
     'ES': 'politica-de-privacidad'
+  },
+  'terms': {
+    'EN': 'terms-of-use',
+    'PT': 'termos-de-uso',
+    'ES': 'terminos-de-uso'
   },
   'cookies': {
     'EN': 'cookie-policy',
@@ -54,6 +63,9 @@ export const URL_TO_PAGE_MAPPINGS: Record<string, string> = {
   'privacy-policy': 'privacy',
   'politica-de-privacidade': 'privacy',
   'politica-de-privacidad': 'privacy',
+  'terms-of-use': 'terms',
+  'termos-de-uso': 'terms',
+  'terminos-de-uso': 'terms',
   'cookie-policy': 'cookies',
   'politica-de-cookies': 'cookies'
 };

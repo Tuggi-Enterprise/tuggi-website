@@ -10,6 +10,7 @@ import ProductsPage from './components/ProductsPage';
 import BusinessBenefitsPage from './components/BusinessBenefitsPage';
 import ContactPage from './components/ContactPage';
 import PrivacyPolicyPage from './components/PrivacyPolicyPage';
+import TermsOfUsePage from './components/TermsOfUsePage';
 import CookiePolicyPage from './components/CookiePolicyPage';
 import { useSEO } from './hooks/useSEO';
 import { initializeAnalytics, trackPerformanceMetrics, trackPageView, trackLanguageChange } from './utils/seo';
@@ -238,6 +239,11 @@ function App() {
       case 'politica-de-privacidade':
       case 'politica-de-privacidad':
         return <PrivacyPolicyPage currentLanguage={currentLanguage} />;
+      case 'terms':
+      case 'terms-of-use':
+      case 'termos-de-uso':
+      case 'terminos-de-uso':
+        return <TermsOfUsePage currentLanguage={currentLanguage} />;
       case 'cookies':
       case 'cookie-policy':
       case 'politica-de-cookies':

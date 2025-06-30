@@ -14,102 +14,78 @@ const BusinessBenefitsPage: React.FC<BusinessBenefitsPageProps> = ({
   const getLocalizedContent = (language: string) => {
     const content: Record<string, any> = {
       EN: {
-        badge: 'Business Benefits',
-        title: 'Transform Your Business with Proven Results',
-        subtitle: 'Discover how transportation companies worldwide are using Tuggi Drive to increase revenue, improve customer satisfaction, and gain competitive advantage.',
-        calculateROI: 'Calculate Your ROI',
-        viewCaseStudies: 'View Case Studies',
+        badge: '🧪 Beta Program',
+        title: 'Be First. Lead the Shift in Passenger Experience.',
+        subtitle: 'Partner with Tuggi to pioneer a new cultural journey standard — powered by AI and designed to elevate transportation services. Our founding partners are shaping the future today.',
+        calculateROI: 'Join as a Founding Partner',
+        viewCaseStudies: 'Request Early Access',
         keyMetrics: [
-          { value: '+22%', label: 'Revenue Growth' },
-          { value: '4.8/5', label: 'Satisfaction' },
-          { value: '+35%', label: 'Retention' },
-          { value: '<5min', label: 'Setup Time' }
+          { value: '🚀', label: 'Designed to boost rider satisfaction and loyalty' },
+          { value: '⚙️', label: 'Built for seamless GPS integration — no driver distractions' },
+          { value: '🛠️', label: 'Currently in pilot phase with selected fleets' },
+          { value: '🎧', label: 'Cultural audio experiences proven to engage passengers' }
         ],
-        coreValuesTitle: 'Three Pillars of Business Success',
-        coreValuesSubtitle: 'Tuggi Drive delivers measurable business value through quality, innovation, and operational excellence.',
+        coreValuesTitle: 'Why Become a Founding Partner',
+        coreValuesSubtitle: 'Join a select group of visionary transportation companies co-creating the future of passenger experiences.',
         coreValues: [
           {
-            title: 'High Service Quality & Reliability',
-            description: 'Deliver consistent, premium experiences that exceed passenger expectations and build lasting customer relationships.',
+            title: 'Early Access Advantage',
+            description: 'Help shape the roadmap. Influence features that matter to your fleet.',
             benefits: [
-              '99.9% system uptime guarantee',
-              'Professional-grade content curation',
-              'Real-time quality monitoring',
-              'Instant technical support'
+              'Direct input on feature development',
+              'Priority access to new capabilities',
+              'Exclusive founding partner benefits',
+              'Custom integration support'
             ],
             metrics: {
-              value: '4.8/5',
-              label: 'Customer Satisfaction',
-              improvement: '+35% passenger retention'
+              value: '🎯',
+              label: 'Strategic Influence',
+              improvement: 'Shape the future of travel tech'
             }
           },
           {
-            title: 'Competitive Edge Through Innovation',
-            description: 'Differentiate your transportation service with cutting-edge cultural storytelling technology that competitors cannot match.',
+            title: 'Brand Differentiation',
+            description: 'Deliver something competitors can\'t: cultural value and premium experience.',
             benefits: [
-              'First-mover advantage in cultural tech',
-              'Unique value proposition for customers',
-              'Premium pricing opportunities',
-              'Enhanced brand positioning'
+              'Unique market positioning',
+              'Premium service differentiation',
+              'Enhanced brand reputation',
+              'Competitive moat creation'
             ],
             metrics: {
-              value: '+22%',
-              label: 'Revenue Growth',
-              improvement: 'Average increase in bookings'
+              value: '💎',
+              label: 'Market Leadership',
+              improvement: 'Be the cultural experience pioneer'
             }
           },
           {
-            title: 'Easy Implementation & Management',
-            description: 'Seamless integration with existing systems and centralized management dashboard for complete operational control.',
+            title: 'Shared Innovation',
+            description: 'Be part of a bold vision — with co-marketing, pilot insights, and dedicated support.',
             benefits: [
-              'One-click installation process',
-              'Zero disruption to current operations',
-              'Centralized fleet management',
-              'Automated content updates'
+              'Co-branded press opportunities',
+              'Shared success stories',
+              'Joint innovation initiatives',
+              'Dedicated founding partner team'
             ],
             metrics: {
-              value: '<5 min',
-              label: 'Setup Time',
-              improvement: 'From installation to activation'
+              value: '🤝',
+              label: 'Strategic Partnership',
+              improvement: 'Innovation through collaboration'
             }
           }
         ],
-        businessImpactTitle: 'Measurable Business Impact',
-        businessImpactSubtitle: 'Real data from transportation companies using Tuggi Drive to transform their passenger experience and business results.',
-        businessImpacts: [
-          {
-            category: 'Revenue Growth',
-            stats: [
-              { value: '+22%', label: 'Average Revenue Increase', description: 'Through premium service offerings' },
-              { value: '+35%', label: 'Customer Retention', description: 'Higher repeat booking rates' },
-              { value: '+18%', label: 'Price Premium', description: 'Ability to charge more for enhanced experience' }
-            ]
-          },
-          {
-            category: 'Operational Efficiency',
-            stats: [
-              { value: '<5 min', label: 'Implementation Time', description: 'From installation to full operation' },
-              { value: '90%', label: 'Reduced Support Calls', description: 'Fewer passenger complaints' },
-              { value: '24/7', label: 'Automated Operation', description: 'No manual intervention required' }
-            ]
-          },
-          {
-            category: 'Customer Experience',
-            stats: [
-              { value: '4.8/5', label: 'Satisfaction Rating', description: 'Average passenger experience score' },
-              { value: '95%', label: 'Positive Feedback', description: 'Passengers recommend the service' },
-              { value: '3x', label: 'Social Sharing', description: 'Increased social media mentions' }
-            ]
-          },
-          {
-            category: 'Market Position',
-            stats: [
-              { value: '1st', label: 'Market Position', description: 'First to offer cultural storytelling' },
-              { value: '500+', label: 'Partner Companies', description: 'Growing network of operators' },
-              { value: '50+', label: 'Cities Covered', description: 'Expanding global presence' }
-            ]
-          }
+        foundingBenefitsTitle: 'What Our Founding Partners Get',
+        foundingBenefitsSubtitle: 'Exclusive advantages for the transportation companies that join us in pioneering the future.',
+        foundingBenefits: [
+          { icon: '🧠', title: 'Dedicated innovation team' },
+          { icon: '🎤', title: 'Custom voice and narrative onboarding' },
+          { icon: '🚀', title: 'Co-branded press opportunities' },
+          { icon: '🧪', title: 'Access to beta features before public release' },
+          { icon: '📊', title: 'Monthly insights & usage reporting' },
+          { icon: '🤝', title: 'Priority support and roadmap input' }
         ],
+        businessImpactTitle: 'Early Results from Pilot Partners',
+        businessImpactSubtitle: 'Initial feedback and metrics from transportation companies currently testing Tuggi Drive in beta.',
         competitiveAdvantagesTitle: 'Gain Competitive Advantage',
         competitiveAdvantagesSubtitle: 'Position your transportation business ahead of competitors with innovative technology that creates lasting customer relationships.',
         competitiveAdvantages: [
@@ -161,32 +137,33 @@ const BusinessBenefitsPage: React.FC<BusinessBenefitsPageProps> = ({
           }
         ],
         startImplementation: 'Start Implementation Today',
-        testimonialsTitle: 'Customer Success Stories',
-        testimonialsSubtitle: 'Real results from transportation companies who transformed their business with Tuggi Drive.',
+        testimonialsTitle: 'Early Partner Feedback',
+        testimonialsSubtitle: 'Insights from transportation companies currently piloting Tuggi Drive in beta phase.',
+        betaBadge: '🧪 Beta Testimonial',
         testimonials: [
           {
-            quote: 'Tuggi Drive transformed our airport transfer service from commodity transportation to premium cultural experiences. Our revenue increased 28% in the first quarter.',
+            quote: 'Working with Tuggi to test their cultural storytelling concept has been fascinating. Our pilot routes show real passenger engagement and we\'re excited to be part of shaping this innovation.',
             author: 'Carlos Mendoza',
             role: 'Fleet Operations Director',
             company: 'Premium Airport Services',
             location: 'São Paulo, Brazil',
-            results: '+28% Revenue Growth'
+            results: 'Pilot Partner'
           },
           {
-            quote: 'The implementation was incredibly smooth. Within hours, our drivers were delivering engaging stories to passengers. Customer satisfaction scores jumped to 4.9/5.',
+            quote: 'The early beta testing has shown promising results for passenger satisfaction. We appreciate being part of the development process and contributing to the roadmap.',
             author: 'Sarah Chen',
             role: 'CEO',
             company: 'Metropolitan Tours',
             location: 'San Francisco, USA',
-            results: '4.9/5 Satisfaction'
+            results: 'Beta Tester'
           },
           {
-            quote: 'Our passengers now specifically request our "storytelling rides." We\'ve become the preferred transportation choice for hotels and travel agencies.',
+            quote: 'As an early partner, we\'re helping Tuggi understand what transportation companies really need. The collaborative approach is refreshing and the technology shows real potential.',
             author: 'Ahmed Hassan',
             role: 'Business Development Manager',
             company: 'City Connect Transport',
             location: 'Dubai, UAE',
-            results: '+45% Bookings'
+            results: 'Founding Partner'
           }
         ],
         finalCtaTitle: 'Ready to Transform Your Business?',
@@ -198,128 +175,104 @@ const BusinessBenefitsPage: React.FC<BusinessBenefitsPageProps> = ({
         phone: '+1 (555) TUGGI-01'
       },
       PT: {
-        badge: 'Benefícios Empresariais',
-        title: 'Transforme Seu Negócio com Resultados Comprovados',
-        subtitle: 'Descubra como empresas de transporte mundialmente estão usando Tuggi Drive para aumentar receita, melhorar satisfação do cliente e ganhar vantagem competitiva.',
-        calculateROI: 'Calcular Seu ROI',
-        viewCaseStudies: 'Ver Casos de Estudo',
+        badge: '🧪 Programa Beta',
+        title: 'Seja o Primeiro. Lidere a Mudança na Experiência do Passageiro.',
+        subtitle: 'Faça parceria com a Tuggi para pioneirizar um novo padrão de jornada cultural — impulsionado por IA e projetado para elevar serviços de transporte. Nossos parceiros fundadores estão moldando o futuro hoje.',
+        calculateROI: 'Tornar-se Parceiro Fundador',
+        viewCaseStudies: 'Solicitar Acesso Antecipado',
         keyMetrics: [
-          { value: '+22%', label: 'Crescimento Receita' },
-          { value: '4.8/5', label: 'Satisfação' },
-          { value: '+35%', label: 'Retenção' },
-          { value: '<5min', label: 'Tempo Configuração' }
+          { value: '🚀', label: 'Projetado para aumentar satisfação e lealdade dos passageiros' },
+          { value: '⚙️', label: 'Construído para integração GPS perfeita — sem distrações para motoristas' },
+          { value: '🛠️', label: 'Atualmente em fase piloto com frotas selecionadas' },
+          { value: '🎧', label: 'Experiências culturais de áudio comprovadamente envolvem passageiros' }
         ],
-        coreValuesTitle: 'Três Pilares do Sucesso Empresarial',
-        coreValuesSubtitle: 'Tuggi Drive entrega valor empresarial mensurável através de qualidade, inovação e excelência operacional.',
+        coreValuesTitle: 'Por Que Se Tornar um Parceiro Fundador',
+        coreValuesSubtitle: 'Junte-se a um grupo seleto de empresas de transporte visionárias co-criando o futuro das experiências de passageiros.',
         coreValues: [
           {
-            title: 'Alta Qualidade de Serviço e Confiabilidade',
-            description: 'Entregue experiências consistentes e premium que excedem expectativas dos passageiros e constroem relacionamentos duradouros com clientes.',
+            title: 'Vantagem de Acesso Antecipado',
+            description: 'Ajude a moldar o roadmap. Influencie recursos que importam para sua frota.',
             benefits: [
-              'Garantia 99.9% tempo atividade sistema',
-              'Curadoria conteúdo nível profissional',
-              'Monitoramento qualidade tempo real',
-              'Suporte técnico instantâneo'
+              'Influência direta no desenvolvimento de recursos',
+              'Acesso prioritário a novas capacidades',
+              'Benefícios exclusivos de parceiro fundador',
+              'Suporte de integração personalizada'
             ],
             metrics: {
-              value: '4.8/5',
-              label: 'Satisfação do Cliente',
-              improvement: '+35% retenção passageiros'
+              value: '🎯',
+              label: 'Influência Estratégica',
+              improvement: 'Molde o futuro da tecnologia de viagem'
             }
-          },
-          {
-            title: 'Vantagem Competitiva Através da Inovação',
-            description: 'Diferencie seu serviço de transporte com tecnologia de narrativa cultural de ponta que competidores não conseguem igualar.',
-            benefits: [
-              'Vantagem pioneiro em tecnologia cultural',
-              'Proposta valor única para clientes',
-              'Oportunidades preços premium',
-              'Posicionamento marca aprimorado'
-            ],
-            metrics: {
-              value: '+22%',
-              label: 'Crescimento Receita',
-              improvement: 'Aumento médio em reservas'
-            }
-          },
-          {
-            title: 'Implementação e Gestão Fáceis',
-            description: 'Integração perfeita com sistemas existentes e painel gestão centralizado para controle operacional completo.',
-            benefits: [
-              'Processo instalação um clique',
-              'Zero interrupção operações atuais',
-              'Gestão frota centralizada',
-              'Atualizações conteúdo automatizadas'
-            ],
-            metrics: {
-              value: '<5 min',
-              label: 'Tempo Configuração',
-              improvement: 'Da instalação à ativação'
-            }
-          }
-        ],
-        businessImpactTitle: 'Impacto Empresarial Mensurável',
-        businessImpactSubtitle: 'Dados reais de empresas de transporte usando Tuggi Drive para transformar sua experiência de passageiros e resultados empresariais.',
-        businessImpacts: [
-          {
-            category: 'Crescimento de Receita',
-            stats: [
-              { value: '+22%', label: 'Aumento Médio Receita', description: 'Através ofertas serviços premium' },
-              { value: '+35%', label: 'Retenção Clientes', description: 'Taxas reservas repetidas mais altas' },
-              { value: '+18%', label: 'Prêmio Preço', description: 'Capacidade cobrar mais por experiência aprimorada' }
-            ]
-          },
-          {
-            category: 'Eficiência Operacional',
-            stats: [
-              { value: '<5 min', label: 'Tempo Implementação', description: 'Da instalação à operação completa' },
-              { value: '90%', label: 'Redução Chamadas Suporte', description: 'Menos reclamações passageiros' },
-              { value: '24/7', label: 'Operação Automatizada', description: 'Sem intervenção manual necessária' }
-            ]
-          },
-          {
-            category: 'Experiência do Cliente',
-            stats: [
-              { value: '4.8/5', label: 'Avaliação Satisfação', description: 'Pontuação média experiência passageiro' },
-              { value: '95%', label: 'Feedback Positivo', description: 'Passageiros recomendam o serviço' },
-              { value: '3x', label: 'Compartilhamento Social', description: 'Aumento menções redes sociais' }
-            ]
-          },
-          {
-            category: 'Posição no Mercado',
-            stats: [
-              { value: '1º', label: 'Posição Mercado', description: 'Primeiro a oferecer narrativa cultural' },
-              { value: '500+', label: 'Empresas Parceiras', description: 'Rede crescente de operadores' },
-              { value: '50+', label: 'Cidades Cobertas', description: 'Presença global em expansão' }
-            ]
-          }
-        ],
-        competitiveAdvantagesTitle: 'Ganhe Vantagem Competitiva',
-        competitiveAdvantagesSubtitle: 'Posicione seu negócio de transporte à frente dos competidores com tecnologia inovadora que cria relacionamentos duradouros com clientes.',
-        competitiveAdvantages: [
-          {
-            title: 'Posição Única no Mercado',
-            description: 'Seja a primeira empresa de transporte em seu mercado a oferecer narrativa cultural com IA.',
-            icon: '🎯',
-            impact: 'Liderança de Mercado'
-          },
-          {
-            title: 'Oferta de Serviço Premium',
-            description: 'Transforme viagens padrão em experiências culturais premium que justificam preços mais altos.',
-            icon: '💎',
-            impact: 'Crescimento Receita'
-          },
-          {
-            title: 'Lealdade do Cliente',
-            description: 'Crie experiências memoráveis que transformam passageiros únicos em clientes leais e recorrentes.',
-            icon: '❤️',
-            impact: 'Aumento Retenção'
           },
           {
             title: 'Diferenciação da Marca',
+            description: 'Entregue algo que os concorrentes não conseguem: valor cultural e experiência premium.',
+            benefits: [
+              'Posicionamento de mercado único',
+              'Diferenciação de serviço premium',
+              'Reputação de marca aprimorada',
+              'Criação de barreira competitiva'
+            ],
+            metrics: {
+              value: '💎',
+              label: 'Liderança de Mercado',
+              improvement: 'Seja o pioneiro da experiência cultural'
+            }
+          },
+          {
+            title: 'Inovação Compartilhada',
+            description: 'Seja parte de uma visão ousada — com co-marketing, insights de piloto e suporte dedicado.',
+            benefits: [
+              'Oportunidades de imprensa co-branded',
+              'Histórias de sucesso compartilhadas',
+              'Iniciativas de inovação conjunta',
+              'Equipe dedicada de parceiro fundador'
+            ],
+            metrics: {
+              value: '🤝',
+              label: 'Parceria Estratégica',
+              improvement: 'Inovação através da colaboração'
+            }
+          }
+        ],
+        foundingBenefitsTitle: 'O Que Nossos Parceiros Fundadores Recebem',
+        foundingBenefitsSubtitle: 'Vantagens exclusivas para as empresas de transporte que se juntam a nós na criação do futuro.',
+        foundingBenefits: [
+          { icon: '🧠', title: 'Equipe de inovação dedicada' },
+          { icon: '🎤', title: 'Onboarding personalizado de voz e narrativa' },
+          { icon: '🚀', title: 'Oportunidades de imprensa co-branded' },
+          { icon: '🧪', title: 'Acesso a recursos beta antes do lançamento público' },
+          { icon: '📊', title: 'Relatórios mensais de insights e uso' },
+          { icon: '🤝', title: 'Suporte prioritário e influência no roadmap' }
+        ],
+        businessImpactTitle: 'Resultados Iniciais dos Parceiros Piloto',
+        businessImpactSubtitle: 'Feedback inicial e métricas de empresas de transporte atualmente testando Tuggi Drive em beta.',
+        competitiveAdvantagesTitle: 'Ganhe Vantagem Competitiva',
+        competitiveAdvantagesSubtitle: 'Posicione seu negócio de transporte à frente de competidores com tecnologia inovadora que cria relacionamentos duradouros com clientes.',
+        competitiveAdvantages: [
+          {
+            title: 'Unique Market Position',
+            description: 'Be the first transportation company in your market to offer AI-powered cultural storytelling.',
+            icon: '🎯',
+            impact: 'Market Leadership'
+          },
+          {
+            title: 'Premium Service Offering',
+            description: 'Transforme viagens padrão em experiências culturais premium que justificam preços mais altos.',
+            icon: '💎',
+            impact: 'Revenue Growth'
+          },
+          {
+            title: 'Customer Loyalty',
+            description: 'Crie experiências memoráveis que transformam passageiros únicos em clientes leais e recorrentes.',
+            icon: '❤️',
+            impact: 'Retention Increase'
+          },
+          {
+            title: 'Brand Differentiation',
             description: 'Destaque-se dos competidores com tecnologia inovadora que melhora a reputação da sua marca.',
             icon: '🌟',
-            impact: 'Valor da Marca'
+            impact: 'Brand Value'
           }
         ],
         implementationTitle: 'Processo de Implementação Simples',
@@ -345,32 +298,33 @@ const BusinessBenefitsPage: React.FC<BusinessBenefitsPageProps> = ({
           }
         ],
         startImplementation: 'Iniciar Implementação Hoje',
-        testimonialsTitle: 'Histórias de Sucesso de Clientes',
-        testimonialsSubtitle: 'Resultados reais de empresas de transporte que transformaram seus negócios com Tuggi Drive.',
+        testimonialsTitle: 'Feedback dos Parceiros Iniciais',
+        testimonialsSubtitle: 'Insights de empresas de transporte atualmente pilotando Tuggi Drive na fase beta.',
+        betaBadge: '🧪 Depoimento Beta',
         testimonials: [
           {
-            quote: 'Tuggi Drive transformou nosso serviço de transfer aeroporto de transporte commodity para experiências culturais premium. Nossa receita aumentou 28% no primeiro trimestre.',
+            quote: 'Trabalhar com a Tuggi para testar seu conceito de narrativa cultural tem sido fascinante. Nossas rotas piloto mostram real engajamento dos passageiros e estamos animados em fazer parte da modelagem desta inovação.',
             author: 'Carlos Mendoza',
             role: 'Diretor Operações de Frota',
             company: 'Premium Airport Services',
             location: 'São Paulo, Brasil',
-            results: '+28% Crescimento Receita'
+            results: 'Parceiro Piloto'
           },
           {
-            quote: 'A implementação foi incrivelmente suave. Em horas, nossos motoristas estavam entregando histórias envolventes aos passageiros. Pontuações satisfação cliente saltaram para 4.9/5.',
+            quote: 'Os testes beta iniciais mostraram resultados promissores para satisfação dos passageiros. Apreciamos fazer parte do processo de desenvolvimento e contribuir para o roadmap.',
             author: 'Sarah Chen',
             role: 'CEO',
             company: 'Metropolitan Tours',
             location: 'San Francisco, EUA',
-            results: '4.9/5 Satisfação'
+            results: 'Testador Beta'
           },
           {
-            quote: 'Nossos passageiros agora solicitam especificamente nossas "viagens com narrativa". Nos tornamos a escolha preferida de transporte para hotéis e agências de viagem.',
+            quote: 'Como parceiro inicial, estamos ajudando a Tuggi a entender o que empresas de transporte realmente precisam. A abordagem colaborativa é refrescante e a tecnologia mostra potencial real.',
             author: 'Ahmed Hassan',
             role: 'Gerente Desenvolvimento Negócios',
             company: 'City Connect Transport',
             location: 'Dubai, EAU',
-            results: '+45% Reservas'
+            results: 'Parceiro Fundador'
           }
         ],
         finalCtaTitle: 'Pronto para Transformar Seu Negócio?',
@@ -382,125 +336,101 @@ const BusinessBenefitsPage: React.FC<BusinessBenefitsPageProps> = ({
         phone: '+1 (555) TUGGI-01'
       },
       ES: {
-        badge: 'Beneficios Empresariales',
-        title: 'Transforme Su Negocio con Resultados Probados',
-        subtitle: 'Descubra cómo empresas de transporte mundialmente están usando Tuggi Drive para aumentar ingresos, mejorar satisfacción del cliente y ganar ventaja competitiva.',
-        calculateROI: 'Calcular Su ROI',
-        viewCaseStudies: 'Ver Casos de Estudio',
+        badge: '🧪 Programa Beta',
+        title: 'Sé el Primero. Lidera el Cambio en la Experiencia del Pasajero.',
+        subtitle: 'Asociate con Tuggi para pionerizar un nuevo estándar de viaje cultural — impulsado por IA y diseñado para elevar los servicios de transporte. Nuestros socios fundadores están moldeando el futuro hoy.',
+        calculateROI: 'Convertirse en Socio Fundador',
+        viewCaseStudies: 'Solicitar Acceso Temprano',
         keyMetrics: [
-          { value: '+22%', label: 'Crecimiento Ingresos' },
-          { value: '4.8/5', label: 'Satisfacción' },
-          { value: '+35%', label: 'Retención' },
-          { value: '<5min', label: 'Tiempo Configuración' }
+          { value: '🚀', label: 'Diseñado para impulsar satisfacción y lealtad de pasajeros' },
+          { value: '⚙️', label: 'Construido para integración GPS perfecta — sin distracciones para conductores' },
+          { value: '🛠️', label: 'Actualmente en fase piloto con flotas seleccionadas' },
+          { value: '🎧', label: 'Experiencias culturales de audio probadamente involucran pasajeros' }
         ],
-        coreValuesTitle: 'Tres Pilares del Éxito Empresarial',
-        coreValuesSubtitle: 'Tuggi Drive entrega valor empresarial medible a través de calidad, innovación y excelencia operacional.',
+        coreValuesTitle: 'Por Qué Convertirse en Socio Fundador',
+        coreValuesSubtitle: 'Únete a un grupo selecto de empresas de transporte visionarias co-creando el futuro de las experiencias de pasajeros.',
         coreValues: [
           {
-            title: 'Alta Calidad de Servicio y Confiabilidad',
-            description: 'Entregue experiencias consistentes y premium que excedan expectativas de pasajeros y construyan relaciones duraderas con clientes.',
+            title: 'Ventaja de Acceso Temprano',
+            description: 'Ayuda a dar forma al roadmap. Influye en características que importan a tu flota.',
             benefits: [
-              'Garantía 99.9% tiempo actividad sistema',
-              'Curación contenido nivel profesional',
-              'Monitoreo calidad tiempo real',
-              'Soporte técnico instantáneo'
+              'Influencia directa en desarrollo de características',
+              'Acceso prioritario a nuevas capacidades',
+              'Beneficios exclusivos de socio fundador',
+              'Soporte de integración personalizada'
             ],
             metrics: {
-              value: '4.8/5',
-              label: 'Satisfacción del Cliente',
-              improvement: '+35% retención pasajeros'
+              value: '🎯',
+              label: 'Influencia Estratégica',
+              improvement: 'Moldea el futuro de la tecnología de viajes'
             }
           },
           {
-            title: 'Ventaja Competitiva a Través de la Innovación',
-            description: 'Diferencie su servicio de transporte con tecnología de narrativa cultural de vanguardia que competidores no pueden igualar.',
+            title: 'Diferenciación de Marca',
+            description: 'Entrega algo que los competidores no pueden: valor cultural y experiencia premium.',
             benefits: [
-              'Ventaja pionero en tecnología cultural',
-              'Propuesta valor única para clientes',
-              'Oportunidades precios premium',
-              'Posicionamiento marca mejorado'
+              'Posicionamiento de mercado único',
+              'Diferenciación de servicio premium',
+              'Reputación de marca mejorada',
+              'Creación de barrera competitiva'
             ],
             metrics: {
-              value: '+22%',
-              label: 'Crecimiento Ingresos',
-              improvement: 'Aumento promedio en reservas'
+              value: '💎',
+              label: 'Liderazgo de Mercado',
+              improvement: 'Sé el pionero de la experiencia cultural'
             }
           },
           {
-            title: 'Implementación y Gestión Fáciles',
-            description: 'Integración perfecta con sistemas existentes y panel gestión centralizado para control operacional completo.',
+            title: 'Innovación Compartida',
+            description: 'Sé parte de una visión audaz — con co-marketing, insights de piloto y soporte dedicado.',
             benefits: [
-              'Proceso instalación un clic',
-              'Cero interrupción operaciones actuales',
-              'Gestión flota centralizada',
-              'Actualizaciones contenido automatizadas'
+              'Oportunidades de prensa co-branded',
+              'Historias de éxito compartidas',
+              'Iniciativas de innovación conjunta',
+              'Equipo dedicado de socio fundador'
             ],
             metrics: {
-              value: '<5 min',
-              label: 'Tiempo Configuración',
-              improvement: 'De instalación a activación'
+              value: '🤝',
+              label: 'Asociación Estratégica',
+              improvement: 'Innovación a través de la colaboración'
             }
           }
         ],
-        businessImpactTitle: 'Impacto Empresarial Medible',
-        businessImpactSubtitle: 'Datos reales de empresas de transporte usando Tuggi Drive para transformar su experiencia de pasajeros y resultados empresariales.',
-        businessImpacts: [
-          {
-            category: 'Crecimiento de Ingresos',
-            stats: [
-              { value: '+22%', label: 'Aumento Promedio Ingresos', description: 'A través ofertas servicios premium' },
-              { value: '+35%', label: 'Retención Clientes', description: 'Tasas reservas repetidas más altas' },
-              { value: '+18%', label: 'Premio Precio', description: 'Capacidad cobrar más por experiencia mejorada' }
-            ]
-          },
-          {
-            category: 'Eficiencia Operacional',
-            stats: [
-              { value: '<5 min', label: 'Tiempo Implementación', description: 'De instalación a operación completa' },
-              { value: '90%', label: 'Reducción Llamadas Soporte', description: 'Menos quejas pasajeros' },
-              { value: '24/7', label: 'Operación Automatizada', description: 'Sin intervención manual requerida' }
-            ]
-          },
-          {
-            category: 'Experiencia del Cliente',
-            stats: [
-              { value: '4.8/5', label: 'Calificación Satisfacción', description: 'Puntuación promedio experiencia pasajero' },
-              { value: '95%', label: 'Comentarios Positivos', description: 'Pasajeros recomiendan el servicio' },
-              { value: '3x', label: 'Compartir Social', description: 'Aumento menciones redes sociales' }
-            ]
-          },
-          {
-            category: 'Posición en el Mercado',
-            stats: [
-              { value: '1º', label: 'Posición Mercado', description: 'Primero en ofrecer narrativa cultural' },
-              { value: '500+', label: 'Empresas Socias', description: 'Red creciente de operadores' },
-              { value: '50+', label: 'Ciudades Cubiertas', description: 'Presencia global en expansión' }
-            ]
-          }
+        foundingBenefitsTitle: 'Lo Que Reciben Nuestros Socios Fundadores',
+        foundingBenefitsSubtitle: 'Ventajas exclusivas para las empresas de transporte que se unen a nosotros en la creación del futuro.',
+        foundingBenefits: [
+          { icon: '🧠', title: 'Equipo de innovación dedicado' },
+          { icon: '🎤', title: 'Onboarding personalizado de voz y narrativa' },
+          { icon: '🚀', title: 'Oportunidades de prensa co-branded' },
+          { icon: '🧪', title: 'Acceso a características beta antes del lanzamiento público' },
+          { icon: '📊', title: 'Reportes mensuales de insights y uso' },
+          { icon: '🤝', title: 'Soporte prioritario e influencia en roadmap' }
         ],
+        businessImpactTitle: 'Resultados Iniciales de Socios Piloto',
+        businessImpactSubtitle: 'Feedback inicial y métricas de empresas de transporte actualmente probando Tuggi Drive en beta.',
         competitiveAdvantagesTitle: 'Gane Ventaja Competitiva',
         competitiveAdvantagesSubtitle: 'Posicione su negocio de transporte por delante de competidores con tecnología innovadora que crea relaciones duraderas con clientes.',
         competitiveAdvantages: [
           {
-            title: 'Posición Única en el Mercado',
-            description: 'Sea la primera empresa de transporte en su mercado en ofrecer narrativa cultural con IA.',
+            title: 'Unique Market Position',
+            description: 'Be the first transportation company in your market to offer AI-powered cultural storytelling.',
             icon: '🎯',
-            impact: 'Liderazgo de Mercado'
+            impact: 'Market Leadership'
           },
           {
-            title: 'Oferta de Servicio Premium',
+            title: 'Premium Service Offering',
             description: 'Transforme viajes estándar en experiencias culturales premium que justifican precios más altos.',
             icon: '💎',
             impact: 'Crecimiento Ingresos'
           },
           {
-            title: 'Lealtad del Cliente',
+            title: 'Customer Loyalty',
             description: 'Cree experiencias memorables que conviertan pasajeros únicos en clientes leales y recurrentes.',
             icon: '❤️',
             impact: 'Aumento Retención'
           },
           {
-            title: 'Diferenciación de Marca',
+            title: 'Brand Differentiation',
             description: 'Destáquese de competidores con tecnología innovadora que mejora la reputación de su marca.',
             icon: '🌟',
             impact: 'Valor de Marca'
@@ -529,32 +459,33 @@ const BusinessBenefitsPage: React.FC<BusinessBenefitsPageProps> = ({
           }
         ],
         startImplementation: 'Iniciar Implementación Hoy',
-        testimonialsTitle: 'Historias de Éxito de Clientes',
-        testimonialsSubtitle: 'Resultados reales de empresas de transporte que transformaron sus negocios con Tuggi Drive.',
+        testimonialsTitle: 'Feedback de Socios Tempranos',
+        testimonialsSubtitle: 'Insights de empresas de transporte actualmente pilotando Tuggi Drive en fase beta.',
+        betaBadge: '🧪 Testimonio Beta',
         testimonials: [
           {
-            quote: 'Tuggi Drive transformó nuestro servicio de transfer aeropuerto de transporte commodity a experiencias culturales premium. Nuestros ingresos aumentaron 28% en el primer trimestre.',
+            quote: 'Trabajar con Tuggi para probar su concepto de narrativa cultural ha sido fascinante. Nuestras rutas piloto muestran real compromiso de pasajeros y estamos emocionados de ser parte de moldear esta innovación.',
             author: 'Carlos Mendoza',
             role: 'Director Operaciones de Flota',
             company: 'Premium Airport Services',
             location: 'São Paulo, Brasil',
-            results: '+28% Crecimiento Ingresos'
+            results: 'Socio Piloto'
           },
           {
-            quote: 'La implementación fue increíblemente suave. En horas, nuestros conductores estaban entregando historias atractivas a pasajeros. Puntuaciones satisfacción cliente saltaron a 4.9/5.',
+            quote: 'Las pruebas beta iniciales han mostrado resultados prometedores para satisfacción de pasajeros. Apreciamos ser parte del proceso de desarrollo y contribuir al roadmap.',
             author: 'Sarah Chen',
             role: 'CEO',
             company: 'Metropolitan Tours',
             location: 'San Francisco, EE.UU.',
-            results: '4.9/5 Satisfacción'
+            results: 'Probador Beta'
           },
           {
-            quote: 'Nuestros pasajeros ahora solicitan específicamente nuestros "viajes con narrativa". Nos hemos convertido en la opción preferida de transporte para hoteles y agencias de viajes.',
+            quote: 'Como socio temprano, estamos ayudando a Tuggi a entender lo que empresas de transporte realmente necesitan. El enfoque colaborativo es refrescante y la tecnología muestra potencial real.',
             author: 'Ahmed Hassan',
             role: 'Gerente Desarrollo Negocios',
             company: 'City Connect Transport',
             location: 'Dubai, EAU',
-            results: '+45% Reservas'
+            results: 'Socio Fundador'
           }
         ],
         finalCtaTitle: '¿Listo para Transformar Su Negocio?',
@@ -601,14 +532,14 @@ const BusinessBenefitsPage: React.FC<BusinessBenefitsPageProps> = ({
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
-                onClick={() => handleCTAClick('calculate_roi')}
+                onClick={() => handleCTAClick('join_founding_partner')}
                 className="bg-tuggi-primary hover:bg-tuggi-primary-dark text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center space-x-2"
               >
                 <span>{content.calculateROI}</span>
                 <ArrowRight className="w-5 h-5" />
               </button>
               <button 
-                onClick={() => handleCTAClick('view_case_studies')}
+                onClick={() => handleCTAClick('request_early_access')}
                 className="border-2 border-tuggi-primary text-tuggi-primary hover:bg-tuggi-primary hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200"
               >
                 {content.viewCaseStudies}
@@ -617,11 +548,11 @@ const BusinessBenefitsPage: React.FC<BusinessBenefitsPageProps> = ({
           </div>
 
           {/* Key Metrics Preview */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {content.keyMetrics.map((metric: any, index: number) => (
-              <div key={index} className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 text-center border border-neutral-200 shadow-sm">
-                <div className="text-3xl font-bold text-tuggi-primary mb-2">{metric.value}</div>
-                <div className="text-sm font-semibold text-neutral-900">{metric.label}</div>
+              <div key={index} className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-neutral-200 shadow-sm flex items-center space-x-4">
+                <div className="text-4xl">{metric.value}</div>
+                <div className="text-sm font-semibold text-neutral-900 leading-relaxed">{metric.label}</div>
               </div>
             ))}
           </div>
@@ -693,55 +624,25 @@ const BusinessBenefitsPage: React.FC<BusinessBenefitsPageProps> = ({
         </div>
       </section>
 
-      {/* Business Impact Metrics */}
+      {/* What Our Founding Partners Get */}
       <section className="py-20 lg:py-24 bg-gradient-to-br from-neutral-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-6">
-              {content.businessImpactTitle}
+              {content.foundingBenefitsTitle}
             </h2>
             <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
-              {content.businessImpactSubtitle}
+              {content.foundingBenefitsSubtitle}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {content.businessImpacts.map((impact: any, index: number) => (
-              <div key={index} className="bg-white rounded-2xl shadow-lg border border-neutral-200 p-8 hover:shadow-xl transition-all duration-300">
-                <div className="flex items-center space-x-4 mb-8">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${
-                    index === 0 ? 'from-green-500 to-emerald-600' :
-                    index === 1 ? 'from-tuggi-primary to-blue-600' :
-                    index === 2 ? 'from-tuggi-secondary to-orange-600' :
-                    'from-purple-500 to-violet-600'
-                  } flex items-center justify-center shadow-lg`}>
-                    {index === 0 && <BarChart3 className="w-8 h-8 text-white" />}
-                    {index === 1 && <Clock className="w-8 h-8 text-white" />}
-                    {index === 2 && <Users className="w-8 h-8 text-white" />}
-                    {index === 3 && <Award className="w-8 h-8 text-white" />}
-                  </div>
-                  <h3 className="text-2xl font-bold text-neutral-900">{impact.category}</h3>
-                </div>
-
-                <div className="space-y-6">
-                  {impact.stats.map((stat: any, statIndex: number) => (
-                    <div key={statIndex} className="flex items-start space-x-4">
-                      <div className="text-center min-w-[80px]">
-                        <div className="text-2xl font-bold text-tuggi-primary mb-1">
-                          {stat.value}
-                        </div>
-                      </div>
-                      <div className="flex-1">
-                        <div className="font-semibold text-neutral-900 mb-1">
-                          {stat.label}
-                        </div>
-                        <div className="text-sm text-neutral-600">
-                          {stat.description}
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {content.foundingBenefits.map((benefit: any, index: number) => (
+              <div key={index} className="bg-white rounded-2xl shadow-lg border border-neutral-200 p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 text-center group">
+                <div className="text-4xl mb-6">{benefit.icon}</div>
+                <h3 className="text-lg font-bold text-neutral-900 group-hover:text-tuggi-primary transition-colors duration-300">
+                  {benefit.title}
+                </h3>
               </div>
             ))}
           </div>
@@ -844,7 +745,7 @@ const BusinessBenefitsPage: React.FC<BusinessBenefitsPageProps> = ({
       </section>
 
       {/* Customer Success Stories */}
-      <section className="py-20 lg:py-24 bg-white">
+      {/* <section className="py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-6">
@@ -857,7 +758,12 @@ const BusinessBenefitsPage: React.FC<BusinessBenefitsPageProps> = ({
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {content.testimonials.map((testimonial: any, index: number) => (
-              <div key={index} className="bg-white rounded-2xl shadow-lg border border-neutral-200 p-8 hover:shadow-xl transition-all duration-300">
+              <div key={index} className="bg-white rounded-2xl shadow-lg border border-neutral-200 p-8 hover:shadow-xl transition-all duration-300 relative">
+                
+                <div className="absolute -top-3 -right-3 bg-tuggi-secondary/20 text-tuggi-secondary px-3 py-1 rounded-full text-xs font-semibold">
+                  {content.betaBadge}
+                </div>
+                
                 <div className="flex text-tuggi-primary mb-6">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 fill-current" />
@@ -881,9 +787,9 @@ const BusinessBenefitsPage: React.FC<BusinessBenefitsPageProps> = ({
                     </div>
                   </div>
                   
-                  <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-3 border border-green-200">
-                    <div className="text-sm font-semibold text-green-800">
-                      Resultado: {testimonial.results}
+                  <div className="bg-gradient-to-r from-tuggi-primary/10 to-tuggi-secondary/10 rounded-lg p-3 border border-tuggi-primary/20">
+                    <div className="text-sm font-semibold text-tuggi-primary">
+                      Status: {testimonial.results}
                     </div>
                   </div>
                 </div>
@@ -891,7 +797,7 @@ const BusinessBenefitsPage: React.FC<BusinessBenefitsPageProps> = ({
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Final CTA */}
       <section className="py-20 lg:py-24 bg-gradient-to-br from-tuggi-primary to-tuggi-primary-dark">
