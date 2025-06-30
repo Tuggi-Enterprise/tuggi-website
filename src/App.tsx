@@ -178,8 +178,19 @@ function App() {
     return localeMap[language] || 'en-US';
   };
 
-  // Enhanced CTA click handler with multilingual tracking
+  // Helper function to get the correct form URL based on language
+  const getFormURL = (language: string): string => {
+    const formURLs = {
+      'EN': 'https://forms.gle/35v8pMERdPqKSt5C6',   // English
+      'PT': 'https://forms.gle/hMfqGLVrQeqFCd5F7',   // Portuguese
+      'ES': 'https://forms.gle/Mcm3w7TSN71L33hh7'    // Spanish
+    };
+    return formURLs[language as keyof typeof formURLs] || formURLs['EN'];
+  };
+
+  // Enhanced CTA click handler with multilingual tracking and URL navigation
   const handleCTAClick = (ctaType: string, position: string = 'unknown') => {
+    // Track analytics first
     if (typeof window !== 'undefined' && (window as any).gtag) {
       (window as any).gtag('event', 'cta_click', {
         event_category: 'CTA Interaction',
@@ -192,6 +203,47 @@ function App() {
         user_journey_stage: getUserJourneyStage(currentPage),
         conversion_value: getCTAValue(ctaType)
       });
+    }
+
+    // Handle URL navigation for demo and early access CTAs
+    const demoCTAs = [
+      // Main demo requests
+      'request_demo',
+      'request_demo_hero',
+      'request_demo_roadmap', 
+      'request_demo_home_final',
+      
+      // Early access and beta programs  
+      'request_early_access',
+      'join_early_access_program',
+      'apply_early_access',
+      'join_beta_program',
+      'join_early_partners_program',
+      
+      // Demo scheduling
+      'schedule_live_demo',
+      'schedule_demo_call',
+      'schedule_partnership_call',
+      'schedule_consultation',
+      'schedule_call_story',
+      
+      // Pilot and trial programs
+      'join_pilot_hero',
+      'start_free_trial',
+      
+      // Waitlist programs
+      'join_tuggi_walk_waitlist',
+      'join_tuggi_walk_waitlist_bottom',
+      
+      // Business and partnership CTAs
+      'join_founding_partner',
+      'get_started',
+      'start_implementation'
+    ];
+
+    if (demoCTAs.includes(ctaType)) {
+      const formURL = getFormURL(currentLanguage);
+      window.open(formURL, '_blank');
     }
   };
 

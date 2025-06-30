@@ -187,7 +187,7 @@ const ProductHighlights: React.FC<ProductHighlightsProps> = ({
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-16">
+        {/* <div className="text-center mt-16">
           <div className="inline-flex flex-col sm:flex-row gap-4">
             <button 
               onClick={() => handleCTAClick('see_all_features')}
@@ -202,7 +202,7 @@ const ProductHighlights: React.FC<ProductHighlightsProps> = ({
               {content.technicalDocs}
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

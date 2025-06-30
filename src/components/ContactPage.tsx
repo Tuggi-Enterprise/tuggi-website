@@ -51,12 +51,12 @@ const ContactPage: React.FC<ContactPageProps> = ({
             contact: '+55 (11) 9.9471-8809',
             href: 'tel:+55 (11) 9.9471-8809'
           },
-          {
-            title: 'Visit Us',
-            description: 'Our headquarters in the heart of San Francisco',
-            contact: 'San Francisco, CA',
-            href: 'https://maps.google.com/?q=San+Francisco,+CA'
-          }
+          // {
+          //   title: 'Visit Us',
+          //   description: 'Our headquarters in the heart of San Francisco',
+          //   contact: 'San Francisco, CA',
+          //   href: 'https://maps.google.com/?q=San+Francisco,+CA'
+          // }
         ],
         formTitle: 'Get Your Custom Demo',
         formSubtitle: 'Fill out the form below and we\'ll schedule a personalized demonstration of Tuggi Drive tailored to your business needs.',
@@ -175,12 +175,12 @@ const ContactPage: React.FC<ContactPageProps> = ({
             contact: '+55 (11) 9.9471-8809',
             href: 'tel:+55 (11) 9.9471-8809'
           },
-          {
-            title: 'Visite-nos',
-            description: 'Nossa sede no coração de San Francisco',
-            contact: 'San Francisco, CA',
-            href: 'https://maps.google.com/?q=San+Francisco,+CA'
-          }
+          // {
+          //   title: 'Visite-nos',
+          //   description: 'Nossa sede no coração de San Francisco',
+          //   contact: 'San Francisco, CA',
+          //   href: 'https://maps.google.com/?q=San+Francisco,+CA'
+          // }
         ],
         formTitle: 'Obtenha Sua Demo Personalizada',
         formSubtitle: 'Preencha o formulário abaixo e agendaremos uma demonstração personalizada do Tuggi Drive adaptada às necessidades do seu negócio.',
@@ -299,12 +299,12 @@ const ContactPage: React.FC<ContactPageProps> = ({
             contact: '+55 (11) 9.9471-8809',
             href: 'tel:+55 (11) 9.9471-8809'
           },
-          {
-            title: 'Visítenos',
-            description: 'Nuestra sede en el corazón de San Francisco',
-            contact: 'San Francisco, CA',
-            href: 'https://maps.google.com/?q=San+Francisco,+CA'
-          }
+          // {
+          //   title: 'Visítenos',
+          //   description: 'Nuestra sede en el corazón de San Francisco',
+          //   contact: 'San Francisco, CA',
+          //   href: 'https://maps.google.com/?q=San+Francisco,+CA'
+          // }
         ],
         formTitle: 'Obtenga Su Demo Personalizada',
         formSubtitle: 'Complete el formulario a continuación y programaremos una demostración personalizada de Tuggi Drive adaptada a las necesidades de su negocio.',
@@ -640,11 +640,11 @@ const ContactPage: React.FC<ContactPageProps> = ({
       </section>
 
       {/* Contact Form & Support Options */}
-      <section className="py-20 lg:py-24 bg-white">
+      {/* <section className="py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Contact Form */}
-            <div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16"> */}
+           
+            {/* <div>
               <div className="mb-8">
                 <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-4">
                   {content.formTitle}
@@ -655,7 +655,7 @@ const ContactPage: React.FC<ContactPageProps> = ({
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Company Name */}
+                
                 <div>
                   <label htmlFor="companyName" className="block text-sm font-semibold text-neutral-700 mb-2">
                     {content.formFields.companyName.label}
@@ -679,7 +679,7 @@ const ContactPage: React.FC<ContactPageProps> = ({
                   )}
                 </div>
 
-                {/* Contact Person */}
+               
                 <div>
                   <label htmlFor="contactPerson" className="block text-sm font-semibold text-neutral-700 mb-2">
                     {content.formFields.contactPerson.label}
@@ -703,7 +703,7 @@ const ContactPage: React.FC<ContactPageProps> = ({
                   )}
                 </div>
 
-                {/* Email & Phone Row */}
+                
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="email" className="block text-sm font-semibold text-neutral-700 mb-2">
@@ -752,7 +752,7 @@ const ContactPage: React.FC<ContactPageProps> = ({
                   </div>
                 </div>
 
-                {/* Country */}
+               
                 <div>
                   <label htmlFor="country" className="block text-sm font-semibold text-neutral-700 mb-2">
                     {content.formFields.country.label}
@@ -781,7 +781,7 @@ const ContactPage: React.FC<ContactPageProps> = ({
                   )}
                 </div>
 
-                {/* Message */}
+               
                 <div>
                   <label htmlFor="message" className="block text-sm font-semibold text-neutral-700 mb-2">
                     {content.formFields.message.label}
@@ -802,7 +802,7 @@ const ContactPage: React.FC<ContactPageProps> = ({
                   )}
                 </div>
 
-                {/* Submit Button */}
+                
                 <button
                   type="submit"
                   disabled={isSubmitting}
@@ -825,12 +825,12 @@ const ContactPage: React.FC<ContactPageProps> = ({
                   {content.privacyNote}
                 </p>
               </form>
-            </div>
+            </div> */}
 
             {/* Support Options & Additional Info */}
-            <div className="space-y-8">
-              {/* Support Options */}
-              <div>
+            {/* <div className="space-y-8"> */}
+              
+              {/* <div>
                 <h3 className="text-2xl font-bold text-neutral-900 mb-6">
                   {content.supportTitle}
                 </h3>
@@ -862,10 +862,10 @@ const ContactPage: React.FC<ContactPageProps> = ({
                     </div>
                   ))}
                 </div>
-              </div>
+              </div> */}
 
-              {/* Response Time */}
-              <div className="bg-gradient-to-br from-tuggi-primary/10 to-tuggi-secondary/10 rounded-2xl p-8 border border-tuggi-primary/20">
+              
+              {/* <div className="bg-gradient-to-br from-tuggi-primary/10 to-tuggi-secondary/10 rounded-2xl p-8 border border-tuggi-primary/20">
                 <div className="flex items-center space-x-3 mb-4">
                   <Clock className="w-6 h-6 text-tuggi-primary" />
                   <h3 className="text-xl font-bold text-neutral-900">
@@ -883,10 +883,10 @@ const ContactPage: React.FC<ContactPageProps> = ({
                     </div>
                   ))}
                 </div>
-              </div>
+              </div> */}
 
-              {/* Social Media */}
-              <div>
+              
+              {/* <div>
                 <h3 className="text-xl font-bold text-neutral-900 mb-4">
                   {content.socialTitle}
                 </h3>
@@ -908,10 +908,9 @@ const ContactPage: React.FC<ContactPageProps> = ({
                 <p className="text-sm text-neutral-600 mt-3">
                   {content.socialDescription}
                 </p>
-              </div>
+              </div> */}
 
-              {/* Multilingual Support */}
-              <div className="bg-white rounded-2xl p-6 border-2 border-neutral-200 shadow-sm">
+              {/* <div className="bg-white rounded-2xl p-6 border-2 border-neutral-200 shadow-sm">
                 <h3 className="text-xl font-bold text-neutral-900 mb-4">
                   {content.multilingualTitle}
                 </h3>
@@ -926,11 +925,11 @@ const ContactPage: React.FC<ContactPageProps> = ({
                 <p className="text-sm text-neutral-600 mt-4 text-center">
                   {content.multilingualDescription}
                 </p>
-              </div>
-            </div>
-          </div>
+              </div> */}
+            {/* </div> */}
+          {/* </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Encouragement Section */}
       <section className="py-20 lg:py-24 bg-gradient-to-br from-tuggi-primary/5 to-tuggi-secondary/5">
@@ -938,11 +937,11 @@ const ContactPage: React.FC<ContactPageProps> = ({
           <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-6">
             {content.encouragementTitle}
           </h2>
-          <p className="text-xl text-neutral-600 max-w-3xl mx-auto mb-8">
+          {/* <p className="text-xl text-neutral-600 max-w-3xl mx-auto mb-8">
             {content.encouragementSubtitle}
-          </p>
+          </p> */}
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
+          {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
             {content.encouragementStats.map((stat: any, index: number) => (
               <div key={index} className="text-center">
                 <div className={`text-3xl font-bold mb-2 ${
@@ -952,7 +951,7 @@ const ContactPage: React.FC<ContactPageProps> = ({
                 <div className="text-neutral-600">{stat.label}</div>
               </div>
             ))}
-          </div>
+          </div> */}
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
