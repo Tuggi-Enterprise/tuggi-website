@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Navigation, Globe, Building2, Smartphone, Settings, ArrowRight, Play, Star, CheckCircle, Clock, Users } from 'lucide-react';
+import { Download, Smartphone, MapPin, Camera, Share2, Heart, MessageCircle, Shield, Zap, TrendingUp, ArrowRight, Play, Navigation, Globe, Building2, CheckCircle } from 'lucide-react';
 import FinalCTASection from './FinalCTASection';
 
 interface ProductsPageProps {

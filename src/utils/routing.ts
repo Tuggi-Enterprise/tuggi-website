@@ -110,7 +110,7 @@ export const parseUrlPath = (pathname: string): ParsedUrl => {
       // Check if it's a localized URL that maps to a standard page
       if (pageSegment in URL_TO_PAGE_MAPPINGS) {
         page = URL_TO_PAGE_MAPPINGS[pageSegment];
-      } else if (VALID_PAGES.includes(pageSegment as any)) {
+      } else if ((VALID_PAGES as readonly string[]).includes(pageSegment)) {
         page = pageSegment;
       }
     }
@@ -118,7 +118,7 @@ export const parseUrlPath = (pathname: string): ParsedUrl => {
     // First segment might be a page without language prefix
     if (firstSegment in URL_TO_PAGE_MAPPINGS) {
       page = URL_TO_PAGE_MAPPINGS[firstSegment];
-    } else if (VALID_PAGES.includes(firstSegment as any)) {
+    } else if ((VALID_PAGES as readonly string[]).includes(firstSegment)) {
       page = firstSegment;
     }
   }
@@ -176,7 +176,7 @@ export const isValidLanguage = (language: string): boolean => {
  * Check if page is valid
  */
 export const isValidPage = (page: string): boolean => {
-  return VALID_PAGES.includes(page as any) || Object.values(URL_TO_PAGE_MAPPINGS).includes(page);
+  return (VALID_PAGES as readonly string[]).includes(page) || Object.values(URL_TO_PAGE_MAPPINGS).includes(page);
 };
 
 /**
@@ -207,12 +207,13 @@ export const getLanguageFlag = (language: string): string => {
  * Get locale code for analytics and SEO
  */
 export const getLocaleCode = (language: string): string => {
-  const locales: Record<string, string> = {
+  const localeCodes: Record<string, string> = {
+    'PT': 'pt-BR',
     'EN': 'en-US',
-    'PT': 'pt-BR', 
     'ES': 'es-ES'
   };
-  return locales[language] || 'en-US';
+  
+  return localeCodes[language] || 'en-US';
 };
 
 /**

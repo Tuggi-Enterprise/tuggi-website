@@ -1,5 +1,5 @@
-import React from 'react';
-import { Mail, Globe, ArrowRight, MapPin, Users } from 'lucide-react';
+import React, { useState } from 'react';
+import { Mail, Phone, MessageCircle, Send, CheckCircle, AlertCircle, ArrowRight } from 'lucide-react';
 import FinalCTASection from './FinalCTASection';
 
 interface ContactPageProps {

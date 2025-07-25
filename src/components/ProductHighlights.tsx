@@ -8,8 +8,7 @@ interface ProductHighlightsProps {
 }
 
 const ProductHighlights: React.FC<ProductHighlightsProps> = ({ 
-  currentLanguage = 'EN',
-  onCTAClick 
+  currentLanguage = 'PT'
 }) => {
   // Localized content
   const getLocalizedContent = (language: string) => {

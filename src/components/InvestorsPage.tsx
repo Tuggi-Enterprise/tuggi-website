@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Building2, TrendingUp, Globe, Users, Target } from 'lucide-react';
+import { TrendingUp, Users, Globe, DollarSign, Calendar, ArrowRight, CheckCircle, Star, BarChart3, Lightbulb, Building2, Mail } from 'lucide-react';
 
 interface InvestorsPageProps {
   currentLanguage: string;

@@ -1,7 +1,23 @@
 import React from 'react';
-import { Globe, Crown, Route, Mic, ArrowRight } from 'lucide-react';
+import { Zap, Users, Globe, ArrowRight, Crown, Route, Mic } from 'lucide-react';
 import StatusBadge from './StatusBadge';
 import { getButtonClasses, layout, gradients } from '../utils/designSystem';
+
+interface RoadmapFeature {
+  icon: string;
+  title: string;
+  description: string;
+  status: string;
+  color: string;
+}
+
+interface ContentLanguage {
+  title: string;
+  subtitle: string;
+  description: string;
+  cta: string;
+  features: RoadmapFeature[];
+}
 
 interface RoadmapSectionProps {
   currentLanguage?: string;
@@ -13,8 +29,8 @@ const RoadmapSection: React.FC<RoadmapSectionProps> = ({
   onCTAClick 
 }) => {
   // Localized content
-  const getLocalizedContent = (language: string) => {
-    const content: Record<string, any> = {
+  const getLocalizedContent = (language: string): ContentLanguage => {
+    const content: Record<string, ContentLanguage> = {
       PT: {
         title: 'Estamos apenas começando.',
         description: 'Nos próximos meses, a Tuggi vai ganhar suporte a outros idiomas, planos premium com novos recursos e formas de contribuição mais diretas dos usuários.',
@@ -25,28 +41,28 @@ const RoadmapSection: React.FC<RoadmapSectionProps> = ({
             icon: 'globe',
             title: 'Suporte multilíngue',
             description: 'Narrativas em inglês, espanhol, francês e outros idiomas para turistas e imigrantes.',
-            timeline: 'Próximos meses',
+            status: 'Próximos meses',
             color: 'from-tuggi-primary to-blue-600'
           },
           {
             icon: 'crown',
             title: 'Planos premium',
             description: 'Recursos exclusivos, conteúdo especializado e experiências personalizadas para assinantes.',
-            timeline: 'Em breve',
+            status: 'Em breve',
             color: 'from-tuggi-secondary to-orange-600'
           },
           {
             icon: 'route',
             title: 'Roteiros temáticos',
             description: 'Percursos culturais organizados por temas: arquitetura, gastronomia, música, história.',
-            timeline: 'Em desenvolvimento',
+            status: 'Em desenvolvimento',
             color: 'from-green-500 to-emerald-600'
           },
           {
             icon: 'mic',
             title: 'Vozes personalizadas',
             description: 'Escolha entre diferentes narradores e estilos de narrativa para sua experiência ideal.',
-            timeline: 'Planejado',
+            status: 'Planejado',
             color: 'from-purple-500 to-violet-600'
           }
         ]
@@ -61,28 +77,28 @@ const RoadmapSection: React.FC<RoadmapSectionProps> = ({
             icon: 'globe',
             title: 'Multilingual support',
             description: 'Narratives in English, Spanish, French and other languages for tourists and immigrants.',
-            timeline: 'Coming months',
+            status: 'Coming months',
             color: 'from-tuggi-primary to-blue-600'
           },
           {
             icon: 'crown',
             title: 'Premium plans',
             description: 'Exclusive features, specialized content and personalized experiences for subscribers.',
-            timeline: 'Coming soon',
+            status: 'Coming soon',
             color: 'from-tuggi-secondary to-orange-600'
           },
           {
             icon: 'route',
             title: 'Thematic routes',
             description: 'Cultural routes organized by themes: architecture, gastronomy, music, history.',
-            timeline: 'In development',
+            status: 'In development',
             color: 'from-green-500 to-emerald-600'
           },
           {
             icon: 'mic',
             title: 'Personalized voices',
             description: 'Choose between different narrators and narrative styles for your ideal experience.',
-            timeline: 'Planned',
+            status: 'Planned',
             color: 'from-purple-500 to-violet-600'
           }
         ]
@@ -97,28 +113,28 @@ const RoadmapSection: React.FC<RoadmapSectionProps> = ({
             icon: 'globe',
             title: 'Soporte multilingüe',
             description: 'Narrativas en inglés, español, francés y otros idiomas para turistas e inmigrantes.',
-            timeline: 'Próximos meses',
+            status: 'Próximos meses',
             color: 'from-tuggi-primary to-blue-600'
           },
           {
             icon: 'crown',
             title: 'Planes premium',
             description: 'Funciones exclusivas, contenido especializado y experiencias personalizadas para suscriptores.',
-            timeline: 'Próximamente',
+            status: 'Próximamente',
             color: 'from-tuggi-secondary to-orange-600'
           },
           {
             icon: 'route',
             title: 'Rutas temáticas',
             description: 'Rutas culturales organizadas por temas: arquitectura, gastronomía, música, historia.',
-            timeline: 'En desarrollo',
+            status: 'En desarrollo',
             color: 'from-green-500 to-emerald-600'
           },
           {
             icon: 'mic',
             title: 'Voces personalizadas',
             description: 'Elige entre diferentes narradores y estilos narrativos para tu experiencia ideal.',
-            timeline: 'Planificado',
+            status: 'Planificado',
             color: 'from-purple-500 to-violet-600'
           }
         ]
@@ -168,7 +184,7 @@ const RoadmapSection: React.FC<RoadmapSectionProps> = ({
 
         {/* Features Grid */}
         <div className={`${layout.grid['2']} gap-4 lg:gap-6 xl:gap-8 mb-8 lg:mb-12`}>
-          {content.features.map((feature: any, index: number) => (
+          {content.features.map((feature: RoadmapFeature, index: number) => (
             <div 
               key={index}
               className="group relative bg-white border border-neutral-200 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
@@ -176,8 +192,8 @@ const RoadmapSection: React.FC<RoadmapSectionProps> = ({
               {/* Timeline Badge */}
               <div className="absolute top-4 right-4">
                 <StatusBadge 
-                  status={feature.timeline === 'Disponível' ? 'success' : 'pending'}
-                  text={feature.timeline}
+                  status={feature.status === 'Disponível' ? 'success' : 'pending'}
+                  text={feature.status}
                   size="sm"
                 />
               </div>

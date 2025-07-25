@@ -1,6 +1,11 @@
 import React from 'react';
-import { Shield, Zap, Settings, TrendingUp, Users, Clock, Award, CheckCircle, ArrowRight, Star, BarChart3, Globe, Smartphone } from 'lucide-react';
+import { Shield, Zap, TrendingUp, CheckCircle, ArrowRight, Settings, Smartphone, Clock } from 'lucide-react';
 import FinalCTASection from './FinalCTASection';
+
+interface KeyMetric {
+  value: string;
+  label: string;
+}
 
 interface BusinessBenefitsPageProps {
   currentLanguage?: string;
@@ -13,7 +18,7 @@ const BusinessBenefitsPage: React.FC<BusinessBenefitsPageProps> = ({
 }) => {
   // Localized content
   const getLocalizedContent = (language: string) => {
-    const content: Record<string, any> = {
+    const content: Record<string, Record<string, unknown>> = {
       EN: {
         badge: '🧪 Beta Program',
         title: 'Be First. Lead the Shift in Passenger Experience.',
@@ -42,7 +47,8 @@ const BusinessBenefitsPage: React.FC<BusinessBenefitsPageProps> = ({
               value: '🎯',
               label: 'Strategic Influence',
               improvement: 'Shape the future of travel tech'
-            }
+            },
+            icon: '🎯'
           },
           {
             title: 'Brand Differentiation',
@@ -57,7 +63,8 @@ const BusinessBenefitsPage: React.FC<BusinessBenefitsPageProps> = ({
               value: '💎',
               label: 'Market Leadership',
               improvement: 'Be the cultural experience pioneer'
-            }
+            },
+            icon: '💎'
           },
           {
             title: 'Shared Innovation',
@@ -72,7 +79,8 @@ const BusinessBenefitsPage: React.FC<BusinessBenefitsPageProps> = ({
               value: '🤝',
               label: 'Strategic Partnership',
               improvement: 'Innovation through collaboration'
-            }
+            },
+            icon: '🤝'
           }
         ],
         foundingBenefitsTitle: 'What Our Founding Partners Get',
@@ -203,7 +211,8 @@ const BusinessBenefitsPage: React.FC<BusinessBenefitsPageProps> = ({
               value: '🎯',
               label: 'Influência Estratégica',
               improvement: 'Molde o futuro da tecnologia de viagem'
-            }
+            },
+            icon: '🎯'
           },
           {
             title: 'Diferenciação da Marca',
@@ -218,7 +227,8 @@ const BusinessBenefitsPage: React.FC<BusinessBenefitsPageProps> = ({
               value: '💎',
               label: 'Liderança de Mercado',
               improvement: 'Seja o pioneiro da experiência cultural'
-            }
+            },
+            icon: '💎'
           },
           {
             title: 'Inovação Compartilhada',
@@ -233,7 +243,8 @@ const BusinessBenefitsPage: React.FC<BusinessBenefitsPageProps> = ({
               value: '🤝',
               label: 'Parceria Estratégica',
               improvement: 'Inovação através da colaboração'
-            }
+            },
+            icon: '🤝'
           }
         ],
         foundingBenefitsTitle: 'O Que Nossos Parceiros Fundadores Recebem',
@@ -364,7 +375,8 @@ const BusinessBenefitsPage: React.FC<BusinessBenefitsPageProps> = ({
               value: '🎯',
               label: 'Influencia Estratégica',
               improvement: 'Moldea el futuro de la tecnología de viajes'
-            }
+            },
+            icon: '🎯'
           },
           {
             title: 'Diferenciación de Marca',
@@ -379,7 +391,8 @@ const BusinessBenefitsPage: React.FC<BusinessBenefitsPageProps> = ({
               value: '💎',
               label: 'Liderazgo de Mercado',
               improvement: 'Sé el pionero de la experiencia cultural'
-            }
+            },
+            icon: '💎'
           },
           {
             title: 'Innovación Compartida',
@@ -394,7 +407,8 @@ const BusinessBenefitsPage: React.FC<BusinessBenefitsPageProps> = ({
               value: '🤝',
               label: 'Asociación Estratégica',
               improvement: 'Innovación a través de la colaboración'
-            }
+            },
+            icon: '🤝'
           }
         ],
         foundingBenefitsTitle: 'Lo Que Reciben Nuestros Socios Fundadores',
@@ -550,7 +564,7 @@ const BusinessBenefitsPage: React.FC<BusinessBenefitsPageProps> = ({
 
           {/* Key Metrics Preview */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {content.keyMetrics.map((metric: any, index: number) => (
+            {content.keyMetrics.map((metric: KeyMetric, index: number) => (
               <div key={index} className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-neutral-200 shadow-sm flex items-center space-x-4">
                 <div className="text-4xl">{metric.value}</div>
                 <div className="text-sm font-semibold text-neutral-900 leading-relaxed">{metric.label}</div>
@@ -600,19 +614,19 @@ const BusinessBenefitsPage: React.FC<BusinessBenefitsPageProps> = ({
                 {/* Key Metric */}
                 <div className="bg-white/80 rounded-xl p-6 mb-6 text-center border border-neutral-200">
                   <div className="text-3xl font-bold text-tuggi-primary mb-2">
-                    {value.metrics.value}
+                    {value.metrics?.value}
                   </div>
                   <div className="text-lg font-semibold text-neutral-900 mb-1">
-                    {value.metrics.label}
+                    {value.metrics?.label}
                   </div>
                   <div className="text-sm text-neutral-600">
-                    {value.metrics.improvement}
+                    {value.metrics?.improvement}
                   </div>
                 </div>
 
                 {/* Benefits List */}
                 <div className="space-y-3">
-                  {value.benefits.map((benefit: string, benefitIndex: number) => (
+                  {value.benefits?.map((benefit: string, benefitIndex: number) => (
                     <div key={benefitIndex} className="flex items-center space-x-3">
                       <CheckCircle className="w-5 h-5 text-tuggi-primary flex-shrink-0" />
                       <span className="text-neutral-700 font-medium">{benefit}</span>

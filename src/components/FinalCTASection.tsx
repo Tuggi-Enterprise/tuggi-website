@@ -1,5 +1,12 @@
 import React from 'react';
-import { layout, gradients, getButtonClasses } from '../utils/designSystem';
+import { layout, gradients } from '../utils/designSystem';
+
+interface ContentLanguage {
+  title: string;
+  description: string;
+  appStore: string;
+  googlePlay: string;
+}
 
 interface FinalCTASectionProps {
   currentLanguage?: string;
@@ -11,8 +18,8 @@ const FinalCTASection: React.FC<FinalCTASectionProps> = ({
   onCTAClick 
 }) => {
   // Localized content
-  const getLocalizedContent = (language: string) => {
-    const content: Record<string, any> = {
+  const getLocalizedContent = (language: string): ContentLanguage => {
+    const content: Record<string, ContentLanguage> = {
       PT: {
         title: 'Comece sua jornada cultural agora mesmo.',
         description: 'Baixe o app gratuitamente, explore o mundo ao seu redor e nos ajude a construir a Tuggi.',

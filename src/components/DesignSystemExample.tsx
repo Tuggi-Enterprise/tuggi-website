@@ -1,13 +1,14 @@
 import React from 'react';
 import { 
+  colors, 
+  typography, 
+  layout, 
+  gradients, 
+  components, 
   getButtonClasses, 
   getCardClasses, 
   getBadgeClasses,
-  getSpinnerClasses,
-  layout,
-  gradients,
-  colors,
-  spacing
+  getSpinnerClasses
 } from '../utils/designSystem';
 import { ArrowRight, Download, Star, Users, MapPin } from 'lucide-react';
 
@@ -294,7 +295,7 @@ const DesignSystemExample: React.FC = () => {
             <div>
               <h3 className="text-xl font-semibold text-neutral-800 mb-4">Grid Patterns</h3>
               <div className="space-y-6">
-                <div className={layout.grid['2']} className="gap-4">
+                <div className={`${layout.grid['2']} gap-4`}>
                   <div className="bg-white p-4 rounded-lg border text-center">
                     <p className="text-sm text-neutral-600">Grid 2 Columns</p>
                   </div>
@@ -303,7 +304,7 @@ const DesignSystemExample: React.FC = () => {
                   </div>
                 </div>
                 
-                <div className={layout.grid['3']} className="gap-4">
+                <div className={`${layout.grid['3']} gap-4`}>
                   <div className="bg-white p-4 rounded-lg border text-center">
                     <p className="text-sm text-neutral-600">Grid 3</p>
                   </div>
@@ -321,11 +322,11 @@ const DesignSystemExample: React.FC = () => {
             <div>
               <h3 className="text-xl font-semibold text-neutral-800 mb-4">Flex Patterns</h3>
               <div className="space-y-4">
-                <div className={layout.flex.center} className="bg-white p-4 rounded-lg border">
+                <div className={`${layout.flex.center} bg-white p-4 rounded-lg border`}>
                   <p className="text-sm text-neutral-600">Centered Content</p>
                 </div>
                 
-                <div className={layout.flex.between} className="bg-white p-4 rounded-lg border">
+                <div className={`${layout.flex.between} bg-white p-4 rounded-lg border`}>
                   <span className="text-sm text-neutral-600">Left Item</span>
                   <span className="text-sm text-neutral-600">Right Item</span>
                 </div>
@@ -342,7 +343,7 @@ const DesignSystemExample: React.FC = () => {
             Color System
           </h2>
           
-          <div className={layout.grid['2']} className="gap-8">
+          <div className={`${layout.grid['2']} gap-8`}>
             {/* Brand Colors */}
             <div>
               <h3 className="text-xl font-semibold text-neutral-800 mb-4">Brand Colors</h3>

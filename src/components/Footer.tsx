@@ -10,10 +10,9 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({ 
-  currentLanguage = 'EN', 
+  currentLanguage = 'PT',
   onLanguageChange,
-  currentPage,
-  onPageChange
+  onPageChange 
 }) => {
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const [email, setEmail] = useState('');
@@ -126,27 +125,6 @@ const Footer: React.FC<FooterProps> = ({
           selection_method: 'footer_dropdown'
         });
       }
-    }
-  };
-
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email.trim()) {
-      // Track newsletter signup
-      if (typeof window !== 'undefined' && (window as any).gtag) {
-        (window as any).gtag('event', 'newsletter_signup', {
-          event_category: 'Lead Generation',
-          event_label: 'footer_newsletter',
-          language: currentLanguage,
-          locale: getLocaleCode(currentLanguage)
-        });
-      }
-      
-      // Reset form
-      setEmail('');
-      
-      // You would typically send this to your email service here
-      console.log('Newsletter signup:', email);
     }
   };
 

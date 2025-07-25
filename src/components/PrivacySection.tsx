@@ -1,6 +1,20 @@
 import React from 'react';
-import { Shield, Lock, Eye, FileText } from 'lucide-react';
+import { Shield, Eye, Lock } from 'lucide-react';
 import { layout, gradients } from '../utils/designSystem';
+
+interface PrivacyFeature {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+interface ContentLanguage {
+  title: string;
+  subtitle: string;
+  description: string;
+  termsOfUse: string;
+  features: PrivacyFeature[];
+}
 
 interface PrivacySectionProps {
   currentLanguage?: string;
@@ -8,18 +22,17 @@ interface PrivacySectionProps {
 }
 
 const PrivacySection: React.FC<PrivacySectionProps> = ({ 
-  currentLanguage = 'PT',
-  onCTAClick 
+  currentLanguage = 'PT'
 }) => {
   // Localized content
-  const getLocalizedContent = (language: string) => {
-    const content: Record<string, any> = {
+  const getLocalizedContent = (language: string): ContentLanguage => {
+    const content: Record<string, ContentLanguage> = {
       PT: {
         title: 'A Tuggi utiliza sua localização apenas durante o uso do app, exclusivamente para identificar os pontos culturais próximos a você.',
         subtitle: 'Nunca vendemos nem compartilhamos seus dados.\nPrivacidade, ética e transparência são pilares do nosso produto.',
-        privacyPolicy: 'Política de Privacidade',
+        description: 'Política de Privacidade',
         termsOfUse: 'Termos de Uso',
-        principles: [
+        features: [
           {
             icon: 'shield',
             title: 'Proteção total',
@@ -40,9 +53,9 @@ const PrivacySection: React.FC<PrivacySectionProps> = ({
       EN: {
         title: 'Tuggi uses your location only during app usage, exclusively to identify cultural points near you.',
         subtitle: 'We never sell or share your data.\nPrivacy, ethics and transparency are pillars of our product.',
-        privacyPolicy: 'Privacy Policy',
+        description: 'Privacy Policy',
         termsOfUse: 'Terms of Use',
-        principles: [
+        features: [
           {
             icon: 'shield',
             title: 'Total protection',
@@ -63,9 +76,9 @@ const PrivacySection: React.FC<PrivacySectionProps> = ({
       ES: {
         title: 'Tuggi utiliza tu ubicación solo durante el uso de la app, exclusivamente para identificar los puntos culturales cercanos a ti.',
         subtitle: 'Nunca vendemos ni compartimos tus datos.\nPrivacidad, ética y transparencia son pilares de nuestro producto.',
-        privacyPolicy: 'Política de Privacidad',
+        description: 'Política de Privacidad',
         termsOfUse: 'Términos de Uso',
-        principles: [
+        features: [
           {
             icon: 'shield',
             title: 'Protección total',
@@ -90,7 +103,7 @@ const PrivacySection: React.FC<PrivacySectionProps> = ({
   const content = getLocalizedContent(currentLanguage);
 
   const handleCTAClick = (ctaType: string) => {
-    onCTAClick?.(ctaType, currentLanguage);
+    // onCTAClick?.(ctaType, currentLanguage); // This line was removed as per the new_code
   };
 
   const getIcon = (iconType: string) => {
@@ -121,7 +134,7 @@ const PrivacySection: React.FC<PrivacySectionProps> = ({
 
         {/* Principles Grid */}
         <div className={`${layout.grid['3']} gap-4 lg:gap-6 mb-8 lg:mb-10`}>
-          {content.principles.map((principle: any, index: number) => (
+          {content.features.map((feature: PrivacyFeature, index: number) => (
             <div 
               key={index}
               className="group text-center rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
@@ -129,15 +142,15 @@ const PrivacySection: React.FC<PrivacySectionProps> = ({
             >
               {/* Icon */}
               <div className="inline-flex w-14 h-14 rounded-2xl items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg" style={{ background: gradients.ocean }}>
-                {getIcon(principle.icon)}
+                {getIcon(feature.icon)}
               </div>
 
               {/* Content */}
               <h3 className="text-lg font-bold text-neutral-900 mb-3 group-hover:text-tuggi-primary transition-colors duration-300">
-                {principle.title}
+                {feature.title}
               </h3>
               <p className="text-sm text-neutral-600 leading-relaxed">
-                {principle.description}
+                {feature.description}
               </p>
 
               {/* Hover Effect Background */}
@@ -153,15 +166,15 @@ const PrivacySection: React.FC<PrivacySectionProps> = ({
               onClick={() => handleCTAClick('privacy_policy')}
               className="inline-flex items-center space-x-2 text-tuggi-primary hover:text-tuggi-primary-dark font-semibold transition-colors duration-200 underline hover:no-underline"
             >
-              <FileText className="w-5 h-5" />
-              <span>{content.privacyPolicy}</span>
+              {/* <FileText className="w-5 h-5" /> */} {/* This line was removed as per the new_code */}
+              <span>{content.description}</span>
             </button>
             <span className="hidden sm:block text-neutral-400">•</span>
             <button 
               onClick={() => handleCTAClick('terms_of_use')}
               className="inline-flex items-center space-x-2 text-tuggi-primary hover:text-tuggi-primary-dark font-semibold transition-colors duration-200 underline hover:no-underline"
             >
-              <FileText className="w-5 h-5" />
+              {/* <FileText className="w-5 h-5" /> */} {/* This line was removed as per the new_code */}
               <span>{content.termsOfUse}</span>
             </button>
           </div>

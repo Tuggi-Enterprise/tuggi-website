@@ -1,6 +1,21 @@
 import React from 'react';
-import { MessageSquare, Users, Lightbulb, ArrowRight } from 'lucide-react';
+import { MessageCircle, MapPin, ArrowRight } from 'lucide-react';
 import { getButtonClasses, layout, gradients } from '../utils/designSystem';
+
+interface Feature {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+interface ContentLanguage {
+  title: string;
+  subtitle: string;
+  description: string;
+  closing: string;
+  joinBeta: string;
+  features: Feature[];
+}
 
 interface CollaborateSectionProps {
   currentLanguage?: string;
@@ -12,8 +27,8 @@ const CollaborateSection: React.FC<CollaborateSectionProps> = ({
   onCTAClick 
 }) => {
   // Localized content
-  const getLocalizedContent = (language: string) => {
-    const content: Record<string, any> = {
+  const getLocalizedContent = (language: string): ContentLanguage => {
+    const content: Record<string, ContentLanguage> = {
       PT: {
         title: 'Colabore com a Tuggi',
         subtitle: 'Durante a fase beta, você pode ir além de explorar.',
@@ -99,13 +114,13 @@ const CollaborateSection: React.FC<CollaborateSectionProps> = ({
   const getIcon = (iconType: string) => {
     switch (iconType) {
       case 'message':
-        return <MessageSquare className="w-8 h-8 text-white" />;
+        return <MessageCircle className="w-8 h-8 text-white" />;
       case 'lightbulb':
-        return <Lightbulb className="w-8 h-8 text-white" />;
+        return <MapPin className="w-8 h-8 text-white" />;
       case 'users':
-        return <Users className="w-8 h-8 text-white" />;
+        return <ArrowRight className="w-8 h-8 text-white" />;
       default:
-        return <MessageSquare className="w-8 h-8 text-white" />;
+        return <MessageCircle className="w-8 h-8 text-white" />;
     }
   };
 
@@ -130,7 +145,7 @@ const CollaborateSection: React.FC<CollaborateSectionProps> = ({
 
         {/* Features Grid */}
         <div className={`${layout.grid['3']} gap-4 lg:gap-6 mb-8 lg:mb-10`}>
-          {content.features.map((feature: any, index: number) => (
+          {content.features.map((feature: Feature, index: number) => (
             <div 
               key={index}
               className="group text-center bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"

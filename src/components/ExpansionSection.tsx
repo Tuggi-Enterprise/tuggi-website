@@ -2,6 +2,20 @@ import React from 'react';
 import { MapPin, Globe, ArrowRight } from 'lucide-react';
 import { getButtonClasses, layout, gradients } from '../utils/designSystem';
 
+interface Feature {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+interface ContentLanguage {
+  title: string;
+  subtitle: string;
+  description: string;
+  cta: string;
+  features: Feature[];
+}
+
 interface ExpansionSectionProps {
   currentLanguage?: string;
   onCTAClick?: (ctaType: string, language: string) => void;
@@ -12,8 +26,8 @@ const ExpansionSection: React.FC<ExpansionSectionProps> = ({
   onCTAClick 
 }) => {
   // Localized content
-  const getLocalizedContent = (language: string) => {
-    const content: Record<string, any> = {
+  const getLocalizedContent = (language: string): ContentLanguage => {
+    const content: Record<string, ContentLanguage> = {
       PT: {
         title: 'Sua cidade ainda não tem a Tuggi?',
         subtitle: 'Estamos começando por São Paulo e algumas cidades do interior — mas queremos saber onde há interesse.',
@@ -96,7 +110,7 @@ const ExpansionSection: React.FC<ExpansionSectionProps> = ({
 
             {/* Features */}
             <div className="space-y-3 mb-6">
-              {content.features.map((feature: any, index: number) => (
+              {content.features.map((feature: Feature, index: number) => (
                 <div key={index} className="flex items-start space-x-4">
                   <div className="w-10 h-10 rounded-lg bg-tuggi-primary/10 flex items-center justify-center flex-shrink-0">
                     {feature.icon === 'map' ? (

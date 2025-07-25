@@ -1,5 +1,5 @@
 import React from 'react';
-import { Compass, MapPin, Heart, Globe, Users, Eye, Headphones, BookOpen, Lightbulb, ArrowRight } from 'lucide-react';
+import { Compass, Users, Eye, BookOpen, ArrowRight, Heart } from 'lucide-react';
 import FinalCTASection from './FinalCTASection';
 
 interface PurposePageProps {

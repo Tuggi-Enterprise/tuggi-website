@@ -2,6 +2,21 @@ import React, { useState, useEffect } from 'react';
 import { Download, Play, MapPin } from 'lucide-react';
 import { getButtonClasses, layout, gradients } from '../utils/designSystem';
 
+interface Features {
+  realTime: string;
+  offline: string;
+  personalized: string;
+}
+
+interface ContentLanguage {
+  title: string;
+  subtitle: string;
+  downloadFree: string;
+  howItWorks: string;
+  availability: string;
+  features: Features;
+}
+
 interface HeroSectionProps {
   currentLanguage?: string;
   onCTAClick?: (ctaType: string, language: string) => void;
@@ -24,17 +39,17 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     const interval = setInterval(() => {
       setIsTransitioning(true);
       setTimeout(() => {
-        setCurrentImageIndex((prev) => (prev + 1) % screenshots.length);
+        setCurrentImageIndex(prev => (prev + 1) % screenshots.length);
         setIsTransitioning(false);
-      }, 300); // Half of the transition duration
+      }, 150);
     }, 4000);
 
     return () => clearInterval(interval);
   }, [screenshots.length]);
 
   // Localized content
-  const getLocalizedContent = (language: string) => {
-    const content: Record<string, any> = {
+  const getLocalizedContent = (language: string): ContentLanguage => {
+    const content: Record<string, ContentLanguage> = {
       PT: {
         title: 'Descubra. Ouça. Construa cultura com a Tuggi.',
         subtitle: 'Explore no seu ritmo, sem rotas fixas.\nA Tuggi transforma qualquer trajeto em uma experiência sonora de conhecimento.\nDurante o beta, o app é gratuito — e você pode nos ajudar a melhorar.',
@@ -43,8 +58,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         availability: 'Disponível em São Paulo e cidades do interior. Novos lugares em breve.',
         features: {
           realTime: 'Narrativas em tempo real',
-          noRoutes: 'Sem rotas fixas',
-          cultural: 'Experiência cultural'
+          offline: 'Offline',
+          personalized: 'Personalizado'
         }
       },
       EN: {
@@ -55,8 +70,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         availability: 'Available in São Paulo and interior cities. New places coming soon.',
         features: {
           realTime: 'Real-time narratives',
-          noRoutes: 'No fixed routes',
-          cultural: 'Cultural experience'
+          offline: 'Offline',
+          personalized: 'Personalized'
         }
       },
       ES: {
@@ -67,8 +82,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         availability: 'Disponible en São Paulo y ciudades del interior. Nuevos lugares próximamente.',
         features: {
           realTime: 'Narrativas en tiempo real',
-          noRoutes: 'Sin rutas fijas',
-          cultural: 'Experiencia cultural'
+          offline: 'Offline',
+          personalized: 'Personalizado'
         }
       }
     };

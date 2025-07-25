@@ -13,11 +13,18 @@ import PurposePage from './components/PurposePage';
 import ContactPage from './components/ContactPage';
 import InvestorsPage from './components/InvestorsPage';
 import PrivacyPolicyPage from './components/PrivacyPolicyPage';
-import TermsOfUsePage from './components/TermsOfUsePage';
 import CookiePolicyPage from './components/CookiePolicyPage';
+import TermsOfUsePage from './components/TermsOfUsePage';
+import { parseUrlPath, generateLocalizedUrl, isValidLanguage } from './utils/routing';
 import { useSEO } from './hooks/useSEO';
 import { initializeAnalytics, trackPerformanceMetrics, trackPageView, trackLanguageChange } from './utils/seo';
-import { parseUrlPath, generateLocalizedUrl, getDefaultLanguage, isValidLanguage } from './utils/routing';
+
+// Extend Window interface for gtag
+declare global {
+  interface Window {
+    gtag?: (command: string, action: string, parameters?: Record<string, unknown>) => void;
+  }
+}
 
 function App() {
   const [currentLanguage, setCurrentLanguage] = useState('PT');
@@ -118,8 +125,8 @@ function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     
     // Track page navigation with detailed analytics
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'page_navigation', {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'page_navigation', {
         event_category: 'Navigation',
         event_label: page,
         language: currentLanguage,
@@ -145,8 +152,8 @@ function App() {
           setCurrentLanguage(language);
           
           // Track back/forward navigation
-          if (typeof window !== 'undefined' && (window as any).gtag) {
-            (window as any).gtag('event', 'browser_navigation', {
+          if (typeof window !== 'undefined' && window.gtag) {
+            window.gtag('event', 'browser_navigation', {
               event_category: 'Navigation',
               event_label: 'back_forward',
               page_type: page,
@@ -194,8 +201,8 @@ function App() {
   // Enhanced CTA click handler with multilingual tracking and URL navigation
   const handleCTAClick = (ctaType: string, position: string = 'unknown') => {
     // Track analytics first
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'cta_click', {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'cta_click', {
         event_category: 'CTA Interaction',
         event_label: ctaType,
         page_type: currentPage,
@@ -366,39 +373,6 @@ function App() {
           </>
         );
     }
-  };
-
-  // Simple localization function (can be expanded with proper i18n library)
-  const getLocalizedText = (key: string, language: string): string => {
-    const translations: Record<string, Record<string, string>> = {
-      contact_specialists: {
-        EN: 'Questions? Speak with our travel-tech specialists',
-        PT: 'Dúvidas? Fale com nossos especialistas em tecnologia de viagem',
-        ES: '¿Preguntas? Habla con nuestros especialistas en tecnología de viajes'
-      },
-      request_demo_aria: {
-        EN: 'Request a demo of Tuggi Drive',
-        PT: 'Solicitar uma demonstração do Tuggi Drive',
-        ES: 'Solicitar una demostración de Tuggi Drive'
-      },
-      learn_more_aria: {
-        EN: 'Join the Early Access Program for Tuggi Drive',
-        PT: 'Participar do Programa de Acesso Antecipado do Tuggi Drive',
-        ES: 'Unirse al Programa de Acceso Temprano de Tuggi Drive'
-      },
-      email_specialists_aria: {
-        EN: 'Email our travel-tech specialists',
-        PT: 'Envie email para nossos especialistas em tecnologia de viagem',
-        ES: 'Envía email a nuestros especialistas en tecnología de viajes'
-      },
-      call_specialists_aria: {
-        EN: 'Call our travel-tech specialists',
-        PT: 'Ligue para nossos especialistas em tecnologia de viagem',
-        ES: 'Llama a nuestros especialistas en tecnología de viajes'
-      }
-    };
-
-    return translations[key]?.[language] || translations[key]?.['EN'] || key;
   };
 
   if (!isInitialized) {

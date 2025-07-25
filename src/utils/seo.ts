@@ -1,7 +1,18 @@
-// SEO and Analytics utilities for multilingual support with enhanced keywords and structured data
+// Enhanced SEO utilities for Tuggi with multilingual support and comprehensive tracking
 
 import { generateHreflangUrls, getLocaleCode, getLocalizedPageUrl } from './routing';
 
+// Extend Window interface for Google Analytics
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+    dataLayer?: unknown[];
+  }
+}
+
+/**
+ * Comprehensive SEO metadata interface supporting multiple languages
+ */
 export interface SEOConfig {
   title: string;
   description: string;
@@ -393,7 +404,7 @@ export const updatePageSEO = (seoConfig: SEOConfig) => {
 
 // Enhanced Google Analytics tracking with multilingual support
 export const trackPageView = (page: string, language: string, measurementId?: string) => {
-  if (typeof window !== 'undefined' && (window as any).gtag) {
+  if (typeof window !== 'undefined' && window.gtag) {
     const locale = getLocaleCode(language);
     
     // Track Core Web Vitals with language context
@@ -402,7 +413,7 @@ export const trackPageView = (page: string, language: string, measurementId?: st
         // Use dynamic import to avoid build-time dependency issues
         import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
           getCLS((metric) => {
-            (window as any).gtag('event', 'web_vitals', {
+            window.gtag('event', 'web_vitals', {
               event_category: 'Performance',
               event_label: 'CLS',
               value: Math.round(metric.value * 1000),
@@ -413,7 +424,7 @@ export const trackPageView = (page: string, language: string, measurementId?: st
           });
 
           getFID((metric) => {
-            (window as any).gtag('event', 'web_vitals', {
+            window.gtag('event', 'web_vitals', {
               event_category: 'Performance',
               event_label: 'FID',
               value: Math.round(metric.value),
@@ -424,7 +435,7 @@ export const trackPageView = (page: string, language: string, measurementId?: st
           });
 
           getFCP((metric) => {
-            (window as any).gtag('event', 'web_vitals', {
+            window.gtag('event', 'web_vitals', {
               event_category: 'Performance',
               event_label: 'FCP',
               value: Math.round(metric.value),
@@ -435,7 +446,7 @@ export const trackPageView = (page: string, language: string, measurementId?: st
           });
 
           getLCP((metric) => {
-            (window as any).gtag('event', 'web_vitals', {
+            window.gtag('event', 'web_vitals', {
               event_category: 'Performance',
               event_label: 'LCP',
               value: Math.round(metric.value),
@@ -446,7 +457,7 @@ export const trackPageView = (page: string, language: string, measurementId?: st
           });
 
           getTTFB((metric) => {
-            (window as any).gtag('event', 'web_vitals', {
+            window.gtag('event', 'web_vitals', {
               event_category: 'Performance',
               event_label: 'TTFB',
               value: Math.round(metric.value),
@@ -463,7 +474,7 @@ export const trackPageView = (page: string, language: string, measurementId?: st
 
     // Enhanced page view tracking with multilingual context
     if (measurementId) {
-      (window as any).gtag('config', measurementId, {
+      window.gtag('config', measurementId, {
         page_title: document.title,
         page_location: window.location.href,
         language: language,
@@ -478,7 +489,7 @@ export const trackPageView = (page: string, language: string, measurementId?: st
       });
     }
 
-    (window as any).gtag('event', 'page_view', {
+    window.gtag('event', 'page_view', {
       language: language,
       locale: locale,
       page_type: page,
@@ -502,7 +513,7 @@ export const trackPageView = (page: string, language: string, measurementId?: st
       const scrollDepth = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
       if (scrollDepth > maxScrollDepth && scrollDepth % 25 === 0) {
         maxScrollDepth = scrollDepth;
-        (window as any).gtag('event', 'scroll_depth', {
+        window.gtag('event', 'scroll_depth', {
           event_category: 'User Engagement',
           event_label: `${scrollDepth}%`,
           page_type: page,
@@ -518,7 +529,7 @@ export const trackPageView = (page: string, language: string, measurementId?: st
     const startTime = Date.now();
     const trackTimeOnPage = () => {
       const timeOnPage = Math.round((Date.now() - startTime) / 1000);
-      (window as any).gtag('event', 'time_on_page', {
+      window.gtag('event', 'time_on_page', {
         event_category: 'User Engagement',
         value: timeOnPage,
         page_type: page,
@@ -540,8 +551,8 @@ export const trackPageView = (page: string, language: string, measurementId?: st
 
 // Track language changes with detailed analytics
 export const trackLanguageChange = (newLanguage: string, previousLanguage: string, page: string) => {
-  if (typeof window !== 'undefined' && (window as any).gtag) {
-    (window as any).gtag('event', 'language_change', {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', 'language_change', {
       event_category: 'User Interaction',
       event_label: `${previousLanguage}_to_${newLanguage}`,
       language: newLanguage,
@@ -557,7 +568,7 @@ export const trackLanguageChange = (newLanguage: string, previousLanguage: strin
     localStorage.setItem('tuggi_preferred_language', newLanguage);
     
     // Track conversion funnel impact of language change
-    (window as any).gtag('event', 'conversion_funnel', {
+    window.gtag('event', 'conversion_funnel', {
       event_category: 'Language Optimization',
       event_label: `language_switch_${page}`,
       language: newLanguage,
@@ -569,10 +580,10 @@ export const trackLanguageChange = (newLanguage: string, previousLanguage: strin
 
 // Enhanced CTA tracking with conversion funnel data and multilingual context
 export const trackCTAClick = (ctaType: string, page: string, language: string, additionalData?: Record<string, any>) => {
-  if (typeof window !== 'undefined' && (window as any).gtag) {
+  if (typeof window !== 'undefined' && window.gtag) {
     const locale = getLocaleCode(language);
     
-    (window as any).gtag('event', 'cta_click', {
+    window.gtag('event', 'cta_click', {
       event_category: 'CTA Interaction',
       event_label: ctaType,
       page_type: page,
@@ -587,7 +598,7 @@ export const trackCTAClick = (ctaType: string, page: string, language: string, a
     });
 
     // Track conversion funnel progression with language context
-    (window as any).gtag('event', 'conversion_funnel', {
+    window.gtag('event', 'conversion_funnel', {
       event_category: 'Conversion Tracking',
       event_label: `${page}_to_${ctaType}`,
       funnel_step: getConversionStep(ctaType),
@@ -600,7 +611,7 @@ export const trackCTAClick = (ctaType: string, page: string, language: string, a
     // Track high-value conversions
     const conversionValue = getCTAValue(ctaType);
     if (conversionValue >= 100) {
-      (window as any).gtag('event', 'conversion', {
+      window.gtag('event', 'conversion', {
         event_category: 'High Value Conversion',
         event_label: ctaType,
         value: conversionValue,
@@ -650,12 +661,12 @@ const getCTAValue = (ctaType: string): number => {
 
 // Enhanced form tracking with lead scoring and multilingual context
 export const trackFormSubmission = (formType: string, success: boolean, formData?: Record<string, any>) => {
-  if (typeof window !== 'undefined' && (window as any).gtag) {
+  if (typeof window !== 'undefined' && window.gtag) {
     const leadScore = calculateLeadScore(formData);
     const language = formData?.language || 'EN';
     const locale = getLocaleCode(language);
     
-    (window as any).gtag('event', 'form_submission', {
+    window.gtag('event', 'form_submission', {
       event_category: 'Form Interaction',
       event_label: formType,
       success: success,
@@ -673,7 +684,7 @@ export const trackFormSubmission = (formType: string, success: boolean, formData
 
     // Track as conversion if successful
     if (success) {
-      (window as any).gtag('event', 'conversion', {
+      window.gtag('event', 'conversion', {
         event_category: 'Lead Generation',
         event_label: formType,
         value: leadScore,
@@ -685,7 +696,7 @@ export const trackFormSubmission = (formType: string, success: boolean, formData
 
       // Track high-quality leads separately
       if (leadScore > 70) {
-        (window as any).gtag('event', 'high_quality_lead', {
+        window.gtag('event', 'high_quality_lead', {
           event_category: 'Premium Lead Generation',
           event_label: formType,
           value: leadScore,
@@ -748,10 +759,10 @@ const getIndustryVertical = (message?: string): string => {
 
 // Enhanced link tracking with multilingual context
 export const trackLinkClick = (linkType: string, destination: string, language: string, additionalData?: Record<string, any>) => {
-  if (typeof window !== 'undefined' && (window as any).gtag) {
+  if (typeof window !== 'undefined' && window.gtag) {
     const locale = getLocaleCode(language);
     
-    (window as any).gtag('event', 'link_click', {
+    window.gtag('event', 'link_click', {
       event_category: 'Link Interaction',
       event_label: linkType,
       destination: destination,
@@ -776,14 +787,14 @@ export const initializeAnalytics = (measurementId: string) => {
     document.head.appendChild(script);
 
     // Initialize gtag with enhanced multilingual configuration
-    (window as any).dataLayer = (window as any).dataLayer || [];
-    (window as any).gtag = function() {
-      (window as any).dataLayer.push(arguments);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(...args: unknown[]) {
+      window.dataLayer?.push(args);
     };
-    (window as any).gtag('js', new Date());
+    window.gtag('js', new Date());
     
     // Enhanced configuration for multilingual tracking
-    (window as any).gtag('config', measurementId, {
+    window.gtag('config', measurementId, {
       page_title: document.title,
       page_location: window.location.href,
       // Enhanced custom dimensions for multilingual tracking
@@ -819,7 +830,7 @@ export const initializeAnalytics = (measurementId: string) => {
     });
 
     // Set up enhanced ecommerce tracking with multilingual context
-    (window as any).gtag('config', measurementId, {
+    window.gtag('config', measurementId, {
       currency: 'USD',
       country: 'US',
       language: 'en'
@@ -828,7 +839,7 @@ export const initializeAnalytics = (measurementId: string) => {
     // Track initial language preference
     const preferredLanguage = localStorage.getItem('tuggi_preferred_language');
     if (preferredLanguage) {
-      (window as any).gtag('event', 'returning_user_language', {
+      window.gtag('event', 'returning_user_language', {
         event_category: 'User Preference',
         event_label: preferredLanguage,
         language: preferredLanguage,
@@ -845,12 +856,12 @@ export const trackPerformanceMetrics = () => {
       setTimeout(() => {
         const perfData = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
         
-        if ((window as any).gtag && perfData) {
+        if (window.gtag && perfData) {
           // Get current language from URL
           const currentLanguage = window.location.pathname.split('/')[1] || 'en';
           const language = currentLanguage === 'pt' ? 'PT' : currentLanguage === 'es' ? 'ES' : 'EN';
           
-          (window as any).gtag('event', 'performance_metrics', {
+          window.gtag('event', 'performance_metrics', {
             event_category: 'Performance',
             dns_time: Math.round(perfData.domainLookupEnd - perfData.domainLookupStart),
             connect_time: Math.round(perfData.connectEnd - perfData.connectStart),

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Globe, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { getLanguageFlag, getLanguageName } from '../utils/routing';
 import TuggiLogo from './TuggiLogo';
 

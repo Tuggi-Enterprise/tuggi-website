@@ -122,10 +122,6 @@ const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
 
   const content = getLocalizedContent(currentLanguage);
 
-  const handleCTAClick = (ctaType: string) => {
-    onCTAClick?.(ctaType, currentLanguage);
-  };
-
   const getIcon = (iconType: string) => {
     switch (iconType) {
       case 'download':

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Cookie, Settings, Eye, BarChart3, Shield, CheckCircle, X, Info, Globe, FileText } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Cookie, Shield, Eye, Settings, ExternalLink, ChevronDown, ChevronUp, BarChart3, Info, CheckCircle, Globe, FileText } from 'lucide-react';
 
 interface CookiePolicyPageProps {
   currentLanguage?: string;

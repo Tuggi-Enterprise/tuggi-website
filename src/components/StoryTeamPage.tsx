@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, Award, Globe, Lightbulb, ArrowRight, MapPin, Calendar, Briefcase, ExternalLink } from 'lucide-react';
+import { Users, Award, Target, TrendingUp, Lightbulb, Heart, Zap, Globe, MapPin, Mail, Linkedin, Instagram, Briefcase, ExternalLink } from 'lucide-react';
 import FinalCTASection from './FinalCTASection';
 
 interface StoryTeamPageProps {
