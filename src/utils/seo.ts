@@ -24,117 +24,117 @@ export const generateSEOConfig = (
   const seoData: Record<string, Record<string, Partial<SEOConfig>>> = {
     home: {
       EN: {
-        title: 'Tuggi Drive - Transforming Journeys into Meaningful Experiences | B2B Tourism Technology',
-        description: 'Transform your transportation business with Tuggi Drive Navigation Audio App. AI-powered cultural storytelling for professional drivers. Increase revenue and satisfaction.',
-        keywords: 'AI travel guide for transport companies, B2B tourism technology, Tuggi Drive navigation audio app, transportation storytelling, fleet management software, cultural tourism tech',
-        ogTitle: 'Tuggi Drive - Transforming Journeys into Meaningful Experiences',
-        ogDescription: 'Cultural storytelling platform for transportation companies. Transform rides into memorable experiences with automatic narration and multilingual support.'
+        title: 'Tuggi – Discover culture and stories wherever you go',
+        description: 'Explore the city with Tuggi: an app that narrates, through audio and in real-time, cultural curiosities and stories about the places around you. Freedom to walk, drive and discover.',
+        keywords: 'cultural tourism app, audio guide, local stories, cultural curiosities, urban exploration, real-time narrative, place discovery',
+        ogTitle: 'Tuggi – Discover culture and stories wherever you go',
+        ogDescription: 'Explore the city with Tuggi: an app that narrates, through audio and in real-time, cultural curiosities and stories about the places around you. Freedom to walk, drive and discover.'
       },
       PT: {
-        title: 'Tuggi Drive - Transformando Jornadas em Experiências Significativas | Tecnologia B2B Turismo',
-        description: 'Transforme seu negócio de transporte com o App de Áudio Tuggi Drive. Narrativa cultural com IA para motoristas profissionais. Aumente receita e satisfação .',
-        keywords: 'guia de viagem IA empresas transporte, tecnologia B2B turismo, app navegação áudio Tuggi Drive, narrativa transporte, software gestão frota, tecnologia turismo cultural',
-        ogTitle: 'Tuggi Drive - Transformando Jornadas em Experiências Significativas',
-        ogDescription: 'Plataforma de narrativa cultural para empresas de transporte. Transforme viagens em experiências memoráveis com narração automática e suporte multilíngue.'
+        title: 'Tuggi – Descubra cultura e histórias por onde você passa',
+        description: 'Explore a cidade com a Tuggi: um app que narra, por áudio e em tempo real, curiosidades culturais e histórias sobre os lugares ao seu redor. Liberdade para caminhar, dirigir e descobrir.',
+        keywords: 'app de turismo cultural, guia de áudio, histórias locais, curiosidades culturais, exploração urbana, narrativa em tempo real, descoberta de lugares',
+        ogTitle: 'Tuggi – Descubra cultura e histórias por onde você passa',
+        ogDescription: 'Explore a cidade com a Tuggi: um app que narra, por áudio e em tempo real, curiosidades culturais e histórias sobre os lugares ao seu redor. Liberdade para caminhar, dirigir e descobrir.'
       },
       ES: {
-        title: 'Tuggi Drive - Transformando Viajes en Experiencias Significativas | Tecnología B2B Turismo',
-        description: 'Transforme su negocio de transporte con la App de Audio Tuggi Drive. Narrativa cultural con IA para conductores profesionales. Aumente ingresos y satisfacción.',
-        keywords: 'guía de viaje IA empresas transporte, tecnología B2B turismo, app navegación audio Tuggi Drive, narrativa transporte, software gestión flotas, tecnología turismo cultural',
-        ogTitle: 'Tuggi Drive - Transformando Viajes en Experiencias Significativas',
-        ogDescription: 'Plataforma de narrativa cultural para empresas de transporte. Transforme viajes en experiencias memorables con narración automática y soporte multilingüe.'
+        title: 'Tuggi – Descubre cultura e historias donde vayas',
+        description: 'Explora la ciudad con Tuggi: una app que narra, por audio y en tiempo real, curiosidades culturales e historias sobre los lugares a tu alrededor. Libertad para caminar, conducir y descubrir.',
+        keywords: 'app de turismo cultural, guía de audio, historias locales, curiosidades culturales, exploración urbana, narrativa en tiempo real, descubrimiento de lugares',
+        ogTitle: 'Tuggi – Descubre cultura e historias donde vayas',
+        ogDescription: 'Explora la ciudad con Tuggi: una app que narra, por audio y en tiempo real, curiosidades culturales e historias sobre los lugares a tu alrededor. Libertad para caminar, conducir y descubrir.'
       }
     },
     contact: {
       EN: {
-        title: 'Tuggi Drive - Transforming Journeys into Meaningful Experiences | B2B Tourism Technology',
-        description: 'Transform your transportation business with Tuggi Drive Navigation Audio App. AI-powered cultural storytelling for professional drivers. Increase revenue and satisfaction.',
-        keywords: 'AI travel guide for transport companies, B2B tourism technology, Tuggi Drive navigation audio app, transportation storytelling, fleet management software, cultural tourism tech',
-        ogTitle: 'Tuggi Drive - Transforming Journeys into Meaningful Experiences',
-        ogDescription: 'Cultural storytelling platform for transportation companies. Transform rides into memorable experiences with automatic narration and multilingual support.'
+        title: 'Contact Us - Tuggi – Discover culture and stories wherever you go',
+        description: 'Get in touch with Tuggi to learn more about our cultural discovery app. Explore cities with real-time audio stories and cultural curiosities.',
+        keywords: 'contact tuggi, cultural app support, audio guide app, local stories app, cultural tourism app',
+        ogTitle: 'Contact Us - Tuggi – Discover culture and stories wherever you go',
+        ogDescription: 'Get in touch with Tuggi to learn more about our cultural discovery app. Explore cities with real-time audio stories and cultural curiosities.'
       },
       PT: {
-        title: 'Tuggi Drive - Transformando Jornadas em Experiências Significativas | Tecnologia B2B Turismo',
-        description: 'Transforme seu negócio de transporte com o App de Áudio Tuggi Drive. Narrativa cultural com IA para motoristas profissionais. Aumente receita e satisfação .',
-        keywords: 'guia de viagem IA empresas transporte, tecnologia B2B turismo, app navegação áudio Tuggi Drive, narrativa transporte, software gestão frota, tecnologia turismo cultural',
-        ogTitle: 'Tuggi Drive - Transformando Jornadas em Experiências Significativas',
-        ogDescription: 'Plataforma de narrativa cultural para empresas de transporte. Transforme viagens em experiências memoráveis com narração automática e suporte multilíngue.'
+        title: 'Entre em Contato - Tuggi – Descubra cultura e histórias por onde você passa',
+        description: 'Entre em contato com a Tuggi para saber mais sobre nosso app de descoberta cultural. Explore cidades com histórias em áudio em tempo real e curiosidades culturais.',
+        keywords: 'contato tuggi, suporte app cultural, app guia de áudio, app histórias locais, app turismo cultural',
+        ogTitle: 'Entre em Contato - Tuggi – Descubra cultura e histórias por onde você passa',
+        ogDescription: 'Entre em contato com a Tuggi para saber mais sobre nosso app de descoberta cultural. Explore cidades com histórias em áudio em tempo real e curiosidades culturais.'
       },
       ES: {
-        title: 'Tuggi Drive - Transformando Viajes en Experiencias Significativas | Tecnología B2B Turismo',
-        description: 'Transforme su negocio de transporte con la App de Audio Tuggi Drive. Narrativa cultural con IA para conductores profesionales. Aumente ingresos y satisfacción.',
-        keywords: 'guía de viaje IA empresas transporte, tecnología B2B turismo, app navegación audio Tuggi Drive, narrativa transporte, software gestión flotas, tecnología turismo cultural',
-        ogTitle: 'Tuggi Drive - Transformando Viajes en Experiencias Significativas',
-        ogDescription: 'Plataforma de narrativa cultural para empresas de transporte. Transforme viajes en experiencias memorables con narración automática y soporte multilingüe.'
+        title: 'Contáctanos - Tuggi – Descubre cultura e historias donde vayas',
+        description: 'Ponte en contacto con Tuggi para conocer más sobre nuestra app de descubrimiento cultural. Explora ciudades con historias de audio en tiempo real y curiosidades culturales.',
+        keywords: 'contacto tuggi, soporte app cultural, app guía de audio, app historias locales, app turismo cultural',
+        ogTitle: 'Contáctanos - Tuggi – Descubre cultura e historias donde vayas',
+        ogDescription: 'Ponte en contacto con Tuggi para conocer más sobre nuestra app de descubrimiento cultural. Explora ciudades con historias de audio en tiempo real y curiosidades culturales.'
       }
     },
     purpose: {
       EN: {
-        title: 'Tuggi Drive - Transforming Journeys into Meaningful Experiences | B2B Tourism Technology',
-        description: 'Transform your transportation business with Tuggi Drive Navigation Audio App. AI-powered cultural storytelling for professional drivers. Increase revenue and satisfaction.',
-        keywords: 'AI travel guide for transport companies, B2B tourism technology, Tuggi Drive navigation audio app, transportation storytelling, fleet management software, cultural tourism tech',
-        ogTitle: 'Tuggi Drive - Transforming Journeys into Meaningful Experiences',
-        ogDescription: 'Cultural storytelling platform for transportation companies. Transform rides into memorable experiences with automatic narration and multilingual support.'
+        title: 'Our Purpose - Tuggi – Discover culture and stories wherever you go',
+        description: 'Learn about Tuggi\'s mission to connect people with local culture through real-time audio stories and cultural discovery.',
+        keywords: 'tuggi purpose, cultural discovery mission, local stories app, cultural tourism app, audio guide app',
+        ogTitle: 'Our Purpose - Tuggi – Discover culture and stories wherever you go',
+        ogDescription: 'Learn about Tuggi\'s mission to connect people with local culture through real-time audio stories and cultural discovery.'
       },
       PT: {
-        title: 'Tuggi Drive - Transformando Jornadas em Experiências Significativas | Tecnologia B2B Turismo',
-        description: 'Transforme seu negócio de transporte com o App de Áudio Tuggi Drive. Narrativa cultural com IA para motoristas profissionais. Aumente receita e satisfação .',
-        keywords: 'guia de viagem IA empresas transporte, tecnologia B2B turismo, app navegação áudio Tuggi Drive, narrativa transporte, software gestão frota, tecnologia turismo cultural',
-        ogTitle: 'Tuggi Drive - Transformando Jornadas em Experiências Significativas',
-        ogDescription: 'Plataforma de narrativa cultural para empresas de transporte. Transforme viagens em experiências memoráveis com narração automática e suporte multilíngue.'
+        title: 'Nosso Propósito - Tuggi – Descubra cultura e histórias por onde você passa',
+        description: 'Conheça a missão da Tuggi de conectar pessoas com a cultura local através de histórias em áudio em tempo real e descoberta cultural.',
+        keywords: 'propósito tuggi, missão descoberta cultural, app histórias locais, app turismo cultural, app guia de áudio',
+        ogTitle: 'Nosso Propósito - Tuggi – Descubra cultura e histórias por onde você passa',
+        ogDescription: 'Conheça a missão da Tuggi de conectar pessoas com a cultura local através de histórias em áudio em tempo real e descoberta cultural.'
       },
       ES: {
-        title: 'Tuggi Drive - Transformando Viajes en Experiencias Significativas | Tecnología B2B Turismo',
-        description: 'Transforme su negocio de transporte con la App de Audio Tuggi Drive. Narrativa cultural con IA para conductores profesionales. Aumente ingresos y satisfacción.',
-        keywords: 'guía de viaje IA empresas transporte, tecnología B2B turismo, app navegación audio Tuggi Drive, narrativa transporte, software gestión flotas, tecnología turismo cultural',
-        ogTitle: 'Tuggi Drive - Transformando Viajes en Experiencias Significativas',
-        ogDescription: 'Plataforma de narrativa cultural para empresas de transporte. Transforme viajes en experiencias memorables con narración automática y soporte multilingüe.'
+        title: 'Nuestro Propósito - Tuggi – Descubre cultura e historias donde vayas',
+        description: 'Conoce la misión de Tuggi de conectar personas con la cultura local a través de historias de audio en tiempo real y descubrimiento cultural.',
+        keywords: 'propósito tuggi, misión descubrimiento cultural, app historias locales, app turismo cultural, app guía de audio',
+        ogTitle: 'Nuestro Propósito - Tuggi – Descubre cultura e historias donde vayas',
+        ogDescription: 'Conoce la misión de Tuggi de conectar personas con la cultura local a través de historias de audio en tiempo real y descubrimiento cultural.'
       }
     },
     privacy: {
       EN: {
-        title: 'Tuggi Drive - Transforming Journeys into Meaningful Experiences | B2B Tourism Technology',
-        description: 'Transform your transportation business with Tuggi Drive Navigation Audio App. AI-powered cultural storytelling for professional drivers. Increase revenue and satisfaction.',
-        keywords: 'AI travel guide for transport companies, B2B tourism technology, Tuggi Drive navigation audio app, transportation storytelling, fleet management software, cultural tourism tech',
-        ogTitle: 'Tuggi Drive - Transforming Journeys into Meaningful Experiences',
-        ogDescription: 'Cultural storytelling platform for transportation companies. Transform rides into memorable experiences with automatic narration and multilingual support.'
+        title: 'Privacy Policy - Tuggi – Discover culture and stories wherever you go',
+        description: 'Learn about how Tuggi protects your privacy and data while you explore cities with our cultural discovery app.',
+        keywords: 'tuggi privacy policy, data protection, cultural app privacy, audio guide privacy, local stories app privacy',
+        ogTitle: 'Privacy Policy - Tuggi – Discover culture and stories wherever you go',
+        ogDescription: 'Learn about how Tuggi protects your privacy and data while you explore cities with our cultural discovery app.'
       },
       PT: {
-        title: 'Tuggi Drive - Transformando Jornadas em Experiências Significativas | Tecnologia B2B Turismo',
-        description: 'Transforme seu negócio de transporte com o App de Áudio Tuggi Drive. Narrativa cultural com IA para motoristas profissionais. Aumente receita e satisfação .',
-        keywords: 'guia de viagem IA empresas transporte, tecnologia B2B turismo, app navegação áudio Tuggi Drive, narrativa transporte, software gestão frota, tecnologia turismo cultural',
-        ogTitle: 'Tuggi Drive - Transformando Jornadas em Experiências Significativas',
-        ogDescription: 'Plataforma de narrativa cultural para empresas de transporte. Transforme viagens em experiências memoráveis com narração automática e suporte multilíngue.'
+        title: 'Política de Privacidade - Tuggi – Descubra cultura e histórias por onde você passa',
+        description: 'Saiba como a Tuggi protege sua privacidade e dados enquanto você explora cidades com nosso app de descoberta cultural.',
+        keywords: 'política privacidade tuggi, proteção dados, privacidade app cultural, privacidade guia áudio, privacidade app histórias locais',
+        ogTitle: 'Política de Privacidade - Tuggi – Descubra cultura e histórias por onde você passa',
+        ogDescription: 'Saiba como a Tuggi protege sua privacidade e dados enquanto você explora cidades com nosso app de descoberta cultural.'
       },
       ES: {
-        title: 'Tuggi Drive - Transformando Viajes en Experiencias Significativas | Tecnología B2B Turismo',
-        description: 'Transforme su negocio de transporte con la App de Audio Tuggi Drive. Narrativa cultural con IA para conductores profesionales. Aumente ingresos y satisfacción.',
-        keywords: 'guía de viaje IA empresas transporte, tecnología B2B turismo, app navegación audio Tuggi Drive, narrativa transporte, software gestión flotas, tecnología turismo cultural',
-        ogTitle: 'Tuggi Drive - Transformando Viajes en Experiencias Significativas',
-        ogDescription: 'Plataforma de narrativa cultural para empresas de transporte. Transforme viajes en experiencias memorables con narración automática y soporte multilingüe.'
+        title: 'Política de Privacidad - Tuggi – Descubre cultura e historias donde vayas',
+        description: 'Conoce cómo Tuggi protege tu privacidad y datos mientras exploras ciudades con nuestra app de descubrimiento cultural.',
+        keywords: 'política privacidad tuggi, protección datos, privacidad app cultural, privacidad guía audio, privacidad app historias locales',
+        ogTitle: 'Política de Privacidad - Tuggi – Descubre cultura e historias donde vayas',
+        ogDescription: 'Conoce cómo Tuggi protege tu privacidad y datos mientras exploras ciudades con nuestra app de descubrimiento cultural.'
       }
     },
     cookies: {
       EN: {
-        title: 'Tuggi Drive - Transforming Journeys into Meaningful Experiences | B2B Tourism Technology',
-        description: 'Transform your transportation business with Tuggi Drive Navigation Audio App. AI-powered cultural storytelling for professional drivers. Increase revenue and satisfaction.',
-        keywords: 'AI travel guide for transport companies, B2B tourism technology, Tuggi Drive navigation audio app, transportation storytelling, fleet management software, cultural tourism tech',
-        ogTitle: 'Tuggi Drive - Transforming Journeys into Meaningful Experiences',
-        ogDescription: 'Cultural storytelling platform for transportation companies. Transform rides into memorable experiences with automatic narration and multilingual support.'
+        title: 'Cookie Policy - Tuggi – Discover culture and stories wherever you go',
+        description: 'Learn about how Tuggi uses cookies to enhance your cultural discovery experience and improve our app.',
+        keywords: 'tuggi cookie policy, cookie usage, cultural app cookies, audio guide cookies, local stories app cookies',
+        ogTitle: 'Cookie Policy - Tuggi – Discover culture and stories wherever you go',
+        ogDescription: 'Learn about how Tuggi uses cookies to enhance your cultural discovery experience and improve our app.'
       },
       PT: {
-        title: 'Tuggi Drive - Transformando Jornadas em Experiências Significativas | Tecnologia B2B Turismo',
-        description: 'Transforme seu negócio de transporte com o App de Áudio Tuggi Drive. Narrativa cultural com IA para motoristas profissionais. Aumente receita e satisfação .',
-        keywords: 'guia de viagem IA empresas transporte, tecnologia B2B turismo, app navegação áudio Tuggi Drive, narrativa transporte, software gestão frota, tecnologia turismo cultural',
-        ogTitle: 'Tuggi Drive - Transformando Jornadas em Experiências Significativas',
-        ogDescription: 'Plataforma de narrativa cultural para empresas de transporte. Transforme viagens em experiências memoráveis com narração automática e suporte multilíngue.'
+        title: 'Política de Cookies - Tuggi – Descubra cultura e histórias por onde você passa',
+        description: 'Saiba como a Tuggi usa cookies para melhorar sua experiência de descoberta cultural e aprimorar nosso app.',
+        keywords: 'política cookies tuggi, uso cookies, cookies app cultural, cookies guia áudio, cookies app histórias locais',
+        ogTitle: 'Política de Cookies - Tuggi – Descubra cultura e histórias por onde você passa',
+        ogDescription: 'Saiba como a Tuggi usa cookies para melhorar sua experiência de descoberta cultural e aprimorar nosso app.'
       },
       ES: {
-        title: 'Tuggi Drive - Transformando Viajes en Experiencias Significativas | Tecnología B2B Turismo',
-        description: 'Transforme su negocio de transporte con la App de Audio Tuggi Drive. Narrativa cultural con IA para conductores profesionales. Aumente ingresos y satisfacción.',
-        keywords: 'guía de viaje IA empresas transporte, tecnología B2B turismo, app navegación audio Tuggi Drive, narrativa transporte, software gestión flotas, tecnología turismo cultural',
-        ogTitle: 'Tuggi Drive - Transformando Viajes en Experiencias Significativas',
-        ogDescription: 'Plataforma de narrativa cultural para empresas de transporte. Transforme viajes en experiencias memorables con narración automática y soporte multilingüe.'
+        title: 'Política de Cookies - Tuggi – Descubre cultura e historias donde vayas',
+        description: 'Conoce cómo Tuggi usa cookies para mejorar tu experiencia de descubrimiento cultural y mejorar nuestra app.',
+        keywords: 'política cookies tuggi, uso cookies, cookies app cultural, cookies guía audio, cookies app historias locales',
+        ogTitle: 'Política de Cookies - Tuggi – Descubre cultura e historias donde vayas',
+        ogDescription: 'Conoce cómo Tuggi usa cookies para mejorar tu experiencia de descubrimiento cultural y mejorar nuestra app.'
       }
     }
   };
@@ -155,11 +155,11 @@ export const generateSEOConfig = (
     : `${baseUrl}/${langCode}/${localizedPageUrl}`;
 
   return {
-    title: pageData.title || 'Tuggi Drive - AI Travel Guide for Transport Companies',
-    description: pageData.description || 'Transform your transportation business with AI-powered cultural storytelling technology.',
-    keywords: pageData.keywords || 'AI travel guide for transport companies, B2B tourism technology, Tuggi Drive navigation audio app',
-    ogTitle: pageData.ogTitle || pageData.title || 'Tuggi Drive - AI Travel Guide for Transport Companies',
-    ogDescription: pageData.ogDescription || pageData.description || 'Transform your transportation business with AI-powered cultural storytelling technology.',
+    title: pageData.title || 'Tuggi – Discover culture and stories wherever you go',
+    description: pageData.description || 'Explore the city with Tuggi: an app that narrates, through audio and in real-time, cultural curiosities and stories about the places around you.',
+    keywords: pageData.keywords || 'cultural tourism app, audio guide, local stories, cultural curiosities, urban exploration, real-time narrative',
+    ogTitle: pageData.ogTitle || pageData.title || 'Tuggi – Discover culture and stories wherever you go',
+    ogDescription: pageData.ogDescription || pageData.description || 'Explore the city with Tuggi: an app that narrates, through audio and in real-time, cultural curiosities and stories about the places around you.',
     canonicalUrl,
     hreflang,
     structuredData
@@ -174,28 +174,28 @@ export const generateStructuredData = (page: string, language: string, baseUrl: 
     "name": "Tuggi",
     "url": baseUrl,
     "logo": `${baseUrl}/logo.png`,
-    "description": "AI travel guide technology for transport companies and B2B tourism businesses",
-    "foundingDate": "2020",
+    "description": "Cultural discovery and local stories app that narrates real-time audio stories about places around you",
+    "foundingDate": "2025",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "San Francisco",
-      "addressRegion": "CA",
-      "addressCountry": "US"
+      "addressLocality": "São Paulo",
+      "addressRegion": "SP",
+      "addressCountry": "BR"
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+1-555-123-4567",
+      "telephone": "+55-11-994718809",
       "contactType": "customer service",
       "email": "hello@tuggi.app",
-      "availableLanguage": ["English", "Portuguese", "Spanish"]
+      "availableLanguage": ["Portuguese", "English", "Spanish"]
     },
     "sameAs": [
       "https://linkedin.com/company/tuggi",
       "https://instagram.com/tuggi"
     ],
     "industry": "Travel Technology",
-    "numberOfEmployees": "50-100",
-    "keywords": "AI travel guide, B2B tourism technology, transportation software, cultural storytelling",
+    "numberOfEmployees": "1-10",
+    "keywords": "cultural tourism app, audio guide, local stories, cultural curiosities, urban exploration, real-time narrative",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.8",
@@ -204,9 +204,9 @@ export const generateStructuredData = (page: string, language: string, baseUrl: 
     },
     "offers": {
       "@type": "Offer",
-      "name": "Tuggi Drive",
-      "description": "AI-powered navigation audio app for transport companies",
-      "category": "Software as a Service"
+      "name": "Tuggi",
+      "description": "Cultural discovery and local stories app with real-time audio narration",
+      "category": "Mobile Application"
     }
   };
 
@@ -216,7 +216,7 @@ export const generateStructuredData = (page: string, language: string, baseUrl: 
         "@context": "https://schema.org",
         "@type": "ContactPage",
         "name": "Contact Tuggi",
-        "description": "Contact Tuggi for AI travel guide technology demo and consultation",
+        "description": "Contact Tuggi to learn more about our cultural discovery app and real-time audio stories",
         "mainEntity": organizationData,
         "inLanguage": getLocaleCode(language),
         "potentialAction": {
@@ -236,14 +236,14 @@ export const generateStructuredData = (page: string, language: string, baseUrl: 
       return {
         "@context": "https://schema.org",
         "@type": "AboutPage",
-        "name": "Our Purpose - Transforming Transportation with AI Travel Guide Technology",
-        "description": "Discover Tuggi's mission to transform transportation into meaningful cultural experiences",
+        "name": "Our Purpose - Connecting People with Local Culture",
+        "description": "Discover Tuggi's mission to connect people with local culture through real-time audio stories and cultural discovery",
         "mainEntity": organizationData,
         "inLanguage": getLocaleCode(language),
         "about": {
           "@type": "Thing",
-          "name": "AI Travel Guide Technology",
-          "description": "Technology that transforms transportation into cultural experiences"
+          "name": "Cultural Discovery Technology",
+          "description": "Technology that connects people with local culture through audio stories"
         }
       };
 
@@ -251,8 +251,8 @@ export const generateStructuredData = (page: string, language: string, baseUrl: 
       return {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "name": "Privacy Policy - Tuggi Drive",
-        "description": "Privacy policy and data protection information for Tuggi Drive AI travel guide technology",
+        "name": "Privacy Policy - Tuggi",
+        "description": "Privacy policy and data protection information for Tuggi cultural discovery app",
         "mainEntity": organizationData,
         "inLanguage": getLocaleCode(language),
         "about": {
@@ -268,8 +268,8 @@ export const generateStructuredData = (page: string, language: string, baseUrl: 
       return {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "name": "Cookie Policy - Tuggi Drive",
-        "description": "Cookie usage policy and privacy controls for Tuggi Drive AI travel guide technology",
+        "name": "Cookie Policy - Tuggi",
+        "description": "Cookie usage policy and privacy controls for Tuggi cultural discovery app",
         "mainEntity": organizationData,
         "inLanguage": getLocaleCode(language),
         "about": {

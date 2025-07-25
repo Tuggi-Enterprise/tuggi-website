@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Download, Play, MapPin } from 'lucide-react';
 
 interface HeroSectionProps {
@@ -10,6 +10,23 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   currentLanguage = 'EN',
   onCTAClick 
 }) => {
+  // State for image animation
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const images = [
+    '/home-screenshot.png',
+    '/home-screenshot-2.png'
+  ];
+
+  // Animation effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % images.length);
+    }, 4000); // Change image every 4 seconds
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   // Localized content
   const getLocalizedContent = (language: string) => {
     const content: Record<string, any> = {
@@ -106,70 +123,27 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
           {/* Mobile App Mockup */}
           <div className="relative animate-fade-in">
-                          <div className="relative bg-gradient-subtle rounded-3xl p-6 lg:p-8">
-              {/* Mobile App Interface */}
-              <div className="bg-white rounded-3xl shadow-2xl overflow-hidden mx-auto" style={{width: '240px', height: '480px'}}>
-                {/* Status Bar */}
-                <div className="bg-neutral-100 px-6 py-3 flex items-center justify-between">
-                  <div className="text-xs font-semibold text-neutral-700">9:41</div>
-                  <div className="flex items-center space-x-1">
-                    <div className="w-4 h-2 bg-neutral-400 rounded-sm"></div>
-                    <div className="w-1 h-2 bg-neutral-400 rounded-sm"></div>
-                    <div className="w-6 h-3 bg-green-500 rounded-sm"></div>
-                  </div>
-                </div>
-                
-                {/* App Header */}
-                <div className="bg-tuggi-primary px-6 py-4 text-white">
-                  <div className="flex items-center justify-between">
-                    <div className="text-lg font-bold">Tuggi</div>
-                    <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                      <span className="text-sm">🎧</span>
-                    </div>
-                  </div>
-                  <div className="text-sm opacity-90 mt-1">Copiloto Cultural</div>
-                </div>
-                
-                {/* Main Content */}
-                <div className="p-6 space-y-4">
-                  {/* Current Location */}
-                  <div className="bg-tuggi-primary/5 rounded-lg p-4">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-3 h-3 bg-tuggi-primary rounded-full animate-pulse"></div>
-                      <div>
-                        <div className="text-sm font-semibold text-neutral-800">São Paulo - Centro</div>
-                        <div className="text-xs text-neutral-600">Narrativas descobertas: 23</div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Active Story */}
-                  <div className="bg-gradient-aurora rounded-lg p-4">
-                    <div className="text-sm font-semibold text-tuggi-primary mb-2">🎙️ Agora tocando</div>
-                    <div className="text-sm text-neutral-800 font-medium mb-2">A História do Teatro Municipal</div>
-                    <div className="flex items-center space-x-2">
-                      <div className="flex-1 h-2 bg-neutral-200 rounded-full">
-                        <div className="h-2 bg-tuggi-primary rounded-full w-1/3"></div>
-                      </div>
-                      <div className="text-xs text-neutral-600">2:30</div>
-                    </div>
-                  </div>
-                  
-                  {/* Features */}
-                  <div className="space-y-3">
-                    <div className="flex items-center space-x-3 p-3 bg-neutral-50 rounded-lg">
-                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                      <span className="text-sm text-neutral-700">{content.features.realTime}</span>
-                    </div>
-                    <div className="flex items-center space-x-3 p-3 bg-neutral-50 rounded-lg">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                      <span className="text-sm text-neutral-700">{content.features.noRoutes}</span>
-                    </div>
-                    <div className="flex items-center space-x-3 p-3 bg-neutral-50 rounded-lg">
-                      <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                      <span className="text-sm text-neutral-700">{content.features.cultural}</span>
-                    </div>
-                  </div>
+            <div className="relative bg-gradient-subtle rounded-3xl p-6 lg:p-8">
+              {/* Mobile App Screenshot */}
+              <div className="mx-auto relative">
+                {images.map((image, index) => (
+                  <img 
+                    key={image}
+                    src={image} 
+                    alt="Tuggi Drive mobile app screenshot" 
+                    className={`w-48 h-auto rounded-3xl shadow-2xl mx-auto absolute top-0 left-1/2 transform -translate-x-1/2 transition-opacity duration-1000 ease-in-out ${
+                      index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                    }`}
+                    style={{ zIndex: index === currentImageIndex ? 2 : 1 }}
+                  />
+                ))}
+                {/* Spacer to maintain height */}
+                <div className="w-48 h-auto invisible">
+                  <img 
+                    src={images[0]} 
+                    alt="" 
+                    className="w-full h-auto"
+                  />
                 </div>
               </div>
               

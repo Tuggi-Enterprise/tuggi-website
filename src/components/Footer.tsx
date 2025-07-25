@@ -32,7 +32,7 @@ const Footer: React.FC<FooterProps> = ({
     const content: Record<string, any> = {
       EN: {
         aboutTitle: 'About Tuggi',
-        aboutDescription: 'Tuggi is a startup transforming transportation into cultural journeys through AI-powered narration. We\'re at an early stage and actively seeking strategic partners.',
+        aboutDescription: 'Tuggi is a cultural copilot that turns your journeys into moments of discovery. Through automatic location-based narration, we deliver knowledge and stories about the places around you — while you move freely.',
         contactTitle: 'Contact',
         quickLinksTitle: 'Quick Links',
         quickLinks: [
@@ -52,7 +52,7 @@ const Footer: React.FC<FooterProps> = ({
       },
       PT: {
         aboutTitle: 'Sobre a Tuggi',
-        aboutDescription: 'A Tuggi é uma startup transformando transporte em jornadas culturais através de narração com IA. Estamos em estágio inicial e buscamos ativamente parceiros estratégicos.',
+        aboutDescription: 'A Tuggi é um copiloto cultural que transforma deslocamentos em experiências de descoberta. Por meio de narração automática baseada em localização, oferecemos conhecimento e histórias sobre o que está ao seu redor — enquanto você se move com liberdade.',
         contactTitle: 'Contato',
         quickLinksTitle: 'Links Rápidos',
         quickLinks: [
@@ -72,7 +72,7 @@ const Footer: React.FC<FooterProps> = ({
       },
       ES: {
         aboutTitle: 'Acerca de Tuggi',
-        aboutDescription: 'Tuggi es una startup transformando el transporte en viajes culturales a través de narración con IA. Estamos en etapa inicial y buscamos activamente socios estratégicos.',
+        aboutDescription: 'Tuggi es un copiloto cultural que transforma tus desplazamientos en experiencias de descubrimiento. A través de narraciones automáticas basadas en tu ubicación, te ofrecemos conocimiento e historias sobre lo que te rodea — mientras te mueves con libertad.',
         contactTitle: 'Contacto',
         quickLinksTitle: 'Enlaces Rápidos',
         quickLinks: [
