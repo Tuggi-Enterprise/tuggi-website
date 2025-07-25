@@ -190,7 +190,7 @@ The website uses a single-page application (SPA) architecture with custom routin
 - Success form confirmation
 
 **Contact Methods:**
-- **Email**: hello@tuggi.app
+- **Email**: contato@tuggi.app
 - **Phone**: +55 (11) 9.9471-8809
 - **Location**: San Francisco, CA headquarters
 
@@ -203,9 +203,9 @@ The website uses a single-page application (SPA) architecture with custom routin
 - Business description message (required)
 
 **Specialized Support:**
-- **Business Development**: hello@tuggi.app (partnerships, sales)
-- **Technical Support**: hello@tuggi.app (implementation, troubleshooting)
-- **International Expansion**: hello@tuggi.app (regional partnerships)
+- **Business Development**: contato@tuggi.app (partnerships, sales)
+- **Technical Support**: contato@tuggi.app (implementation, troubleshooting)
+- **International Expansion**: contato@tuggi.app (regional partnerships)
 
 **Response Guarantees:**
 - Demo requests: Within 4 hours

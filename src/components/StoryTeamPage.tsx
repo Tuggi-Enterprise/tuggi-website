@@ -118,7 +118,7 @@ const StoryTeamPage: React.FC<StoryTeamPageProps> = ({
         meetTeam: 'Meet Our Team',
         scheduleCall: 'Schedule a Call',
         contactInfo: 'Questions about our team or company background?',
-        email: 'hello@tuggi.app',
+        email: 'contato@tuggi.app',
         phone: '+55 (11) 9.9471-8809',
         location: 'São Paulo, Brazil',
         available: 'Available'
@@ -227,7 +227,7 @@ const StoryTeamPage: React.FC<StoryTeamPageProps> = ({
         meetTeam: 'Conheça Nossa Equipe',
         scheduleCall: 'Agendar uma Chamada',
         contactInfo: 'Dúvidas sobre nossa equipe ou histórico da empresa?',
-        email: 'hello@tuggi.app',
+        email: 'contato@tuggi.app',
         phone: '+55 (11) 9.9471-8809',
         location: 'São Paulo, Brasil',
         available: 'Disponível'
@@ -336,7 +336,7 @@ const StoryTeamPage: React.FC<StoryTeamPageProps> = ({
         meetTeam: 'Conocer Nuestro Equipo',
         scheduleCall: 'Programar una Llamada',
         contactInfo: '¿Preguntas sobre nuestro equipo o antecedentes de la empresa?',
-        email: 'hello@tuggi.app',
+        email: 'contato@tuggi.app',
         phone: '+55 (11) 9.9471-8809',
         location: 'São Paulo, Brasil',
         available: 'Disponible'

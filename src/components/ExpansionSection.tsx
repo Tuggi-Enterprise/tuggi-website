@@ -156,11 +156,11 @@ const ExpansionSection: React.FC<ExpansionSectionProps> = ({
               {/* Stats */}
               <div className="grid grid-cols-2 gap-6 mt-6">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-tuggi-primary">1</div>
-                  <div className="text-sm text-neutral-600">Estado ativo</div>
+                  <div className="text-2xl font-bold text-tuggi-primary">20</div>
+                  <div className="text-sm text-neutral-600">Cidades ativas</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-neutral-400">+∞</div>
+                  <div className="text-2xl font-bold text-tuggi-secondary">+∞</div>
                   <div className="text-sm text-neutral-600">Possibilidades</div>
                 </div>
               </div>

@@ -208,7 +208,7 @@ We regularly review our third-party providers to ensure they maintain adequate d
           content: `For questions about our cookie usage or to exercise your rights:
 
 **Data Protection Officer**
-Email: hello@tuggi.app
+Email: contato@tuggi.app
 Phone: +55 (11) 9.9471-8809
 
 **Mailing Address:**

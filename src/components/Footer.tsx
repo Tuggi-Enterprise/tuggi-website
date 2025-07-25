@@ -155,18 +155,13 @@ const Footer: React.FC<FooterProps> = ({
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-tuggi-primary flex-shrink-0" />
                 <a 
-                  href="mailto:hello@tuggi.app" 
+                  href="mailto:contato@tuggi.app" 
                   className="text-sm hover:text-tuggi-primary transition-colors duration-200"
                 >
-                  hello@tuggi.app
+                  contato@tuggi.app
                 </a>
               </div>
-              <div className="flex items-center space-x-3">
-                <MapPin className="w-4 h-4 text-tuggi-primary flex-shrink-0" />
-                <span className="text-neutral-400 text-sm">
-                  Brazil & Remote Operations
-                </span>
-              </div>
+              
             </div>
           </div>
 

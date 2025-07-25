@@ -180,7 +180,7 @@ const BusinessBenefitsPage: React.FC<BusinessBenefitsPageProps> = ({
         getStarted: 'Get Started Today',
         scheduleConsultation: 'Schedule Consultation',
         contactInfo: 'Questions about ROI or implementation?',
-        email: 'hello@tuggi.app',
+        email: 'contato@tuggi.app',
         phone: '+55 (11) 9.9471-8809'
       },
       PT: {
@@ -344,7 +344,7 @@ const BusinessBenefitsPage: React.FC<BusinessBenefitsPageProps> = ({
         getStarted: 'Começar Hoje',
         scheduleConsultation: 'Agendar Consulta',
         contactInfo: 'Dúvidas sobre ROI ou implementação?',
-        email: 'hello@tuggi.app',
+        email: 'contato@tuggi.app',
         phone: '+55 (11) 9.9471-8809'
       },
       ES: {
@@ -508,7 +508,7 @@ const BusinessBenefitsPage: React.FC<BusinessBenefitsPageProps> = ({
         getStarted: 'Comenzar Hoy',
         scheduleConsultation: 'Programar Consulta',
         contactInfo: '¿Preguntas sobre ROI o implementación?',
-        email: 'hello@tuggi.app',
+        email: 'contato@tuggi.app',
         phone: '+55 (11) 9.9471-8809'
       }
     };
