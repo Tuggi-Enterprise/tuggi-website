@@ -1,311 +1,379 @@
 import React from 'react';
-import { Shield, Eye, Lock, Users, Globe, FileText, CheckCircle, Mail } from 'lucide-react';
 
 interface PrivacyPolicyPageProps {
   currentLanguage?: string;
 }
 
-const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ currentLanguage = 'EN' }) => {
+const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ currentLanguage = 'PT' }) => {
   // Get localized content based on current language
   const getContent = () => {
     const content: Record<string, any> = {
-      EN: {
-        title: 'Privacy Policy',
-        lastUpdated: 'Last updated: June 2025',
-        introduction: {
-          title: 'Introduction',
-          content: `At Tuggi, we respect your privacy. This Privacy Policy describes how we collect and use information from users of our products and services.
-
-We are an early-stage startup committed to privacy best practices. This policy reflects our current data collection and usage, which is minimal and focused on delivering our core service.`
-        },
-        dataCollection: {
-          title: 'Data We Collect',
-          subtitle: 'We collect minimal information and only when necessary for app functionality:',
-          categories: [
-            {
-              title: 'Location & Preferences',
-              icon: Eye,
-              items: [
-                'Approximate location (to display nearby attractions)',
-                'Language preference',
-                'Device type and operating system version'
-              ]
-            },
-            {
-              title: 'Account Information (Optional)',
-              icon: Users,
-              items: [
-                'Nickname (only if you create an account)',
-                'Authentication data (via nickname or external provider)'
-              ]
-            }
-          ]
-        },
-        dataUse: {
-          title: 'How We Use Your Information',
-          subtitle: 'We use your data only for:',
-          purposes: [
-            {
-              title: 'Service Delivery',
-              description: 'Display tourist attractions based on your location'
-            },
-            {
-              title: 'User Experience',
-              description: 'Improve the app experience and performance'
-            },
-            {
-              title: 'Legal & Security',
-              description: 'Comply with legal obligations and ensure security'
-            }
-          ]
-        },
-        dataSharing: {
-          title: 'Data Sharing',
-          content: `We do not sell or share your data with third parties for marketing purposes.
-
-We may use services like Supabase or OpenAI with whom we maintain contractual relationships to protect your data.`
-        },
-        userRights: {
-          title: 'Your Rights',
-          subtitle: 'You can:',
-          rights: [
-            {
-              title: 'Access',
-              description: 'Request access to your data',
-              icon: Eye
-            },
-            {
-              title: 'Correction',
-              description: 'Correct incorrect data',
-              icon: FileText
-            },
-            {
-              title: 'Deletion',
-              description: 'Request deletion of your data',
-              icon: Shield
-            },
-            {
-              title: 'Account Closure',
-              description: 'Close your account at any time',
-              icon: Lock
-            }
-          ]
-        },
-        security: {
-          title: 'Security',
-          content: `We follow good data protection practices, but no online transmission is 100% secure. We cannot guarantee absolute security.`
-        },
-        contact: {
-          title: 'Contact',
-          content: `For questions or requests:
-📧 hello@tuggi.app`
-        },
-        updates: {
-          title: 'Updates',
-          content: `We may update this policy. The last update date will always be shown.
-
-Last updated: June 2025.`
-        }
-      },
       PT: {
         title: 'Política de Privacidade',
-        lastUpdated: 'Última atualização: Junho de 2025',
-        introduction: {
-          title: 'Introdução',
-          content: `Na Tuggi, respeitamos sua privacidade. Esta Política de Privacidade descreve como coletamos e usamos informações dos usuários de nossos produtos e serviços.
+        lastUpdated: 'Última atualização: Julho 2025',
+        introduction: 'Esta Política de Privacidade descreve como o aplicativo Tuggi (Tuggi Drive e Tuggi Walk) e o site tuggi.app coletam, utilizam e protegem os dados dos usuários.',
+        sections: [
+          {
+            title: '1. Informações que coletamos',
+            subsections: [
+              {
+                subtitle: 'a) Informações da conta',
+                content: `• E-mail (obrigatório, para login)
+• Nome completo (opcional, para personalização)
+• Apelido (opcional, para exibição no app)
+• Número de telefone (opcional, para recuperação de conta)
+• Foto de perfil (opcional)`
+              },
+              {
+                subtitle: 'b) Dados de localização',
+                content: `• Localização em tempo real durante o uso do app
+• Rastreio em segundo plano durante sessões de navegação
+• Histórico de rotas e pontos visitados
+• Ruas, bairros e regiões acessadas para contexto cultural`
+              },
+              {
+                subtitle: 'c) Informações do dispositivo',
+                content: `• Modelo do aparelho e sistema operacional
+• Versão do app
+• Identificadores anônimos para análise (Firebase, Mixpanel)`
+              },
+              {
+                subtitle: 'd) Dados de uso',
+                content: `• Eventos no app (login, início/fim de trajeto, reprodução de áudios)
+• Duração e frequência de sessões
+• Interações com recursos do app
+• Feedbacks enviados sobre pontos de interesse`
+              },
+              {
+                subtitle: 'e) Dados de áudio',
+                content: `• Áudios cacheados localmente para reprodução offline
+• Estatísticas de reprodução (duração, sucesso/falha)
+• Comandos de voz (quando usados, não armazenados)`
+              }
+            ]
+          },
+          {
+            title: '2. Como usamos seus dados',
+            subsections: [
+              {
+                subtitle: 'Para funcionamento do app',
+                content: `• Ativar narrações automáticas por localização
+• Permitir navegação contextual e em segundo plano
+• Oferecer conteúdos personalizados durante a jornada`
+              },
+              {
+                subtitle: 'Para melhorar o serviço',
+                content: `• Analisar uso do app e comportamento dos usuários
+• Aprimorar o sistema de localização e ativação de pontos
+• Otimizar cache de áudio e performance geral`
+              },
+              {
+                subtitle: 'Para suporte e experiência',
+                content: `• Personalizar a interface com apelidos e fotos
+• Enviar notificações sobre atrações próximas
+• Atender solicitações e dúvidas de usuários`
+              }
+            ]
+          },
+          {
+            title: '3. Onde seus dados são armazenados',
+            content: `• Supabase: dados da conta e localização (com segurança e RLS)
+• Firebase / Mixpanel: dados analíticos e eventos de uso
+• Dispositivo do usuário: cache local de áudios e dados temporários
+• Biometria (se ativada): armazenada no sistema de segurança do dispositivo (keychain/secure enclave)`
+          },
+          {
+            title: '4. Compartilhamento de dados',
+            content: `• **Não vendemos nem compartilhamos seus dados com terceiros**
+• Dados são utilizados apenas para operação e melhoria do serviço`
+          },
+          {
+            title: '5. Permissões solicitadas',
+            content: `• **Localização (obrigatória)** – para detectar sua posição e acionar áudios
+• **Áudio (obrigatória)** – para reprodução das narrações
+• **Notificações (opcional)** – para alertas sobre atrações
+• **Biometria (opcional)** – para login mais seguro
+• **Câmera (futuro)** – para foto de perfil, se desejado`
+          },
+          {
+            title: '6. Seus direitos',
+            content: `Você pode a qualquer momento:
 
-Somos uma startup em estágio inicial comprometida com as melhores práticas de privacidade. Esta política reflete nossa coleta e uso atual de dados, que é mínima e focada em entregar nosso serviço principal.`
-        },
-        dataCollection: {
-          title: 'Dados Que Coletamos',
-          subtitle: 'Coletamos informações mínimas e apenas quando necessário para funcionamento do app:',
-          categories: [
-            {
-              title: 'Localização e Preferências',
-              icon: Eye,
-              items: [
-                'Localização aproximada (para exibir atrações turísticas por proximidade)',
-                'Preferência de idioma',
-                'Dados técnicos do dispositivo (tipo, sistema operacional)'
-              ]
-            },
-            {
-              title: 'Informações da Conta (Opcional)',
-              icon: Users,
-              items: [
-                'Nome ou apelido (apenas se você criar uma conta)',
-                'Dados de autenticação (via nickname ou provedor externo)'
-              ]
-            }
-          ]
-        },
-        dataUse: {
-          title: 'Como Usamos Seus Dados',
-          subtitle: 'Utilizamos os dados apenas para:',
-          purposes: [
-            {
-              title: 'Entrega do Serviço',
-              description: 'Apresentar informações turísticas baseadas na localização'
-            },
-            {
-              title: 'Experiência do Usuário',
-              description: 'Melhorar a experiência do usuário e performance do app'
-            },
-            {
-              title: 'Legal e Segurança',
-              description: 'Cumprir obrigações legais e de segurança'
-            }
-          ]
-        },
-        dataSharing: {
-          title: 'Compartilhamento de Dados',
-          content: `Não vendemos ou compartilhamos dados com terceiros para fins de marketing.
+• Solicitar remoção da conta e dos dados associados
+• Desativar permissões no seu dispositivo
+• Corrigir informações pessoais em seu perfil
+• Solicitar informações sobre os dados armazenados
 
-Podemos usar serviços como Supabase ou OpenAI, com quem mantemos relação contratual para proteger seus dados.`
-        },
-        userRights: {
-          title: 'Seus Direitos',
-          subtitle: 'Você pode:',
-          rights: [
-            {
-              title: 'Acesso',
-              description: 'Solicitar acesso aos seus dados',
-              icon: Eye
-            },
-            {
-              title: 'Correção',
-              description: 'Corrigir dados incorretos',
-              icon: FileText
-            },
-            {
-              title: 'Exclusão',
-              description: 'Solicitar exclusão de seus dados',
-              icon: Shield
-            },
-            {
-              title: 'Encerramento',
-              description: 'Encerrar sua conta a qualquer momento',
-              icon: Lock
-            }
-          ]
-        },
-        security: {
-          title: 'Segurança',
-          content: `Seguimos boas práticas de proteção de dados, mas nenhuma transmissão online é 100% segura. Não podemos garantir segurança absoluta.`
-        },
-        contact: {
-          title: 'Contato',
-          content: `Para dúvidas ou solicitações:
-📧 hello@tuggi.app`
-        },
-        updates: {
-          title: 'Atualizações',
-          content: `Podemos atualizar esta política. A data da última alteração será sempre informada.
+Para isso, entre em contato:
+**contato@tuggi.app**`
+          },
+          {
+            title: '7. Segurança',
+            content: `Adotamos práticas modernas de segurança, incluindo:
 
-Última atualização: Junho de 2025.`
-        }
+• Criptografia de dados em trânsito
+• Acesso restrito com autenticação segura
+• Armazenamento seguro com controle de acesso (Supabase RLS)`
+          },
+          {
+            title: '8. Atualizações nesta política',
+            content: `Podemos atualizar esta Política periodicamente.
+Mudanças relevantes serão comunicadas pelo app ou e-mail.
+Ao continuar usando o app, você concorda com os termos atualizados.`
+          },
+          {
+            title: '9. Dúvidas',
+            content: `Se você tiver qualquer dúvida sobre nossa Política de Privacidade, entre em contato:
+
+**contato@tuggi.app**`
+          }
+        ]
+      },
+      EN: {
+        title: 'Privacy Policy',
+        lastUpdated: 'Last updated: July 2025',
+        introduction: 'This Privacy Policy describes how the Tuggi application (Tuggi Drive and Tuggi Walk) and the tuggi.app website collect, use, and protect user data.',
+        sections: [
+          {
+            title: '1. Information We Collect',
+            subsections: [
+              {
+                subtitle: 'a) Account Information',
+                content: `• Email (required, for login)
+• Full name (optional, for personalization)
+• Nickname (optional, for display in the app)
+• Phone number (optional, for account recovery)
+• Profile photo (optional)`
+              },
+              {
+                subtitle: 'b) Location Data',
+                content: `• Real-time location during app use
+• Background tracking during navigation sessions
+• Route history and visited points
+• Streets, neighborhoods, and regions accessed for cultural context`
+              },
+              {
+                subtitle: 'c) Device Information',
+                content: `• Device model and operating system
+• App version
+• Anonymous identifiers for analytics (Firebase, Mixpanel)`
+              },
+              {
+                subtitle: 'd) Usage Data',
+                content: `• App events (login, route start/end, audio playback)
+• Session duration and frequency
+• Interactions with app features
+• Feedback sent about points of interest`
+              },
+              {
+                subtitle: 'e) Audio Data',
+                content: `• Audio cached locally for offline playback
+• Playback statistics (duration, success/failure)
+• Voice commands (when used, not stored)`
+              }
+            ]
+          },
+          {
+            title: '2. How We Use Your Data',
+            subsections: [
+              {
+                subtitle: 'For App Functionality',
+                content: `• Activate automatic narrations by location
+• Enable contextual and background navigation
+• Provide personalized content during the journey`
+              },
+              {
+                subtitle: 'To Improve Service',
+                content: `• Analyze app usage and user behavior
+• Enhance location and point activation system
+• Optimize audio cache and overall performance`
+              },
+              {
+                subtitle: 'For Support and Experience',
+                content: `• Personalize interface with nicknames and photos
+• Send notifications about nearby attractions
+• Handle user requests and questions`
+              }
+            ]
+          },
+          {
+            title: '3. Where Your Data Is Stored',
+            content: `• Supabase: account and location data (with security and RLS)
+• Firebase / Mixpanel: analytics data and usage events
+• User device: local cache of audio and temporary data
+• Biometrics (if enabled): stored in device security system (keychain/secure enclave)`
+          },
+          {
+            title: '4. Data Sharing',
+            content: `• **We do not sell or share your data with third parties**
+• Data is used only for service operation and improvement`
+          },
+          {
+            title: '5. Requested Permissions',
+            content: `• **Location (required)** – to detect your position and trigger audio
+• **Audio (required)** – for narration playback
+• **Notifications (optional)** – for attraction alerts
+• **Biometrics (optional)** – for more secure login
+• **Camera (future)** – for profile photo, if desired`
+          },
+          {
+            title: '6. Your Rights',
+            content: `You can at any time:
+
+• Request removal of account and associated data
+• Disable permissions on your device
+• Correct personal information in your profile
+• Request information about stored data
+
+For this, contact us:
+**contato@tuggi.app**`
+          },
+          {
+            title: '7. Security',
+            content: `We adopt modern security practices, including:
+
+• Data encryption in transit
+• Restricted access with secure authentication
+• Secure storage with access control (Supabase RLS)`
+          },
+          {
+            title: '8. Updates to This Policy',
+            content: `We may update this Policy periodically.
+Relevant changes will be communicated through the app or email.
+By continuing to use the app, you agree to the updated terms.`
+          },
+          {
+            title: '9. Questions',
+            content: `If you have any questions about our Privacy Policy, contact us:
+
+**contato@tuggi.app**`
+          }
+        ]
       },
       ES: {
         title: 'Política de Privacidad',
-        lastUpdated: 'Última actualización: Junio de 2025',
-        introduction: {
-          title: 'Introducción',
-          content: `En Tuggi, respetamos tu privacidad. Esta Política de Privacidad describe cómo recopilamos y utilizamos información de los usuarios de nuestros productos y servicios.
+        lastUpdated: 'Última actualización: Julio 2025',
+        introduction: 'Esta Política de Privacidad describe cómo la aplicación Tuggi (Tuggi Drive y Tuggi Walk) y el sitio web tuggi.app recopilan, utilizan y protegen los datos de los usuarios.',
+        sections: [
+          {
+            title: '1. Información que recopilamos',
+            subsections: [
+              {
+                subtitle: 'a) Información de la cuenta',
+                content: `• Email (obligatorio, para login)
+• Nombre completo (opcional, para personalización)
+• Apodo (opcional, para mostrar en la app)
+• Número de teléfono (opcional, para recuperación de cuenta)
+• Foto de perfil (opcional)`
+              },
+              {
+                subtitle: 'b) Datos de ubicación',
+                content: `• Ubicación en tiempo real durante el uso de la app
+• Seguimiento en segundo plano durante sesiones de navegación
+• Historial de rutas y puntos visitados
+• Calles, barrios y regiones accedidas para contexto cultural`
+              },
+              {
+                subtitle: 'c) Información del dispositivo',
+                content: `• Modelo del dispositivo y sistema operativo
+• Versión de la app
+• Identificadores anónimos para análisis (Firebase, Mixpanel)`
+              },
+              {
+                subtitle: 'd) Datos de uso',
+                content: `• Eventos en la app (login, inicio/fin de ruta, reproducción de audio)
+• Duración y frecuencia de sesiones
+• Interacciones con funciones de la app
+• Comentarios enviados sobre puntos de interés`
+              },
+              {
+                subtitle: 'e) Datos de audio',
+                content: `• Audio almacenado localmente para reproducción offline
+• Estadísticas de reproducción (duración, éxito/fallo)
+• Comandos de voz (cuando se usan, no se almacenan)`
+              }
+            ]
+          },
+          {
+            title: '2. Cómo utilizamos tus datos',
+            subsections: [
+              {
+                subtitle: 'Para funcionamiento de la app',
+                content: `• Activar narraciones automáticas por ubicación
+• Permitir navegación contextual y en segundo plano
+• Ofrecer contenido personalizado durante el viaje`
+              },
+              {
+                subtitle: 'Para mejorar el servicio',
+                content: `• Analizar uso de la app y comportamiento de usuarios
+• Mejorar el sistema de ubicación y activación de puntos
+• Optimizar caché de audio y rendimiento general`
+              },
+              {
+                subtitle: 'Para soporte y experiencia',
+                content: `• Personalizar la interfaz con apodos y fotos
+• Enviar notificaciones sobre atracciones cercanas
+• Atender solicitudes y dudas de usuarios`
+              }
+            ]
+          },
+          {
+            title: '3. Dónde se almacenan tus datos',
+            content: `• Supabase: datos de cuenta y ubicación (con seguridad y RLS)
+• Firebase / Mixpanel: datos analíticos y eventos de uso
+• Dispositivo del usuario: caché local de audio y datos temporales
+• Biometría (si está activada): almacenada en el sistema de seguridad del dispositivo (keychain/secure enclave)`
+          },
+          {
+            title: '4. Compartir datos',
+            content: `• **No vendemos ni compartimos tus datos con terceros**
+• Los datos se utilizan solo para operación y mejora del servicio`
+          },
+          {
+            title: '5. Permisos solicitados',
+            content: `• **Ubicación (obligatorio)** – para detectar tu posición y activar audio
+• **Audio (obligatorio)** – para reproducción de narraciones
+• **Notificaciones (opcional)** – para alertas sobre atracciones
+• **Biometría (opcional)** – para login más seguro
+• **Cámara (futuro)** – para foto de perfil, si se desea`
+          },
+          {
+            title: '6. Tus derechos',
+            content: `Puedes en cualquier momento:
 
-Somos una startup en etapa inicial comprometida con las mejores prácticas de privacidad. Esta política refleja nuestra recopilación y uso actual de datos, que es mínima y enfocada en entregar nuestro servicio principal.`
-        },
-        dataCollection: {
-          title: 'Datos Que Recopilamos',
-          subtitle: 'Recopilamos información mínima y solo cuando es necesario para el funcionamiento de la app:',
-          categories: [
-            {
-              title: 'Ubicación y Preferencias',
-              icon: Eye,
-              items: [
-                'Ubicación aproximada (para mostrar atracciones turísticas cercanas)',
-                'Preferencia de idioma',
-                'Datos técnicos del dispositivo (tipo, sistema operativo)'
-              ]
-            },
-            {
-              title: 'Información de Cuenta (Opcional)',
-              icon: Users,
-              items: [
-                'Nombre o apodo (solo si creas una cuenta)',
-                'Datos de autenticación (vía nickname o proveedor externo)'
-              ]
-            }
-          ]
-        },
-        dataUse: {
-          title: 'Cómo Utilizamos Tu Información',
-          subtitle: 'Utilizamos los datos solo para:',
-          purposes: [
-            {
-              title: 'Entrega del Servicio',
-              description: 'Mostrar información turística basada en la ubicación'
-            },
-            {
-              title: 'Experiencia del Usuario',
-              description: 'Mejorar la experiencia del usuario y rendimiento de la app'
-            },
-            {
-              title: 'Legal y Seguridad',
-              description: 'Cumplir obligaciones legales y de seguridad'
-            }
-          ]
-        },
-        dataSharing: {
-          title: 'Compartir Datos',
-          content: `No vendemos ni compartimos tus datos con terceros para fines de marketing.
+• Solicitar eliminación de la cuenta y datos asociados
+• Desactivar permisos en tu dispositivo
+• Corregir información personal en tu perfil
+• Solicitar información sobre datos almacenados
 
-Podemos usar servicios como Supabase o OpenAI, con quienes mantenemos relaciones contractuales para proteger tus datos.`
-        },
-        userRights: {
-          title: 'Tus Derechos',
-          subtitle: 'Puedes:',
-          rights: [
-            {
-              title: 'Acceso',
-              description: 'Solicitar acceso a tus datos',
-              icon: Eye
-            },
-            {
-              title: 'Corrección',
-              description: 'Corregir datos incorrectos',
-              icon: FileText
-            },
-            {
-              title: 'Eliminación',
-              description: 'Solicitar eliminación de tus datos',
-              icon: Shield
-            },
-            {
-              title: 'Cierre de Cuenta',
-              description: 'Cerrar tu cuenta en cualquier momento',
-              icon: Lock
-            }
-          ]
-        },
-        security: {
-          title: 'Seguridad',
-          content: `Seguimos buenas prácticas de protección de datos, pero ninguna transmisión en línea es 100% segura. No podemos garantizar seguridad absoluta.`
-        },
-        contact: {
-          title: 'Contacto',
-          content: `Para preguntas o solicitudes:
-📧 hello@tuggi.app`
-        },
-        updates: {
-          title: 'Actualizaciones',
-          content: `Podemos actualizar esta política. La fecha de última actualización siempre será mostrada.
+Para esto, contáctanos:
+**contato@tuggi.app**`
+          },
+          {
+            title: '7. Seguridad',
+            content: `Adoptamos prácticas modernas de seguridad, incluyendo:
 
-Última actualización: Junio de 2025.`
-        }
+• Cifrado de datos en tránsito
+• Acceso restringido con autenticación segura
+• Almacenamiento seguro con control de acceso (Supabase RLS)`
+          },
+          {
+            title: '8. Actualizaciones en esta política',
+            content: `Podemos actualizar esta Política periódicamente.
+Los cambios relevantes serán comunicados por la app o email.
+Al continuar usando la app, aceptas los términos actualizados.`
+          },
+          {
+            title: '9. Dudas',
+            content: `Si tienes alguna duda sobre nuestra Política de Privacidad, contáctanos:
+
+**contato@tuggi.app**`
+          }
+        ]
       }
     };
 
-    return content[currentLanguage] || content['EN'];
+    return content[currentLanguage] || content['PT'];
   };
 
   const content = getContent();
@@ -313,176 +381,54 @@ Podemos usar servicios como Supabase o OpenAI, con quienes mantenemos relaciones
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <section className="bg-gradient-to-br from-neutral-50 via-white to-tuggi-primary/5 py-16 lg:py-20">
+      <section className="bg-white py-16 lg:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center px-4 py-2 bg-tuggi-primary/10 rounded-full mb-6">
-              <Shield className="w-5 h-5 text-tuggi-primary mr-2" />
-              <span className="text-tuggi-primary font-semibold text-sm">Privacy Policy</span>
-            </div>
-            
-            <h1 className="text-3xl lg:text-5xl font-bold text-neutral-900 mb-6">
+          <div className="text-center mb-12">
+            <h1 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-4">
               {content.title}
             </h1>
-            
             <p className="text-lg text-neutral-600">{content.lastUpdated}</p>
+          </div>
+          
+          <div className="mb-12">
+            <p className="text-neutral-700 leading-relaxed text-lg">
+              {content.introduction}
+            </p>
           </div>
         </div>
       </section>
 
       {/* Content */}
-      <section className="py-16 lg:py-20">
+      <section className="pb-16 lg:pb-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg max-w-none">
-            {/* Introduction */}
-            <div className="mb-12">
-              <h2 className="text-2xl lg:text-3xl font-bold text-neutral-900 mb-6 flex items-center">
-                <FileText className="w-8 h-8 text-tuggi-primary mr-3" />
-                {content.introduction.title}
-              </h2>
-              <div className="bg-tuggi-primary/5 border-l-4 border-tuggi-primary p-6 rounded-r-lg">
-                <p className="text-neutral-700 leading-relaxed whitespace-pre-line">
-                  {content.introduction.content}
-                </p>
-              </div>
-            </div>
-
-            {/* Data Collection */}
-            <div className="mb-12">
-              <h2 className="text-2xl lg:text-3xl font-bold text-neutral-900 mb-6">
-                {content.dataCollection.title}
-              </h2>
-              <p className="text-neutral-600 mb-8">{content.dataCollection.subtitle}</p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {content.dataCollection.categories.map((category: any, index: number) => (
-                  <div key={index} className="bg-white border border-neutral-200 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300">
-                    <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 bg-tuggi-primary/10 rounded-xl flex items-center justify-center mr-4">
-                        <category.icon className="w-6 h-6 text-tuggi-primary" />
+            {content.sections.map((section: any, index: number) => (
+              <div key={index} className="mb-12">
+                <h2 className="text-2xl font-bold text-neutral-900 mb-6">
+                  {section.title}
+                </h2>
+                
+                {section.subsections ? (
+                  <div className="space-y-8">
+                    {section.subsections.map((subsection: any, subIndex: number) => (
+                      <div key={subIndex}>
+                        <h3 className="text-xl font-semibold text-neutral-800 mb-4">
+                          {subsection.subtitle}
+                        </h3>
+                        <div className="text-neutral-700 leading-relaxed whitespace-pre-line">
+                          {subsection.content}
+                        </div>
                       </div>
-                      <h3 className="text-xl font-bold text-neutral-900">{category.title}</h3>
-                    </div>
-                    <ul className="space-y-2">
-                      {category.items.map((item: string, itemIndex: number) => (
-                        <li key={itemIndex} className="flex items-start">
-                          <CheckCircle className="w-4 h-4 text-tuggi-primary mt-1 mr-2 flex-shrink-0" />
-                          <span className="text-neutral-700 text-sm">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Data Use */}
-            <div className="mb-12">
-              <h2 className="text-2xl lg:text-3xl font-bold text-neutral-900 mb-6">
-                {content.dataUse.title}
-              </h2>
-              <p className="text-neutral-600 mb-8">{content.dataUse.subtitle}</p>
-              
-              <div className="space-y-4">
-                {content.dataUse.purposes.map((purpose: any, index: number) => (
-                  <div key={index} className="bg-neutral-50 rounded-lg p-6 border border-neutral-200">
-                    <h3 className="text-lg font-bold text-neutral-900 mb-2">{purpose.title}</h3>
-                    <p className="text-neutral-700">{purpose.description}</p>
+                ) : (
+                  <div className="text-neutral-700 leading-relaxed whitespace-pre-line">
+                    {section.content}
                   </div>
-                ))}
+                )}
               </div>
-            </div>
-
-            {/* Data Sharing */}
-            <div className="mb-12">
-              <h2 className="text-2xl lg:text-3xl font-bold text-neutral-900 mb-6">
-                {content.dataSharing.title}
-              </h2>
-              <div className="bg-neutral-50 border border-neutral-200 rounded-xl p-6">
-                <p className="text-neutral-700 leading-relaxed whitespace-pre-line">
-                  {content.dataSharing.content}
-                </p>
-              </div>
-            </div>
-
-            {/* User Rights */}
-            <div className="mb-12">
-              <h2 className="text-2xl lg:text-3xl font-bold text-neutral-900 mb-6">
-                {content.userRights.title}
-              </h2>
-              <p className="text-neutral-600 mb-8">{content.userRights.subtitle}</p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                {content.userRights.rights.map((right: any, index: number) => (
-                  <div key={index} className="bg-white border border-neutral-200 rounded-xl p-6 text-center hover:shadow-lg transition-shadow duration-300">
-                    <div className="w-16 h-16 bg-tuggi-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <right.icon className="w-8 h-8 text-tuggi-primary" />
-                    </div>
-                    <h3 className="text-lg font-bold text-neutral-900 mb-3">{right.title}</h3>
-                    <p className="text-neutral-700 text-sm">{right.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Security */}
-            <div className="mb-12">
-              <h2 className="text-2xl lg:text-3xl font-bold text-neutral-900 mb-6 flex items-center">
-                <Lock className="w-8 h-8 text-tuggi-primary mr-3" />
-                {content.security.title}
-              </h2>
-              <div className="bg-neutral-50 border border-neutral-200 rounded-xl p-6">
-                <p className="text-neutral-700 leading-relaxed">
-                  {content.security.content}
-                </p>
-              </div>
-            </div>
-
-            {/* Contact */}
-            <div className="mb-12">
-              <h2 className="text-2xl lg:text-3xl font-bold text-neutral-900 mb-6 flex items-center">
-                <Mail className="w-8 h-8 text-tuggi-primary mr-3" />
-                {content.contact.title}
-              </h2>
-              <div className="bg-tuggi-primary/5 border border-tuggi-primary/20 rounded-xl p-6">
-                <p className="text-neutral-700 leading-relaxed whitespace-pre-line">
-                  {content.contact.content}
-                </p>
-              </div>
-            </div>
-
-            {/* Updates */}
-            <div className="mb-12">
-              <h2 className="text-2xl lg:text-3xl font-bold text-neutral-900 mb-6 flex items-center">
-                <Globe className="w-8 h-8 text-tuggi-primary mr-3" />
-                {content.updates.title}
-              </h2>
-              <div className="bg-neutral-50 border border-neutral-200 rounded-xl p-6">
-                <p className="text-neutral-700 leading-relaxed whitespace-pre-line">
-                  {content.updates.content}
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
-        </div>
-      </section>
-
-      {/* Contact CTA */}
-      <section className="py-16 bg-gradient-to-br from-tuggi-primary/5 to-tuggi-secondary/5">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-2xl lg:text-3xl font-bold text-neutral-900 mb-6">
-            Questions About Your Privacy?
-          </h2>
-          <p className="text-xl text-neutral-600 mb-8">
-            Contact us for any questions or concerns about your data.
-          </p>
-          <a
-            href="mailto:hello@tuggi.app"
-            className="bg-tuggi-primary hover:bg-tuggi-primary-dark text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center space-x-2"
-          >
-            <Mail className="w-5 h-5" />
-            <span>Contact Us</span>
-          </a>
         </div>
       </section>
     </div>

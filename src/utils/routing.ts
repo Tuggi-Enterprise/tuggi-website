@@ -23,6 +23,7 @@ export const VALID_PAGES = [
   'home',
   'contact',
   'purpose',
+  'investors',
   'privacy',
   'privacy-policy',
   'politica-de-privacidade',
@@ -38,6 +39,11 @@ export const VALID_PAGES = [
 
 // Page URL mappings for different languages
 export const PAGE_URL_MAPPINGS: Record<string, Record<string, string>> = {
+  'investors': {
+    'EN': 'investors',
+    'PT': 'investidores',
+    'ES': 'inversores'
+  },
   'privacy': {
     'EN': 'privacy-policy',
     'PT': 'politica-de-privacidade',
@@ -57,6 +63,9 @@ export const PAGE_URL_MAPPINGS: Record<string, Record<string, string>> = {
 
 // Reverse mappings for URL parsing
 export const URL_TO_PAGE_MAPPINGS: Record<string, string> = {
+  'investors': 'investors',
+  'investidores': 'investors',
+  'inversores': 'investors',
   'privacy-policy': 'privacy',
   'politica-de-privacidade': 'privacy',
   'politica-de-privacidad': 'privacy',

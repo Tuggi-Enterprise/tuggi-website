@@ -11,6 +11,7 @@ import PrivacySection from './components/PrivacySection';
 import FinalCTASection from './components/FinalCTASection';
 import PurposePage from './components/PurposePage';
 import ContactPage from './components/ContactPage';
+import InvestorsPage from './components/InvestorsPage';
 import PrivacyPolicyPage from './components/PrivacyPolicyPage';
 import TermsOfUsePage from './components/TermsOfUsePage';
 import CookiePolicyPage from './components/CookiePolicyPage';
@@ -308,6 +309,10 @@ function App() {
         return <PurposePage currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />;
       case 'contact':
         return <ContactPage currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />;
+      case 'investors':
+      case 'investidores':
+      case 'inversores':
+        return <InvestorsPage currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />;
       case 'privacy':
       case 'privacy-policy':
       case 'politica-de-privacidade':

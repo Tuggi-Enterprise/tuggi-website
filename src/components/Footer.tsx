@@ -38,9 +38,8 @@ const Footer: React.FC<FooterProps> = ({
         quickLinks: [
           { label: 'Home', page: 'home' },
           { label: 'Our Purpose', page: 'purpose' },
-          { label: 'Products', page: 'products' },
-          { label: 'Benefits', page: 'benefits' },
-          { label: 'Contact', page: 'contact' }
+          { label: 'Contact', page: 'contact' },
+          { label: 'Investors', page: 'investors' }
         ],
         languageTitle: 'Language',
         newsletterTitle: 'Stay Updated',
@@ -59,9 +58,8 @@ const Footer: React.FC<FooterProps> = ({
         quickLinks: [
           { label: 'Início', page: 'home' },
           { label: 'Nosso Propósito', page: 'purpose' },
-          { label: 'Produtos', page: 'products' },
-          { label: 'Benefícios', page: 'benefits' },
-          { label: 'Contato', page: 'contact' }
+          { label: 'Contato', page: 'contact' },
+          { label: 'Investidores', page: 'investors' }
         ],
         languageTitle: 'Idioma',
         newsletterTitle: 'Mantenha-se Atualizado',
@@ -80,9 +78,8 @@ const Footer: React.FC<FooterProps> = ({
         quickLinks: [
           { label: 'Inicio', page: 'home' },
           { label: 'Nuestro Propósito', page: 'purpose' },
-          { label: 'Productos', page: 'products' },
-          { label: 'Beneficios', page: 'benefits' },
-          { label: 'Contacto', page: 'contact' }
+          { label: 'Contacto', page: 'contact' },
+          { label: 'Inversores', page: 'investors' }
         ],
         languageTitle: 'Idioma',
         newsletterTitle: 'Mantente Actualizado',
