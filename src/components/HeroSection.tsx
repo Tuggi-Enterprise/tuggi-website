@@ -123,13 +123,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 <span>{content.downloadFree}</span>
               </button>
               
-              <button 
+              {/* <button 
                 onClick={() => handleCTAClick('how_it_works')}
                 className={`${getButtonClasses('outline', 'lg')} inline-flex items-center gap-2`}
               >
                 <Play className="w-4 h-4 sm:w-5 sm:h-5" />
                 <span>{content.howItWorks}</span>
-              </button>
+              </button> */}
             </div>
 
             {/* Availability Note */}
@@ -143,33 +143,34 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
           {/* Mobile App Mockup */}
           <div className="relative animate-fade-in">
-            <div className="relative rounded-3xl p-6 lg:p-8" style={{ background: gradients.subtle }}>
+            <div className="relative rounded-3xl p-4 sm:p-6 lg:p-8 overflow-hidden" style={{ background: gradients.subtle }}>
               {/* Mobile App Screenshot with Animation */}
-              <div className="mx-auto relative">
-                <div className="relative w-48 h-auto mx-auto">
+              <div className="mx-auto relative overflow-hidden">
+                <div className="relative w-40 sm:w-48 lg:w-56 mx-auto overflow-hidden">
                   {screenshots.map((screenshot, index) => (
                     <img 
                       key={screenshot}
                       src={screenshot} 
                       alt={`Tuggi Drive mobile app screenshot ${index + 1}`}
-                      className={`absolute inset-0 w-full h-auto rounded-3xl shadow-2xl transition-opacity duration-600 ease-in-out ${
+                      className={`absolute top-0 left-0 w-full h-auto rounded-2xl sm:rounded-3xl shadow-2xl transition-opacity duration-600 ease-in-out object-contain ${
                         index === currentImageIndex && !isTransitioning
                           ? 'opacity-100'
                           : 'opacity-0'
                       }`}
                       style={{
-                        transition: 'opacity 0.6s ease-in-out'
+                        transition: 'opacity 0.6s ease-in-out',
+                        aspectRatio: '9/16'
                       }}
                     />
                   ))}
                   {/* Placeholder to maintain aspect ratio */}
-                  <div className="w-full h-auto rounded-3xl" style={{ aspectRatio: '9/16' }}></div>
+                  <div className="w-full rounded-2xl sm:rounded-3xl" style={{ aspectRatio: '9/16' }}></div>
                 </div>
               </div>
               
               {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-tuggi-secondary rounded-2xl opacity-20 rotate-12 animate-pulse"></div>
-              <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-tuggi-primary rounded-2xl opacity-20 -rotate-12 animate-pulse" style={{ animationDelay: '1s' }}></div>
+              <div className="absolute -top-4 -right-4 w-16 h-16 sm:w-20 sm:h-20 bg-tuggi-secondary rounded-2xl opacity-20 rotate-12 animate-pulse"></div>
+              <div className="absolute -bottom-6 -left-6 w-12 h-12 sm:w-16 sm:h-16 bg-tuggi-primary rounded-2xl opacity-20 -rotate-12 animate-pulse" style={{ animationDelay: '1s' }}></div>
             </div>
           </div>
         </div>

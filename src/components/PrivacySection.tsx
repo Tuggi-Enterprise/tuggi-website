@@ -18,11 +18,12 @@ interface ContentLanguage {
 
 interface PrivacySectionProps {
   currentLanguage?: string;
-  onCTAClick?: (ctaType: string, language: string) => void;
+  onCTAClick?: (ctaType: string, position?: string) => void;
 }
 
 const PrivacySection: React.FC<PrivacySectionProps> = ({ 
-  currentLanguage = 'PT'
+  currentLanguage = 'PT',
+  onCTAClick
 }) => {
   // Localized content
   const getLocalizedContent = (language: string): ContentLanguage => {
@@ -103,7 +104,7 @@ const PrivacySection: React.FC<PrivacySectionProps> = ({
   const content = getLocalizedContent(currentLanguage);
 
   const handleCTAClick = (ctaType: string) => {
-    // onCTAClick?.(ctaType, currentLanguage); // This line was removed as per the new_code
+    onCTAClick?.(ctaType, 'privacy_section');
   };
 
   const getIcon = (iconType: string) => {
