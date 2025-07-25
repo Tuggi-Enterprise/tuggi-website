@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MessageCircle, Send, CheckCircle, AlertCircle, ArrowRight } from 'lucide-react';
+import { Mail, Phone, MessageCircle, Send, CheckCircle, AlertCircle, ArrowRight, Globe, TrendingUp, Users, Building2 } from 'lucide-react';
 import FinalCTASection from './FinalCTASection';
 import { 
   getButtonClasses, 
@@ -100,115 +100,148 @@ const ContactPage: React.FC<ContactPageProps> = ({
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section */}
+    <div className="min-h-screen">
+      {/* Hero Section - Aligned with other pages */}
       <section 
-        className={`${layout.section.compact} pt-12 lg:pt-16 relative overflow-hidden`}
+        className={`${layout.section.hero} relative overflow-hidden`}
         style={{ background: gradients.hero }}
       >
-        {/* Background Elements */}
-        <div className="absolute top-4 left-4 w-16 h-16 bg-tuggi-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-4 right-4 w-12 h-12 bg-tuggi-secondary/5 rounded-full blur-3xl"></div>
+        {/* Enhanced Background Elements */}
+        <div className="absolute top-8 left-8 w-24 h-24 bg-tuggi-primary/8 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-8 right-8 w-20 h-20 bg-tuggi-secondary/8 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-tuggi-primary/6 rounded-full blur-2xl"></div>
         
         <div className={`${layout.container.narrow} relative`}>
-          <div className="text-center mb-4">
-            <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-neutral-900 mb-3 leading-tight">
+          <div className="text-center">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-900 mb-6 leading-tight">
               {content.hero.title}
             </h1>
-            <p className="text-sm sm:text-base text-neutral-700 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl text-neutral-700 leading-relaxed max-w-3xl mx-auto">
               {content.hero.subtitle}
             </p>
           </div>
         </div>
       </section>
 
-      {/* Main Content - Ultra Compact Layout */}
-      <section className={`${layout.section.compact} bg-white relative overflow-hidden`}>
-        {/* Background Elements */}
-        <div className="absolute top-4 right-4 w-12 h-12 bg-tuggi-primary/4 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-4 left-4 w-16 h-16 bg-tuggi-secondary/4 rounded-full blur-3xl"></div>
+      {/* Main Content Section - Proper spacing and layout */}
+      <section className={`${layout.section.base} relative overflow-hidden`}>
+        {/* Enhanced Background Elements */}
+        <div className="absolute top-8 right-8 w-20 h-20 bg-tuggi-primary/6 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-8 left-8 w-24 h-24 bg-tuggi-secondary/6 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/3 right-1/3 w-12 h-12 bg-tuggi-primary/4 rounded-full blur-2xl"></div>
         
         <div className={`${layout.container.wide} relative`}>
-          {/* Email Contact - Compact */}
-          <div className="text-center mb-6">
-            <p className="text-xs sm:text-sm text-neutral-700 mb-3 leading-relaxed">
-              {content.email.title}
-            </p>
-            
-            <div 
-              className="rounded-lg p-3 lg:p-4 border border-tuggi-primary/20 mb-3"
-              style={{ background: 'linear-gradient(to right, rgba(0, 168, 232, 0.1), rgba(255, 111, 0, 0.1))' }}
-            >
-              <div className="flex items-center justify-center space-x-2 mb-1">
-                <div 
-                  className="w-6 h-6 rounded-full flex items-center justify-center shadow-sm"
-                  style={{ background: gradients.ocean }}
-                >
-                  <Mail className="w-3 h-3 text-white" />
+          {/* Email Contact - Enhanced prominence */}
+          <div className="text-center mb-16">
+            <div className="max-w-2xl mx-auto">
+              <p className="text-lg sm:text-xl text-neutral-700 mb-8 leading-relaxed">
+                {content.email.title}
+              </p>
+              
+              {/* Enhanced Email Card */}
+              <div 
+                className={`${getCardClasses(true)} p-8 mb-8 relative overflow-hidden group`}
+                style={{ background: 'linear-gradient(135deg, rgba(0, 168, 232, 0.08) 0%, rgba(255, 111, 0, 0.08) 100%)' }}
+              >
+                {/* Decorative background elements */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-tuggi-primary/5 rounded-full blur-3xl group-hover:scale-110 transition-transform duration-500"></div>
+                <div className="absolute bottom-0 left-0 w-24 h-24 bg-tuggi-secondary/5 rounded-full blur-3xl group-hover:scale-110 transition-transform duration-500"></div>
+                
+                <div className="relative">
+                  <div className="flex items-center justify-center space-x-4 mb-6">
+                    <div 
+                      className="w-16 h-16 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300"
+                      style={{ background: gradients.ocean }}
+                    >
+                      <Mail className="w-8 h-8 text-white" />
+                    </div>
+                  </div>
+                  <a 
+                    href={`mailto:${content.email.address}`}
+                    onClick={() => handleCTAClick('email_contact')}
+                    className="text-2xl sm:text-3xl font-bold text-tuggi-primary hover:text-tuggi-primary-dark transition-colors duration-300 break-all group-hover:scale-105 transform transition-transform duration-300"
+                  >
+                    {content.email.address}
+                  </a>
                 </div>
               </div>
-              <a 
-                href={`mailto:${content.email.address}`}
-                onClick={() => handleCTAClick('email_contact')}
-                className="text-base lg:text-lg font-bold text-tuggi-primary hover:text-tuggi-primary-dark transition-colors duration-300 break-all"
-              >
-                {content.email.address}
-              </a>
+              
+              <p className="text-base sm:text-lg text-neutral-600 leading-relaxed max-w-3xl mx-auto">
+                {content.email.note}
+              </p>
             </div>
-            
-            <p className="text-xs text-neutral-600 leading-relaxed max-w-2xl mx-auto">
-              {content.email.note}
-            </p>
           </div>
 
-          {/* Two Column Layout for Expansion and Investors */}
-          <div className={`${layout.grid['2']} gap-4 lg:gap-6`}>
-            {/* City Expansion Section */}
-            <div 
-              className="rounded-lg p-3 lg:p-4 border border-white/20 shadow-sm"
-              style={{ background: gradients.subtle }}
-            >
-              <div className="text-center mb-3">
-                <h2 className="text-sm sm:text-base font-bold text-neutral-900 mb-2">
+          {/* Two Column Layout - Enhanced cards */}
+          <div className={`${layout.grid['2']} gap-8 lg:gap-12`}>
+            {/* City Expansion Section - Enhanced */}
+            <div className={`${getCardClasses(true)} p-8 relative overflow-hidden group`}>
+              {/* Decorative background */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-tuggi-primary/5 rounded-full blur-3xl group-hover:scale-110 transition-transform duration-500"></div>
+              
+              <div className="relative">
+                <div className="flex items-center justify-center mb-6">
+                  <div 
+                    className="w-12 h-12 rounded-full flex items-center justify-center shadow-md"
+                    style={{ background: gradients.aurora }}
+                  >
+                    <Globe className="w-6 h-6 text-white" />
+                  </div>
+                </div>
+                
+                <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-4 text-center">
                   {content.expansion.title}
                 </h2>
-                <p className="text-xs sm:text-sm text-neutral-700 leading-relaxed mb-3">
+                <p className="text-base sm:text-lg text-neutral-700 leading-relaxed mb-8 text-center">
                   {content.expansion.description}
                 </p>
                 
-                <button 
-                  onClick={() => handleCTAClick('expansion_form')}
-                  className="bg-tuggi-primary hover:bg-tuggi-primary-dark text-white font-semibold transition-all duration-200 hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-tuggi-primary focus:ring-offset-2 px-3 py-1.5 text-xs rounded-lg inline-flex items-center space-x-1 group"
-                >
-                  <span>{content.expansion.button}</span>
-                  <ArrowRight className="w-2.5 h-2.5 group-hover:translate-x-0.5 transition-transform duration-200" />
-                </button>
-                <p className="text-xs text-neutral-500 italic">
-                  {content.expansion.note}
-                </p>
+                <div className="text-center">
+                  <button 
+                    onClick={() => handleCTAClick('expansion_form')}
+                    className={`${getButtonClasses('primary', 'lg')} inline-flex items-center space-x-2 group-hover:scale-105 transform transition-transform duration-300`}
+                  >
+                    <span>{content.expansion.button}</span>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+                  </button>
+                  <p className="text-sm text-neutral-500 italic mt-4">
+                    {content.expansion.note}
+                  </p>
+                </div>
               </div>
             </div>
 
-            {/* Investors Section */}
-            <div 
-              className="rounded-lg p-3 lg:p-4 border border-tuggi-primary/10"
-              style={{ background: 'linear-gradient(to right, rgba(0, 168, 232, 0.05), rgba(255, 111, 0, 0.05))' }}
-            >
-              <div className="text-center mb-3">
-                <h2 className="text-sm sm:text-base font-bold text-neutral-900 mb-2">
+            {/* Investors Section - Enhanced */}
+            <div className={`${getCardClasses(true)} p-8 relative overflow-hidden group`}>
+              {/* Decorative background */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-tuggi-secondary/5 rounded-full blur-3xl group-hover:scale-110 transition-transform duration-500"></div>
+              
+              <div className="relative">
+                <div className="flex items-center justify-center mb-6">
+                  <div 
+                    className="w-12 h-12 rounded-full flex items-center justify-center shadow-md"
+                    style={{ background: gradients.sunset }}
+                  >
+                    <TrendingUp className="w-6 h-6 text-white" />
+                  </div>
+                </div>
+                
+                <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-4 text-center">
                   {content.investors.title}
                 </h2>
-                <p className="text-xs sm:text-sm text-neutral-700 leading-relaxed mb-3">
+                <p className="text-base sm:text-lg text-neutral-700 leading-relaxed mb-8 text-center">
                   {content.investors.description}
                 </p>
                 
-                <button 
-                  onClick={() => handleCTAClick('investors_page')}
-                  className="bg-tuggi-primary hover:bg-tuggi-primary-dark text-white font-semibold transition-all duration-200 hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-tuggi-primary focus:ring-offset-2 px-3 py-1.5 text-xs rounded-lg inline-flex items-center space-x-1 group"
-                >
-                  <span>{content.investors.button}</span>
-                  <ArrowRight className="w-2.5 h-2.5 group-hover:translate-x-0.5 transition-transform duration-200" />
-                </button>
+                <div className="text-center">
+                  <button 
+                    onClick={() => handleCTAClick('investors_page')}
+                    className={`${getButtonClasses('primary', 'lg')} inline-flex items-center space-x-2 group-hover:scale-105 transform transition-transform duration-300`}
+                  >
+                    <span>{content.investors.button}</span>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+                  </button>
+                </div>
               </div>
             </div>
           </div>

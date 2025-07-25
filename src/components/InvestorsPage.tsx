@@ -21,9 +21,9 @@ const InvestorsPage: React.FC<InvestorsPageProps> = ({
       PT: {
         title: 'Para investidores',
         subtitle: 'A Tuggi está construindo o futuro da descoberta cultural urbana.',
-        description: 'Criamos um copiloto sonoro que transforma qualquer trajeto — a pé, de carro ou transporte público — em uma experiência de conhecimento. Com tecnologia de geolocalização e inteligência contextual, levamos cultura e curiosidade para o cotidiano das pessoas, sem a necessidade de rotas fixas ou roteiros turísticos tradicionais.',
-        currentStatus: 'Estamos atualmente em fase beta no Brasil, com planos de expansão geográfica, introdução de monetização via modelo freemium, e abertura da plataforma para contribuição da comunidade.',
-        vision: 'Buscamos conexões com investidores e aceleradoras que compartilhem nossa visão de impacto, inovação e educação acessível.',
+        description: 'A Tuggi nasceu do desejo de reconectar as pessoas com o mundo ao seu redor. Acreditamos que a cultura não precisa estar presa a livros, museus ou salas de aula. Ela pode estar viva no caminho, nas ruas, nos nomes, nos edifícios, nos bairros — e pode ser acessada por qualquer pessoa, em qualquer lugar, no momento certo.',
+        currentStatus: 'Para realizar essa visão, criamos um copiloto cultural que transforma trajetos cotidianos em experiências de conhecimento. Utilizando geolocalização, inteligência contextual e narração automática, oferecemos uma nova forma de consumir cultura: natural, viva, espontânea — e sem depender de roteiros fixos.',
+        vision: 'Hoje, a Tuggi está em fase beta no Brasil. Estamos mapeando regiões estratégicas, ouvindo os primeiros usuários e preparando os fundamentos para escalar: Expansão geográfica orientada por dados de interesse, modelo freemium com plano gratuito e opções pagas por tempo de uso, e abertura da plataforma para contribuições da própria comunidade. Buscamos conexões com investidores e aceleradoras que compartilhem nossa visão de impacto, inovação social e acesso democrático ao conhecimento.',
         contactTitle: 'Para conversar conosco, envie um e-mail para:',
         primaryEmail: 'investidores@tuggi.app',
         alternativeContact: 'Se preferir, entre em contato também por:',
@@ -42,9 +42,9 @@ const InvestorsPage: React.FC<InvestorsPageProps> = ({
       EN: {
         title: 'For Investors',
         subtitle: 'Tuggi is building the future of urban cultural discovery.',
-        description: 'We created an audio copilot that transforms any journey — on foot, by car, or public transport — into a knowledge experience. With geolocation technology and contextual intelligence, we bring culture and curiosity to people\'s daily lives, without the need for fixed routes or traditional tourist itineraries.',
-        currentStatus: 'We are currently in beta phase in Brazil, with plans for geographic expansion, introduction of monetization via freemium model, and opening the platform for community contribution.',
-        vision: 'We seek connections with investors and accelerators who share our vision of impact, innovation, and accessible education.',
+        description: 'Tuggi was born from the desire to reconnect people with the world around them. We believe that culture doesn\'t need to be confined to books, museums, or classrooms. It can be alive in the path, in the streets, in names, in buildings, in neighborhoods — and can be accessed by anyone, anywhere, at the right moment.',
+        currentStatus: 'To realize this vision, we created a cultural copilot that transforms everyday journeys into knowledge experiences. Using geolocation, contextual intelligence, and automatic narration, we offer a new way to consume culture: natural, alive, spontaneous — and without depending on fixed itineraries.',
+        vision: 'Today, Tuggi is in beta phase in Brazil. We are mapping strategic regions, listening to early users, and preparing the foundations to scale: Data-driven geographic expansion, freemium model with free plan and paid options for usage time, and opening the platform for community contributions. We seek connections with investors and accelerators who share our vision of impact, social innovation, and democratic access to knowledge.',
         contactTitle: 'To talk to us, send an email to:',
         primaryEmail: 'investidores@tuggi.app',
         alternativeContact: 'If you prefer, also contact us at:',
@@ -63,9 +63,9 @@ const InvestorsPage: React.FC<InvestorsPageProps> = ({
       ES: {
         title: 'Para inversores',
         subtitle: 'Tuggi está construyendo el futuro del descubrimiento cultural urbano.',
-        description: 'Creamos un copiloto de audio que transforma cualquier trayecto — a pie, en coche o transporte público — en una experiencia de conocimiento. Con tecnología de geolocalización e inteligencia contextual, llevamos cultura y curiosidad al día a día de las personas, sin necesidad de rutas fijas o itinerarios turísticos tradicionales.',
-        currentStatus: 'Actualmente estamos en fase beta en Brasil, con planes de expansión geográfica, introducción de monetización vía modelo freemium, y apertura de la plataforma para contribución de la comunidad.',
-        vision: 'Buscamos conexiones con inversores y aceleradoras que compartan nuestra visión de impacto, innovación y educación accesible.',
+        description: 'Tuggi nació del deseo de reconectar a las personas con el mundo que les rodea. Creemos que la cultura no necesita estar confinada a libros, museos o aulas. Puede estar viva en el camino, en las calles, en los nombres, en los edificios, en los barrios — y puede ser accesible para cualquier persona, en cualquier lugar, en el momento adecuado.',
+        currentStatus: 'Para realizar esta visión, creamos un copiloto cultural que transforma trayectos cotidianos en experiencias de conocimiento. Utilizando geolocalización, inteligencia contextual y narración automática, ofrecemos una nueva forma de consumir cultura: natural, viva, espontánea — y sin depender de itinerarios fijos.',
+        vision: 'Hoy, Tuggi está en fase beta en Brasil. Estamos mapeando regiones estratégicas, escuchando a los primeros usuarios y preparando los fundamentos para escalar: Expansión geográfica orientada por datos de interés, modelo freemium con plan gratuito y opciones pagas por tiempo de uso, y apertura de la plataforma para contribuciones de la propia comunidad. Buscamos conexiones con inversores y aceleradoras que compartan nuestra visión de impacto, innovación social y acceso democrático al conocimiento.',
         contactTitle: 'Para conversar con nosotros, envíe un correo electrónico a:',
         primaryEmail: 'investidores@tuggi.app',
         alternativeContact: 'Si prefiere, también contáctenos en:',
@@ -98,9 +98,9 @@ const InvestorsPage: React.FC<InvestorsPageProps> = ({
       style={{ background: 'linear-gradient(to bottom right, #f8fafc, rgba(0, 168, 232, 0.05))' }}
     >
       {/* Hero Section */}
-      <section className={`${layout.section.hero} relative`}>
+      <section className={`${layout.section.hero} relative mb-0`}>
         <div className={`${layout.container.narrow} text-center`}>
-          <div className="mb-8">
+          <div className="mb-0">
             <h1 className="text-4xl lg:text-5xl font-bold text-neutral-900 mb-6 leading-tight">
               {content.title}
             </h1>
@@ -115,6 +115,15 @@ const InvestorsPage: React.FC<InvestorsPageProps> = ({
       <section className={layout.section.base}>
         <div className={layout.container.narrow}>
           <div className="prose prose-lg max-w-none">
+            {/* Logo */}
+            <div className="flex justify-center mb-8 -mt-8">
+              <img 
+                src="/tuggi-drive-logo.png" 
+                alt="Tuggi Logo" 
+                className="h-24 lg:h-32 w-auto"
+              />
+            </div>
+            
             {/* Description */}
             <div className="mb-12">
               <p className="text-lg text-neutral-700 leading-relaxed mb-6">

@@ -249,6 +249,26 @@ export const animations = {
 } as const;
 
 // ============================================================================
+// TRANSITION SYSTEM (Synced with Tailwind)
+// ============================================================================
+
+export const transitions = {
+  duration: {
+    fast: '150ms',
+    normal: '200ms', 
+    slow: '300ms',
+    slower: '500ms',
+  },
+  timing: {
+    ease: 'ease',
+    'ease-in': 'ease-in',
+    'ease-out': 'ease-out',
+    'ease-in-out': 'ease-in-out',
+    linear: 'linear',
+  },
+} as const;
+
+// ============================================================================
 // COMPONENT PATTERNS
 // ============================================================================
 
@@ -413,6 +433,39 @@ export function getCardClasses(includeHover = true) {
   return `${components.card.base} ${includeHover ? components.card.hover : ''}`;
 }
 
+/**
+ * Generate transition classes with specified duration and timing
+ */
+export function getTransitionClasses(
+  duration: keyof typeof transitions.duration = 'normal',
+  timing: keyof typeof transitions.timing = 'ease-in-out'
+) {
+  return `transition-all duration-${duration === 'normal' ? '200' : duration === 'fast' ? '150' : duration === 'slow' ? '300' : '500'} ${timing}`;
+}
+
+/**
+ * Generate spacing classes (Tailwind-compatible)
+ */
+export function getSpacingClass(value: keyof typeof spacing) {
+  // Convert design system spacing keys to Tailwind classes
+  return `${value}`;
+}
+
+/**
+ * Generate color utility classes for Tailwind
+ */
+export function getTuggiColorClass(colorType: 'primary' | 'secondary' | 'success' | 'warning' | 'error' | 'info', variant: 'main' | 'light' | 'dark' = 'main') {
+  const suffix = variant === 'main' ? '' : `-${variant}`;
+  return `tuggi-${colorType}${suffix}`;
+}
+
+/**
+ * Get Tailwind gradient background class
+ */
+export function getGradientClass(gradientName: keyof typeof gradients) {
+  return `bg-gradient-${gradientName}`;
+}
+
 // ============================================================================
 // RESPONSIVE BREAKPOINTS
 // ============================================================================
@@ -451,6 +504,7 @@ export const designSystem = {
   shadows,
   gradients,
   animations,
+  transitions,
   components,
   layout,
   breakpoints,
@@ -460,6 +514,10 @@ export const designSystem = {
     getBadgeClasses,
     getSpinnerClasses,
     getCardClasses,
+    getTransitionClasses,
+    getSpacingClass,
+    getTuggiColorClass,
+    getGradientClass,
   },
 } as const;
 

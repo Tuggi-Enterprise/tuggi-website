@@ -294,6 +294,12 @@ function App() {
       return;
     }
 
+    // Handle investors page navigation
+    if (ctaType === 'investors_page') {
+      handlePageChange('investors');
+      return;
+    }
+
     if (demoCTAs.includes(ctaType)) {
       const formURL = getFormURL(currentLanguage);
       window.open(formURL, '_blank');
