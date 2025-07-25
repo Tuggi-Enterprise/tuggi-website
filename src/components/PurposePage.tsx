@@ -30,9 +30,9 @@ const PurposePage: React.FC<PurposePageProps> = ({
           content: [
             'Criamos a Tuggi porque queremos democratizar o acesso ao conhecimento. Queremos que cada pessoa, em qualquer lugar, tenha a oportunidade de descobrir mais sobre o mundo ao seu redor.',
             'Enquanto outras plataformas centralizam a experiência em roteiros prontos, mapas fechados ou atrações turísticas, nós preferimos entregar liberdade.',
-            'Liberdade para explorar.',
-            'Liberdade para ouvir.',
-            'Liberdade para se conectar.'
+            // 'Liberdade para explorar.',
+            // 'Liberdade para ouvir.',
+            // 'Liberdade para se conectar.'
           ]
         },
         block3: {
@@ -56,7 +56,7 @@ const PurposePage: React.FC<PurposePageProps> = ({
             'Acreditamos em um futuro construído junto. Por isso, mesmo durante a fase beta, já é possível avaliar os conteúdos e sugerir melhorias.',
             'Em breve, você poderá indicar novos pontos, enviar histórias e cocriar a experiência com a gente.',
             'Porque cultura se constrói coletivamente.',
-            'E a Tuggi está aqui para dar voz a esse movimento.'
+            // 'E a Tuggi está aqui para dar voz a esse movimento.'
           ]
         },
         values: {
@@ -119,9 +119,9 @@ const PurposePage: React.FC<PurposePageProps> = ({
           content: [
             'We created Tuggi because we want to democratize access to knowledge. We want every person, anywhere, to have the opportunity to discover more about the world around them.',
             'While other platforms centralize the experience in ready-made itineraries, closed maps, or tourist attractions, we prefer to deliver freedom.',
-            'Freedom to explore.',
-            'Freedom to listen.',
-            'Freedom to connect.'
+            // 'Freedom to explore.',
+            // 'Freedom to listen.',
+            // 'Freedom to connect.'
           ]
         },
         block3: {
@@ -145,7 +145,7 @@ const PurposePage: React.FC<PurposePageProps> = ({
             'We believe in a future built together. That\'s why, even during the beta phase, it\'s already possible to evaluate content and suggest improvements.',
             'Soon, you\'ll be able to indicate new points, send stories, and co-create the experience with us.',
             'Because culture is built collectively.',
-            'And Tuggi is here to give voice to this movement.'
+            // 'And Tuggi is here to give voice to this movement.'
           ]
         },
         values: {
@@ -208,9 +208,9 @@ const PurposePage: React.FC<PurposePageProps> = ({
           content: [
             'Creamos Tuggi porque queremos democratizar el acceso al conocimiento. Queremos que cada persona, en cualquier lugar, tenga la oportunidad de descubrir más sobre el mundo que le rodea.',
             'Mientras otras plataformas centralizan la experiencia en itinerarios prefabricados, mapas cerrados o atracciones turísticas, nosotros preferimos entregar libertad.',
-            'Libertad para explorar.',
-            'Libertad para escuchar.',
-            'Libertad para conectar.'
+            // 'Libertad para explorar.',
+            // 'Libertad para escuchar.',
+            // 'Libertad para conectar.'
           ]
         },
         block3: {
@@ -234,7 +234,7 @@ const PurposePage: React.FC<PurposePageProps> = ({
             'Creemos en un futuro construido juntos. Por eso, incluso durante la fase beta, ya es posible evaluar los contenidos y sugerir mejoras.',
             'Pronto, podrás indicar nuevos puntos, enviar historias y cocrear la experiencia con nosotros.',
             'Porque la cultura se construye colectivamente.',
-            'Y Tuggi está aquí para dar voz a este movimiento.'
+            // 'Y Tuggi está aquí para dar voz a este movimiento.'
           ]
         },
         values: {
@@ -365,101 +365,107 @@ const PurposePage: React.FC<PurposePageProps> = ({
         </div>
       </section>
 
-      {/* Bloco 2 - Por que criamos a Tuggi */}
+      {/* Bloco 2 - Por que criamos a Tuggi + Valores */}
       <section className="py-12 lg:py-16 xl:py-20 bg-gradient-to-br from-neutral-50 to-white relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute top-20 left-20 w-40 h-40 bg-tuggi-primary/3 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-20 w-36 h-36 bg-tuggi-secondary/3 rounded-full blur-3xl"></div>
-        
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900 mb-6 lg:mb-8 text-center">
-            {content.block2.title}
-            </h2>
-          
-          <div className="space-y-6 lg:space-y-8">
-            {content.block2.content.map((paragraph: string, index: number) => (
-              <div key={index} className="group">
-                <p className={`text-lg lg:text-xl leading-relaxed text-center transition-all duration-300 ${
-                  index >= 3 ? 'font-medium text-tuggi-primary text-xl lg:text-2xl' : 'text-neutral-700'
-                }`}>
-                  {paragraph}
-                </p>
-                {index >= 3 && (
-                  <div className="flex justify-center mt-3">
-                    <div className="w-8 h-8 bg-gradient-ocean rounded-full flex items-center justify-center shadow-lg">
-                      <Heart className="w-4 h-4 text-white" />
-                    </div>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Valores da marca - Transição visual */}
-      <section className="py-12 lg:py-16 xl:py-20 bg-white relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute top-20 right-20 w-40 h-40 bg-tuggi-primary/3 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-20 w-36 h-36 bg-tuggi-secondary/3 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-cosmic opacity-3 rounded-full blur-3xl"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="text-center mb-8 lg:mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900 mb-4">
-              {content.values.title}
-            </h2>
-            <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
-              {content.values.subtitle}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-            {/* Descobrimento */}
-            <div className="group text-center bg-gradient-to-br from-neutral-50 to-white border border-neutral-200 rounded-2xl p-6 lg:p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
-              {/* Card Background Pattern */}
-              <div className="absolute top-0 right-0 w-20 h-20 bg-tuggi-primary/5 rounded-full blur-2xl"></div>
-              
-              <div className="inline-flex w-16 h-16 rounded-full bg-gradient-ocean items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg relative z-10">
-                <Eye className="w-8 h-8 text-white" />
+          {/* Content Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            {/* Left Column - Why we created Tuggi */}
+            <div className="space-y-6 lg:space-y-8">
+              <div className="mb-8">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900 mb-6">
+                  {content.block2.title}
+                </h2>
               </div>
-              <h3 className="text-lg lg:text-xl font-bold text-neutral-900 mb-3 group-hover:text-tuggi-primary transition-colors duration-300 relative z-10">
-                {content.values.discovery.title}
-              </h3>
-              <p className="text-sm lg:text-base text-neutral-600 leading-relaxed relative z-10">
-                {content.values.discovery.description}
-              </p>
+              
+              {content.block2.content.map((paragraph: string, index: number) => (
+                <div key={index} className="group">
+                  <p className={`text-lg lg:text-xl leading-relaxed transition-all duration-300 ${
+                    index >= 3 ? 'font-medium text-tuggi-primary text-xl lg:text-2xl' : 'text-neutral-700'
+                  }`}>
+                    {paragraph}
+                  </p>
+                </div>
+              ))}
             </div>
 
-            {/* Conexão */}
-            <div className="group text-center bg-gradient-to-br from-neutral-50 to-white border border-neutral-200 rounded-2xl p-6 lg:p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
-              {/* Card Background Pattern */}
-              <div className="absolute top-0 right-0 w-20 h-20 bg-tuggi-secondary/5 rounded-full blur-2xl"></div>
-              
-              <div className="inline-flex w-16 h-16 rounded-full bg-gradient-forest items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg relative z-10">
-                <Heart className="w-8 h-8 text-white" />
+            {/* Right Column - Values */}
+            <div className="space-y-8">
+              <div className="mb-8">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900 mb-4">
+                  {content.values.title}
+                </h2>
+                <p className="text-base lg:text-lg text-neutral-600">
+                  {content.values.subtitle}
+                </p>
               </div>
-              <h3 className="text-lg lg:text-xl font-bold text-neutral-900 mb-3 group-hover:text-tuggi-primary transition-colors duration-300 relative z-10">
-                {content.values.connection.title}
-              </h3>
-              <p className="text-sm lg:text-base text-neutral-600 leading-relaxed relative z-10">
-                {content.values.connection.description}
-              </p>
-            </div>
 
-            {/* Liberdade */}
-            <div className="group text-center bg-gradient-to-br from-neutral-50 to-white border border-neutral-200 rounded-2xl p-6 lg:p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
-              {/* Card Background Pattern */}
-              <div className="absolute top-0 right-0 w-20 h-20 bg-tuggi-primary/5 rounded-full blur-2xl"></div>
-              
-              <div className="inline-flex w-16 h-16 rounded-full bg-gradient-cosmic items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg relative z-10">
-                <Compass className="w-8 h-8 text-white" />
+              <div className="grid grid-cols-1 gap-6">
+                {/* Descobrimento */}
+                <div className="group text-left bg-white/60 backdrop-blur-sm border border-neutral-200 rounded-2xl p-6 lg:p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
+                  {/* Card Background Pattern */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-tuggi-primary/5 rounded-full blur-2xl"></div>
+                  
+                  <div className="flex items-start space-x-4 relative z-10">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-ocean items-center justify-center flex group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <Eye className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-bold text-neutral-900 mb-2 group-hover:text-tuggi-primary transition-colors duration-300">
+                        {content.values.discovery.title}
+                      </h3>
+                      <p className="text-sm lg:text-base text-neutral-600 leading-relaxed">
+                        {content.values.discovery.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Conexão */}
+                <div className="group text-left bg-white/60 backdrop-blur-sm border border-neutral-200 rounded-2xl p-6 lg:p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
+                  {/* Card Background Pattern */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-tuggi-secondary/5 rounded-full blur-2xl"></div>
+                  
+                  <div className="flex items-start space-x-4 relative z-10">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-forest items-center justify-center flex group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <Heart className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-bold text-neutral-900 mb-2 group-hover:text-tuggi-primary transition-colors duration-300">
+                        {content.values.connection.title}
+                      </h3>
+                      <p className="text-sm lg:text-base text-neutral-600 leading-relaxed">
+                        {content.values.connection.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Liberdade */}
+                <div className="group text-left bg-white/60 backdrop-blur-sm border border-neutral-200 rounded-2xl p-6 lg:p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
+                  {/* Card Background Pattern */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-tuggi-primary/5 rounded-full blur-2xl"></div>
+                  
+                  <div className="flex items-start space-x-4 relative z-10">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-cosmic items-center justify-center flex group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                      <Compass className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-bold text-neutral-900 mb-2 group-hover:text-tuggi-primary transition-colors duration-300">
+                        {content.values.freedom.title}
+                      </h3>
+                      <p className="text-sm lg:text-base text-neutral-600 leading-relaxed">
+                        {content.values.freedom.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-lg lg:text-xl font-bold text-neutral-900 mb-3 group-hover:text-tuggi-primary transition-colors duration-300 relative z-10">
-                {content.values.freedom.title}
-              </h3>
-              <p className="text-sm lg:text-base text-neutral-600 leading-relaxed relative z-10">
-                {content.values.freedom.description}
-              </p>
             </div>
           </div>
         </div>
@@ -518,13 +524,13 @@ const PurposePage: React.FC<PurposePageProps> = ({
                 }`}>
                   {paragraph}
                 </p>
-                {index === content.block4.content.length - 1 && (
+                {/* {index === content.block4.content.length - 1 && (
                   <div className="flex justify-center mt-4">
                     <div className="w-12 h-12 bg-gradient-forest rounded-full flex items-center justify-center shadow-lg">
                       <Compass className="w-6 h-6 text-white" />
                   </div>
                   </div>
-                )}
+                )} */}
               </div>
             ))}
           </div>
@@ -605,7 +611,7 @@ const PurposePage: React.FC<PurposePageProps> = ({
           {/* Highlighted Statements */}
           <div className="space-y-8 lg:space-y-12">
             {/* First Statement */}
-            <div className="group">
+            {/* <div className="group">
               <div className="text-center">
                 <p className="text-xl lg:text-2xl font-medium text-tuggi-primary mb-4 group-hover:text-tuggi-primary-dark transition-colors duration-300">
                   {content.block5.content[3]}
@@ -616,10 +622,10 @@ const PurposePage: React.FC<PurposePageProps> = ({
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* Second Statement */}
-            <div className="group">
+            {/* <div className="group">
               <div className="text-center">
                 <p className="text-xl lg:text-2xl font-medium text-tuggi-primary mb-4 group-hover:text-tuggi-primary-dark transition-colors duration-300">
                   {content.block5.content[4]}
@@ -630,7 +636,7 @@ const PurposePage: React.FC<PurposePageProps> = ({
                   </div>
                 </div>
               </div>
-          </div>
+          </div> */}
         </div>
 
           {/* CTA Section */}

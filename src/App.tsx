@@ -269,6 +269,24 @@ function App() {
       'start_implementation'
     ];
 
+    // Handle legal page navigation CTAs
+    const legalCTAs = [
+      'privacy_policy',
+      'terms_of_use'
+    ];
+
+    if (legalCTAs.includes(ctaType)) {
+      const pageMap: Record<string, string> = {
+        'privacy_policy': 'privacy',
+        'terms_of_use': 'terms'
+      };
+      const targetPage = pageMap[ctaType];
+      if (targetPage) {
+        handlePageChange(targetPage);
+      }
+      return;
+    }
+
     if (demoCTAs.includes(ctaType)) {
       const formURL = getFormURL(currentLanguage);
       window.open(formURL, '_blank');
