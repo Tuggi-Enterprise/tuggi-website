@@ -31,13 +31,13 @@ const ContactPage: React.FC<ContactPageProps> = ({
           note: 'No momento, não utilizamos formulários de contato nem atendimento via telefone. Respondemos os e-mails periodicamente, de acordo com a disponibilidade da equipe.'
         },
         expansion: {
-          title: '🌍 Quer ver a Tuggi na sua cidade?',
+          title: 'Quer ver a Tuggi na sua cidade?',
           description: 'Estamos expandindo gradualmente. Se você gostaria de ter a Tuggi mapeando a sua região, idioma ou país, participe da nossa pesquisa de interesse.',
           button: 'Preencher formulário de interesse',
           note: '(Link será adicionado assim que o formulário oficial estiver disponível)'
         },
         investors: {
-          title: '📈 É investidor ou representa uma aceleradora?',
+          title: 'É investidor ou representa uma aceleradora?',
           description: 'Temos uma página dedicada com informações sobre nosso propósito, estágio atual e canal de contato direto para investidores.',
           button: 'Ir para a página de investidores',
           link: '/investors'
@@ -54,13 +54,13 @@ const ContactPage: React.FC<ContactPageProps> = ({
           note: 'Currently, we do not use contact forms or phone support. We respond to emails periodically, according to team availability.'
         },
         expansion: {
-          title: '🌍 Want to see Tuggi in your city?',
+          title: 'Want to see Tuggi in your city?',
           description: 'We are expanding gradually. If you would like to have Tuggi mapping your region, language, or country, participate in our interest survey.',
           button: 'Fill out interest form',
           note: '(Link will be added once the official form is available)'
         },
         investors: {
-          title: '📈 Are you an investor or represent an accelerator?',
+          title: 'Are you an investor or represent an accelerator?',
           description: 'We have a dedicated page with information about our purpose, current stage, and direct contact channel for investors.',
           button: 'Go to investors page',
           link: '/investors'
@@ -77,13 +77,13 @@ const ContactPage: React.FC<ContactPageProps> = ({
           note: 'Actualmente, no utilizamos formularios de contacto ni atención telefónica. Respondemos los emails periódicamente, según la disponibilidad del equipo.'
         },
         expansion: {
-          title: '🌍 ¿Quieres ver Tuggi en tu ciudad?',
+          title: '¿Quieres ver Tuggi en tu ciudad?',
           description: 'Estamos expandiéndonos gradualmente. Si te gustaría tener Tuggi mapeando tu región, idioma o país, participa en nuestra encuesta de interés.',
           button: 'Llenar formulario de interés',
           note: '(El enlace se agregará una vez que el formulario oficial esté disponible)'
         },
         investors: {
-          title: '📈 ¿Eres inversor o representas una aceleradora?',
+          title: '¿Eres inversor o representas una aceleradora?',
           description: 'Tenemos una página dedicada con información sobre nuestro propósito, etapa actual y canal de contacto directo para inversores.',
           button: 'Ir a la página de inversores',
           link: '/investors'

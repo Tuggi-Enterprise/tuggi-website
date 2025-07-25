@@ -191,9 +191,9 @@ function App() {
   // Helper function to get the correct form URL based on language
   const getFormURL = (language: string): string => {
     const formURLs = {
-      'EN': 'https://forms.gle/35v8pMERdPqKSt5C6',   // English
-      'PT': 'https://forms.gle/hMfqGLVrQeqFCd5F7',   // Portuguese
-      'ES': 'https://forms.gle/Mcm3w7TSN71L33hh7'    // Spanish
+      'EN': 'https://forms.gle/B5VWqtDgjEKEiHv1A',   // English
+      'PT': 'https://forms.gle/B5VWqtDgjEKEiHv1A',   // Portuguese
+      'ES': 'https://forms.gle/B5VWqtDgjEKEiHv1A'    // Spanish
     };
     return formURLs[language as keyof typeof formURLs] || formURLs['EN'];
   };
@@ -254,6 +254,8 @@ function App() {
       'apply_early_access',
       'join_beta_program',
       'join_early_partners_program',
+      'join_beta',
+      'early_access',
       
       // Demo scheduling
       'schedule_live_demo',
@@ -273,7 +275,11 @@ function App() {
       // Business and partnership CTAs
       'join_founding_partner',
       'get_started',
-      'start_implementation'
+      'start_implementation',
+      
+      // City expansion and contact forms
+      'expansion_form',
+      'request_city'
     ];
 
     // Handle legal page navigation CTAs
@@ -303,7 +309,32 @@ function App() {
     if (demoCTAs.includes(ctaType)) {
       const formURL = getFormURL(currentLanguage);
       window.open(formURL, '_blank');
+      return;
     }
+
+    // Handle external social media links
+    const socialCTAs = [
+      'linkedin_leandro_ramos',
+      'linkedin_pedro_silva',
+      'linkedin_ana_costa',
+      'view_open_positions'
+    ];
+
+    if (socialCTAs.some(social => ctaType.startsWith(social.split('_')[0]))) {
+      // Social media links are handled directly in components with their own href
+      // This is just for analytics tracking
+      return;
+    }
+
+    // Handle email contact (analytics only)
+    if (ctaType === 'email_contact') {
+      // Email links are handled directly in components with mailto:
+      // This is just for analytics tracking
+      return;
+    }
+
+    // For any unhandled CTA types, log for debugging
+    console.log(`Unhandled CTA type: ${ctaType}`);
   };
 
   // Helper functions for enhanced analytics
