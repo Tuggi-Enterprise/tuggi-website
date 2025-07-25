@@ -129,35 +129,13 @@ const ExpansionSection: React.FC<ExpansionSectionProps> = ({
           {/* Visual */}
           <div className="relative">
             <div className="bg-white/60 backdrop-blur-sm rounded-3xl p-6 border border-white/20 shadow-xl">
-              {/* Map Visualization */}
-              <div className="aspect-square bg-gradient-to-br from-neutral-100 to-neutral-200 rounded-2xl p-8 relative overflow-hidden">
-                {/* São Paulo - Current */}
-                <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <div className="w-4 h-4 bg-tuggi-primary rounded-full animate-pulse"></div>
-                  <div className="text-xs font-semibold text-tuggi-primary mt-1 whitespace-nowrap">São Paulo</div>
-                </div>
-
-                {/* Future Cities - Placeholder dots */}
-                <div className="absolute top-1/4 left-1/3">
-                  <div className="w-3 h-3 bg-neutral-400 rounded-full opacity-40"></div>
-                  <div className="text-xs text-neutral-500 mt-1">?</div>
-                </div>
-                <div className="absolute bottom-1/3 right-1/4">
-                  <div className="w-3 h-3 bg-neutral-400 rounded-full opacity-40"></div>
-                  <div className="text-xs text-neutral-500 mt-1">?</div>
-                </div>
-                <div className="absolute top-1/2 right-1/3">
-                  <div className="w-3 h-3 bg-neutral-400 rounded-full opacity-40"></div>
-                  <div className="text-xs text-neutral-500 mt-1">?</div>
-                </div>
-
-                {/* Map Grid Background */}
-                <div className="absolute inset-0 opacity-10">
-                  <div className="h-full w-full" style={{
-                    backgroundImage: `url("data:image/svg+xml,%3csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3e%3cdefs%3e%3cpattern id='grid' width='20' height='20' patternUnits='userSpaceOnUse'%3e%3cpath d='M 20 0 L 0 0 0 20' fill='none' stroke='%23000' stroke-width='1'/%3e%3c/pattern%3e%3c/defs%3e%3crect width='100' height='100' fill='url(%23grid)' /%3e%3c/svg%3e")`,
-                    backgroundSize: '20px 20px'
-                  }}></div>
-                </div>
+              {/* Media Coverage Image */}
+              <div className="aspect-square rounded-2xl overflow-hidden">
+                <img 
+                  src="/tuggi-covered-july-2025.png" 
+                  alt="Tuggi media coverage July 2025" 
+                  className="w-full h-full object-cover"
+                />
               </div>
 
               {/* Stats */}

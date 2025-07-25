@@ -10,22 +10,26 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   currentLanguage = 'EN',
   onCTAClick 
 }) => {
-  // State for image animation
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
-  const images = [
+  const screenshots = [
     '/home-screenshot.png',
     '/home-screenshot-2.png'
   ];
 
-  // Animation effect
+  // Auto-cycle through screenshots every 4 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % images.length);
-    }, 4000); // Change image every 4 seconds
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setCurrentImageIndex((prev) => (prev + 1) % screenshots.length);
+        setIsTransitioning(false);
+      }, 300); // Half of the transition duration
+    }, 4000);
 
     return () => clearInterval(interval);
-  }, [images.length]);
+  }, [screenshots.length]);
 
   // Localized content
   const getLocalizedContent = (language: string) => {
@@ -124,32 +128,32 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           {/* Mobile App Mockup */}
           <div className="relative animate-fade-in">
             <div className="relative bg-gradient-subtle rounded-3xl p-6 lg:p-8">
-              {/* Mobile App Screenshot */}
+              {/* Mobile App Screenshot with Animation */}
               <div className="mx-auto relative">
-                {images.map((image, index) => (
-                  <img 
-                    key={image}
-                    src={image} 
-                    alt="Tuggi Drive mobile app screenshot" 
-                    className={`w-48 h-auto rounded-3xl shadow-2xl mx-auto absolute top-0 left-1/2 transform -translate-x-1/2 transition-opacity duration-1000 ease-in-out ${
-                      index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-                    }`}
-                    style={{ zIndex: index === currentImageIndex ? 2 : 1 }}
-                  />
-                ))}
-                {/* Spacer to maintain height */}
-                <div className="w-48 h-auto invisible">
-                  <img 
-                    src={images[0]} 
-                    alt="" 
-                    className="w-full h-auto"
-                  />
+                <div className="relative w-48 h-auto mx-auto">
+                  {screenshots.map((screenshot, index) => (
+                    <img 
+                      key={screenshot}
+                      src={screenshot} 
+                      alt={`Tuggi Drive mobile app screenshot ${index + 1}`}
+                      className={`absolute inset-0 w-full h-auto rounded-3xl shadow-2xl transition-opacity duration-600 ease-in-out ${
+                        index === currentImageIndex && !isTransitioning
+                          ? 'opacity-100'
+                          : 'opacity-0'
+                      }`}
+                      style={{
+                        transition: 'opacity 0.6s ease-in-out'
+                      }}
+                    />
+                  ))}
+                  {/* Placeholder to maintain aspect ratio */}
+                  <div className="w-full h-auto rounded-3xl" style={{ aspectRatio: '9/16' }}></div>
                 </div>
               </div>
               
               {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-tuggi-secondary rounded-2xl opacity-20 rotate-12"></div>
-              <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-tuggi-primary rounded-2xl opacity-20 -rotate-12"></div>
+              <div className="absolute -top-4 -right-4 w-20 h-20 bg-tuggi-secondary rounded-2xl opacity-20 rotate-12 animate-pulse"></div>
+              <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-tuggi-primary rounded-2xl opacity-20 -rotate-12 animate-pulse" style={{ animationDelay: '1s' }}></div>
             </div>
           </div>
         </div>
