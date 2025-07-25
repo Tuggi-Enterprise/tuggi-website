@@ -310,7 +310,7 @@ const PurposePage: React.FC<PurposePageProps> = ({
                 Um manifesto sobre democratizar o acesso à cultura e transformar qualquer trajeto em uma jornada de descobertas.
               </p>
             </div>
-
+            
             {/* Right Column - Visual Element */}
             <div className="relative flex justify-center lg:justify-end">
               {/* Book Mockup */}
@@ -344,8 +344,8 @@ const PurposePage: React.FC<PurposePageProps> = ({
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900 mb-6 lg:mb-8 text-center">
             {content.block1.title}
-          </h2>
-          
+            </h2>
+            
           <div className="space-y-6 lg:space-y-8">
             {content.block1.content.map((paragraph: string, index: number) => (
               <div key={index} className="group">
@@ -374,7 +374,7 @@ const PurposePage: React.FC<PurposePageProps> = ({
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900 mb-6 lg:mb-8 text-center">
             {content.block2.title}
-          </h2>
+            </h2>
           
           <div className="space-y-6 lg:space-y-8">
             {content.block2.content.map((paragraph: string, index: number) => (
@@ -412,7 +412,7 @@ const PurposePage: React.FC<PurposePageProps> = ({
               {content.values.subtitle}
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {/* Descobrimento */}
             <div className="group text-center bg-gradient-to-br from-neutral-50 to-white border border-neutral-200 rounded-2xl p-6 lg:p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
@@ -522,7 +522,7 @@ const PurposePage: React.FC<PurposePageProps> = ({
                   <div className="flex justify-center mt-4">
                     <div className="w-12 h-12 bg-gradient-forest rounded-full flex items-center justify-center shadow-lg">
                       <Compass className="w-6 h-6 text-white" />
-                    </div>
+                  </div>
                   </div>
                 )}
               </div>
@@ -555,9 +555,9 @@ const PurposePage: React.FC<PurposePageProps> = ({
                   </p>
                   <p className="text-base lg:text-lg text-neutral-600 leading-relaxed">
                     {content.block5.content[1]}
-                  </p>
-                </div>
-                
+            </p>
+          </div>
+
                 <div className="bg-gradient-to-br from-tuggi-primary/5 to-tuggi-secondary/5 rounded-2xl p-6 lg:p-8 border border-tuggi-primary/10">
                   <p className="text-base lg:text-lg text-neutral-700 leading-relaxed">
                     {content.block5.content[2]}
@@ -630,8 +630,8 @@ const PurposePage: React.FC<PurposePageProps> = ({
                   </div>
                 </div>
               </div>
-            </div>
           </div>
+        </div>
 
           {/* CTA Section */}
           <div className="text-center mt-12 lg:mt-16">
@@ -641,14 +641,14 @@ const PurposePage: React.FC<PurposePageProps> = ({
               </h3>
               <p className="text-base lg:text-lg text-neutral-600 mb-6 max-w-2xl mx-auto">
                 {content.cta.description}
-              </p>
-              <button 
+            </p>
+            <button 
                 onClick={() => handleCTAClick('join_beta')}
                 className="bg-tuggi-primary hover:bg-tuggi-primary-dark text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center space-x-2 group"
-              >
+            >
                 <span>{content.cta.button}</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
-              </button>
+            </button>
             </div>
           </div>
         </div>
@@ -664,7 +664,7 @@ const PurposePage: React.FC<PurposePageProps> = ({
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900 mb-4">
               {content.appMockup.title}
-            </h2>
+          </h2>
             <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
               {content.appMockup.subtitle}
             </p>
