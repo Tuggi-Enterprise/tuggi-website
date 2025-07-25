@@ -1,6 +1,15 @@
 import React from 'react';
 import { Compass, Users, Eye, BookOpen, ArrowRight, Heart } from 'lucide-react';
 import FinalCTASection from './FinalCTASection';
+import { 
+  getButtonClasses, 
+  getCardClasses, 
+  getBadgeClasses,
+  layout,
+  gradients,
+  colors,
+  spacing
+} from '../utils/designSystem';
 
 interface PurposePageProps {
   currentLanguage?: string;
@@ -294,13 +303,16 @@ const PurposePage: React.FC<PurposePageProps> = ({
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-12 lg:py-16 xl:py-20 bg-gradient-hero relative overflow-hidden">
+      <section 
+        className={`${layout.section.hero} relative overflow-hidden`}
+        style={{ background: gradients.hero }}
+      >
         {/* Background Elements */}
         <div className="absolute top-20 left-20 w-40 h-40 bg-tuggi-primary/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-20 w-36 h-36 bg-tuggi-secondary/5 rounded-full blur-3xl"></div>
         
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className={layout.container.wide}>
+          <div className={`${layout.grid['2']} gap-8 lg:gap-12 items-center`}>
             {/* Left Column - Text Content */}
             <div className="text-center lg:text-left">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-neutral-900 mb-6 lg:mb-8 leading-tight">
@@ -314,14 +326,24 @@ const PurposePage: React.FC<PurposePageProps> = ({
             {/* Right Column - Visual Element */}
             <div className="relative flex justify-center lg:justify-end">
               {/* Book Mockup */}
-              <div className="relative bg-gradient-subtle rounded-3xl p-8 lg:p-12" style={{width: '280px', height: '400px'}}>
+              <div 
+                className="relative rounded-3xl p-8 lg:p-12" 
+                style={{
+                  width: '280px', 
+                  height: '400px',
+                  background: gradients.subtle
+                }}
+              >
                 {/* Floating Elements */}
                 <div className="absolute top-4 right-4 w-16 h-16 bg-tuggi-primary/10 rounded-full blur-xl"></div>
                 <div className="absolute bottom-4 left-4 w-20 h-20 bg-tuggi-secondary/10 rounded-full blur-xl"></div>
                 
                 {/* Book Content */}
                 <div className="relative z-10 h-full flex flex-col justify-center items-center text-center">
-                  <div className="w-20 h-20 bg-gradient-aurora rounded-full flex items-center justify-center mb-6 shadow-2xl">
+                  <div 
+                    className="w-20 h-20 rounded-full flex items-center justify-center mb-6 shadow-2xl"
+                    style={{ background: gradients.aurora }}
+                  >
                     <BookOpen className="w-10 h-10 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-neutral-800 mb-3">{content.bookMockup.title}</h3>
@@ -336,12 +358,12 @@ const PurposePage: React.FC<PurposePageProps> = ({
       </section>
 
       {/* Bloco 1 - Cultura em movimento */}
-      <section className="py-12 lg:py-16 xl:py-20 bg-white relative overflow-hidden">
+      <section className={`${layout.section.base} bg-white relative overflow-hidden`}>
         {/* Background Elements */}
         <div className="absolute top-20 right-20 w-36 h-36 bg-tuggi-primary/4 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 left-20 w-40 h-40 bg-tuggi-secondary/4 rounded-full blur-3xl"></div>
         
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className={`${layout.container.narrow} relative`}>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900 mb-6 lg:mb-8 text-center">
             {content.block1.title}
             </h2>
@@ -366,15 +388,21 @@ const PurposePage: React.FC<PurposePageProps> = ({
       </section>
 
       {/* Bloco 2 - Por que criamos a Tuggi + Valores */}
-      <section className="py-12 lg:py-16 xl:py-20 bg-gradient-to-br from-neutral-50 to-white relative overflow-hidden">
+      <section 
+        className={`${layout.section.base} relative overflow-hidden`}
+        style={{ background: 'linear-gradient(to bottom right, #f8fafc, white)' }}
+      >
         {/* Background Elements */}
         <div className="absolute top-20 left-20 w-40 h-40 bg-tuggi-primary/3 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-20 w-36 h-36 bg-tuggi-secondary/3 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-cosmic opacity-3 rounded-full blur-3xl"></div>
+        <div 
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full blur-3xl"
+          style={{ background: gradients.cosmic, opacity: 0.03 }}
+        ></div>
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className={layout.container.base}>
           {/* Content Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          <div className={`${layout.grid['2']} gap-12 lg:gap-16 items-start`}>
             {/* Left Column - Why we created Tuggi */}
             <div className="space-y-6 lg:space-y-8">
               <div className="mb-8">
@@ -407,12 +435,15 @@ const PurposePage: React.FC<PurposePageProps> = ({
 
               <div className="grid grid-cols-1 gap-6">
                 {/* Descobrimento */}
-                <div className="group text-left bg-white/60 backdrop-blur-sm border border-neutral-200 rounded-2xl p-6 lg:p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
+                <div className={`${getCardClasses()} group text-left bg-white/60 backdrop-blur-sm border border-neutral-200 relative overflow-hidden`}>
                   {/* Card Background Pattern */}
                   <div className="absolute top-0 right-0 w-20 h-20 bg-tuggi-primary/5 rounded-full blur-2xl"></div>
                   
                   <div className="flex items-start space-x-4 relative z-10">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-ocean items-center justify-center flex group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <div 
+                      className="flex-shrink-0 w-12 h-12 rounded-full items-center justify-center flex group-hover:scale-110 transition-transform duration-300 shadow-lg"
+                      style={{ background: gradients.ocean }}
+                    >
                       <Eye className="w-6 h-6 text-white" />
                     </div>
                     <div className="flex-1">
@@ -427,12 +458,15 @@ const PurposePage: React.FC<PurposePageProps> = ({
                 </div>
 
                 {/* Conexão */}
-                <div className="group text-left bg-white/60 backdrop-blur-sm border border-neutral-200 rounded-2xl p-6 lg:p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
+                <div className={`${getCardClasses()} group text-left bg-white/60 backdrop-blur-sm border border-neutral-200 relative overflow-hidden`}>
                   {/* Card Background Pattern */}
                   <div className="absolute top-0 right-0 w-20 h-20 bg-tuggi-secondary/5 rounded-full blur-2xl"></div>
                   
                   <div className="flex items-start space-x-4 relative z-10">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-forest items-center justify-center flex group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <div 
+                      className="flex-shrink-0 w-12 h-12 rounded-full items-center justify-center flex group-hover:scale-110 transition-transform duration-300 shadow-lg"
+                      style={{ background: gradients.forest }}
+                    >
                       <Heart className="w-6 h-6 text-white" />
                     </div>
                     <div className="flex-1">
@@ -447,12 +481,15 @@ const PurposePage: React.FC<PurposePageProps> = ({
                 </div>
 
                 {/* Liberdade */}
-                <div className="group text-left bg-white/60 backdrop-blur-sm border border-neutral-200 rounded-2xl p-6 lg:p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
+                <div className={`${getCardClasses()} group text-left bg-white/60 backdrop-blur-sm border border-neutral-200 relative overflow-hidden`}>
                   {/* Card Background Pattern */}
                   <div className="absolute top-0 right-0 w-20 h-20 bg-tuggi-primary/5 rounded-full blur-2xl"></div>
                   
                   <div className="flex items-start space-x-4 relative z-10">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-cosmic items-center justify-center flex group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <div 
+                      className="flex-shrink-0 w-12 h-12 rounded-full items-center justify-center flex group-hover:scale-110 transition-transform duration-300 shadow-lg"
+                      style={{ background: gradients.cosmic }}
+                    >
                       <Compass className="w-6 h-6 text-white" />
                     </div>
                     <div className="flex-1">
@@ -472,12 +509,15 @@ const PurposePage: React.FC<PurposePageProps> = ({
       </section>
 
       {/* Bloco 3 - Como fazemos isso */}
-      <section className="py-12 lg:py-16 xl:py-20 bg-gradient-subtle relative overflow-hidden">
+      <section 
+        className={`${layout.section.base} relative overflow-hidden`}
+        style={{ background: gradients.subtle }}
+      >
         {/* Background Elements */}
         <div className="absolute top-10 right-10 w-28 h-28 bg-tuggi-primary/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-10 left-10 w-32 h-32 bg-tuggi-secondary/5 rounded-full blur-3xl"></div>
         
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className={`${layout.container.narrow} relative`}>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900 mb-6 lg:mb-8 text-center">
             {content.block3.title}
           </h2>
@@ -491,7 +531,7 @@ const PurposePage: React.FC<PurposePageProps> = ({
                   {paragraph}
                 </p>
                 {index === content.block3.content.length - 1 && (
-                  <div className="flex justify-center mt-4">
+                  <div className={`${layout.flex.center} mt-4`}>
                     <div className="flex items-center space-x-2">
                       <div className="w-3 h-3 bg-tuggi-primary rounded-full animate-pulse"></div>
                       <div className="w-3 h-3 bg-tuggi-secondary rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
@@ -506,12 +546,12 @@ const PurposePage: React.FC<PurposePageProps> = ({
       </section>
 
       {/* Bloco 4 - Liberdade de rota */}
-      <section className="py-12 lg:py-16 xl:py-20 bg-white relative overflow-hidden">
+      <section className={`${layout.section.base} bg-white relative overflow-hidden`}>
         {/* Background Elements */}
         <div className="absolute top-20 right-20 w-36 h-36 bg-tuggi-primary/4 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 left-20 w-40 h-40 bg-tuggi-secondary/4 rounded-full blur-3xl"></div>
         
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className={`${layout.container.narrow} relative`}>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900 mb-6 lg:mb-8 text-center">
             {content.block4.title}
           </h2>
@@ -524,13 +564,6 @@ const PurposePage: React.FC<PurposePageProps> = ({
                 }`}>
                   {paragraph}
                 </p>
-                {/* {index === content.block4.content.length - 1 && (
-                  <div className="flex justify-center mt-4">
-                    <div className="w-12 h-12 bg-gradient-forest rounded-full flex items-center justify-center shadow-lg">
-                      <Compass className="w-6 h-6 text-white" />
-                  </div>
-                  </div>
-                )} */}
               </div>
             ))}
           </div>
@@ -538,13 +571,19 @@ const PurposePage: React.FC<PurposePageProps> = ({
       </section>
 
       {/* Bloco 5 - Um futuro construído em comunidade */}
-      <section className="py-12 lg:py-16 xl:py-20 bg-gradient-to-br from-neutral-50 to-white relative overflow-hidden">
+      <section 
+        className={`${layout.section.base} relative overflow-hidden`}
+        style={{ background: 'linear-gradient(to bottom right, #f8fafc, white)' }}
+      >
         {/* Background Elements */}
         <div className="absolute top-10 left-10 w-32 h-32 bg-tuggi-primary/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-10 right-10 w-28 h-28 bg-tuggi-secondary/5 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-cosmic opacity-5 rounded-full blur-3xl"></div>
+        <div 
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full blur-3xl"
+          style={{ background: gradients.cosmic, opacity: 0.05 }}
+        ></div>
         
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className={`${layout.container.wide} relative`}>
           {/* Header Section */}
           <div className="text-center mb-12 lg:mb-16">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900 mb-6 lg:mb-8">
@@ -552,7 +591,7 @@ const PurposePage: React.FC<PurposePageProps> = ({
             </h2>
             
             {/* Main Content Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className={`${layout.grid['2']} gap-8 lg:gap-12 items-center`}>
               {/* Left Column - Text Content */}
               <div className="space-y-6 lg:space-y-8">
                 <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-white/20 shadow-lg">
@@ -564,7 +603,10 @@ const PurposePage: React.FC<PurposePageProps> = ({
             </p>
           </div>
 
-                <div className="bg-gradient-to-br from-tuggi-primary/5 to-tuggi-secondary/5 rounded-2xl p-6 lg:p-8 border border-tuggi-primary/10">
+                <div 
+                  className="rounded-2xl p-6 lg:p-8 border border-tuggi-primary/10"
+                  style={{ background: 'linear-gradient(to bottom right, rgba(0, 168, 232, 0.05), rgba(255, 111, 0, 0.05))' }}
+                >
                   <p className="text-base lg:text-lg text-neutral-700 leading-relaxed">
                     {content.block5.content[2]}
                   </p>
@@ -574,20 +616,26 @@ const PurposePage: React.FC<PurposePageProps> = ({
               {/* Right Column - Visual Elements */}
               <div className="relative">
                 {/* Community Visual */}
-                <div className="bg-gradient-subtle rounded-3xl p-8 lg:p-12 text-center relative overflow-hidden">
+                <div 
+                  className="rounded-3xl p-8 lg:p-12 text-center relative overflow-hidden"
+                  style={{ background: gradients.subtle }}
+                >
                   {/* Floating Elements */}
                   <div className="absolute top-4 right-4 w-16 h-16 bg-tuggi-primary/10 rounded-full blur-xl"></div>
                   <div className="absolute bottom-4 left-4 w-20 h-20 bg-tuggi-secondary/10 rounded-full blur-xl"></div>
                   
                   {/* Main Icon */}
                   <div className="relative z-10 mb-6">
-                    <div className="w-24 h-24 bg-gradient-cosmic rounded-full flex items-center justify-center mx-auto shadow-2xl">
+                    <div 
+                      className="w-24 h-24 rounded-full flex items-center justify-center mx-auto shadow-2xl"
+                      style={{ background: gradients.cosmic }}
+                    >
                       <Users className="w-12 h-12 text-white" />
                     </div>
                   </div>
                   
                   {/* Community Stats */}
-                  <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className={`${layout.grid['2']} gap-4 mb-6`}>
                     <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4">
                       <div className="text-2xl font-bold text-tuggi-primary">150+</div>
                       <div className="text-sm text-neutral-600">{content.community.participants}</div>
@@ -599,49 +647,21 @@ const PurposePage: React.FC<PurposePageProps> = ({
                   </div>
                   
                   {/* Beta Badge */}
-                  <div className="inline-flex items-center px-4 py-2 bg-tuggi-primary/10 rounded-full border border-tuggi-primary/20">
-                    <div className="w-2 h-2 bg-tuggi-primary rounded-full mr-2 animate-pulse"></div>
-                    <span className="text-sm font-semibold text-tuggi-primary">{content.community.betaPhase}</span>
+                  <div className={getBadgeClasses('info', 'md')}>
+                    <div className="w-2 h-2 bg-tuggi-primary rounded-full animate-pulse"></div>
+                    <span>{content.community.betaPhase}</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Highlighted Statements */}
-          <div className="space-y-8 lg:space-y-12">
-            {/* First Statement */}
-            {/* <div className="group">
-              <div className="text-center">
-                <p className="text-xl lg:text-2xl font-medium text-tuggi-primary mb-4 group-hover:text-tuggi-primary-dark transition-colors duration-300">
-                  {content.block5.content[3]}
-                </p>
-                <div className="flex justify-center">
-                  <div className="w-16 h-16 bg-gradient-ocean rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <Heart className="w-8 h-8 text-white" />
-                  </div>
-                </div>
-              </div>
-            </div> */}
-
-            {/* Second Statement */}
-            {/* <div className="group">
-              <div className="text-center">
-                <p className="text-xl lg:text-2xl font-medium text-tuggi-primary mb-4 group-hover:text-tuggi-primary-dark transition-colors duration-300">
-                  {content.block5.content[4]}
-                </p>
-                <div className="flex justify-center">
-                  <div className="w-16 h-16 bg-gradient-forest rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <Globe className="w-8 h-8 text-white" />
-                  </div>
-                </div>
-              </div>
-          </div> */}
-        </div>
-
           {/* CTA Section */}
           <div className="text-center mt-12 lg:mt-16">
-            <div className="bg-gradient-to-r from-tuggi-primary/5 to-tuggi-secondary/5 rounded-3xl p-8 lg:p-12 border border-tuggi-primary/10">
+            <div 
+              className="rounded-3xl p-8 lg:p-12 border border-tuggi-primary/10"
+              style={{ background: 'linear-gradient(to right, rgba(0, 168, 232, 0.05), rgba(255, 111, 0, 0.05))' }}
+            >
               <h3 className="text-xl lg:text-2xl font-bold text-neutral-900 mb-4">
                 {content.cta.title}
               </h3>
@@ -650,7 +670,7 @@ const PurposePage: React.FC<PurposePageProps> = ({
             </p>
             <button 
                 onClick={() => handleCTAClick('join_beta')}
-                className="bg-tuggi-primary hover:bg-tuggi-primary-dark text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center space-x-2 group"
+                className={`${getButtonClasses('primary', 'lg')} inline-flex items-center space-x-2 group`}
             >
                 <span>{content.cta.button}</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
@@ -661,12 +681,15 @@ const PurposePage: React.FC<PurposePageProps> = ({
       </section>
 
       {/* Final Visual Element - App Mockup */}
-      <section className="py-12 lg:py-16 xl:py-20 bg-gradient-to-br from-neutral-50 to-white relative overflow-hidden">
+      <section 
+        className={`${layout.section.base} relative overflow-hidden`}
+        style={{ background: 'linear-gradient(to bottom right, #f8fafc, white)' }}
+      >
         {/* Background Elements */}
         <div className="absolute top-10 left-10 w-32 h-32 bg-tuggi-primary/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-10 right-10 w-28 h-28 bg-tuggi-secondary/5 rounded-full blur-3xl"></div>
         
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className={`${layout.container.wide} relative`}>
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900 mb-4">
               {content.appMockup.title}
@@ -676,8 +699,11 @@ const PurposePage: React.FC<PurposePageProps> = ({
             </p>
           </div>
           
-          <div className="flex justify-center">
-            <div className="relative bg-gradient-subtle rounded-3xl p-6 lg:p-8">
+          <div className={layout.flex.center}>
+            <div 
+              className="relative rounded-3xl p-6 lg:p-8"
+              style={{ background: gradients.subtle }}
+            >
               {/* Mobile App Interface */}
               <div className="bg-white rounded-3xl shadow-2xl overflow-hidden mx-auto" style={{width: '240px', height: '480px'}}>
                 {/* Status Bar */}
@@ -692,7 +718,7 @@ const PurposePage: React.FC<PurposePageProps> = ({
                 
                 {/* App Header */}
                 <div className="bg-tuggi-primary px-6 py-4 text-white">
-                  <div className="flex items-center justify-between">
+                  <div className={layout.flex.between}>
                     <div className="text-lg font-bold">Tuggi</div>
                     <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
                       <span className="text-sm">🎧</span>
@@ -715,7 +741,10 @@ const PurposePage: React.FC<PurposePageProps> = ({
                   </div>
                   
                   {/* Active Story */}
-                  <div className="bg-gradient-aurora rounded-lg p-4">
+                  <div 
+                    className="rounded-lg p-4"
+                    style={{ background: gradients.aurora }}
+                  >
                     <div className="text-sm font-semibold text-tuggi-primary mb-2">🎙️ {content.appMockup.nowPlaying}</div>
                     <div className="text-sm text-neutral-800 font-medium mb-2">{content.appMockup.storyTitle}</div>
                     <div className="flex items-center space-x-2">

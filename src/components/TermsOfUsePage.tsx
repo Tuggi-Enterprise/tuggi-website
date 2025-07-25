@@ -1,4 +1,5 @@
 import React from 'react';
+import { layout } from '../utils/designSystem';
 
 interface TermsOfUsePageProps {
   currentLanguage?: string;
@@ -300,8 +301,8 @@ Al continuar utilizando nuestros servicios, aceptas las alteraciones.`
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <section className="bg-white py-16 lg:py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className={`${layout.section.base} bg-white`}>
+        <div className={layout.container.narrow}>
           <div className="text-center mb-12">
             <h1 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-4">
               {content.title}
@@ -318,8 +319,8 @@ Al continuar utilizando nuestros servicios, aceptas las alteraciones.`
       </section>
 
       {/* Content */}
-      <section className="pb-16 lg:pb-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className={layout.section.base}>
+        <div className={layout.container.narrow}>
           <div className="prose prose-lg max-w-none">
             {content.sections.map((section: any, index: number) => (
               <div key={index} className="mb-12">

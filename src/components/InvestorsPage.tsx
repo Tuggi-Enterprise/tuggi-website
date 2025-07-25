@@ -1,5 +1,11 @@
 import React from 'react';
 import { TrendingUp, Users, Globe, DollarSign, Calendar, ArrowRight, CheckCircle, Star, BarChart3, Lightbulb, Building2, Mail } from 'lucide-react';
+import { 
+  getButtonClasses, 
+  getCardClasses, 
+  layout,
+  gradients 
+} from '../utils/designSystem';
 
 interface InvestorsPageProps {
   currentLanguage: string;
@@ -87,10 +93,13 @@ const InvestorsPage: React.FC<InvestorsPageProps> = ({
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-neutral-50 to-tuggi-primary/5">
+    <div 
+      className="min-h-screen"
+      style={{ background: 'linear-gradient(to bottom right, #f8fafc, rgba(0, 168, 232, 0.05))' }}
+    >
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className={`${layout.section.hero} relative`}>
+        <div className={`${layout.container.narrow} text-center`}>
           <div className="mb-8">
             <h1 className="text-4xl lg:text-5xl font-bold text-neutral-900 mb-6 leading-tight">
               {content.title}
@@ -103,8 +112,8 @@ const InvestorsPage: React.FC<InvestorsPageProps> = ({
       </section>
 
       {/* Main Content */}
-      <section className="py-16 lg:py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className={layout.section.base}>
+        <div className={layout.container.narrow}>
           <div className="prose prose-lg max-w-none">
             {/* Description */}
             <div className="mb-12">
@@ -120,8 +129,8 @@ const InvestorsPage: React.FC<InvestorsPageProps> = ({
             </div>
 
             {/* Market Insights Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-neutral-200">
+            <div className={`${layout.grid['3']} gap-8 mb-16`}>
+              <div className={getCardClasses()}>
                 <div className="flex items-center mb-4">
                   <TrendingUp className="w-6 h-6 text-tuggi-primary mr-3" />
                   <h3 className="text-lg font-semibold text-neutral-900">{content.marketSize}</h3>
@@ -130,7 +139,7 @@ const InvestorsPage: React.FC<InvestorsPageProps> = ({
                 <p className="text-sm text-neutral-600">{content.marketGrowth}</p>
               </div>
 
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-neutral-200">
+              <div className={getCardClasses()}>
                 <div className="flex items-center mb-4">
                   <Users className="w-6 h-6 text-tuggi-primary mr-3" />
                   <h3 className="text-lg font-semibold text-neutral-900">{content.userBase}</h3>
@@ -139,7 +148,7 @@ const InvestorsPage: React.FC<InvestorsPageProps> = ({
                 <p className="text-sm text-neutral-600">{content.userGrowth}</p>
               </div>
 
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-neutral-200">
+              <div className={getCardClasses()}>
                 <div className="flex items-center mb-4">
                   <Globe className="w-6 h-6 text-tuggi-primary mr-3" />
                   <h3 className="text-lg font-semibold text-neutral-900">{content.targetMarkets}</h3>
@@ -150,7 +159,7 @@ const InvestorsPage: React.FC<InvestorsPageProps> = ({
             </div>
 
             {/* Contact Section */}
-            <div className="bg-white rounded-xl p-8 lg:p-12 shadow-sm border border-neutral-200">
+            <div className={`${getCardClasses(false)} p-8 lg:p-12`}>
               <div className="text-center mb-8">
                 <Building2 className="w-12 h-12 text-tuggi-primary mx-auto mb-4" />
                 <h2 className="text-2xl lg:text-3xl font-bold text-neutral-900 mb-4">
@@ -162,7 +171,7 @@ const InvestorsPage: React.FC<InvestorsPageProps> = ({
                 <div className="text-center">
                   <button
                     onClick={() => handleEmailClick(content.primaryEmail, 'primary')}
-                    className="inline-flex items-center px-6 py-4 bg-tuggi-primary hover:bg-tuggi-primary-dark text-white font-semibold rounded-lg transition-all duration-200 hover:shadow-lg text-lg"
+                    className={`${getButtonClasses('primary', 'lg')} inline-flex items-center`}
                   >
                     <Mail className="w-5 h-5 mr-3" />
                     {content.primaryEmail}
@@ -173,7 +182,7 @@ const InvestorsPage: React.FC<InvestorsPageProps> = ({
                   <p className="text-neutral-600 mb-4">{content.alternativeContact}</p>
                   <button
                     onClick={() => handleEmailClick(content.secondaryEmail, 'secondary')}
-                    className="inline-flex items-center px-6 py-3 bg-neutral-100 hover:bg-neutral-200 text-neutral-700 font-medium rounded-lg transition-all duration-200 text-base"
+                    className={`${getButtonClasses('outline', 'md')} inline-flex items-center`}
                   >
                     <Mail className="w-4 h-4 mr-2" />
                     {content.secondaryEmail}

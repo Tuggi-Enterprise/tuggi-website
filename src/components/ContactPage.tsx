@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MessageCircle, Send, CheckCircle, AlertCircle, ArrowRight } from 'lucide-react';
 import FinalCTASection from './FinalCTASection';
+import { 
+  getButtonClasses, 
+  getCardClasses, 
+  layout,
+  gradients
+} from '../utils/designSystem';
 
 interface ContactPageProps {
   currentLanguage?: string;
@@ -96,12 +102,15 @@ const ContactPage: React.FC<ContactPageProps> = ({
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="pt-8 pb-4 lg:pt-12 lg:pb-6 bg-gradient-hero relative overflow-hidden">
+      <section 
+        className={`${layout.section.compact} pt-12 lg:pt-16 relative overflow-hidden`}
+        style={{ background: gradients.hero }}
+      >
         {/* Background Elements */}
         <div className="absolute top-4 left-4 w-16 h-16 bg-tuggi-primary/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-4 right-4 w-12 h-12 bg-tuggi-secondary/5 rounded-full blur-3xl"></div>
         
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className={`${layout.container.narrow} relative`}>
           <div className="text-center mb-4">
             <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-neutral-900 mb-3 leading-tight">
               {content.hero.title}
@@ -114,21 +123,27 @@ const ContactPage: React.FC<ContactPageProps> = ({
       </section>
 
       {/* Main Content - Ultra Compact Layout */}
-      <section className="py-4 lg:py-6 bg-white relative overflow-hidden">
+      <section className={`${layout.section.compact} bg-white relative overflow-hidden`}>
         {/* Background Elements */}
         <div className="absolute top-4 right-4 w-12 h-12 bg-tuggi-primary/4 rounded-full blur-3xl"></div>
         <div className="absolute bottom-4 left-4 w-16 h-16 bg-tuggi-secondary/4 rounded-full blur-3xl"></div>
         
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className={`${layout.container.wide} relative`}>
           {/* Email Contact - Compact */}
           <div className="text-center mb-6">
             <p className="text-xs sm:text-sm text-neutral-700 mb-3 leading-relaxed">
               {content.email.title}
             </p>
             
-            <div className="bg-gradient-to-r from-tuggi-primary/10 to-tuggi-secondary/10 rounded-lg p-3 lg:p-4 border border-tuggi-primary/20 mb-3">
+            <div 
+              className="rounded-lg p-3 lg:p-4 border border-tuggi-primary/20 mb-3"
+              style={{ background: 'linear-gradient(to right, rgba(0, 168, 232, 0.1), rgba(255, 111, 0, 0.1))' }}
+            >
               <div className="flex items-center justify-center space-x-2 mb-1">
-                <div className="w-6 h-6 bg-gradient-ocean rounded-full flex items-center justify-center shadow-sm">
+                <div 
+                  className="w-6 h-6 rounded-full flex items-center justify-center shadow-sm"
+                  style={{ background: gradients.ocean }}
+                >
                   <Mail className="w-3 h-3 text-white" />
                 </div>
               </div>
@@ -147,9 +162,12 @@ const ContactPage: React.FC<ContactPageProps> = ({
           </div>
 
           {/* Two Column Layout for Expansion and Investors */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
+          <div className={`${layout.grid['2']} gap-4 lg:gap-6`}>
             {/* City Expansion Section */}
-            <div className="bg-gradient-subtle rounded-lg p-3 lg:p-4 border border-white/20 shadow-sm">
+            <div 
+              className="rounded-lg p-3 lg:p-4 border border-white/20 shadow-sm"
+              style={{ background: gradients.subtle }}
+            >
               <div className="text-center mb-3">
                 <h2 className="text-sm sm:text-base font-bold text-neutral-900 mb-2">
                   {content.expansion.title}
@@ -160,7 +178,7 @@ const ContactPage: React.FC<ContactPageProps> = ({
                 
                 <button 
                   onClick={() => handleCTAClick('expansion_form')}
-                  className="bg-tuggi-primary hover:bg-tuggi-primary-dark text-white px-3 py-1.5 rounded-md font-semibold transition-all duration-200 hover:shadow-md transform hover:-translate-y-0.5 inline-flex items-center space-x-1 group mb-1 text-xs"
+                  className="bg-tuggi-primary hover:bg-tuggi-primary-dark text-white font-semibold transition-all duration-200 hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-tuggi-primary focus:ring-offset-2 px-3 py-1.5 text-xs rounded-lg inline-flex items-center space-x-1 group"
                 >
                   <span>{content.expansion.button}</span>
                   <ArrowRight className="w-2.5 h-2.5 group-hover:translate-x-0.5 transition-transform duration-200" />
@@ -172,7 +190,10 @@ const ContactPage: React.FC<ContactPageProps> = ({
             </div>
 
             {/* Investors Section */}
-            <div className="bg-gradient-to-r from-tuggi-primary/5 to-tuggi-secondary/5 rounded-lg p-3 lg:p-4 border border-tuggi-primary/10">
+            <div 
+              className="rounded-lg p-3 lg:p-4 border border-tuggi-primary/10"
+              style={{ background: 'linear-gradient(to right, rgba(0, 168, 232, 0.05), rgba(255, 111, 0, 0.05))' }}
+            >
               <div className="text-center mb-3">
                 <h2 className="text-sm sm:text-base font-bold text-neutral-900 mb-2">
                   {content.investors.title}
@@ -183,7 +204,7 @@ const ContactPage: React.FC<ContactPageProps> = ({
                 
                 <button 
                   onClick={() => handleCTAClick('investors_page')}
-                  className="bg-tuggi-secondary hover:bg-tuggi-secondary-dark text-white px-3 py-1.5 rounded-md font-semibold transition-all duration-200 hover:shadow-md transform hover:-translate-y-0.5 inline-flex items-center space-x-1 group text-xs"
+                  className="bg-tuggi-primary hover:bg-tuggi-primary-dark text-white font-semibold transition-all duration-200 hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-tuggi-primary focus:ring-offset-2 px-3 py-1.5 text-xs rounded-lg inline-flex items-center space-x-1 group"
                 >
                   <span>{content.investors.button}</span>
                   <ArrowRight className="w-2.5 h-2.5 group-hover:translate-x-0.5 transition-transform duration-200" />
