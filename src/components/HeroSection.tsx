@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Play, MapPin, Globe, Smartphone, Settings } from 'lucide-react';
+import { Download, Play, MapPin } from 'lucide-react';
 
 interface HeroSectionProps {
   currentLanguage?: string;
@@ -13,68 +13,44 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   // Localized content
   const getLocalizedContent = (language: string) => {
     const content: Record<string, any> = {
-      EN: {
-        badge: '🧪 Early Access Program',
-        title: 'Be one of the first to turn trips into memorable experiences with Tuggi Drive',
-        subtitle: 'We\'re selecting transportation companies to join our early access program.',
-        quote: '"At Tuggi, we believe that every journey can be more than just getting from point A to point B — it can be a cultural immersion, a story told at the pace of the road."',
-        requestDemo: 'Request Demo',
-        joinPilot: 'Join the Pilot',
-        trustIndicator: 'Trusted by leading transportation companies',
-        companies: ['TRANSPORT', 'LOGISTICS', 'TRAVEL', 'FLEET'],
+      PT: {
+        title: 'Descubra. Ouça. Construa cultura com a Tuggi.',
+        subtitle: 'Explore no seu ritmo, sem rotas fixas.\nA Tuggi transforma qualquer trajeto em uma experiência sonora de conhecimento.\nDurante o beta, o app é gratuito — e você pode nos ajudar a melhorar.',
+        downloadFree: 'Baixar gratuitamente',
+        howItWorks: 'Como funciona',
+        availability: 'Disponível em São Paulo e cidades do interior. Novos lugares em breve.',
         features: {
-          narration: 'Cultural Journey Active',
-          premium: 'Premium Experience',
-          experience: 'Real Traveler Experience',
-          immersion: 'Cultural Immersion: Passengers discover local history, traditions, and hidden gems as they travel through each neighborhood.',
-          personalized: 'Personalized Narratives: Stories adapt to passenger preferences, language, and interests for maximum engagement.',
-          memorable: 'Memorable Connections: Every journey becomes a story worth sharing, creating lasting impressions of your service.',
-          quote: '"This isn\'t just a ride — it\'s a journey through time and culture."',
-          feedback: '— Typical Passenger Feedback'
+          realTime: 'Narrativas em tempo real',
+          noRoutes: 'Sem rotas fixas',
+          cultural: 'Experiência cultural'
         }
       },
-      PT: {
-        badge: '🧪 Programa de Acesso Antecipado',
-        title: 'Seja um dos primeiros a transformar viagens em experiências memoráveis com o Tuggi Drive',
-        subtitle: 'Estamos selecionando empresas de transporte para participar do nosso programa de acesso antecipado.',
-        quote: '"Na Tuggi, acreditamos que cada jornada pode ser mais do que apenas ir do ponto A ao ponto B — pode ser uma imersão cultural, uma história contada no ritmo da estrada."',
-        requestDemo: 'Solicitar Demo',
-        joinPilot: 'Participar do Piloto',
-        trustIndicator: 'Confiado por empresas líderes de transporte',
-        companies: ['TRANSPORTE', 'LOGÍSTICA', 'VIAGEM', 'FROTA'],
+      EN: {
+        title: 'Discover. Listen. Build culture with Tuggi.',
+        subtitle: 'Explore at your own pace, without fixed routes.\nTuggi transforms any journey into a sound experience of knowledge.\nDuring beta, the app is free — and you can help us improve.',
+        downloadFree: 'Download for free',
+        howItWorks: 'How it works',
+        availability: 'Available in São Paulo and interior cities. New places coming soon.',
         features: {
-          narration: 'Jornada Cultural Ativa',
-          premium: 'Experiência Premium',
-          experience: 'Experiência Real do Viajante',
-          immersion: 'Imersão Cultural: Passageiros descobrem história local, tradições e joias escondidas enquanto viajam por cada bairro.',
-          personalized: 'Narrativas Personalizadas: Histórias se adaptam às preferências, idioma e interesses dos passageiros para máximo engajamento.',
-          memorable: 'Conexões Memoráveis: Cada jornada se torna uma história que vale a pena compartilhar, criando impressões duradouras do seu serviço.',
-          quote: '"Isso não é apenas uma viagem — é uma jornada através do tempo e da cultura."',
-          feedback: '— Feedback Típico de Passageiros'
+          realTime: 'Real-time narratives',
+          noRoutes: 'No fixed routes',
+          cultural: 'Cultural experience'
         }
       },
       ES: {
-        badge: '🧪 Programa de Acceso Temprano',
-        title: 'Sé uno de los primeros en convertir viajes en experiencias memorables con Tuggi Drive',
-        subtitle: 'Estamos seleccionando empresas de transporte para unirse a nuestro programa de acceso temprano.',
-        quote: '"En Tuggi, creemos que cada viaje puede ser más que solo ir del punto A al punto B — puede ser una inmersión cultural, una historia contada al ritmo del camino."',
-        requestDemo: 'Solicitar Demo',
-        joinPilot: 'Unirse al Piloto',
-        trustIndicator: 'Confiado por empresas líderes de transporte',
-        companies: ['TRANSPORTE', 'LOGÍSTICA', 'VIAJES', 'FLOTA'],
+        title: 'Descubre. Escucha. Construye cultura con Tuggi.',
+        subtitle: 'Explora a tu ritmo, sin rutas fijas.\nTuggi transforma cualquier trayecto en una experiencia sonora de conocimiento.\nDurante la beta, la app es gratuita — y puedes ayudarnos a mejorar.',
+        downloadFree: 'Descargar gratis',
+        howItWorks: 'Cómo funciona',
+        availability: 'Disponible en São Paulo y ciudades del interior. Nuevos lugares próximamente.',
         features: {
-          narration: 'Viaje Cultural Activo',
-          premium: 'Experiencia Premium',
-          experience: 'Experiencia Real del Viajero',
-          immersion: 'Inmersión Cultural: Los pasajeros descubren historia local, tradiciones y gemas ocultas mientras viajan por cada vecindario.',
-          personalized: 'Narrativas Personalizadas: Las historias se adaptan a las preferencias, idioma e intereses de los pasajeros para máximo compromiso.',
-          memorable: 'Conexiones Memorables: Cada viaje se convierte en una historia que vale la pena compartir, creando impresiones duraderas de su servicio.',
-          quote: '"Esto no es solo un viaje — es un recorrido a través del tiempo y la cultura."',
-          feedback: '— Comentarios Típicos de Pasajeros'
+          realTime: 'Narrativas en tiempo real',
+          noRoutes: 'Sin rutas fijas',
+          cultural: 'Experiencia cultural'
         }
       }
     };
-    return content[language] || content['EN'];
+    return content[language] || content['PT'];
   };
 
   const content = getLocalizedContent(currentLanguage);
@@ -84,113 +60,115 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   };
 
   return (
-    <section className="relative bg-gradient-to-br from-neutral-50 via-white to-tuggi-primary/5 overflow-hidden">
+    <section className="relative bg-gradient-hero overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%2300A8E8%22 fill-opacity=%220.03%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
       
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-2 py-20 lg:py-32">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-12 xl:py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 xl:gap-12 items-center">
           {/* Content */}
           <div className="animate-slide-up">
-            <div className="inline-flex items-center px-4 py-2 bg-tuggi-primary/10 rounded-full mb-6">
-              <span className="text-tuggi-primary font-semibold text-sm">
-                {content.badge}
-              </span>
-            </div>
-            
-            <h1 className="text-4xl lg:text-6xl font-bold text-neutral-900 leading-tight mb-6">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-neutral-900 leading-tight mb-2 lg:mb-3">
               {content.title}
             </h1>
             
-            <p className="text-xl text-neutral-600 mb-6 font-medium">
+            <p className="text-base sm:text-lg text-neutral-600 mb-3 lg:mb-4 font-medium leading-relaxed whitespace-pre-line">
               {content.subtitle}
             </p>
-            
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 mb-8 border border-neutral-200 shadow-sm">
-              <p className="text-lg text-neutral-700 leading-relaxed italic">
-                {content.quote}
-              </p>
-            </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-4">
+            <div className="flex flex-col sm:flex-row gap-3 mb-4">
               <button 
-                onClick={() => handleCTAClick('request_demo_hero')}
-                className="bg-tuggi-primary hover:bg-tuggi-primary-dark text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center space-x-2 group"
+                onClick={() => handleCTAClick('download_free')}
+                className="bg-tuggi-primary hover:bg-tuggi-primary-dark text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-200 hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center space-x-2 group text-sm sm:text-base"
               >
-                <span>{content.requestDemo}</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+                <Download className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span>{content.downloadFree}</span>
               </button>
               
               <button 
-                onClick={() => handleCTAClick('join_pilot_hero')}
-                className="border-2 border-neutral-300 hover:border-tuggi-primary text-neutral-700 hover:text-tuggi-primary px-8 py-4 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center space-x-2 group bg-white/80 backdrop-blur-sm"
+                onClick={() => handleCTAClick('how_it_works')}
+                className="border-2 border-neutral-300 hover:border-tuggi-primary text-neutral-700 hover:text-tuggi-primary px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center space-x-2 group bg-white/80 backdrop-blur-sm text-sm sm:text-base"
               >
-                <Play className="w-5 h-5" />
-                <span>{content.joinPilot}</span>
+                <Play className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span>{content.howItWorks}</span>
               </button>
             </div>
 
-            {/* Trust Indicators */}
-            {/* <div className="pt-8 border-t border-neutral-200">
-              <p className="text-sm text-neutral-500 mb-4">{content.trustIndicator}</p>
-              <div className="flex items-center space-x-8 opacity-60">
-                {content.companies.map((company: string, index: number) => (
-                  <div key={index} className="text-xl font-bold text-neutral-400">{company}</div>
-                ))}
-              </div>
-            </div> */}
+            {/* Availability Note */}
+            <div className="flex items-start space-x-3 text-neutral-600">
+              <MapPin className="w-5 h-5 mt-0.5 text-tuggi-primary flex-shrink-0" />
+              <p className="text-sm leading-relaxed">
+                {content.availability}
+              </p>
+            </div>
           </div>
 
-          {/* Professional Driver Image Mockup */}
+          {/* Mobile App Mockup */}
           <div className="relative animate-fade-in">
-            <div className="relative bg-gradient-to-br from-tuggi-primary/10 to-tuggi-secondary/10 rounded-3xl p-8 lg:p-12">
-              {/* Driver Dashboard Mockup */}
-              <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
-                <div className="bg-neutral-100 px-6 py-4 flex items-center justify-between">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                    <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                    <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                          <div className="relative bg-gradient-subtle rounded-3xl p-6 lg:p-8">
+              {/* Mobile App Interface */}
+              <div className="bg-white rounded-3xl shadow-2xl overflow-hidden mx-auto" style={{width: '240px', height: '480px'}}>
+                {/* Status Bar */}
+                <div className="bg-neutral-100 px-6 py-3 flex items-center justify-between">
+                  <div className="text-xs font-semibold text-neutral-700">9:41</div>
+                  <div className="flex items-center space-x-1">
+                    <div className="w-4 h-2 bg-neutral-400 rounded-sm"></div>
+                    <div className="w-1 h-2 bg-neutral-400 rounded-sm"></div>
+                    <div className="w-6 h-3 bg-green-500 rounded-sm"></div>
                   </div>
-                  <div className="text-xs text-neutral-500 font-medium">Tuggi Drive Dashboard</div>
                 </div>
                 
-                {/* Professional Driver Interface */}
-                <div className="p-6">
-                  {/* Driver Profile */}
-                  <div className="flex items-center space-x-4 mb-6 p-4 bg-tuggi-primary/5 rounded-xl">
-                    <div className="w-12 h-12 bg-tuggi-primary rounded-full flex items-center justify-center">
-                      <span className="text-white font-bold text-lg">👨‍💼</span>
+                {/* App Header */}
+                <div className="bg-tuggi-primary px-6 py-4 text-white">
+                  <div className="flex items-center justify-between">
+                    <div className="text-lg font-bold">Tuggi</div>
+                    <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                      <span className="text-sm">🎧</span>
                     </div>
-                    <div>
-                      <div className="font-semibold text-neutral-800">Professional Driver</div>
-                      <div className="text-sm text-neutral-600">Active Route • 4.9★ Rating</div>
+                  </div>
+                  <div className="text-sm opacity-90 mt-1">Copiloto Cultural</div>
+                </div>
+                
+                {/* Main Content */}
+                <div className="p-6 space-y-4">
+                  {/* Current Location */}
+                  <div className="bg-tuggi-primary/5 rounded-lg p-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-3 h-3 bg-tuggi-primary rounded-full animate-pulse"></div>
+                      <div>
+                        <div className="text-sm font-semibold text-neutral-800">São Paulo - Centro</div>
+                        <div className="text-xs text-neutral-600">Narrativas descobertas: 23</div>
+                      </div>
                     </div>
                   </div>
                   
-                  {/* Active Features */}
-                  <div className="grid grid-cols-2 gap-3 mb-6">
-                    <div className="bg-green-50 border border-green-200 rounded-lg p-3 text-center">
-                      <div className="text-green-600 font-semibold text-sm">🗣️ Narration ON</div>
-                      <div className="text-xs text-green-700 mt-1">Auto-storytelling active</div>
-                    </div>
-                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 text-center">
-                      <div className="text-blue-600 font-semibold text-sm">🌍 Multi-language</div>
-                      <div className="text-xs text-blue-700 mt-1">EN • ES • PT ready</div>
+                  {/* Active Story */}
+                  <div className="bg-gradient-aurora rounded-lg p-4">
+                    <div className="text-sm font-semibold text-tuggi-primary mb-2">🎙️ Agora tocando</div>
+                    <div className="text-sm text-neutral-800 font-medium mb-2">A História do Teatro Municipal</div>
+                    <div className="flex items-center space-x-2">
+                      <div className="flex-1 h-2 bg-neutral-200 rounded-full">
+                        <div className="h-2 bg-tuggi-primary rounded-full w-1/3"></div>
+                      </div>
+                      <div className="text-xs text-neutral-600">2:30</div>
                     </div>
                   </div>
                   
-                  {/* Route Progress */}
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-neutral-700">Route Progress</span>
-                      <span className="text-sm text-tuggi-primary font-semibold">65%</span>
+                  {/* Features */}
+                  <div className="space-y-3">
+                    <div className="flex items-center space-x-3 p-3 bg-neutral-50 rounded-lg">
+                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                      <span className="text-sm text-neutral-700">{content.features.realTime}</span>
                     </div>
-                    <div className="h-2 bg-neutral-200 rounded-full overflow-hidden">
-                      <div className="h-full bg-gradient-to-r from-tuggi-primary to-tuggi-secondary rounded-full w-2/3 transition-all duration-500"></div>
+                    <div className="flex items-center space-x-3 p-3 bg-neutral-50 rounded-lg">
+                      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                      <span className="text-sm text-neutral-700">{content.features.noRoutes}</span>
                     </div>
-                    <div className="text-xs text-neutral-600">Next story point in 2.3 km</div>
+                    <div className="flex items-center space-x-3 p-3 bg-neutral-50 rounded-lg">
+                      <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                      <span className="text-sm text-neutral-700">{content.features.cultural}</span>
+                    </div>
                   </div>
                 </div>
               </div>

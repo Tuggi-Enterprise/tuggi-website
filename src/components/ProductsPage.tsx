@@ -1,5 +1,6 @@
 import React from 'react';
 import { MapPin, Navigation, Globe, Building2, Smartphone, Settings, ArrowRight, Play, Star, CheckCircle, Clock, Users } from 'lucide-react';
+import FinalCTASection from './FinalCTASection';
 
 interface ProductsPageProps {
   currentLanguage?: string;
@@ -874,54 +875,10 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 lg:py-24 bg-gradient-to-br from-tuggi-primary to-tuggi-primary-dark">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
-            {content.finalCtaTitle}
-          </h2>
-          <p className="text-xl text-white max-w-3xl mx-auto mb-8">
-            {content.finalCtaSubtitle}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button 
-              onClick={() => handleCTAClick('start_free_trial')}
-              className="bg-white hover:bg-neutral-100 text-tuggi-primary px-8 py-4 rounded-lg font-semibold transition-all duration-200 hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center space-x-2"
-            >
-              <span>{content.startTrial}</span>
-              <ArrowRight className="w-5 h-5" />
-            </button>
-            <button 
-              onClick={() => handleCTAClick('schedule_demo_call')}
-              className="border-2 border-white text-white hover:bg-white hover:text-tuggi-primary px-8 py-4 rounded-lg font-semibold transition-all duration-200"
-            >
-              {content.scheduleDemo}
-            </button>
-          </div>
-          
-          {/* Contact Info */}
-          <div className="mt-12 pt-8 border-t border-tuggi-primary-light/30">
-            <p className="text-white mb-4">
-              {content.contactInfo}
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-8 text-white">
-              <a 
-                href={`mailto:${content.email}`}
-                onClick={() => handleCTAClick('contact_email_products')}
-                className="hover:text-tuggi-primary-light transition-colors duration-200"
-              >
-                📧 {content.email}
-              </a>
-              <a 
-                href={`tel:${content.phone}`}
-                onClick={() => handleCTAClick('contact_phone_products')}
-                className="hover:text-tuggi-primary-light transition-colors duration-200"
-              >
-                📞 {content.phone}
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FinalCTASection 
+        currentLanguage={currentLanguage}
+        onCTAClick={handleCTAClick}
+      />
     </div>
   );
 };

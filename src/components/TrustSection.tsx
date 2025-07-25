@@ -1,249 +1,139 @@
 import React from 'react';
-import { Building2, Shield, Server } from 'lucide-react';
+import { Eye, Heart, Compass } from 'lucide-react';
 
 interface TrustSectionProps {
   currentLanguage?: string;
 }
 
-const TrustSection: React.FC<TrustSectionProps> = ({ currentLanguage = 'EN' }) => {
+const TrustSection: React.FC<TrustSectionProps> = ({ currentLanguage = 'PT' }) => {
   // Localized content
   const getLocalizedContent = (language: string) => {
     const content: Record<string, any> = {
-      EN: {
-        badge: '🛡️ Enterprise Trust & Security',
-        title: 'Built for Enterprise Trust & Scale',
-        fleetOnboarding: 'Our infrastructure and standards are ready — we\'re currently onboarding first fleet partners.',
-        subtitle: 'Your business deserves technology that meets the highest standards of security, compliance, and reliability.',
-        trustTags: [
+      PT: {
+        mainTitle: 'Cultura não deveria ser um destino — ela deveria acompanhar você no caminho.',
+        description: 'Criamos a Tuggi porque acreditamos que cada trajeto pode ser uma oportunidade de descoberta.\nUsamos tecnologia para dar vida àquilo que normalmente passaria despercebido: ruas, edifícios, bairros, paisagens.',
+        closing: 'Com narrações envolventes e conteúdo contextual, ajudamos você a enxergar — e ouvir — o mundo com outros olhos.',
+        values: [
           {
-            title: 'Built for B2B',
-            description: 'Enterprise-grade solution designed specifically for transportation companies, fleet operators, and professional drivers.',
-            features: ['Multi-tenant architecture', 'Fleet management dashboard', 'Driver performance analytics', 'Corporate billing'],
-            color: 'from-tuggi-primary to-blue-600',
-            bgColor: 'bg-tuggi-primary/5',
-            borderColor: 'border-tuggi-primary/20'
+            icon: 'eye',
+            title: 'Descoberta espontânea',
+            description: 'Cada lugar tem uma história. Nossa missão é revelar essas narrativas enquanto você vive sua rotina, transformando o comum em extraordinário.'
           },
           {
-            title: 'Privacy-compliant',
-            description: 'Full GDPR, CCPA, and international privacy law compliance with end-to-end encryption and secure data handling.',
-            features: ['GDPR compliant', 'End-to-end encryption', 'Zero data retention', 'Privacy by design'],
-            color: 'from-green-500 to-emerald-600',
-            bgColor: 'bg-green-50',
-            borderColor: 'border-green-200'
+            icon: 'heart',
+            title: 'Conexão cultural',
+            description: 'Acreditamos que conhecer a história e cultura dos lugares cria um vínculo mais profundo com o mundo ao nosso redor.'
           },
           {
-            title: 'Scalable Infrastructure',
-            description: 'Cloud-native architecture that grows with your business, supporting everything from single vehicles to enterprise fleets.',
-            features: ['99.9% uptime SLA', 'Auto-scaling', 'Global CDN', 'Real-time monitoring'],
-            color: 'from-tuggi-secondary to-orange-600',
-            bgColor: 'bg-tuggi-secondary/5',
-            borderColor: 'border-tuggi-secondary/20'
+            icon: 'compass',
+            title: 'Liberdade de exploração',
+            description: 'Sem rotas predefinidas ou obrigações. A cultura surge naturalmente, respeitando seu ritmo e suas escolhas.'
           }
-        ],
-        certifications: [
-          { name: 'ISO 27001', description: 'Information Security' },
-          { name: 'SOC 2 Type II', description: 'Security & Availability' },
-          { name: 'GDPR', description: 'Privacy Compliance' },
-          { name: 'PCI DSS', description: 'Payment Security' }
-        ],
-        certificationsTitle: 'Industry Certifications & Compliance',
-        certificationsSubtitle: 'Certified and audited by leading security and compliance organizations',
-        stats: [
-          { value: '99.9%', label: 'Uptime SLA' },
-          { value: '24/7', label: 'Support' },
-          { value: '500+', label: 'Enterprise Clients' },
-          { value: '50M+', label: 'Stories Delivered' }
         ]
       },
-      PT: {
-        badge: '🛡️ Confiança e Segurança Empresarial',
-        title: 'Construído para Confiança e Escala Empresarial',
-        fleetOnboarding: 'Nossa infraestrutura e padrões estão prontos — estamos atualmente integrando os primeiros parceiros de frota.',
-        subtitle: 'Seu negócio merece tecnologia que atende aos mais altos padrões de segurança, conformidade e confiabilidade.',
-        trustTags: [
+      EN: {
+        mainTitle: 'Culture shouldn\'t be a destination — it should accompany you on the journey.',
+        description: 'We created Tuggi because we believe that every journey can be an opportunity for discovery.\nWe use technology to bring life to what would normally go unnoticed: streets, buildings, neighborhoods, landscapes.',
+        closing: 'With engaging narratives and contextual content, we help you see — and hear — the world with different eyes.',
+        values: [
           {
-            title: 'Construído para B2B',
-            description: 'Solução de nível empresarial projetada especificamente para empresas de transporte, operadores de frota e motoristas profissionais.',
-            features: ['Arquitetura multi-inquilino', 'Painel gestão de frota', 'Análises desempenho motorista', 'Faturamento corporativo'],
-            color: 'from-tuggi-primary to-blue-600',
-            bgColor: 'bg-tuggi-primary/5',
-            borderColor: 'border-tuggi-primary/20'
+            icon: 'eye',
+            title: 'Spontaneous discovery',
+            description: 'Every place has a story. Our mission is to reveal these narratives while you live your routine, transforming the ordinary into extraordinary.'
           },
           {
-            title: 'Conformidade de Privacidade',
-            description: 'Conformidade total com GDPR, CCPA e leis internacionais de privacidade com criptografia ponta a ponta e manuseio seguro de dados.',
-            features: ['Conforme GDPR', 'Criptografia ponta a ponta', 'Zero retenção de dados', 'Privacidade por design'],
-            color: 'from-green-500 to-emerald-600',
-            bgColor: 'bg-green-50',
-            borderColor: 'border-green-200'
+            icon: 'heart',
+            title: 'Cultural connection',
+            description: 'We believe that knowing the history and culture of places creates a deeper bond with the world around us.'
           },
           {
-            title: 'Infraestrutura Escalável',
-            description: 'Arquitetura nativa da nuvem que cresce com seu negócio, suportando desde veículos únicos até frotas empresariais.',
-            features: ['99.9% SLA tempo atividade', 'Auto-escalonamento', 'CDN global', 'Monitoramento tempo real'],
-            color: 'from-tuggi-secondary to-orange-600',
-            bgColor: 'bg-tuggi-secondary/5',
-            borderColor: 'border-tuggi-secondary/20'
+            icon: 'compass',
+            title: 'Freedom of exploration',
+            description: 'No predefined routes or obligations. Culture emerges naturally, respecting your pace and choices.'
           }
-        ],
-        certifications: [
-          { name: 'ISO 27001', description: 'Segurança da Informação' },
-          { name: 'SOC 2 Tipo II', description: 'Segurança e Disponibilidade' },
-          { name: 'GDPR', description: 'Conformidade Privacidade' },
-          { name: 'PCI DSS', description: 'Segurança Pagamentos' }
-        ],
-        certificationsTitle: 'Certificações e Conformidade da Indústria',
-        certificationsSubtitle: 'Certificado e auditado por organizações líderes de segurança e conformidade',
-        stats: [
-          { value: '99.9%', label: 'SLA Tempo Atividade' },
-          { value: '24/7', label: 'Suporte' },
-          { value: '500+', label: 'Clientes Empresariais' },
-          { value: '50M+', label: 'Histórias Entregues' }
         ]
       },
       ES: {
-        badge: '🛡️ Confianza y Seguridad Empresarial',
-        title: 'Construido para Confianza y Escala Empresarial',
-        fleetOnboarding: 'Nuestra infraestructura y estándares están listos — actualmente estamos incorporando los primeros socios de flota.',
-        subtitle: 'Su negócio merece tecnología que cumple con los más altos estándares de seguridad, cumplimiento y confiabilidad.',
-        trustTags: [
+        mainTitle: 'La cultura no debería ser un destino — debería acompañarte en el camino.',
+        description: 'Creamos Tuggi porque creemos que cada trayecto puede ser una oportunidad de descubrimiento.\nUsamos tecnología para dar vida a lo que normalmente pasaría desapercibido: calles, edificios, barrios, paisajes.',
+        closing: 'Con narraciones envolventes y contenido contextual, te ayudamos a ver — y escuchar — el mundo con otros ojos.',
+        values: [
           {
-            title: 'Construido para B2B',
-            description: 'Solución de nivel empresarial diseñada específicamente para empresas de transporte, operadores de flotas y conductores profesionales.',
-            features: ['Arquitectura multi-inquilino', 'Panel gestión de flotas', 'Análisis rendimiento conductor', 'Facturación corporativa'],
-            color: 'from-tuggi-primary to-blue-600',
-            bgColor: 'bg-tuggi-primary/5',
-            borderColor: 'border-tuggi-primary/20'
+            icon: 'eye',
+            title: 'Descubrimiento espontáneo',
+            description: 'Cada lugar tiene una historia. Nuestra misión es revelar estas narrativas mientras vives tu rutina, transformando lo común en extraordinario.'
           },
           {
-            title: 'Cumplimiento de Privacidad',
-            description: 'Cumplimiento total con GDPR, CCPA y leyes internacionales de privacidad con cifrado de extremo a extremo y manejo seguro de datos.',
-            features: ['Cumple GDPR', 'Cifrado extremo a extremo', 'Cero retención datos', 'Privacidad por diseño'],
-            color: 'from-green-500 to-emerald-600',
-            bgColor: 'bg-green-50',
-            borderColor: 'border-green-200'
+            icon: 'heart',
+            title: 'Conexión cultural',
+            description: 'Creemos que conocer la historia y cultura de los lugares crea un vínculo más profundo con el mundo que nos rodea.'
           },
           {
-            title: 'Infraestructura Escalable',
-            description: 'Arquitectura nativa de la nube que crece con su negocio, soportando desde vehículos únicos hasta flotas empresariales.',
-            features: ['99.9% SLA tiempo actividad', 'Auto-escalamiento', 'CDN global', 'Monitoreo tiempo real'],
-            color: 'from-tuggi-secondary to-orange-600',
-            bgColor: 'bg-tuggi-secondary/5',
-            borderColor: 'border-tuggi-secondary/20'
+            icon: 'compass',
+            title: 'Libertad de exploración',
+            description: 'Sin rutas predefinidas u obligaciones. La cultura surge naturalmente, respetando tu ritmo y tus decisiones.'
           }
-        ],
-        certifications: [
-          { name: 'ISO 27001', description: 'Seguridad de la Información' },
-          { name: 'SOC 2 Tipo II', description: 'Seguridad y Disponibilidad' },
-          { name: 'GDPR', description: 'Cumplimiento Privacidad' },
-          { name: 'PCI DSS', description: 'Seguridad Pagos' }
-        ],
-        certificationsTitle: 'Certificaciones y Cumplimiento de la Industria',
-        certificationsSubtitle: 'Certificado y auditado por organizaciones líderes de seguridad y cumplimiento',
-        stats: [
-          { value: '99.9%', label: 'SLA Tiempo Actividad' },
-          { value: '24/7', label: 'Soporte' },
-          { value: '500+', label: 'Clientes Empresariales' },
-          { value: '50M+', label: 'Historias Entregadas' }
         ]
       }
     };
-    return content[language] || content['EN'];
+    return content[language] || content['PT'];
   };
 
   const content = getLocalizedContent(currentLanguage);
 
+  const getIcon = (iconType: string) => {
+    switch (iconType) {
+      case 'eye':
+        return <Eye className="w-7 h-7 text-white" />;
+      case 'heart':
+        return <Heart className="w-7 h-7 text-white" />;
+      case 'compass':
+        return <Compass className="w-7 h-7 text-white" />;
+      default:
+        return <Eye className="w-7 h-7 text-white" />;
+    }
+  };
+
   return (
-    <section className="py-20 lg:py-24 bg-gradient-to-br from-neutral-50 to-white">
+    <section className="py-12 lg:py-16 xl:py-20 bg-gradient-to-br from-neutral-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-green-100 rounded-full mb-6">
-            <span className="text-green-700 font-semibold text-sm">
-              {content.badge}
-            </span>
-          </div>
-          <h2 className="text-3xl lg:text-5xl font-bold text-neutral-900 mb-6">
-            {content.title}
+        {/* Main Content */}
+        <div className="text-center mb-8 lg:mb-12">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900 mb-4 lg:mb-6 leading-tight">
+            {content.mainTitle}
           </h2>
-          <p className="text-lg text-tuggi-primary font-medium mb-4">
-            {content.fleetOnboarding}
-          </p>
-          <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
-            {content.subtitle}
-          </p>
-        </div>
-
-        {/* Trust Tags */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-          {content.trustTags.map((tag: any, index: number) => (
-            <div 
-              key={index}
-              className={`group ${tag.bgColor} ${tag.borderColor} border-2 rounded-2xl p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2`}
-            >
-              {/* Icon & Title */}
-              <div className="flex items-center space-x-4 mb-6">
-                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${tag.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                  {index === 0 && <Building2 className="w-7 h-7 text-white" />}
-                  {index === 1 && <Shield className="w-7 h-7 text-white" />}
-                  {index === 2 && <Server className="w-7 h-7 text-white" />}
-                </div>
-                <h3 className="text-xl lg:text-2xl font-bold text-neutral-900 group-hover:text-tuggi-primary transition-colors duration-300">
-                  {tag.title}
-                </h3>
-              </div>
-
-              {/* Description */}
-              <p className="text-neutral-600 leading-relaxed mb-6">
-                {tag.description}
-              </p>
-
-              {/* Features List */}
-              <div className="space-y-2">
-                {tag.features.map((feature: string, featureIndex: number) => (
-                  <div key={featureIndex} className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-tuggi-primary rounded-full"></div>
-                    <span className="text-sm text-neutral-700 font-medium">{feature}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Certifications Bar */}
-        {/* <div className="bg-white rounded-2xl shadow-lg border border-neutral-200 p-8">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-neutral-900 mb-2">
-              {content.certificationsTitle}
-            </h3>
-            <p className="text-neutral-600">
-              {content.certificationsSubtitle}
+          <div className="max-w-4xl mx-auto">
+            <p className="text-base sm:text-lg text-neutral-600 leading-relaxed mb-4 lg:mb-6 whitespace-pre-line">
+              {content.description}
+            </p>
+            <p className="text-base sm:text-lg text-neutral-700 font-medium leading-relaxed">
+              {content.closing}
             </p>
           </div>
-          
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {content.certifications.map((cert: any, index: number) => (
-              <div key={index} className="text-center group">
-                <div className="w-16 h-16 bg-gradient-to-br from-tuggi-primary/10 to-tuggi-secondary/10 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-2xl font-bold text-tuggi-primary">✓</span>
-                </div>
-                <div className="font-bold text-neutral-900 mb-1">{cert.name}</div>
-                <div className="text-sm text-neutral-600">{cert.description}</div>
-              </div>
-            ))}
-          </div>
-        </div> */}
+        </div>
 
-        {/* Stats */}
-        {/* <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
-          {content.stats.map((stat: any, index: number) => (
-            <div key={index} className="text-center">
-              <div className="text-3xl lg:text-4xl font-bold text-tuggi-primary mb-2">{stat.value}</div>
-              <div className="text-neutral-600 font-medium">{stat.label}</div>
+        {/* Values Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-8 lg:mt-12">
+          {content.values.map((value: any, index: number) => (
+            <div 
+              key={index}
+              className="group text-center"
+            >
+              {/* Icon */}
+                             <div className="inline-flex w-16 h-16 rounded-full bg-gradient-to-br from-tuggi-primary to-tuggi-primary-dark items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                {getIcon(value.icon)}
+              </div>
+
+              {/* Content */}
+                             <h3 className="text-lg lg:text-xl font-bold text-neutral-900 mb-3 group-hover:text-tuggi-primary transition-colors duration-300">
+                 {value.title}
+               </h3>
+               <p className="text-sm text-neutral-600 leading-relaxed">
+                 {value.description}
+               </p>
             </div>
           ))}
-        </div> */}
+        </div>
       </div>
     </section>
   );

@@ -372,7 +372,7 @@
 
 /* Smooth scrolling with offset for fixed header */
 html {
-  scroll-padding-top: 80px;
+  scroll-padding-top: 64px; /* Reduced from 80px since we removed the beta badge */
 }
 
 /* Performance optimizations for animations */

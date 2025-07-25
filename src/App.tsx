@@ -3,7 +3,12 @@ import Layout from './components/Layout';
 import HeroSection from './components/HeroSection';
 import ProductHighlights from './components/ProductHighlights';
 import TrustSection from './components/TrustSection';
+import CollaborateSection from './components/CollaborateSection';
+import HowItWorksSection from './components/HowItWorksSection';
 import RoadmapSection from './components/RoadmapSection';
+import ExpansionSection from './components/ExpansionSection';
+import PrivacySection from './components/PrivacySection';
+import FinalCTASection from './components/FinalCTASection';
 import PurposePage from './components/PurposePage';
 import StoryTeamPage from './components/StoryTeamPage';
 import ProductsPage from './components/ProductsPage';
@@ -17,7 +22,7 @@ import { initializeAnalytics, trackPerformanceMetrics, trackPageView, trackLangu
 import { parseUrlPath, generateLocalizedUrl, getDefaultLanguage, isValidLanguage } from './utils/routing';
 
 function App() {
-  const [currentLanguage, setCurrentLanguage] = useState('EN');
+  const [currentLanguage, setCurrentLanguage] = useState('PT');
   const [currentPage, setCurrentPage] = useState('home');
   const [isInitialized, setIsInitialized] = useState(false);
 
@@ -205,6 +210,31 @@ function App() {
       });
     }
 
+    // Handle app store downloads
+    const downloadCTAs = [
+      'download_free',
+      'app_store_download',
+      'google_play_download'
+    ];
+
+    if (downloadCTAs.includes(ctaType)) {
+      // TODO: Replace with actual app store links when available
+      const downloadURLs = {
+        'app_store_download': 'https://apps.apple.com/app/tuggi', // Placeholder
+        'google_play_download': 'https://play.google.com/store/apps/details?id=com.tuggi.app', // Placeholder
+        'download_free': 'https://apps.apple.com/app/tuggi' // Default to App Store
+      };
+      
+      const url = downloadURLs[ctaType as keyof typeof downloadURLs];
+      if (url) {
+        window.open(url, '_blank');
+      } else {
+        // Fallback: show coming soon message
+        alert('App disponível em breve! Em breve você poderá baixar o Tuggi nas lojas de aplicativos.');
+      }
+      return;
+    }
+
     // Handle URL navigation for demo and early access CTAs
     const demoCTAs = [
       // Main demo requests
@@ -308,80 +338,17 @@ function App() {
             <HeroSection currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
             <ProductHighlights currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
             <TrustSection currentLanguage={currentLanguage} />
+            <CollaborateSection currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
+            <HowItWorksSection currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
             <RoadmapSection currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
+            <ExpansionSection currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
+            <PrivacySection currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
             
-            {/* Final CTA Section with Enhanced Tracking */}
-            <section className="py-20 bg-gradient-to-br from-tuggi-primary to-tuggi-primary-dark">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
-                  {getLocalizedText('final_cta_title', currentLanguage)}
-                </h2>
-                <p className="text-xl text-white max-w-3xl mx-auto mb-8">
-                  {getLocalizedText('final_cta_description', currentLanguage)}
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <button 
-                    className="bg-white hover:bg-neutral-100 text-tuggi-primary px-8 py-4 rounded-lg font-semibold transition-all duration-200 hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-tuggi-primary"
-                    onClick={() => handleCTAClick('request_demo_home_final', 'final_section')}
-                    aria-label={getLocalizedText('request_demo_aria', currentLanguage)}
-                  >
-                    {getLocalizedText('request_demo', currentLanguage)}
-                  </button>
-                  <button 
-                    className="border-2 border-white text-white hover:bg-white hover:text-tuggi-primary px-8 py-4 rounded-lg font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-tuggi-primary"
-                    onClick={() => handleCTAClick('learn_more_home_final', 'final_section')}
-                    aria-label={getLocalizedText('learn_more_aria', currentLanguage)}
-                  >
-                    {getLocalizedText('learn_more', currentLanguage)}
-                  </button>
-                </div>
-                
-                {/* Contact Info with Localized Content */}
-                <div className="mt-12 pt-8 border-t border-tuggi-primary-light/30">
-                  <p className="text-white mb-4">
-                    {getLocalizedText('contact_specialists', currentLanguage)}
-                  </p>
-                  <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-8 text-white">
-                    <a 
-                      href="mailto:hello@tuggi.app" 
-                      className="hover:text-tuggi-primary-light transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-tuggi-primary rounded-lg px-2 py-1"
-                      onClick={() => {
-                        if (typeof window !== 'undefined' && (window as any).gtag) {
-                          (window as any).gtag('event', 'contact_click', {
-                            event_category: 'Contact',
-                            event_label: 'email_home_final',
-                            contact_method: 'email',
-                            language: currentLanguage,
-                            locale: getLocaleCode(currentLanguage)
-                          });
-                        }
-                      }}
-                      aria-label={getLocalizedText('email_specialists_aria', currentLanguage)}
-                    >
-                      📧 hello@tuggi.app
-                    </a>
-                    <a 
-                      href="tel:+55 (11) 9.9471-8809" 
-                      className="hover:text-tuggi-primary-light transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-tuggi-primary rounded-lg px-2 py-1"
-                      onClick={() => {
-                        if (typeof window !== 'undefined' && (window as any).gtag) {
-                          (window as any).gtag('event', 'contact_click', {
-                            event_category: 'Contact',
-                            event_label: 'phone_home_final',
-                            contact_method: 'phone',
-                            language: currentLanguage,
-                            locale: getLocaleCode(currentLanguage)
-                          });
-                        }
-                      }}
-                      aria-label={getLocalizedText('call_specialists_aria', currentLanguage)}
-                    >
-                      📞 +55 (11) 9.9471-8809
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </section>
+            {/* Final CTA Section */}
+            <FinalCTASection 
+              currentLanguage={currentLanguage}
+              onCTAClick={handleCTAClick}
+            />
           </>
         );
     }
@@ -390,26 +357,6 @@ function App() {
   // Simple localization function (can be expanded with proper i18n library)
   const getLocalizedText = (key: string, language: string): string => {
     const translations: Record<string, Record<string, string>> = {
-      final_cta_title: {
-        EN: 'Ready to Help Shape the Future of Passenger Experiences?',
-        PT: 'Pronto para Ajudar a Moldar o Futuro das Experiências de Passageiros?',
-        ES: '¿Listo para Ayudar a Dar Forma al Futuro de las Experiencias de Pasajeros?'
-      },
-      final_cta_description: {
-        EN: 'Join the visionary companies shaping the Tuggi Drive experience with us.',
-        PT: 'Junte-se às empresas visionárias moldando a experiência Tuggi Drive conosco.',
-        ES: 'Únete a las empresas visionarias que dan forma a la experiencia Tuggi Drive con nosotros.'
-      },
-      request_demo: {
-        EN: 'Request Demo',
-        PT: 'Solicitar Demo',
-        ES: 'Solicitar Demo'
-      },
-      learn_more: {
-        EN: 'Join the Early Access Program',
-        PT: 'Participar do Programa de Acesso Antecipado',
-        ES: 'Unirse al Programa de Acceso Temprano'
-      },
       contact_specialists: {
         EN: 'Questions? Speak with our travel-tech specialists',
         PT: 'Dúvidas? Fale com nossos especialistas em tecnologia de viagem',

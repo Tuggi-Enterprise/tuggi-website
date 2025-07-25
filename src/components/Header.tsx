@@ -119,13 +119,9 @@ const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    // Fixed wrapper for both Beta flag and header
-    <div className="fixed top-0 left-0 right-0 z-50 flex flex-col fixed-header-wrapper">
-      {/* Beta Badge */}
-      <div className="bg-tuggi-secondary text-white text-center py-2 px-4 text-sm font-medium">
-        🧪 Beta – Working with selected fleet partners
-      </div>
-      {/* Header (remove fixed/top-8 from here) */}
+    // Fixed wrapper for header only
+    <div className="fixed top-0 left-0 right-0 z-50">
+      {/* Header */}
       <header
         className={`transition-all duration-300 ${
           isScrolled
