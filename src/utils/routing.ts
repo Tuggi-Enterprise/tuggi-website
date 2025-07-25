@@ -21,11 +21,8 @@ export const LANGUAGE_CODES = {
 // Valid page routes with multilingual URL mappings
 export const VALID_PAGES = [
   'home',
-  'products', 
-  'benefits',
   'contact',
   'purpose',
-  'story',
   'privacy',
   'privacy-policy',
   'politica-de-privacidade',

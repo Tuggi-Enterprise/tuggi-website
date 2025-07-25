@@ -47,25 +47,16 @@ const Header: React.FC<HeaderProps> = ({
       EN: [
         { label: 'Home', page: 'home' },
         { label: 'Our Purpose', page: 'purpose' },
-        { label: 'Our Story & Team', page: 'story' },
-        { label: 'Products', page: 'products' },
-        { label: 'Business Benefits', page: 'benefits' },
         { label: 'Contact', page: 'contact' },
       ],
       PT: [
         { label: 'Início', page: 'home' },
         { label: 'Nosso Propósito', page: 'purpose' },
-        { label: 'Nossa História', page: 'story' },
-        { label: 'Produtos', page: 'products' },
-        { label: 'Benefícios', page: 'benefits' },
         { label: 'Contato', page: 'contact' },
       ],
       ES: [
         { label: 'Inicio', page: 'home' },
         { label: 'Nuestro Propósito', page: 'purpose' },
-        { label: 'Nuestra Historia', page: 'story' },
-        { label: 'Productos', page: 'products' },
-        { label: 'Beneficios', page: 'benefits' },
         { label: 'Contacto', page: 'contact' },
       ]
     };

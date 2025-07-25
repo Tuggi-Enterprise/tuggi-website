@@ -10,9 +10,6 @@ import ExpansionSection from './components/ExpansionSection';
 import PrivacySection from './components/PrivacySection';
 import FinalCTASection from './components/FinalCTASection';
 import PurposePage from './components/PurposePage';
-import StoryTeamPage from './components/StoryTeamPage';
-import ProductsPage from './components/ProductsPage';
-import BusinessBenefitsPage from './components/BusinessBenefitsPage';
 import ContactPage from './components/ContactPage';
 import PrivacyPolicyPage from './components/PrivacyPolicyPage';
 import TermsOfUsePage from './components/TermsOfUsePage';
@@ -309,12 +306,6 @@ function App() {
     switch (currentPage) {
       case 'purpose':
         return <PurposePage currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />;
-      case 'story':
-        return <StoryTeamPage currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />;
-      case 'products':
-        return <ProductsPage currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />;
-      case 'benefits':
-        return <BusinessBenefitsPage currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />;
       case 'contact':
         return <ContactPage currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />;
       case 'privacy':

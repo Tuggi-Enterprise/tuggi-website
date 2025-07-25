@@ -45,52 +45,6 @@ export const generateSEOConfig = (
         ogDescription: 'Plataforma de narrativa cultural para empresas de transporte. Transforme viajes en experiencias memorables con narración automática y soporte multilingüe.'
       }
     },
-    products: {
-      EN: {
-        title: 'Tuggi Drive - Transforming Journeys into Meaningful Experiences | B2B Tourism Technology',
-        description: 'Transform your transportation business with Tuggi Drive Navigation Audio App. AI-powered cultural storytelling for professional drivers. Increase revenue and satisfaction.',
-        keywords: 'AI travel guide for transport companies, B2B tourism technology, Tuggi Drive navigation audio app, transportation storytelling, fleet management software, cultural tourism tech',
-        ogTitle: 'Tuggi Drive - Transforming Journeys into Meaningful Experiences',
-        ogDescription: 'Cultural storytelling platform for transportation companies. Transform rides into memorable experiences with automatic narration and multilingual support.'
-      },
-      PT: {
-        title: 'Tuggi Drive - Transformando Jornadas em Experiências Significativas | Tecnologia B2B Turismo',
-        description: 'Transforme seu negócio de transporte com o App de Áudio Tuggi Drive. Narrativa cultural com IA para motoristas profissionais. Aumente receita e satisfação .',
-        keywords: 'guia de viagem IA empresas transporte, tecnologia B2B turismo, app navegação áudio Tuggi Drive, narrativa transporte, software gestão frota, tecnologia turismo cultural',
-        ogTitle: 'Tuggi Drive - Transformando Jornadas em Experiências Significativas',
-        ogDescription: 'Plataforma de narrativa cultural para empresas de transporte. Transforme viagens em experiências memoráveis com narração automática e suporte multilíngue.'
-      },
-      ES: {
-        title: 'Tuggi Drive - Transformando Viajes en Experiencias Significativas | Tecnología B2B Turismo',
-        description: 'Transforme su negocio de transporte con la App de Audio Tuggi Drive. Narrativa cultural con IA para conductores profesionales. Aumente ingresos y satisfacción.',
-        keywords: 'guía de viaje IA empresas transporte, tecnología B2B turismo, app navegación audio Tuggi Drive, narrativa transporte, software gestión flotas, tecnología turismo cultural',
-        ogTitle: 'Tuggi Drive - Transformando Viajes en Experiencias Significativas',
-        ogDescription: 'Plataforma de narrativa cultural para empresas de transporte. Transforme viajes en experiencias memorables con narración automática y soporte multilingüe.'
-      }
-    },
-    benefits: {
-      EN: {
-        title: 'Tuggi Drive - Transforming Journeys into Meaningful Experiences | B2B Tourism Technology',
-        description: 'Transform your transportation business with Tuggi Drive Navigation Audio App. AI-powered cultural storytelling for professional drivers. Increase revenue and satisfaction.',
-        keywords: 'AI travel guide for transport companies, B2B tourism technology, Tuggi Drive navigation audio app, transportation storytelling, fleet management software, cultural tourism tech',
-        ogTitle: 'Tuggi Drive - Transforming Journeys into Meaningful Experiences',
-        ogDescription: 'Cultural storytelling platform for transportation companies. Transform rides into memorable experiences with automatic narration and multilingual support.'
-      },
-      PT: {
-        title: 'Tuggi Drive - Transformando Jornadas em Experiências Significativas | Tecnologia B2B Turismo',
-        description: 'Transforme seu negócio de transporte com o App de Áudio Tuggi Drive. Narrativa cultural com IA para motoristas profissionais. Aumente receita e satisfação .',
-        keywords: 'guia de viagem IA empresas transporte, tecnologia B2B turismo, app navegação áudio Tuggi Drive, narrativa transporte, software gestão frota, tecnologia turismo cultural',
-        ogTitle: 'Tuggi Drive - Transformando Jornadas em Experiências Significativas',
-        ogDescription: 'Plataforma de narrativa cultural para empresas de transporte. Transforme viagens em experiências memoráveis com narração automática e suporte multilíngue.'
-      },
-      ES: {
-        title: 'Tuggi Drive - Transformando Viajes en Experiencias Significativas | Tecnología B2B Turismo',
-        description: 'Transforme su negocio de transporte con la App de Audio Tuggi Drive. Narrativa cultural con IA para conductores profesionales. Aumente ingresos y satisfacción.',
-        keywords: 'guía de viaje IA empresas transporte, tecnología B2B turismo, app navegación audio Tuggi Drive, narrativa transporte, software gestión flotas, tecnología turismo cultural',
-        ogTitle: 'Tuggi Drive - Transformando Viajes en Experiencias Significativas',
-        ogDescription: 'Plataforma de narrativa cultural para empresas de transporte. Transforme viajes en experiencias memorables con narración automática y soporte multilingüe.'
-      }
-    },
     contact: {
       EN: {
         title: 'Tuggi Drive - Transforming Journeys into Meaningful Experiences | B2B Tourism Technology',
@@ -115,29 +69,6 @@ export const generateSEOConfig = (
       }
     },
     purpose: {
-      EN: {
-        title: 'Tuggi Drive - Transforming Journeys into Meaningful Experiences | B2B Tourism Technology',
-        description: 'Transform your transportation business with Tuggi Drive Navigation Audio App. AI-powered cultural storytelling for professional drivers. Increase revenue and satisfaction.',
-        keywords: 'AI travel guide for transport companies, B2B tourism technology, Tuggi Drive navigation audio app, transportation storytelling, fleet management software, cultural tourism tech',
-        ogTitle: 'Tuggi Drive - Transforming Journeys into Meaningful Experiences',
-        ogDescription: 'Cultural storytelling platform for transportation companies. Transform rides into memorable experiences with automatic narration and multilingual support.'
-      },
-      PT: {
-        title: 'Tuggi Drive - Transformando Jornadas em Experiências Significativas | Tecnologia B2B Turismo',
-        description: 'Transforme seu negócio de transporte com o App de Áudio Tuggi Drive. Narrativa cultural com IA para motoristas profissionais. Aumente receita e satisfação .',
-        keywords: 'guia de viagem IA empresas transporte, tecnologia B2B turismo, app navegação áudio Tuggi Drive, narrativa transporte, software gestão frota, tecnologia turismo cultural',
-        ogTitle: 'Tuggi Drive - Transformando Jornadas em Experiências Significativas',
-        ogDescription: 'Plataforma de narrativa cultural para empresas de transporte. Transforme viagens em experiências memoráveis com narração automática e suporte multilíngue.'
-      },
-      ES: {
-        title: 'Tuggi Drive - Transformando Viajes en Experiencias Significativas | Tecnología B2B Turismo',
-        description: 'Transforme su negocio de transporte con la App de Audio Tuggi Drive. Narrativa cultural con IA para conductores profesionales. Aumente ingresos y satisfacción.',
-        keywords: 'guía de viaje IA empresas transporte, tecnología B2B turismo, app navegación audio Tuggi Drive, narrativa transporte, software gestión flotas, tecnología turismo cultural',
-        ogTitle: 'Tuggi Drive - Transformando Viajes en Experiencias Significativas',
-        ogDescription: 'Plataforma de narrativa cultural para empresas de transporte. Transforme viajes en experiencias memorables con narración automática y soporte multilingüe.'
-      }
-    },
-    story: {
       EN: {
         title: 'Tuggi Drive - Transforming Journeys into Meaningful Experiences | B2B Tourism Technology',
         description: 'Transform your transportation business with Tuggi Drive Navigation Audio App. AI-powered cultural storytelling for professional drivers. Increase revenue and satisfaction.',
@@ -280,38 +211,6 @@ export const generateStructuredData = (page: string, language: string, baseUrl: 
   };
 
   switch (page) {
-    case 'products':
-      return {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Tuggi Drive",
-        "description": "AI-powered navigation audio app for transport companies with cultural storytelling",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "iOS, Android, Web",
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "USD",
-          "price": "Contact for pricing",
-          "availability": "https://schema.org/InStock"
-        },
-        "provider": organizationData,
-        "featureList": [
-          "AI-powered cultural storytelling",
-          "GPS-triggered narration",
-          "Multilingual support",
-          "Fleet management dashboard",
-          "Navigation app integration"
-        ],
-        "screenshot": `${baseUrl}/tuggi-drive-screenshot.png`,
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.8",
-          "ratingCount": "500",
-          "bestRating": "5"
-        },
-        "inLanguage": getLocaleCode(language)
-      };
-
     case 'contact':
       return {
         "@context": "https://schema.org",
@@ -330,36 +229,6 @@ export const generateStructuredData = (page: string, language: string, baseUrl: 
               "http://schema.org/MobileWebPlatform"
             ]
           }
-        }
-      };
-
-    case 'benefits':
-      return {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Business Benefits of AI Travel Guide Technology for Transport Companies",
-        "description": "Proven ROI and business benefits of implementing AI travel guide technology in transportation businesses",
-        "author": organizationData,
-        "publisher": organizationData,
-        "datePublished": "2024-01-01",
-        "dateModified": new Date().toISOString().split('T')[0],
-        "mainEntityOfPage": `${baseUrl}/${language.toLowerCase()}/benefits`,
-        "articleSection": "Business Benefits",
-        "keywords": "AI travel guide ROI, B2B tourism technology benefits, transportation revenue growth",
-        "inLanguage": getLocaleCode(language)
-      };
-
-    case 'story':
-      return {
-        "@context": "https://schema.org",
-        "@type": "AboutPage",
-        "name": "About Tuggi - Our Story & Team",
-        "description": "Learn about Tuggi's story and meet the team behind AI travel guide technology for B2B tourism",
-        "mainEntity": organizationData,
-        "inLanguage": getLocaleCode(language),
-        "speakable": {
-          "@type": "SpeakableSpecification",
-          "cssSelector": ["h1", "h2", ".team-member"]
         }
       };
 
@@ -759,11 +628,8 @@ const getConversionStep = (ctaType: string): number => {
 const getUserJourneyStage = (page: string): string => {
   const stageMap: Record<string, string> = {
     'home': 'awareness',
-    'products': 'consideration',
-    'benefits': 'evaluation',
     'contact': 'conversion',
     'purpose': 'awareness',
-    'story': 'trust_building',
     'privacy': 'legal_compliance',
     'cookies': 'legal_compliance'
   };
