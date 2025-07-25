@@ -1,5 +1,6 @@
 import React from 'react';
 import { MapPin, Globe, ArrowRight } from 'lucide-react';
+import { getButtonClasses, layout, gradients } from '../utils/designSystem';
 
 interface ExpansionSectionProps {
   currentLanguage?: string;
@@ -78,9 +79,9 @@ const ExpansionSection: React.FC<ExpansionSectionProps> = ({
   };
 
   return (
-    <section className="py-12 lg:py-16 xl:py-20 bg-gradient-to-br from-tuggi-primary/10 to-tuggi-secondary/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 xl:gap-12 items-center">
+    <section className={`${layout.section.base}`} style={{ background: gradients.subtle }}>
+      <div className={layout.container.base}>
+        <div className={`${layout.grid['2']} gap-6 lg:gap-8 xl:gap-12 items-center`}>
           {/* Content */}
           <div>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900 mb-3 lg:mb-4">
@@ -119,7 +120,7 @@ const ExpansionSection: React.FC<ExpansionSectionProps> = ({
             {/* CTA */}
             <button 
               onClick={() => handleCTAClick('request_city')}
-              className="bg-tuggi-primary hover:bg-tuggi-primary-dark text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center space-x-2 group"
+              className={`${getButtonClasses('primary', 'lg')} inline-flex items-center gap-2`}
             >
               <span>{content.cta}</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />

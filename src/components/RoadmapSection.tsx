@@ -1,6 +1,7 @@
 import React from 'react';
 import { Globe, Crown, Route, Mic, ArrowRight } from 'lucide-react';
 import StatusBadge from './StatusBadge';
+import { getButtonClasses, layout, gradients } from '../utils/designSystem';
 
 interface RoadmapSectionProps {
   currentLanguage?: string;
@@ -148,8 +149,8 @@ const RoadmapSection: React.FC<RoadmapSectionProps> = ({
   };
 
   return (
-    <section className="py-12 lg:py-16 xl:py-20 bg-gradient-to-br from-neutral-50 to-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className={`${layout.section.base}`} style={{ background: gradients.subtle }}>
+      <div className={layout.container.base}>
         {/* Section Header */}
         <div className="text-center mb-8 lg:mb-12">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900 mb-4 lg:mb-6">
@@ -166,7 +167,7 @@ const RoadmapSection: React.FC<RoadmapSectionProps> = ({
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 xl:gap-8 mb-8 lg:mb-12">
+        <div className={`${layout.grid['2']} gap-4 lg:gap-6 xl:gap-8 mb-8 lg:mb-12`}>
           {content.features.map((feature: any, index: number) => (
             <div 
               key={index}
@@ -182,7 +183,7 @@ const RoadmapSection: React.FC<RoadmapSectionProps> = ({
               </div>
 
               {/* Icon */}
-              <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+              <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg" style={{ background: gradients.ocean }}>
                 {getIcon(feature.icon)}
               </div>
 
@@ -195,7 +196,7 @@ const RoadmapSection: React.FC<RoadmapSectionProps> = ({
               </p>
 
               {/* Hover Effect Background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-tuggi-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{ background: gradients.subtle }}></div>
             </div>
           ))}
         </div>
@@ -204,7 +205,7 @@ const RoadmapSection: React.FC<RoadmapSectionProps> = ({
         <div className="text-center">
           <button 
             onClick={() => handleCTAClick('early_access')}
-            className="bg-tuggi-primary hover:bg-tuggi-primary-dark text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center space-x-2 group"
+            className={`${getButtonClasses('primary', 'lg')} inline-flex items-center gap-2`}
           >
             <span>{content.cta}</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />

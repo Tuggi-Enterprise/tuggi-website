@@ -1,5 +1,6 @@
 import React from 'react';
 import { Download, MapPin, Headphones, Star } from 'lucide-react';
+import { layout, gradients } from '../utils/designSystem';
 
 interface HowItWorksSectionProps {
   currentLanguage?: string;
@@ -141,8 +142,8 @@ const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
   };
 
   return (
-    <section className="py-12 lg:py-16 xl:py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className={`${layout.section.base} bg-white`}>
+      <div className={layout.container.base}>
         {/* Section Header */}
         <div className="text-center mb-8 lg:mb-12">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900 mb-4 lg:mb-6">
@@ -154,7 +155,7 @@ const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
         </div>
 
         {/* Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+        <div className={`${layout.grid['4']} gap-4 lg:gap-6`}>
           {content.steps.map((step: any, index: number) => (
             <div 
               key={index}
@@ -166,9 +167,9 @@ const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
               </div>
               
               {/* Card */}
-              <div className="relative z-10 bg-gradient-to-br from-neutral-50 to-white border border-neutral-200 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group-hover:border-tuggi-primary/20">
+              <div className="relative z-10 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group-hover:border-tuggi-primary/20" style={{ background: gradients.subtle }}>
                 {/* Icon */}
-                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${step.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg group-hover:shadow-xl`}>
+                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg group-hover:shadow-xl`} style={{ background: gradients.ocean }}>
                   {getIcon(step.icon)}
                 </div>
 

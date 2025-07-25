@@ -1,5 +1,6 @@
 import React from 'react';
 import { Eye, Heart, Compass } from 'lucide-react';
+import { layout, gradients } from '../utils/designSystem';
 
 interface TrustSectionProps {
   currentLanguage?: string;
@@ -95,8 +96,8 @@ const TrustSection: React.FC<TrustSectionProps> = ({ currentLanguage = 'PT' }) =
   };
 
   return (
-    <section className="py-12 lg:py-16 xl:py-20 bg-gradient-to-br from-neutral-50 to-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className={`${layout.section.base}`} style={{ background: gradients.subtle }}>
+      <div className={layout.container.base}>
         {/* Main Content */}
         <div className="text-center mb-8 lg:mb-12">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900 mb-4 lg:mb-6 leading-tight">
@@ -113,24 +114,24 @@ const TrustSection: React.FC<TrustSectionProps> = ({ currentLanguage = 'PT' }) =
         </div>
 
         {/* Values Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-8 lg:mt-12">
+        <div className={`${layout.grid['3']} gap-6 mt-8 lg:mt-12`}>
           {content.values.map((value: any, index: number) => (
             <div 
               key={index}
               className="group text-center"
             >
               {/* Icon */}
-                             <div className="inline-flex w-16 h-16 rounded-full bg-gradient-to-br from-tuggi-primary to-tuggi-primary-dark items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+              <div className="inline-flex w-16 h-16 rounded-full items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg" style={{ background: gradients.ocean }}>
                 {getIcon(value.icon)}
               </div>
 
               {/* Content */}
-                             <h3 className="text-lg lg:text-xl font-bold text-neutral-900 mb-3 group-hover:text-tuggi-primary transition-colors duration-300">
-                 {value.title}
-               </h3>
-               <p className="text-sm text-neutral-600 leading-relaxed">
-                 {value.description}
-               </p>
+              <h3 className="text-lg lg:text-xl font-bold text-neutral-900 mb-3 group-hover:text-tuggi-primary transition-colors duration-300">
+                {value.title}
+              </h3>
+              <p className="text-sm text-neutral-600 leading-relaxed">
+                {value.description}
+              </p>
             </div>
           ))}
         </div>

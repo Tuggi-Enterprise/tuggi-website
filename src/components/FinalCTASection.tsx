@@ -1,4 +1,5 @@
 import React from 'react';
+import { layout, gradients, getButtonClasses } from '../utils/designSystem';
 
 interface FinalCTASectionProps {
   currentLanguage?: string;
@@ -41,8 +42,8 @@ const FinalCTASection: React.FC<FinalCTASectionProps> = ({
   };
 
   return (
-    <section className="py-12 lg:py-16 bg-gradient-ocean">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section className={`${layout.section.compact}`} style={{ background: gradients.ocean }}>
+      <div className={`${layout.container.base} text-center`}>
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3 lg:mb-4">
           {content.title}
         </h2>
@@ -51,14 +52,14 @@ const FinalCTASection: React.FC<FinalCTASectionProps> = ({
         </p>
         <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center">
           <button 
-            className="bg-white hover:bg-neutral-100 text-tuggi-primary px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-200 hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-tuggi-primary inline-flex items-center space-x-2 text-sm sm:text-base"
+            className="bg-white hover:bg-neutral-100 text-tuggi-primary px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-200 hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-tuggi-primary inline-flex items-center gap-2 text-sm sm:text-base"
             onClick={() => handleCTAClick('app_store_download')}
           >
             <span>📱</span>
             <span>{content.appStore}</span>
           </button>
           <button 
-            className="bg-white hover:bg-neutral-100 text-tuggi-primary px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-200 hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-tuggi-primary inline-flex items-center space-x-2 text-sm sm:text-base"
+            className="bg-white hover:bg-neutral-100 text-tuggi-primary px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-200 hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-tuggi-primary inline-flex items-center gap-2 text-sm sm:text-base"
             onClick={() => handleCTAClick('google_play_download')}
           >
             <span>🤖</span>

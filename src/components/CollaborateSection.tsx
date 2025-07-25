@@ -1,5 +1,6 @@
 import React from 'react';
 import { MessageSquare, Users, Lightbulb, ArrowRight } from 'lucide-react';
+import { getButtonClasses, layout, gradients } from '../utils/designSystem';
 
 interface CollaborateSectionProps {
   currentLanguage?: string;
@@ -109,8 +110,8 @@ const CollaborateSection: React.FC<CollaborateSectionProps> = ({
   };
 
   return (
-    <section className="py-12 lg:py-16 xl:py-20 bg-gradient-to-br from-tuggi-primary/5 to-tuggi-secondary/5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className={`${layout.section.base}`} style={{ background: gradients.subtle }}>
+      <div className={layout.container.base}>
         {/* Section Header */}
         <div className="text-center mb-8 lg:mb-12">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900 mb-3 lg:mb-4">
@@ -128,14 +129,14 @@ const CollaborateSection: React.FC<CollaborateSectionProps> = ({
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 mb-8 lg:mb-10">
+        <div className={`${layout.grid['3']} gap-4 lg:gap-6 mb-8 lg:mb-10`}>
           {content.features.map((feature: any, index: number) => (
             <div 
               key={index}
               className="group text-center bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
             >
               {/* Icon */}
-              <div className="inline-flex w-14 h-14 rounded-2xl bg-gradient-to-br from-tuggi-primary to-tuggi-primary-dark items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+              <div className="inline-flex w-14 h-14 rounded-2xl items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg" style={{ background: gradients.ocean }}>
                 {getIcon(feature.icon)}
               </div>
 
@@ -154,7 +155,7 @@ const CollaborateSection: React.FC<CollaborateSectionProps> = ({
         <div className="text-center">
           <button 
             onClick={() => handleCTAClick('join_beta')}
-            className="bg-tuggi-primary hover:bg-tuggi-primary-dark text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center space-x-2 group"
+            className={`${getButtonClasses('primary', 'lg')} inline-flex items-center gap-2`}
           >
             <span>{content.joinBeta}</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />

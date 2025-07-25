@@ -1,5 +1,6 @@
 import React from 'react';
 import { Shield, Lock, Eye, FileText } from 'lucide-react';
+import { layout, gradients } from '../utils/designSystem';
 
 interface PrivacySectionProps {
   currentLanguage?: string;
@@ -106,8 +107,8 @@ const PrivacySection: React.FC<PrivacySectionProps> = ({
   };
 
   return (
-    <section className="py-12 lg:py-16 xl:py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className={`${layout.section.base} bg-white`}>
+      <div className={layout.container.base}>
         {/* Section Header */}
         <div className="text-center mb-8 lg:mb-12">
           <h2 className="text-2xl sm:text-3xl lg:text-3xl font-bold text-neutral-900 mb-4 lg:mb-6 max-w-5xl mx-auto leading-tight">
@@ -119,14 +120,15 @@ const PrivacySection: React.FC<PrivacySectionProps> = ({
         </div>
 
         {/* Principles Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 mb-8 lg:mb-10">
+        <div className={`${layout.grid['3']} gap-4 lg:gap-6 mb-8 lg:mb-10`}>
           {content.principles.map((principle: any, index: number) => (
             <div 
               key={index}
-              className="group text-center bg-gradient-to-br from-neutral-50 to-white border border-neutral-200 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+              className="group text-center rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+              style={{ background: gradients.subtle }}
             >
               {/* Icon */}
-              <div className="inline-flex w-14 h-14 rounded-2xl bg-gradient-to-br from-tuggi-primary to-tuggi-primary-dark items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+              <div className="inline-flex w-14 h-14 rounded-2xl items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg" style={{ background: gradients.ocean }}>
                 {getIcon(principle.icon)}
               </div>
 
@@ -139,7 +141,7 @@ const PrivacySection: React.FC<PrivacySectionProps> = ({
               </p>
 
               {/* Hover Effect Background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-tuggi-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{ background: gradients.subtle }}></div>
             </div>
           ))}
         </div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Download, Play, MapPin } from 'lucide-react';
+import { getButtonClasses, layout, gradients } from '../utils/designSystem';
 
 interface HeroSectionProps {
   currentLanguage?: string;
@@ -81,12 +82,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   };
 
   return (
-    <section className="relative bg-gradient-hero overflow-hidden">
+    <section className="relative overflow-hidden" style={{ background: gradients.hero }}>
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%2300A8E8%22 fill-opacity=%220.03%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
       
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-12 xl:py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 xl:gap-12 items-center">
+      <div className={`${layout.container.base} ${layout.section.hero}`}>
+        <div className={`${layout.grid['2']} gap-6 lg:gap-8 xl:gap-12 items-center`}>
           {/* Content */}
           <div className="animate-slide-up">
             <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-neutral-900 leading-tight mb-2 lg:mb-3">
@@ -101,7 +102,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             <div className="flex flex-col sm:flex-row gap-3 mb-4">
               <button 
                 onClick={() => handleCTAClick('download_free')}
-                className="bg-tuggi-primary hover:bg-tuggi-primary-dark text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-200 hover:shadow-xl transform hover:-translate-y-1 flex items-center justify-center space-x-2 group text-sm sm:text-base"
+                className={`${getButtonClasses('primary', 'lg')} inline-flex items-center gap-2`}
               >
                 <Download className="w-4 h-4 sm:w-5 sm:h-5" />
                 <span>{content.downloadFree}</span>
@@ -109,7 +110,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               
               <button 
                 onClick={() => handleCTAClick('how_it_works')}
-                className="border-2 border-neutral-300 hover:border-tuggi-primary text-neutral-700 hover:text-tuggi-primary px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center space-x-2 group bg-white/80 backdrop-blur-sm text-sm sm:text-base"
+                className={`${getButtonClasses('outline', 'lg')} inline-flex items-center gap-2`}
               >
                 <Play className="w-4 h-4 sm:w-5 sm:h-5" />
                 <span>{content.howItWorks}</span>
@@ -117,7 +118,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             </div>
 
             {/* Availability Note */}
-            <div className="flex items-start space-x-3 text-neutral-600">
+            <div className="flex items-start gap-3 text-neutral-600">
               <MapPin className="w-5 h-5 mt-0.5 text-tuggi-primary flex-shrink-0" />
               <p className="text-sm leading-relaxed">
                 {content.availability}
@@ -127,7 +128,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
           {/* Mobile App Mockup */}
           <div className="relative animate-fade-in">
-            <div className="relative bg-gradient-subtle rounded-3xl p-6 lg:p-8">
+            <div className="relative rounded-3xl p-6 lg:p-8" style={{ background: gradients.subtle }}>
               {/* Mobile App Screenshot with Animation */}
               <div className="mx-auto relative">
                 <div className="relative w-48 h-auto mx-auto">

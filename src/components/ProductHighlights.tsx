@@ -1,5 +1,6 @@
 import React from 'react';
 import { Headphones, MapPin, Clock, Heart } from 'lucide-react';
+import { layout, gradients } from '../utils/designSystem';
 
 interface ProductHighlightsProps {
   currentLanguage?: string;
@@ -113,8 +114,8 @@ const ProductHighlights: React.FC<ProductHighlightsProps> = ({
   };
 
   return (
-    <section className="py-8 lg:py-12 xl:py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className={`${layout.section.base} bg-white`}>
+      <div className={layout.container.base}>
         {/* Section Header */}
         <div className="text-center mb-6 lg:mb-8">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900 mb-3 lg:mb-4">
@@ -126,14 +127,15 @@ const ProductHighlights: React.FC<ProductHighlightsProps> = ({
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 xl:gap-8">
+        <div className={`${layout.grid['2']} gap-4 lg:gap-6 xl:gap-8`}>
           {content.features.map((feature: any, index: number) => (
             <div 
               key={index}
-              className="group relative bg-gradient-to-br from-neutral-50 to-white border border-neutral-200 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:border-tuggi-primary/20"
+              className="group relative rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:border-tuggi-primary/20"
+              style={{ background: gradients.subtle }}
             >
               {/* Icon */}
-                              <div className="w-14 h-14 rounded-2xl bg-gradient-ocean flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+              <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg" style={{ background: gradients.ocean }}>
                 {getIcon(feature.icon)}
               </div>
 
@@ -146,7 +148,7 @@ const ProductHighlights: React.FC<ProductHighlightsProps> = ({
               </p>
 
               {/* Hover Effect Background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-tuggi-primary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" style={{ background: gradients.subtle }}></div>
             </div>
           ))}
         </div>
