@@ -57,7 +57,7 @@ export interface SEOConfig {
 export const generateSEOConfig = (
   page: string,
   language: string,
-  baseUrl: string = 'https://tuggi.com'
+  baseUrl: string = 'https://tuggi.app'
 ): SEOConfig => {
   const seoData: Record<string, Record<string, Partial<SEOConfig>>> = {
     home: {

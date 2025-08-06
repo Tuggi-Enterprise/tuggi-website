@@ -219,7 +219,7 @@ export const getLocaleCode = (language: string): string => {
 /**
  * Generate all localized URLs for a page (for hreflang)
  */
-export const generateHreflangUrls = (page: string, baseUrl: string = 'https://tuggi.com'): Array<{lang: string, url: string}> => {
+export const generateHreflangUrls = (page: string, baseUrl: string = 'https://tuggi.app'): Array<{lang: string, url: string}> => {
   return Object.entries(LANGUAGE_CODES).map(([language, code]) => ({
     lang: getLocaleCode(language),
     url: `${baseUrl}${generateLocalizedUrl(language, page)}`

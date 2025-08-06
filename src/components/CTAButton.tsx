@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAnalytics } from '../hooks/useAnalytics';
 import { getCurrentPageInfo } from '../utils/routing';
+import { isValidGoogleFormUrl, secureExternalNavigation, sanitizeAnalyticsData } from '../utils/security';
 
 interface CTAButtonProps {
   variant?: 'primary' | 'secondary' | 'outline';
@@ -52,31 +53,45 @@ const CTAButton: React.FC<CTAButtonProps> = ({
   const handleCTAClick = () => {
     const buttonText = ctaText[language as keyof typeof ctaText];
     
-    // Track the CTA click with detailed context
-    trackCTAClickEvent(buttonText, googleFormUrl, {
+    // Validate Google Form URL for security
+    if (!isValidGoogleFormUrl(googleFormUrl)) {
+      console.warn('Invalid Google Form URL blocked:', googleFormUrl);
+      return;
+    }
+    
+    // Sanitize analytics data for security
+    const sanitizedAnalyticsData = sanitizeAnalyticsData({
       cta_type: 'google_form_cta',
       cta_variant: variant,
       cta_size: size,
       section: trackingContext.section,
       position: trackingContext.position,
-      campaign: trackingContext.campaign,
+      campaign: trackingContext.campaign || '',
       conversion_funnel: 'awareness_to_interest',
       user_journey_stage: 'consideration'
     });
+    
+    // Track the CTA click with sanitized data
+    trackCTAClickEvent(buttonText, googleFormUrl, sanitizedAnalyticsData);
     
     // Track the button click
     trackButtonClick(buttonText, googleFormUrl);
     
     // Track Google Form interaction (opening) - main conversion goal
-    trackFormInteraction('open', 'registration_form', {
+    const sanitizedFormData = sanitizeAnalyticsData({
       source_element: buttonText,
       source_section: trackingContext.section,
       source_page: page,
       cta_variant: variant
     });
     
-    // Open Google Form in new tab
-    window.open(googleFormUrl, '_blank', 'noopener,noreferrer');
+    trackFormInteraction('open', 'registration_form', sanitizedFormData);
+    
+    // Use secure external navigation
+    secureExternalNavigation(googleFormUrl, (url) => {
+      // Additional tracking for successful navigation
+      console.log('Secure navigation to:', url);
+    });
   };
 
   const getButtonClasses = () => {
