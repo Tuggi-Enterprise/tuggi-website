@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, MapPin, ChevronDown, Globe } from 'lucide-react';
 import { getLanguageFlag, getLanguageName, getLocaleCode } from '../utils/routing';
+import LocationDisplay from './LocationDisplay';
 
 interface FooterProps {
   currentLanguage?: string;
@@ -162,6 +163,11 @@ const Footer: React.FC<FooterProps> = ({
                 </a>
               </div>
               
+              {/* User Location Display */}
+              <LocationDisplay 
+                language={currentLanguage} 
+                className="mt-3"
+              />
             </div>
           </div>
 

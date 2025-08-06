@@ -18,7 +18,8 @@ import CookiePolicyPage from './components/CookiePolicyPage';
 import TermsOfUsePage from './components/TermsOfUsePage';
 import { parseUrlPath, generateLocalizedUrl, isValidLanguage } from './utils/routing';
 import { useSEO } from './hooks/useSEO';
-import { initializeAnalytics, trackPerformanceMetrics, trackPageView, trackLanguageChange } from './utils/seo';
+import { initializeAnalytics, trackPerformanceMetrics, trackPageView, trackLanguageChange, trackUserLocation } from './utils/seo';
+import LocationDisplay from './components/LocationDisplay';
 
 // Extend Window interface for gtag
 declare global {
@@ -50,6 +51,11 @@ function App() {
     
     // Track initial page view
     trackPageView(page, language, measurementId);
+    
+    // Track user location for geographic analytics
+    trackUserLocation(language).catch(() => {
+      // Location tracking failed, but continue normally
+    });
     
     // Set up intersection observer for scroll animations
     const observerOptions = {

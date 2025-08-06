@@ -936,3 +936,249 @@ export const trackPerformanceMetrics = () => {
     });
   }
 };
+
+/**
+ * Get user's geographic location using multiple methods
+ * Priority: 1) Browser Geolocation API, 2) IP-based detection, 3) Fallback
+ */
+export const getUserLocation = async (): Promise<UserLocation> => {
+  // Try browser geolocation first (most accurate)
+  try {
+    const position = await getCurrentPosition();
+    if (position) {
+      const location = await reverseGeocode(position.coords.latitude, position.coords.longitude);
+      return {
+        ...location,
+        latitude: position.coords.latitude,
+        longitude: position.coords.longitude,
+        source: 'geolocation'
+      };
+    }
+  } catch (error) {
+    // Geolocation failed, continue to IP-based detection
+  }
+
+  // Fallback to IP-based location
+  try {
+    const ipLocation = await getLocationByIP();
+    return {
+      ...ipLocation,
+      source: 'ip'
+    };
+  } catch (error) {
+    // IP detection failed, use fallback
+  }
+
+  // Final fallback - basic detection from browser/timezone
+  return getFallbackLocation();
+};
+
+/**
+ * Get current position using browser's Geolocation API
+ */
+const getCurrentPosition = (): Promise<GeolocationPosition | null> => {
+  return new Promise((resolve) => {
+    if (!navigator.geolocation) {
+      resolve(null);
+      return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+      (position) => resolve(position),
+      () => resolve(null),
+      {
+        timeout: 10000,
+        maximumAge: 300000, // 5 minutes
+        enableHighAccuracy: false
+      }
+    );
+  });
+};
+
+/**
+ * Reverse geocode coordinates to get location details
+ */
+const reverseGeocode = async (lat: number, lng: number): Promise<Partial<UserLocation>> => {
+  try {
+    // Using a free geocoding service (you can replace with your preferred service)
+    const response = await fetch(
+      `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lng}&localityLanguage=en`
+    );
+    
+    if (!response.ok) throw new Error('Geocoding failed');
+    
+    const data = await response.json();
+    
+    return {
+      country: data.countryName,
+      countryCode: data.countryCode,
+      region: data.principalSubdivision,
+      regionCode: data.principalSubdivisionCode,
+      city: data.city || data.locality,
+      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
+    };
+  } catch (error) {
+    return {};
+  }
+};
+
+/**
+ * Get location based on IP address
+ */
+const getLocationByIP = async (): Promise<UserLocation> => {
+  try {
+    // Using ipapi.co (free tier available)
+    const response = await fetch('https://ipapi.co/json/');
+    
+    if (!response.ok) throw new Error('IP location failed');
+    
+    const data: IPLocationResponse = await response.json();
+    
+    return {
+      country: data.country,
+      countryCode: data.country_code,
+      region: data.region,
+      regionCode: data.region_code,
+      city: data.city,
+      latitude: data.latitude,
+      longitude: data.longitude,
+      timezone: data.timezone,
+      isp: data.isp,
+      source: 'ip'
+    };
+  } catch (error) {
+    // Fallback to alternative IP service
+    try {
+      const response = await fetch('https://api.country.is/');
+      const data = await response.json();
+      
+      return {
+        country: data.country,
+        countryCode: data.country,
+        source: 'ip'
+      };
+    } catch (fallbackError) {
+      throw new Error('All IP location services failed');
+    }
+  }
+};
+
+/**
+ * Fallback location detection using browser/timezone info
+ */
+const getFallbackLocation = (): UserLocation => {
+  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const language = navigator.language || 'en-US';
+  
+  // Basic country detection from timezone
+  let country = 'Unknown';
+  let countryCode = 'XX';
+  
+  if (timezone.includes('America/Sao_Paulo') || timezone.includes('America/Fortaleza')) {
+    country = 'Brazil';
+    countryCode = 'BR';
+  } else if (timezone.includes('America/New_York') || timezone.includes('America/Los_Angeles')) {
+    country = 'United States';
+    countryCode = 'US';
+  } else if (timezone.includes('Europe/Madrid')) {
+    country = 'Spain';
+    countryCode = 'ES';
+  } else if (timezone.includes('Europe/London')) {
+    country = 'United Kingdom';
+    countryCode = 'GB';
+  }
+  
+  return {
+    country,
+    countryCode,
+    timezone,
+    source: 'fallback'
+  };
+};
+
+/**
+ * Track user location for analytics
+ */
+export const trackUserLocation = async (language: string) => {
+  if (typeof window !== 'undefined' && window.gtag) {
+    try {
+      const location = await getUserLocation();
+      
+      window.gtag('event', 'user_location_detected', {
+        event_category: 'Geographic',
+        event_label: location.source,
+        country: location.country,
+        country_code: location.countryCode,
+        region: location.region,
+        city: location.city,
+        timezone: location.timezone,
+        detection_method: location.source,
+        language: language,
+        locale: getLocaleCode(language)
+      });
+      
+      // Store location in localStorage for future use
+      localStorage.setItem('tuggi_user_location', JSON.stringify(location));
+      
+      return location;
+    } catch (error) {
+      // Track location detection failure
+      window.gtag('event', 'location_detection_failed', {
+        event_category: 'Geographic',
+        event_label: 'detection_error',
+        language: language
+      });
+      
+      return getFallbackLocation();
+    }
+  }
+  
+  return getFallbackLocation();
+};
+
+/**
+ * Get cached user location from localStorage
+ */
+export const getCachedUserLocation = (): UserLocation | null => {
+  try {
+    const cached = localStorage.getItem('tuggi_user_location');
+    return cached ? JSON.parse(cached) : null;
+  } catch (error) {
+    return null;
+  }
+};
+
+/**
+ * Check if location data is fresh (less than 1 hour old)
+ */
+export const isLocationDataFresh = (): boolean => {
+  try {
+    const timestamp = localStorage.getItem('tuggi_location_timestamp');
+    if (!timestamp) return false;
+    
+    const oneHour = 60 * 60 * 1000; // 1 hour in milliseconds
+    return (Date.now() - parseInt(timestamp)) < oneHour;
+  } catch (error) {
+    return false;
+  }
+};
+
+/**
+ * Get user location with caching
+ */
+export const getUserLocationCached = async (): Promise<UserLocation> => {
+  // Check if we have fresh cached data
+  if (isLocationDataFresh()) {
+    const cached = getCachedUserLocation();
+    if (cached) return cached;
+  }
+  
+  // Get fresh location data
+  const location = await getUserLocation();
+  
+  // Cache the result with timestamp
+  localStorage.setItem('tuggi_user_location', JSON.stringify(location));
+  localStorage.setItem('tuggi_location_timestamp', Date.now().toString());
+  
+  return location;
+};
