@@ -413,58 +413,68 @@ export const trackPageView = (page: string, language: string, measurementId?: st
         // Use dynamic import to avoid build-time dependency issues
         import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
           getCLS((metric) => {
-            window.gtag('event', 'web_vitals', {
-              event_category: 'Performance',
-              event_label: 'CLS',
-              value: Math.round(metric.value * 1000),
-              language: language,
-              locale: locale,
-              page_type: page
-            });
+            if (window.gtag) {
+              window.gtag('event', 'web_vitals', {
+                event_category: 'Performance',
+                event_label: 'CLS',
+                value: Math.round(metric.value * 1000),
+                language: language,
+                locale: locale,
+                page_type: page
+              });
+            }
           });
 
           getFID((metric) => {
-            window.gtag('event', 'web_vitals', {
-              event_category: 'Performance',
-              event_label: 'FID',
-              value: Math.round(metric.value),
-              language: language,
-              locale: locale,
-              page_type: page
-            });
+            if (window.gtag) {
+              window.gtag('event', 'web_vitals', {
+                event_category: 'Performance',
+                event_label: 'FID',
+                value: Math.round(metric.value),
+                language: language,
+                locale: locale,
+                page_type: page
+              });
+            }
           });
 
           getFCP((metric) => {
-            window.gtag('event', 'web_vitals', {
-              event_category: 'Performance',
-              event_label: 'FCP',
-              value: Math.round(metric.value),
-              language: language,
-              locale: locale,
-              page_type: page
-            });
+            if (window.gtag) {
+              window.gtag('event', 'web_vitals', {
+                event_category: 'Performance',
+                event_label: 'FCP',
+                value: Math.round(metric.value),
+                language: language,
+                locale: locale,
+                page_type: page
+              });
+            }
           });
 
           getLCP((metric) => {
-            window.gtag('event', 'web_vitals', {
-              event_category: 'Performance',
-              event_label: 'LCP',
-              value: Math.round(metric.value),
-              language: language,
-              locale: locale,
-              page_type: page
-            });
+            if (window.gtag) {
+              window.gtag('event', 'web_vitals', {
+                event_category: 'Performance',
+                event_label: 'LCP',
+                value: Math.round(metric.value),
+                language: language,
+                locale: locale,
+                page_type: page
+              });
+            }
           });
 
           getTTFB((metric) => {
-            window.gtag('event', 'web_vitals', {
-              event_category: 'Performance',
-              event_label: 'TTFB',
-              value: Math.round(metric.value),
-              language: language,
-              locale: locale,
-              page_type: page
-            });
+            if (window.gtag) {
+              window.gtag('event', 'web_vitals', {
+                event_category: 'Performance',
+                event_label: 'TTFB',
+                value: Math.round(metric.value),
+                language: language,
+                locale: locale,
+                page_type: page
+              });
+            }
           });
         }).catch((error) => {
           console.warn('Web Vitals library not available:', error);
@@ -473,7 +483,7 @@ export const trackPageView = (page: string, language: string, measurementId?: st
     };
 
     // Enhanced page view tracking with multilingual context
-    if (measurementId) {
+    if (measurementId && window.gtag) {
       window.gtag('config', measurementId, {
         page_title: document.title,
         page_location: window.location.href,
@@ -513,13 +523,17 @@ export const trackPageView = (page: string, language: string, measurementId?: st
       const scrollDepth = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
       if (scrollDepth > maxScrollDepth && scrollDepth % 25 === 0) {
         maxScrollDepth = scrollDepth;
-        window.gtag('event', 'scroll_depth', {
-          event_category: 'User Engagement',
-          event_label: `${scrollDepth}%`,
-          page_type: page,
-          language: language,
-          locale: locale
-        });
+        if (window.gtag) {
+          if (window.gtag) {
+          window.gtag('event', 'scroll_depth', {
+            event_category: 'User Engagement',
+            event_label: `${scrollDepth}%`,
+            page_type: page,
+            language: language,
+            locale: locale
+          });
+        }
+        }
       }
     };
 
@@ -529,13 +543,15 @@ export const trackPageView = (page: string, language: string, measurementId?: st
     const startTime = Date.now();
     const trackTimeOnPage = () => {
       const timeOnPage = Math.round((Date.now() - startTime) / 1000);
-      window.gtag('event', 'time_on_page', {
-        event_category: 'User Engagement',
-        value: timeOnPage,
-        page_type: page,
-        language: language,
-        locale: locale
-      });
+      if (window.gtag) {
+        window.gtag('event', 'time_on_page', {
+          event_category: 'User Engagement',
+          value: timeOnPage,
+          page_type: page,
+          language: language,
+          locale: locale
+        });
+      }
     };
 
     window.addEventListener('beforeunload', trackTimeOnPage);
@@ -780,18 +796,33 @@ export const trackLinkClick = (linkType: string, destination: string, language: 
 // Initialize Google Analytics with enhanced multilingual configuration
 export const initializeAnalytics = (measurementId: string) => {
   if (typeof window !== 'undefined') {
+    console.log('🔧 Initializing Google Analytics with ID:', measurementId);
+    
     // Load Google Analytics script
     const script = document.createElement('script');
     script.async = true;
     script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+    
+    // Add load and error event listeners
+    script.onload = () => {
+      console.log('✅ Google Analytics script loaded successfully');
+    };
+    
+    script.onerror = (error) => {
+      console.error('❌ Failed to load Google Analytics script:', error);
+    };
+    
     document.head.appendChild(script);
+    console.log('📝 GA script added to document head');
 
     // Initialize gtag with enhanced multilingual configuration
     window.dataLayer = window.dataLayer || [];
     window.gtag = function(...args: unknown[]) {
+      console.log('📊 gtag call:', args);
       window.dataLayer?.push(args);
     };
     window.gtag('js', new Date());
+    console.log('🚀 gtag function initialized');
     
     // Enhanced configuration for multilingual tracking
     window.gtag('config', measurementId, {

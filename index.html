@@ -123,7 +123,7 @@
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     
     <!-- Security headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com;" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com https://tagmanager.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: https://www.google-analytics.com https://ssl.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://ssl.google-analytics.com https://region1.google-analytics.com https://region1.analytics.google.com;" />
     
     <!-- Favicon and app icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -367,6 +367,39 @@
           updateSEOContent(currentLang);
         }
       })();
+    </script>
+    
+    <!-- Google Analytics Debug Script -->
+    <script>
+      // Debug Google Analytics loading
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          console.log('=== Google Analytics Debug ===');
+          console.log('gtag function exists:', typeof window.gtag);
+          console.log('dataLayer exists:', !!window.dataLayer);
+          console.log('dataLayer length:', window.dataLayer ? window.dataLayer.length : 0);
+          
+          // Check if GA script is loaded
+          const gaScripts = document.querySelectorAll('script[src*="googletagmanager.com"]');
+          console.log('GA scripts found:', gaScripts.length);
+          
+          // Check measurement ID
+          console.log('Measurement ID from env:', 'G-LFFNJDG7TJ');
+          
+          // Test gtag call
+          if (window.gtag) {
+            console.log('Testing gtag call...');
+            window.gtag('event', 'debug_test', {
+              event_category: 'Debug',
+              event_label: 'GA_Loading_Test',
+              debug: true
+            });
+            console.log('gtag test call completed');
+          } else {
+            console.error('gtag function not available!');
+          }
+        }, 2000);
+      });
     </script>
     
     <!-- Main application script -->
