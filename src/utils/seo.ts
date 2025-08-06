@@ -429,10 +429,63 @@ export const updatePageSEO = (seoConfig: SEOConfig) => {
   updateMetaTag('apple-mobile-web-app-status-bar-style', 'default');
 };
 
-// Enhanced Google Analytics tracking with multilingual support
+// Enhanced Google Analytics tracking with multilingual support for SPAs
 export const trackPageView = (page: string, language: string, measurementId?: string) => {
   if (typeof window !== 'undefined' && window.gtag) {
     const locale = getLocaleCode(language);
+    
+    // Generate proper page path for SPA tracking
+    const generatePagePath = (page: string, language: string): string => {
+      const langPrefix = language === 'EN' ? '' : `/${language.toLowerCase()}`;
+      const pagePath = page === 'home' ? '' : `/${page}`;
+      return `${langPrefix}${pagePath}` || '/';
+    };
+
+    // Generate page title based on page and language
+    const generatePageTitle = (page: string, language: string): string => {
+      const titles: Record<string, Record<string, string>> = {
+        home: {
+          EN: 'Tuggi - Discover culture and stories wherever you go',
+          PT: 'Tuggi - Descubra cultura e histórias por onde você passa',
+          ES: 'Tuggi - Descubre cultura e historias por donde pases'
+        },
+        purpose: {
+          EN: 'Our Purpose - Tuggi',
+          PT: 'Nosso Propósito - Tuggi',
+          ES: 'Nuestro Propósito - Tuggi'
+        },
+        contact: {
+          EN: 'Contact - Tuggi',
+          PT: 'Contato - Tuggi',
+          ES: 'Contacto - Tuggi'
+        },
+        investors: {
+          EN: 'Investors - Tuggi',
+          PT: 'Investidores - Tuggi',
+          ES: 'Inversores - Tuggi'
+        },
+        privacy: {
+          EN: 'Privacy Policy - Tuggi',
+          PT: 'Política de Privacidade - Tuggi',
+          ES: 'Política de Privacidad - Tuggi'
+        },
+        terms: {
+          EN: 'Terms of Use - Tuggi',
+          PT: 'Termos de Uso - Tuggi',
+          ES: 'Términos de Uso - Tuggi'
+        },
+        cookies: {
+          EN: 'Cookie Policy - Tuggi',
+          PT: 'Política de Cookies - Tuggi',
+          ES: 'Política de Cookies - Tuggi'
+        }
+      };
+      
+      return titles[page]?.[language] || titles.home[language] || titles.home.EN;
+    };
+
+    const pagePath = generatePagePath(page, language);
+    const pageTitle = generatePageTitle(page, language);
     
     // Track Core Web Vitals with language context
     const trackWebVitals = () => {
@@ -504,16 +557,18 @@ export const trackPageView = (page: string, language: string, measurementId?: st
             }
           });
         }).catch((error) => {
-          console.warn('Web Vitals library not available:', error);
+          // Web Vitals library not available
         });
       }
     };
 
-    // Enhanced page view tracking with multilingual context
+    // CRITICAL: Use gtag config for proper SPA page tracking
+    // This is the correct way to track page views in SPAs
     if (measurementId && window.gtag) {
       window.gtag('config', measurementId, {
-        page_title: document.title,
-        page_location: window.location.href,
+        page_path: pagePath,
+        page_title: pageTitle,
+        page_location: window.location.origin + pagePath,
         language: language,
         locale: locale,
         custom_map: {
@@ -526,12 +581,14 @@ export const trackPageView = (page: string, language: string, measurementId?: st
       });
     }
 
-    window.gtag('event', 'page_view', {
+    // Send additional custom event for enhanced tracking
+    window.gtag('event', 'page_view_enhanced', {
       language: language,
       locale: locale,
       page_type: page,
-      page_title: document.title,
-      page_location: window.location.href,
+      page_path: pagePath,
+      page_title: pageTitle,
+      page_location: window.location.origin + pagePath,
       timestamp: new Date().toISOString(),
       user_agent: navigator.userAgent,
       screen_resolution: `${screen.width}x${screen.height}`,
@@ -663,6 +720,137 @@ export const trackCTAClick = (ctaType: string, page: string, language: string, a
         locale: locale
       });
     }
+  }
+};
+
+// Simple session ID for basic tracking
+const getSessionId = (): string => {
+  let sessionId = sessionStorage.getItem('tuggi_session_id');
+  if (!sessionId) {
+    sessionId = `tuggi_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+    sessionStorage.setItem('tuggi_session_id', sessionId);
+  }
+  return sessionId;
+};
+
+// Track Google Forms interactions (simplified - click tracking only)
+export const trackGoogleFormInteraction = (action: 'open' | 'start_fill' | 'submit' | 'abandon', formType: string, page: string, language: string, additionalData?: Record<string, any>) => {
+  if (typeof window !== 'undefined' && window.gtag) {
+    const locale = getLocaleCode(language);
+    const sessionId = getSessionId();
+    
+    // Track the specific form interaction
+    window.gtag('event', 'google_form_interaction', {
+      event_category: 'Form Conversion',
+      event_label: `${action}_${formType}`,
+      form_action: action,
+      form_type: formType,
+      page_type: page,
+      language: language,
+      locale: locale,
+      timestamp: new Date().toISOString(),
+      session_id: sessionId,
+      conversion_value: action === 'open' ? 50 : 10,
+      ...additionalData
+    });
+
+    // Track as conversion when form is opened (main conversion goal)
+    if (action === 'open') {
+      window.gtag('event', 'conversion', {
+        event_category: 'Primary Conversion',
+        event_label: 'google_form_opened',
+        value: 50,
+        currency: 'USD',
+        language: language,
+        locale: locale,
+        page_type: page,
+        conversion_type: 'form_engagement',
+        session_id: sessionId
+      });
+    }
+  }
+};
+
+
+
+// Track all button and link clicks with detailed analytics
+export const trackElementClick = (elementType: 'button' | 'link' | 'cta', elementText: string, destination: string, page: string, language: string, additionalData?: Record<string, any>) => {
+  if (typeof window !== 'undefined' && window.gtag) {
+    const locale = getLocaleCode(language);
+    const isExternal = destination && !destination.includes(window.location.hostname) && destination.startsWith('http');
+    const isGoogleForm = destination.includes('forms.gle') || destination.includes('docs.google.com/forms');
+    
+    window.gtag('event', 'element_click', {
+      event_category: 'User Interaction',
+      event_label: `${elementType}_${elementText.toLowerCase().replace(/\s+/g, '_')}`,
+      element_type: elementType,
+      element_text: elementText,
+      destination: destination,
+      page_type: page,
+      language: language,
+      locale: locale,
+      is_external: isExternal,
+      is_google_form: isGoogleForm,
+      timestamp: new Date().toISOString(),
+      ...additionalData
+    });
+
+    // Special tracking for Google Forms
+    if (isGoogleForm) {
+      trackGoogleFormInteraction('open', 'registration_form', page, language, {
+        source_element: elementText,
+        source_page: page
+      });
+    }
+
+    // Track external link clicks
+    if (isExternal) {
+      window.gtag('event', 'external_link_click', {
+        event_category: 'External Navigation',
+        event_label: destination,
+        page_type: page,
+        language: language,
+        locale: locale
+      });
+    }
+  }
+};
+
+// Track user engagement patterns
+export const trackUserEngagement = (engagementType: 'scroll_milestone' | 'time_milestone' | 'interaction_burst' | 'return_visit', value: number, page: string, language: string) => {
+  if (typeof window !== 'undefined' && window.gtag) {
+    const locale = getLocaleCode(language);
+    
+    window.gtag('event', 'user_engagement', {
+      event_category: 'Engagement Metrics',
+      event_label: engagementType,
+      engagement_type: engagementType,
+      engagement_value: value,
+      page_type: page,
+      language: language,
+      locale: locale,
+      timestamp: new Date().toISOString(),
+      session_quality: value > 80 ? 'high' : value > 50 ? 'medium' : 'low'
+    });
+  }
+};
+
+// Track page sections visibility (for institutional site optimization)
+export const trackSectionVisibility = (sectionName: string, visibilityPercentage: number, timeVisible: number, page: string, language: string) => {
+  if (typeof window !== 'undefined' && window.gtag) {
+    const locale = getLocaleCode(language);
+    
+    window.gtag('event', 'section_visibility', {
+      event_category: 'Content Engagement',
+      event_label: sectionName,
+      section_name: sectionName,
+      visibility_percentage: visibilityPercentage,
+      time_visible: timeVisible,
+      page_type: page,
+      language: language,
+      locale: locale,
+      engagement_quality: timeVisible > 5 && visibilityPercentage > 50 ? 'high' : 'low'
+    });
   }
 };
 

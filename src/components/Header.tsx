@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { getLanguageFlag, getLanguageName } from '../utils/routing';
 import TuggiLogo from './TuggiLogo';
+import { useAnalytics } from '../hooks/useAnalytics';
 
 interface HeaderProps {
   currentLanguage?: string;
@@ -19,6 +20,13 @@ const Header: React.FC<HeaderProps> = ({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
+  
+  // Analytics tracking
+  const {
+    trackHeaderClick,
+    trackLanguageSwitch,
+    trackNavigation
+  } = useAnalytics(currentPage, currentLanguage);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,20 +82,16 @@ const Header: React.FC<HeaderProps> = ({
 
   const currentLang = languages.find(lang => lang.code === currentLanguage) || languages[1];
 
-  const handleNavClick = (page: string) => {
+  const handleNavClick = (page: string, linkText?: string) => {
     onPageChange?.(page);
     setIsMenuOpen(false);
     
-    // Track navigation with multilingual context
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'navigation_click', {
-        event_category: 'Navigation',
-        event_label: page,
-        language: currentLanguage,
-        navigation_type: 'header_menu',
-        from_page: currentPage,
-        to_page: page
-      });
+    // Track navigation with enhanced analytics
+    const destination = `/${page === 'home' ? '' : page}`;
+    if (linkText) {
+      trackNavigation(destination, linkText);
+    } else {
+      trackHeaderClick('Logo', destination);
     }
   };
 
@@ -96,17 +100,16 @@ const Header: React.FC<HeaderProps> = ({
       onLanguageChange?.(langCode);
       setIsLanguageOpen(false);
       
-      // Track language selection
-      if (typeof window !== 'undefined' && (window as any).gtag) {
-        (window as any).gtag('event', 'language_selector_click', {
-          event_category: 'Language Selection',
-          event_label: `${currentLanguage}_to_${langCode}`,
-          language: langCode,
-          previous_language: currentLanguage,
-          selection_method: 'header_dropdown'
-        });
-      }
+      // Track language selection with enhanced analytics
+      trackLanguageSwitch(langCode);
     }
+  };
+
+  const handleMobileMenuToggle = () => {
+    setIsMenuOpen(!isMenuOpen);
+    
+    // Track mobile menu interaction
+    trackHeaderClick('Mobile Menu Toggle', '');
   };
 
   return (
@@ -142,7 +145,7 @@ const Header: React.FC<HeaderProps> = ({
               {navigationItems.map((item) => (
                 <button
                   key={item.page}
-                  onClick={() => handleNavClick(item.page)}
+                  onClick={() => handleNavClick(item.page, item.label)}
                   className={`px-4 py-2 font-medium transition-all duration-200 relative group rounded-lg hover:bg-tuggi-primary/5 ${
                     currentPage === item.page
                       ? 'text-tuggi-primary'

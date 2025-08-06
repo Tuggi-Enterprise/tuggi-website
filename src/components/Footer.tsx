@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Mail, MapPin, ChevronDown, Globe } from 'lucide-react';
 import { getLanguageFlag, getLanguageName, getLocaleCode } from '../utils/routing';
 import LocationDisplay from './LocationDisplay';
+import { useAnalytics } from '../hooks/useAnalytics';
 
 interface FooterProps {
   currentLanguage?: string;
@@ -13,11 +14,19 @@ interface FooterProps {
 const Footer: React.FC<FooterProps> = ({ 
   currentLanguage = 'PT',
   onLanguageChange,
+  currentPage = 'home',
   onPageChange 
 }) => {
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const [email, setEmail] = useState('');
   const currentYear = new Date().getFullYear();
+  
+  // Analytics tracking
+  const {
+    trackFooterClick,
+    trackLanguageSwitch,
+    trackNewsletterSignup
+  } = useAnalytics(currentPage, currentLanguage);
 
   const languages = [
     { code: 'PT', label: getLanguageName('PT'), flag: getLanguageFlag('PT') },
@@ -96,19 +105,11 @@ const Footer: React.FC<FooterProps> = ({
 
   const content = getLocalizedContent(currentLanguage);
 
-  const handleNavClick = (page: string) => {
+  const handleNavClick = (page: string, linkText: string) => {
     onPageChange?.(page);
     
-    // Track footer navigation
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'footer_navigation', {
-        event_category: 'Navigation',
-        event_label: page,
-        language: currentLanguage,
-        locale: getLocaleCode(currentLanguage),
-        navigation_type: 'footer_link'
-      });
-    }
+    // Track footer navigation with enhanced analytics
+    trackFooterClick(linkText, `/${page === 'home' ? '' : page}`);
   };
 
   const handleLanguageChange = (langCode: string) => {
@@ -116,17 +117,29 @@ const Footer: React.FC<FooterProps> = ({
       onLanguageChange?.(langCode);
       setIsLanguageOpen(false);
       
-      // Track language change from footer
-      if (typeof window !== 'undefined' && (window as any).gtag) {
-        (window as any).gtag('event', 'language_change_footer', {
-          event_category: 'Language Selection',
-          event_label: `${currentLanguage}_to_${langCode}`,
-          language: langCode,
-          previous_language: currentLanguage,
-          selection_method: 'footer_dropdown'
-        });
-      }
+      // Track language change with enhanced analytics
+      trackLanguageSwitch(langCode);
     }
+  };
+
+  const handleNewsletterSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email.trim()) return;
+    
+    // Simulate newsletter signup (replace with actual implementation)
+    const success = email.includes('@') && email.includes('.');
+    
+    // Track newsletter signup
+    trackNewsletterSignup(email, success);
+    
+    if (success) {
+      setEmail('');
+      // Show success message (you can add a toast notification here)
+    }
+  };
+
+  const handleEmailClick = () => {
+    trackFooterClick('Email Contact', 'mailto:contato@tuggi.app');
   };
 
   return (
@@ -157,6 +170,7 @@ const Footer: React.FC<FooterProps> = ({
                 <Mail className="w-4 h-4 text-tuggi-primary flex-shrink-0" />
                 <a 
                   href="mailto:contato@tuggi.app" 
+                  onClick={handleEmailClick}
                   className="text-sm hover:text-tuggi-primary transition-colors duration-200"
                 >
                   contato@tuggi.app
@@ -180,7 +194,7 @@ const Footer: React.FC<FooterProps> = ({
               {content.quickLinks.map((link: any) => (
                 <li key={link.label}>
                   <button
-                    onClick={() => handleNavClick(link.page)}
+                    onClick={() => handleNavClick(link.page, link.label)}
                     className="text-neutral-400 hover:text-tuggi-primary transition-colors duration-200 text-sm block text-left"
                   >
                     {link.label}
@@ -283,14 +297,14 @@ const Footer: React.FC<FooterProps> = ({
             {/* Legal Links */}
             <div className="flex items-center space-x-6 text-sm">
               <button 
-                onClick={() => handleNavClick('privacy')}
+                onClick={() => handleNavClick('privacy', content.privacyPolicy)}
                 className="text-neutral-500 hover:text-tuggi-primary transition-colors duration-200"
               >
                 {content.privacyPolicy}
               </button>
               <span className="text-neutral-600">|</span>
               <button 
-                onClick={() => handleNavClick('terms')}
+                onClick={() => handleNavClick('terms', content.termsOfUse)}
                 className="text-neutral-500 hover:text-tuggi-primary transition-colors duration-200"
               >
                 {content.termsOfUse}
