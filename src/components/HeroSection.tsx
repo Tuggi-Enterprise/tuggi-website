@@ -14,6 +14,7 @@ interface ContentLanguage {
   downloadFree: string;
   howItWorks: string;
   availability: string;
+  comingSoon: string;
   features: Features;
 }
 
@@ -56,6 +57,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         downloadFree: 'Baixar gratuitamente',
         howItWorks: 'Como funciona',
         availability: 'Disponível em São Paulo e cidades do interior. Novos lugares em breve.',
+        comingSoon: 'Em breve',
         features: {
           realTime: 'Narrativas em tempo real',
           offline: 'Offline',
@@ -68,6 +70,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         downloadFree: 'Download for free',
         howItWorks: 'How it works',
         availability: 'Available in São Paulo and interior cities. New places coming soon.',
+        comingSoon: 'Coming soon',
         features: {
           realTime: 'Real-time narratives',
           offline: 'Offline',
@@ -80,6 +83,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         downloadFree: 'Descargar gratis',
         howItWorks: 'Cómo funciona',
         availability: 'Disponible en São Paulo y ciudades del interior. Nuevos lugares próximamente.',
+        comingSoon: 'Próximamente',
         features: {
           realTime: 'Narrativas en tiempo real',
           offline: 'Offline',
@@ -140,11 +144,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             {/* Enhanced CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <button 
-                onClick={() => handleCTAClick('download_free')}
-                className="group bg-gradient-to-r from-tuggi-primary via-tuggi-primary-dark to-tuggi-secondary hover:from-tuggi-secondary hover:via-tuggi-primary hover:to-tuggi-primary-dark text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 hover:shadow-2xl hover:shadow-tuggi-primary/25 transform hover:-translate-y-1 inline-flex items-center justify-center gap-3 animate-gradient-shift"
+                disabled
+                className="group bg-gradient-to-r from-neutral-400 via-neutral-500 to-neutral-600 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 inline-flex items-center justify-center gap-3 cursor-not-allowed opacity-75"
               >
-                <Download className="w-5 h-5 group-hover:animate-bounce" />
+                <Download className="w-5 h-5" />
                 <span>{content.downloadFree}</span>
+                <span className="ml-2 bg-white/20 px-2 py-1 rounded-full text-xs font-medium">{content.comingSoon}</span>
               </button>
             </div>
 

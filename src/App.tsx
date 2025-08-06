@@ -5,6 +5,7 @@ import ProductHighlights from './components/ProductHighlights';
 import TrustSection from './components/TrustSection';
 import CollaborateSection from './components/CollaborateSection';
 import HowItWorksSection from './components/HowItWorksSection';
+import VideoTutorialsSection from './components/VideoTutorialsSection';
 import RoadmapSection from './components/RoadmapSection';
 import ExpansionSection from './components/ExpansionSection';
 import PrivacySection from './components/PrivacySection';
@@ -22,7 +23,7 @@ import { initializeAnalytics, trackPerformanceMetrics, trackPageView, trackLangu
 // Extend Window interface for gtag
 declare global {
   interface Window {
-    gtag?: (command: string, action: string, parameters?: Record<string, unknown>) => void;
+    gtag?: (...args: unknown[]) => void;
   }
 }
 
@@ -398,6 +399,7 @@ function App() {
             <TrustSection currentLanguage={currentLanguage} />
             <CollaborateSection currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
             <HowItWorksSection currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
+            <VideoTutorialsSection currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
             <RoadmapSection currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
             <ExpansionSection currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
             <PrivacySection currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />

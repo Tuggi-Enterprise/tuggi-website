@@ -1,6 +1,7 @@
 import React from 'react';
 import { Download, Smartphone, MapPin, Camera, Share2, Heart, MessageCircle, Shield, Zap, TrendingUp, ArrowRight, Play, Navigation, Globe, Building2, CheckCircle } from 'lucide-react';
 import FinalCTASection from './FinalCTASection';
+import VideoTutorialsSection from './VideoTutorialsSection';
 
 interface ProductsPageProps {
   currentLanguage?: string;
@@ -818,6 +819,12 @@ const ProductsPage: React.FC<ProductsPageProps> = ({
           </div>
         </div>
       </section>
+
+      {/* Video Tutorials */}
+      <VideoTutorialsSection 
+        currentLanguage={currentLanguage}
+        onCTAClick={handleCTAClick}
+      />
 
       {/* Tuggi Walk Preview */}
       <section className="py-20 lg:py-24 bg-gradient-to-br from-tuggi-secondary/5 to-orange-50">

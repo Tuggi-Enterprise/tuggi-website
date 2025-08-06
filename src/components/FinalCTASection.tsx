@@ -6,6 +6,7 @@ interface ContentLanguage {
   description: string;
   appStore: string;
   googlePlay: string;
+  comingSoon: string;
 }
 
 interface FinalCTASectionProps {
@@ -24,19 +25,22 @@ const FinalCTASection: React.FC<FinalCTASectionProps> = ({
         title: 'Comece sua jornada cultural agora mesmo.',
         description: 'Baixe o app gratuitamente, explore o mundo ao seu redor e nos ajude a construir a Tuggi.',
         appStore: 'App Store',
-        googlePlay: 'Google Play'
+        googlePlay: 'Google Play',
+        comingSoon: 'Em breve'
       },
       EN: {
         title: 'Start your cultural journey right now.',
         description: 'Download the app for free, explore the world around you and help us build Tuggi.',
         appStore: 'App Store',
-        googlePlay: 'Google Play'
+        googlePlay: 'Google Play',
+        comingSoon: 'Coming soon'
       },
       ES: {
         title: 'Comienza tu viaje cultural ahora mismo.',
         description: 'Descarga la app gratis, explora el mundo a tu alrededor y ayúdanos a construir Tuggi.',
         appStore: 'App Store',
-        googlePlay: 'Google Play'
+        googlePlay: 'Google Play',
+        comingSoon: 'Próximamente'
       }
     };
     return content[language] || content['PT'];
@@ -59,18 +63,20 @@ const FinalCTASection: React.FC<FinalCTASectionProps> = ({
         </p>
         <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center">
           <button 
-            className="bg-white hover:bg-neutral-100 text-tuggi-primary px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-200 hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-tuggi-primary inline-flex items-center gap-2 text-sm sm:text-base"
-            onClick={() => handleCTAClick('app_store_download')}
+            disabled
+            className="bg-neutral-300 text-neutral-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-200 inline-flex items-center gap-2 text-sm sm:text-base cursor-not-allowed opacity-75"
           >
             <span>📱</span>
             <span>{content.appStore}</span>
+            <span className="ml-2 bg-neutral-400/30 px-2 py-1 rounded-full text-xs font-medium">{content.comingSoon}</span>
           </button>
           <button 
-            className="bg-white hover:bg-neutral-100 text-tuggi-primary px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-200 hover:shadow-xl transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-tuggi-primary inline-flex items-center gap-2 text-sm sm:text-base"
-            onClick={() => handleCTAClick('google_play_download')}
+            disabled
+            className="bg-neutral-300 text-neutral-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-200 inline-flex items-center gap-2 text-sm sm:text-base cursor-not-allowed opacity-75"
           >
             <span>🤖</span>
             <span>{content.googlePlay}</span>
+            <span className="ml-2 bg-neutral-400/30 px-2 py-1 rounded-full text-xs font-medium">Em breve</span>
           </button>
         </div>
       </div>
@@ -78,4 +84,4 @@ const FinalCTASection: React.FC<FinalCTASectionProps> = ({
   );
 };
 
-export default FinalCTASection; 
+export default FinalCTASection;
