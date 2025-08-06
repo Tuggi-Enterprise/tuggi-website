@@ -132,7 +132,7 @@ const YouTubeVideoModal: React.FC<YouTubeVideoModalProps> = ({
         await navigator.share(shareData);
         trackVideoAnalytics(video.videoId, 'share_native', currentLanguage);
       } catch (error) {
-        console.log('Share cancelled');
+        // Share cancelled
       }
     } else {
       setShowShareMenu(!showShareMenu);
@@ -157,7 +157,7 @@ const YouTubeVideoModal: React.FC<YouTubeVideoModalProps> = ({
         }, 2000);
       }
     } catch (error) {
-      console.error('Failed to copy link:', error);
+      // Failed to copy link
     }
   };
 

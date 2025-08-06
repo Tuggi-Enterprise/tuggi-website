@@ -2,6 +2,33 @@
 
 import { generateHreflangUrls, getLocaleCode, getLocalizedPageUrl } from './routing';
 
+// Geographic location interface
+export interface UserLocation {
+  country?: string;
+  countryCode?: string;
+  region?: string;
+  regionCode?: string;
+  city?: string;
+  latitude?: number;
+  longitude?: number;
+  timezone?: string;
+  isp?: string;
+  source: 'geolocation' | 'ip' | 'fallback';
+}
+
+// IP-based location service response
+interface IPLocationResponse {
+  country?: string;
+  country_code?: string;
+  region?: string;
+  region_code?: string;
+  city?: string;
+  latitude?: number;
+  longitude?: number;
+  timezone?: string;
+  isp?: string;
+}
+
 // Extend Window interface for Google Analytics
 declare global {
   interface Window {
@@ -796,7 +823,7 @@ export const trackLinkClick = (linkType: string, destination: string, language: 
 // Initialize Google Analytics with enhanced multilingual configuration
 export const initializeAnalytics = (measurementId: string) => {
   if (typeof window !== 'undefined') {
-    console.log('🔧 Initializing Google Analytics with ID:', measurementId);
+    // Initializing Google Analytics
     
     // Load Google Analytics script
     const script = document.createElement('script');
@@ -805,24 +832,24 @@ export const initializeAnalytics = (measurementId: string) => {
     
     // Add load and error event listeners
     script.onload = () => {
-      console.log('✅ Google Analytics script loaded successfully');
+      // Google Analytics script loaded successfully
     };
     
     script.onerror = (error) => {
-      console.error('❌ Failed to load Google Analytics script:', error);
+      // Failed to load Google Analytics script
     };
     
     document.head.appendChild(script);
-    console.log('📝 GA script added to document head');
+    // GA script added to document head
 
     // Initialize gtag with enhanced multilingual configuration
     window.dataLayer = window.dataLayer || [];
     window.gtag = function(...args: unknown[]) {
-      console.log('📊 gtag call:', args);
+      // gtag call executed
       window.dataLayer?.push(args);
     };
     window.gtag('js', new Date());
-    console.log('🚀 gtag function initialized');
+    // gtag function initialized
     
     // Enhanced configuration for multilingual tracking
     window.gtag('config', measurementId, {

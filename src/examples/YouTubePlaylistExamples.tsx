@@ -141,7 +141,7 @@ export const MultilingualVideoSection: React.FC<{ language: string }> = ({ langu
 export const CustomVideoHandlerSection: React.FC = () => {
   const handleVideoClick = (video: any) => {
     // Custom analytics or tracking
-    console.log('Video clicked:', video.title);
+    // Video clicked
     
     // You could also navigate to a custom video page
     // navigate(`/videos/${video.videoId}`);

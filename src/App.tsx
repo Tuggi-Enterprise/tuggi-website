@@ -102,7 +102,7 @@ function App() {
     // Track page view for new language
     trackPageView(currentPage, lang, import.meta.env.VITE_GA4_MEASUREMENT_ID || 'G-XXXXXXXXXX');
     
-    console.log(`Language changed from ${previousLanguage} to ${lang}, URL: ${newUrl}`);
+    // Language changed successfully
   };
 
   // Handle page navigation with proper URL routing and analytics
@@ -335,7 +335,7 @@ function App() {
     }
 
     // For any unhandled CTA types, log for debugging
-    console.log(`Unhandled CTA type: ${ctaType}`);
+    // Unhandled CTA type
   };
 
   // Helper functions for enhanced analytics

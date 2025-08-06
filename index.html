@@ -63,6 +63,21 @@
     <link rel="preload" href="/src/main.tsx" as="script" />
     <link rel="preload" href="/src/index.css" as="style" />
     
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LFFNJDG7TJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LFFNJDG7TJ', {
+        page_title: document.title,
+        page_location: window.location.href,
+        anonymize_ip: true,
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false
+      });
+    </script>
+    
     <!-- Structured Data (Schema.org) - will be updated dynamically -->
     <script type="application/ld+json">
     {
@@ -369,38 +384,7 @@
       })();
     </script>
     
-    <!-- Google Analytics Debug Script -->
-    <script>
-      // Debug Google Analytics loading
-      window.addEventListener('load', function() {
-        setTimeout(function() {
-          console.log('=== Google Analytics Debug ===');
-          console.log('gtag function exists:', typeof window.gtag);
-          console.log('dataLayer exists:', !!window.dataLayer);
-          console.log('dataLayer length:', window.dataLayer ? window.dataLayer.length : 0);
-          
-          // Check if GA script is loaded
-          const gaScripts = document.querySelectorAll('script[src*="googletagmanager.com"]');
-          console.log('GA scripts found:', gaScripts.length);
-          
-          // Check measurement ID
-          console.log('Measurement ID from env:', 'G-LFFNJDG7TJ');
-          
-          // Test gtag call
-          if (window.gtag) {
-            console.log('Testing gtag call...');
-            window.gtag('event', 'debug_test', {
-              event_category: 'Debug',
-              event_label: 'GA_Loading_Test',
-              debug: true
-            });
-            console.log('gtag test call completed');
-          } else {
-            console.error('gtag function not available!');
-          }
-        }, 2000);
-      });
-    </script>
+
     
     <!-- Main application script -->
     <script type="module" src="/src/main.tsx"></script>
@@ -410,12 +394,12 @@
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
           navigator.serviceWorker.register('/sw.js')
-            .then(function(registration) {
-              console.log('SW registered: ', registration);
-            })
-            .catch(function(registrationError) {
-              console.log('SW registration failed: ', registrationError);
-            });
+          .then(function(registration) {
+            // Service Worker registered successfully
+          })
+          .catch(function(registrationError) {
+            // Service Worker registration failed
+          });
         });
       }
     </script>
