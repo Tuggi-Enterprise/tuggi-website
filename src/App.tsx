@@ -19,7 +19,6 @@ import TermsOfUsePage from './components/TermsOfUsePage';
 import { parseUrlPath, generateLocalizedUrl, isValidLanguage } from './utils/routing';
 import { useSEO } from './hooks/useSEO';
 import { initializeAnalytics, trackPerformanceMetrics, trackPageView, trackLanguageChange, trackUserLocation } from './utils/seo';
-import { initializeSecurity } from './utils/security';
 import LocationDisplay from './components/LocationDisplay';
 
 // Extend Window interface for gtag
@@ -42,9 +41,6 @@ function App() {
     // Set initial state
     setCurrentLanguage(language);
     setCurrentPage(page);
-    
-    // Initialize security monitoring
-    initializeSecurity();
     
     // Initialize Google Analytics with enhanced multilingual tracking
     const measurementId = import.meta.env.VITE_GA4_MEASUREMENT_ID || 'G-LFFNJDG7TJ'; // Replace with actual GA4 Measurement ID
