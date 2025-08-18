@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Layout from './components/Layout';
 import HeroSection from './components/HeroSection';
+import LanguageStrip from './components/LanguageStrip';
+import ExploreWays from './components/ExploreWays';
+import LanguagePreview from './components/LanguagePreview';
+import Factuality from './components/Factuality';
 import ProductHighlights from './components/ProductHighlights';
 import TrustSection from './components/TrustSection';
 import CollaborateSection from './components/CollaborateSection';
@@ -16,6 +20,9 @@ import InvestorsPage from './components/InvestorsPage';
 import PrivacyPolicyPage from './components/PrivacyPolicyPage';
 import CookiePolicyPage from './components/CookiePolicyPage';
 import TermsOfUsePage from './components/TermsOfUsePage';
+import BusinessPage from './components/BusinessPage';
+import IOSBanner from './components/IOSBanner';
+import FAQSection from './components/FAQSection';
 import { parseUrlPath, generateLocalizedUrl, isValidLanguage } from './utils/routing';
 import { useSEO } from './hooks/useSEO';
 import { initializeAnalytics, trackPerformanceMetrics, trackPageView, trackLanguageChange, trackUserLocation } from './utils/seo';
@@ -35,12 +42,15 @@ function App() {
 
   // Initialize app with URL parsing and analytics
   useEffect(() => {
+    console.log('App.tsx useEffect - window.location.pathname:', window.location.pathname);
     // Parse current URL to determine language and page
     const { language, page } = parseUrlPath(window.location.pathname);
+    console.log('App.tsx useEffect - parsed values:', { language, page });
     
     // Set initial state
     setCurrentLanguage(language);
     setCurrentPage(page);
+    console.log('App.tsx useEffect - states set to:', { language, page });
     
     // Initialize Google Analytics with enhanced multilingual tracking
     const measurementId = import.meta.env.VITE_GA4_MEASUREMENT_ID || 'G-LFFNJDG7TJ'; // Replace with actual GA4 Measurement ID
@@ -83,6 +93,7 @@ function App() {
   }, []);
 
   // Update SEO when page or language changes
+  console.log('App.tsx - calling useSEO with:', { currentPage, currentLanguage });
   useSEO(currentPage, currentLanguage);
 
   // Handle language change with proper URL routing and analytics
@@ -226,15 +237,30 @@ function App() {
     const downloadCTAs = [
       'download_free',
       'app_store_download',
-      'google_play_download'
+      'google_play_download',
+      'ios_download'
     ];
 
     if (downloadCTAs.includes(ctaType)) {
-      // TODO: Replace with actual app store links when available
+      // Track iOS download click specifically
+      if (ctaType === 'ios_download' && typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'cta_ios_download_click', {
+          event_category: 'App Download',
+          event_label: 'iOS Banner Download',
+          page_type: currentPage,
+          language: currentLanguage,
+          cta_position: position,
+          locale: getLocaleCode(currentLanguage),
+          timestamp: new Date().toISOString()
+        });
+      }
+      
+      // App store links
       const downloadURLs = {
-        'app_store_download': 'https://apps.apple.com/app/tuggi', // Placeholder
+        'app_store_download': 'https://apps.apple.com/us/app/tuggi-drive/id6744379818?l=pt-BR',
         'google_play_download': 'https://play.google.com/store/apps/details?id=com.tuggi.app', // Placeholder
-        'download_free': 'https://apps.apple.com/app/tuggi' // Default to App Store
+        'download_free': 'https://apps.apple.com/us/app/tuggi-drive/id6744379818?l=pt-BR', // Default to App Store
+        'ios_download': 'https://apps.apple.com/us/app/tuggi-drive/id6744379818?l=pt-BR' // iOS Banner download
       };
       
       const url = downloadURLs[ctaType as keyof typeof downloadURLs];
@@ -288,6 +314,12 @@ function App() {
       'expansion_form',
       'request_city'
     ];
+
+    // Handle business contact CTA
+    if (ctaType === 'business_contact') {
+      // This will be handled by the BusinessPage component itself
+      return;
+    }
 
     // Handle legal page navigation CTAs
     const legalCTAs = [
@@ -396,11 +428,20 @@ function App() {
       case 'cookie-policy':
       case 'politica-de-cookies':
         return <CookiePolicyPage currentLanguage={currentLanguage} />;
+      case 'business':
+      case 'empresas':
+      case 'empresa':
+        return <BusinessPage currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />;
       case 'home':
       default:
         return (
           <>
+            <IOSBanner currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
             <HeroSection currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
+            <LanguageStrip currentLanguage={currentLanguage} />
+            <ExploreWays currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
+            <LanguagePreview currentLanguage={currentLanguage} />
+            <Factuality currentLanguage={currentLanguage} />
             <ProductHighlights currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
             <TrustSection currentLanguage={currentLanguage} />
             <CollaborateSection currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
@@ -409,6 +450,9 @@ function App() {
             <RoadmapSection currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
             <ExpansionSection currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
             <PrivacySection currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
+            
+            {/* FAQ Section */}
+            <FAQSection currentLanguage={currentLanguage} />
             
             {/* Final CTA Section */}
             <FinalCTASection 

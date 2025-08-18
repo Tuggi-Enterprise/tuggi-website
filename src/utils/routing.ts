@@ -24,6 +24,9 @@ export const VALID_PAGES = [
   'contact',
   'purpose',
   'investors',
+  'business',
+  'empresas',
+  'empresa',
   'privacy',
   'privacy-policy',
   'politica-de-privacidade',
@@ -43,6 +46,11 @@ export const PAGE_URL_MAPPINGS: Record<string, Record<string, string>> = {
     'EN': 'investors',
     'PT': 'investidores',
     'ES': 'inversores'
+  },
+  'business': {
+    'EN': 'business',
+    'PT': 'empresas',
+    'ES': 'empresas'
   },
   'privacy': {
     'EN': 'privacy-policy',
@@ -66,6 +74,9 @@ export const URL_TO_PAGE_MAPPINGS: Record<string, string> = {
   'investors': 'investors',
   'investidores': 'investors',
   'inversores': 'investors',
+  'business': 'business',
+  'empresas': 'business',
+  'empresa': 'business',
   'privacy-policy': 'privacy',
   'politica-de-privacidade': 'privacy',
   'politica-de-privacidad': 'privacy',
@@ -86,10 +97,12 @@ export const URL_TO_PAGE_MAPPINGS: Record<string, string> = {
  * / -> { language: 'EN', page: 'home' } (default)
  */
 export const parseUrlPath = (pathname: string): ParsedUrl => {
+  console.log('parseUrlPath called with pathname:', pathname);
   // Remove leading and trailing slashes, split by '/'
   const segments = pathname.replace(/^\/+|\/+$/g, '').split('/').filter(Boolean);
+  console.log('parseUrlPath segments:', segments);
   
-  let language = 'EN'; // Default language
+  let language = 'PT'; // Default language
   let page = 'home'; // Default page
   
   if (segments.length === 0) {
@@ -123,7 +136,9 @@ export const parseUrlPath = (pathname: string): ParsedUrl => {
     }
   }
   
-  return { language, page };
+  const result = { language, page };
+  console.log('parseUrlPath result:', result);
+  return result;
 };
 
 /**
@@ -201,6 +216,22 @@ export const getLanguageFlag = (language: string): string => {
     'ES': '🇪🇸'
   };
   return flags[language] || '🇺🇸';
+};
+
+/**
+ * Get flag accessibility attributes with full language name
+ */
+export const getFlagAccessibilityProps = (language: string): { role: string; 'aria-label': string } => {
+  const fullNames: Record<string, string> = {
+    'EN': 'English (United States)',
+    'PT': 'Português (Brasil)',
+    'ES': 'Español (España)'
+  };
+  
+  return {
+    role: 'img',
+    'aria-label': `${fullNames[language] || fullNames['EN']} flag`
+  };
 };
 
 /**

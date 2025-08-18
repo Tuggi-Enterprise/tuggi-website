@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import { getLanguageFlag, getLanguageName } from '../utils/routing';
+import { getLanguageFlag, getLanguageName, getFlagAccessibilityProps } from '../utils/routing';
 import TuggiLogo from './TuggiLogo';
 import { useAnalytics } from '../hooks/useAnalytics';
 
@@ -12,7 +12,7 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ 
-  currentLanguage = 'EN', 
+  currentLanguage = 'PT', 
   onLanguageChange,
   currentPage = 'home',
   onPageChange
@@ -55,16 +55,19 @@ const Header: React.FC<HeaderProps> = ({
       EN: [
         { label: 'Home', page: 'home' },
         { label: 'Our Purpose', page: 'purpose' },
+        { label: 'For Business', page: 'empresas' },
         { label: 'Contact', page: 'contact' },
       ],
       PT: [
         { label: 'Início', page: 'home' },
         { label: 'Nosso Propósito', page: 'purpose' },
+        { label: 'Para Empresas', page: 'empresas' },
         { label: 'Contato', page: 'contact' },
       ],
       ES: [
         { label: 'Inicio', page: 'home' },
         { label: 'Nuestro Propósito', page: 'purpose' },
+        { label: 'Para Empresas', page: 'empresas' },
         { label: 'Contacto', page: 'contact' },
       ]
     };
@@ -175,7 +178,7 @@ const Header: React.FC<HeaderProps> = ({
                   aria-expanded={isLanguageOpen}
                   aria-haspopup="true"
                 >
-                  <span className="text-lg" role="img" aria-label={`${currentLang.label} flag`}>
+                  <span className="text-lg" {...getFlagAccessibilityProps(currentLanguage)}>
                     {currentLang.flag}
                   </span>
                   <span className="text-sm font-medium text-neutral-700 hidden sm:inline">
@@ -197,7 +200,7 @@ const Header: React.FC<HeaderProps> = ({
                         }`}
                         aria-current={currentLanguage === lang.code ? 'true' : undefined}
                       >
-                        <span className="text-lg" role="img" aria-label={`${lang.label} flag`}>
+                        <span className="text-lg" {...getFlagAccessibilityProps(lang.code)}>
                           {lang.flag}
                         </span>
                         <span className="font-medium">{lang.label}</span>

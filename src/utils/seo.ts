@@ -51,7 +51,7 @@ export interface SEOConfig {
     lang: string;
     url: string;
   }>;
-  structuredData?: object;
+  structuredData?: object | object[];
 }
 
 export const generateSEOConfig = (
@@ -62,25 +62,25 @@ export const generateSEOConfig = (
   const seoData: Record<string, Record<string, Partial<SEOConfig>>> = {
     home: {
       EN: {
-        title: 'Tuggi – Discover culture and stories wherever you go',
-        description: 'Explore the city with Tuggi: an app that narrates, through audio and in real-time, cultural curiosities and stories about the places around you. Freedom to walk, drive and discover.',
+        title: 'Tuggi — Discover culture and stories wherever you go ',
+        description: 'Tuggi reveals stories and curiosities on the go or through the map. Audio in PT-BR, ES-ES and EN-US. No fixed routes and with verified factuality.',
         keywords: 'cultural tourism app, audio guide, local stories, cultural curiosities, urban exploration, real-time narrative, place discovery',
-        ogTitle: 'Tuggi – Discover culture and stories wherever you go',
-        ogDescription: 'Explore the city with Tuggi: an app that narrates, through audio and in real-time, cultural curiosities and stories about the places around you. Freedom to walk, drive and discover.'
+        ogTitle: 'Tuggi — culture in motion',
+        ogDescription: 'Explore on the go or through the map, with multilingual audio and verified content.'
       },
       PT: {
-        title: 'Tuggi – Descubra cultura e histórias por onde você passa',
-        description: 'Explore a cidade com a Tuggi: um app que narra, por áudio e em tempo real, curiosidades culturais e histórias sobre os lugares ao seu redor. Liberdade para caminhar, dirigir e descobrir.',
+        title: 'Tuggi — Explore no trajeto ou pelo mapa ',
+        description: 'A Tuggi revela histórias e curiosidades no trajeto ou pelo mapa. Áudio em PT-BR, ES-ES e EN-US. Sem rotas fixas e com factualidade verificada.',
         keywords: 'app de turismo cultural, guia de áudio, histórias locais, curiosidades culturais, exploração urbana, narrativa em tempo real, descoberta de lugares',
-        ogTitle: 'Tuggi – Descubra cultura e histórias por onde você passa',
-        ogDescription: 'Explore a cidade com a Tuggi: um app que narra, por áudio e em tempo real, curiosidades culturais e histórias sobre os lugares ao seu redor. Liberdade para caminhar, dirigir e descobrir.'
+        ogTitle: 'Tuggi — cultura em movimento',
+        ogDescription: 'Explore no trajeto ou pelo mapa, com áudio multilíngue e conteúdo verificado.'
       },
       ES: {
-        title: 'Tuggi – Descubre cultura e historias donde vayas',
-        description: 'Explora la ciudad con Tuggi: una app que narra, por audio y en tiempo real, curiosidades culturales e historias sobre los lugares a tu alrededor. Libertad para caminar, conducir y descubrir.',
+        title: 'Tuggi — Descubre cultura e historias donde vayas ',
+        description: 'Tuggi revela historias y curiosidades en el trayecto o por el mapa. Audio en PT-BR, ES-ES y EN-US. Sin rutas fijas y con factualidad verificada.',
         keywords: 'app de turismo cultural, guía de audio, historias locales, curiosidades culturales, exploración urbana, narrativa en tiempo real, descubrimiento de lugares',
-        ogTitle: 'Tuggi – Descubre cultura e historias donde vayas',
-        ogDescription: 'Explora la ciudad con Tuggi: una app que narra, por audio y en tiempo real, curiosidades culturales e historias sobre los lugares a tu alrededor. Libertad para caminar, conducir y descubrir.'
+        ogTitle: 'Tuggi — cultura en movimiento',
+        ogDescription: 'Explora en el trayecto o por el mapa, con audio multilingüe y contenido verificado.'
       }
     },
     contact: {
@@ -319,6 +319,75 @@ export const generateStructuredData = (page: string, language: string, baseUrl: 
         "dateModified": "2024-01-15"
       };
 
+    case 'home':
+      const faqData: Record<string, Array<{"@type": string, name: string, acceptedAnswer: {"@type": string, text: string}}>> = {
+        PT: [
+          {"@type":"Question","name":"Preciso seguir um roteiro?","acceptedAnswer":{"@type":"Answer","text":"Não. A Tuggi funciona no seu ritmo — no trajeto ou pelo mapa."}},
+          {"@type":"Question","name":"Quais idiomas estão disponíveis?","acceptedAnswer":{"@type":"Answer","text":"PT-BR, ES-ES e EN-US. Mais idiomas em breve."}},
+          {"@type":"Question","name":"Funciona sem internet?","acceptedAnswer":{"@type":"Answer","text":"Parte do áudio é cacheada, mas recomendamos conexão para atualizações."}},
+          {"@type":"Question","name":"É seguro usar dirigindo?","acceptedAnswer":{"@type":"Answer","text":"Evite interações enquanto dirige. As narrações tocam automaticamente."}},
+          {"@type":"Question","name":"Como a Tuggi garante fatos corretos?","acceptedAnswer":{"@type":"Answer","text":"Aplicamos checagens automáticas de datas/entidades e curadoria contínua."}}
+        ],
+        EN: [
+          {"@type":"Question","name":"Do I need to follow a route?","acceptedAnswer":{"@type":"Answer","text":"No. Tuggi works at your pace — on the go or through the map."}},
+          {"@type":"Question","name":"What languages are available?","acceptedAnswer":{"@type":"Answer","text":"PT-BR, ES-ES and EN-US. More languages coming soon."}},
+          {"@type":"Question","name":"Does it work without internet?","acceptedAnswer":{"@type":"Answer","text":"Part of the audio is cached, but we recommend connection for updates."}},
+          {"@type":"Question","name":"Is it safe to use while driving?","acceptedAnswer":{"@type":"Answer","text":"Avoid interactions while driving. Narrations play automatically."}},
+          {"@type":"Question","name":"How does Tuggi ensure correct facts?","acceptedAnswer":{"@type":"Answer","text":"We apply automatic checks on dates/entities and continuous curation."}}
+        ],
+        ES: [
+          {"@type":"Question","name":"¿Necesito seguir una ruta?","acceptedAnswer":{"@type":"Answer","text":"No. Tuggi funciona a tu ritmo — en el trayecto o por el mapa."}},
+          {"@type":"Question","name":"¿Qué idiomas están disponibles?","acceptedAnswer":{"@type":"Answer","text":"PT-BR, ES-ES y EN-US. Más idiomas próximamente."}},
+          {"@type":"Question","name":"¿Funciona sin internet?","acceptedAnswer":{"@type":"Answer","text":"Parte del audio está en caché, pero recomendamos conexión para actualizaciones."}},
+          {"@type":"Question","name":"¿Es seguro usar mientras conduces?","acceptedAnswer":{"@type":"Answer","text":"Evita interacciones mientras conduces. Las narraciones se reproducen automáticamente."}},
+          {"@type":"Question","name":"¿Cómo garantiza Tuggi hechos correctos?","acceptedAnswer":{"@type":"Answer","text":"Aplicamos verificaciones automáticas de fechas/entidades y curación continua."}}
+        ]
+      };
+      
+      // Organization Schema
+      const organizationSchema = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Tuggi",
+        "url": "https://www.tuggi.app/",
+        "logo": "https://www.tuggi.app/og/logo.png",
+        "contactPoint": [{
+          "@type": "ContactPoint",
+          "email": "contato@tuggi.app",
+          "contactType": "customer support",
+          "areaServed": "BR"
+        }]
+      };
+      
+      // MobileApplication Schema
+      const mobileAppSchema = {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "Tuggi",
+        "operatingSystem": "iOS",
+        "applicationCategory": "TravelApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "BRL"
+        },
+        "inLanguage": ["pt-BR", "es-ES", "en-US"],
+        "url": "https://www.tuggi.app/",
+        "installUrl": "APP_STORE_URL"
+      };
+      
+      // FAQ Schema
+      const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqData[language] || faqData.PT,
+        "inLanguage": getLocaleCode(language),
+        "about": organizationData
+      };
+      
+      // Return array of schemas for home page
+      return [organizationSchema, mobileAppSchema, faqSchema];
+
     default:
       return {
         ...organizationData,
@@ -329,7 +398,9 @@ export const generateStructuredData = (page: string, language: string, baseUrl: 
 
 export const updatePageSEO = (seoConfig: SEOConfig) => {
   // Update document title
+  console.log('updatePageSEO called with title:', seoConfig.title);
   document.title = seoConfig.title;
+  console.log('document.title set to:', document.title);
 
   // Update meta tags
   const updateMetaTag = (name: string, content: string, property?: boolean) => {
@@ -361,16 +432,17 @@ export const updatePageSEO = (seoConfig: SEOConfig) => {
   updateMetaTag('og:url', seoConfig.canonicalUrl, true);
   updateMetaTag('og:type', 'website', true);
   updateMetaTag('og:site_name', 'Tuggi', true);
-  updateMetaTag('og:image', `${new URL(seoConfig.canonicalUrl).origin}/og-image.png`, true);
+  updateMetaTag('og:image', 'https://www.tuggi.app/og/home.jpg', true);
   updateMetaTag('og:image:width', '1200', true);
   updateMetaTag('og:image:height', '630', true);
-  updateMetaTag('og:image:alt', 'Tuggi Drive - AI Travel Guide for Transport Companies', true);
+  updateMetaTag('og:image:alt', 'Tuggi — cultura em movimento', true);
+
 
   // Update Twitter Card tags
   updateMetaTag('twitter:card', 'summary_large_image');
   updateMetaTag('twitter:title', seoConfig.ogTitle);
   updateMetaTag('twitter:description', seoConfig.ogDescription);
-  updateMetaTag('twitter:image', `${new URL(seoConfig.canonicalUrl).origin}/og-image.png`);
+  updateMetaTag('twitter:image', 'https://www.tuggi.app/og/home.jpg');
   updateMetaTag('twitter:site', '@tuggi');
   updateMetaTag('twitter:creator', '@tuggi');
 
@@ -404,13 +476,20 @@ export const updatePageSEO = (seoConfig: SEOConfig) => {
 
   // Update structured data
   if (seoConfig.structuredData) {
-    let structuredDataScript = document.querySelector('script[type="application/ld+json"]');
-    if (!structuredDataScript) {
-      structuredDataScript = document.createElement('script');
+    // Remove existing structured data scripts
+    const existingScripts = document.querySelectorAll('script[type="application/ld+json"]');
+    existingScripts.forEach(script => script.remove());
+    
+    // Handle both single objects and arrays of schemas
+    const schemas = Array.isArray(seoConfig.structuredData) ? seoConfig.structuredData : [seoConfig.structuredData];
+    
+    // Create a script tag for each schema
+    schemas.forEach(schema => {
+      const structuredDataScript = document.createElement('script');
       structuredDataScript.setAttribute('type', 'application/ld+json');
+      structuredDataScript.textContent = JSON.stringify(schema);
       document.head.appendChild(structuredDataScript);
-    }
-    structuredDataScript.textContent = JSON.stringify(seoConfig.structuredData);
+    });
   }
 
   // Update viewport and mobile optimization
@@ -443,6 +522,7 @@ export const trackPageView = (page: string, language: string, measurementId?: st
 
     // Generate page title based on page and language
     const generatePageTitle = (page: string, language: string): string => {
+      console.log('generatePageTitle called with:', { page, language });
       const titles: Record<string, Record<string, string>> = {
         home: {
           EN: 'Tuggi - Discover culture and stories wherever you go',
@@ -453,6 +533,11 @@ export const trackPageView = (page: string, language: string, measurementId?: st
           EN: 'Our Purpose - Tuggi',
           PT: 'Nosso Propósito - Tuggi',
           ES: 'Nuestro Propósito - Tuggi'
+        },
+        business: {
+          EN: 'For Businesses - Tuggi',
+          PT: 'Para Empresas - Tuggi',
+          ES: 'Para Empresas - Tuggi'
         },
         contact: {
           EN: 'Contact - Tuggi',
@@ -481,7 +566,9 @@ export const trackPageView = (page: string, language: string, measurementId?: st
         }
       };
       
-      return titles[page]?.[language] || titles.home[language] || titles.home.EN;
+      const result = titles[page]?.[language] || titles.home[language] || titles.home.EN;
+      console.log('generatePageTitle result:', result);
+      return result;
     };
 
     const pagePath = generatePagePath(page, language);
@@ -490,6 +577,8 @@ export const trackPageView = (page: string, language: string, measurementId?: st
     // Track Core Web Vitals with language context
     const trackWebVitals = () => {
       if (typeof window !== 'undefined') {
+        const currentLanguage = language;
+        const currentLocale = getLocaleCode(language);
         // Use dynamic import to avoid build-time dependency issues
         import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
           getCLS((metric) => {
@@ -498,8 +587,8 @@ export const trackPageView = (page: string, language: string, measurementId?: st
                 event_category: 'Performance',
                 event_label: 'CLS',
                 value: Math.round(metric.value * 1000),
-                language: language,
-                locale: locale,
+                language: currentLanguage,
+                locale: currentLocale,
                 page_type: page
               });
             }
@@ -511,8 +600,8 @@ export const trackPageView = (page: string, language: string, measurementId?: st
                 event_category: 'Performance',
                 event_label: 'FID',
                 value: Math.round(metric.value),
-                language: language,
-                locale: locale,
+                language: currentLanguage,
+                locale: currentLocale,
                 page_type: page
               });
             }
@@ -524,8 +613,8 @@ export const trackPageView = (page: string, language: string, measurementId?: st
                 event_category: 'Performance',
                 event_label: 'FCP',
                 value: Math.round(metric.value),
-                language: language,
-                locale: locale,
+                language: currentLanguage,
+                locale: currentLocale,
                 page_type: page
               });
             }
@@ -537,8 +626,8 @@ export const trackPageView = (page: string, language: string, measurementId?: st
                 event_category: 'Performance',
                 event_label: 'LCP',
                 value: Math.round(metric.value),
-                language: language,
-                locale: locale,
+                language: currentLanguage,
+                locale: currentLocale,
                 page_type: page
               });
             }
@@ -550,8 +639,8 @@ export const trackPageView = (page: string, language: string, measurementId?: st
                 event_category: 'Performance',
                 event_label: 'TTFB',
                 value: Math.round(metric.value),
-                language: language,
-                locale: locale,
+                language: currentLanguage,
+                locale: currentLocale,
                 page_type: page
               });
             }

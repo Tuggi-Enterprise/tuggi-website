@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480">
+  <g fillRule="evenodd">
+    <g strokeWidth="1pt">
+      <path fill="#bd3d44" d="M0 0h640v37h-640z"/>
+      <path fill="#fff" d="M0 37h640v36h-640z"/>
+      <path fill="#bd3d44" d="M0 73h640v37h-640z"/>
+      <path fill="#fff" d="M0 110h640v36h-640z"/>
+      <path fill="#bd3d44" d="M0 146h640v37h-640z"/>
+      <path fill="#fff" d="M0 183h640v36h-640z"/>
+      <path fill="#bd3d44" d="M0 219h640v37h-640z"/>
+      <path fill="#fff" d="M0 256h640v36h-640z"/>
+      <path fill="#bd3d44" d="M0 292h640v37h-640z"/>
+      <path fill="#fff" d="M0 329h640v36h-640z"/>
+      <path fill="#bd3d44" d="M0 365h640v37h-640z"/>
+      <path fill="#fff" d="M0 402h640v36h-640z"/>
+      <path fill="#bd3d44" d="M0 438h640v42h-640z"/>
+    </g>
+    <rect width="256" height="185" fill="#192f5d"/>
+    <g fill="#fff">
+      <g id="s18">
+        <g id="s9">
+          <g id="s5">
+            <g id="s4">
+              <path id="s" d="M247 90l70.5 217.4-184.1-134.3h227.6l-184.1 134.3z"/>
+              <use xlinkHref="#s" y="-18"/>
+              <use xlinkHref="#s" y="-36"/>
+              <use xlinkHref="#s" y="-54"/>
+            </g>
+            <use xlinkHref="#s" y="-72"/>
+          </g>
+          <use xlinkHref="#s4" x="-247" y="-126"/>
+          <use xlinkHref="#s4" x="-494" y="-126"/>
+        </g>
+        <use xlinkHref="#s9" x="247"/>
+      </g>
+      <use xlinkHref="#s18" x="494"/>
+    </g>
+  </g>
+</svg>

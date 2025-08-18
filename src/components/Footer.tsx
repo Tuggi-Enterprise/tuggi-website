@@ -47,6 +47,7 @@ const Footer: React.FC<FooterProps> = ({
         quickLinks: [
           { label: 'Home', page: 'home' },
           { label: 'Our Purpose', page: 'purpose' },
+          { label: 'For Business', page: 'empresas' },
           { label: 'Contact', page: 'contact' },
           { label: 'Investors', page: 'investors' }
         ],
@@ -67,6 +68,7 @@ const Footer: React.FC<FooterProps> = ({
         quickLinks: [
           { label: 'Início', page: 'home' },
           { label: 'Nosso Propósito', page: 'purpose' },
+          { label: 'Para Empresas', page: 'empresas' },
           { label: 'Contato', page: 'contact' },
           { label: 'Investidores', page: 'investors' }
         ],
@@ -87,6 +89,7 @@ const Footer: React.FC<FooterProps> = ({
         quickLinks: [
           { label: 'Inicio', page: 'home' },
           { label: 'Nuestro Propósito', page: 'purpose' },
+          { label: 'Para Empresas', page: 'empresas' },
           { label: 'Contacto', page: 'contact' },
           { label: 'Inversores', page: 'investors' }
         ],

@@ -23,6 +23,7 @@ const InvestorsPage: React.FC<InvestorsPageProps> = ({
         subtitle: 'A Tuggi está construindo o futuro da descoberta cultural urbana.',
         description: 'A Tuggi nasceu do desejo de reconectar as pessoas com o mundo ao seu redor. Acreditamos que a cultura não precisa estar presa a livros, museus ou salas de aula. Ela pode estar viva no caminho, nas ruas, nos nomes, nos edifícios, nos bairros — e pode ser acessada por qualquer pessoa, em qualquer lugar, no momento certo.',
         currentStatus: 'Para realizar essa visão, criamos um copiloto cultural que transforma trajetos cotidianos em experiências de conhecimento. Utilizando geolocalização, inteligência contextual e narração automática, oferecemos uma nova forma de consumir cultura: natural, viva, espontânea — e sem depender de roteiros fixos.',
+        b2bPillar: 'Além do app B2C, a Tuggi opera um pilar B2B de dados culturais verificados e APIs, permitindo que empresas integrem descrições confiáveis em seus produtos. Hoje, já operamos em três idiomas (PT-BR, ES-ES e EN-US), com expansão contínua.',
         vision: 'Hoje, a Tuggi está em fase beta no Brasil. Estamos mapeando regiões estratégicas, ouvindo os primeiros usuários e preparando os fundamentos para escalar: Expansão geográfica orientada por dados de interesse, modelo freemium com plano gratuito e opções pagas por tempo de uso, e abertura da plataforma para contribuições da própria comunidade. Buscamos conexões com investidores e aceleradoras que compartilhem nossa visão de impacto, inovação social e acesso democrático ao conhecimento.',
         contactTitle: 'Para conversar conosco, envie um e-mail para:',
         primaryEmail: 'investidores@tuggi.app',
@@ -44,6 +45,7 @@ const InvestorsPage: React.FC<InvestorsPageProps> = ({
         subtitle: 'Tuggi is building the future of urban cultural discovery.',
         description: 'Tuggi was born from the desire to reconnect people with the world around them. We believe that culture doesn\'t need to be confined to books, museums, or classrooms. It can be alive in the path, in the streets, in names, in buildings, in neighborhoods — and can be accessed by anyone, anywhere, at the right moment.',
         currentStatus: 'To realize this vision, we created a cultural copilot that transforms everyday journeys into knowledge experiences. Using geolocation, contextual intelligence, and automatic narration, we offer a new way to consume culture: natural, alive, spontaneous — and without depending on fixed itineraries.',
+        b2bPillar: 'Beyond the B2C app, Tuggi operates a B2B pillar of verified cultural data and APIs, allowing companies to integrate reliable descriptions into their products. Today, we already operate in three languages (PT-BR, ES-ES, and EN-US), with continuous expansion.',
         vision: 'Today, Tuggi is in beta phase in Brazil. We are mapping strategic regions, listening to early users, and preparing the foundations to scale: Data-driven geographic expansion, freemium model with free plan and paid options for usage time, and opening the platform for community contributions. We seek connections with investors and accelerators who share our vision of impact, social innovation, and democratic access to knowledge.',
         contactTitle: 'To talk to us, send an email to:',
         primaryEmail: 'investidores@tuggi.app',
@@ -65,6 +67,7 @@ const InvestorsPage: React.FC<InvestorsPageProps> = ({
         subtitle: 'Tuggi está construyendo el futuro del descubrimiento cultural urbano.',
         description: 'Tuggi nació del deseo de reconectar a las personas con el mundo que les rodea. Creemos que la cultura no necesita estar confinada a libros, museos o aulas. Puede estar viva en el camino, en las calles, en los nombres, en los edificios, en los barrios — y puede ser accesible para cualquier persona, en cualquier lugar, en el momento adecuado.',
         currentStatus: 'Para realizar esta visión, creamos un copiloto cultural que transforma trayectos cotidianos en experiencias de conocimiento. Utilizando geolocalización, inteligencia contextual y narración automática, ofrecemos una nueva forma de consumir cultura: natural, viva, espontánea — y sin depender de itinerarios fijos.',
+        b2bPillar: 'Además de la app B2C, Tuggi opera un pilar B2B de datos culturales verificados y APIs, permitiendo que las empresas integren descripciones confiables en sus productos. Hoy, ya operamos en tres idiomas (PT-BR, ES-ES y EN-US), con expansión continua.',
         vision: 'Hoy, Tuggi está en fase beta en Brasil. Estamos mapeando regiones estratégicas, escuchando a los primeros usuarios y preparando los fundamentos para escalar: Expansión geográfica orientada por datos de interés, modelo freemium con plan gratuito y opciones pagas por tiempo de uso, y apertura de la plataforma para contribuciones de la propia comunidad. Buscamos conexiones con inversores y aceleradoras que compartan nuestra visión de impacto, innovación social y acceso democrático al conocimiento.',
         contactTitle: 'Para conversar con nosotros, envíe un correo electrónico a:',
         primaryEmail: 'investidores@tuggi.app',
@@ -131,6 +134,9 @@ const InvestorsPage: React.FC<InvestorsPageProps> = ({
               </p>
               <p className="text-lg text-neutral-700 leading-relaxed mb-6">
                 {content.currentStatus}
+              </p>
+              <p className="text-lg text-neutral-700 leading-relaxed mb-6">
+                {content.b2bPillar}
               </p>
               <p className="text-lg text-neutral-700 leading-relaxed">
                 {content.vision}
@@ -213,4 +219,4 @@ const InvestorsPage: React.FC<InvestorsPageProps> = ({
   );
 };
 
-export default InvestorsPage; 
+export default InvestorsPage;

@@ -15,6 +15,7 @@ interface ContentLanguage {
   howItWorks: string;
   availability: string;
   comingSoon: string;
+  freedomMessage: string;
   features: Features;
 }
 
@@ -24,7 +25,7 @@ interface HeroSectionProps {
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({ 
-  currentLanguage = 'EN',
+  currentLanguage = 'PT',
   onCTAClick 
 }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -52,12 +53,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   const getLocalizedContent = (language: string): ContentLanguage => {
     const content: Record<string, ContentLanguage> = {
       PT: {
-        title: 'Descubra. Ouça. Construa cultura com a Tuggi.',
-        subtitle: 'Explore no seu ritmo, sem rotas fixas.\nA Tuggi transforma qualquer trajeto em uma experiência sonora de conhecimento.\nDurante o beta, o app é gratuito — e você pode nos ajudar a melhorar.',
-        downloadFree: 'Baixar gratuitamente',
+        title: 'Descubra cultura onde você estiver.',
+        subtitle: 'A Tuggi transforma seus caminhos e seu olhar sobre a cidade. Explore no seu ritmo: ouvindo no trajeto ou navegando pelo mapa.',
+        downloadFree: 'Baixar grátis',
         howItWorks: 'Como funciona',
-        availability: 'Disponível em São Paulo e cidades do interior. Novos lugares em breve.',
+        availability: 'Disponível no Brasil. Novas cidades e idiomas em breve.',
         comingSoon: 'Em breve',
+        freedomMessage: 'Sem rotas fixas. Você define o caminho — a Tuggi revela o que existe ao seu redor, no seu tempo e do seu jeito.',
         features: {
           realTime: 'Narrativas em tempo real',
           offline: 'Offline',
@@ -71,6 +73,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         howItWorks: 'How it works',
         availability: 'Available in São Paulo and interior cities. New places coming soon.',
         comingSoon: 'Coming soon',
+        freedomMessage: 'No fixed routes. You define the path — Tuggi reveals what exists around you, at your time and your way.',
         features: {
           realTime: 'Real-time narratives',
           offline: 'Offline',
@@ -84,6 +87,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         howItWorks: 'Cómo funciona',
         availability: 'Disponible en São Paulo y ciudades del interior. Nuevos lugares próximamente.',
         comingSoon: 'Próximamente',
+        freedomMessage: 'Sin rutas fijas. Tú defines el camino — Tuggi revela lo que existe a tu alrededor, en tu tiempo y a tu manera.',
         features: {
           realTime: 'Narrativas en tiempo real',
           offline: 'Offline',
@@ -119,41 +123,66 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             <div className="space-y-3">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-neutral-900 leading-[1.1] tracking-tight">
                 <span className="bg-gradient-to-r from-tuggi-primary to-tuggi-secondary bg-clip-text text-transparent">
-                  {content.title.split('.').slice(0, 2).join('.') + '.'}
-                </span>
-                <br />
-                <span className="text-neutral-900">
-                  {content.title.split('.').slice(2).join('.').trim()}
+                  {content.title}
                 </span>
               </h1>
             </div>
             
             <p className="text-lg sm:text-xl text-neutral-700 leading-relaxed font-medium max-w-2xl">
-              {content.subtitle.split('\n')[0]} {content.subtitle.split('\n')[1].split('.')[0]}.
-              <span className="text-tuggi-primary font-semibold">
-                {content.subtitle.split('\n')[1].split('.').slice(1).join('.').trim()}
-              </span>
+              {content.subtitle}
             </p>
             
-            {/* Beta highlight */}
+            {/* Availability note */}
             <div className="inline-flex items-center gap-2 bg-tuggi-primary/10 text-tuggi-primary px-4 py-2 rounded-full text-sm font-semibold">
               <div className="w-2 h-2 bg-tuggi-primary rounded-full animate-pulse"></div>
-              {content.subtitle.split('\n')[2]}
+              {content.availability}
             </div>
 
             {/* Enhanced CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button 
-                disabled
-                className="group bg-gradient-to-r from-neutral-400 via-neutral-500 to-neutral-600 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 inline-flex items-center justify-center gap-3 cursor-not-allowed opacity-75"
-              >
-                <Download className="w-5 h-5" />
-                <span>{content.downloadFree}</span>
-                <span className="ml-2 bg-white/20 px-2 py-1 rounded-full text-xs font-medium">{content.comingSoon}</span>
-              </button>
+              <div className="flex flex-col gap-2">
+                <button 
+                  onClick={() => {
+                    handleCTAClick('cta_ios_download_click');
+                    if (typeof window !== 'undefined' && window.gtag) {
+                      window.gtag('event', 'cta_ios_download_click', {
+                        event_category: 'CTA',
+                        event_label: 'hero_ios_download',
+                        language: currentLanguage
+                      });
+                    }
+                    window.open('https://apps.apple.com/us/app/tuggi-drive/id6744379818?l=pt-BR', '_blank');
+                  }}
+                  className="group bg-gradient-to-r from-tuggi-primary via-tuggi-primary to-tuggi-secondary text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 inline-flex items-center justify-center gap-3 hover:shadow-xl hover:scale-105 transform"
+                >
+                  <Download className="w-5 h-5" />
+                  <span>{content.downloadFree}</span>
+                </button>
+                <div className="text-center">
+                  <span className="inline-flex items-center gap-2 bg-tuggi-primary/10 text-tuggi-primary px-3 py-1 rounded-full text-sm font-semibold">
+                    📱 iOS
+                  </span>
+                </div>
+              </div>
+              
+              <div className="flex flex-col gap-2">
+                <button 
+                  disabled
+                  className="group bg-gradient-to-r from-neutral-400 via-neutral-500 to-neutral-600 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 inline-flex items-center justify-center gap-3 cursor-not-allowed opacity-75"
+                  title="Em breve"
+                >
+                  <Download className="w-5 h-5" />
+                  <span>{content.comingSoon}</span>
+                </button>
+                <div className="text-center">
+                  <span className="inline-flex items-center gap-2 bg-neutral-200 text-neutral-600 px-3 py-1 rounded-full text-sm font-semibold">
+                    🤖 Android
+                  </span>
+                </div>
+              </div>
             </div>
 
-            {/* Enhanced Availability Note */}
+            {/* Freedom message */}
             <div className="flex items-start gap-3 bg-white/60 backdrop-blur-sm rounded-2xl p-4 border border-white/20">
               <div className="flex-shrink-0">
                 <div className="w-10 h-10 bg-tuggi-primary/10 rounded-full flex items-center justify-center">
@@ -162,7 +191,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               </div>
               <div>
                  <p className="text-neutral-700 font-medium leading-relaxed">
-                   {content.availability}
+                   {content.freedomMessage}
                  </p>
                </div>
             </div>

@@ -63,12 +63,11 @@ const FinalCTASection: React.FC<FinalCTASectionProps> = ({
         </p>
         <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center">
           <button 
-            disabled
-            className="bg-neutral-300 text-neutral-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-200 inline-flex items-center gap-2 text-sm sm:text-base cursor-not-allowed opacity-75"
+            onClick={() => handleCTAClick('app_store_download')}
+            className="bg-white text-tuggi-primary px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-200 inline-flex items-center gap-2 text-sm sm:text-base hover:bg-gray-50 hover:scale-105 transform shadow-lg"
           >
             <span>📱</span>
             <span>{content.appStore}</span>
-            <span className="ml-2 bg-neutral-400/30 px-2 py-1 rounded-full text-xs font-medium">{content.comingSoon}</span>
           </button>
           <button 
             disabled
@@ -76,7 +75,7 @@ const FinalCTASection: React.FC<FinalCTASectionProps> = ({
           >
             <span>🤖</span>
             <span>{content.googlePlay}</span>
-            <span className="ml-2 bg-neutral-400/30 px-2 py-1 rounded-full text-xs font-medium">Em breve</span>
+            <span className="ml-2 bg-neutral-400/30 px-2 py-1 rounded-full text-xs font-medium">{content.comingSoon}</span>
           </button>
         </div>
       </div>

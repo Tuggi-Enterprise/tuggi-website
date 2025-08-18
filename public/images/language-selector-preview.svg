@@ -1,0 +1,45 @@
+<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .container { fill: #ffffff; stroke: #e1e5e9; stroke-width: 2; rx: 8; }
+      .flag { width: 24; height: 16; }
+      .text { font-family: Arial, sans-serif; font-size: 14px; fill: #374151; }
+      .title { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #111827; }
+    </style>
+  </defs>
+  
+  <!-- Container -->
+  <rect class="container" width="280" height="180" x="10" y="10"/>
+  
+  <!-- Title -->
+  <text class="title" x="150" y="35" text-anchor="middle">Language Selector</text>
+  
+  <!-- Brazil Option -->
+  <g transform="translate(30, 60)">
+    <rect class="flag" fill="#229e45" width="24" height="16"/>
+    <rect fill="#f8e509" x="4" y="4" width="16" height="8"/>
+    <circle fill="#2e4094" cx="12" cy="8" r="3"/>
+    <text class="text" x="35" y="12">Português (Brasil)</text>
+  </g>
+  
+  <!-- Spain Option -->
+  <g transform="translate(30, 90)">
+    <rect class="flag" fill="#aa151b" width="24" height="16"/>
+    <rect fill="#f1bf00" x="0" y="4" width="24" height="8"/>
+    <text class="text" x="35" y="12">Español (España)</text>
+  </g>
+  
+  <!-- USA Option -->
+  <g transform="translate(30, 120)">
+    <rect class="flag" fill="#bd3d44" width="24" height="16"/>
+    <rect fill="#192f5d" x="0" y="0" width="10" height="8"/>
+    <rect fill="#fff" x="0" y="2" width="24" height="2"/>
+    <rect fill="#fff" x="0" y="6" width="24" height="2"/>
+    <rect fill="#fff" x="0" y="10" width="24" height="2"/>
+    <rect fill="#fff" x="0" y="14" width="24" height="2"/>
+    <text class="text" x="35" y="12">English (United States)</text>
+  </g>
+  
+  <!-- Preview label -->
+  <text class="text" x="150" y="165" text-anchor="middle" font-style="italic">Language Selector Preview</text>
+</svg>
