@@ -21,6 +21,7 @@ import PrivacyPolicyPage from './components/PrivacyPolicyPage';
 import CookiePolicyPage from './components/CookiePolicyPage';
 import TermsOfUsePage from './components/TermsOfUsePage';
 import BusinessPage from './components/BusinessPage';
+import DataDeletionPage from './components/DataDeletionPage';
 import IOSBanner from './components/IOSBanner';
 import FAQSection from './components/FAQSection';
 import { parseUrlPath, generateLocalizedUrl, isValidLanguage } from './utils/routing';
@@ -324,13 +325,15 @@ function App() {
     // Handle legal page navigation CTAs
     const legalCTAs = [
       'privacy_policy',
-      'terms_of_use'
+      'terms_of_use',
+      'data_deletion'
     ];
 
     if (legalCTAs.includes(ctaType)) {
       const pageMap: Record<string, string> = {
         'privacy_policy': 'privacy',
-        'terms_of_use': 'terms'
+        'terms_of_use': 'terms',
+        'data_deletion': 'data-deletion'
       };
       const targetPage = pageMap[ctaType];
       if (targetPage) {
@@ -428,6 +431,10 @@ function App() {
       case 'cookie-policy':
       case 'politica-de-cookies':
         return <CookiePolicyPage currentLanguage={currentLanguage} />;
+      case 'data-deletion':
+      case 'exclusao-de-dados':
+      case 'eliminacion-de-datos':
+        return <DataDeletionPage currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />;
       case 'business':
       case 'empresas':
       case 'empresa':

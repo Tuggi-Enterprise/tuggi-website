@@ -37,7 +37,10 @@ export const VALID_PAGES = [
   'terminos-de-uso',
   'cookies',
   'cookie-policy',
-  'politica-de-cookies'
+  'politica-de-cookies',
+  'data-deletion',
+  'exclusao-de-dados',
+  'eliminacion-de-datos'
 ] as const;
 
 // Page URL mappings for different languages
@@ -66,6 +69,11 @@ export const PAGE_URL_MAPPINGS: Record<string, Record<string, string>> = {
     'EN': 'cookie-policy',
     'PT': 'politica-de-cookies',
     'ES': 'politica-de-cookies'
+  },
+  'data-deletion': {
+    'EN': 'data-deletion',
+    'PT': 'exclusao-de-dados',
+    'ES': 'eliminacion-de-datos'
   }
 };
 
@@ -84,7 +92,10 @@ export const URL_TO_PAGE_MAPPINGS: Record<string, string> = {
   'termos-de-uso': 'terms',
   'terminos-de-uso': 'terms',
   'cookie-policy': 'cookies',
-  'politica-de-cookies': 'cookies'
+  'politica-de-cookies': 'cookies',
+  'data-deletion': 'data-deletion',
+  'exclusao-de-dados': 'data-deletion',
+  'eliminacion-de-datos': 'data-deletion'
 };
 
 /**

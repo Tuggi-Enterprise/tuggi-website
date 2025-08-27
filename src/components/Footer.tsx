@@ -58,7 +58,8 @@ const Footer: React.FC<FooterProps> = ({
         subscribe: 'Subscribe',
         allRightsReserved: 'All rights reserved.',
         privacyPolicy: 'Privacy Policy',
-        termsOfUse: 'Terms of Use'
+        termsOfUse: 'Terms of Use',
+        dataDeletion: 'Data Deletion'
       },
       PT: {
         aboutTitle: 'Sobre a Tuggi',
@@ -79,7 +80,8 @@ const Footer: React.FC<FooterProps> = ({
         subscribe: 'Inscrever-se',
         allRightsReserved: 'Todos os direitos reservados.',
         privacyPolicy: 'Política de Privacidade',
-        termsOfUse: 'Termos de Uso'
+        termsOfUse: 'Termos de Uso',
+        dataDeletion: 'Exclusão de Dados'
       },
       ES: {
         aboutTitle: 'Acerca de Tuggi',
@@ -100,7 +102,8 @@ const Footer: React.FC<FooterProps> = ({
         subscribe: 'Suscribirse',
         allRightsReserved: 'Todos los derechos reservados.',
         privacyPolicy: 'Política de Privacidad',
-        termsOfUse: 'Términos de Uso'
+        termsOfUse: 'Términos de Uso',
+        dataDeletion: 'Eliminación de Datos'
       }
     };
     return content[language] || content['EN'];
@@ -311,6 +314,13 @@ const Footer: React.FC<FooterProps> = ({
                 className="text-neutral-500 hover:text-tuggi-primary transition-colors duration-200"
               >
                 {content.termsOfUse}
+              </button>
+              <span className="text-neutral-600">|</span>
+              <button 
+                onClick={() => handleNavClick('data-deletion', content.dataDeletion)}
+                className="text-neutral-500 hover:text-tuggi-primary transition-colors duration-200"
+              >
+                {content.dataDeletion}
               </button>
             </div>
           </div>
