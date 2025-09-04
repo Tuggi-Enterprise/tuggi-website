@@ -195,3 +195,4 @@ https://tuggi.app/pt/exclusao-de-dados
 - [ ] Documentação atualizada
 
 A integração está completa e pronta para uso! 🎉
+
