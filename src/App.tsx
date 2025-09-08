@@ -28,6 +28,7 @@ import { parseUrlPath, generateLocalizedUrl, isValidLanguage } from './utils/rou
 import { useSEO } from './hooks/useSEO';
 import { initializeAnalytics, trackPerformanceMetrics, trackPageView, trackLanguageChange, trackUserLocation } from './utils/seo';
 import LocationDisplay from './components/LocationDisplay';
+import DriversLandingPage from './components/DriversLandingPage';
 
 // Extend Window interface for gtag
 declare global {
@@ -439,6 +440,10 @@ function App() {
       case 'empresas':
       case 'empresa':
         return <BusinessPage currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />;
+      case 'drivers':
+      case 'motoristas':
+      case 'conductores':
+        return <DriversLandingPage currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />;
       case 'home':
       default:
         return (
@@ -457,10 +462,8 @@ function App() {
             <RoadmapSection currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
             <ExpansionSection currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
             <PrivacySection currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
-            
             {/* FAQ Section */}
             <FAQSection currentLanguage={currentLanguage} />
-            
             {/* Final CTA Section */}
             <FinalCTASection 
               currentLanguage={currentLanguage}

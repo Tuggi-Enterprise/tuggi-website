@@ -52,6 +52,9 @@ export interface SEOConfig {
     url: string;
   }>;
   structuredData?: object | object[];
+  ogImage?: string;
+  twitterImage?: string;
+  ogImageAlt?: string;
 }
 
 export const generateSEOConfig = (
@@ -174,6 +177,29 @@ export const generateSEOConfig = (
         ogTitle: 'Política de Cookies - Tuggi – Descubre cultura e historias donde vayas',
         ogDescription: 'Conoce cómo Tuggi usa cookies para mejorar tu experiencia de descubrimiento cultural y mejorar nuestra app.'
       }
+    },
+    drivers: {
+      EN: {
+        title: 'For Drivers - Tuggi – Turn your rides into unique experiences',
+        description: 'While you drive, Tuggi narrates stories and fun facts about the city for your passengers. Join for free and offer a unique experience in your rides.',
+        keywords: 'tuggi for drivers, rideshare drivers, passenger experience, tips increase, uber 99 indrive cabify, cultural stories app',
+        ogTitle: 'For Drivers - Tuggi',
+        ogDescription: 'Turn your rides into unique experiences with Tuggi. Simple, free, and valuable for your passengers.'
+      },
+      PT: {
+        title: 'Para Motoristas - Tuggi – Transforme suas corridas em experiências únicas',
+        description: 'Enquanto você dirige, o Tuggi narra histórias e curiosidades da cidade para seus passageiros. Participe gratuitamente e ofereça uma experiência diferente nas suas corridas.',
+        keywords: 'tuggi para motoristas, motoristas de aplicativo, experiência do passageiro, gorjeta, uber 99 indrive cabify, histórias culturais',
+        ogTitle: 'Para Motoristas - Tuggi',
+        ogDescription: 'Transforme suas corridas em experiências únicas com o Tuggi. Simples, gratuito e valioso para seus passageiros.'
+      },
+      ES: {
+        title: 'Para Conductores - Tuggi – Transforma tus viajes en experiencias únicas',
+        description: 'Mientras conduces, Tuggi narra historias y curiosidades de la ciudad para tus pasajeros. Participa gratis y ofrece una experiencia diferente en tus viajes.',
+        keywords: 'tuggi para conductores, conductores de apps, experiencia del pasajero, propina, uber 99 indrive cabify, historias culturales',
+        ogTitle: 'Para Conductores - Tuggi',
+        ogDescription: 'Transforma tus viajes en experiencias únicas con Tuggi. Simple, gratis y valioso para tus pasajeros.'
+      }
     }
   };
 
@@ -192,6 +218,14 @@ export const generateSEOConfig = (
     ? `${baseUrl}/${langCode}/`
     : `${baseUrl}/${langCode}/${localizedPageUrl}`;
 
+  // Define og:image per page with fallback
+  const defaultOgImage = page === 'drivers' ? `${baseUrl}/og/drivers.jpg` : `${baseUrl}/og/home.jpg`;
+  const ogImageAltByLang: Record<string, string> = {
+    EN: 'Tuggi - Cultural discovery and local stories app',
+    PT: 'Tuggi - App de descoberta cultural e histórias locais',
+    ES: 'Tuggi - App de descubrimiento cultural e historias locales'
+  };
+
   return {
     title: pageData.title || 'Tuggi – Discover culture and stories wherever you go',
     description: pageData.description || 'Explore the city with Tuggi: an app that narrates, through audio and in real-time, cultural curiosities and stories about the places around you.',
@@ -200,7 +234,10 @@ export const generateSEOConfig = (
     ogDescription: pageData.ogDescription || pageData.description || 'Explore the city with Tuggi: an app that narrates, through audio and in real-time, cultural curiosities and stories about the places around you.',
     canonicalUrl,
     hreflang,
-    structuredData
+    structuredData,
+    ogImage: defaultOgImage,
+    twitterImage: defaultOgImage,
+    ogImageAlt: ogImageAltByLang[language] || ogImageAltByLang.EN
   };
 };
 
@@ -432,17 +469,16 @@ export const updatePageSEO = (seoConfig: SEOConfig) => {
   updateMetaTag('og:url', seoConfig.canonicalUrl, true);
   updateMetaTag('og:type', 'website', true);
   updateMetaTag('og:site_name', 'Tuggi', true);
-  updateMetaTag('og:image', 'https://www.tuggi.app/og/home.jpg', true);
+  updateMetaTag('og:image', seoConfig.ogImage || 'https://www.tuggi.app/og/home.jpg', true);
   updateMetaTag('og:image:width', '1200', true);
   updateMetaTag('og:image:height', '630', true);
-  updateMetaTag('og:image:alt', 'Tuggi — cultura em movimento', true);
-
+  updateMetaTag('og:image:alt', seoConfig.ogImageAlt || 'Tuggi — cultura em movimento', true);
 
   // Update Twitter Card tags
   updateMetaTag('twitter:card', 'summary_large_image');
   updateMetaTag('twitter:title', seoConfig.ogTitle);
   updateMetaTag('twitter:description', seoConfig.ogDescription);
-  updateMetaTag('twitter:image', 'https://www.tuggi.app/og/home.jpg');
+  updateMetaTag('twitter:image', seoConfig.twitterImage || 'https://www.tuggi.app/og/home.jpg');
   updateMetaTag('twitter:site', '@tuggi');
   updateMetaTag('twitter:creator', '@tuggi');
 
@@ -563,6 +599,11 @@ export const trackPageView = (page: string, language: string, measurementId?: st
           EN: 'Cookie Policy - Tuggi',
           PT: 'Política de Cookies - Tuggi',
           ES: 'Política de Cookies - Tuggi'
+        },
+        drivers: {
+          EN: 'For Drivers - Tuggi',
+          PT: 'Para Motoristas - Tuggi',
+          ES: 'Para Conductores - Tuggi'
         }
       };
       

@@ -27,6 +27,11 @@ export const VALID_PAGES = [
   'business',
   'empresas',
   'empresa',
+  // New drivers landing page routes
+  'drivers',
+  'motoristas',
+  'conductores',
+  // Legal and policy pages
   'privacy',
   'privacy-policy',
   'politica-de-privacidade',
@@ -54,6 +59,12 @@ export const PAGE_URL_MAPPINGS: Record<string, Record<string, string>> = {
     'EN': 'business',
     'PT': 'empresas',
     'ES': 'empresas'
+  },
+  // New drivers page localized mappings
+  'drivers': {
+    'EN': 'drivers',
+    'PT': 'motoristas',
+    'ES': 'conductores'
   },
   'privacy': {
     'EN': 'privacy-policy',
@@ -85,6 +96,10 @@ export const URL_TO_PAGE_MAPPINGS: Record<string, string> = {
   'business': 'business',
   'empresas': 'business',
   'empresa': 'business',
+  // New drivers reverse mappings
+  'drivers': 'drivers',
+  'motoristas': 'drivers',
+  'conductores': 'drivers',
   'privacy-policy': 'privacy',
   'politica-de-privacidade': 'privacy',
   'politica-de-privacidad': 'privacy',
