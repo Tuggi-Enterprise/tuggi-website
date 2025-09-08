@@ -2,6 +2,7 @@ import React from 'react';
 import { Car, Smartphone, Navigation, Mic, Sparkles, Gift, Coins, Handshake, Smile } from 'lucide-react';
 import CTAButton from './CTAButton';
 import { generateLocalizedUrl } from '../utils/routing';
+import VideoTutorialsSection from './VideoTutorialsSection';
 
 interface DriversLandingPageProps {
   currentLanguage?: 'PT' | 'EN' | 'ES';
@@ -228,6 +229,9 @@ const DriversLandingPage: React.FC<DriversLandingPageProps> = ({ currentLanguage
           </ol>
         </div>
       </section>
+
+      {/* Video Tutorials */}
+      <VideoTutorialsSection currentLanguage={currentLanguage} onCTAClick={onCTAClick} />
 
       {/* Who can participate */}
       <section className="bg-neutral-50">
