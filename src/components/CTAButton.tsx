@@ -78,6 +78,9 @@ const CTAButton: React.FC<CTAButtonProps> = ({
       created_at: new Date().toISOString()
     };
 
+    console.log('Supabase URL:', SUPABASE_URL);
+    console.log('Payload:', JSON.stringify(payload, null, 2));
+    
     try {
       const resp = await fetch(`${SUPABASE_URL}/rest/v1/campaign.driver_email_leads`, {
         method: 'POST',
@@ -89,10 +92,16 @@ const CTAButton: React.FC<CTAButtonProps> = ({
         },
         body: JSON.stringify(payload)
       });
+      
+      console.log('Response status:', resp.status);
+      console.log('Response headers:', Object.fromEntries(resp.headers.entries()));
+      
       if (resp.ok) return { ok: true };
       const text = await resp.text();
+      console.log('Error response:', text);
       return { ok: false, reason: text || 'insert_failed' };
     } catch (e: any) {
+      console.error('Network error:', e);
       return { ok: false, reason: e?.message || 'network_error' };
     }
   };
