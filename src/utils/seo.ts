@@ -180,25 +180,25 @@ export const generateSEOConfig = (
     },
     drivers: {
       EN: {
-        title: 'For Drivers - Tuggi – Turn your rides into unique experiences',
-        description: 'While you drive, Tuggi narrates stories and fun facts about the city for your passengers. Join for free and offer a unique experience in your rides.',
+        title: 'Tuggi for Drivers — earn more with a different passenger experience',
+        description: 'A cultural co-pilot that runs alongside your ride-hailing app. Simple, automatic, effortless. Drive better ratings and potential earnings.',
         keywords: 'tuggi for drivers, rideshare drivers, passenger experience, tips increase, uber 99 indrive cabify, cultural stories app',
-        ogTitle: 'For Drivers - Tuggi',
-        ogDescription: 'Turn your rides into unique experiences with Tuggi. Simple, free, and valuable for your passengers.'
+        ogTitle: 'Tuggi for Drivers — earn more with a different passenger experience',
+        ogDescription: 'A cultural co-pilot that runs alongside your ride-hailing app. Simple, automatic, effortless. Drive better ratings and potential earnings.'
       },
       PT: {
-        title: 'Para Motoristas - Tuggi – Transforme suas corridas em experiências únicas',
-        description: 'Enquanto você dirige, o Tuggi narra histórias e curiosidades da cidade para seus passageiros. Participe gratuitamente e ofereça uma experiência diferente nas suas corridas.',
+        title: 'Tuggi para Motoristas — ganhe mais com uma experiência diferente',
+        description: 'Copiloto cultural que roda junto com seu app de corridas. Simples, automático e sem esforço extra. Atraia melhores avaliações e potenciais ganhos.',
         keywords: 'tuggi para motoristas, motoristas de aplicativo, experiência do passageiro, gorjeta, uber 99 indrive cabify, histórias culturais',
-        ogTitle: 'Para Motoristas - Tuggi',
-        ogDescription: 'Transforme suas corridas em experiências únicas com o Tuggi. Simples, gratuito e valioso para seus passageiros.'
+        ogTitle: 'Tuggi para Motoristas — ganhe mais com uma experiência diferente',
+        ogDescription: 'Copiloto cultural que roda junto com seu app de corridas. Simples, automático e sem esforço extra. Atraia melhores avaliações e potenciais ganhos.'
       },
       ES: {
-        title: 'Para Conductores - Tuggi – Transforma tus viajes en experiencias únicas',
-        description: 'Mientras conduces, Tuggi narra historias y curiosidades de la ciudad para tus pasajeros. Participa gratis y ofrece una experiencia diferente en tus viajes.',
+        title: 'Tuggi para Conductores — gana más con una experiencia diferente',
+        description: 'Un copiloto cultural que funciona junto con tu app de movilidad. Simple, automático y sin esfuerzo. Mejores valoraciones y potenciales ingresos.',
         keywords: 'tuggi para conductores, conductores de apps, experiencia del pasajero, propina, uber 99 indrive cabify, historias culturales',
-        ogTitle: 'Para Conductores - Tuggi',
-        ogDescription: 'Transforma tus viajes en experiencias únicas con Tuggi. Simple, gratis y valioso para tus pasajeros.'
+        ogTitle: 'Tuggi para Conductores — gana más con una experiencia diferente',
+        ogDescription: 'Un copiloto cultural que funciona junto con tu app de movilidad. Simple, automático y sin esfuerzo. Mejores valoraciones y potenciales ingresos.'
       }
     }
   };
@@ -271,12 +271,6 @@ export const generateStructuredData = (page: string, language: string, baseUrl: 
     "industry": "Travel Technology",
     "numberOfEmployees": "1-10",
     "keywords": "cultural tourism app, audio guide, local stories, cultural curiosities, urban exploration, real-time narrative",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "500",
-      "bestRating": "5"
-    },
     "offers": {
       "@type": "Offer",
       "name": "Tuggi",

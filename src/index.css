@@ -515,3 +515,19 @@ button, a, input, textarea, select {
   height: 3em;
   border-radius: 50%;
 }
+
+/* CTA subtle attention animation */
+@keyframes ctaGlow {
+  0%, 100% {
+    transform: translateY(0);
+    box-shadow: 0 10px 20px rgba(0, 168, 232, 0.25);
+  }
+  50% {
+    transform: translateY(-0.5px);
+    box-shadow: 0 12px 24px rgba(255, 111, 0, 0.35);
+  }
+}
+
+.cta-attention {
+  animation: ctaGlow 6s ease-in-out infinite;
+}
