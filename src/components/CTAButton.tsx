@@ -60,8 +60,19 @@ const CTAButton: React.FC<CTAButtonProps> = ({
   const saveEmailToSupabase = async (email: string) => {
     const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
     const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
+    
+    // Verificar se as variáveis de ambiente estão configuradas
     if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
-      return { ok: false, reason: 'missing_env' };
+      console.error('❌ Variáveis de ambiente do Supabase não configuradas');
+      console.error('VITE_SUPABASE_URL:', SUPABASE_URL ? 'Configurada' : 'Não configurada');
+      console.error('VITE_SUPABASE_ANON_KEY:', SUPABASE_ANON_KEY ? 'Configurada' : 'Não configurada');
+      return { ok: false, reason: 'missing_env', details: 'Variáveis do Supabase não configuradas' };
+    }
+
+    // Verificar se as URLs são válidas
+    if (!SUPABASE_URL.startsWith('https://') || !SUPABASE_URL.includes('.supabase.co')) {
+      console.error('❌ URL do Supabase inválida:', SUPABASE_URL);
+      return { ok: false, reason: 'invalid_url', details: 'URL do Supabase inválida' };
     }
     
     const payload = {
@@ -78,31 +89,56 @@ const CTAButton: React.FC<CTAButtonProps> = ({
       created_at: new Date().toISOString()
     };
 
+    console.log('🔄 Enviando dados para Supabase...');
     console.log('Supabase URL:', SUPABASE_URL);
     console.log('Payload:', JSON.stringify(payload, null, 2));
     
     try {
-      const resp = await fetch(`${SUPABASE_URL}/rest/v1/campaign.driver_email_leads`, {
+      const url = `${SUPABASE_URL}/rest/v1/driver_email_leads`;
+      console.log('📡 URL completa:', url);
+      
+      const resp = await fetch(url, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'apikey': SUPABASE_ANON_KEY,
           'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+          'Accept-Profile': 'campaign',
+          'Content-Profile': 'campaign',
           'Prefer': 'return=minimal'
         },
         body: JSON.stringify(payload)
       });
       
-      console.log('Response status:', resp.status);
-      console.log('Response headers:', Object.fromEntries(resp.headers.entries()));
+      console.log('📊 Response status:', resp.status);
+      console.log('📋 Response headers:', Object.fromEntries(resp.headers.entries()));
       
-      if (resp.ok) return { ok: true };
+      if (resp.ok) {
+        console.log('✅ Dados enviados com sucesso para o Supabase');
+        return { ok: true };
+      }
+      
       const text = await resp.text();
-      console.log('Error response:', text);
-      return { ok: false, reason: text || 'insert_failed' };
+      console.error('❌ Erro na resposta do Supabase:', text);
+      
+      // Tratamento específico de erros comuns
+      if (resp.status === 401) {
+        return { ok: false, reason: 'unauthorized', details: 'Chave de API inválida' };
+      } else if (resp.status === 403) {
+        return { ok: false, reason: 'forbidden', details: 'Permissões insuficientes' };
+      } else if (resp.status === 404) {
+        return { ok: false, reason: 'not_found', details: 'Tabela não encontrada' };
+      } else if (resp.status === 422) {
+        return { ok: false, reason: 'validation_error', details: 'Dados inválidos' };
+      } else {
+        return { ok: false, reason: 'server_error', details: `Erro ${resp.status}: ${text}` };
+      }
     } catch (e: any) {
-      console.error('Network error:', e);
-      return { ok: false, reason: e?.message || 'network_error' };
+      console.error('❌ Erro de rede:', e);
+      if (e.name === 'TypeError' && e.message.includes('fetch')) {
+        return { ok: false, reason: 'network_error', details: 'Erro de conexão com o Supabase' };
+      }
+      return { ok: false, reason: 'unknown_error', details: e?.message || 'Erro desconhecido' };
     }
   };
 
@@ -152,14 +188,29 @@ const CTAButton: React.FC<CTAButtonProps> = ({
     } else {
       // Show error message to user
       setIsSubmitting(false);
-      setSubmitError(result.reason || 'unknown_error');
+      
+      // Definir mensagem de erro específica baseada no tipo de erro
+      let errorKey = 'unknown_error';
+      if (result.reason === 'missing_env') {
+        errorKey = 'config_error';
+      } else if (result.reason === 'network_error') {
+        errorKey = 'network_error';
+      } else if (result.reason === 'unauthorized' || result.reason === 'forbidden') {
+        errorKey = 'auth_error';
+      } else if (result.reason === 'validation_error') {
+        errorKey = 'validation_error';
+      }
+      
+      setSubmitError(errorKey);
+      
       // Track failed submission
       trackFormInteraction('abandon', 'email_capture', {
         source_element: ctaText[language as keyof typeof ctaText],
         source_section: trackingContext.section,
         source_page: page,
         cta_variant: variant,
-        error_reason: result.reason
+        error_reason: result.reason,
+        error_details: result.details
       });
     }
   };
@@ -248,13 +299,49 @@ const CTAButton: React.FC<CTAButtonProps> = ({
                 {language === 'PT' ? 'Por favor, insira um email válido' : language === 'ES' ? 'Por favor, ingresa un email válido' : 'Please enter a valid email'}
               </p>
             )}
-            {submitError && submitError !== 'email_invalid' && (
+            {submitError === 'config_error' && (
               <p className="mt-1 text-sm text-red-600">
                 {language === 'PT' 
-                  ? 'Erro ao enviar. Tente novamente em alguns instantes.' 
+                  ? 'Erro de configuração. Entre em contato com o suporte.' 
                   : language === 'ES' 
-                  ? 'Error al enviar. Inténtalo de nuevo en unos momentos.' 
-                  : 'Error sending. Please try again in a few moments.'}
+                  ? 'Error de configuración. Contacta con soporte.' 
+                  : 'Configuration error. Please contact support.'}
+              </p>
+            )}
+            {submitError === 'network_error' && (
+              <p className="mt-1 text-sm text-red-600">
+                {language === 'PT' 
+                  ? 'Erro de conexão. Verifique sua internet e tente novamente.' 
+                  : language === 'ES' 
+                  ? 'Error de conexión. Verifica tu internet e inténtalo de nuevo.' 
+                  : 'Connection error. Check your internet and try again.'}
+              </p>
+            )}
+            {submitError === 'auth_error' && (
+              <p className="mt-1 text-sm text-red-600">
+                {language === 'PT' 
+                  ? 'Erro de autenticação. Entre em contato com o suporte.' 
+                  : language === 'ES' 
+                  ? 'Error de autenticación. Contacta con soporte.' 
+                  : 'Authentication error. Please contact support.'}
+              </p>
+            )}
+            {submitError === 'validation_error' && (
+              <p className="mt-1 text-sm text-red-600">
+                {language === 'PT' 
+                  ? 'Dados inválidos. Verifique as informações e tente novamente.' 
+                  : language === 'ES' 
+                  ? 'Datos inválidos. Verifica la información e inténtalo de nuevo.' 
+                  : 'Invalid data. Please check the information and try again.'}
+              </p>
+            )}
+            {submitError === 'unknown_error' && (
+              <p className="mt-1 text-sm text-red-600">
+                {language === 'PT' 
+                  ? 'Erro inesperado. Tente novamente em alguns instantes.' 
+                  : language === 'ES' 
+                  ? 'Error inesperado. Inténtalo de nuevo en unos momentos.' 
+                  : 'Unexpected error. Please try again in a few moments.'}
               </p>
             )}
           </div>
