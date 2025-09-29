@@ -125,19 +125,76 @@ const DriversLandingPage: React.FC<DriversLandingPageProps> = ({ currentLanguage
   // Sticky CTA state and microcopy variant per session
   const [showStickyCTA, setShowStickyCTA] = useState<boolean>(false);
   const [stickyCTAText, setStickyCTAText] = useState<string>(t.cta);
+  // Hero CTA variant state (A/B testing for PT)
+  const [heroCTAText, setHeroCTAText] = useState<string>(t.cta);
 
+  // Pick and persist PT CTA variant for the session
   useEffect(() => {
-    try {
-      const hidden = sessionStorage.getItem('sticky_cta_hidden');
-      if (hidden !== 'true') {
-        setShowStickyCTA(true);
-      }
-    } catch (e) {
-      setShowStickyCTA(true);
+    if (currentLanguage !== 'PT') {
+      setHeroCTAText(t.cta);
+      return;
     }
-    // Unify microcopy across CTAs: use page-level cta text for current language
-    setStickyCTAText(t.cta);
+    try {
+      const key = 'pt_cta_variant_hero';
+      const stored = sessionStorage.getItem(key);
+      const variants = ['Quero ganhar mais dirigindo', 'Quero aumentar minhas gorjetas'];
+      let chosen = stored;
+      if (!chosen || !variants.includes(chosen)) {
+        chosen = variants[Math.random() < 0.5 ? 0 : 1];
+        sessionStorage.setItem(key, chosen);
+      }
+      setHeroCTAText(chosen);
+    } catch {
+      setHeroCTAText(t.cta);
+    }
   }, [currentLanguage, t.cta]);
+
+  // Atualiza a microcopy do CTA conforme o idioma (sticky usa versão curta em PT)
+  useEffect(() => {
+    if (currentLanguage === 'PT') {
+      setStickyCTAText('Começar agora');
+    } else {
+      setStickyCTAText(t.cta);
+    }
+  }, [currentLanguage, t.cta]);
+
+  // Exibe o Sticky CTA após intenção (scroll) ou tempo de permanência
+  useEffect(() => {
+    let timeoutId: number | undefined;
+
+    const shouldShow = () => {
+      try {
+        const hidden = sessionStorage.getItem('sticky_cta_hidden');
+        return hidden !== 'true';
+      } catch {
+        return true;
+      }
+    };
+
+    const onScroll = () => {
+      if (!shouldShow()) return;
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const depth = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      if (depth >= 30) {
+        setShowStickyCTA(true);
+        window.removeEventListener('scroll', onScroll);
+        if (timeoutId) window.clearTimeout(timeoutId);
+      }
+    };
+
+    timeoutId = window.setTimeout(() => {
+      if (!shouldShow()) return;
+      setShowStickyCTA(true);
+      window.removeEventListener('scroll', onScroll);
+    }, 7000);
+
+    window.addEventListener('scroll', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      if (timeoutId) window.clearTimeout(timeoutId);
+    };
+  }, []);
 
   const handleDismissSticky = () => {
     try {
@@ -147,39 +204,57 @@ const DriversLandingPage: React.FC<DriversLandingPageProps> = ({ currentLanguage
   };
 
   return (
-    <div className="w-full bg-white pb-20 md:pb-0">
+    <div className="w-full bg-white pb-16 md:pb-0">
       {/* Hero Section */}
       <section className="bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
           <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 leading-tight mb-6 max-w-4xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 leading-tight mb-4 max-w-4xl mx-auto">
               {t.heroTitle}
             </h1>
-            <p className="text-xl sm:text-2xl text-neutral-600 leading-relaxed mb-10 max-w-3xl mx-auto">
+            <p className="text-xl sm:text-2xl text-neutral-600 leading-relaxed mb-6 max-w-3xl mx-auto">
               {t.heroSubtitle}
             </p>
             
-            <div className="mb-12">
+            <div className="mb-4">
               <CTAButton
                  variant="primary"
                  size="lg"
                  googleFormUrl="https://forms.gle/B5VWqtDgjEKEiHv1A"
-                 ctaText={{ EN: content.EN.cta, PT: content.PT.cta, ES: content.ES.cta }}
-                 trackingContext={{ section: 'hero', position: 'hero_primary' }}
+                 ctaText={{ EN: content.EN.cta, PT: heroCTAText, ES: content.ES.cta }}
+                 trackingContext={{ section: 'hero', position: 'hero_primary', campaign: 'drivers_pt_cta_ab', cta_variant_text: heroCTAText }}
                  currentLanguage={currentLanguage}
                  currentPage="drivers"
                  attention
-                 className="!bg-[#00A8E8] hover:!bg-[#FF6F00] !text-white !text-xl !px-12 !py-4"
+                 className="!bg-[#00A8E8] hover:!bg-[#FF6F00] !text-white !text-xl !px-8 !py-3"
                />
+            </div>
+            
+            {/* Trust Bar */}
+            <div className="flex justify-center items-center space-x-4 mb-8 text-sm text-neutral-600">
+              <div className="flex items-center">
+                <Star className="w-4 h-4 text-yellow-500 mr-1" />
+                <span>{currentLanguage === 'PT' ? 'NPS 4.8/5' : currentLanguage === 'ES' ? 'NPS 4.8/5' : 'NPS 4.8/5'}</span>
+              </div>
+              <div className="w-1 h-1 bg-neutral-300 rounded-full"></div>
+              <div className="flex items-center">
+                <Users className="w-4 h-4 text-blue-500 mr-1" />
+                <span>{currentLanguage === 'PT' ? '10+ cidades' : currentLanguage === 'ES' ? '10+ ciudades' : '10+ cities'}</span>
+              </div>
+              <div className="w-1 h-1 bg-neutral-300 rounded-full"></div>
+              <div className="flex items-center">
+                <Zap className="w-4 h-4 text-green-500 mr-1" />
+                <span>{currentLanguage === 'PT' ? 'Ative e dirija' : currentLanguage === 'ES' ? 'Activa y conduce' : 'Activate and drive'}</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Benefits Section */}
-      <section className="bg-neutral-50 py-16 md:py-20">
+      <section className="bg-neutral-50 py-14 md:py-18">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {t.benefits.map((benefit, index) => (
               <div key={index} className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300 text-center">
                 <div className="w-20 h-20 mx-auto mb-6 bg-[#00A8E8]/10 rounded-full flex items-center justify-center">
@@ -238,11 +313,11 @@ const DriversLandingPage: React.FC<DriversLandingPageProps> = ({ currentLanguage
              variant="secondary"
              size="lg"
              googleFormUrl="https://forms.gle/B5VWqtDgjEKEiHv1A"
-             ctaText={{ EN: content.EN.cta, PT: content.PT.cta, ES: content.ES.cta }}
-             trackingContext={{ section: 'global_value', position: 'global_cta' }}
+             ctaText={{ EN: content.EN.cta, PT: 'Quero ativar o Tuggi', ES: content.ES.cta }}
+             trackingContext={{ section: 'global_value', position: 'global_cta', campaign: 'drivers_pt_cta_ab', cta_variant_text: 'Quero ativar o Tuggi' }}
              currentLanguage={currentLanguage}
              currentPage="drivers"
-             className="!bg-white !text-[#00A8E8] hover:!bg-[#FF6F00] hover:!text-white !text-xl !px-12 !py-4 transform hover:scale-105"
+             className="!bg-white !text-[#00A8E8] hover:!bg-[#FF6F00] hover:!text-white !text-xl !px-8 !py-3 transform hover:scale-105"
            />
         </div>
       </section>

@@ -16,6 +16,7 @@ interface CTAButtonProps {
     section: string;
     position: string;
     campaign?: string;
+    cta_variant_text?: string; // explicit CTA text variant for analytics
   };
   currentLanguage?: string;
   currentPage?: string;
@@ -75,7 +76,7 @@ const CTAButton: React.FC<CTAButtonProps> = ({
       return { ok: false, reason: 'invalid_url', details: 'URL do Supabase inválida' };
     }
     
-    const payload = {
+  const payload = {
       email,
       language,
       page,
@@ -85,6 +86,7 @@ const CTAButton: React.FC<CTAButtonProps> = ({
       cta_variant: variant,
       cta_size: size,
       button_text: ctaText[language as keyof typeof ctaText],
+      cta_variant_text: trackingContext?.cta_variant_text || ctaText[language as keyof typeof ctaText],
       user_agent: navigator.userAgent,
       created_at: new Date().toISOString()
     };
@@ -153,6 +155,7 @@ const CTAButton: React.FC<CTAButtonProps> = ({
       section: trackingContext.section,
       position: trackingContext.position,
       campaign: trackingContext.campaign,
+      cta_variant_text: trackingContext?.cta_variant_text || buttonText,
       conversion_funnel: 'awareness_to_interest',
       user_journey_stage: 'consideration'
     });
@@ -274,7 +277,7 @@ const CTAButton: React.FC<CTAButtonProps> = ({
   if (showEmailForm) {
     return (
       <div className="w-full max-w-md mx-auto">
-        <form onSubmit={handleEmailSubmit} className="space-y-4">
+        <form onSubmit={handleEmailSubmit} className="space-y-3">
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
               {language === 'PT' ? 'Seu email:' : language === 'ES' ? 'Tu email:' : 'Your email:'}
@@ -294,6 +297,13 @@ const CTAButton: React.FC<CTAButtonProps> = ({
               required
               autoFocus
             />
+            <p className="mt-1 text-xs text-neutral-500">
+              {language === 'PT'
+                ? 'Sem spam. Você pode descadastrar quando quiser.'
+                : language === 'ES'
+                ? 'Sin spam. Puedes darte de baja cuando quieras.'
+                : 'No spam. You can unsubscribe anytime.'}
+            </p>
             {submitError === 'email_invalid' && (
               <p className="mt-1 text-sm text-red-600">
                 {language === 'PT' ? 'Por favor, insira um email válido' : language === 'ES' ? 'Por favor, ingresa un email válido' : 'Please enter a valid email'}
