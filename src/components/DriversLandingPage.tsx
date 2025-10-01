@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { DollarSign, Star, Users, Zap, Smartphone, Navigation, Mic, X } from 'lucide-react';
-import CTAButton from './CTAButton';
+import { LeadCaptureForm } from './LeadCaptureForm';
 import { generateLocalizedUrl } from '../utils/routing';
 
 interface DriversLandingPageProps {
@@ -122,11 +122,32 @@ const DriversLandingPage: React.FC<DriversLandingPageProps> = ({ currentLanguage
 
   const t = content[currentLanguage];
 
+  // Ref para o formulário do hero
+  const heroFormRef = useRef<HTMLDivElement>(null);
+
   // Sticky CTA state and microcopy variant per session
   const [showStickyCTA, setShowStickyCTA] = useState<boolean>(false);
   const [stickyCTAText, setStickyCTAText] = useState<string>(t.cta);
   // Hero CTA variant state (A/B testing for PT)
   const [heroCTAText, setHeroCTAText] = useState<string>(t.cta);
+
+  // Função para fazer scroll suave até o formulário
+  const scrollToHeroForm = () => {
+    if (heroFormRef.current) {
+      heroFormRef.current.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'center' 
+      });
+      
+      // Opcional: focar no primeiro input após o scroll
+      setTimeout(() => {
+        const firstInput = heroFormRef.current?.querySelector('input, select, textarea') as HTMLElement;
+        if (firstInput) {
+          firstInput.focus();
+        }
+      }, 500);
+    }
+  };
 
   // Pick and persist PT CTA variant for the session
   useEffect(() => {
@@ -207,27 +228,17 @@ const DriversLandingPage: React.FC<DriversLandingPageProps> = ({ currentLanguage
     <div className="w-full bg-white pb-16 md:pb-0">
       {/* Hero Section */}
       <section className="bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-16">
           <div className="text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 leading-tight mb-4 max-w-4xl mx-auto">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-neutral-900 leading-tight mb-3 sm:mb-4 max-w-4xl mx-auto">
               {t.heroTitle}
             </h1>
-            <p className="text-xl sm:text-2xl text-neutral-600 leading-relaxed mb-6 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl lg:text-2xl text-neutral-600 leading-relaxed mb-4 sm:mb-6 max-w-3xl mx-auto">
               {t.heroSubtitle}
             </p>
             
-            <div className="mb-4">
-              <CTAButton
-                 variant="primary"
-                 size="lg"
-                 googleFormUrl="https://forms.gle/B5VWqtDgjEKEiHv1A"
-                 ctaText={{ EN: content.EN.cta, PT: heroCTAText, ES: content.ES.cta }}
-                 trackingContext={{ section: 'hero', position: 'hero_primary', campaign: 'drivers_pt_cta_ab', cta_variant_text: heroCTAText }}
-                 currentLanguage={currentLanguage}
-                 currentPage="drivers"
-                 attention
-                 className="!bg-[#00A8E8] hover:!bg-[#FF6F00] !text-white !text-xl !px-8 !py-3"
-               />
+            <div className="mb-3 sm:mb-4" ref={heroFormRef}>
+              <LeadCaptureForm className="max-w-md mx-auto" currentLanguage={currentLanguage} />
             </div>
             
             {/* Trust Bar */}
@@ -273,7 +284,7 @@ const DriversLandingPage: React.FC<DriversLandingPageProps> = ({ currentLanguage
       </section>
 
       {/* How It Works Section */}
-      <section className="bg-white py-16 md:py-20">
+      <section id="como-funciona" className="bg-white py-16 md:py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 text-center mb-12">
             {t.howItWorksTitle}
@@ -309,16 +320,14 @@ const DriversLandingPage: React.FC<DriversLandingPageProps> = ({ currentLanguage
             {t.globalValueDescription}
           </p>
           
-          <CTAButton
-             variant="secondary"
-             size="lg"
-             googleFormUrl="https://forms.gle/B5VWqtDgjEKEiHv1A"
-             ctaText={{ EN: content.EN.cta, PT: 'Quero ativar o Tuggi', ES: content.ES.cta }}
-             trackingContext={{ section: 'global_value', position: 'global_cta', campaign: 'drivers_pt_cta_ab', cta_variant_text: 'Quero ativar o Tuggi' }}
-             currentLanguage={currentLanguage}
-             currentPage="drivers"
-             className="!bg-white !text-[#00A8E8] hover:!bg-[#FF6F00] hover:!text-white !text-xl !px-8 !py-3 transform hover:scale-105"
-           />
+          <button
+            onClick={scrollToHeroForm}
+            className="bg-white text-[#00A8E8] hover:bg-[#FF6F00] hover:text-white text-xl px-8 py-3 transform hover:scale-105 rounded-lg font-semibold transition-all duration-200 shadow-lg hover:shadow-xl"
+          >
+            {currentLanguage === 'PT' ? 'Quero ativar o Tuggi' : 
+             currentLanguage === 'ES' ? content.ES.cta : 
+             content.EN.cta}
+          </button>
         </div>
       </section>
 
@@ -331,25 +340,25 @@ const DriversLandingPage: React.FC<DriversLandingPageProps> = ({ currentLanguage
             {currentLanguage === 'PT' && (
               <>
                 · Leia nossos{' '}
-                <a href={generateLocalizedUrl('PT', 'terms')} className="underline hover:text-neutral-700 transition-colors">Termos de Uso</a>
-                {' '}e{' '}
-                <a href={generateLocalizedUrl('PT', 'privacy')} className="underline hover:text-neutral-700 transition-colors">Política de Privacidade</a>.
+                <a href={generateLocalizedUrl('PT', 'terms-of-use')} className="underline hover:text-neutral-700 transition-colors">Termos de Uso</a>
+              {' e '}
+              <a href={generateLocalizedUrl('PT', 'privacy-policy')} className="underline hover:text-neutral-700 transition-colors">Política de Privacidade</a>.
               </>
             )}
             {currentLanguage === 'EN' && (
               <>
                 · Read our{' '}
-                <a href={generateLocalizedUrl('EN', 'terms')} className="underline hover:text-neutral-700 transition-colors">Terms of Use</a>
-                {' '}and{' '}
-                <a href={generateLocalizedUrl('EN', 'privacy')} className="underline hover:text-neutral-700 transition-colors">Privacy Policy</a>.
+                <a href={generateLocalizedUrl('EN', 'terms-of-use')} className="underline hover:text-neutral-700 transition-colors">Terms of Use</a>
+              {' and '}
+              <a href={generateLocalizedUrl('EN', 'privacy-policy')} className="underline hover:text-neutral-700 transition-colors">Privacy Policy</a>.
               </>
             )}
             {currentLanguage === 'ES' && (
               <>
                 · Lee nuestros{' '}
-                <a href={generateLocalizedUrl('ES', 'terms')} className="underline hover:text-neutral-700 transition-colors">Términos de Uso</a>
-                {' '}y{' '}
-                <a href={generateLocalizedUrl('ES', 'privacy')} className="underline hover:text-neutral-700 transition-colors">Política de Privacidad</a>.
+                <a href={generateLocalizedUrl('ES', 'terms-of-use')} className="underline hover:text-neutral-700 transition-colors">Términos de Uso</a>
+              {' y '}
+              <a href={generateLocalizedUrl('ES', 'privacy-policy')} className="underline hover:text-neutral-700 transition-colors">Política de Privacidad</a>.
               </>
             )}
           </p>
@@ -371,21 +380,12 @@ const DriversLandingPage: React.FC<DriversLandingPageProps> = ({ currentLanguage
               <X className="w-4 h-4 text-neutral-700" />
             </button>
             <div className="max-w-6xl mx-auto">
-              <CTAButton
-                variant="primary"
-                size="lg"
-                googleFormUrl="https://forms.gle/B5VWqtDgjEKEiHv1A"
-                ctaText={{
-                  EN: content.EN.cta,
-                  PT: stickyCTAText,
-                  ES: content.ES.cta
-                }}
-                trackingContext={{ section: 'sticky_mobile', position: 'footer_fixed_cta' }}
-                currentLanguage={currentLanguage}
-                currentPage="drivers"
-                attention
-                className="w-full !bg-[#00A8E8] hover:!bg-[#FF6F00] !text-white !text-base !px-6 !py-3"
-              />
+              <button
+                onClick={scrollToHeroForm}
+                className="w-full bg-[#00A8E8] hover:bg-[#FF6F00] text-white text-base font-semibold px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl"
+              >
+                {stickyCTAText}
+              </button>
             </div>
           </div>
         </div>

@@ -303,14 +303,14 @@ const Footer: React.FC<FooterProps> = ({
             {/* Legal Links */}
             <div className="flex items-center space-x-6 text-sm">
               <button 
-                onClick={() => handleNavClick('privacy', content.privacyPolicy)}
+                onClick={() => handleNavClick('privacy-policy', content.privacyPolicy)}
                 className="text-neutral-500 hover:text-tuggi-primary transition-colors duration-200"
               >
                 {content.privacyPolicy}
               </button>
               <span className="text-neutral-600">|</span>
               <button 
-                onClick={() => handleNavClick('terms', content.termsOfUse)}
+                onClick={() => handleNavClick('terms-of-use', content.termsOfUse)}
                 className="text-neutral-500 hover:text-tuggi-primary transition-colors duration-200"
               >
                 {content.termsOfUse}

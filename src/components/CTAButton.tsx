@@ -59,22 +59,6 @@ const CTAButton: React.FC<CTAButtonProps> = ({
   const [submitError, setSubmitError] = useState<string | null>(null);
 
   const saveEmailToSupabase = async (email: string) => {
-    const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
-    const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
-    
-    // Verificar se as variáveis de ambiente estão configuradas
-    if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
-      console.error('❌ Variáveis de ambiente do Supabase não configuradas');
-      console.error('VITE_SUPABASE_URL:', SUPABASE_URL ? 'Configurada' : 'Não configurada');
-      console.error('VITE_SUPABASE_ANON_KEY:', SUPABASE_ANON_KEY ? 'Configurada' : 'Não configurada');
-      return { ok: false, reason: 'missing_env', details: 'Variáveis do Supabase não configuradas' };
-    }
-
-    // Verificar se as URLs são válidas
-    if (!SUPABASE_URL.startsWith('https://') || !SUPABASE_URL.includes('.supabase.co')) {
-      console.error('❌ URL do Supabase inválida:', SUPABASE_URL);
-      return { ok: false, reason: 'invalid_url', details: 'URL do Supabase inválida' };
-    }
     
   const payload = {
       email,
@@ -96,18 +80,13 @@ const CTAButton: React.FC<CTAButtonProps> = ({
     console.log('Payload:', JSON.stringify(payload, null, 2));
     
     try {
-      const url = `${SUPABASE_URL}/rest/v1/driver_email_leads`;
+      const url = '/api/leads';
       console.log('📡 URL completa:', url);
       
       const resp = await fetch(url, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          'apikey': SUPABASE_ANON_KEY,
-          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
-          'Accept-Profile': 'campaign',
-          'Content-Profile': 'campaign',
-          'Prefer': 'return=minimal'
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify(payload)
       });
