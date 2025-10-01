@@ -310,6 +310,55 @@ const DriversLandingPage: React.FC<DriversLandingPageProps> = ({ currentLanguage
         </div>
       </section>
 
+      {/* Video Section */}
+      <section className="bg-neutral-50 py-16 md:py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            {/* <h2 className="text-3xl sm:text-4xl font-bold text-neutral-900 mb-6">
+              {currentLanguage === 'PT' ? 'Veja o Tuggi em ação' : 
+               currentLanguage === 'ES' ? 'Ve Tuggi en acción' : 
+               'See Tuggi in action'}
+            </h2>
+            <p className="text-xl text-neutral-600 leading-relaxed">
+              {currentLanguage === 'PT' ? 'Descubra como o Tuggi transforma a experiência de dirigir' : 
+               currentLanguage === 'ES' ? 'Descubre cómo Tuggi transforma la experiencia de conducir' : 
+               'Discover how Tuggi transforms the driving experience'}
+            </p> */}
+          </div>
+          
+          <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl bg-neutral-900">
+            <iframe
+              src="https://www.youtube.com/embed/0wcdWElwkRM?rel=0&modestbranding=1&showinfo=0&controls=1&fs=1&cc_load_policy=0&iv_load_policy=3&autohide=0"
+              title={currentLanguage === 'PT' ? 'Descubra o Tuggi - Seu Copiloto Cultural' : 
+                     currentLanguage === 'ES' ? 'Descubre Tuggi - Tu Copiloto Cultural' : 
+                     'Discover Tuggi - Your Cultural Co-pilot'}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              referrerPolicy="strict-origin-when-cross-origin"
+              loading="lazy"
+              className="absolute inset-0 w-full h-full"
+            />
+          </div>
+          
+          <div className="text-center mt-8">
+            <a
+              href="https://youtu.be/0wcdWElwkRM"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-[#00A8E8] hover:text-[#0088CC] font-semibold transition-colors duration-200"
+            >
+              {currentLanguage === 'PT' ? 'Assistir no YouTube' : 
+               currentLanguage === 'ES' ? 'Ver en YouTube' : 
+               'Watch on YouTube'}
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Global Value Proposition */}
       <section className="bg-gradient-to-br from-[#00A8E8] to-[#0088CC] py-16 md:py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
