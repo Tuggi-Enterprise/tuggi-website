@@ -24,7 +24,9 @@ const CTAFinalV2: React.FC<CTAFinalV2Props> = ({
           'Sem anúncios',
           'Conteúdo verificado'
         ],
-        socialProof: '⭐ 4.8 de avaliação média • 5K+ viagens narradas • Disponível em SP e RJ'
+        socialProof: '⭐ 4.8 de avaliação média • 5K+ viagens narradas • Disponível em SP e RJ',
+        ariaLabelIOS: 'Baixar Tuggi para iOS',
+        ariaLabelAndroid: 'Baixar Tuggi para Android'
       },
       EN: {
         title: 'Transform every journey into a discovery.',
@@ -36,7 +38,9 @@ const CTAFinalV2: React.FC<CTAFinalV2Props> = ({
           'No ads',
           'Verified content'
         ],
-        socialProof: '⭐ 4.8 average rating • 5K+ narrated trips • Available in SP and RJ'
+        socialProof: '⭐ 4.8 average rating • 5K+ narrated trips • Available in SP and RJ',
+        ariaLabelIOS: 'Download Tuggi for iOS',
+        ariaLabelAndroid: 'Download Tuggi for Android'
       },
       ES: {
         title: 'Transforma cada trayecto en un descubrimiento.',
@@ -48,7 +52,9 @@ const CTAFinalV2: React.FC<CTAFinalV2Props> = ({
           'Sin anuncios',
           'Contenido verificado'
         ],
-        socialProof: '⭐ 4.8 calificación promedio • 5K+ viajes narrados • Disponible en SP y RJ'
+        socialProof: '⭐ 4.8 calificación promedio • 5K+ viajes narrados • Disponible en SP y RJ',
+        ariaLabelIOS: 'Descargar Tuggi para iOS',
+        ariaLabelAndroid: 'Descargar Tuggi para Android'
       }
     };
     return content[language] || content['PT'];
@@ -110,7 +116,7 @@ const CTAFinalV2: React.FC<CTAFinalV2Props> = ({
                 handleCTAClick('ios_download');
               }}
               className="group bg-white text-tuggi-primary px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-300 inline-flex items-center justify-center gap-3 hover:bg-gray-50 hover:scale-105 transform shadow-lg min-h-[56px]"
-              aria-label="Baixar Tuggi para iOS"
+              aria-label={content.ariaLabelIOS}
               style={{ minHeight: '56px' }}
             >
               <Download className="w-5 h-5" />
@@ -124,7 +130,7 @@ const CTAFinalV2: React.FC<CTAFinalV2Props> = ({
                 handleCTAClick('android_beta');
               }}
               className="group bg-tuggi-primary/20 text-white border-2 border-white px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-300 inline-flex items-center justify-center gap-3 hover:bg-white hover:text-tuggi-primary hover:scale-105 transform min-h-[56px]"
-              aria-label="Baixar Tuggi para Android"
+              aria-label={content.ariaLabelAndroid}
               style={{ minHeight: '56px' }}
             >
               <Download className="w-5 h-5" />

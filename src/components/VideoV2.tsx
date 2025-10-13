@@ -22,6 +22,7 @@ const VideoV2: React.FC<VideoV2Props> = ({
         subtitle: 'Cena real no carro com narração automática.',
         description: 'O Tuggi fala, você descobre.',
         videoTitle: '45s: Tuggi em uso real',
+        videoDescription: 'Demonstração real do Tuggi em uso durante um trajeto urbano',
         youtubeId: 'XvQfdfWDpVQ' // Tuggi demo video
       },
       EN: {
@@ -29,6 +30,7 @@ const VideoV2: React.FC<VideoV2Props> = ({
         subtitle: 'Real scene in the car with automatic narration.',
         description: 'Tuggi speaks, you discover.',
         videoTitle: '45s: Tuggi in real use',
+        videoDescription: 'Real demonstration of Tuggi in use during an urban journey',
         youtubeId: 'XvQfdfWDpVQ'
       },
       ES: {
@@ -36,6 +38,7 @@ const VideoV2: React.FC<VideoV2Props> = ({
         subtitle: 'Escena real en el auto con narración automática.',
         description: 'Tuggi habla, tú descubres.',
         videoTitle: '45s: Tuggi en uso real',
+        videoDescription: 'Demostración real de Tuggi en uso durante un trayecto urbano',
         youtubeId: 'XvQfdfWDpVQ'
       }
     };
@@ -129,7 +132,7 @@ const VideoV2: React.FC<VideoV2Props> = ({
             {/* Video Description */}
             <div className="mt-4 text-center">
               <p className="text-sm text-neutral-600">
-                Demonstração real do Tuggi em uso durante um trajeto urbano
+                {content.videoDescription}
               </p>
             </div>
           </div>

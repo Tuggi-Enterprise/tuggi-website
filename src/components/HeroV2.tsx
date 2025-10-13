@@ -26,7 +26,9 @@ const HeroV2: React.FC<HeroV2Props> = ({
         guarantee: 'Sem anúncios. Sem pegadinhas. Conteúdo verificado.',
         ctaPrimary: 'Entrar no Beta Android',
         ctaSecondary: 'Baixar no iOS',
-        betaLabel: '🚀 Beta aberto – São Paulo e Rio de Janeiro'
+        betaLabel: '🚀 Beta aberto – São Paulo e Rio de Janeiro',
+        ariaLabelAndroid: 'Baixar Tuggi para Android - Versão Beta',
+        ariaLabelIOS: 'Baixar Tuggi para iOS'
       },
       EN: {
         headline: 'Discover stories while you drive.',
@@ -34,7 +36,9 @@ const HeroV2: React.FC<HeroV2Props> = ({
         guarantee: 'No ads. No tricks. Verified content.',
         ctaPrimary: 'Join Android Beta',
         ctaSecondary: 'Download on iOS',
-        betaLabel: '🚀 Open Beta – São Paulo and Rio de Janeiro'
+        betaLabel: '🚀 Open Beta – São Paulo and Rio de Janeiro',
+        ariaLabelAndroid: 'Download Tuggi for Android - Beta Version',
+        ariaLabelIOS: 'Download Tuggi for iOS'
       },
       ES: {
         headline: 'Descubre historias mientras conduces.',
@@ -42,7 +46,9 @@ const HeroV2: React.FC<HeroV2Props> = ({
         guarantee: 'Sin anuncios. Sin trucos. Contenido verificado.',
         ctaPrimary: 'Unirse al Beta Android',
         ctaSecondary: 'Descargar en iOS',
-        betaLabel: '🚀 Beta abierto – São Paulo y Río de Janeiro'
+        betaLabel: '🚀 Beta abierto – São Paulo y Río de Janeiro',
+        ariaLabelAndroid: 'Descargar Tuggi para Android - Versión Beta',
+        ariaLabelIOS: 'Descargar Tuggi para iOS'
       }
     };
     
@@ -128,7 +134,7 @@ const HeroV2: React.FC<HeroV2Props> = ({
                     handleCTAClick('android_beta');
                   }}
                   className="btn-primary inline-flex items-center justify-center gap-3 text-lg min-h-[48px]"
-                  aria-label="Baixar Tuggi para Android - Versão Beta"
+                  aria-label={content.ariaLabelAndroid}
                   style={{ 
                     height: '48px', 
                     padding: '0 20px',
@@ -142,7 +148,7 @@ const HeroV2: React.FC<HeroV2Props> = ({
                 <button 
                   onClick={() => handleCTAClick('ios_download')}
                   className="btn-secondary inline-flex items-center justify-center gap-3 text-lg min-h-[48px]"
-                  aria-label="Baixar Tuggi para iOS"
+                  aria-label={content.ariaLabelIOS}
                   style={{ 
                     height: '48px', 
                     padding: '0 20px',
