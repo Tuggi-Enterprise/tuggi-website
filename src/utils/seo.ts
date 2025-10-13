@@ -65,25 +65,25 @@ export const generateSEOConfig = (
   const seoData: Record<string, Record<string, Partial<SEOConfig>>> = {
     home: {
       EN: {
-        title: 'Tuggi — Discover culture and stories wherever you go ',
-        description: 'Tuggi reveals stories and curiosities on the go or through the map. Audio in PT-BR, ES-ES and EN-US. No fixed routes and with verified factuality.',
-        keywords: 'cultural tourism app, audio guide, local stories, cultural curiosities, urban exploration, real-time narrative, place discovery',
-        ogTitle: 'Tuggi — culture in motion',
-        ogDescription: 'Explore on the go or through the map, with multilingual audio and verified content.'
+        title: 'Tuggi | Cultural audio guide — discover stories while driving',
+        description: 'Tuggi is an automatic cultural narration app that transforms journeys into experiences. Ad-free, multilingual and with verified content.',
+        keywords: 'Tuggi, cultural audio guide, tourism app, local stories, automatic narrations, cultural curiosities, explore cities, travel app, educational tourism, culture on the go',
+        ogTitle: 'Tuggi — Discover stories while driving',
+        ogDescription: 'Transform your journeys into cultural experiences with automatic narrations and verified content. Available in Portuguese, English and Spanish.'
       },
       PT: {
-        title: 'Tuggi — Explore no trajeto ou pelo mapa ',
-        description: 'A Tuggi revela histórias e curiosidades no trajeto ou pelo mapa. Áudio em PT-BR, ES-ES e EN-US. Sem rotas fixas e com factualidade verificada.',
-        keywords: 'app de turismo cultural, guia de áudio, histórias locais, curiosidades culturais, exploração urbana, narrativa em tempo real, descoberta de lugares',
-        ogTitle: 'Tuggi — cultura em movimento',
-        ogDescription: 'Explore no trajeto ou pelo mapa, com áudio multilíngue e conteúdo verificado.'
+        title: 'Tuggi | Guia de áudio cultural — descubra histórias enquanto dirige',
+        description: 'O Tuggi é um app de narrações culturais automáticas que transforma trajetos em experiências. Sem anúncios, multilíngue e com conteúdo verificado.',
+        keywords: 'Tuggi, guia de áudio cultural, app de turismo, narrações automáticas, curiosidades culturais, conteúdo verificado, explorar cidades, aplicativo de cultura, experiências culturais',
+        ogTitle: 'Tuggi — Descubra histórias enquanto dirige',
+        ogDescription: 'Transforme seus trajetos em descobertas culturais com narrações automáticas e conteúdo verificado. Disponível em português, inglês e espanhol.'
       },
       ES: {
-        title: 'Tuggi — Descubre cultura e historias donde vayas ',
-        description: 'Tuggi revela historias y curiosidades en el trayecto o por el mapa. Audio en PT-BR, ES-ES y EN-US. Sin rutas fijas y con factualidad verificada.',
-        keywords: 'app de turismo cultural, guía de audio, historias locales, curiosidades culturales, exploración urbana, narrativa en tiempo real, descubrimiento de lugares',
-        ogTitle: 'Tuggi — cultura en movimiento',
-        ogDescription: 'Explora en el trayecto o por el mapa, con audio multilingüe y contenido verificado.'
+        title: 'Tuggi | Guía de audio cultural — descubre historias mientras conduces',
+        description: 'Tuggi es una app de narraciones culturales automáticas que transforma trayectos en experiencias. Sin anuncios, multilingüe y con contenido verificado.',
+        keywords: 'Tuggi, guía de audio cultural, app de turismo, historias locales, narraciones automáticas, curiosidades culturales, explorar ciudades, aplicación de viaje, turismo educativo, cultura en el trayecto',
+        ogTitle: 'Tuggi — Descubre historias mientras conduces',
+        ogDescription: 'Transforma tus trayectos en experiencias culturales con narraciones automáticas y contenido verificado. Disponible en portugués, inglés y español.'
       }
     },
     contact: {
@@ -180,25 +180,48 @@ export const generateSEOConfig = (
     },
     drivers: {
       EN: {
-        title: 'Tuggi for Drivers — earn more with a different passenger experience',
-        description: 'A cultural co-pilot that runs alongside your ride-hailing app. Simple, automatic, effortless. Drive better ratings and potential earnings.',
-        keywords: 'tuggi for drivers, rideshare drivers, passenger experience, tips increase, uber 99 indrive cabify, cultural stories app',
-        ogTitle: 'Tuggi for Drivers — earn more with a different passenger experience',
-        ogDescription: 'A cultural co-pilot that runs alongside your ride-hailing app. Simple, automatic, effortless. Drive better ratings and potential earnings.'
+        title: 'Tuggi Drivers | Earn more and offer cultural experiences in your rides',
+        description: 'Increase your value as a ride-hailing driver with Tuggi. Offer cultural narrations to passengers, improve ratings and stand out without changing your routine.',
+        keywords: 'ride-hailing driver, earn more driving, app for drivers, increase ratings, added value transportation, monetize journeys, audio guides, cultural experience for passengers, Uber, 99, Cabify, inDrive',
+        ogTitle: 'Tuggi Drivers — Earn more on rides with cultural experiences',
+        ogDescription: 'Increase the value of your rides with Tuggi. Offer local stories, improve ratings and create a unique experience for your passengers.'
       },
       PT: {
-        title: 'Tuggi para Motoristas — ganhe mais com uma experiência diferente',
-        description: 'Copiloto cultural que roda junto com seu app de corridas. Simples, automático e sem esforço extra. Atraia melhores avaliações e potenciais ganhos.',
-        keywords: 'tuggi para motoristas, motoristas de aplicativo, experiência do passageiro, gorjeta, uber 99 indrive cabify, histórias culturais',
-        ogTitle: 'Tuggi para Motoristas — ganhe mais com uma experiência diferente',
-        ogDescription: 'Copiloto cultural que roda junto com seu app de corridas. Simples, automático e sem esforço extra. Atraia melhores avaliações e potenciais ganhos.'
+        title: 'Tuggi Motoristas | Ganhe mais e ofereça experiências culturais nas suas corridas',
+        description: 'Aumente seu valor como motorista de app com o Tuggi. Ofereça narrativas culturais aos passageiros, melhore avaliações e destaque-se sem mudar sua rotina.',
+        keywords: 'Tuggi motoristas, ganhar mais dirigindo, aumentar gorjeta, motorista de aplicativo, valor agregado transporte, audioguia para motoristas, experiência de corrida, narrações culturais automáticas',
+        ogTitle: 'Tuggi Motoristas — Ganhe mais com experiências culturais',
+        ogDescription: 'Ofereça narrações culturais automáticas e encante seus passageiros. Melhore avaliações e gere valor sem mudar sua rotina.'
       },
       ES: {
-        title: 'Tuggi para Conductores — gana más con una experiencia diferente',
-        description: 'Un copiloto cultural que funciona junto con tu app de movilidad. Simple, automático y sin esfuerzo. Mejores valoraciones y potenciales ingresos.',
-        keywords: 'tuggi para conductores, conductores de apps, experiencia del pasajero, propina, uber 99 indrive cabify, historias culturales',
-        ogTitle: 'Tuggi para Conductores — gana más con una experiencia diferente',
-        ogDescription: 'Un copiloto cultural que funciona junto con tu app de movilidad. Simple, automático y sin esfuerzo. Mejores valoraciones y potenciales ingresos.'
+        title: 'Tuggi Conductores | Gana más y ofrece experiencias culturales en tus viajes',
+        description: 'Aumenta tu valor como conductor de app con Tuggi. Ofrece narraciones culturales a los pasajeros, mejora valoraciones y destácate sin cambiar tu rutina.',
+        keywords: 'conductor de aplicación, ganar más conduciendo, app para conductores, aumentar valoraciones, valor agregado transporte, monetizar trayectos, guías de audio, experiencia cultural para pasajeros, Uber, 99, Cabify, inDrive',
+        ogTitle: 'Tuggi Conductores — Gana más en los viajes con experiencias culturales',
+        ogDescription: 'Aumenta el valor de tus viajes con Tuggi. Ofrece historias locales, mejora valoraciones y crea una experiencia única para tus pasajeros.'
+      }
+    },
+    business: {
+      EN: {
+        title: 'Tuggi for Businesses | Cultural partnerships and brand differentiation',
+        description: 'Partner with Tuggi to offer cultural experiences to your customers. Differentiate your brand through verified cultural content and multilingual storytelling.',
+        keywords: 'business partnership, cultural tourism, brand differentiation, transportation companies, cultural content, multilingual experiences, corporate partnerships, tourism agencies',
+        ogTitle: 'Tuggi for Businesses — Cultural partnerships and brand differentiation',
+        ogDescription: 'Transform your business with cultural storytelling. Partner with Tuggi to offer unique experiences and differentiate your brand.'
+      },
+      PT: {
+        title: 'Tuggi Empresas | Valor cultural e diferencial para transporte e turismo',
+        description: 'Fortaleça sua marca com o Tuggi — narrações culturais automáticas que agregam valor às experiências de transporte, turismo e hospitalidade.',
+        keywords: 'Tuggi empresas, parcerias turismo, transporte cultural, valor agregado marca, inovação em mobilidade, experiência de viagem, audioguia corporativo, diferencial competitivo',
+        ogTitle: 'Tuggi Empresas — Valor cultural para transporte e turismo',
+        ogDescription: 'Ofereça experiências culturais em seus serviços de transporte com o Tuggi. Agregue valor, destaque sua marca e inove com tecnologia cultural.'
+      },
+      ES: {
+        title: 'Tuggi para Empresas | Alianzas culturales y diferenciación de marca',
+        description: 'Asóciate con Tuggi para ofrecer experiencias culturales a tus clientes. Diferencia tu marca a través de contenido cultural verificado y storytelling multilingüe.',
+        keywords: 'alianza empresarial, turismo cultural, diferenciación de marca, empresas de transporte, contenido cultural, experiencias multilingües, alianzas corporativas, agencias de turismo',
+        ogTitle: 'Tuggi para Empresas — Alianzas culturales y diferenciación de marca',
+        ogDescription: 'Transforma tu negocio con storytelling cultural. Asóciate con Tuggi para ofrecer experiencias únicas y diferenciar tu marca.'
       }
     }
   };
@@ -219,7 +242,9 @@ export const generateSEOConfig = (
     : `${baseUrl}/${langCode}/${localizedPageUrl}`;
 
   // Define og:image per page with fallback
-  const defaultOgImage = page === 'drivers' ? `${baseUrl}/og/drivers.jpg` : `${baseUrl}/og/home.jpg`;
+  const defaultOgImage = page === 'drivers' ? `${baseUrl}/og/drivers.jpg` : 
+                         page === 'business' ? `${baseUrl}/og/business.jpg` : 
+                         `${baseUrl}/og/home.jpg`;
   const ogImageAltByLang: Record<string, string> = {
     EN: 'Tuggi - Cultural discovery and local stories app',
     PT: 'Tuggi - App de descoberta cultural e histórias locais',
@@ -350,28 +375,76 @@ export const generateStructuredData = (page: string, language: string, baseUrl: 
         "dateModified": "2024-01-15"
       };
 
+    case 'drivers':
+      const driversFaqData: Record<string, Array<{"@type": string, name: string, acceptedAnswer: {"@type": string, text: string}}>> = {
+        PT: [
+          {"@type":"Question","name":"Como o Tuggi ajuda motoristas de aplicativo?","acceptedAnswer":{"@type":"Answer","text":"O Tuggi transforma suas corridas em experiências culturais, oferecendo narrações automáticas que encantam passageiros e melhoram avaliações."}},
+          {"@type":"Question","name":"Preciso mudar minha rotina para usar o Tuggi?","acceptedAnswer":{"@type":"Answer","text":"Não. O Tuggi funciona em segundo plano, junto com seu app de navegação, e narra histórias automaticamente."}},
+          {"@type":"Question","name":"O Tuggi aumenta meus ganhos?","acceptedAnswer":{"@type":"Answer","text":"Sim. Ao oferecer uma experiência diferenciada aos passageiros, motoristas tendem a receber melhores avaliações e mais gorjetas."}}
+        ],
+        EN: [
+          {"@type":"Question","name":"How does Tuggi help ride-hailing drivers?","acceptedAnswer":{"@type":"Answer","text":"Tuggi allows drivers to offer cultural experiences during rides, increasing ratings and building passenger loyalty."}},
+          {"@type":"Question","name":"Can I use Tuggi with Waze or Google Maps?","acceptedAnswer":{"@type":"Answer","text":"Yes. Tuggi works in the background, automatically narrating while the driver uses the navigation app."}},
+          {"@type":"Question","name":"Does Tuggi help earn more?","acceptedAnswer":{"@type":"Answer","text":"Yes. Drivers who offer differentiated experiences are more likely to receive tips and better ratings."}}
+        ],
+        ES: [
+          {"@type":"Question","name":"¿Cómo ayuda Tuggi a los conductores de apps?","acceptedAnswer":{"@type":"Answer","text":"Tuggi permite que los conductores ofrezcan experiencias culturales durante los viajes, aumentando las valoraciones y fidelizando pasajeros."}},
+          {"@type":"Question","name":"¿Puedo usar Tuggi junto con Waze o Google Maps?","acceptedAnswer":{"@type":"Answer","text":"Sí. Tuggi funciona en segundo plano, narrando automáticamente mientras el conductor usa la app de navegación."}},
+          {"@type":"Question","name":"¿Tuggi ayuda a ganar más?","acceptedAnswer":{"@type":"Answer","text":"Sí. Los conductores que ofrecen experiencias diferenciadas tienen más posibilidades de recibir propinas y mejores valoraciones."}}
+        ]
+      };
+      
+      return {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": driversFaqData[language] || driversFaqData.PT,
+        "inLanguage": getLocaleCode(language),
+        "about": organizationData
+      };
+
+    case 'business':
+      const businessFaqData: Record<string, Array<{"@type": string, name: string, acceptedAnswer: {"@type": string, text: string}}>> = {
+        PT: [
+          {"@type":"Question","name":"Como o Tuggi pode ajudar minha empresa?","acceptedAnswer":{"@type":"Answer","text":"O Tuggi permite integrar experiências culturais em rotas e trajetos, agregando valor à jornada dos clientes e reforçando o posicionamento da marca."}},
+          {"@type":"Question","name":"Quais empresas podem se beneficiar?","acceptedAnswer":{"@type":"Answer","text":"Empresas de transporte, turismo, hotelaria e mobilidade urbana que desejam oferecer uma experiência diferenciada e cultural aos clientes."}},
+          {"@type":"Question","name":"O Tuggi pode ser personalizado para minha marca?","acceptedAnswer":{"@type":"Answer","text":"Sim. O Tuggi oferece opções de personalização e integração com identidade visual e narrativas específicas de parceiros corporativos."}}
+        ],
+        EN: [
+          {"@type":"Question","name":"How can Tuggi help my business?","acceptedAnswer":{"@type":"Answer","text":"Tuggi offers partnerships for transportation and tourism companies, allowing them to offer differentiated cultural experiences to customers."}},
+          {"@type":"Question","name":"What types of businesses can benefit?","acceptedAnswer":{"@type":"Answer","text":"Transportation companies, tourism agencies, bus operators, shuttle services and any business that wants to offer cultural value to customers."}},
+          {"@type":"Question","name":"How does partnership with Tuggi work?","acceptedAnswer":{"@type":"Answer","text":"We offer customized solutions to integrate Tuggi into your company's services, creating unique and differentiated experiences."}}
+        ],
+        ES: [
+          {"@type":"Question","name":"¿Cómo puede ayudar Tuggi a mi empresa?","acceptedAnswer":{"@type":"Answer","text":"Tuggi ofrece alianzas para empresas de transporte y turismo, permitiendo que ofrezcan experiencias culturales diferenciadas a los clientes."}},
+          {"@type":"Question","name":"¿Qué tipos de empresas pueden beneficiarse?","acceptedAnswer":{"@type":"Answer","text":"Empresas de transporte, agencias de turismo, operadores de autobuses, servicios de shuttle y cualquier negocio que quiera ofrecer valor cultural a los clientes."}},
+          {"@type":"Question","name":"¿Cómo funciona la alianza con Tuggi?","acceptedAnswer":{"@type":"Answer","text":"Ofrecemos soluciones personalizadas para integrar Tuggi a los servicios de su empresa, creando experiencias únicas y diferenciadas."}}
+        ]
+      };
+      
+      return {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": businessFaqData[language] || businessFaqData.PT,
+        "inLanguage": getLocaleCode(language),
+        "about": organizationData
+      };
+
     case 'home':
       const faqData: Record<string, Array<{"@type": string, name: string, acceptedAnswer: {"@type": string, text: string}}>> = {
         PT: [
-          {"@type":"Question","name":"Preciso seguir um roteiro?","acceptedAnswer":{"@type":"Answer","text":"Não. A Tuggi funciona no seu ritmo — no trajeto ou pelo mapa."}},
-          {"@type":"Question","name":"Quais idiomas estão disponíveis?","acceptedAnswer":{"@type":"Answer","text":"PT-BR, ES-ES e EN-US. Mais idiomas em breve."}},
-          {"@type":"Question","name":"Funciona sem internet?","acceptedAnswer":{"@type":"Answer","text":"Parte do áudio é cacheada, mas recomendamos conexão para atualizações."}},
-          {"@type":"Question","name":"É seguro usar dirigindo?","acceptedAnswer":{"@type":"Answer","text":"Evite interações enquanto dirige. As narrações tocam automaticamente."}},
-          {"@type":"Question","name":"Como a Tuggi garante fatos corretos?","acceptedAnswer":{"@type":"Answer","text":"Aplicamos checagens automáticas de datas/entidades e curadoria contínua."}}
+          {"@type":"Question","name":"O que é o Tuggi?","acceptedAnswer":{"@type":"Answer","text":"O Tuggi é um aplicativo de guia de áudio cultural que narra automaticamente histórias e curiosidades sobre lugares próximos a você."}},
+          {"@type":"Question","name":"Em quais idiomas o Tuggi está disponível?","acceptedAnswer":{"@type":"Answer","text":"O Tuggi está disponível em português, inglês e espanhol."}},
+          {"@type":"Question","name":"O Tuggi funciona sem internet?","acceptedAnswer":{"@type":"Answer","text":"Parte do conteúdo é cacheado e pode ser acessado offline, mas o uso completo requer conexão ativa."}}
         ],
         EN: [
-          {"@type":"Question","name":"Do I need to follow a route?","acceptedAnswer":{"@type":"Answer","text":"No. Tuggi works at your pace — on the go or through the map."}},
-          {"@type":"Question","name":"What languages are available?","acceptedAnswer":{"@type":"Answer","text":"PT-BR, ES-ES and EN-US. More languages coming soon."}},
-          {"@type":"Question","name":"Does it work without internet?","acceptedAnswer":{"@type":"Answer","text":"Part of the audio is cached, but we recommend connection for updates."}},
-          {"@type":"Question","name":"Is it safe to use while driving?","acceptedAnswer":{"@type":"Answer","text":"Avoid interactions while driving. Narrations play automatically."}},
-          {"@type":"Question","name":"How does Tuggi ensure correct facts?","acceptedAnswer":{"@type":"Answer","text":"We apply automatic checks on dates/entities and continuous curation."}}
+          {"@type":"Question","name":"What is Tuggi?","acceptedAnswer":{"@type":"Answer","text":"Tuggi is a cultural audio guide app that automatically narrates stories about places around you while you drive or explore."}},
+          {"@type":"Question","name":"Do I need to follow a route?","acceptedAnswer":{"@type":"Answer","text":"No. Tuggi works at your pace, without fixed routes — it identifies the location and narrates automatically."}},
+          {"@type":"Question","name":"What languages is Tuggi available in?","acceptedAnswer":{"@type":"Answer","text":"The app is available in Portuguese, English and Spanish, with more languages in development."}}
         ],
         ES: [
-          {"@type":"Question","name":"¿Necesito seguir una ruta?","acceptedAnswer":{"@type":"Answer","text":"No. Tuggi funciona a tu ritmo — en el trayecto o por el mapa."}},
-          {"@type":"Question","name":"¿Qué idiomas están disponibles?","acceptedAnswer":{"@type":"Answer","text":"PT-BR, ES-ES y EN-US. Más idiomas próximamente."}},
-          {"@type":"Question","name":"¿Funciona sin internet?","acceptedAnswer":{"@type":"Answer","text":"Parte del audio está en caché, pero recomendamos conexión para actualizaciones."}},
-          {"@type":"Question","name":"¿Es seguro usar mientras conduces?","acceptedAnswer":{"@type":"Answer","text":"Evita interacciones mientras conduces. Las narraciones se reproducen automáticamente."}},
-          {"@type":"Question","name":"¿Cómo garantiza Tuggi hechos correctos?","acceptedAnswer":{"@type":"Answer","text":"Aplicamos verificaciones automáticas de fechas/entidades y curación continua."}}
+          {"@type":"Question","name":"¿Qué es Tuggi?","acceptedAnswer":{"@type":"Answer","text":"Tuggi es una app de guía de audio cultural que narra automáticamente historias sobre los lugares a tu alrededor mientras conduces o exploras."}},
+          {"@type":"Question","name":"¿Necesito seguir una ruta?","acceptedAnswer":{"@type":"Answer","text":"No. Tuggi funciona a tu ritmo, sin rutas fijas — identifica la ubicación y narra automáticamente."}},
+          {"@type":"Question","name":"¿En qué idiomas está disponible Tuggi?","acceptedAnswer":{"@type":"Answer","text":"La app está disponible en portugués, inglés y español, con más idiomas en desarrollo."}}
         ]
       };
       
@@ -680,7 +753,7 @@ export const trackPageView = (page: string, language: string, measurementId?: st
               });
             }
           });
-        }).catch((error) => {
+        }).catch(() => {
           // Web Vitals library not available
         });
       }
@@ -1147,7 +1220,7 @@ export const initializeAnalytics = (measurementId: string) => {
       // Google Analytics script loaded successfully
     };
     
-    script.onerror = (error) => {
+    script.onerror = () => {
       // Failed to load Google Analytics script
     };
     
@@ -1380,7 +1453,6 @@ const getLocationByIP = async (): Promise<UserLocation> => {
  */
 const getFallbackLocation = (): UserLocation => {
   const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  const language = navigator.language || 'en-US';
   
   // Basic country detection from timezone
   let country = 'Unknown';
