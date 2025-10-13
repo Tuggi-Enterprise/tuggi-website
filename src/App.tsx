@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import Layout from './components/Layout';
-import PurposePage from './components/PurposePage';
-import ContactPage from './components/ContactPage';
-import InvestorsPage from './components/InvestorsPage';
-import PrivacyPolicyPage from './components/PrivacyPolicyPage';
-import CookiePolicyPage from './components/CookiePolicyPage';
-import TermsOfUsePage from './components/TermsOfUsePage';
-import BusinessPage from './components/BusinessPage';
-import DataDeletionPage from './components/DataDeletionPage';
+import Layout from './components/layout/Layout';
+import PurposePage from './pages/PurposePage';
+import ContactPage from './pages/ContactPage';
+import InvestorsPage from './pages/InvestorsPage';
+import PrivacyPolicyPage from './pages/legal/PrivacyPolicyPage';
+import CookiePolicyPage from './pages/legal/CookiePolicyPage';
+import TermsOfUsePage from './pages/legal/TermsOfUsePage';
+import BusinessPage from './pages/BusinessPage';
+import DataDeletionPage from './pages/legal/DataDeletionPage';
 import { parseUrlPath, generateLocalizedUrl, isValidLanguage } from './utils/routing';
 import { useSEO } from './hooks/useSEO';
 import { initializeAnalytics, trackPerformanceMetrics, trackPageView, trackLanguageChange, trackUserLocation } from './utils/seo';
-import LocationDisplay from './components/LocationDisplay';
-import DriversLandingPage from './components/DriversLandingPage';
-import HomeV2 from './components/HomeV2';
+import DriversLandingPage from './pages/DriversLandingPage';
+import HomeV2 from './pages/HomeV2';
 
 // Extend Window interface for gtag
 declare global {
