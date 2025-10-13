@@ -242,7 +242,7 @@ const DataDeletionPage: React.FC<DataDeletionPageProps> = ({
         {/* Header */}
         <div className="text-center mb-12">
           <div className="flex justify-center mb-6">
-            <TuggiLogo className="w-16 h-16" />
+            <TuggiLogo className="w-16 h-16" language={currentLanguage} />
           </div>
           <h1 className="text-4xl font-bold text-neutral-900 mb-4">
             {t.title}

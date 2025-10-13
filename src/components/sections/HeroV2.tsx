@@ -29,7 +29,15 @@ const HeroV2: React.FC<HeroV2Props> = ({
         betaLabel: '🚀 Beta aberto – São Paulo e Rio de Janeiro',
         ariaLabelAndroid: 'Baixar Tuggi para Android - Versão Beta',
         ariaLabelIOS: 'Baixar Tuggi para iOS',
-        heroImageAlt: 'Tuggi em funcionamento no painel do carro, narrando histórias durante o trajeto'
+        heroImageAlt: 'Tuggi em funcionamento no painel do carro, narrando histórias durante o trajeto',
+        stepsTitle: 'Em 3 passos, o Tuggi guia você',
+        stepsSubtitle: 'Sem rotas fixas, sem distrações. Você escolhe o caminho, o Tuggi conta a história.',
+        step1Title: 'Instale o Tuggi no seu iOS ou Android.',
+        step1Description: 'Download rápido e instalação simples',
+        step2Title: 'Permita localização e inicie sua jornada.',
+        step2Description: 'Ative o guia e comece a dirigir',
+        step3Title: 'Descubra o que há ao seu redor.',
+        step3Description: 'Ouça narrativas automáticas'
       },
       EN: {
         headline: 'Discover stories while you drive.',
@@ -40,7 +48,15 @@ const HeroV2: React.FC<HeroV2Props> = ({
         betaLabel: '🚀 Open Beta – São Paulo and Rio de Janeiro',
         ariaLabelAndroid: 'Download Tuggi for Android - Beta Version',
         ariaLabelIOS: 'Download Tuggi for iOS',
-        heroImageAlt: 'Tuggi running on car dashboard, narrating stories during the journey'
+        heroImageAlt: 'Tuggi running on car dashboard, narrating stories during the journey',
+        stepsTitle: 'In 3 steps, Tuggi guides you',
+        stepsSubtitle: 'No fixed routes, no distractions. You choose the path, Tuggi tells the story.',
+        step1Title: 'Install Tuggi on your iOS or Android.',
+        step1Description: 'Quick download and simple installation',
+        step2Title: 'Allow location and start your journey.',
+        step2Description: 'Activate the guide and start driving',
+        step3Title: 'Discover what\'s around you.',
+        step3Description: 'Listen to automatic narratives'
       },
       ES: {
         headline: 'Descubre historias mientras conduces.',
@@ -51,7 +67,15 @@ const HeroV2: React.FC<HeroV2Props> = ({
         betaLabel: '🚀 Beta abierto – São Paulo y Río de Janeiro',
         ariaLabelAndroid: 'Descargar Tuggi para Android - Versión Beta',
         ariaLabelIOS: 'Descargar Tuggi para iOS',
-        heroImageAlt: 'Tuggi funcionando en el tablero del auto, narrando historias durante el trayecto'
+        heroImageAlt: 'Tuggi funcionando en el tablero del auto, narrando historias durante el trayecto',
+        stepsTitle: 'En 3 pasos, Tuggi te guía',
+        stepsSubtitle: 'Sin rutas fijas, sin distracciones. Tú eliges el camino, Tuggi cuenta la historia.',
+        step1Title: 'Instala Tuggi en tu iOS o Android.',
+        step1Description: 'Descarga rápida e instalación simple',
+        step2Title: 'Permite la ubicación e inicia tu viaje.',
+        step2Description: 'Activa la guía y comienza a conducir',
+        step3Title: 'Descubre lo que hay a tu alrededor.',
+        step3Description: 'Escucha narraciones automáticas'
       }
     };
     
@@ -263,7 +287,7 @@ const HeroV2: React.FC<HeroV2Props> = ({
                 marginBottom: '24px'
               }}
             >
-              Em 3 passos, o Tuggi guia você
+              {content.stepsTitle}
             </motion.h2>
             <motion.p 
               variants={fadeInUp} 
@@ -275,7 +299,7 @@ const HeroV2: React.FC<HeroV2Props> = ({
                 fontWeight: '500'
               }}
             >
-              Sem rotas fixas, sem distrações. Você escolhe o caminho, o Tuggi conta a história.
+              {content.stepsSubtitle}
             </motion.p>
           </motion.div>
 
@@ -334,7 +358,7 @@ const HeroV2: React.FC<HeroV2Props> = ({
                   fontSize: '20px'
                 }}
               >
-                Instale o Tuggi no seu iOS ou Android.
+                {content.step1Title}
               </h3>
               <p 
                 className="max-w-xs mx-auto"
@@ -345,7 +369,7 @@ const HeroV2: React.FC<HeroV2Props> = ({
                   lineHeight: '1.6'
                 }}
               >
-                Download rápido e instalação simples
+                {content.step1Description}
               </p>
             </motion.div>
 
@@ -396,7 +420,7 @@ const HeroV2: React.FC<HeroV2Props> = ({
                   fontSize: '20px'
                 }}
               >
-                Permita localização e inicie sua jornada.
+                {content.step2Title}
               </h3>
               <p 
                 className="max-w-xs mx-auto"
@@ -407,7 +431,7 @@ const HeroV2: React.FC<HeroV2Props> = ({
                   lineHeight: '1.6'
                 }}
               >
-                Ative o guia e comece a dirigir
+                {content.step2Description}
               </p>
             </motion.div>
 
@@ -458,7 +482,7 @@ const HeroV2: React.FC<HeroV2Props> = ({
                   fontSize: '20px'
                 }}
               >
-                Descubra o que há ao seu redor.
+                {content.step3Title}
               </h3>
               <p 
                 className="max-w-xs mx-auto"
@@ -469,7 +493,7 @@ const HeroV2: React.FC<HeroV2Props> = ({
                   lineHeight: '1.6'
                 }}
               >
-                Ouça narrativas automáticas
+                {content.step3Description}
               </p>
             </motion.div>
             </div>
