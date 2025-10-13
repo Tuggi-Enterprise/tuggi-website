@@ -1,0 +1,289 @@
+[
+  {
+    "id": "home-v2-hero",
+    "title": "Home v2 – Hero + CTAs iOS/Android",
+    "description": "Implementar nova seção hero com headlines focadas em benefício, CTAs destacados para iOS e Android, e mockup do app em uso real.",
+    "impact": "alto",
+    "effort": "médio",
+    "area": "UX/UI",
+    "milestone": "M1",
+    "priority": 1,
+    "estimatedHours": 16,
+    "dependencies": [],
+    "acceptanceCriteria": [
+      "Headline focada em benefício imediato",
+      "CTAs iOS e Android sempre visíveis",
+      "Mockup do app em uso real",
+      "Selo 'Beta aberto – Grátis'",
+      "Responsivo em todos os dispositivos"
+    ]
+  },
+  {
+    "id": "video-demo-section",
+    "title": "Seção 'Veja em ação' (vídeo curto)",
+    "description": "Criar seção com vídeo de demonstração de 15-20s mostrando o app em uso real no carro, com thumbnail atrativo e autoplay opcional.",
+    "impact": "alto",
+    "effort": "médio",
+    "area": "Conteúdo",
+    "milestone": "M1",
+    "priority": 2,
+    "estimatedHours": 12,
+    "dependencies": ["home-v2-hero"],
+    "acceptanceCriteria": [
+      "Vídeo de 15-20s com demonstração real",
+      "Thumbnail atrativo com play button",
+      "Autoplay respeitando preferências do usuário",
+      "Tracking de visualização no GA4",
+      "Fallback para imagem estática"
+    ]
+  },
+  {
+    "id": "cities-form-integration",
+    "title": "Cidades + Form de interesse (Google Forms)",
+    "description": "Implementar seção de cidades com cobertura atual, mapa visual simples e integração com Google Forms para votação em novas cidades.",
+    "impact": "alto",
+    "effort": "baixo",
+    "area": "UX",
+    "milestone": "M1",
+    "priority": 3,
+    "estimatedHours": 8,
+    "dependencies": [],
+    "acceptanceCriteria": [
+      "Seção dedicada para cidades",
+      "Cobertura atual (São Paulo) destacada",
+      "Botão para Google Forms integrado",
+      "Tracking de cliques no formulário",
+      "Design visual atrativo"
+    ]
+  },
+  {
+    "id": "social-proof-minimal",
+    "title": "Provas sociais mínimas",
+    "description": "Adicionar seção de prova social com depoimentos curtos, métricas básicas e parceiros culturais (se disponíveis).",
+    "impact": "médio",
+    "effort": "baixo",
+    "area": "Conteúdo",
+    "milestone": "M1",
+    "priority": 4,
+    "estimatedHours": 6,
+    "dependencies": [],
+    "acceptanceCriteria": [
+      "2-3 depoimentos curtos e autênticos",
+      "Métricas básicas (cidades, idiomas, grátis)",
+      "Design visual consistente",
+      "Responsivo em mobile",
+      "Parceiros culturais (se disponíveis)"
+    ]
+  },
+  {
+    "id": "ga4-essential-events",
+    "title": "GA4 – eventos essenciais",
+    "description": "Implementar tracking de eventos essenciais no Google Analytics 4: downloads iOS, beta Android, formulários, vídeos e navegação.",
+    "impact": "alto",
+    "effort": "baixo",
+    "area": "Analytics",
+    "milestone": "M1",
+    "priority": 5,
+    "estimatedHours": 8,
+    "dependencies": [],
+    "acceptanceCriteria": [
+      "Eventos de download iOS implementados",
+      "Eventos de beta Android implementados",
+      "Tracking de formulários funcionando",
+      "Eventos de vídeo configurados",
+      "Navegação e scroll depth trackados"
+    ]
+  },
+  {
+    "id": "seo-basic-jsonld",
+    "title": "SEO básico + JSON-LD",
+    "description": "Implementar melhorias básicas de SEO: títulos otimizados, meta descriptions únicas, structured data JSON-LD expandido e hreflang correto.",
+    "impact": "médio",
+    "effort": "baixo",
+    "area": "SEO",
+    "milestone": "M1",
+    "priority": 6,
+    "estimatedHours": 6,
+    "dependencies": [],
+    "acceptanceCriteria": [
+      "Títulos otimizados por página",
+      "Meta descriptions únicas",
+      "JSON-LD expandido implementado",
+      "Hreflang correto para todos os idiomas",
+      "Canonical URLs configurados"
+    ]
+  },
+  {
+    "id": "a11y-quick-wins",
+    "title": "A11y quick wins",
+    "description": "Implementar melhorias básicas de acessibilidade: landmarks semânticos, contraste AA, foco visível e alt text significativo.",
+    "impact": "médio",
+    "effort": "baixo",
+    "area": "A11y",
+    "milestone": "M1",
+    "priority": 7,
+    "estimatedHours": 4,
+    "dependencies": [],
+    "acceptanceCriteria": [
+      "Landmarks semânticos implementados",
+      "Contraste AA em todos os elementos",
+      "Foco visível em elementos interativos",
+      "Alt text significativo em imagens",
+      "Skip links funcionando"
+    ]
+  },
+  {
+    "id": "unify-purpose-team",
+    "title": "Unificar 'Propósito' + 'Equipe'",
+    "description": "Consolidar páginas de 'Propósito' e 'Equipe' em uma única página 'Quem Somos' com conteúdo unificado e navegação simplificada.",
+    "impact": "médio",
+    "effort": "baixo",
+    "area": "IA",
+    "milestone": "M2",
+    "priority": 8,
+    "estimatedHours": 8,
+    "dependencies": [],
+    "acceptanceCriteria": [
+      "Página 'Quem Somos' criada",
+      "Conteúdo de 'Propósito' migrado",
+      "Conteúdo de 'Equipe' migrado",
+      "Redirects 301 configurados",
+      "Navegação atualizada"
+    ]
+  },
+  {
+    "id": "performance-optimization",
+    "title": "Otimização de Performance",
+    "description": "Implementar otimizações de performance: imagens WebP/AVIF, lazy loading, code splitting e critical CSS inline.",
+    "impact": "alto",
+    "effort": "médio",
+    "area": "Performance",
+    "milestone": "M2",
+    "priority": 9,
+    "estimatedHours": 12,
+    "dependencies": ["home-v2-hero"],
+    "acceptanceCriteria": [
+      "Imagens convertidas para WebP/AVIF",
+      "Lazy loading implementado",
+      "Code splitting por rota",
+      "Critical CSS inline",
+      "Core Web Vitals otimizados"
+    ]
+  },
+  {
+    "id": "ab-testing-framework",
+    "title": "Framework de A/B Testing",
+    "description": "Implementar sistema de A/B testing para testar headlines, CTAs e ordem das seções com tracking de conversão.",
+    "impact": "alto",
+    "effort": "médio",
+    "area": "Analytics",
+    "milestone": "M2",
+    "priority": 10,
+    "estimatedHours": 16,
+    "dependencies": ["ga4-essential-events"],
+    "acceptanceCriteria": [
+      "Sistema de A/B testing implementado",
+      "3 variações de headlines testáveis",
+      "Tracking de conversão por variante",
+      "Dashboard de resultados",
+      "Critérios de significância definidos"
+    ]
+  },
+  {
+    "id": "design-tokens-system",
+    "title": "Sistema de Design Tokens",
+    "description": "Implementar sistema completo de design tokens com variáveis CSS, utilitários e documentação para consistência visual.",
+    "impact": "médio",
+    "effort": "médio",
+    "area": "Design System",
+    "milestone": "M2",
+    "priority": 11,
+    "estimatedHours": 10,
+    "dependencies": [],
+    "acceptanceCriteria": [
+      "Tokens CSS implementados",
+      "Utilitários criados",
+      "Documentação completa",
+      "Modo escuro suportado",
+      "Alto contraste suportado"
+    ]
+  },
+  {
+    "id": "mobile-optimization",
+    "title": "Otimização Mobile",
+    "description": "Otimizar experiência mobile com botões flutuantes, navegação simplificada e performance melhorada em dispositivos móveis.",
+    "impact": "alto",
+    "effort": "médio",
+    "area": "Mobile",
+    "milestone": "M3",
+    "priority": 12,
+    "estimatedHours": 14,
+    "dependencies": ["home-v2-hero"],
+    "acceptanceCriteria": [
+      "Botões flutuantes para CTAs",
+      "Navegação mobile otimizada",
+      "Performance mobile melhorada",
+      "Touch targets adequados",
+      "Testes em dispositivos reais"
+    ]
+  },
+  {
+    "id": "content-management",
+    "title": "Sistema de Gerenciamento de Conteúdo",
+    "description": "Implementar sistema para gerenciar conteúdo dinâmico: depoimentos, métricas, cidades e notícias sem necessidade de deploy.",
+    "impact": "médio",
+    "effort": "alto",
+    "area": "Backend",
+    "milestone": "M3",
+    "priority": 13,
+    "estimatedHours": 24,
+    "dependencies": ["social-proof-minimal"],
+    "acceptanceCriteria": [
+      "CMS básico implementado",
+      "Gerenciamento de depoimentos",
+      "Atualização de métricas",
+      "Gerenciamento de cidades",
+      "Interface administrativa"
+    ]
+  },
+  {
+    "id": "advanced-analytics",
+    "title": "Analytics Avançado",
+    "description": "Implementar analytics avançado com funil de conversão, segmentação de usuários e relatórios automáticos.",
+    "impact": "médio",
+    "effort": "alto",
+    "area": "Analytics",
+    "milestone": "M3",
+    "priority": 14,
+    "estimatedHours": 20,
+    "dependencies": ["ga4-essential-events", "ab-testing-framework"],
+    "acceptanceCriteria": [
+      "Funil de conversão completo",
+      "Segmentação de usuários",
+      "Relatórios automáticos",
+      "Dashboard executivo",
+      "Alertas de performance"
+    ]
+  },
+  {
+    "id": "pwa-features",
+    "title": "Recursos PWA",
+    "description": "Implementar recursos de Progressive Web App: service worker, cache offline, push notifications e instalação no dispositivo.",
+    "impact": "baixo",
+    "effort": "alto",
+    "area": "PWA",
+    "milestone": "M4",
+    "priority": 15,
+    "estimatedHours": 32,
+    "dependencies": ["performance-optimization"],
+    "acceptanceCriteria": [
+      "Service worker implementado",
+      "Cache offline funcionando",
+      "Push notifications configuradas",
+      "Instalação no dispositivo",
+      "Manifest.json otimizado"
+    ]
+  }
+]
+
+

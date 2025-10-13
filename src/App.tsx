@@ -22,13 +22,13 @@ import CookiePolicyPage from './components/CookiePolicyPage';
 import TermsOfUsePage from './components/TermsOfUsePage';
 import BusinessPage from './components/BusinessPage';
 import DataDeletionPage from './components/DataDeletionPage';
-import IOSBanner from './components/IOSBanner';
 import FAQSection from './components/FAQSection';
 import { parseUrlPath, generateLocalizedUrl, isValidLanguage } from './utils/routing';
 import { useSEO } from './hooks/useSEO';
 import { initializeAnalytics, trackPerformanceMetrics, trackPageView, trackLanguageChange, trackUserLocation } from './utils/seo';
 import LocationDisplay from './components/LocationDisplay';
 import DriversLandingPage from './components/DriversLandingPage';
+import HomeV2 from './components/HomeV2';
 
 // Extend Window interface for gtag
 declare global {
@@ -126,9 +126,15 @@ function App() {
 
   // Handle page navigation with proper URL routing and analytics
   const handlePageChange = (page: string) => {
-    if (page === currentPage) return;
+    console.log('handlePageChange called with:', page);
+    console.log('currentPage:', currentPage);
+    if (page === currentPage) {
+      console.log('Same page, returning early');
+      return;
+    }
     
     const previousPage = currentPage;
+    console.log('Setting new page:', page);
     setCurrentPage(page);
     
     // Generate new localized URL
@@ -349,6 +355,41 @@ function App() {
       return;
     }
 
+    // Handle Android beta navigation to drivers page
+    if (ctaType === 'android_beta' || ctaType === 'android_beta_final') {
+      console.log('Android beta CTA clicked, navigating to motoristas');
+      handlePageChange('motoristas');
+      return;
+    }
+
+    // Handle video play CTA
+    if (ctaType === 'video_play') {
+      console.log('Video play CTA clicked');
+      // Just track the event, no navigation needed
+      return;
+    }
+
+    // Handle video demo CTA - scroll to final CTA section
+    if (ctaType === 'video_demo_cta') {
+      console.log('Video demo CTA clicked, scrolling to final CTA section');
+      // Scroll to the final CTA section
+      const finalCTASection = document.querySelector('[data-section="final-cta"]');
+      if (finalCTASection) {
+        finalCTASection.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      } else {
+        // Fallback: scroll to bottom of page
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: 'smooth'
+        });
+      }
+      return;
+    }
+
+
     if (demoCTAs.includes(ctaType)) {
       const formURL = getFormURL(currentLanguage);
       window.open(formURL, '_blank');
@@ -443,34 +484,12 @@ function App() {
       case 'drivers':
       case 'motoristas':
       case 'conductores':
-        return <DriversLandingPage currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />;
-      case 'home':
-      default:
-        return (
-          <>
-            <IOSBanner currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
-            <HeroSection currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
-            <LanguageStrip currentLanguage={currentLanguage} />
-            <ExploreWays currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
-            <LanguagePreview currentLanguage={currentLanguage} />
-            <Factuality currentLanguage={currentLanguage} />
-            <ProductHighlights currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
-            <TrustSection currentLanguage={currentLanguage} />
-            <CollaborateSection currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
-            <HowItWorksSection currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
-            <VideoTutorialsSection currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
-            <RoadmapSection currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
-            <ExpansionSection currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
-            <PrivacySection currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
-            {/* FAQ Section */}
-            <FAQSection currentLanguage={currentLanguage} />
-            {/* Final CTA Section */}
-            <FinalCTASection 
-              currentLanguage={currentLanguage}
-              onCTAClick={handleCTAClick}
-            />
-          </>
-        );
+        return <DriversLandingPage currentLanguage={currentLanguage as 'PT' | 'EN' | 'ES'} onCTAClick={handleCTAClick} />;
+        case 'home':
+        default:
+          return (
+            <HomeV2 currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
+          );
     }
   };
 

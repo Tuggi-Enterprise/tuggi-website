@@ -12,6 +12,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden; /* Prevent horizontal scroll */
   }
   
   /* Accessibility improvements */
@@ -32,6 +33,27 @@
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    /* Ensure touch targets are at least 44px */
+    button, a, input, select, textarea {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    
+    /* Improve text readability on mobile */
+    body {
+      font-size: 16px; /* Prevent zoom on iOS */
+      line-height: 1.5;
+    }
+    
+    /* Better spacing for mobile */
+    .container {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
   }
   
   .focus\:not-sr-only:focus {
@@ -452,7 +474,7 @@ html {
 
 /* Critical path CSS for above-the-fold content */
 .hero-section {
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
   background: linear-gradient(135deg, #f8fafc 0%, rgba(0, 168, 232, 0.05) 100%);

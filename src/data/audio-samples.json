@@ -1,0 +1,146 @@
+[
+  {
+    "id": "masp",
+    "city": "São Paulo",
+    "name": "Museu de Arte de São Paulo",
+    "image": "/places/masp.jpg",
+    "verified": true,
+    "audios": {
+      "PT": {
+        "url": "https://tysnkzmljlmmqpbotkxv.supabase.co/storage/v1/object/travel-app-audios/audio/1f6fac51-e8eb-4136-a1ec-954b952a9d05/narration-1f6fac51-e8eb-4136-a1ec-954b952a9d05-pt-br-1758060150166.mp3",
+        "duration": "2:30",
+        "description": "Conheça a história por trás do icônico edifício suspenso do MASP."
+      },
+      "EN": {
+        "url": "https://tysnkzmljlmmqpbotkxv.supabase.co/storage/v1/object/travel-app-audios/audio/1f6fac51-e8eb-4136-a1ec-954b952a9d05/1f6fac51-e8eb-4136-a1ec-954b952a9d05-en-us-male.mp3",
+        "duration": "2:25",
+        "description": "Discover the history behind the iconic suspended MASP building."
+      },
+      "ES": {
+        "url": "https://tysnkzmljlmmqpbotkxv.supabase.co/storage/v1/object/travel-app-audios/audio/1f6fac51-e8eb-4136-a1ec-954b952a9d05/1f6fac51-e8eb-4136-a1ec-954b952a9d05-es-es-male.mp3",
+        "duration": "2:35",
+        "description": "Descubre la historia detrás del icónico edificio suspendido del MASP."
+      }
+    }
+  },
+  {
+    "id": "cristo",
+    "city": "Rio de Janeiro",
+    "name": "Cristo Redentor",
+    "image": "/places/cristo-redentor.jpg",
+    "verified": true,
+    "audios": {
+      "PT": {
+        "url": "https://tysnkzmljlmmqpbotkxv.supabase.co/storage/v1/object/travel-app-audios/audio/ae3a6d91-feef-46f7-aae2-a34c3db12c04/narration-ae3a6d91-feef-46f7-aae2-a34c3db12c04-pt-br-1755603610849.mp3",
+        "duration": "3:15",
+        "description": "A fascinante história da construção de uma das 7 maravilhas do mundo."
+      },
+      "EN": {
+        "url": "https://tysnkzmljlmmqpbotkxv.supabase.co/storage/v1/object/travel-app-audios/audio/ae3a6d91-feef-46f7-aae2-a34c3db12c04/ae3a6d91-feef-46f7-aae2-a34c3db12c04-en-us-male.mp3",
+        "duration": "3:10",
+        "description": "The fascinating story behind the construction of one of the 7 wonders of the world."
+      },
+      "ES": {
+        "url": "https://tysnkzmljlmmqpbotkxv.supabase.co/storage/v1/object/travel-app-audios/audio/ae3a6d91-feef-46f7-aae2-a34c3db12c04/ae3a6d91-feef-46f7-aae2-a34c3db12c04-es-es-male.mp3",
+        "duration": "3:20",
+        "description": "La fascinante historia de la construcción de una de las 7 maravillas del mundo."
+      }
+    }
+  },
+  {
+    "id": "catedral-se",
+    "city": "São Paulo",
+    "name": "Catedral da Sé",
+    "image": "/places/catedral-da-se.jpg",
+    "verified": true,
+    "audios": {
+      "PT": {
+        "url": "https://tysnkzmljlmmqpbotkxv.supabase.co/storage/v1/object/travel-app-audios/audio/1d617b6d-c9f1-4d5c-9fd6-95722f3e2403/narration-1d617b6d-c9f1-4d5c-9fd6-95722f3e2403-pt-br-1753477380820.mp3",
+        "duration": "2:45",
+        "description": "Catedral da Sé, é a catedral da Arquidiocese de São Paulo"
+      },
+      "EN": {
+        "url": "https://tysnkzmljlmmqpbotkxv.supabase.co/storage/v1/object/travel-app-audios/audio/1d617b6d-c9f1-4d5c-9fd6-95722f3e2403/1d617b6d-c9f1-4d5c-9fd6-95722f3e2403-en-us-male.mp3",
+        "duration": "2:40",
+        "description": "Catedral da Sé, is the cathedral of the Archdiocese of São Paulo"
+      },
+      "ES": {
+        "url": "https://tysnkzmljlmmqpbotkxv.supabase.co/storage/v1/object/travel-app-audios/audio/1d617b6d-c9f1-4d5c-9fd6-95722f3e2403/1d617b6d-c9f1-4d5c-9fd6-95722f3e2403-es-es-male.mp3",
+        "duration": "2:50",
+        "description": "Catedral da Sé, es la catedral de la Arquidiócesis de São Paulo"
+      }
+    }
+  },
+  {
+    "id": "ibirapuera",
+    "city": "São Paulo",
+    "name": "Parque Ibirapuera",
+    "image": "/places/parque-ibirapuera.webp",
+    "verified": true,
+    "audios": {
+      "PT": {
+        "url": "https://tysnkzmljlmmqpbotkxv.supabase.co/storage/v1/object/travel-app-audios/audio/66e082b7-744a-4c93-8fbb-f039d3f34e64/narration-66e082b7-744a-4c93-8fbb-f039d3f34e64-pt-br-1758135717736.mp3",
+        "duration": "2:20",
+        "description": "O parque mais famoso de São Paulo e sua rica história cultural."
+      },
+      "EN": {
+        "url": "https://tysnkzmljlmmqpbotkxv.supabase.co/storage/v1/object/travel-app-audios/audio/66e082b7-744a-4c93-8fbb-f039d3f34e64/66e082b7-744a-4c93-8fbb-f039d3f34e64-en-us-male.mp3",
+        "duration": "2:15",
+        "description": "São Paulo's most famous park and its rich cultural history."
+      },
+      "ES": {
+        "url": "https://tysnkzmljlmmqpbotkxv.supabase.co/storage/v1/object/travel-app-audios/audio/66e082b7-744a-4c93-8fbb-f039d3f34e64/66e082b7-744a-4c93-8fbb-f039d3f34e64-es-es-male.mp3",
+        "duration": "2:25",
+        "description": "El parque más famoso de São Paulo y su rica historia cultural."
+      }
+    }
+  },
+  {
+    "id": "copacabana",
+    "city": "Rio de Janeiro",
+    "name": "Praia de Copacabana",
+    "image": "/places/praia-copacabana.webp",
+    "verified": true,
+    "audios": {
+      "PT": {
+        "url": "https://tysnkzmljlmmqpbotkxv.supabase.co/storage/v1/object/travel-app-audios/audio/e19ce4c7-b60e-4ec9-a458-ada29fe456bd/narration-e19ce4c7-b60e-4ec9-a458-ada29fe456bd-pt-br-1755608346104.mp3",
+        "duration": "2:55",
+        "description": "A história da praia mais famosa do mundo e seu calçadão icônico."
+      },
+      "EN": {
+        "url": "https://tysnkzmljlmmqpbotkxv.supabase.co/storage/v1/object/travel-app-audios/audio/e19ce4c7-b60e-4ec9-a458-ada29fe456bd/e19ce4c7-b60e-4ec9-a458-ada29fe456bd-en-us-male.mp3",
+        "duration": "2:50",
+        "description": "The history of the world's most famous beach and its iconic boardwalk."
+      },
+      "ES": {
+        "url": "https://tysnkzmljlmmqpbotkxv.supabase.co/storage/v1/object/travel-app-audios/audio/e19ce4c7-b60e-4ec9-a458-ada29fe456bd/e19ce4c7-b60e-4ec9-a458-ada29fe456bd-es-es-male.mp3",
+        "duration": "3:00",
+        "description": "La historia de la playa más famosa del mundo y su icónico paseo marítimo."
+      }
+    }
+  },
+  {
+    "id": "arcos-da-lapa",
+    "city": "Rio de Janeiro",
+    "name": "Arcos da Lapa",
+    "image": "/places/arcos-da-lapa.webp",
+    "verified": true,
+    "audios": {
+      "PT": {
+        "url": "https://tysnkzmljlmmqpbotkxv.supabase.co/storage/v1/object/travel-app-audios/audio/41c3761c-b64e-49be-a90b-07e524d1adeb/narration-41c3761c-b64e-49be-a90b-07e524d1adeb-pt-br-1755601177993.mp3",
+        "duration": "3:10",
+        "description": "Cartão postal da cidade do Rio de Janeiro, é um dos principais símbolos do Rio."
+      },
+      "EN": {
+        "url": "https://tysnkzmljlmmqpbotkxv.supabase.co/storage/v1/object/travel-app-audios/audio/41c3761c-b64e-49be-a90b-07e524d1adeb/41c3761c-b64e-49be-a90b-07e524d1adeb-en-us-male.mp3",
+        "duration": "3:05",
+        "description": "Postcard of the city of Rio de Janeiro, it is one of the main symbols of Rio."
+      },
+      "ES": {
+        "url": "https://tysnkzmljlmmqpbotkxv.supabase.co/storage/v1/object/travel-app-audios/audio/41c3761c-b64e-49be-a90b-07e524d1adeb/41c3761c-b64e-49be-a90b-07e524d1adeb-es-es-male.mp3",
+        "duration": "3:15",
+        "description": "Postal de la ciudad de Río de Janeiro, es uno de los principales símbolos de Río."
+      }
+    }
+  }
+]

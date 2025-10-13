@@ -5,13 +5,13 @@ export default {
     extend: {
       colors: {
         tuggi: {
-          // Primary Brand Colors (synced with design system)
-          primary: '#00A8E8',
-          'primary-dark': '#0088BB',
-          'primary-light': '#33B9ED',
-          secondary: '#FF6F00',
-          'secondary-dark': '#E55A00',
-          'secondary-light': '#FF8533',
+          // Primary Brand Colors (exact from briefing)
+          primary: '#00A8E8', // Azul Tuggi - confiança, tecnologia
+          'primary-dark': '#0088C7',
+          'primary-light': '#33B9EB',
+          secondary: '#FF6F00', // Laranja Tuggi - energia, descoberta
+          'secondary-dark': '#E55A2B',
+          'secondary-light': '#FF8A5C',
           
           // Semantic Colors (synced with design system)
           success: '#10B981',
@@ -27,16 +27,16 @@ export default {
           'info-light': '#60A5FA',
           'info-dark': '#2563EB',
           
-          // Neutral Colors (synced with design system)
+          // Neutral Colors (from briefing)
           neutral: {
-            50: '#F8FAFC',
+            50: '#F9FAFB', // Fundo neutro - leveza, foco no conteúdo
             100: '#F1F5F9',
-            200: '#E2E8F0',
+            200: '#E5E7EB', // Linhas/divisores - sutileza e estrutura
             300: '#CBD5E1',
             400: '#94A3B8',
-            500: '#64748B',
+            500: '#4B5563', // Texto secundário - neutralidade
             600: '#475569',
-            700: '#334155',
+            700: '#111827', // Texto principal - legibilidade
             800: '#1E293B',
             900: '#0F172A',
           },

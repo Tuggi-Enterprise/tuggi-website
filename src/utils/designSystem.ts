@@ -11,18 +11,18 @@
 // ============================================================================
 
 export const colors = {
-  // Primary Brand Colors
+  // Primary Brand Colors (exact from briefing)
   primary: {
-    main: '#00A8E8',
-    dark: '#0088BB',
-    light: '#33B9ED',
+    main: '#00A8E8', // Azul Tuggi - confiança, tecnologia
+    dark: '#0088C7',
+    light: '#33B9EB',
   },
   
-  // Secondary Brand Colors
+  // Secondary Brand Colors (exact from briefing)
   secondary: {
-    main: '#FF6F00',
-    dark: '#E55A00',
-    light: '#FF8533',
+    main: '#FF6F00', // Laranja Tuggi - energia, descoberta
+    dark: '#E55A2B',
+    light: '#FF8A5C',
   },
   
   // Semantic Colors
@@ -50,16 +50,16 @@ export const colors = {
     dark: '#2563EB',
   },
   
-  // Neutral Colors
+  // Neutral Colors (from briefing)
   neutral: {
-    50: '#F8FAFC',
+    50: '#F9FAFB', // Fundo neutro - leveza, foco no conteúdo
     100: '#F1F5F9',
-    200: '#E2E8F0',
+    200: '#E5E7EB', // Linhas/divisores - sutileza e estrutura
     300: '#CBD5E1',
     400: '#94A3B8',
-    500: '#64748B',
+    500: '#4B5563', // Texto secundário - neutralidade
     600: '#475569',
-    700: '#334155',
+    700: '#111827', // Texto principal - legibilidade
     800: '#1E293B',
     900: '#0F172A',
   },
