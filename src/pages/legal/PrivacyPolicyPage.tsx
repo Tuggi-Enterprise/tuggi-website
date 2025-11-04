@@ -1353,118 +1353,666 @@ When requesting to exercise rights, we may request identity verification to prot
         introduction: 'Esta Política de Privacidad describe cómo la aplicación Tuggi (Tuggi Drive y Tuggi Walk) y el sitio web tuggi.app recopilan, utilizan, almacenan, comparten y protegen los datos de los usuarios. Esta política cumple con la Ley General de Protección de Datos (LGPD) de Brasil y el Reglamento General de Protección de Datos (GDPR) de la Unión Europea.',
         sections: [
           {
-            title: '1. Información que recopilamos',
+            title: '1. Información que Recopilamos',
             subsections: [
               {
-                subtitle: 'a) Información de la cuenta',
-                content: `• Email (obligatorio, para login)
+                subtitle: '1.1 Información de la Cuenta y Autenticación',
+                content: `Tuggi Drive ofrece tres métodos de registro e inicio de sesión:
+
+**Registro con Email y Contraseña:**
+• Email (obligatorio, usado para login y comunicación)
+• Contraseña (almacenada de forma cifrada, nunca en texto plano)
 • Nombre completo (opcional, para personalización)
-• Apodo (opcional, para mostrar en la app)
 • Número de teléfono (opcional, para recuperación de cuenta)
-• Foto de perfil (opcional)`
+• Verificación de email obligatoria para activación de la cuenta
+
+**Google Sign-In:**
+• Integración con Google OAuth para autenticación
+• Email (proporcionado por Google)
+• Nombre (si se autoriza)
+• Foto de perfil (si se autoriza)
+• Tokens de autenticación gestionados por Google según su política de privacidad
+
+**Apple Sign-In:**
+• Integración nativa con Apple Authentication
+• Email (puede ser un email privado proporcionado por Apple para proteger tu privacidad)
+• Nombre (si se autoriza la primera vez)
+• Según la política de privacidad de Apple
+
+**Datos del Perfil Almacenados:**
+• Nombre completo (full_name)
+• Email (solo lectura después de crear la cuenta)
+• Teléfono (phone) - opcional
+• Apodo (nickname) - opcional
+• Avatar/foto de perfil (avatar_url) - opcional
+• ID único del usuario (UUID)
+• Fecha de creación de la cuenta
+• Última actualización del perfil`
               },
               {
-                subtitle: 'b) Datos de ubicación',
-                content: `• Ubicación en tiempo real durante el uso de la app
-• Seguimiento en segundo plano durante sesiones de navegación
-• Historial de rutas y puntos visitados
-• Calles, barrios y regiones accedidas para contexto cultural`
+                subtitle: '1.2 Datos de Ubicación',
+                content: `La recopilación de datos de ubicación es **esencial** para el funcionamiento de la aplicación. La app no funciona adecuadamente sin permiso de ubicación.
+
+**Permisos Solicitados:**
+• **Android:** ACCESS_FINE_LOCATION (GPS preciso), ACCESS_COARSE_LOCATION (ubicación aproximada), ACCESS_BACKGROUND_LOCATION (ubicación en segundo plano - opcional pero recomendado)
+• **iOS:** Ubicación mientras la app está abierta y en segundo plano durante sesiones de viaje
+
+**Datos de Ubicación Recopilados:**
+• Latitud y longitud (con precisión GPS)
+• Altitud
+• Heading (dirección del movimiento)
+• Velocidad
+• Precisión de la señal GPS
+• Timestamp de cada actualización
+• Estado de movimiento (parado/en movimiento)
+
+**Cuándo Recopilamos Ubicación:**
+• Durante sesiones activas de guía de viaje
+• En segundo plano cuando la app está ejecutándose durante un viaje
+• Para rastreo de ruta durante desplazamientos
+• Para detección automática de puntos de interés (POIs) cercanos
+• **NO recopilamos cuando la app está completamente cerrada** (a menos que hayas otorgado permiso de ubicación en segundo plano)
+
+**Almacenamiento de Datos de Ubicación:**
+• Los puntos de ubicación durante sesiones se almacenan en la tabla \`drive.route_trail\` vinculados a la sesión de viaje
+• Las sesiones completas de viaje se almacenan en la tabla \`drive.trip_sessions\`
+• Los datos están vinculados a tu usuario y protegidos por Row Level Security (RLS)`
               },
               {
-                subtitle: 'c) Información del dispositivo',
-                content: `• Modelo del dispositivo y sistema operativo
+                subtitle: '1.3 Información del Dispositivo',
+                content: `Recopilamos información técnica del dispositivo para optimización del servicio y resolución de problemas:
+
+**Identificadores:**
+• Device ID (identificador único del dispositivo)
+• Unique ID (identificador único de la instalación de la app)
+• FCM Token (para notificaciones push, si se permite)
+
+**Información de Hardware:**
+• Modelo del dispositivo (ej: iPhone 14, Samsung Galaxy S23)
+• Sistema operativo (iOS/Android)
+• Versión del OS (ej: iOS 17.0, Android 14)
 • Versión de la app
-• Identificadores anónimos para análisis (Firebase, Mixpanel)`
+• Build number
+• Nombre del dispositivo (si está disponible)
+
+**Información de Rendimiento:**
+• Memoria total del dispositivo (para optimización)
+• Capacidad de almacenamiento (para gestión de caché)`
               },
               {
-                subtitle: 'd) Datos de uso',
-                content: `• Eventos en la app (login, inicio/fin de ruta, reproducción de audio)
-• Duración y frecuencia de sesiones
-• Interacciones con funciones de la app
-• Comentarios enviados sobre puntos de interés`
+                subtitle: '1.4 Datos de Uso e Interacciones',
+                content: `Recopilamos información sobre cómo usas la aplicación:
+
+**Eventos de Sesión:**
+• Inicio y fin de sesiones de viaje
+• Duración de cada sesión
+• Modo de transporte utilizado (conduciendo, caminando, bicicleta, etc.)
+
+**Interacciones con POIs:**
+• POIs visitados/detectados durante viajes
+• Distancia de trigger de cada POI
+• Dirección del POI en relación al usuario (izquierda, derecha, frente, atrás)
+• Timestamp de cada detección
+• Reproducción de audio (inicio, duración, conclusión o interrupción)
+
+**Interacciones con Rutas:**
+• Rutas creadas y guardadas
+• POIs incluidos en cada ruta
+• Orden optimizado de los POIs
+• Distancia total estimada
+• Duración total estimada
+• Preferencias de ruta
+
+**Historial de Viajes:**
+• Historial completo de rutas y viajes realizados
+• Puntos visitados durante cada viaje
+• Ubicaciones iniciales y finales de cada sesión`
               },
               {
-                subtitle: 'e) Datos de audio',
-                content: `• Audio almacenado localmente para reproducción offline
-• Estadísticas de reproducción (duración, éxito/fallo)
-• Comandos de voz (cuando se usan, no se almacenan)`
+                subtitle: '1.5 Datos de Audio y Narraciones',
+                content: `**Preferencias de Audio:**
+• Idioma de audio preferido (pt-BR, en, es)
+• Voz preferida (masculina/femenina)
+• Velocidad de TTS (text-to-speech)
+
+**Estadísticas de Reproducción:**
+• Duración de audios reproducidos
+• Tasa de conclusión (audio escuchado hasta el final o interrumpido)
+• Idioma de audio seleccionado para cada POI
+
+**Caché Local de Audio:**
+• Archivos de audio descargados localmente para reproducción offline
+• Metadatos de caché (URLs, timestamps, tamaños)
+• **Nota:** Los audios se almacenan localmente en el dispositivo, no se envían a nuestros servidores`
+              },
+              {
+                subtitle: '1.6 Datos de Configuraciones y Preferencias',
+                content: `Almacenamos tus preferencias y configuraciones:
+
+**Preferencias de Guía:**
+• Radio de trigger (100m, 200m o 500m)
+• Privacidad predeterminada de POI (privado/público)
+• Permiso de compartir listas
+
+**Preferencias de Notificaciones:**
+• Estado de permiso de notificaciones push
+• Preferencias de tipos de notificación (si está configurado)`
               }
             ]
           },
           {
-            title: '2. Cómo utilizamos tus datos',
+            title: '2. Cómo Utilizamos Tus Datos',
             subsections: [
               {
-                subtitle: 'Para funcionamiento de la app',
-                content: `• Activar narraciones automáticas por ubicación
-• Permitir navegación contextual y en segundo plano
-• Ofrecer contenido personalizado durante el viaje`
+                subtitle: '2.1 Para Funcionamiento del Servicio',
+                content: `Utilizamos tus datos para proporcionar los servicios principales de la aplicación:
+
+• **Detección Automática de POIs:** Utilizamos tu ubicación en tiempo real para detectar cuando te acercas a puntos de interés y reproducir narraciones automáticamente
+• **Generación de Rutas:** Creamos rutas personalizadas conectando múltiples POIs basado en tu ubicación y preferencias
+• **Historial de Viajes:** Almacenamos tu historial para que puedas acceder a rutas y viajes anteriores
+• **Funcionalidad Offline:** El caché local permite que uses la app incluso sin conexión a internet
+• **Autenticación:** Gestionamos tu cuenta y autenticación para acceso seguro al servicio`
               },
               {
-                subtitle: 'Para mejorar el servicio',
-                content: `• Analizar uso de la app y comportamiento de usuarios
-• Mejorar el sistema de ubicación y activación de puntos
-• Optimizar caché de audio y rendimiento general`
+                subtitle: '2.2 Para Mejorar el Servicio',
+                content: `Utilizamos datos agregados y anonimizados para mejorar continuamente la aplicación:
+
+• **Análisis de Uso:** Analizamos patrones de uso para identificar problemas y oportunidades de mejora
+• **Optimización de Rendimiento:** Utilizamos información del dispositivo para optimizar el rendimiento de la app
+• **Mejora de Ubicación:** Mejoramos la precisión de la detección de POIs basado en datos de uso
+• **Optimización de Caché:** Gestionamos eficientemente el caché de audios y POIs para mejor experiencia
+• **Resolución de Problemas:** Utilizamos datos de crash y errores para identificar y corregir bugs`
               },
               {
-                subtitle: 'Para soporte y experiencia',
-                content: `• Personalizar la interfaz con apodos y fotos
-• Enviar notificaciones sobre atracciones cercanas
-• Atender solicitudes y dudas de usuarios`
+                subtitle: '2.3 Para Personalización',
+                content: `Personalizamos tu experiencia con base en tus preferencias:
+
+• **Interfaz Personalizada:** Utilizamos tu nombre, apodo y foto de perfil para personalizar la interfaz
+• **Contenido Relevante:** Ofrecemos contenido y rutas basadas en tus preferencias e historial
+• **Configuraciones de Audio:** Aplicamos tus preferencias de idioma, voz y velocidad de narración
+• **Notificaciones Personalizadas:** Enviamos notificaciones relevantes sobre atracciones cercanas (si se permite)`
+              },
+              {
+                subtitle: '2.4 Para Comunicación y Soporte',
+                content: `Utilizamos tus datos de contacto para:
+
+• **Verificación de Cuenta:** Enviamos emails de verificación durante el registro
+• **Recuperación de Cuenta:** Permite recuperación de contraseña vía email
+• **Soporte al Cliente:** Respondemos tus solicitudes y dudas
+• **Comunicaciones Importantes:** Notificamos sobre cambios significativos en la política o términos de uso`
               }
             ]
           },
           {
-            title: '3. Dónde se almacenan tus datos',
-            content: `• Supabase: datos de cuenta y ubicación (con seguridad y RLS)
-• Firebase / Mixpanel: datos analíticos y eventos de uso
-• Dispositivo del usuario: caché local de audio y datos temporales
-• Biometría (si está activada): almacenada en el sistema de seguridad del dispositivo (keychain/secure enclave)`
-          },
-          {
-            title: '4. Compartir datos',
-            content: `• **No vendemos ni compartimos tus datos con terceros**
-• Los datos se utilizan solo para operación y mejora del servicio`
-          },
-          {
-            title: '5. Permisos solicitados',
-            content: `• **Ubicación (obligatorio)** – para detectar tu posición y activar audio
-• **Audio (obligatorio)** – para reproducción de narraciones
-• **Notificaciones (opcional)** – para alertas sobre atracciones
-• **Biometría (opcional)** – para login más seguro
-• **Cámara (futuro)** – para foto de perfil, si se desea`
-          },
-          {
-            title: '6. Tus derechos',
-            content: `Puedes en cualquier momento:
+            title: '3. Compartimiento de Datos con Terceros',
+            subsections: [
+              {
+                subtitle: '3.1 Proveedores de Servicios Esenciales',
+                content: `Compartimos datos con proveedores de servicios que nos ayudan a operar la aplicación:
 
-• Solicitar eliminación de la cuenta y datos asociados
-• Desactivar permisos en tu dispositivo
-• Corregir información personal en tu perfil
-• Solicitar información sobre datos almacenados
+**Supabase (Backend as a Service):**
+• **Datos compartidos:** Todos los datos del usuario (perfil, ubicación, rutas, viajes, preferencias)
+• **Finalidad:** Almacenamiento seguro de datos, autenticación, APIs y sincronización entre dispositivos
+• **Seguridad:** Datos protegidos por Row Level Security (RLS) y cifrado
+• **Ubicación:** Los servidores pueden estar ubicados fuera de Brasil, según política de Supabase
+• **Política de Privacidad:** https://supabase.com/privacy
 
-Para esto, contáctanos:
-**contato@tuggi.app**`
+**Firebase (Google):**
+• **Firebase Analytics:** Datos de uso y eventos anonimizados para análisis
+• **Firebase Crashlytics:** Informes de crash y errores (sin información personal identificable)
+• **Firebase Cloud Messaging (FCM):** Tokens FCM para envío de notificaciones push
+• **Datos compartidos:** Eventos de uso, datos de crash, tokens FCM, información del dispositivo (anonimizados cuando es posible)
+• **Finalidad:** Analytics, resolución de problemas, notificaciones push
+• **Ubicación:** Servidores Google (principalmente EE.UU.)
+• **Política de Privacidad:** https://policies.google.com/privacy
+
+**Google Maps SDK:**
+• **Datos compartidos:** Ubicación, rutas, POIs (según política de Google)
+• **Finalidad:** Renderización de mapas, geocodificación, servicios de navegación
+• **Política de Privacidad:** https://policies.google.com/privacy
+
+**Google OAuth / Apple Sign-In:**
+• **Datos compartidos:** Email, nombre (si se autoriza), foto de perfil (si se autoriza)
+• **Finalidad:** Autenticación de usuario
+• **Política de Privacidad Google:** https://policies.google.com/privacy
+• **Política de Privacidad Apple:** https://www.apple.com/privacy/`
+              },
+              {
+                subtitle: '3.2 Compartimiento No Permitido',
+                content: `**NO vendemos, alquilamos o comercializamos tus datos personales** a terceros para fines de marketing o publicidad.
+
+**NO compartimos tus datos con:**
+• Empresas de publicidad para marketing dirigido
+• Corredores de datos
+• Otros servicios que no sean esenciales para el funcionamiento de la app`
+              },
+              {
+                subtitle: '3.3 Requisitos Legales',
+                content: `Podemos compartir tus datos cuando lo exija la ley:
+
+• En respuesta a procesos legales válidos (órdenes judiciales, órdenes de tribunales)
+• Para cumplir obligaciones legales
+• Para proteger derechos, propiedad o seguridad nuestra, de nuestros usuarios o del público
+• En caso de fusión, adquisición o venta de activos (con notificación previa)`
+              }
+            ]
           },
           {
-            title: '7. Seguridad',
-            content: `Adoptamos prácticas modernas de seguridad, incluyendo:
+            title: '4. Almacenamiento de Datos',
+            subsections: [
+              {
+                subtitle: '4.1 Almacenamiento en el Servidor (Supabase)',
+                content: `Tus datos se almacenan de forma segura en Supabase:
 
-• Cifrado de datos en tránsito
-• Acceso restringido con autenticación segura
-• Almacenamiento seguro con control de acceso (Supabase RLS)`
+**Tablas y Datos Almacenados:**
+• **drive.profiles:** Datos del perfil, preferencias de audio y configuraciones (retención: mientras la cuenta exista)
+• **drive.user_route_history:** Historial de rutas guardadas (retención: mientras la cuenta exista o hasta que elimines)
+• **drive.route_pois:** POIs detallados de cada ruta guardada (retención: vinculado a la ruta)
+• **drive.trip_sessions:** Sesiones de viaje completas (retención: mientras la cuenta exista o hasta que elimines)
+• **drive.trip_session_attractions:** POIs visitados durante viajes (retención: vinculado a la sesión)
+• **drive.route_trail:** Puntos de ubicación durante sesiones (retención: vinculado a la sesión)
+• **drive.fcm_tokens:** Tokens FCM para push notifications (retención: mientras la app esté instalada)
+• **drive.data_deletion_requests:** Logs de solicitudes de eliminación (retención: para auditoría, según regulación)
+
+**Seguridad:**
+• Todos los datos protegidos por Row Level Security (RLS)
+• Solo tú puedes acceder a tus propios datos
+• Cifrado en tránsito (HTTPS/TLS)
+• Cifrado en reposo según estándares de Supabase`
+              },
+              {
+                subtitle: '4.2 Almacenamiento Local (Dispositivo)',
+                content: `Datos almacenados localmente en tu dispositivo:
+
+**SQLite (Caché):**
+• Caché de POIs (retención: 5 días, limpieza automática)
+• Caché de audios (retención: 7 días, limpieza automática)
+• Metadatos de caché (URLs, timestamps, tamaños)
+
+**AsyncStorage:**
+• Caché temporal de datos (retención: 1 minuto)
+• Preferencias locales temporales
+
+**Sistema de Archivos:**
+• Archivos de audio descargados
+• **Ubicación iOS:** \`Documents/audio/\` (sandbox de la app)
+• **Ubicación Android:** \`DocumentDirectory/audio/\` (almacenamiento interno de la app)
+
+**Limpieza Automática:**
+• El caché expirado se elimina automáticamente
+• Limpieza semanal de archivos huérfanos
+• Todos los datos locales se eliminan al desinstalar la app`
+              }
+            ]
           },
           {
-            title: '8. Actualizaciones en esta política',
-            content: `Podemos actualizar esta Política periódicamente.
-Los cambios relevantes serán comunicados por la app o email.
-Al continuar usando la app, aceptas los términos actualizados.`
+            title: '5. Permisos Solicitados',
+            subsections: [
+              {
+                subtitle: '5.1 Permisos Obligatorios',
+                content: `**Ubicación (CRÍTICA - Obligatoria):**
+La app **no funciona adecuadamente** sin permiso de ubicación.
+
+• **Android:** ACCESS_FINE_LOCATION (GPS preciso), ACCESS_COARSE_LOCATION (ubicación aproximada), ACCESS_BACKGROUND_LOCATION (opcional pero recomendado para funcionamiento durante viajes)
+• **iOS:** Ubicación mientras la app está abierta y en segundo plano durante sesiones de viaje
+• **Finalidad:** Detección automática de POIs, rastreo de ruta, cálculo de distancias, funcionamiento del guía de viaje
+• **Cuándo se usa:** Durante sesiones activas de guía y en segundo plano durante viajes
+
+**Audio (Obligatoria):**
+• **Android:** Permisos para reproducir audio y ajustar volumen
+• **iOS:** Permisos automáticos para reproducción de audio
+• **Finalidad:** Reproducción de narraciones de POIs, control de audio durante navegación, integración con sistemas de coche (CarPlay)`
+              },
+              {
+                subtitle: '5.2 Permisos Opcionales',
+                content: `**Notificaciones Push (Opcional):**
+• **Finalidad:** Notificaciones sobre POIs cercanos, actualizaciones de la app, recordatorios y recomendaciones
+• **Control:** Puedes activar/desactivar en la configuración del dispositivo en cualquier momento
+• **Datos recopilados:** FCM Token, estado de permiso, preferencias de notificación
+
+**Biometría (Opcional):**
+• **Finalidad:** Login más seguro y conveniente
+• **Almacenamiento:** Almacenado en el sistema de seguridad del dispositivo (keychain/secure enclave), nunca en nuestros servidores
+• **Control:** Puedes activar/desactivar en la configuración de la app
+
+**Cámara (Futuro - Opcional):**
+• **Finalidad:** Para tomar foto de perfil, si se desea
+• **Control:** Solo se solicitará cuando optes por usar esta funcionalidad`
+              },
+              {
+                subtitle: '5.3 Control de Permisos',
+                content: `Tienes control total sobre los permisos:
+
+• Puedes revocar cualquier permiso en cualquier momento en la configuración del dispositivo
+• Algunas funcionalidades pueden no funcionar sin permisos necesarios
+• La app solicitará permisos cuando sea necesario y explicará el motivo
+• Puedes negar permisos opcionales sin afectar el uso básico de la app (excepto ubicación, que es esencial)`
+              }
+            ]
           },
           {
-            title: '9. Dudas',
-            content: `Si tienes alguna duda sobre nuestra Política de Privacidad, contáctanos:
+            title: '6. Analytics y Rastreo',
+            subsections: [
+              {
+                subtitle: '6.1 Firebase Analytics',
+                content: `Utilizamos Firebase Analytics (Google Analytics) para entender cómo se usa la app y mejorarla:
 
-**contato@tuggi.app**`
+**Eventos Rastreados:**
+• **Eventos de Sesión:** Inicio/fin de viaje, visualización de pantallas
+• **Eventos de POI:** POI detectado, inicio/conclusión de reproducción de audio
+• **Eventos de Autenticación:** Login, logout, intentos de login/registro
+• **Eventos de Interacción:** Clics en botones, visualizaciones de pantallas
+
+**Datos Recopilados con Eventos:**
+• User ID (anonimizado cuando es posible)
+• Session ID
+• Timestamps
+• Datos de ubicación (latitud, longitud, precisión) - anonimizados
+• Información de POI (ID, nombre, categoría) - anonimizada
+• Métricas de rendimiento (tiempo de respuesta, tasa de cache hit)
+
+**Anonimización:**
+• Los datos se anonimizan cuando es posible
+• No recopilamos información personal identificable a través del Analytics
+• Los datos se agregan para análisis estadístico
+
+**Desactivación:**
+• Analytics es necesario para funcionalidad y mejora del servicio
+• Los datos se tratan según política de Google Analytics
+• Retención: Generalmente 14 meses (política predeterminada de Google Analytics)`
+              },
+              {
+                subtitle: '6.2 Firebase Crashlytics',
+                content: `Utilizamos Firebase Crashlytics para identificar y corregir problemas técnicos:
+
+**Datos Recopilados:**
+• Stack traces de errores
+• Información del dispositivo (modelo, OS, versión de la app) - anonimizada
+• Estado de la app en el momento del crash
+• Logs de error (sin información personal identificable)
+
+**No Incluye:**
+• Información personal identificable
+• Datos de ubicación (excepto si es necesario para debug del error específico)
+• Datos sensibles del usuario
+
+**Finalidad:**
+• Identificar bugs y crashes
+• Mejorar estabilidad de la app
+• Resolver problemas técnicos rápidamente`
+              },
+              {
+                subtitle: '6.3 Firebase Cloud Messaging (FCM)',
+                content: `Utilizamos FCM para enviar notificaciones push:
+
+**Datos Recopilados:**
+• FCM Token (identificador único del dispositivo para push)
+• Estado de permiso de notificaciones
+• Preferencias de notificación del usuario
+
+**Almacenamiento:**
+• Tokens almacenados en la tabla \`drive.fcm_tokens\` vinculados al usuario
+• Removidos cuando desinstalas la app o revocas permisos
+
+**Finalidad:**
+• Enviar notificaciones sobre POIs cercanos
+• Actualizaciones de la app
+• Recordatorios y recomendaciones (si se permite)`
+              }
+            ]
+          },
+          {
+            title: '7. Seguridad de los Datos',
+            subsections: [
+              {
+                subtitle: '7.1 Medidas de Seguridad Implementadas',
+                content: `Implementamos medidas de seguridad robustas para proteger tus datos:
+
+**Autenticación:**
+• Contraseñas hashadas (nunca almacenadas en texto plano)
+• Tokens JWT para autenticación segura
+• OAuth seguro para Google/Apple Sign-In
+• Autenticación biométrica opcional (almacenada en el dispositivo)
+
+**Cifrado:**
+• Comunicación HTTPS/TLS con servidores
+• Datos sensibles cifrados en tránsito
+• Almacenamiento seguro en Supabase (según estándares de seguridad)
+• Cifrado en reposo según estándares de Supabase
+
+**Row Level Security (RLS):**
+• Los usuarios solo pueden acceder a sus propios datos
+• Políticas RLS en Supabase para todas las tablas
+• Verificación de autenticación en todas las queries
+• Aislamiento completo de datos entre usuarios
+
+**Almacenamiento Local:**
+• Datos locales almacenados en el sandbox de la app
+• No accesibles por otras apps
+• Limpieza automática al desinstalar
+• El caché expira automáticamente después del período definido`
+              },
+              {
+                subtitle: '7.2 Protección Contra Acceso No Autorizado',
+                content: `• Monitorización continua de seguridad
+• Acceso restringido solo a empleados autorizados
+• Auditorías regulares de seguridad
+• Respuesta rápida a incidentes de seguridad`
+              }
+            ]
+          },
+          {
+            title: '8. Tus Derechos (LGPD/GDPR)',
+            subsections: [
+              {
+                subtitle: '8.1 Derecho de Acceso',
+                content: `Tienes derecho a acceder a todos tus datos personales:
+
+• Visualizar todos los datos del perfil en la pantalla de Profile de la app
+• Acceder al historial de rutas y viajes en la app
+• Solicitar información detallada sobre datos almacenados vía **contato@tuggi.app**`
+              },
+              {
+                subtitle: '8.2 Derecho de Rectificación',
+                content: `Puedes corregir tus datos en cualquier momento:
+
+• Editar perfil (nombre, teléfono, nickname) directamente en la app
+• Actualizar preferencias de audio y configuraciones
+• Solicitar corrección de datos incorrectos vía **contato@tuggi.app**`
+              },
+              {
+                subtitle: '8.3 Derecho de Eliminación',
+                content: `Puedes solicitar la eliminación completa de tu cuenta y datos:
+
+• **Eliminación disponible en la app:** Accede a la configuración y selecciona "Eliminar Cuenta"
+• **Lo que se elimina:**
+  - Todos los datos del perfil
+  - Historial de rutas y viajes
+  - Preferencias y configuraciones
+  - Datos de autenticación de Supabase Auth
+  - Caché local del dispositivo
+• **Tiempo de procesamiento:** Generalmente en hasta 30 días
+• **Excepciones:** Algunos datos pueden mantenerse según obligaciones legales (logs de auditoría)`
+              },
+              {
+                subtitle: '8.4 Derecho de Portabilidad',
+                content: `Puedes solicitar una copia de tus datos en formato estructurado:
+
+• Solicita vía **contato@tuggi.app**
+• Los datos se exportarán en formato JSON
+• Incluye todos los datos del perfil, rutas, viajes y preferencias
+• Procesamiento en hasta 30 días`
+              },
+              {
+                subtitle: '8.5 Derecho de Revocación de Consentimiento',
+                content: `Puedes revocar consentimientos en cualquier momento:
+
+• **Permisos de Ubicación:** Revoca en la configuración del dispositivo (puede afectar funcionalidad de la app)
+• **Notificaciones Push:** Desactiva en la configuración del dispositivo
+• **Analytics:** Contacta vía **contato@tuggi.app** (algunas funcionalidades pueden verse afectadas)
+• **Eliminación de Cuenta:** Elimina todos los consentimientos y datos`
+              },
+              {
+                subtitle: '8.6 Derecho de Oposición al Procesamiento',
+                content: `Puedes oponerte al procesamiento de tus datos:
+
+• Solicita parada de procesamiento vía **contato@tuggi.app**
+• Algunas funcionalidades pueden no estar disponibles
+• La eliminación de cuenta elimina todos los procesamientos`
+              }
+            ]
+          },
+          {
+            title: '9. Retención de Datos',
+            content: `**Datos del Perfil:**
+• Retenidos mientras tu cuenta exista
+• Eliminados inmediatamente al eliminar cuenta
+
+**Historial de Rutas y Viajes:**
+• Retenidos mientras la cuenta exista
+• Pueden ser eliminados individualmente por ti
+• Eliminados al eliminar cuenta
+
+**Datos de Ubicación:**
+• Retenidos durante sesión de viaje
+• Vinculados al historial de viaje
+• Eliminados cuando la sesión de viaje es eliminada
+
+**Caché Local:**
+• POIs: 5 días (limpieza automática)
+• Audios: 7 días (limpieza automática)
+• Limpieza semanal de archivos huérfanos
+
+**Datos de Analytics:**
+• Retenidos según política de Firebase Analytics
+• Generalmente 14 meses (política predeterminada de Google Analytics)
+
+**Logs de Eliminación:**
+• Retenidos para fines de auditoría
+• Período según regulación aplicable (LGPD, GDPR)`
+          },
+          {
+            title: '10. Transferencia Internacional de Datos',
+            content: `Tus datos pueden ser transferidos y procesados fuera de Brasil:
+
+**Supabase:**
+• Los servidores pueden estar ubicados fuera de Brasil
+• Conformidad con estándares de seguridad internacionales
+• Política de privacidad: https://supabase.com/privacy
+
+**Firebase (Google):**
+• Servidores ubicados globalmente (principalmente EE.UU.)
+• Datos de analytics transferidos a servidores Google
+• Conformidad con estándares de seguridad de Google
+• Política de privacidad: https://policies.google.com/privacy
+
+**Google Maps:**
+• Los servicios de mapas pueden procesar datos en servidores globales
+• Conformidad con política de privacidad de Google
+
+**Protecciones:**
+• Utilizamos solo proveedores que garantizan protecciones adecuadas
+• Cláusulas contractuales estándar (Standard Contractual Clauses - SCCs) cuando sea aplicable
+• Conformidad con GDPR para transferencias a UE`
+          },
+          {
+            title: '11. Notificaciones Push',
+            content: `Si optas por recibir notificaciones push:
+
+**Tipos de Notificaciones:**
+• Notificaciones sobre POIs cercanos (cuando se implemente)
+• Actualizaciones de la app
+• Recordatorios y recomendaciones
+
+**Control:**
+• Puedes activar/desactivar en la configuración del dispositivo en cualquier momento
+• Las preferencias de notificación pueden gestionarse en la app (si se implementa)
+
+**Datos Utilizados:**
+• FCM Token (identificador único del dispositivo)
+• Estado de permiso
+• Tu ubicación (solo para notificaciones sobre POIs cercanos, si se permite)
+
+**Revocación:**
+• Puedes revocar permiso de notificaciones en la configuración del dispositivo
+• Inmediatamente efectivo`
+          },
+          {
+            title: '12. Conformidad Regulatoria',
+            content: `Estamos en conformidad con:
+
+**LGPD (Ley General de Protección de Datos - Brasil):**
+• Consentimiento explícito para recopilación de datos
+• Derecho de acceso, corrección y eliminación
+• Portabilidad de datos
+• Sistema de eliminación de datos implementado
+• Transparencia sobre recopilación y uso de datos
+
+**GDPR (Reglamento General de Protección de Datos - Europa):**
+• Base legal para procesamiento de datos
+• Derechos de los titulares de datos
+• Sistema de eliminación de datos
+• Protección de datos de transferencia internacional
+• Notificación de violaciones de datos (si es aplicable)
+
+**COPPA (Children's Online Privacy Protection Act - EE.UU.):**
+• La app no está dirigida a niños menores de 13 años
+• No recopilamos datos de niños sin consentimiento parental
+
+**Política de Privacidad de Niños:**
+• Si tienes menos de 13 años (o edad mínima en tu país), no uses esta app sin consentimiento parental
+• Contáctanos si tienes dudas sobre protección de datos de niños`
+          },
+          {
+            title: '13. Cookies y Tecnologías Similares',
+            content: `**Sitio Web (tuggi.app):**
+El sitio web puede utilizar cookies y tecnologías similares. Consulta nuestra Política de Cookies para más detalles.
+
+**Aplicación:**
+La aplicación no utiliza cookies en el sentido tradicional. Utilizamos:
+• Caché local (SQLite, AsyncStorage) para funcionalidad offline
+• Tokens de autenticación para sesiones
+• FCM Tokens para notificaciones push
+
+Estos datos se almacenan localmente en el dispositivo y no son cookies rastreables.`
+          },
+          {
+            title: '14. Actualizaciones en Esta Política',
+            content: `Podemos actualizar esta Política de Privacidad periódicamente para reflejar cambios en nuestros servicios o prácticas legales.
+
+**Notificaciones:**
+• Los cambios significativos serán comunicados a través de la app o email
+• La fecha de última actualización siempre visible en la parte superior de esta política
+• Serás notificado sobre cambios importantes antes de que entren en vigor
+
+**Continuidad:**
+• Al continuar usando la app después de cambios, aceptas los términos actualizados
+• Si no estás de acuerdo con los cambios, puedes eliminar tu cuenta en cualquier momento
+
+**Historial:**
+• Las versiones anteriores de esta política pueden solicitarse vía **contato@tuggi.app**`
+          },
+          {
+            title: '15. Contacto y Dudas',
+            content: `Si tienes alguna duda sobre nuestra Política de Privacidad o deseas ejercer tus derechos, contáctanos:
+
+**Email General:**
+**contato@tuggi.app**
+
+**Para Cuestiones de Privacidad:**
+**contato@tuggi.app** (asunto: "Privacidad")
+
+**Para Ejercer Derechos (LGPD/GDPR):**
+**contato@tuggi.app** (asunto: "Derechos de Datos")
+
+**Sitio Web:**
+https://www.tuggi.app/es/privacy-policy
+
+**Tiempo de Respuesta:**
+Respondemos solicitudes relacionadas con derechos de datos en hasta 30 días, según lo exigido por LGPD y GDPR.
+
+**Identificación:**
+Al solicitar ejercer derechos, podemos solicitar verificación de identidad para proteger tus datos.`
           }
         ]
       }
