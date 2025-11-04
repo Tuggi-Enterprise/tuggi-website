@@ -12,7 +12,7 @@ const TermsOfUsePage: React.FC<TermsOfUsePageProps> = ({ currentLanguage = 'PT' 
       PT: {
         title: 'Termos de Uso',
         lastUpdated: 'Última atualização: Janeiro 2025',
-        introduction: 'Estes Termos de Uso descrevem as condições para uso do aplicativo Tuggi (Tuggi Drive e Tuggi Walk) e do site oficial tuggi.app. Ao criar uma conta, instalar, acessar ou utilizar nossos serviços, você concorda expressamente com estes termos. Se você não concordar com estes termos, não utilize nossos serviços.',
+        introduction: 'Estes Termos de Uso descrevem as condições para uso do aplicativo Tuggi e do site oficial tuggi.app. Ao criar uma conta, instalar, acessar ou utilizar nossos serviços, você concorda expressamente com estes termos. Se você não concordar com estes termos, não utilize nossos serviços.',
         sections: [
           {
             title: '1. Aceitação dos Termos',
@@ -128,9 +128,9 @@ Você pode revogar permissões opcionais a qualquer momento nas configurações 
                 subtitle: '4.3 Dados de Terceiros',
                 content: `O app utiliza serviços de terceiros que podem coletar dados:
 
-• **Google Maps SDK:** Utilizado para renderização de mapas e serviços de geocodificação. O uso do Google Maps está sujeito aos Termos de Serviço do Google.
-• **Firebase (Google):** Utilizado para analytics, crash reporting e notificações push, conforme nossa Política de Privacidade.
-• **Supabase:** Utilizado para armazenamento de dados e autenticação, conforme nossa Política de Privacidade.
+• **Serviço de Mapas:** Utilizado para renderização de mapas e serviços de geocodificação. O uso está sujeito aos termos de serviço do provedor.
+• **Serviços de Analytics e Monitoramento:** Utilizados para analytics, crash reporting e notificações push, conforme nossa Política de Privacidade.
+• **Provedor de Backend:** Utilizado para armazenamento de dados e autenticação, conforme nossa Política de Privacidade.
 
 Ao usar o app, você também concorda com os termos de serviço desses provedores quando aplicável. Consulte nossa [Política de Privacidade](/privacy) para detalhes sobre como tratamos seus dados.`
               }
@@ -314,7 +314,7 @@ Respondemos em até 30 dias úteis.`
       EN: {
         title: 'Terms of Use',
         lastUpdated: 'Last updated: January 2025',
-        introduction: 'These Terms of Use describe the conditions for using the Tuggi application (Tuggi Drive and Tuggi Walk) and the official website tuggi.app. By creating an account, installing, accessing, or using our services, you expressly agree to these terms. If you do not agree with these terms, do not use our services.',
+        introduction: 'These Terms of Use describe the conditions for using the Tuggi application and the official website tuggi.app. By creating an account, installing, accessing, or using our services, you expressly agree to these terms. If you do not agree with these terms, do not use our services.',
         sections: [
           {
             title: '1. Acceptance of Terms',
@@ -430,9 +430,9 @@ You can revoke optional permissions at any time in device settings, but this may
                 subtitle: '4.3 Third-Party Data',
                 content: `The app uses third-party services that may collect data:
 
-• **Google Maps SDK:** Used for map rendering and geocoding services. Use of Google Maps is subject to Google's Terms of Service.
-• **Firebase (Google):** Used for analytics, crash reporting, and push notifications, per our Privacy Policy.
-• **Supabase:** Used for data storage and authentication, per our Privacy Policy.
+• **Maps Service:** Used for map rendering and geocoding services. Use is subject to the provider's terms of service.
+• **Analytics and Monitoring Services:** Used for analytics, crash reporting, and push notifications, per our Privacy Policy.
+• **Backend Provider:** Used for data storage and authentication, per our Privacy Policy.
 
 By using the app, you also agree to these providers' terms of service when applicable. See our [Privacy Policy](/privacy) for details on how we handle your data.`
               }
@@ -616,7 +616,7 @@ We respond within 30 business days.`
       ES: {
         title: 'Términos de Uso',
         lastUpdated: 'Última actualización: Enero 2025',
-        introduction: 'Estos Términos de Uso describen las condiciones para el uso de la aplicación Tuggi (Tuggi Drive y Tuggi Walk) y el sitio web oficial tuggi.app. Al crear una cuenta, instalar, acceder o utilizar nuestros servicios, aceptas expresamente estos términos. Si no estás de acuerdo con estos términos, no utilices nuestros servicios.',
+        introduction: 'Estos Términos de Uso describen las condiciones para el uso de la aplicación Tuggi y el sitio web oficial tuggi.app. Al crear una cuenta, instalar, acceder o utilizar nuestros servicios, aceptas expresamente estos términos. Si no estás de acuerdo con estos términos, no utilices nuestros servicios.',
         sections: [
           {
             title: '1. Aceptación de los Términos',
@@ -732,9 +732,9 @@ Puedes revocar permisos opcionales en cualquier momento en la configuración del
                 subtitle: '4.3 Datos de Terceros',
                 content: `La app utiliza servicios de terceros que pueden recopilar datos:
 
-• **Google Maps SDK:** Utilizado para renderización de mapas y servicios de geocodificación. El uso de Google Maps está sujeto a los Términos de Servicio de Google.
-• **Firebase (Google):** Utilizado para analytics, crash reporting y notificaciones push, conforme nuestra Política de Privacidad.
-• **Supabase:** Utilizado para almacenamiento de datos y autenticación, conforme nuestra Política de Privacidad.
+• **Servicio de Mapas:** Utilizado para renderización de mapas y servicios de geocodificación. El uso está sujeto a los términos de servicio del proveedor.
+• **Servicios de Analytics y Monitoreo:** Utilizados para analytics, crash reporting y notificaciones push, conforme nuestra Política de Privacidad.
+• **Proveedor de Backend:** Utilizado para almacenamiento de datos y autenticación, conforme nuestra Política de Privacidad.
 
 Al usar la app, también aceptas los términos de servicio de estos proveedores cuando sea aplicable. Consulta nuestra [Política de Privacidad](/privacy) para detalles sobre cómo tratamos tus datos.`
               }

@@ -12,7 +12,7 @@ const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ currentLanguage =
       PT: {
         title: 'Política de Privacidade',
         lastUpdated: 'Última atualização: Janeiro 2025',
-        introduction: 'Esta Política de Privacidade descreve como o aplicativo Tuggi (Tuggi Drive e Tuggi Walk) e o site tuggi.app coletam, utilizam, armazenam, compartilham e protegem os dados dos usuários. Esta política está em conformidade com a Lei Geral de Proteção de Dados (LGPD) do Brasil e o Regulamento Geral sobre a Proteção de Dados (GDPR) da União Europeia.',
+        introduction: 'Esta Política de Privacidade descreve como o aplicativo Tuggi e o site tuggi.app coletam, utilizam, armazenam, compartilham e protegem os dados dos usuários. Esta política está em conformidade com a Lei Geral de Proteção de Dados (LGPD) do Brasil e o Regulamento Geral sobre a Proteção de Dados (GDPR) da União Europeia.',
         sections: [
           {
             title: '1. Informações que Coletamos',
@@ -28,18 +28,18 @@ const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ currentLanguage =
 • Número de telefone (opcional, para recuperação de conta)
 • Verificação de e-mail obrigatória para ativação da conta
 
-**Google Sign-In:**
-• Integração com Google OAuth para autenticação
-• E-mail (fornecido pelo Google)
+**Autenticação Social (Google):**
+• Integração com serviço de autenticação de terceiros
+• E-mail (fornecido pelo provedor)
 • Nome (se autorizado)
 • Foto de perfil (se autorizado)
-• Tokens de autenticação gerenciados pelo Google conforme sua política de privacidade
+• Tokens de autenticação gerenciados pelo provedor conforme sua política de privacidade
 
-**Apple Sign-In:**
-• Integração nativa com Apple Authentication
-• E-mail (pode ser um e-mail privado fornecido pela Apple para proteger sua privacidade)
+**Autenticação Social (Apple):**
+• Integração nativa com serviço de autenticação
+• E-mail (pode ser um e-mail privado fornecido pelo provedor para proteger sua privacidade)
 • Nome (se autorizado na primeira vez)
-• Conforme política de privacidade da Apple
+• Conforme política de privacidade do provedor
 
 **Dados do Perfil Armazenados:**
 • Nome completo (full_name)
@@ -76,8 +76,8 @@ const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ currentLanguage =
 • **NÃO coletamos quando o app está completamente fechado** (a menos que você tenha concedido permissão de localização em background)
 
 **Armazenamento de Dados de Localização:**
-• Pontos de localização durante sessões são armazenados na tabela \`drive.route_trail\` vinculados à sessão de viagem
-• Sessões completas de viagem são armazenadas na tabela \`drive.trip_sessions\`
+• Pontos de localização durante sessões são armazenados vinculados à sessão de viagem
+• Sessões completas de viagem são armazenadas de forma segura
 • Dados são vinculados ao seu usuário e protegidos por Row Level Security (RLS)`
               },
               {
@@ -87,7 +87,7 @@ const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ currentLanguage =
 **Identificadores:**
 • Device ID (identificador único do dispositivo)
 • Unique ID (identificador único da instalação do app)
-• FCM Token (para notificações push, se permitido)
+• Token de notificação push (para notificações, se permitido)
 
 **Informações de Hardware:**
 • Modelo do dispositivo (ex: iPhone 14, Samsung Galaxy S23)
@@ -212,32 +212,31 @@ const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ currentLanguage =
                 subtitle: '3.1 Provedores de Serviços Essenciais',
                 content: `Compartilhamos dados com provedores de serviços que nos ajudam a operar o aplicativo:
 
-**Supabase (Backend as a Service):**
+**Provedor de Backend e Armazenamento:**
 • **Dados compartilhados:** Todos os dados do usuário (perfil, localização, rotas, viagens, preferências)
 • **Finalidade:** Armazenamento seguro de dados, autenticação, APIs e sincronização entre dispositivos
 • **Segurança:** Dados protegidos por Row Level Security (RLS) e criptografia
-• **Localização:** Servidores podem estar localizados fora do Brasil, conforme política do Supabase
-• **Política de Privacidade:** https://supabase.com/privacy
+• **Localização:** Servidores podem estar localizados fora do Brasil
+• **Política de Privacidade:** Disponível nas políticas do provedor de serviços
 
-**Firebase (Google):**
-• **Firebase Analytics:** Dados de uso e eventos anonimizados para análise
-• **Firebase Crashlytics:** Relatórios de crash e erros (sem informações pessoais identificáveis)
-• **Firebase Cloud Messaging (FCM):** Tokens FCM para envio de notificações push
-• **Dados compartilhados:** Eventos de uso, dados de crash, tokens FCM, informações do dispositivo (anonimizados quando possível)
+**Serviços de Analytics e Monitoramento:**
+• **Analytics:** Dados de uso e eventos anonimizados para análise
+• **Crash Reporting:** Relatórios de crash e erros (sem informações pessoais identificáveis)
+• **Notificações Push:** Tokens para envio de notificações push
+• **Dados compartilhados:** Eventos de uso, dados de crash, tokens de notificação, informações do dispositivo (anonimizados quando possível)
 • **Finalidade:** Analytics, resolução de problemas, notificações push
-• **Localização:** Servidores Google (principalmente EUA)
-• **Política de Privacidade:** https://policies.google.com/privacy
+• **Localização:** Servidores podem estar localizados fora do Brasil (principalmente EUA)
+• **Política de Privacidade:** Disponível nas políticas do provedor de serviços
 
-**Google Maps SDK:**
-• **Dados compartilhados:** Localização, rotas, POIs (conforme política do Google)
+**Serviço de Mapas:**
+• **Dados compartilhados:** Localização, rotas, POIs (conforme política do provedor)
 • **Finalidade:** Renderização de mapas, geocodificação, serviços de navegação
-• **Política de Privacidade:** https://policies.google.com/privacy
+• **Política de Privacidade:** Disponível nas políticas do provedor de serviços
 
-**Google OAuth / Apple Sign-In:**
+**Provedores de Autenticação Social:**
 • **Dados compartilhados:** Email, nome (se autorizado), foto de perfil (se autorizado)
 • **Finalidade:** Autenticação de usuário
-• **Política de Privacidade Google:** https://policies.google.com/privacy
-• **Política de Privacidade Apple:** https://www.apple.com/privacy/`
+• **Política de Privacidade:** Disponível nas políticas de cada provedor de autenticação`
               },
               {
                 subtitle: '3.2 Compartilhamento Não Permitido',
@@ -263,42 +262,42 @@ const PrivacyPolicyPage: React.FC<PrivacyPolicyPageProps> = ({ currentLanguage =
             title: '4. Armazenamento de Dados',
             subsections: [
               {
-                subtitle: '4.1 Armazenamento no Servidor (Supabase)',
-                content: `Seus dados são armazenados de forma segura no Supabase:
+                subtitle: '4.1 Armazenamento no Servidor',
+                content: `Seus dados são armazenados de forma segura em servidores protegidos:
 
-**Tabelas e Dados Armazenados:**
-• **drive.profiles:** Dados do perfil, preferências de áudio e configurações (retenção: enquanto conta existir)
-• **drive.user_route_history:** Histórico de rotas salvas (retenção: enquanto conta existir ou até você deletar)
-• **drive.route_pois:** POIs detalhados de cada rota salva (retenção: vinculado à rota)
-• **drive.trip_sessions:** Sessões de viagem completas (retenção: enquanto conta existir ou até você deletar)
-• **drive.trip_session_attractions:** POIs visitados durante viagens (retenção: vinculado à sessão)
-• **drive.route_trail:** Pontos de localização durante sessões (retenção: vinculado à sessão)
-• **drive.fcm_tokens:** Tokens FCM para push notifications (retenção: enquanto app estiver instalado)
-• **drive.data_deletion_requests:** Logs de solicitações de exclusão (retenção: para auditoria, conforme regulamentação)
+**Tipos de Dados Armazenados:**
+• **Dados do Perfil:** Informações da conta, preferências de áudio e configurações (retenção: enquanto conta existir)
+• **Histórico de Rotas:** Rotas salvas e seus detalhes (retenção: enquanto conta existir ou até você deletar)
+• **Sessões de Viagem:** Dados completos de cada viagem realizada (retenção: enquanto conta existir ou até você deletar)
+• **Pontos Visitados:** POIs visitados durante viagens (retenção: vinculado à sessão de viagem)
+• **Dados de Localização:** Pontos de localização registrados durante sessões ativas (retenção: vinculado à sessão)
+• **Tokens de Notificação:** Tokens para push notifications (retenção: enquanto app estiver instalado)
+• **Logs de Auditoria:** Registros de solicitações de exclusão e ações administrativas (retenção: para auditoria, conforme regulamentação)
 
 **Segurança:**
 • Todos os dados protegidos por Row Level Security (RLS)
 • Apenas você pode acessar seus próprios dados
 • Criptografia em trânsito (HTTPS/TLS)
-• Criptografia em repouso conforme padrões do Supabase`
+• Criptografia em repouso conforme padrões de segurança
+• Estrutura de banco de dados protegida e não acessível publicamente`
               },
               {
                 subtitle: '4.2 Armazenamento Local (Dispositivo)',
                 content: `Dados armazenados localmente no seu dispositivo:
 
-**SQLite (Cache):**
+**Banco de Dados Local (Cache):**
 • Cache de POIs (retenção: 5 dias, limpeza automática)
 • Cache de áudios (retenção: 7 dias, limpeza automática)
 • Metadados de cache (URLs, timestamps, tamanhos)
 
-**AsyncStorage:**
+**Armazenamento Temporário:**
 • Cache temporário de dados (retenção: 1 minuto)
 • Preferências locais temporárias
 
-**File System:**
-• Arquivos de áudio baixados
-• **Localização iOS:** \`Documents/audio/\` (sandbox do app)
-• **Localização Android:** \`DocumentDirectory/audio/\` (armazenamento interno do app)
+**Arquivos Locais:**
+• Arquivos de áudio baixados para reprodução offline
+• Armazenados no sandbox seguro do app (área isolada do sistema operacional)
+• Não acessíveis por outros apps ou usuários do dispositivo
 
 **Limpeza Automática:**
 • Cache expirado é removido automaticamente
@@ -330,7 +329,7 @@ O app **não funciona adequadamente** sem permissão de localização.
                 content: `**Notificações Push (Opcional):**
 • **Finalidade:** Notificações sobre POIs próximos, atualizações do app, lembretes e recomendações
 • **Controle:** Você pode ativar/desativar nas configurações do dispositivo a qualquer momento
-• **Dados coletados:** FCM Token, status de permissão, preferências de notificação
+• **Dados coletados:** Token de notificação, status de permissão, preferências de notificação
 
 **Biometria (Opcional):**
 • **Finalidade:** Login mais seguro e conveniente
@@ -356,8 +355,8 @@ O app **não funciona adequadamente** sem permissão de localização.
             title: '6. Analytics e Rastreamento',
             subsections: [
               {
-                subtitle: '6.1 Firebase Analytics',
-                content: `Utilizamos Firebase Analytics (Google Analytics) para entender como o app é usado e melhorá-lo:
+                subtitle: '6.1 Analytics e Análise de Uso',
+                content: `Utilizamos serviços de analytics para entender como o app é usado e melhorá-lo:
 
 **Eventos Rastreados:**
 • **Eventos de Sessão:** Início/fim de viagem, visualização de telas
@@ -380,12 +379,12 @@ O app **não funciona adequadamente** sem permissão de localização.
 
 **Desativação:**
 • Analytics é necessário para funcionalidade e melhoria do serviço
-• Dados são tratados conforme política do Google Analytics
-• Retenção: Geralmente 14 meses (política padrão do Google Analytics)`
+• Dados são tratados conforme política do provedor de serviços
+• Retenção: Geralmente 14 meses (política padrão do provedor)`
               },
               {
-                subtitle: '6.2 Firebase Crashlytics',
-                content: `Utilizamos Firebase Crashlytics para identificar e corrigir problemas técnicos:
+                subtitle: '6.2 Relatórios de Erro e Crash',
+                content: `Utilizamos serviços de relatório de erros para identificar e corrigir problemas técnicos:
 
 **Dados Coletados:**
 • Stack traces de erros
@@ -404,16 +403,16 @@ O app **não funciona adequadamente** sem permissão de localização.
 • Resolver problemas técnicos rapidamente`
               },
               {
-                subtitle: '6.3 Firebase Cloud Messaging (FCM)',
-                content: `Utilizamos FCM para enviar notificações push:
+                subtitle: '6.3 Notificações Push',
+                content: `Utilizamos serviços de notificações push para enviar notificações:
 
 **Dados Coletados:**
-• FCM Token (identificador único do dispositivo para push)
+• Token de notificação (identificador único do dispositivo para push)
 • Status de permissão de notificações
 • Preferências de notificação do usuário
 
 **Armazenamento:**
-• Tokens armazenados na tabela \`drive.fcm_tokens\` vinculados ao usuário
+• Tokens armazenados de forma segura vinculados ao usuário
 • Removidos quando você desinstala o app ou revoga permissões
 
 **Finalidade:**
@@ -432,19 +431,19 @@ O app **não funciona adequadamente** sem permissão de localização.
 
 **Autenticação:**
 • Senhas hashadas (nunca armazenadas em texto plano)
-• Tokens JWT para autenticação segura
-• OAuth seguro para Google/Apple Sign-In
+• Tokens de autenticação segura
+• Autenticação social segura (Google/Apple)
 • Autenticação biométrica opcional (armazenada no dispositivo)
 
 **Criptografia:**
 • Comunicação HTTPS/TLS com servidores
 • Dados sensíveis criptografados em trânsito
-• Armazenamento seguro no Supabase (conforme padrões de segurança)
-• Criptografia em repouso conforme padrões do Supabase
+• Armazenamento seguro em servidores protegidos (conforme padrões de segurança)
+• Criptografia em repouso conforme padrões de segurança
 
 **Row Level Security (RLS):**
 • Usuários só podem acessar seus próprios dados
-• Políticas RLS no Supabase para todas as tabelas
+• Políticas de segurança de acesso (RLS) para todas as tabelas
 • Verificação de autenticação em todas as queries
 • Isolamento completo de dados entre usuários
 
@@ -491,7 +490,7 @@ O app **não funciona adequadamente** sem permissão de localização.
   - Todos os dados do perfil
   - Histórico de rotas e viagens
   - Preferências e configurações
-  - Dados de autenticação do Supabase Auth
+  - Dados de autenticação do sistema
   - Cache local do dispositivo
 • **Tempo de processamento:** Geralmente em até 30 dias
 • **Exceções:** Alguns dados podem ser mantidos conforme obrigações legais (logs de auditoria)`
@@ -546,8 +545,8 @@ O app **não funciona adequadamente** sem permissão de localização.
 • Limpeza semanal de arquivos órfãos
 
 **Dados de Analytics:**
-• Retidos conforme política do Firebase Analytics
-• Geralmente 14 meses (política padrão do Google Analytics)
+• Retidos conforme política do provedor de serviços
+• Geralmente 14 meses (política padrão do provedor)
 
 **Logs de Exclusão:**
 • Retidos para fins de auditoria
@@ -557,20 +556,20 @@ O app **não funciona adequadamente** sem permissão de localização.
             title: '10. Transferência Internacional de Dados',
             content: `Seus dados podem ser transferidos e processados fora do Brasil:
 
-**Supabase:**
+**Provedor de Backend e Armazenamento:**
 • Servidores podem estar localizados fora do Brasil
 • Conformidade com padrões de segurança internacionais
-• Política de privacidade: https://supabase.com/privacy
+• Política de privacidade disponível nas políticas do provedor
 
-**Firebase (Google):**
+**Provedor de Analytics e Monitoramento:**
 • Servidores localizados globalmente (principalmente EUA)
-• Dados de analytics transferidos para servidores Google
-• Conformidade com padrões de segurança do Google
-• Política de privacidade: https://policies.google.com/privacy
+• Dados de analytics transferidos para servidores do provedor
+• Conformidade com padrões de segurança do provedor
+• Política de privacidade disponível nas políticas do provedor
 
-**Google Maps:**
+**Provedor de Serviços de Mapas:**
 • Serviços de mapas podem processar dados em servidores globais
-• Conformidade com política de privacidade do Google
+• Conformidade com política de privacidade do provedor
 
 **Proteções:**
 • Utilizamos apenas provedores que garantem proteções adequadas
@@ -591,7 +590,7 @@ O app **não funciona adequadamente** sem permissão de localização.
 • Preferências de notificação podem ser gerenciadas no app (se implementado)
 
 **Dados Utilizados:**
-• FCM Token (identificador único do dispositivo)
+• Token de notificação (identificador único do dispositivo)
 • Status de permissão
 • Sua localização (apenas para notificações sobre POIs próximos, se permitido)
 
@@ -632,9 +631,9 @@ O site pode utilizar cookies e tecnologias similares. Consulte nossa Política d
 
 **Aplicativo:**
 O aplicativo não utiliza cookies no sentido tradicional. Utilizamos:
-• Cache local (SQLite, AsyncStorage) para funcionalidade offline
+• Cache local (banco de dados local) para funcionalidade offline
 • Tokens de autenticação para sessões
-• FCM Tokens para notificações push
+• Tokens de notificação para push notifications
 
 Esses dados são armazenados localmente no dispositivo e não são cookies rastreáveis.`
           },
@@ -681,7 +680,7 @@ Ao solicitar exercício de direitos, podemos solicitar verificação de identida
       EN: {
         title: 'Privacy Policy',
         lastUpdated: 'Last updated: January 2025',
-        introduction: 'This Privacy Policy describes how the Tuggi application (Tuggi Drive and Tuggi Walk) and the tuggi.app website collect, use, store, share, and protect user data. This policy is compliant with the General Data Protection Law (LGPD) of Brazil and the General Data Protection Regulation (GDPR) of the European Union.',
+        introduction: 'This Privacy Policy describes how the Tuggi application  and the tuggi.app website collect, use, store, share, and protect user data. This policy is compliant with the General Data Protection Law (LGPD) of Brazil and the General Data Protection Regulation (GDPR) of the European Union.',
         sections: [
           {
             title: '1. Information We Collect',
@@ -697,18 +696,18 @@ Ao solicitar exercício de direitos, podemos solicitar verificação de identida
 • Phone number (optional, for account recovery)
 • Email verification required for account activation
 
-**Google Sign-In:**
-• Integration with Google OAuth for authentication
-• Email (provided by Google)
+**Social Authentication (Google):**
+• Integration with third-party authentication service
+• Email (provided by the provider)
 • Name (if authorized)
 • Profile photo (if authorized)
-• Authentication tokens managed by Google per their privacy policy
+• Authentication tokens managed by the provider per their privacy policy
 
-**Apple Sign-In:**
-• Native integration with Apple Authentication
-• Email (may be a private email provided by Apple to protect your privacy)
+**Social Authentication (Apple):**
+• Native integration with authentication service
+• Email (may be a private email provided by the provider to protect your privacy)
 • Name (if authorized the first time)
-• Per Apple's privacy policy
+• Per provider's privacy policy
 
 **Stored Profile Data:**
 • Full name (full_name)
@@ -745,8 +744,8 @@ Ao solicitar exercício de direitos, podemos solicitar verificação de identida
 • **We do NOT collect when the app is completely closed** (unless you have granted background location permission)
 
 **Location Data Storage:**
-• Location points during sessions are stored in the \`drive.route_trail\` table linked to the travel session
-• Complete travel sessions are stored in the \`drive.trip_sessions\` table
+• Location points during sessions are stored linked to the travel session
+• Complete travel sessions are stored securely
 • Data is linked to your user and protected by Row Level Security (RLS)`
               },
               {
@@ -756,7 +755,7 @@ Ao solicitar exercício de direitos, podemos solicitar verificação de identida
 **Identifiers:**
 • Device ID (unique device identifier)
 • Unique ID (unique app installation identifier)
-• FCM Token (for push notifications, if permitted)
+• Push notification token (for notifications, if permitted)
 
 **Hardware Information:**
 • Device model (e.g., iPhone 14, Samsung Galaxy S23)
@@ -881,32 +880,31 @@ Ao solicitar exercício de direitos, podemos solicitar verificação de identida
                 subtitle: '3.1 Essential Service Providers',
                 content: `We share data with service providers that help us operate the application:
 
-**Supabase (Backend as a Service):**
+**Backend and Storage Provider:**
 • **Data shared:** All user data (profile, location, routes, trips, preferences)
 • **Purpose:** Secure data storage, authentication, APIs, and device synchronization
 • **Security:** Data protected by Row Level Security (RLS) and encryption
-• **Location:** Servers may be located outside Brazil, per Supabase policy
-• **Privacy Policy:** https://supabase.com/privacy
+• **Location:** Servers may be located outside Brazil
+• **Privacy Policy:** Available in provider's service policies
 
-**Firebase (Google):**
-• **Firebase Analytics:** Anonymized usage and event data for analysis
-• **Firebase Crashlytics:** Crash and error reports (without personally identifiable information)
-• **Firebase Cloud Messaging (FCM):** FCM tokens for push notifications
-• **Data shared:** Usage events, crash data, FCM tokens, device information (anonymized when possible)
+**Analytics and Monitoring Services:**
+• **Analytics:** Anonymized usage and event data for analysis
+• **Crash Reporting:** Crash and error reports (without personally identifiable information)
+• **Push Notifications:** Tokens for push notifications
+• **Data shared:** Usage events, crash data, notification tokens, device information (anonymized when possible)
 • **Purpose:** Analytics, problem resolution, push notifications
-• **Location:** Google servers (primarily USA)
-• **Privacy Policy:** https://policies.google.com/privacy
+• **Location:** Servers may be located outside Brazil (primarily USA)
+• **Privacy Policy:** Available in provider's service policies
 
-**Google Maps SDK:**
-• **Data shared:** Location, routes, POIs (per Google policy)
+**Maps Service:**
+• **Data shared:** Location, routes, POIs (per provider policy)
 • **Purpose:** Map rendering, geocoding, navigation services
-• **Privacy Policy:** https://policies.google.com/privacy
+• **Privacy Policy:** Available in provider's service policies
 
-**Google OAuth / Apple Sign-In:**
+**Social Authentication Providers:**
 • **Data shared:** Email, name (if authorized), profile photo (if authorized)
 • **Purpose:** User authentication
-• **Google Privacy Policy:** https://policies.google.com/privacy
-• **Apple Privacy Policy:** https://www.apple.com/privacy/`
+• **Privacy Policy:** Available in each authentication provider's policies`
               },
               {
                 subtitle: '3.2 Sharing Not Permitted',
@@ -932,42 +930,42 @@ Ao solicitar exercício de direitos, podemos solicitar verificação de identida
             title: '4. Data Storage',
             subsections: [
               {
-                subtitle: '4.1 Server Storage (Supabase)',
-                content: `Your data is stored securely on Supabase:
+                subtitle: '4.1 Server Storage',
+                content: `Your data is stored securely on protected servers:
 
-**Tables and Stored Data:**
-• **drive.profiles:** Profile data, audio preferences and settings (retention: while account exists)
-• **drive.user_route_history:** Saved route history (retention: while account exists or until you delete)
-• **drive.route_pois:** Detailed POIs of each saved route (retention: linked to route)
-• **drive.trip_sessions:** Complete travel sessions (retention: while account exists or until you delete)
-• **drive.trip_session_attractions:** POIs visited during trips (retention: linked to session)
-• **drive.route_trail:** Location points during sessions (retention: linked to session)
-• **drive.fcm_tokens:** FCM tokens for push notifications (retention: while app is installed)
-• **drive.data_deletion_requests:** Data deletion request logs (retention: for audit, per regulations)
+**Types of Stored Data:**
+• **Profile Data:** Account information, audio preferences and settings (retention: while account exists)
+• **Route History:** Saved routes and their details (retention: while account exists or until you delete)
+• **Travel Sessions:** Complete data of each trip taken (retention: while account exists or until you delete)
+• **Visited Points:** POIs visited during trips (retention: linked to travel session)
+• **Location Data:** Location points recorded during active sessions (retention: linked to session)
+• **Notification Tokens:** Tokens for push notifications (retention: while app is installed)
+• **Audit Logs:** Records of deletion requests and administrative actions (retention: for audit, per regulations)
 
 **Security:**
 • All data protected by Row Level Security (RLS)
 • Only you can access your own data
 • Encryption in transit (HTTPS/TLS)
-• Encryption at rest per Supabase standards`
+• Encryption at rest per security standards
+• Database structure protected and not publicly accessible`
               },
               {
                 subtitle: '4.2 Local Storage (Device)',
                 content: `Data stored locally on your device:
 
-**SQLite (Cache):**
+**Local Database (Cache):**
 • POI cache (retention: 5 days, automatic cleanup)
 • Audio cache (retention: 7 days, automatic cleanup)
 • Cache metadata (URLs, timestamps, sizes)
 
-**AsyncStorage:**
+**Temporary Storage:**
 • Temporary data cache (retention: 1 minute)
 • Temporary local preferences
 
-**File System:**
-• Downloaded audio files
-• **iOS Location:** \`Documents/audio/\` (app sandbox)
-• **Android Location:** \`DocumentDirectory/audio/\` (app internal storage)
+**Local Files:**
+• Downloaded audio files for offline playback
+• Stored in the app's secure sandbox (isolated area of the operating system)
+• Not accessible by other apps or device users
 
 **Automatic Cleanup:**
 • Expired cache is automatically removed
@@ -999,7 +997,7 @@ The app **does not work properly** without location permission.
                 content: `**Push Notifications (Optional):**
 • **Purpose:** Notifications about nearby POIs, app updates, reminders and recommendations
 • **Control:** You can enable/disable in device settings at any time
-• **Data collected:** FCM Token, permission status, notification preferences
+• **Data collected:** Notification token, permission status, notification preferences
 
 **Biometrics (Optional):**
 • **Purpose:** More secure and convenient login
@@ -1025,8 +1023,8 @@ The app **does not work properly** without location permission.
             title: '6. Analytics and Tracking',
             subsections: [
               {
-                subtitle: '6.1 Firebase Analytics',
-                content: `We use Firebase Analytics (Google Analytics) to understand how the app is used and improve it:
+                subtitle: '6.1 Analytics and Usage Analysis',
+                content: `We use analytics services to understand how the app is used and improve it:
 
 **Tracked Events:**
 • **Session Events:** Trip start/end, screen views
@@ -1049,12 +1047,12 @@ The app **does not work properly** without location permission.
 
 **Deactivation:**
 • Analytics is necessary for functionality and service improvement
-• Data is handled per Google Analytics policy
-• Retention: Generally 14 months (default Google Analytics policy)`
+• Data is handled per provider's service policy
+• Retention: Generally 14 months (default provider policy)`
               },
               {
-                subtitle: '6.2 Firebase Crashlytics',
-                content: `We use Firebase Crashlytics to identify and fix technical problems:
+                subtitle: '6.2 Error and Crash Reports',
+                content: `We use error reporting services to identify and fix technical problems:
 
 **Data Collected:**
 • Error stack traces
@@ -1073,16 +1071,16 @@ The app **does not work properly** without location permission.
 • Resolve technical problems quickly`
               },
               {
-                subtitle: '6.3 Firebase Cloud Messaging (FCM)',
-                content: `We use FCM to send push notifications:
+                subtitle: '6.3 Push Notifications',
+                content: `We use push notification services to send notifications:
 
 **Data Collected:**
-• FCM Token (unique device identifier for push)
+• Notification token (unique device identifier for push)
 • Notification permission status
 • User notification preferences
 
 **Storage:**
-• Tokens stored in \`drive.fcm_tokens\` table linked to user
+• Tokens stored securely linked to user
 • Removed when you uninstall the app or revoke permissions
 
 **Purpose:**
@@ -1101,19 +1099,19 @@ The app **does not work properly** without location permission.
 
 **Authentication:**
 • Hashed passwords (never stored in plain text)
-• JWT tokens for secure authentication
-• Secure OAuth for Google/Apple Sign-In
+• Secure authentication tokens
+• Secure social authentication (Google/Apple)
 • Optional biometric authentication (stored on device)
 
 **Encryption:**
 • HTTPS/TLS communication with servers
 • Sensitive data encrypted in transit
-• Secure storage on Supabase (per security standards)
-• Encryption at rest per Supabase standards
+• Secure storage on protected servers (per security standards)
+• Encryption at rest per security standards
 
 **Row Level Security (RLS):**
 • Users can only access their own data
-• RLS policies on Supabase for all tables
+• Security access policies (RLS) for all tables
 • Authentication verification on all queries
 • Complete data isolation between users
 
@@ -1160,7 +1158,7 @@ The app **does not work properly** without location permission.
   - All profile data
   - Route and trip history
   - Preferences and settings
-  - Supabase Auth authentication data
+  - System authentication data
   - Local device cache
 • **Processing time:** Generally within 30 days
 • **Exceptions:** Some data may be retained per legal obligations (audit logs)`
@@ -1215,8 +1213,8 @@ The app **does not work properly** without location permission.
 • Weekly cleanup of orphaned files
 
 **Analytics Data:**
-• Retained per Firebase Analytics policy
-• Generally 14 months (default Google Analytics policy)
+• Retained per provider's service policy
+• Generally 14 months (default provider policy)
 
 **Deletion Logs:**
 • Retained for audit purposes
@@ -1226,20 +1224,20 @@ The app **does not work properly** without location permission.
             title: '10. International Data Transfers',
             content: `Your data may be transferred and processed outside Brazil:
 
-**Supabase:**
+**Backend and Storage Provider:**
 • Servers may be located outside Brazil
 • Compliance with international security standards
-• Privacy policy: https://supabase.com/privacy
+• Privacy policy available in provider's service policies
 
-**Firebase (Google):**
+**Analytics and Monitoring Provider:**
 • Servers located globally (primarily USA)
-• Analytics data transferred to Google servers
-• Compliance with Google security standards
-• Privacy policy: https://policies.google.com/privacy
+• Analytics data transferred to provider servers
+• Compliance with provider security standards
+• Privacy policy available in provider's service policies
 
-**Google Maps:**
+**Maps Service Provider:**
 • Map services may process data on global servers
-• Compliance with Google privacy policy
+• Compliance with provider privacy policy
 
 **Protections:**
 • We only use providers that guarantee adequate protections
@@ -1260,7 +1258,7 @@ The app **does not work properly** without location permission.
 • Notification preferences can be managed in the app (if implemented)
 
 **Data Used:**
-• FCM Token (unique device identifier)
+• Notification token (unique device identifier)
 • Permission status
 • Your location (only for notifications about nearby POIs, if permitted)
 
@@ -1301,9 +1299,9 @@ The website may use cookies and similar technologies. See our Cookie Policy for 
 
 **Application:**
 The application does not use cookies in the traditional sense. We use:
-• Local cache (SQLite, AsyncStorage) for offline functionality
+• Local cache (local database) for offline functionality
 • Authentication tokens for sessions
-• FCM Tokens for push notifications
+• Notification tokens for push notifications
 
 This data is stored locally on the device and is not trackable cookies.`
           },
@@ -1350,7 +1348,7 @@ When requesting to exercise rights, we may request identity verification to prot
       ES: {
         title: 'Política de Privacidad',
         lastUpdated: 'Última actualización: Enero 2025',
-        introduction: 'Esta Política de Privacidad describe cómo la aplicación Tuggi (Tuggi Drive y Tuggi Walk) y el sitio web tuggi.app recopilan, utilizan, almacenan, comparten y protegen los datos de los usuarios. Esta política cumple con la Ley General de Protección de Datos (LGPD) de Brasil y el Reglamento General de Protección de Datos (GDPR) de la Unión Europea.',
+        introduction: 'Esta Política de Privacidad describe cómo la aplicación Tuggi y el sitio web tuggi.app recopilan, utilizan, almacenan, comparten y protegen los datos de los usuarios. Esta política cumple con la Ley General de Protección de Datos (LGPD) de Brasil y el Reglamento General de Protección de Datos (GDPR) de la Unión Europea.',
         sections: [
           {
             title: '1. Información que Recopilamos',
@@ -1366,18 +1364,18 @@ When requesting to exercise rights, we may request identity verification to prot
 • Número de teléfono (opcional, para recuperación de cuenta)
 • Verificación de email obligatoria para activación de la cuenta
 
-**Google Sign-In:**
-• Integración con Google OAuth para autenticación
-• Email (proporcionado por Google)
+**Autenticación Social (Google):**
+• Integración con servicio de autenticación de terceros
+• Email (proporcionado por el proveedor)
 • Nombre (si se autoriza)
 • Foto de perfil (si se autoriza)
-• Tokens de autenticación gestionados por Google según su política de privacidad
+• Tokens de autenticación gestionados por el proveedor según su política de privacidad
 
-**Apple Sign-In:**
-• Integración nativa con Apple Authentication
-• Email (puede ser un email privado proporcionado por Apple para proteger tu privacidad)
+**Autenticación Social (Apple):**
+• Integración nativa con servicio de autenticación
+• Email (puede ser un email privado proporcionado por el proveedor para proteger tu privacidad)
 • Nombre (si se autoriza la primera vez)
-• Según la política de privacidad de Apple
+• Según la política de privacidad del proveedor
 
 **Datos del Perfil Almacenados:**
 • Nombre completo (full_name)
@@ -1414,8 +1412,8 @@ When requesting to exercise rights, we may request identity verification to prot
 • **NO recopilamos cuando la app está completamente cerrada** (a menos que hayas otorgado permiso de ubicación en segundo plano)
 
 **Almacenamiento de Datos de Ubicación:**
-• Los puntos de ubicación durante sesiones se almacenan en la tabla \`drive.route_trail\` vinculados a la sesión de viaje
-• Las sesiones completas de viaje se almacenan en la tabla \`drive.trip_sessions\`
+• Los puntos de ubicación durante sesiones se almacenan vinculados a la sesión de viaje
+• Las sesiones completas de viaje se almacenan de forma segura
 • Los datos están vinculados a tu usuario y protegidos por Row Level Security (RLS)`
               },
               {
@@ -1425,7 +1423,7 @@ When requesting to exercise rights, we may request identity verification to prot
 **Identificadores:**
 • Device ID (identificador único del dispositivo)
 • Unique ID (identificador único de la instalación de la app)
-• FCM Token (para notificaciones push, si se permite)
+• Token de notificación push (para notificaciones, si se permite)
 
 **Información de Hardware:**
 • Modelo del dispositivo (ej: iPhone 14, Samsung Galaxy S23)
@@ -1550,32 +1548,31 @@ When requesting to exercise rights, we may request identity verification to prot
                 subtitle: '3.1 Proveedores de Servicios Esenciales',
                 content: `Compartimos datos con proveedores de servicios que nos ayudan a operar la aplicación:
 
-**Supabase (Backend as a Service):**
+**Proveedor de Backend y Almacenamiento:**
 • **Datos compartidos:** Todos los datos del usuario (perfil, ubicación, rutas, viajes, preferencias)
 • **Finalidad:** Almacenamiento seguro de datos, autenticación, APIs y sincronización entre dispositivos
 • **Seguridad:** Datos protegidos por Row Level Security (RLS) y cifrado
-• **Ubicación:** Los servidores pueden estar ubicados fuera de Brasil, según política de Supabase
-• **Política de Privacidad:** https://supabase.com/privacy
+• **Ubicación:** Los servidores pueden estar ubicados fuera de Brasil
+• **Política de Privacidad:** Disponible en las políticas del proveedor de servicios
 
-**Firebase (Google):**
-• **Firebase Analytics:** Datos de uso y eventos anonimizados para análisis
-• **Firebase Crashlytics:** Informes de crash y errores (sin información personal identificable)
-• **Firebase Cloud Messaging (FCM):** Tokens FCM para envío de notificaciones push
-• **Datos compartidos:** Eventos de uso, datos de crash, tokens FCM, información del dispositivo (anonimizados cuando es posible)
+**Servicios de Analytics y Monitoreo:**
+• **Analytics:** Datos de uso y eventos anonimizados para análisis
+• **Crash Reporting:** Informes de crash y errores (sin información personal identificable)
+• **Notificaciones Push:** Tokens para envío de notificaciones push
+• **Datos compartidos:** Eventos de uso, datos de crash, tokens de notificación, información del dispositivo (anonimizados cuando es posible)
 • **Finalidad:** Analytics, resolución de problemas, notificaciones push
-• **Ubicación:** Servidores Google (principalmente EE.UU.)
-• **Política de Privacidad:** https://policies.google.com/privacy
+• **Ubicación:** Servidores pueden estar ubicados fuera de Brasil (principalmente EE.UU.)
+• **Política de Privacidad:** Disponible en las políticas del proveedor de servicios
 
-**Google Maps SDK:**
-• **Datos compartidos:** Ubicación, rutas, POIs (según política de Google)
+**Servicio de Mapas:**
+• **Datos compartidos:** Ubicación, rutas, POIs (según política del proveedor)
 • **Finalidad:** Renderización de mapas, geocodificación, servicios de navegación
-• **Política de Privacidad:** https://policies.google.com/privacy
+• **Política de Privacidad:** Disponible en las políticas del proveedor de servicios
 
-**Google OAuth / Apple Sign-In:**
+**Proveedores de Autenticación Social:**
 • **Datos compartidos:** Email, nombre (si se autoriza), foto de perfil (si se autoriza)
 • **Finalidad:** Autenticación de usuario
-• **Política de Privacidad Google:** https://policies.google.com/privacy
-• **Política de Privacidad Apple:** https://www.apple.com/privacy/`
+• **Política de Privacidad:** Disponible en las políticas de cada proveedor de autenticación`
               },
               {
                 subtitle: '3.2 Compartimiento No Permitido',
@@ -1601,42 +1598,42 @@ When requesting to exercise rights, we may request identity verification to prot
             title: '4. Almacenamiento de Datos',
             subsections: [
               {
-                subtitle: '4.1 Almacenamiento en el Servidor (Supabase)',
-                content: `Tus datos se almacenan de forma segura en Supabase:
+                subtitle: '4.1 Almacenamiento en el Servidor',
+                content: `Tus datos se almacenan de forma segura en servidores protegidos:
 
-**Tablas y Datos Almacenados:**
-• **drive.profiles:** Datos del perfil, preferencias de audio y configuraciones (retención: mientras la cuenta exista)
-• **drive.user_route_history:** Historial de rutas guardadas (retención: mientras la cuenta exista o hasta que elimines)
-• **drive.route_pois:** POIs detallados de cada ruta guardada (retención: vinculado a la ruta)
-• **drive.trip_sessions:** Sesiones de viaje completas (retención: mientras la cuenta exista o hasta que elimines)
-• **drive.trip_session_attractions:** POIs visitados durante viajes (retención: vinculado a la sesión)
-• **drive.route_trail:** Puntos de ubicación durante sesiones (retención: vinculado a la sesión)
-• **drive.fcm_tokens:** Tokens FCM para push notifications (retención: mientras la app esté instalada)
-• **drive.data_deletion_requests:** Logs de solicitudes de eliminación (retención: para auditoría, según regulación)
+**Tipos de Datos Almacenados:**
+• **Datos del Perfil:** Información de la cuenta, preferencias de audio y configuraciones (retención: mientras la cuenta exista)
+• **Historial de Rutas:** Rutas guardadas y sus detalles (retención: mientras la cuenta exista o hasta que elimines)
+• **Sesiones de Viaje:** Datos completos de cada viaje realizado (retención: mientras la cuenta exista o hasta que elimines)
+• **Puntos Visitados:** POIs visitados durante viajes (retención: vinculado a la sesión de viaje)
+• **Datos de Ubicación:** Puntos de ubicación registrados durante sesiones activas (retención: vinculado a la sesión)
+• **Tokens de Notificación:** Tokens para push notifications (retención: mientras la app esté instalada)
+• **Logs de Auditoría:** Registros de solicitudes de eliminación y acciones administrativas (retención: para auditoría, según regulación)
 
 **Seguridad:**
 • Todos los datos protegidos por Row Level Security (RLS)
 • Solo tú puedes acceder a tus propios datos
 • Cifrado en tránsito (HTTPS/TLS)
-• Cifrado en reposo según estándares de Supabase`
+• Cifrado en reposo según estándares de seguridad
+• Estructura de base de datos protegida y no accesible públicamente`
               },
               {
                 subtitle: '4.2 Almacenamiento Local (Dispositivo)',
                 content: `Datos almacenados localmente en tu dispositivo:
 
-**SQLite (Caché):**
+**Base de Datos Local (Caché):**
 • Caché de POIs (retención: 5 días, limpieza automática)
 • Caché de audios (retención: 7 días, limpieza automática)
 • Metadatos de caché (URLs, timestamps, tamaños)
 
-**AsyncStorage:**
+**Almacenamiento Temporal:**
 • Caché temporal de datos (retención: 1 minuto)
 • Preferencias locales temporales
 
-**Sistema de Archivos:**
-• Archivos de audio descargados
-• **Ubicación iOS:** \`Documents/audio/\` (sandbox de la app)
-• **Ubicación Android:** \`DocumentDirectory/audio/\` (almacenamiento interno de la app)
+**Archivos Locales:**
+• Archivos de audio descargados para reproducción offline
+• Almacenados en el sandbox seguro de la app (área aislada del sistema operativo)
+• No accesibles por otras apps o usuarios del dispositivo
 
 **Limpieza Automática:**
 • El caché expirado se elimina automáticamente
@@ -1668,7 +1665,7 @@ La app **no funciona adecuadamente** sin permiso de ubicación.
                 content: `**Notificaciones Push (Opcional):**
 • **Finalidad:** Notificaciones sobre POIs cercanos, actualizaciones de la app, recordatorios y recomendaciones
 • **Control:** Puedes activar/desactivar en la configuración del dispositivo en cualquier momento
-• **Datos recopilados:** FCM Token, estado de permiso, preferencias de notificación
+• **Datos recopilados:** Token de notificación, estado de permiso, preferencias de notificación
 
 **Biometría (Opcional):**
 • **Finalidad:** Login más seguro y conveniente
@@ -1694,8 +1691,8 @@ La app **no funciona adecuadamente** sin permiso de ubicación.
             title: '6. Analytics y Rastreo',
             subsections: [
               {
-                subtitle: '6.1 Firebase Analytics',
-                content: `Utilizamos Firebase Analytics (Google Analytics) para entender cómo se usa la app y mejorarla:
+                subtitle: '6.1 Analytics y Análisis de Uso',
+                content: `Utilizamos servicios de analytics para entender cómo se usa la app y mejorarla:
 
 **Eventos Rastreados:**
 • **Eventos de Sesión:** Inicio/fin de viaje, visualización de pantallas
@@ -1718,12 +1715,12 @@ La app **no funciona adecuadamente** sin permiso de ubicación.
 
 **Desactivación:**
 • Analytics es necesario para funcionalidad y mejora del servicio
-• Los datos se tratan según política de Google Analytics
-• Retención: Generalmente 14 meses (política predeterminada de Google Analytics)`
+• Los datos se tratan según política del proveedor de servicios
+• Retención: Generalmente 14 meses (política predeterminada del proveedor)`
               },
               {
-                subtitle: '6.2 Firebase Crashlytics',
-                content: `Utilizamos Firebase Crashlytics para identificar y corregir problemas técnicos:
+                subtitle: '6.2 Informes de Error y Crash',
+                content: `Utilizamos servicios de informe de errores para identificar y corregir problemas técnicos:
 
 **Datos Recopilados:**
 • Stack traces de errores
@@ -1742,16 +1739,16 @@ La app **no funciona adecuadamente** sin permiso de ubicación.
 • Resolver problemas técnicos rápidamente`
               },
               {
-                subtitle: '6.3 Firebase Cloud Messaging (FCM)',
-                content: `Utilizamos FCM para enviar notificaciones push:
+                subtitle: '6.3 Notificaciones Push',
+                content: `Utilizamos servicios de notificaciones push para enviar notificaciones:
 
 **Datos Recopilados:**
-• FCM Token (identificador único del dispositivo para push)
+• Token de notificación (identificador único del dispositivo para push)
 • Estado de permiso de notificaciones
 • Preferencias de notificación del usuario
 
 **Almacenamiento:**
-• Tokens almacenados en la tabla \`drive.fcm_tokens\` vinculados al usuario
+• Tokens almacenados de forma segura vinculados al usuario
 • Removidos cuando desinstalas la app o revocas permisos
 
 **Finalidad:**
@@ -1770,19 +1767,19 @@ La app **no funciona adecuadamente** sin permiso de ubicación.
 
 **Autenticación:**
 • Contraseñas hashadas (nunca almacenadas en texto plano)
-• Tokens JWT para autenticación segura
-• OAuth seguro para Google/Apple Sign-In
+• Tokens de autenticación segura
+• Autenticación social segura (Google/Apple)
 • Autenticación biométrica opcional (almacenada en el dispositivo)
 
 **Cifrado:**
 • Comunicación HTTPS/TLS con servidores
 • Datos sensibles cifrados en tránsito
-• Almacenamiento seguro en Supabase (según estándares de seguridad)
-• Cifrado en reposo según estándares de Supabase
+• Almacenamiento seguro en servidores protegidos (según estándares de seguridad)
+• Cifrado en reposo según estándares de seguridad
 
 **Row Level Security (RLS):**
 • Los usuarios solo pueden acceder a sus propios datos
-• Políticas RLS en Supabase para todas las tablas
+• Políticas de seguridad de acceso (RLS) para todas las tablas
 • Verificación de autenticación en todas las queries
 • Aislamiento completo de datos entre usuarios
 
@@ -1829,7 +1826,7 @@ La app **no funciona adecuadamente** sin permiso de ubicación.
   - Todos los datos del perfil
   - Historial de rutas y viajes
   - Preferencias y configuraciones
-  - Datos de autenticación de Supabase Auth
+  - Datos de autenticación del sistema
   - Caché local del dispositivo
 • **Tiempo de procesamiento:** Generalmente en hasta 30 días
 • **Excepciones:** Algunos datos pueden mantenerse según obligaciones legales (logs de auditoría)`
@@ -1884,8 +1881,8 @@ La app **no funciona adecuadamente** sin permiso de ubicación.
 • Limpieza semanal de archivos huérfanos
 
 **Datos de Analytics:**
-• Retenidos según política de Firebase Analytics
-• Generalmente 14 meses (política predeterminada de Google Analytics)
+• Retenidos según política del proveedor de servicios
+• Generalmente 14 meses (política predeterminada del proveedor)
 
 **Logs de Eliminación:**
 • Retenidos para fines de auditoría
@@ -1895,20 +1892,20 @@ La app **no funciona adecuadamente** sin permiso de ubicación.
             title: '10. Transferencia Internacional de Datos',
             content: `Tus datos pueden ser transferidos y procesados fuera de Brasil:
 
-**Supabase:**
+**Proveedor de Backend y Almacenamiento:**
 • Los servidores pueden estar ubicados fuera de Brasil
 • Conformidad con estándares de seguridad internacionales
-• Política de privacidad: https://supabase.com/privacy
+• Política de privacidad disponible en las políticas del proveedor
 
-**Firebase (Google):**
+**Proveedor de Analytics y Monitoreo:**
 • Servidores ubicados globalmente (principalmente EE.UU.)
-• Datos de analytics transferidos a servidores Google
-• Conformidad con estándares de seguridad de Google
-• Política de privacidad: https://policies.google.com/privacy
+• Datos de analytics transferidos a servidores del proveedor
+• Conformidad con estándares de seguridad del proveedor
+• Política de privacidad disponible en las políticas del proveedor
 
-**Google Maps:**
+**Proveedor de Servicios de Mapas:**
 • Los servicios de mapas pueden procesar datos en servidores globales
-• Conformidad con política de privacidad de Google
+• Conformidad con política de privacidad del proveedor
 
 **Protecciones:**
 • Utilizamos solo proveedores que garantizan protecciones adecuadas
@@ -1929,7 +1926,7 @@ La app **no funciona adecuadamente** sin permiso de ubicación.
 • Las preferencias de notificación pueden gestionarse en la app (si se implementa)
 
 **Datos Utilizados:**
-• FCM Token (identificador único del dispositivo)
+• Token de notificación (identificador único del dispositivo)
 • Estado de permiso
 • Tu ubicación (solo para notificaciones sobre POIs cercanos, si se permite)
 
@@ -1970,9 +1967,9 @@ El sitio web puede utilizar cookies y tecnologías similares. Consulta nuestra P
 
 **Aplicación:**
 La aplicación no utiliza cookies en el sentido tradicional. Utilizamos:
-• Caché local (SQLite, AsyncStorage) para funcionalidad offline
+• Caché local (base de datos local) para funcionalidad offline
 • Tokens de autenticación para sesiones
-• FCM Tokens para notificaciones push
+• Tokens de notificación para push notifications
 
 Estos datos se almacenan localmente en el dispositivo y no son cookies rastreables.`
           },
