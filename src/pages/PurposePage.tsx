@@ -376,7 +376,7 @@ const PurposePage: React.FC<PurposePageProps> = ({
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <h3 className="text-2xl font-bold text-neutral-900 mb-4 text-tuggi-primary">
+              <h3 className="text-2xl font-bold mb-4 text-tuggi-primary">
                 {content.responsibility.safety.title}
               </h3>
               <p className="text-lg text-neutral-700">
@@ -384,7 +384,7 @@ const PurposePage: React.FC<PurposePageProps> = ({
               </p>
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-neutral-900 mb-4 text-tuggi-primary">
+              <h3 className="text-2xl font-bold mb-4 text-tuggi-primary">
                 {content.responsibility.privacy.title}
               </h3>
               <ul className="space-y-3 mb-6">
@@ -437,10 +437,10 @@ const PurposePage: React.FC<PurposePageProps> = ({
       {/* SECTION 9 — FOOTER CTA */}
       <section id="footer-cta" className={`${layout.section.base} bg-neutral-900 text-white text-center`}>
         <div className={layout.container.narrow}>
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-white">
             {content.finalCta.title}
           </h2>
-          <p className="text-neutral-400 mb-10">
+          <p className="text-neutral-300 mb-10">
             {content.finalCta.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
