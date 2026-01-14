@@ -203,25 +203,25 @@ export const generateSEOConfig = (
     },
     business: {
       EN: {
-        title: 'Tuggi for Businesses | Cultural partnerships and brand differentiation',
-        description: 'Partner with Tuggi to offer cultural experiences to your customers. Differentiate your brand through verified cultural content and multilingual storytelling.',
-        keywords: 'business partnership, cultural tourism, brand differentiation, transportation companies, cultural content, multilingual experiences, corporate partnerships, tourism agencies',
-        ogTitle: 'Tuggi for Businesses — Cultural partnerships and brand differentiation',
-        ogDescription: 'Transform your business with cultural storytelling. Partner with Tuggi to offer unique experiences and differentiate your brand.'
+        title: 'For Businesses | Tuggi — Cultural Data & Narratives',
+        description: 'Licensing and integration of cultural audio content and POI metadata for mobility, tourism, and education. Enrich your product with local stories.',
+        keywords: 'tuggi for business, cultural data license, poi metadata api, mobility content, tourism narratives, audio guide api, cultural discovery b2b',
+        ogTitle: 'For Businesses | Tuggi — Cultural Data & Narratives',
+        ogDescription: 'Licensing and integration of cultural audio content and POI metadata for mobility, tourism, and education.'
       },
       PT: {
-        title: 'Tuggi Empresas | Valor cultural e diferencial para transporte e turismo',
-        description: 'Fortaleça sua marca com o Tuggi — narrações culturais automáticas que agregam valor às experiências de transporte, turismo e hospitalidade.',
-        keywords: 'Tuggi empresas, parcerias turismo, transporte cultural, valor agregado marca, inovação em mobilidade, experiência de viagem, audioguia corporativo, diferencial competitivo',
-        ogTitle: 'Tuggi Empresas — Valor cultural para transporte e turismo',
-        ogDescription: 'Ofereça experiências culturais em seus serviços de transporte com o Tuggi. Agregue valor, destaque sua marca e inove com tecnologia cultural.'
+        title: 'Para empresas — Tuggi',
+        description: 'Licenciamento e integração de conteúdo cultural em áudio e metadados de pontos de interesse para mobilidade, turismo e educação.',
+        keywords: 'Tuggi empresas, licenciamento de dados, metadados POI, conteúdo para mobilidade, narrativas de turismo, API de audioguia, dados culturais B2B',
+        ogTitle: 'Para empresas — Tuggi',
+        ogDescription: 'Licenciamento e integração de conteúdo cultural em áudio e metadados de pontos de interesse.'
       },
       ES: {
-        title: 'Tuggi para Empresas | Alianzas culturales y diferenciación de marca',
-        description: 'Asóciate con Tuggi para ofrecer experiencias culturales a tus clientes. Diferencia tu marca a través de contenido cultural verificado y storytelling multilingüe.',
-        keywords: 'alianza empresarial, turismo cultural, diferenciación de marca, empresas de transporte, contenido cultural, experiencias multilingües, alianzas corporativas, agencias de turismo',
-        ogTitle: 'Tuggi para Empresas — Alianzas culturales y diferenciación de marca',
-        ogDescription: 'Transforma tu negocio con storytelling cultural. Asóciate con Tuggi para ofrecer experiencias únicas y diferenciar tu marca.'
+        title: 'Para empresas | Tuggi — Datos Culturales y Narrativas',
+        description: 'Licenciamiento e integración de contenido cultural en audio y metadatos de POIs para movilidad, turismo y educación. Enriquece tu producto con historias.',
+        keywords: 'tuggi para empresas, licencia de datos culturales, api metadatos poi, contenido movilidad, narrativas turismo, api audioguía, datos culturales b2b',
+        ogTitle: 'Para empresas | Tuggi — Datos Culturales y Narrativas',
+        ogDescription: 'Licenciamiento e integración de contenido cultural en audio y metadatos de POIs para movilidad, turismo y educación.'
       }
     }
   };
