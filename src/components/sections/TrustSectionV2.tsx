@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import { ShieldCheck, MapPin, ChevronDown, Globe, MicOff, Settings, Trash2, ExternalLink } from 'lucide-react';
+import React from 'react';
+import { ShieldCheck, MapPin, Globe, MicOff, Settings, Trash2, ExternalLink } from 'lucide-react';
 import { layout } from '../../utils/designSystem';
-import audioSamples from '../../data/audio-samples.json';
-import AudioCardMultilingual from '../features/AudioCardMultilingual';
+import AudioSamplesSection from './AudioSamplesSection';
 
 interface TrustSectionV2Props {
   currentLanguage?: string;
@@ -11,7 +10,6 @@ interface TrustSectionV2Props {
 const TrustSectionV2: React.FC<TrustSectionV2Props> = ({ 
   currentLanguage = 'PT' 
 }) => {
-  const [showAllSamples, setShowAllSamples] = useState(false);
   // Localized content
   const getLocalizedContent = (language: string) => {
     const content: Record<string, any> = {
@@ -38,11 +36,7 @@ const TrustSectionV2: React.FC<TrustSectionV2Props> = ({
         ],
         curatedTitle: 'Conteúdo curado',
         curatedDescription: 'Aprimorado continuamente. Encontrou algo incorreto?',
-        curatedLinkText: 'Fale com a gente',
-        samplesTitle: 'Ouça um exemplo real',
-        samplesSubtitle: 'Histórias curtas e contextuais para ouvir enquanto dirige.',
-        showMore: 'Ver mais exemplos',
-        showLess: 'Ver menos'
+        curatedLinkText: 'Fale com a gente'
       },
       EN: {
         privacyTitle: 'Privacy by Design',
@@ -67,11 +61,7 @@ const TrustSectionV2: React.FC<TrustSectionV2Props> = ({
         ],
         curatedTitle: 'Curated content',
         curatedDescription: 'Continuously improved. Found something incorrect?',
-        curatedLinkText: 'Contact us',
-        samplesTitle: 'Listen to a real example',
-        samplesSubtitle: 'Short, contextual stories to listen to while driving.',
-        showMore: 'Show more examples',
-        showLess: 'Show less'
+        curatedLinkText: 'Contact us'
       },
       ES: {
         privacyTitle: 'Privacidad por Diseño',
@@ -96,28 +86,13 @@ const TrustSectionV2: React.FC<TrustSectionV2Props> = ({
         ],
         curatedTitle: 'Contenido curado',
         curatedDescription: 'Mejorado continuamente. ¿Encontraste algo incorrecto?',
-        curatedLinkText: 'Contáctanos',
-        samplesTitle: 'Escucha un ejemplo real',
-        samplesSubtitle: 'Historias cortas y contextuales para escuchar mientras conduces.',
-        showMore: 'Ver más ejemplos',
-        showLess: 'Ver menos'
+        curatedLinkText: 'Contáctanos'
       }
     };
     return content[language] || content['PT'];
   };
 
   const content = getLocalizedContent(currentLanguage);
-
-
-  // Get samples to display (3 initially, 6 when showAllSamples is true)
-  const getDisplaySamples = () => {
-    if (showAllSamples) {
-      return audioSamples.slice(0, 6); // Show 6 samples when expanded
-    }
-    // Show 3 samples initially
-    return audioSamples.slice(0, 3);
-  };
-
 
   return (
     <section 
@@ -132,64 +107,8 @@ const TrustSectionV2: React.FC<TrustSectionV2Props> = ({
         <Globe className="w-32 h-32 text-tuggi-primary" />
       </div>
       <div className={layout.container.base}>
-        {/* Audio Samples Section - Moved Up */}
-        <div className="mb-24">
-          <div className="text-center mb-8">
-            <h2 
-              className="font-bold mb-4 leading-tight text-[#0F172A] text-[32px] tracking-tight"
-              style={{ 
-                fontFamily: 'var(--font-sans)',
-                fontWeight: '700',
-              }}
-            >
-              {content.samplesTitle}
-            </h2>
-            <p 
-              className="max-w-2xl mx-auto leading-relaxed text-[#374151] font-medium text-lg"
-              style={{ 
-                fontFamily: 'var(--font-sans)',
-              }}
-            >
-              {content.samplesSubtitle}
-            </p>
-          </div>
-
-          {/* Audio Samples Grid - Unified Responsive */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {getDisplaySamples().map((sample: any) => (
-              <AudioCardMultilingual
-                key={sample.id}
-                sample={sample}
-                currentLanguage={currentLanguage}
-              />
-            ))}
-          </div>
-
-          {/* Show More/Less Button */}
-          <div className="text-center mt-8">
-            <button
-              onClick={() => setShowAllSamples(!showAllSamples)}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors duration-200"
-              style={{ 
-                background: 'transparent',
-                color: '#374151',
-                border: '1px solid #D1D5DB',
-                borderRadius: '24px',
-                padding: '12px 24px',
-                fontFamily: 'var(--font-sans)',
-                fontSize: '14px',
-                fontWeight: '500'
-              }}
-            >
-              {showAllSamples ? content.showLess : content.showMore}
-              <ChevronDown 
-                className={`w-4 h-4 transition-transform duration-200 ${
-                  showAllSamples ? 'rotate-180' : ''
-                }`} 
-              />
-            </button>
-          </div>
-        </div>
+        {/* Audio Samples Section */}
+        <AudioSamplesSection currentLanguage={currentLanguage} />
 
         {/* Privacy Section */}
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-12 items-start mb-12">
