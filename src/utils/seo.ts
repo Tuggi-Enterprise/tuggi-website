@@ -132,6 +132,29 @@ export const generateSEOConfig = (
         ogDescription: 'Información para inversores: tesis, producto y modelo de negocio de Tuggi — copiloto cultural en audio para trayectos en coche.'
       }
     },
+    drivers: {
+      EN: {
+        title: 'For Rideshare Drivers — Tuggi',
+        description: 'Tuggi for drivers: audio stories on the way to make the trip more interesting. Download from official stores.',
+        keywords: 'tuggi for drivers, rideshare experience, driver tips, audio guide for cars',
+        ogTitle: 'For Rideshare Drivers — Tuggi',
+        ogDescription: 'Tuggi for drivers: audio stories on the way to make the trip more interesting.'
+      },
+      PT: {
+        title: 'Para motoristas de aplicativo — Tuggi',
+        description: 'Tuggi para motoristas: histórias em áudio no trajeto para tornar a corrida mais interessante. Baixe nas lojas oficiais.',
+        keywords: 'tuggi motoristas, motorista de app, uber, 99, historias audio dirigir, experiência passageiro',
+        ogTitle: 'Para motoristas de aplicativo — Tuggi',
+        ogDescription: 'Tuggi para motoristas: histórias em áudio no trajeto para tornar a corrida mais interessante. Baixe nas lojas oficiais.'
+      },
+      ES: {
+        title: 'Para conductores de aplicaciones — Tuggi',
+        description: 'Tuggi para conductores: historias en audio en el camino para que el viaje sea más interesante. Descarga en tiendas oficiales.',
+        keywords: 'tuggi conductores, conductores de app, uber, cabify, historias audio conducir, experiencia pasajero',
+        ogTitle: 'Para conductores de aplicaciones — Tuggi',
+        ogDescription: 'Tuggi para conductores: historias en audio en el camino para que el viaje sea más interesante.'
+      }
+    },
     purpose: {
       EN: {
         title: 'Our Purpose | Tuggi — More than a route',
@@ -201,29 +224,7 @@ export const generateSEOConfig = (
         ogDescription: 'Conoce cómo Tuggi usa cookies para mejorar tu experiencia de descubrimiento cultural y mejorar nuestra app.'
       }
     },
-    drivers: {
-      EN: {
-        title: 'Tuggi Drivers | Earn more and offer cultural experiences in your rides',
-        description: 'Increase your value as a ride-hailing driver with Tuggi. Offer cultural narrations to passengers, improve ratings and stand out without changing your routine.',
-        keywords: 'ride-hailing driver, earn more driving, app for drivers, increase ratings, added value transportation, monetize journeys, audio guides, cultural experience for passengers, Uber, 99, Cabify, inDrive',
-        ogTitle: 'Tuggi Drivers — Earn more on rides with cultural experiences',
-        ogDescription: 'Increase the value of your rides with Tuggi. Offer local stories, improve ratings and create a unique experience for your passengers.'
-      },
-      PT: {
-        title: 'Tuggi Motoristas | Ganhe mais e ofereça experiências culturais nas suas corridas',
-        description: 'Aumente seu valor como motorista de app com o Tuggi. Ofereça narrativas culturais aos passageiros, melhore avaliações e destaque-se sem mudar sua rotina.',
-        keywords: 'Tuggi motoristas, ganhar mais dirigindo, aumentar gorjeta, motorista de aplicativo, valor agregado transporte, audioguia para motoristas, experiência de corrida, narrações culturais automáticas',
-        ogTitle: 'Tuggi Motoristas — Ganhe mais com experiências culturais',
-        ogDescription: 'Ofereça narrações culturais automáticas e encante seus passageiros. Melhore avaliações e gere valor sem mudar sua rotina.'
-      },
-      ES: {
-        title: 'Tuggi Conductores | Gana más y ofrece experiencias culturales en tus viajes',
-        description: 'Aumenta tu valor como conductor de app con Tuggi. Ofrece narraciones culturales a los pasajeros, mejora valoraciones y destácate sin cambiar tu rutina.',
-        keywords: 'conductor de aplicación, ganar más conduciendo, app para conductores, aumentar valoraciones, valor agregado transporte, monetizar trayectos, guías de audio, experiencia cultural para pasajeros, Uber, 99, Cabify, inDrive',
-        ogTitle: 'Tuggi Conductores — Gana más en los viajes con experiencias culturales',
-        ogDescription: 'Aumenta el valor de tus viajes con Tuggi. Ofrece historias locales, mejora valoraciones y crea una experiencia única para tus pasajeros.'
-      }
-    },
+
     business: {
       EN: {
         title: 'For Businesses | Tuggi — Cultural Data & Narratives',
