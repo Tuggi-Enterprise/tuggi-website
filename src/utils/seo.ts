@@ -111,25 +111,25 @@ export const generateSEOConfig = (
     },
     purpose: {
       EN: {
-        title: 'Our Purpose - Tuggi – Discover culture and stories wherever you go',
-        description: 'Learn about Tuggi\'s mission to connect people with local culture through real-time audio stories and cultural discovery.',
-        keywords: 'tuggi purpose, cultural discovery mission, local stories app, cultural tourism app, audio guide app',
-        ogTitle: 'Our Purpose - Tuggi – Discover culture and stories wherever you go',
-        ogDescription: 'Learn about Tuggi\'s mission to connect people with local culture through real-time audio stories and cultural discovery.'
+        title: 'Our Purpose | Tuggi — More than a route',
+        description: 'Tuggi\'s manifesto: democratizing access to culture and transforming journeys into discoveries. Cultural copilot for drivers and passengers.',
+        keywords: 'tuggi purpose, cultural discovery mission, audio guide app, local stories, driver assistance, mobility culture',
+        ogTitle: 'Our Purpose | Tuggi — More than a route',
+        ogDescription: 'Tuggi\'s manifesto: democratizing access to culture and transforming journeys into discoveries.'
       },
       PT: {
-        title: 'Nosso Propósito - Tuggi – Descubra cultura e histórias por onde você passa',
-        description: 'Conheça a missão da Tuggi de conectar pessoas com a cultura local através de histórias em áudio em tempo real e descoberta cultural.',
-        keywords: 'propósito tuggi, missão descoberta cultural, app histórias locais, app turismo cultural, app guia de áudio',
-        ogTitle: 'Nosso Propósito - Tuggi – Descubra cultura e histórias por onde você passa',
-        ogDescription: 'Conheça a missão da Tuggi de conectar pessoas com a cultura local através de histórias em áudio em tempo real e descoberta cultural.'
+        title: 'Nossa razão de existir | Tuggi — Além do trajeto',
+        description: 'O manifesto da Tuggi: democratizando o acesso à cultura e transformando trajetos em descobertas. Copiloto cultural para motoristas e passageiros.',
+        keywords: 'propósito tuggi, manifesto cultural, histórias ao dirigir, copiloto cultural, mobilidade urbana, cultura em movimento',
+        ogTitle: 'Nossa razão de existir | Tuggi — Além do trajeto',
+        ogDescription: 'O manifesto da Tuggi: democratizando o acesso à cultura e transformando trajetos em descobertas.'
       },
       ES: {
-        title: 'Nuestro Propósito - Tuggi – Descubre cultura e historias donde vayas',
-        description: 'Conoce la misión de Tuggi de conectar personas con la cultura local a través de historias de audio en tiempo real y descubrimiento cultural.',
-        keywords: 'propósito tuggi, misión descubrimiento cultural, app historias locales, app turismo cultural, app guía de audio',
-        ogTitle: 'Nuestro Propósito - Tuggi – Descubre cultura e historias donde vayas',
-        ogDescription: 'Conoce la misión de Tuggi de conectar personas con la cultura local a través de historias de audio en tiempo real y descubrimiento cultural.'
+        title: 'Nuestro Propósito | Tuggi — Más que una ruta',
+        description: 'El manifiesto de Tuggi: democratizar el acceso a la cultura y transformar los trayectos en descubrimientos. Copiloto cultural para conductores y pasajeros.',
+        keywords: 'propósito tuggi, manifiesto cultural, historias al conducir, copiloto cultural, movilidad urbana, cultura en movimiento',
+        ogTitle: 'Nuestro Propósito | Tuggi — Más que una ruta',
+        ogDescription: 'El manifiesto de Tuggi: democratizar el acceso a la cultura y transformar los trayectos en descubrimientos.'
       }
     },
     privacy: {

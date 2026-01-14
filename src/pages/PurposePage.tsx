@@ -1,14 +1,9 @@
-import React from 'react';
-import { Compass, Users, Eye, BookOpen, ArrowRight, Heart } from 'lucide-react';
-import FinalCTASection from '../components/sections/FinalCTASection';
+import { ArrowRight } from 'lucide-react';
 import { 
   getButtonClasses, 
   getCardClasses, 
-  getBadgeClasses,
   layout,
-  gradients,
-  colors,
-  spacing
+  gradients
 } from '../utils/designSystem';
 
 interface PurposePageProps {
@@ -25,269 +20,218 @@ const PurposePage: React.FC<PurposePageProps> = ({
     const content: Record<string, any> = {
       PT: {
         hero: {
-          title: 'Nossa razão de existir'
+          title: 'Nossa razão de existir',
+          subtitle: 'Cultura não deveria ficar presa a roteiros e salas de aula. A Tuggi existe para colocar histórias no caminho — de forma leve, em áudio, enquanto você dirige.'
         },
         block1: {
           title: 'Cultura em movimento',
-          content: [
-            'Acreditamos que a cultura não deve estar presa a livros, roteiros turísticos ou salas de aula. Ela deve acompanhar você no seu caminho, nos lugares por onde passa, nas paisagens que atravessa, nas ruas que conhece todos os dias.',
-            'Cultura é viva. Está no trajeto, não só no destino.'
-          ]
+          text: 'Acreditamos que a cultura vive no trajeto. Em vez de te prender a um roteiro, a Tuggi revela contexto e histórias no momento em que você passa pelos lugares.'
         },
         block2: {
-          title: 'Por que criamos a Tuggi',
-          content: [
-            'Criamos a Tuggi porque queremos democratizar o acesso ao conhecimento. Queremos que cada pessoa, em qualquer lugar, tenha a oportunidade de descobrir mais sobre o mundo ao seu redor.',
-            'Enquanto outras plataformas centralizam a experiência em roteiros prontos, mapas fechados ou atrações turísticas, nós preferimos entregar liberdade.',
-            // 'Liberdade para explorar.',
-            // 'Liberdade para ouvir.',
-            // 'Liberdade para se conectar.'
-          ]
+          title: 'O que é a Tuggi hoje',
+          text: 'Hoje, a Tuggi é um copiloto cultural em áudio para quem está dirigindo. Ela identifica pontos no caminho e narra histórias curtas e contextuais, sem exigir atenção à tela.'
         },
-        block3: {
-          title: 'Como fazemos isso',
-          content: [
-            'Utilizamos tecnologia de geolocalização e inteligência contextual para acionar narrações automáticas, que contam a história do que está ao redor do usuário — no momento certo.',
-            'É uma experiência sem telas, sem distrações, sem algoritmos. O conhecimento vem até você, de forma leve, orgânica e real.',
-            'Você se move. A Tuggi fala.'
-          ]
-        },
-        block4: {
-          title: 'Liberdade de rota',
-          content: [
-            'Você não precisa seguir uma rota planejada. A Tuggi funciona onde você estiver. Seja indo para o trabalho, viajando, caminhando no seu bairro ou explorando uma nova cidade, ela revela as camadas culturais invisíveis do seu trajeto.',
-            'O caminho é seu. A descoberta também.'
-          ]
-        },
-        block5: {
-          title: 'Um futuro construído em comunidade',
-          content: [
-            'Acreditamos em um futuro construído junto. Por isso, mesmo durante a fase beta, já é possível avaliar os conteúdos e sugerir melhorias.',
-            'Em breve, você poderá indicar novos pontos, enviar histórias e cocriar a experiência com a gente.',
-            'Porque cultura se constrói coletivamente.',
-            // 'E a Tuggi está aqui para dar voz a esse movimento.'
-          ]
+        targetAudience: {
+          drivers: {
+            title: 'Motoristas de aplicativo',
+            text: 'Uma forma simples de tornar a viagem mais interessante para o passageiro — com controle de quando tocar e pausar.',
+            link: 'Ver para motoristas'
+          },
+          daily: {
+            title: 'Quem dirige no dia a dia',
+            text: 'Transforme deslocamentos e viagens em descobertas culturais, no seu tempo.'
+          }
         },
         values: {
           title: 'Nossos valores fundamentais',
-          subtitle: 'Os princípios que guiam nossa missão de democratizar o acesso à cultura',
-          discovery: {
-            title: 'Descobrimento espontâneo',
-            description: 'Cada lugar tem uma história. Nossa missão é revelar essas narrativas enquanto você vive sua rotina.'
+          items: [
+            { id: 'trajeto', title: 'Descoberta no trajeto', description: 'Histórias no caminho, no tempo certo.' },
+            { id: 'contexto', title: 'Clareza e contexto', description: 'Conteúdo curto, direto e bem explicado.' },
+            { id: 'autonomia', title: 'Autonomia do usuário', description: 'Você decide quando ouvir e pausar.' },
+            { id: 'simplicidade', title: 'Segurança e simplicidade', description: 'Áudio em primeiro lugar, pouca tela.' },
+            { id: 'dados', title: 'Responsabilidade com dados', description: 'Privacidade e controle nas suas mãos.' }
+          ]
+        },
+        whatWeAreNot: {
+          title: 'O que a Tuggi não é',
+          bullets: [
+            'Não é um guia que exige ficar olhando para a tela.',
+            'Não é rádio contínuo: você controla quando ouvir.',
+            'Não grava conversas e não faz \'escuta\' passiva.'
+          ]
+        },
+        responsibility: {
+          title: 'Responsabilidade',
+          safety: {
+            title: 'Segurança',
+            text: 'A experiência é pensada para áudio e uso com o celular fixo. Atenção total ao trânsito.'
           },
-          connection: {
-            title: 'Conexão cultural',
-            description: 'Acreditamos que conhecer a história dos lugares cria um vínculo mais profundo com o mundo.'
-          },
-          freedom: {
-            title: 'Liberdade de exploração',
-            description: 'Sem rotas predefinidas. A cultura surge naturalmente, respeitando seu ritmo e suas escolhas.'
+          privacy: {
+            title: 'Privacidade por design',
+            bullets: [
+              'Localização usada apenas para disparar histórias ao longo do trajeto.',
+              'Não gravamos conversas; não fazemos \'escuta\' passiva.',
+              'Você controla permissões e pode revogar quando quiser.',
+              'Você pode solicitar exclusão de dados.'
+            ],
+            links: {
+              privacy: 'Política de Privacidade',
+              dataDeletion: 'Exclusão de Dados'
+            }
           }
         },
         community: {
-          participants: 'Participantes',
-          cities: 'Cidades',
-          betaPhase: 'Fase Beta Ativa'
+          title: 'Construído com a comunidade',
+          text: 'Quer sugerir pontos, reportar algo incorreto ou enviar uma ideia? A gente lê e prioriza melhorias continuamente.',
+          cta: 'Falar com a gente'
         },
-        cta: {
-          title: 'Faça parte da construção',
-          description: 'Junte-se a nós e ajude a moldar o futuro da cultura urbana no Brasil',
-          button: 'Participar da pesquisa'
-        },
-        appMockup: {
-          title: 'A Tuggi em ação',
-          subtitle: 'Veja como transformamos qualquer trajeto em uma jornada de descobertas culturais',
-          location: 'São Paulo - Centro',
-          storiesFound: 'Histórias descobertas: 15',
-          nowPlaying: 'Agora tocando',
-          storyTitle: 'A História da Liberdade',
-          features: {
-            culture: 'Cultura em movimento',
-            stories: 'Histórias vivas',
-            knowledge: 'Conhecimento livre'
-          }
-        },
-        bookMockup: {
-          title: 'Cultura Viva',
-          description: 'Histórias que se revelam no seu caminho, transformando cada trajeto em uma jornada de conhecimento.'
+        finalCta: {
+          title: 'Comece sua jornada cultural no trajeto.',
+          subtitle: 'Baixe o app nas lojas oficiais.'
         }
       },
       EN: {
         hero: {
-          title: 'Our reason for being'
+          title: 'Our reason for being',
+          subtitle: 'Culture should not be confined to books or classrooms. Tuggi exists to put stories along your path — lightly, via audio, while you drive.'
         },
         block1: {
           title: 'Culture in motion',
-          content: [
-            'We believe that culture should not be confined to books, tourist itineraries, or classrooms. It should accompany you on your journey, in the places you pass through, in the landscapes you cross, in the streets you know every day.',
-            'Culture is alive. It\'s in the journey, not just the destination.'
-          ]
+          text: 'We believe that culture lives in the journey. Instead of pinning you to a route, Tuggi reveals context and stories the moment you pass by places.'
         },
         block2: {
-          title: 'Why we created Tuggi',
-          content: [
-            'We created Tuggi because we want to democratize access to knowledge. We want every person, anywhere, to have the opportunity to discover more about the world around them.',
-            'While other platforms centralize the experience in ready-made itineraries, closed maps, or tourist attractions, we prefer to deliver freedom.',
-            // 'Freedom to explore.',
-            // 'Freedom to listen.',
-            // 'Freedom to connect.'
-          ]
+          title: 'What Tuggi is today',
+          text: 'Today, Tuggi is a cultural audio copilot for those driving. It identifies points along the path and narrates short, contextual stories without requiring screen attention.'
         },
-        block3: {
-          title: 'How we do it',
-          content: [
-            'We use geolocation technology and contextual intelligence to trigger automatic narrations that tell the story of what\'s around the user — at the right moment.',
-            'It\'s an experience without screens, without distractions, without algorithms. Knowledge comes to you, in a light, organic, and real way.',
-            'You move. Tuggi speaks.'
-          ]
-        },
-        block4: {
-          title: 'Freedom of route',
-          content: [
-            'You don\'t need to follow a planned route. Tuggi works wherever you are. Whether going to work, traveling, walking in your neighborhood, or exploring a new city, it reveals the invisible cultural layers of your journey.',
-            'The path is yours. The discovery too.'
-          ]
-        },
-        block5: {
-          title: 'A future built in community',
-          content: [
-            'We believe in a future built together. That\'s why, even during the beta phase, it\'s already possible to evaluate content and suggest improvements.',
-            'Soon, you\'ll be able to indicate new points, send stories, and co-create the experience with us.',
-            'Because culture is built collectively.',
-            // 'And Tuggi is here to give voice to this movement.'
-          ]
+        targetAudience: {
+          drivers: {
+            title: 'Rideshare Drivers',
+            text: 'A simple way to make the trip more interesting for the passenger — with control over when to play and pause.',
+            link: 'View for drivers'
+          },
+          daily: {
+            title: 'Daily Drivers',
+            text: 'Transform commutes and trips into cultural discoveries, on your own time.'
+          }
         },
         values: {
-          title: 'Our fundamental values',
-          subtitle: 'The principles that guide our mission to democratize access to culture',
-          discovery: {
-            title: 'Spontaneous discovery',
-            description: 'Every place has a story. Our mission is to reveal these narratives while you live your routine.'
+          title: 'Our core values',
+          items: [
+            { id: 'trajeto', title: 'Discovery on the go', description: 'Stories on the way, at the right time.' },
+            { id: 'contexto', title: 'Clarity and context', description: 'Short, direct, and well-explained content.' },
+            { id: 'autonomia', title: 'User autonomy', description: 'You decide when to listen and pause.' },
+            { id: 'simplicidade', title: 'Safety and simplicity', description: 'Audio first, minimal screen time.' },
+            { id: 'dados', title: 'Data responsibility', description: 'Privacy and control in your hands.' }
+          ]
+        },
+        whatWeAreNot: {
+          title: 'What Tuggi is NOT',
+          bullets: [
+            'It is not a guide that requires looking at a screen.',
+            'It is not continuous radio: you control when to listen.',
+            'It does not record conversations and does not perform passive listening.'
+          ]
+        },
+        responsibility: {
+          title: 'Responsibility',
+          safety: {
+            title: 'Safety',
+            text: 'The experience is designed for audio and hands-free use. Full attention on the road.'
           },
-          connection: {
-            title: 'Cultural connection',
-            description: 'We believe that knowing the history of places creates a deeper bond with the world.'
-          },
-          freedom: {
-            title: 'Freedom of exploration',
-            description: 'No predefined routes. Culture emerges naturally, respecting your rhythm and your choices.'
+          privacy: {
+            title: 'Privacy by design',
+            bullets: [
+              'Location used only to trigger stories along the route.',
+              'No recording conversations; no passive listening.',
+              'You control permissions and can revoke at any time.',
+              'You can request data deletion.'
+            ],
+            links: {
+              privacy: 'Privacy Policy',
+              dataDeletion: 'Data Deletion'
+            }
           }
         },
         community: {
-          participants: 'Participants',
-          cities: 'Cities',
-          betaPhase: 'Active Beta Phase'
+          title: 'Built with the community',
+          text: 'Want to suggest points, report something incorrect, or send an idea? We read and prioritize improvements continuously.',
+          cta: 'Talk to us'
         },
-        cta: {
-          title: 'Be part of the construction',
-          description: 'Join us and help shape the future of urban culture in Brazil',
-          button: 'Participate in the survey'
-        },
-        appMockup: {
-          title: 'Tuggi in action',
-          subtitle: 'See how we transform any journey into a cultural discovery adventure',
-          location: 'São Paulo - Downtown',
-          storiesFound: 'Stories discovered: 15',
-          nowPlaying: 'Now playing',
-          storyTitle: 'The Story of Liberty',
-          features: {
-            culture: 'Culture in motion',
-            stories: 'Living stories',
-            knowledge: 'Free knowledge'
-          }
-        },
-        bookMockup: {
-          title: 'Living Culture',
-          description: 'Stories that reveal themselves along your path, transforming every journey into a knowledge adventure.'
+        finalCta: {
+          title: 'Start your cultural journey on the road.',
+          subtitle: 'Download the app on official stores.'
         }
       },
       ES: {
         hero: {
-          title: 'Nuestra razón de ser'
+          title: 'Nuestra razón de ser',
+          subtitle: 'La cultura no debería estar limitada a libros o aulas. Tuggi existe para poner historias en el camino — de forma ligera, en audio, mientras conduces.'
         },
         block1: {
           title: 'Cultura en movimiento',
-          content: [
-            'Creemos que la cultura no debe estar confinada a libros, itinerarios turísticos o aulas. Debe acompañarte en tu camino, en los lugares por donde pasas, en los paisajes que atraviesas, en las calles que conoces todos los días.',
-            'La cultura está viva. Está en el trayecto, no solo en el destino.'
-          ]
+          text: 'Creemos que la cultura vive en el trayecto. En lugar de atarte a una ruta, Tuggi revela contexto e historias en el momento en que pasas por los lugares.'
         },
         block2: {
-          title: 'Por qué creamos Tuggi',
-          content: [
-            'Creamos Tuggi porque queremos democratizar el acceso al conocimiento. Queremos que cada persona, en cualquier lugar, tenga la oportunidad de descubrir más sobre el mundo que le rodea.',
-            'Mientras otras plataformas centralizan la experiencia en itinerarios prefabricados, mapas cerrados o atracciones turísticas, nosotros preferimos entregar libertad.',
-            // 'Libertad para explorar.',
-            // 'Libertad para escuchar.',
-            // 'Libertad para conectar.'
-          ]
+          title: 'Qué es Tuggi hoy',
+          text: 'Hoy, Tuggi es un copiloto cultural en audio para quienes conducen. Identifica puntos en el camino y narra historias cortas y contextuales, sin exigir atención a la pantalla.'
         },
-        block3: {
-          title: 'Cómo lo hacemos',
-          content: [
-            'Utilizamos tecnología de geolocalización e inteligencia contextual para activar narraciones automáticas que cuentan la historia de lo que está alrededor del usuario — en el momento adecuado.',
-            'Es una experiencia sin pantallas, sin distracciones, sin algoritmos. El conocimiento viene hacia ti, de forma ligera, orgánica y real.',
-            'Tú te mueves. Tuggi habla.'
-          ]
-        },
-        block4: {
-          title: 'Libertad de ruta',
-          content: [
-            'No necesitas seguir una ruta planificada. Tuggi funciona donde estés. Ya sea yendo al trabajo, viajando, caminando en tu barrio o explorando una nueva ciudad, revela las capas culturales invisibles de tu trayecto.',
-            'El camino es tuyo. El descubrimiento también.'
-          ]
-        },
-        block5: {
-          title: 'Un futuro construido en comunidad',
-          content: [
-            'Creemos en un futuro construido juntos. Por eso, incluso durante la fase beta, ya es posible evaluar los contenidos y sugerir mejoras.',
-            'Pronto, podrás indicar nuevos puntos, enviar historias y cocrear la experiencia con nosotros.',
-            'Porque la cultura se construye colectivamente.',
-            // 'Y Tuggi está aquí para dar voz a este movimiento.'
-          ]
+        targetAudience: {
+          drivers: {
+            title: 'Conductores de apps',
+            text: 'Una forma sencilla de hacer el viaje más interesante para el pasajero — con control de cuándo reproducir y pausar.',
+            link: 'Ver para conductores'
+          },
+          daily: {
+            title: 'Quienes conducen a diario',
+            text: 'Transforma desplazamientos y viajes en descubrimientos culturales, a tu ritmo.'
+          }
         },
         values: {
           title: 'Nuestros valores fundamentales',
-          subtitle: 'Los principios que guían nuestra misión de democratizar el acceso a la cultura',
-          discovery: {
-            title: 'Descubrimiento espontáneo',
-            description: 'Cada lugar tiene una historia. Nuestra misión es revelar estas narrativas mientras vives tu rutina.'
+          items: [
+            { id: 'trajeto', title: 'Descubrimiento en el camino', description: 'Historias en el camino, en el momento justo.' },
+            { id: 'contexto', title: 'Claridad y contexto', description: 'Contenido corto, directo y bien explicado.' },
+            { id: 'autonomia', title: 'Autonomía del usuario', description: 'Tú decides cuándo escuchar y pausar.' },
+            { id: 'simplicidade', title: 'Seguridad y sencillez', description: 'Audio en primer lugar, poca pantalla.' },
+            { id: 'dados', title: 'Responsabilidad con los datos', description: 'Privacidad y control en tus manos.' }
+          ]
+        },
+        whatWeAreNot: {
+          title: 'Lo que Tuggi NO es',
+          bullets: [
+            'No es una guía que exija mirar la pantalla.',
+            'No es radio continua: tú controlas cuándo escuchar.',
+            'No graba conversaciones y no hace escucha pasiva.'
+          ]
+        },
+        responsibility: {
+          title: 'Responsabilidad',
+          safety: {
+            title: 'Seguridad',
+            text: 'La experiencia está pensada para audio y uso con el móvil fijo. Atención total al tráfico.'
           },
-          connection: {
-            title: 'Conexión cultural',
-            description: 'Creemos que conocer la historia de los lugares crea un vínculo más profundo con el mundo.'
-          },
-          freedom: {
-            title: 'Libertad de exploración',
-            description: 'Sin rutas predefinidas. La cultura surge naturalmente, respetando tu ritmo y tus elecciones.'
+          privacy: {
+            title: 'Privacidad por design',
+            bullets: [
+              'Ubicación usada solo para activar historias a lo largo del trayecto.',
+              'No grabamos conversaciones; no hacemos escucha pasiva.',
+              'Tú controlas los permisos y puedes revocarlos cuando quieras.',
+              'Puedes solicitar la eliminación de datos.'
+            ],
+            links: {
+              privacy: 'Política de Privacidad',
+              dataDeletion: 'Eliminación de Datos'
+            }
           }
         },
         community: {
-          participants: 'Participantes',
-          cities: 'Ciudades',
-          betaPhase: 'Fase Beta Activa'
+          title: 'Construido con la comunidad',
+          text: '¿Quieres sugerir puntos, reportar algo incorrecto o enviar una idea? Leemos y priorizamos mejoras continuamente.',
+          cta: 'Habla con nosotros'
         },
-        cta: {
-          title: 'Sé parte de la construcción',
-          description: 'Únete a nosotros y ayúdanos a moldear el futuro de la cultura urbana en Brasil',
-          button: 'Participar en la encuesta'
-        },
-        appMockup: {
-          title: 'Tuggi en acción',
-          subtitle: 'Ve cómo transformamos cualquier trayecto en una aventura de descubrimiento cultural',
-          location: 'São Paulo - Centro',
-          storiesFound: 'Historias descubiertas: 15',
-          nowPlaying: 'Reproduciendo ahora',
-          storyTitle: 'La Historia de la Libertad',
-          features: {
-            culture: 'Cultura en movimiento',
-            stories: 'Historias vivas',
-            knowledge: 'Conocimiento libre'
-          }
-        },
-        bookMockup: {
-          title: 'Cultura Viva',
-          description: 'Historias que se revelan en tu camino, transformando cada trayecto en una aventura de conocimiento.'
+        finalCta: {
+          title: 'Comienza tu viaje cultural en el camino.',
+          subtitle: 'Descarga el app en las tiendas oficiales.'
         }
       }
     };
@@ -302,490 +246,223 @@ const PurposePage: React.FC<PurposePageProps> = ({
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
+      {/* SECTION 1 — HERO (manifesto) */}
       <section 
-        className={`${layout.section.hero} relative overflow-hidden`}
+        className={`${layout.section.hero} relative overflow-hidden flex flex-col items-center justify-center text-center`}
         style={{ background: gradients.hero }}
       >
-        {/* Background Elements */}
-        <div className="absolute top-20 left-20 w-40 h-40 bg-tuggi-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-36 h-36 bg-tuggi-secondary/5 rounded-full blur-3xl"></div>
-        
-        <div className={layout.container.wide}>
-          <div className={`${layout.grid['2']} gap-8 lg:gap-12 items-center`}>
-            {/* Left Column - Text Content */}
-            <div className="text-center lg:text-left">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-neutral-900 mb-6 lg:mb-8 leading-tight">
-                {content.hero.title}
-              </h1>
-              <p className="text-lg lg:text-xl text-neutral-700 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                Um manifesto sobre democratizar o acesso à cultura e transformar qualquer trajeto em uma jornada de descobertas.
+        <div className={layout.container.narrow}>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 leading-tight">
+            {content.hero.title}
+          </h1>
+          <p className="text-xl lg:text-2xl text-neutral-700 leading-relaxed mb-8">
+            {content.hero.subtitle}
+          </p>
+          <button 
+            onClick={() => {
+              const footerCta = document.getElementById('footer-cta');
+              footerCta?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className={`${getButtonClasses('secondary', 'md')} mt-4`}
+          >
+            Baixar o app
+          </button>
+        </div>
+      </section>
+
+      {/* SECTION 2 — CULTURA EM MOVIMENTO */}
+      <section className={`${layout.section.base} bg-white`}>
+        <div className={layout.container.narrow}>
+          <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-6 text-center">
+            {content.block1.title}
+          </h2>
+          <p className="text-lg lg:text-xl text-neutral-700 leading-relaxed text-center">
+            {content.block1.text}
+          </p>
+        </div>
+      </section>
+
+      {/* SECTION 3 — O QUE É A TUGGI HOJE */}
+      <section className={`${layout.section.base} bg-white`}>
+        <div className={layout.container.narrow}>
+          <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-6 text-center">
+            {content.block2.title}
+          </h2>
+          <p className="text-lg lg:text-xl text-neutral-700 leading-relaxed text-center">
+            {content.block2.text}
+          </p>
+        </div>
+      </section>
+
+      {/* SECTION 4 — PARA QUEM EXISTE */}
+      <section className={`${layout.section.base} bg-white`}>
+        <div className={layout.container.base}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Card A */}
+            <div className={`${getCardClasses()} p-8 border border-neutral-200`}>
+              <h3 className="text-2xl font-bold text-neutral-900 mb-4">
+                {content.targetAudience.drivers.title}
+              </h3>
+              <p className="text-neutral-700 mb-6">
+                {content.targetAudience.drivers.text}
+              </p>
+              <button 
+                onClick={() => handleCTAClick('android_beta')}
+                className="text-tuggi-primary font-semibold inline-flex items-center group"
+              >
+                <span>{content.targetAudience.drivers.link}</span>
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
+            {/* Card B */}
+            <div className={`${getCardClasses()} p-8 border border-neutral-200`}>
+              <h3 className="text-2xl font-bold text-neutral-900 mb-4">
+                {content.targetAudience.daily.title}
+              </h3>
+              <p className="text-neutral-700">
+                {content.targetAudience.daily.text}
               </p>
             </div>
-            
-            {/* Right Column - Visual Element */}
-            <div className="relative flex justify-center lg:justify-end">
-              {/* Book Mockup */}
-              <div 
-                className="relative rounded-3xl p-8 lg:p-12" 
-                style={{
-                  width: '280px', 
-                  height: '400px',
-                  background: gradients.subtle
-                }}
-              >
-                {/* Floating Elements */}
-                <div className="absolute top-4 right-4 w-16 h-16 bg-tuggi-primary/10 rounded-full blur-xl"></div>
-                <div className="absolute bottom-4 left-4 w-20 h-20 bg-tuggi-secondary/10 rounded-full blur-xl"></div>
-                
-                {/* Book Content */}
-                <div className="relative z-10 h-full flex flex-col justify-center items-center text-center">
-                  <div 
-                    className="w-20 h-20 rounded-full flex items-center justify-center mb-6 shadow-2xl"
-                    style={{ background: gradients.aurora }}
-                  >
-                    <BookOpen className="w-10 h-10 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-neutral-800 mb-3">{content.bookMockup.title}</h3>
-                  <p className="text-sm text-neutral-600 leading-relaxed">
-                    {content.bookMockup.description}
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Bloco 1 - Cultura em movimento */}
-      <section className={`${layout.section.base} bg-white relative overflow-hidden`}>
-        {/* Background Elements */}
-        <div className="absolute top-20 right-20 w-36 h-36 bg-tuggi-primary/4 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-20 w-40 h-40 bg-tuggi-secondary/4 rounded-full blur-3xl"></div>
-        
-        <div className={`${layout.container.narrow} relative`}>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900 mb-6 lg:mb-8 text-center">
-            {content.block1.title}
-            </h2>
-            
-          <div className="space-y-6 lg:space-y-8">
-            {content.block1.content.map((paragraph: string, index: number) => (
-              <div key={index} className="group">
-                <p className={`text-lg lg:text-xl leading-relaxed text-center transition-all duration-300 ${
-                  index === content.block1.content.length - 1 ? 'font-medium text-tuggi-primary text-xl lg:text-2xl' : 'text-neutral-700'
-                }`}>
-                  {paragraph}
-                </p>
-                {index === content.block1.content.length - 1 && (
-                  <div className="flex justify-center mt-4">
-                    <div className="w-32 h-1 bg-gradient-to-r from-tuggi-primary to-tuggi-secondary rounded-full"></div>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Bloco 2 - Por que criamos a Tuggi + Valores */}
-      <section 
-        className={`${layout.section.base} relative overflow-hidden`}
-        style={{ background: 'linear-gradient(to bottom right, #f8fafc, white)' }}
-      >
-        {/* Background Elements */}
-        <div className="absolute top-20 left-20 w-40 h-40 bg-tuggi-primary/3 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-36 h-36 bg-tuggi-secondary/3 rounded-full blur-3xl"></div>
-        <div 
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full blur-3xl"
-          style={{ background: gradients.cosmic, opacity: 0.03 }}
-        ></div>
-        
+      {/* SECTION 5 — NOSSOS VALORES FUNDAMENTAIS */}
+      <section className={`${layout.section.base} bg-white`}>
         <div className={layout.container.base}>
-          {/* Content Grid */}
-          <div className={`${layout.grid['2']} gap-12 lg:gap-16 items-start`}>
-            {/* Left Column - Why we created Tuggi */}
-            <div className="space-y-6 lg:space-y-8">
-              <div className="mb-8">
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900 mb-6">
-                  {content.block2.title}
-                </h2>
-              </div>
-              
-              {content.block2.content.map((paragraph: string, index: number) => (
-                <div key={index} className="group">
-                  <p className={`text-lg lg:text-xl leading-relaxed transition-all duration-300 ${
-                    index >= 3 ? 'font-medium text-tuggi-primary text-xl lg:text-2xl' : 'text-neutral-700'
-                  }`}>
-                    {paragraph}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            {/* Right Column - Values */}
-            <div className="space-y-8">
-              <div className="mb-8">
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900 mb-4">
-                  {content.values.title}
-                </h2>
-                <p className="text-base lg:text-lg text-neutral-600">
-                  {content.values.subtitle}
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 gap-6">
-                {/* Descobrimento */}
-                <div className={`${getCardClasses()} group text-left bg-white/60 backdrop-blur-sm border border-neutral-200 relative overflow-hidden`}>
-                  {/* Card Background Pattern */}
-                  <div className="absolute top-0 right-0 w-20 h-20 bg-tuggi-primary/5 rounded-full blur-2xl"></div>
-                  
-                  <div className="flex items-start space-x-4 relative z-10">
-                    <div 
-                      className="flex-shrink-0 w-12 h-12 rounded-full items-center justify-center flex group-hover:scale-110 transition-transform duration-300 shadow-lg"
-                      style={{ background: gradients.ocean }}
-                    >
-                      <Eye className="w-6 h-6 text-white" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg font-bold text-neutral-900 mb-2 group-hover:text-tuggi-primary transition-colors duration-300">
-                        {content.values.discovery.title}
-                      </h3>
-                      <p className="text-sm lg:text-base text-neutral-600 leading-relaxed">
-                        {content.values.discovery.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Conexão */}
-                <div className={`${getCardClasses()} group text-left bg-white/60 backdrop-blur-sm border border-neutral-200 relative overflow-hidden`}>
-                  {/* Card Background Pattern */}
-                  <div className="absolute top-0 right-0 w-20 h-20 bg-tuggi-secondary/5 rounded-full blur-2xl"></div>
-                  
-                  <div className="flex items-start space-x-4 relative z-10">
-                    <div 
-                      className="flex-shrink-0 w-12 h-12 rounded-full items-center justify-center flex group-hover:scale-110 transition-transform duration-300 shadow-lg"
-                      style={{ background: gradients.forest }}
-                    >
-                      <Heart className="w-6 h-6 text-white" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg font-bold text-neutral-900 mb-2 group-hover:text-tuggi-primary transition-colors duration-300">
-                        {content.values.connection.title}
-                      </h3>
-                      <p className="text-sm lg:text-base text-neutral-600 leading-relaxed">
-                        {content.values.connection.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Liberdade */}
-                <div className={`${getCardClasses()} group text-left bg-white/60 backdrop-blur-sm border border-neutral-200 relative overflow-hidden`}>
-                  {/* Card Background Pattern */}
-                  <div className="absolute top-0 right-0 w-20 h-20 bg-tuggi-primary/5 rounded-full blur-2xl"></div>
-                  
-                  <div className="flex items-start space-x-4 relative z-10">
-                    <div 
-                      className="flex-shrink-0 w-12 h-12 rounded-full items-center justify-center flex group-hover:scale-110 transition-transform duration-300 shadow-lg"
-                      style={{ background: gradients.cosmic }}
-                    >
-                      <Compass className="w-6 h-6 text-white" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg font-bold text-neutral-900 mb-2 group-hover:text-tuggi-primary transition-colors duration-300">
-                        {content.values.freedom.title}
-                      </h3>
-                      <p className="text-sm lg:text-base text-neutral-600 leading-relaxed">
-                        {content.values.freedom.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Bloco 3 - Como fazemos isso */}
-      <section 
-        className={`${layout.section.base} relative overflow-hidden`}
-        style={{ background: gradients.subtle }}
-      >
-        {/* Background Elements */}
-        <div className="absolute top-10 right-10 w-28 h-28 bg-tuggi-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 left-10 w-32 h-32 bg-tuggi-secondary/5 rounded-full blur-3xl"></div>
-        
-        <div className={`${layout.container.narrow} relative`}>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900 mb-6 lg:mb-8 text-center">
-            {content.block3.title}
+          <h2 className="text-3xl lg:text-4xl font-bold mb-12 text-center text-neutral-900">
+            {content.values.title}
           </h2>
-          
-          <div className="space-y-6 lg:space-y-8">
-            {content.block3.content.map((paragraph: string, index: number) => (
-              <div key={index} className="group">
-                <p className={`text-lg lg:text-xl leading-relaxed text-center transition-all duration-300 ${
-                  index === content.block3.content.length - 1 ? 'font-medium text-tuggi-primary text-xl lg:text-2xl' : 'text-neutral-700'
-                }`}>
-                  {paragraph}
-                </p>
-                {index === content.block3.content.length - 1 && (
-                  <div className={`${layout.flex.center} mt-4`}>
-                    <div className="flex items-center space-x-2">
-                      <div className="w-3 h-3 bg-tuggi-primary rounded-full animate-pulse"></div>
-                      <div className="w-3 h-3 bg-tuggi-secondary rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
-                      <div className="w-3 h-3 bg-tuggi-primary rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
-                    </div>
-                  </div>
-                )}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {content.values.items.map((item: any) => (
+              <div key={item.id} className={`${getCardClasses()} p-6 border border-neutral-200`}>
+                <h3 className="text-xl font-bold text-tuggi-primary mb-2">{item.title}</h3>
+                <p className="text-neutral-600 text-sm leading-relaxed">{item.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Bloco 4 - Liberdade de rota */}
-      <section className={`${layout.section.base} bg-white relative overflow-hidden`}>
-        {/* Background Elements */}
-        <div className="absolute top-20 right-20 w-36 h-36 bg-tuggi-primary/4 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-20 w-40 h-40 bg-tuggi-secondary/4 rounded-full blur-3xl"></div>
-        
-        <div className={`${layout.container.narrow} relative`}>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900 mb-6 lg:mb-8 text-center">
-            {content.block4.title}
+      {/* TRANSITION LINE */}
+      <div className={layout.container.narrow}>
+        <p className="text-center text-neutral-500 font-medium py-8 italic">
+          “Para manter a experiência simples e segura, fazemos escolhas claras.”
+        </p>
+      </div>
+
+      {/* SECTION 6 — O QUE NÃO SOMOS */}
+      <section className={`${layout.section.base} bg-white pt-0`}>
+        <div className={layout.container.narrow}>
+          <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-8 text-center">
+            {content.whatWeAreNot.title}
           </h2>
-          
-          <div className="space-y-6 lg:space-y-8">
-            {content.block4.content.map((paragraph: string, index: number) => (
-              <div key={index} className="group">
-                <p className={`text-lg lg:text-xl leading-relaxed text-center transition-all duration-300 ${
-                  index === content.block4.content.length - 1 ? 'font-medium text-tuggi-primary text-xl lg:text-2xl' : 'text-neutral-700'
-                }`}>
-                  {paragraph}
-                </p>
-              </div>
+          <ul className="space-y-4 max-w-2xl mx-auto">
+            {content.whatWeAreNot.bullets.map((bullet: string, idx: number) => (
+              <li key={idx} className="flex items-start">
+                <span className="text-tuggi-primary mr-3">•</span>
+                <span className="text-lg text-neutral-700">{bullet}</span>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
-      {/* Bloco 5 - Um futuro construído em comunidade */}
-      <section 
-        className={`${layout.section.base} relative overflow-hidden`}
-        style={{ background: 'linear-gradient(to bottom right, #f8fafc, white)' }}
-      >
-        {/* Background Elements */}
-        <div className="absolute top-10 left-10 w-32 h-32 bg-tuggi-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 right-10 w-28 h-28 bg-tuggi-secondary/5 rounded-full blur-3xl"></div>
-        <div 
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full blur-3xl"
-          style={{ background: gradients.cosmic, opacity: 0.05 }}
-        ></div>
-        
-        <div className={`${layout.container.wide} relative`}>
-          {/* Header Section */}
-          <div className="text-center mb-12 lg:mb-16">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900 mb-6 lg:mb-8">
-              {content.block5.title}
-            </h2>
-            
-            {/* Main Content Grid */}
-            <div className={`${layout.grid['2']} gap-8 lg:gap-12 items-center`}>
-              {/* Left Column - Text Content */}
-              <div className="space-y-6 lg:space-y-8">
-                <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-white/20 shadow-lg">
-                  <p className="text-lg lg:text-xl text-neutral-700 leading-relaxed mb-4">
-                    {content.block5.content[0]}
-                  </p>
-                  <p className="text-base lg:text-lg text-neutral-600 leading-relaxed">
-                    {content.block5.content[1]}
-            </p>
-          </div>
-
-                <div 
-                  className="rounded-2xl p-6 lg:p-8 border border-tuggi-primary/10"
-                  style={{ background: 'linear-gradient(to bottom right, rgba(0, 168, 232, 0.05), rgba(255, 111, 0, 0.05))' }}
-                >
-                  <p className="text-base lg:text-lg text-neutral-700 leading-relaxed">
-                    {content.block5.content[2]}
-                  </p>
-                </div>
-              </div>
-
-              {/* Right Column - Visual Elements */}
-              <div className="relative">
-                {/* Community Visual */}
-                <div 
-                  className="rounded-3xl p-8 lg:p-12 text-center relative overflow-hidden"
-                  style={{ background: gradients.subtle }}
-                >
-                  {/* Floating Elements */}
-                  <div className="absolute top-4 right-4 w-16 h-16 bg-tuggi-primary/10 rounded-full blur-xl"></div>
-                  <div className="absolute bottom-4 left-4 w-20 h-20 bg-tuggi-secondary/10 rounded-full blur-xl"></div>
-                  
-                  {/* Main Icon */}
-                  <div className="relative z-10 mb-6">
-                    <div 
-                      className="w-24 h-24 rounded-full flex items-center justify-center mx-auto shadow-2xl"
-                      style={{ background: gradients.cosmic }}
-                    >
-                      <Users className="w-12 h-12 text-white" />
-                    </div>
-                  </div>
-                  
-                  {/* Community Stats */}
-                  <div className={`${layout.grid['2']} gap-4 mb-6`}>
-                    <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4">
-                      <div className="text-2xl font-bold text-tuggi-primary">150+</div>
-                      <div className="text-sm text-neutral-600">{content.community.participants}</div>
-                    </div>
-                    <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4">
-                      <div className="text-2xl font-bold text-tuggi-secondary">23</div>
-                      <div className="text-sm text-neutral-600">{content.community.cities}</div>
-                    </div>
-                  </div>
-                  
-                  {/* Beta Badge */}
-                  <div className={getBadgeClasses('info', 'md')}>
-                    <div className="w-2 h-2 bg-tuggi-primary rounded-full animate-pulse"></div>
-                    <span>{content.community.betaPhase}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* CTA Section */}
-          <div className="text-center mt-12 lg:mt-16">
-            <div 
-              className="rounded-3xl p-8 lg:p-12 border border-tuggi-primary/10"
-              style={{ background: 'linear-gradient(to right, rgba(0, 168, 232, 0.05), rgba(255, 111, 0, 0.05))' }}
-            >
-              <h3 className="text-xl lg:text-2xl font-bold text-neutral-900 mb-4">
-                {content.cta.title}
+      {/* SECTION 7 — RESPONSABILIDADE */}
+      <section className={`${layout.section.base} bg-white relative z-10 border-t border-neutral-100`}>
+        <div className={layout.container.base}>
+          <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-12 text-center">
+            {content.responsibility.title}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+              <h3 className="text-2xl font-bold text-neutral-900 mb-4 text-tuggi-primary">
+                {content.responsibility.safety.title}
               </h3>
-              <p className="text-base lg:text-lg text-neutral-600 mb-6 max-w-2xl mx-auto">
-                {content.cta.description}
-            </p>
-            <button 
-                onClick={() => handleCTAClick('join_beta')}
-                className={`${getButtonClasses('primary', 'lg')} inline-flex items-center space-x-2 group`}
-            >
-                <span>{content.cta.button}</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
-            </button>
+              <p className="text-lg text-neutral-700">
+                {content.responsibility.safety.text}
+              </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Final Visual Element - App Mockup */}
-      <section 
-        className={`${layout.section.base} relative overflow-hidden`}
-        style={{ background: 'linear-gradient(to bottom right, #f8fafc, white)' }}
-      >
-        {/* Background Elements */}
-        <div className="absolute top-10 left-10 w-32 h-32 bg-tuggi-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 right-10 w-28 h-28 bg-tuggi-secondary/5 rounded-full blur-3xl"></div>
-        
-        <div className={`${layout.container.wide} relative`}>
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900 mb-4">
-              {content.appMockup.title}
-          </h2>
-            <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-              {content.appMockup.subtitle}
-            </p>
-          </div>
-          
-          <div className={layout.flex.center}>
-            <div 
-              className="relative rounded-3xl p-6 lg:p-8"
-              style={{ background: gradients.subtle }}
-            >
-              {/* Mobile App Interface */}
-              <div className="bg-white rounded-3xl shadow-2xl overflow-hidden mx-auto" style={{width: '240px', height: '480px'}}>
-                {/* Status Bar */}
-                <div className="bg-neutral-100 px-6 py-3 flex items-center justify-between">
-                  <div className="text-xs font-semibold text-neutral-700">9:41</div>
-                  <div className="flex items-center space-x-1">
-                    <div className="w-4 h-2 bg-neutral-400 rounded-sm"></div>
-                    <div className="w-1 h-2 bg-neutral-400 rounded-sm"></div>
-                    <div className="w-6 h-3 bg-green-500 rounded-sm"></div>
-                  </div>
-                </div>
-                
-                {/* App Header */}
-                <div className="bg-tuggi-primary px-6 py-4 text-white">
-                  <div className={layout.flex.between}>
-                    <div className="text-lg font-bold">Tuggi</div>
-                    <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                      <span className="text-sm">🎧</span>
-                    </div>
-                  </div>
-                  <div className="text-sm opacity-90 mt-1">Copiloto Cultural</div>
-                </div>
-                
-                {/* Main Content */}
-                <div className="p-6 space-y-4">
-                  {/* Current Location */}
-                  <div className="bg-tuggi-primary/5 rounded-lg p-4">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-3 h-3 bg-tuggi-primary rounded-full animate-pulse"></div>
-                      <div>
-                        <div className="text-sm font-semibold text-neutral-800">{content.appMockup.location}</div>
-                        <div className="text-xs text-neutral-600">{content.appMockup.storiesFound}</div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Active Story */}
-                  <div 
-                    className="rounded-lg p-4"
-                    style={{ background: gradients.aurora }}
-                  >
-                    <div className="text-sm font-semibold text-tuggi-primary mb-2">🎙️ {content.appMockup.nowPlaying}</div>
-                    <div className="text-sm text-neutral-800 font-medium mb-2">{content.appMockup.storyTitle}</div>
-                    <div className="flex items-center space-x-2">
-                      <div className="flex-1 h-2 bg-neutral-200 rounded-full">
-                        <div className="h-2 bg-tuggi-primary rounded-full w-1/3"></div>
-                      </div>
-                      <div className="text-xs text-neutral-600">2:30</div>
-                    </div>
-                  </div>
-                  
-                  {/* Features */}
-                  <div className="space-y-3">
-                    <div className="flex items-center space-x-3 p-3 bg-neutral-50 rounded-lg">
-                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                      <span className="text-sm text-neutral-700">{content.appMockup.features.culture}</span>
-                    </div>
-                    <div className="flex items-center space-x-3 p-3 bg-neutral-50 rounded-lg">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                      <span className="text-sm text-neutral-700">{content.appMockup.features.stories}</span>
-                    </div>
-                    <div className="flex items-center space-x-3 p-3 bg-neutral-50 rounded-lg">
-                      <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                      <span className="text-sm text-neutral-700">{content.appMockup.features.knowledge}</span>
-                    </div>
-                  </div>
-                </div>
+            <div>
+              <h3 className="text-2xl font-bold text-neutral-900 mb-4 text-tuggi-primary">
+                {content.responsibility.privacy.title}
+              </h3>
+              <ul className="space-y-3 mb-6">
+                {content.responsibility.privacy.bullets.map((bullet: string, idx: number) => (
+                  <li key={idx} className="flex items-start text-neutral-700">
+                    <span className="text-tuggi-primary mr-2 font-bold">✓</span>
+                    <span>{bullet}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="flex flex-wrap gap-4">
+                <button 
+                  onClick={() => handleCTAClick('privacy_policy')}
+                  className="text-tuggi-primary hover:underline text-sm font-medium"
+                >
+                  {content.responsibility.privacy.links.privacy}
+                </button>
+                <button 
+                  onClick={() => handleCTAClick('data_deletion')}
+                  className="text-tuggi-primary hover:underline text-sm font-medium"
+                >
+                  {content.responsibility.privacy.links.dataDeletion}
+                </button>
               </div>
-              
-              {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-tuggi-secondary rounded-2xl opacity-20 rotate-12"></div>
-              <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-tuggi-primary rounded-2xl opacity-20 -rotate-12"></div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Final CTA Section */}
-      <FinalCTASection 
-        currentLanguage={currentLanguage}
-        onCTAClick={handleCTAClick}
-      />
+      {/* SECTION 8 — COMUNIDADE */}
+      <section className={`${layout.section.base} bg-white`}>
+        <div className={layout.container.narrow}>
+          <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-6 text-center">
+            {content.community.title}
+          </h2>
+          <p className="text-lg text-neutral-700 text-center mb-10">
+            {content.community.text}
+          </p>
+          <div className="flex justify-center">
+            <button 
+              onClick={() => handleCTAClick('contact_sales')}
+              className={`${getButtonClasses('secondary', 'lg')}`}
+            >
+              {content.community.cta}
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 9 — FOOTER CTA */}
+      <section id="footer-cta" className={`${layout.section.base} bg-neutral-900 text-white text-center`}>
+        <div className={layout.container.narrow}>
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+            {content.finalCta.title}
+          </h2>
+          <p className="text-neutral-400 mb-10">
+            {content.finalCta.subtitle}
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a 
+              href="https://apps.apple.com/br/app/tuggi-explore-ao-dirigir/id6744379818"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white text-black px-8 py-4 rounded-xl font-bold hover:bg-neutral-100 transition-colors w-full sm:w-auto"
+            >
+              App Store
+            </a>
+            <a 
+              href="https://play.google.com/store/apps/details?id=com.tuggidrive.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-neutral-800 text-white border border-white/20 px-8 py-4 rounded-xl font-bold hover:bg-neutral-700 transition-colors w-full sm:w-auto"
+            >
+              Google Play
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
