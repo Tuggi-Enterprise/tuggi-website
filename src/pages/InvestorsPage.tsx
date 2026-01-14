@@ -1,10 +1,15 @@
 import React from 'react';
-import { TrendingUp, Users, Globe, DollarSign, Calendar, ArrowRight, CheckCircle, Star, BarChart3, Lightbulb, Building2, Mail } from 'lucide-react';
 import { 
-  getButtonClasses, 
+  BarChart3, 
+  Target, 
+  Zap, 
+  ShieldCheck, 
+  Handshake, 
+  ChevronRight
+} from 'lucide-react';
+import { 
   getCardClasses, 
-  layout,
-  gradients 
+  layout 
 } from '../utils/designSystem';
 
 interface InvestorsPageProps {
@@ -13,76 +18,202 @@ interface InvestorsPageProps {
 }
 
 const InvestorsPage: React.FC<InvestorsPageProps> = ({ 
-  currentLanguage,
+  currentLanguage = 'PT',
   onCTAClick 
 }) => {
   const getLocalizedContent = (language: string) => {
     const content: Record<string, any> = {
       PT: {
-        title: 'Para investidores',
-        subtitle: 'A Tuggi está construindo o futuro da descoberta cultural urbana.',
-        description: 'A Tuggi nasceu do desejo de reconectar as pessoas com o mundo ao seu redor. Acreditamos que a cultura não precisa estar presa a livros, museus ou salas de aula. Ela pode estar viva no caminho, nas ruas, nos nomes, nos edifícios, nos bairros — e pode ser acessada por qualquer pessoa, em qualquer lugar, no momento certo.',
-        currentStatus: 'Para realizar essa visão, criamos um copiloto cultural que transforma trajetos cotidianos em experiências de conhecimento. Utilizando geolocalização, inteligência contextual e narração automática, oferecemos uma nova forma de consumir cultura: natural, viva, espontânea — e sem depender de roteiros fixos.',
-        b2bPillar: 'Além do app B2C, a Tuggi opera um pilar B2B de dados culturais verificados e APIs, permitindo que empresas integrem descrições confiáveis em seus produtos. Hoje, já operamos em três idiomas (PT-BR, ES-ES e EN-US), com expansão contínua.',
-        vision: 'Hoje, a Tuggi está em fase beta no Brasil. Estamos mapeando regiões estratégicas, ouvindo os primeiros usuários e preparando os fundamentos para escalar: Expansão geográfica orientada por dados de interesse, modelo freemium com plano gratuito e opções pagas por tempo de uso, e abertura da plataforma para contribuições da própria comunidade. Buscamos conexões com investidores e aceleradoras que compartilhem nossa visão de impacto, inovação social e acesso democrático ao conhecimento.',
-        contactTitle: 'Para conversar conosco, envie um e-mail para:',
-        primaryEmail: 'investidores@tuggi.app',
-        alternativeContact: 'Se preferir, entre em contato também por:',
-        secondaryEmail: 'contato@tuggi.app',
-        futureNote: 'Versões futuras desta página incluirão press kit, métricas de uso, roadmap e materiais complementares.',
-        marketSize: 'Mercado de Turismo Cultural',
-        marketValue: 'US$ 1.2 trilhões',
-        marketGrowth: 'Crescimento anual de 15%',
-        userBase: 'Testes de Usabilidade',
-        userCount: '50+',
-        userGrowth: 'Feedback positivo de 90%',
-        targetMarkets: 'Mercados-Alvo',
-        markets: 'Brasil, América Latina, Europa',
-        expansion: 'Expansão planejada para 2024'
+        hero: {
+          title: 'Para investidores',
+          subtitle: 'Tuggi é um copiloto cultural em áudio para trajetos de carro — com potencial de distribuição via motoristas de aplicativo.'
+        },
+        thesis: {
+          title: 'Tese',
+          items: [
+            {
+              title: 'Cultura no trajeto',
+              text: 'Histórias curtas, contextuais e acionadas por localização.'
+            },
+            {
+              title: 'Baixa fricção',
+              text: 'Experiência em áudio, com foco em simplicidade e segurança.'
+            },
+            {
+              title: 'Distribuição',
+              text: 'Motoristas de aplicativo como canal natural de adoção.'
+            }
+          ]
+        },
+        product: {
+          title: 'Produto hoje',
+          description: 'O app entrega narrações automáticas em pontos do caminho para quem está dirigindo. O conteúdo é curado e evolui continuamente.',
+          cta: 'Ver o produto'
+        },
+        businessModel: {
+          title: 'Modelo de negócio',
+          cardA: {
+            title: 'B2C (usuário final)',
+            text: 'Acesso ao app com planos e evolução de funcionalidades ao longo do tempo.'
+          },
+          cardB: {
+            title: 'B2B (dados e integração)',
+            text: 'Licenciamento de conteúdo e metadados de POIs para produtos de mobilidade, turismo e educação.',
+            cta: 'Ver página para empresas'
+          }
+        },
+        reliability: {
+          title: 'Confiabilidade',
+          items: [
+            'Conteúdo curado com apoio de validações automatizadas e revisão contínua.',
+            'Parte do conteúdo é contexto histórico e cultural, não ‘fato’ absoluto.',
+            'Canal para correções e revisão mediante feedback.'
+          ],
+          cta: 'Reportar correção'
+        },
+        seeking: {
+          title: 'O que buscamos',
+          items: [
+            'Investidores e aceleradoras com experiência em marketplaces, mobilidade ou travel.',
+            'Apoio em distribuição, parcerias e estruturação comercial.',
+            'Conexões para pilotos comerciais B2B (quando aplicável) e canais de aquisição.'
+          ]
+        },
+        contact: {
+          title: 'Vamos conversar',
+          description: 'Envie um e-mail com uma breve descrição do seu perfil e interesse.',
+          primary: 'investidores@tuggi.app',
+          secondary: 'contato@tuggi.app'
+        },
+        footnote: 'Materiais complementares (deck, métricas e roadmap) disponíveis sob solicitação.'
       },
       EN: {
-        title: 'For Investors',
-        subtitle: 'Tuggi is building the future of urban cultural discovery.',
-        description: 'Tuggi was born from the desire to reconnect people with the world around them. We believe that culture doesn\'t need to be confined to books, museums, or classrooms. It can be alive in the path, in the streets, in names, in buildings, in neighborhoods — and can be accessed by anyone, anywhere, at the right moment.',
-        currentStatus: 'To realize this vision, we created a cultural copilot that transforms everyday journeys into knowledge experiences. Using geolocation, contextual intelligence, and automatic narration, we offer a new way to consume culture: natural, alive, spontaneous — and without depending on fixed itineraries.',
-        b2bPillar: 'Beyond the B2C app, Tuggi operates a B2B pillar of verified cultural data and APIs, allowing companies to integrate reliable descriptions into their products. Today, we already operate in three languages (PT-BR, ES-ES, and EN-US), with continuous expansion.',
-        vision: 'Today, Tuggi is in beta phase in Brazil. We are mapping strategic regions, listening to early users, and preparing the foundations to scale: Data-driven geographic expansion, freemium model with free plan and paid options for usage time, and opening the platform for community contributions. We seek connections with investors and accelerators who share our vision of impact, social innovation, and democratic access to knowledge.',
-        contactTitle: 'To talk to us, send an email to:',
-        primaryEmail: 'investidores@tuggi.app',
-        alternativeContact: 'If you prefer, also contact us at:',
-        secondaryEmail: 'contato@tuggi.app',
-        futureNote: 'Future versions of this page will include press kit, usage metrics, roadmap, and complementary materials.',
-        marketSize: 'Cultural Tourism Market',
-        marketValue: 'US$ 1.2 trillion',
-        marketGrowth: '15% annual growth',
-        userBase: 'Usability Tests',
-        userCount: '50+',
-        userGrowth: '90% positive feedback',
-        targetMarkets: 'Target Markets',
-        markets: 'Brazil, Latin America, Europe',
-        expansion: 'Planned expansion for 2024'
+        hero: {
+          title: 'For Investors',
+          subtitle: 'Tuggi is a cultural audio copilot for car journeys — with distribution potential via rideshare drivers.'
+        },
+        thesis: {
+          title: 'Thesis',
+          items: [
+            {
+              title: 'Culture on the way',
+              text: 'Short, contextual, location-triggered stories.'
+            },
+            {
+              title: 'Low friction',
+              text: 'Audio experience focused on simplicity and safety.'
+            },
+            {
+              title: 'Distribution',
+              text: 'Rideshare drivers as a natural adoption channel.'
+            }
+          ]
+        },
+        product: {
+          title: 'Product Today',
+          description: 'The app delivers automatic narrations at points along the way for drivers. Content is curated and constantly evolving.',
+          cta: 'See Product'
+        },
+        businessModel: {
+          title: 'Business Model',
+          cardA: {
+            title: 'B2C (end user)',
+            text: 'App access with plans and evolving features over time.'
+          },
+          cardB: {
+            title: 'B2B (data & integration)',
+            text: 'Content licensing and POI metadata for mobility, tourism, and education products.',
+            cta: 'See Business Page'
+          }
+        },
+        reliability: {
+          title: 'Reliability',
+          items: [
+            'Curated content supported by automated validation and continuous review.',
+            'Part of the content is historical and cultural context, not absolute \'fact\'.',
+            'Channel for corrections and review through feedback.'
+          ],
+          cta: 'Report Correction'
+        },
+        seeking: {
+          title: 'What we are looking for',
+          items: [
+            'Investors and accelerators with experience in marketplaces, mobility, or travel.',
+            'Support in distribution, partnerships, and commercial structuring.',
+            'Connections for B2B commercial pilots (where applicable) and acquisition channels.'
+          ]
+        },
+        contact: {
+          title: 'Let\'s talk',
+          description: 'Send an email with a brief description of your profile and interest.',
+          primary: 'investidores@tuggi.app',
+          secondary: 'contato@tuggi.app'
+        },
+        footnote: 'Complementary materials (deck, metrics, and roadmap) available upon request.'
       },
       ES: {
-        title: 'Para inversores',
-        subtitle: 'Tuggi está construyendo el futuro del descubrimiento cultural urbano.',
-        description: 'Tuggi nació del deseo de reconectar a las personas con el mundo que les rodea. Creemos que la cultura no necesita estar confinada a libros, museos o aulas. Puede estar viva en el camino, en las calles, en los nombres, en los edificios, en los barrios — y puede ser accesible para cualquier persona, en cualquier lugar, en el momento adecuado.',
-        currentStatus: 'Para realizar esta visión, creamos un copiloto cultural que transforma trayectos cotidianos en experiencias de conocimiento. Utilizando geolocalización, inteligencia contextual y narración automática, ofrecemos una nueva forma de consumir cultura: natural, viva, espontánea — y sin depender de itinerarios fijos.',
-        b2bPillar: 'Además de la app B2C, Tuggi opera un pilar B2B de datos culturales verificados y APIs, permitiendo que las empresas integren descripciones confiables en sus productos. Hoy, ya operamos en tres idiomas (PT-BR, ES-ES y EN-US), con expansión continua.',
-        vision: 'Hoy, Tuggi está en fase beta en Brasil. Estamos mapeando regiones estratégicas, escuchando a los primeros usuarios y preparando los fundamentos para escalar: Expansión geográfica orientada por datos de interés, modelo freemium con plan gratuito y opciones pagas por tiempo de uso, y apertura de la plataforma para contribuciones de la propia comunidad. Buscamos conexiones con inversores y aceleradoras que compartan nuestra visión de impacto, innovación social y acceso democrático al conocimiento.',
-        contactTitle: 'Para conversar con nosotros, envíe un correo electrónico a:',
-        primaryEmail: 'investidores@tuggi.app',
-        alternativeContact: 'Si prefiere, también contáctenos en:',
-        secondaryEmail: 'contato@tuggi.app',
-        futureNote: 'Las versiones futuras de esta página incluirán press kit, métricas de uso, roadmap y materiales complementarios.',
-        marketSize: 'Mercado de Turismo Cultural',
-        marketValue: 'US$ 1.2 billones',
-        marketGrowth: 'Crecimiento anual del 15%',
-        userBase: 'Pruebas de Usabilidad',
-        userCount: '50+',
-        userGrowth: '90% de feedback positivo',
-        targetMarkets: 'Mercados Objetivo',
-        markets: 'Brasil, América Latina, Europa',
-        expansion: 'Expansión planificada para 2024'
+        hero: {
+          title: 'Para inversores',
+          subtitle: 'Tuggi es un copiloto cultural en audio para trayectos en coche, con potencial de distribución a través de conductores de aplicaciones.'
+        },
+        thesis: {
+          title: 'Tesis',
+          items: [
+            {
+              title: 'Cultura en el trayecto',
+              text: 'Historias cortas, contextuales y activadas por ubicación.'
+            },
+            {
+              title: 'Baja fricción',
+              text: 'Experiencia de audio enfocada en la simplicidad y la seguridad.'
+            },
+            {
+              title: 'Distribución',
+              text: 'Conductores de aplicaciones como canal natural de adopción.'
+            }
+          ]
+        },
+        product: {
+          title: 'Producto hoy',
+          description: 'La aplicación ofrece narraciones automáticas en puntos del camino para quienes conducen. El contenido es curado y evoluciona continuamente.',
+          cta: 'Ver producto'
+        },
+        businessModel: {
+          title: 'Modelo de negocio',
+          cardA: {
+            title: 'B2C (usuario final)',
+            text: 'Acceso a la aplicación con planes y evolución de funcionalidades a lo largo del tiempo.'
+          },
+          cardB: {
+            title: 'B2B (datos e integración)',
+            text: 'Licenciamiento de contenido y metadatos de POIs para productos de movilidad, turismo y educación.',
+            cta: 'Ver página para empresas'
+          }
+        },
+        reliability: {
+          title: 'Confiabilidad',
+          items: [
+            'Contenido curado con apoyo de validaciones automatizadas y revisión continua.',
+            'Parte del contenido es contexto histórico y cultural, no "hecho" absoluto.',
+            'Canal para correcciones y revisión mediante comentarios.'
+          ],
+          cta: 'Reportar corrección'
+        },
+        seeking: {
+          title: 'Qué buscamos',
+          items: [
+            'Inversores y aceleradoras con experiencia en marketplaces, movilidad o viajes.',
+            'Apoyo en distribución, asociaciones y estructuración comercial.',
+            'Conexiones para pilotos comerciales B2B (cuando corresponda) y canales de adquisición.'
+          ]
+        },
+        contact: {
+          title: 'Hablemos',
+          description: 'Envíe un correo electrónico con una breve descripción de su perfil e interés.',
+          primary: 'investidores@tuggi.app',
+          secondary: 'contato@tuggi.app'
+        },
+        footnote: 'Materiales complementarios (deck, métricas y roadmap) disponibles bajo solicitud.'
       }
     };
     return content[language] || content['PT'];
@@ -90,131 +221,177 @@ const InvestorsPage: React.FC<InvestorsPageProps> = ({
 
   const content = getLocalizedContent(currentLanguage);
 
-  const handleEmailClick = (email: string, type: string) => {
-    onCTAClick?.(`investor_email_${type}`, 'investors_page');
-    window.location.href = `mailto:${email}`;
+  const handleCTAClick = (ctaType: string) => {
+    onCTAClick?.(ctaType, 'investors_page');
   };
 
   return (
-    <div 
-      className="min-h-screen"
-      style={{ background: 'linear-gradient(to bottom right, #f8fafc, rgba(0, 168, 232, 0.05))' }}
-    >
-      {/* Hero Section */}
-      <section className={`${layout.section.hero} relative mb-0`}>
-        <div className={`${layout.container.narrow} text-center`}>
-          <div className="mb-0">
-            <h1 className="text-4xl lg:text-5xl font-bold text-neutral-900 mb-6 leading-tight">
-              {content.title}
-            </h1>
-            <p className="text-xl lg:text-2xl text-neutral-700 leading-relaxed max-w-3xl mx-auto">
-              {content.subtitle}
-            </p>
-          </div>
+    <div className="min-h-screen bg-white text-neutral-900">
+      {/* SECTION 1 — HERO */}
+      <section className={`${layout.section.hero} bg-neutral-50 border-b border-neutral-100`}>
+        <div className={layout.container.narrow}>
+          <h1 className="text-4xl lg:text-5xl font-bold mb-6 text-neutral-900">
+            {content.hero.title}
+          </h1>
+          <p className="text-xl lg:text-2xl text-neutral-600 leading-relaxed">
+            {content.hero.subtitle}
+          </p>
         </div>
       </section>
 
-      {/* Main Content */}
+      {/* SECTION 2 — TESE */}
       <section className={layout.section.base}>
         <div className={layout.container.narrow}>
-          <div className="prose prose-lg max-w-none">
-            {/* Logo */}
-            <div className="flex justify-center mb-8 -mt-8">
-              <img 
-                src="/tuggi-logo.png" 
-                alt="Tuggi Logo" 
-                className="h-24 lg:h-32 w-auto"
-              />
+          <div className="flex items-center gap-3 mb-10">
+            <BarChart3 className="w-8 h-8 text-tuggi-primary" />
+            <h2 className="text-3xl font-bold">{content.thesis.title}</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {content.thesis.items.map((item: any, idx: number) => (
+              <div key={idx} className={`${getCardClasses()} p-8 h-full`}>
+                <h3 className="text-xl font-bold mb-4 text-tuggi-primary">{item.title}</h3>
+                <p className="text-neutral-600 leading-relaxed font-medium">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 3 — PRODUTO HOJE */}
+      <section className={`${layout.section.base} bg-neutral-50`}>
+        <div className={layout.container.narrow}>
+          <div className="flex items-center gap-3 mb-8">
+            <Zap className="w-8 h-8 text-tuggi-primary" />
+            <h2 className="text-3xl font-bold">{content.product.title}</h2>
+          </div>
+          <p className="text-lg text-neutral-700 leading-relaxed mb-8 max-w-2xl font-medium">
+            {content.product.description}
+          </p>
+          <a 
+            href={`/${currentLanguage.toLowerCase()}/`}
+            className="inline-flex items-center gap-2 text-tuggi-primary font-bold hover:underline"
+            onClick={() => handleCTAClick('see_product')}
+          >
+            {content.product.cta}
+            <ChevronRight className="w-4 h-4" />
+          </a>
+        </div>
+      </section>
+
+      {/* SECTION 4 — MODELO DE NEGÓCIO */}
+      <section className={layout.section.base}>
+        <div className={layout.container.narrow}>
+          <div className="flex items-center gap-3 mb-10">
+            <Target className="w-8 h-8 text-tuggi-primary" />
+            <h2 className="text-3xl font-bold">{content.businessModel.title}</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className={`${getCardClasses()} p-8 border border-neutral-100`}>
+              <h3 className="text-xl font-bold mb-4">{content.businessModel.cardA.title}</h3>
+              <p className="text-neutral-600 leading-relaxed font-medium mb-6">
+                {content.businessModel.cardA.text}
+              </p>
             </div>
-            
-            {/* Description */}
-            <div className="mb-12">
-              <p className="text-lg text-neutral-700 leading-relaxed mb-6">
-                {content.description}
+            <div className={`${getCardClasses()} p-8 border border-neutral-100`}>
+              <h3 className="text-xl font-bold mb-4">{content.businessModel.cardB.title}</h3>
+              <p className="text-neutral-600 leading-relaxed font-medium mb-6">
+                {content.businessModel.cardB.text}
               </p>
-              <p className="text-lg text-neutral-700 leading-relaxed mb-6">
-                {content.currentStatus}
-              </p>
-              <p className="text-lg text-neutral-700 leading-relaxed mb-6">
-                {content.b2bPillar}
-              </p>
-              <p className="text-lg text-neutral-700 leading-relaxed">
-                {content.vision}
-              </p>
-            </div>
-
-            {/* Market Insights Grid */}
-            <div className={`${layout.grid['3']} gap-8 mb-16`}>
-              <div className={getCardClasses()}>
-                <div className="flex items-center mb-4">
-                  <TrendingUp className="w-6 h-6 text-tuggi-primary mr-3" />
-                  <h3 className="text-lg font-semibold text-neutral-900">{content.marketSize}</h3>
-                </div>
-                <p className="text-2xl font-bold text-tuggi-primary mb-2">{content.marketValue}</p>
-                <p className="text-sm text-neutral-600">{content.marketGrowth}</p>
-              </div>
-
-              <div className={getCardClasses()}>
-                <div className="flex items-center mb-4">
-                  <Users className="w-6 h-6 text-tuggi-primary mr-3" />
-                  <h3 className="text-lg font-semibold text-neutral-900">{content.userBase}</h3>
-                </div>
-                <p className="text-2xl font-bold text-tuggi-primary mb-2">{content.userCount}</p>
-                <p className="text-sm text-neutral-600">{content.userGrowth}</p>
-              </div>
-
-              <div className={getCardClasses()}>
-                <div className="flex items-center mb-4">
-                  <Globe className="w-6 h-6 text-tuggi-primary mr-3" />
-                  <h3 className="text-lg font-semibold text-neutral-900">{content.targetMarkets}</h3>
-                </div>
-                <p className="text-lg font-semibold text-neutral-900 mb-2">{content.markets}</p>
-                <p className="text-sm text-neutral-600">{content.expansion}</p>
-              </div>
-            </div>
-
-            {/* Contact Section */}
-            <div className={`${getCardClasses(false)} p-8 lg:p-12`}>
-              <div className="text-center mb-8">
-                <Building2 className="w-12 h-12 text-tuggi-primary mx-auto mb-4" />
-                <h2 className="text-2xl lg:text-3xl font-bold text-neutral-900 mb-4">
-                  {content.contactTitle}
-                </h2>
-              </div>
-
-              <div className="space-y-6">
-                <div className="text-center">
-                  <button
-                    onClick={() => handleEmailClick(content.primaryEmail, 'primary')}
-                    className={`${getButtonClasses('primary', 'lg')} inline-flex items-center`}
-                  >
-                    <Mail className="w-5 h-5 mr-3" />
-                    {content.primaryEmail}
-                  </button>
-                </div>
-
-                <div className="text-center">
-                  <p className="text-neutral-600 mb-4">{content.alternativeContact}</p>
-                  <button
-                    onClick={() => handleEmailClick(content.secondaryEmail, 'secondary')}
-                    className={`${getButtonClasses('outline', 'md')} inline-flex items-center`}
-                  >
-                    <Mail className="w-4 h-4 mr-2" />
-                    {content.secondaryEmail}
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* Future Note */}
-            <div className="mt-12 text-center">
-              <p className="text-sm text-neutral-500 italic">
-                {content.futureNote}
-              </p>
+              <a 
+                href={`/${currentLanguage.toLowerCase()}/empresas`}
+                className="inline-flex items-center gap-2 text-tuggi-primary font-bold hover:underline"
+                onClick={() => handleCTAClick('see_business')}
+              >
+                {content.businessModel.cardB.cta}
+                <ChevronRight className="w-4 h-4" />
+              </a>
             </div>
           </div>
         </div>
       </section>
+
+      {/* SECTION 5 — CONFIABILIDADE */}
+      <section className={`${layout.section.base} bg-neutral-50`}>
+        <div className={layout.container.narrow}>
+          <div className="flex items-center gap-3 mb-10">
+            <ShieldCheck className="w-8 h-8 text-tuggi-primary" />
+            <h2 className="text-3xl font-bold">{content.reliability.title}</h2>
+          </div>
+          <div className="space-y-6 mb-10">
+            {content.reliability.items.map((item: string, idx: number) => (
+              <div key={idx} className="flex items-start gap-4">
+                <div className="w-6 h-6 rounded-full bg-tuggi-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
+                  <div className="w-2 h-2 rounded-full bg-tuggi-primary"></div>
+                </div>
+                <p className="text-lg text-neutral-700 font-medium">{item}</p>
+              </div>
+            ))}
+          </div>
+          <a 
+            href={`/${currentLanguage.toLowerCase()}/contato`}
+            className="inline-flex items-center gap-2 text-tuggi-primary font-bold hover:underline"
+            onClick={() => handleCTAClick('report_correction')}
+          >
+            {content.reliability.cta}
+            <ChevronRight className="w-4 h-4" />
+          </a>
+        </div>
+      </section>
+
+      {/* SECTION 6 — O QUE BUSCAMOS */}
+      <section className={layout.section.base}>
+        <div className={layout.container.narrow}>
+          <div className="flex items-center gap-3 mb-10">
+            <Handshake className="w-8 h-8 text-tuggi-primary" />
+            <h2 className="text-3xl font-bold">{content.seeking.title}</h2>
+          </div>
+          <div className="space-y-8">
+            {content.seeking.items.map((item: string, idx: number) => (
+              <div key={idx} className="flex items-start gap-5">
+                <div className="p-2 rounded-lg bg-tuggi-primary/5">
+                  <div className="w-3 h-3 rounded-full bg-tuggi-primary"></div>
+                </div>
+                <p className="text-xl text-neutral-700 font-medium">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 7 — CONTATO */}
+      <section className={`${layout.section.base} bg-tuggi-primary text-white border-t border-tuggi-primary/10`}>
+        <div className={layout.container.narrow}>
+          <h2 className="text-3xl lg:text-4xl font-bold mb-6">{content.contact.title}</h2>
+          <p className="text-xl text-white/90 mb-10 leading-relaxed font-medium">
+            {content.contact.description}
+          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-6">
+            <a 
+              href={`mailto:${content.contact.primary}?subject=Investimento%20%E2%80%94%20Tuggi`}
+              className="bg-white text-tuggi-primary px-10 py-4 rounded-xl font-bold text-lg hover:bg-neutral-50 transition-colors shadow-2xl"
+              onClick={() => handleCTAClick('contact_investors')}
+            >
+              {content.contact.primary}
+            </a>
+            <a 
+              href={`mailto:${content.contact.secondary}`}
+              className="text-white/80 font-bold hover:text-white transition-colors"
+              onClick={() => handleCTAClick('contact_general')}
+            >
+              {content.contact.secondary}
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTNOTE */}
+      <footer className="py-12 border-t border-neutral-100">
+        <div className={layout.container.narrow}>
+          <p className="text-sm text-neutral-400 italic font-medium">
+            {content.footnote}
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };

@@ -109,6 +109,29 @@ export const generateSEOConfig = (
         ogDescription: 'Ponte en contacto con Tuggi para conocer más sobre nuestra app de descubrimiento cultural. Explora ciudades con historias de audio en tiempo real y curiosidades culturales.'
       }
     },
+    investors: {
+      EN: {
+        title: 'Investors — Tuggi',
+        description: 'Information for investors: Tuggi\'s thesis, product, and business model — cultural audio copilot for car journeys.',
+        keywords: 'tuggi investors, mobility startup, cultural data, audio guide investment, b2b data licensing',
+        ogTitle: 'Investors — Tuggi',
+        ogDescription: 'Information for investors: Tuggi\'s thesis, product, and business model.'
+      },
+      PT: {
+        title: 'Investidores — Tuggi',
+        description: 'Informações para investidores: tese, produto e modelo de negócio da Tuggi — copiloto cultural em áudio para trajetos de carro.',
+        keywords: 'investidores tuggi, tese investimento, startup mobilidade, licenciamento de dados, marketplace cultura',
+        ogTitle: 'Investidores — Tuggi',
+        ogDescription: 'Informações para investidores: tese, produto e modelo de negócio da Tuggi — copiloto cultural em áudio para trajetos de carro.'
+      },
+      ES: {
+        title: 'Inversores — Tuggi',
+        description: 'Información para inversores: tesis, producto y modelo de negocio de Tuggi — copiloto cultural en audio para trayectos en coche.',
+        keywords: 'inversores tuggi, tesis inversión, startup movilidad, licenciamiento de datos, marketplace cultura',
+        ogTitle: 'Inversores — Tuggi',
+        ogDescription: 'Información para inversores: tesis, producto y modelo de negocio de Tuggi — copiloto cultural en audio para trayectos en coche.'
+      }
+    },
     purpose: {
       EN: {
         title: 'Our Purpose | Tuggi — More than a route',
