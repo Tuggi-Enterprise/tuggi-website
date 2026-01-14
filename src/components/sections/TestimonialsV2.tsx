@@ -1,6 +1,4 @@
-import React from 'react';
-import { Star, Quote, MapPin, Users, Globe, Award, Building2, Languages, BadgeX, BadgeCheck } from 'lucide-react';
-import { layout } from '../../utils/designSystem';
+import { Star, Quote, MapPin, Award, Headphones, Volume2, MessageSquare } from 'lucide-react';
 
 interface Testimonial {
   id: string;
@@ -24,199 +22,169 @@ const TestimonialsV2: React.FC<TestimonialsV2Props> = ({
     const content: Record<string, any> = {
       PT: {
         title: 'O que dizem nossos usuários',
-        subtitle: 'Histórias reais de pessoas que transformaram seus trajetos.',
-        subheadSecondary: 'Piloto ativo nas cidades de São Paulo e Rio de Janeiro (fase beta).',
-        note: 'Sem anúncios. Foco total na experiência cultural.',
+        subtitle: 'Relatos de quem usa o Tuggi para transformar trajetos em histórias.',
         testimonials: [
           {
-            id: 'maria_sp',
-            name: 'Maria',
+            id: 'maria',
+            name: 'Maria Silva',
             location: 'São Paulo',
-            role: 'Turista',
-            text: 'Descobri lugares que eu passava todos os dias. O Tuggi me fez ver minha cidade com outros olhos.',
+            role: 'Usuária',
+            text: 'Passei a notar detalhes da cidade que eu nunca tinha percebido. As histórias são curtas e no tempo certo.',
             rating: 5,
             avatar: '/images/avatar-maria.jpg'
           },
           {
-            id: 'joao_sp',
-            name: 'João',
-            location: 'São Paulo',
+            id: 'joao',
+            name: 'João Oliveira',
+            location: 'Rio de Janeiro',
             role: 'Motorista',
-            text: 'Perfeito para o trânsito de SP. As narrações tornam o tempo no carro muito mais interessante.',
+            text: 'No trânsito, o áudio dá contexto e deixa a viagem mais leve sem eu precisar olhar para a tela.',
             rating: 5,
             avatar: '/images/avatar-joao.jpg'
           },
           {
-            id: 'camila_sp',
-            name: 'Camila',
-            location: 'São Paulo',
-            role: 'Turista',
-            text: 'Funciona muito bem nas vias principais. O modo offline ainda está em testes, mas já vale a pena.',
-            rating: 4,
+            id: 'camila',
+            name: 'Camila Santos',
+            location: 'Minas Gerais',
+            role: 'Motorista de aplicativo',
+            text: 'Quando levo passageiros, as narrações viram assunto e deixam o trajeto mais interessante.',
+            rating: 5,
             avatar: '/images/avatar-camila.jpg'
           },
           {
-            id: 'carlos_rj',
-            name: 'Carlos',
-            location: 'Rio de Janeiro',
-            role: 'Motorista',
-            text: 'A qualidade do conteúdo impressiona. Cada ponto tem uma história que prende a atenção dos passageiros.',
+            id: 'carlos',
+            name: 'Carlos Ferreira',
+            location: 'Paraná',
+            role: 'Usuário',
+            text: 'A qualidade do conteúdo impressiona. Cada ponto tem uma história curta e bem explicada.',
             rating: 5,
             avatar: '/images/avatar-carlos.jpg'
           }
         ],
-        stats: [
+        trustItems: [
           {
-            icon: 'building',
-            value: '2',
-            label: 'Cidades em piloto'
+            icon: 'headphones',
+            label: 'Áudio em primeiro lugar'
           },
           {
-            icon: 'languages',
-            value: '3',
-            label: 'Idiomas disponíveis'
+            icon: 'message',
+            label: 'Histórias curtas e contextuais'
           },
           {
-            icon: 'badge-x',
-            value: '0',
-            label: 'Anúncios'
-          },
-          {
-            icon: 'badge-check',
-            value: 'Grátis',
-            label: 'Preço (beta)'
+            icon: 'volume',
+            label: 'Narração automática'
           }
         ]
       },
       EN: {
         title: 'What our users say',
-        subtitle: 'Real stories from people who transformed their journeys.',
-        subheadSecondary: 'Active pilot in São Paulo and Rio de Janeiro cities (beta phase).',
-        note: 'No ads. Total focus on cultural experience.',
+        subtitle: 'Real stories from people who use Tuggi to transform their journeys.',
         testimonials: [
           {
-            id: 'maria_sp',
-            name: 'Maria',
+            id: 'maria',
+            name: 'Maria Silva',
             location: 'São Paulo',
-            role: 'Tourist',
-            text: 'I discovered places I passed every day. Tuggi made me see my city with different eyes.',
+            role: 'User',
+            text: 'I started noticing details in the city I had never seen before. The stories are short and perfectly timed.',
             rating: 5,
             avatar: '/images/avatar-maria.jpg'
           },
           {
-            id: 'joao_sp',
-            name: 'João',
-            location: 'São Paulo',
+            id: 'joao',
+            name: 'João Oliveira',
+            location: 'Rio de Janeiro',
             role: 'Driver',
-            text: 'Perfect for São Paulo traffic. The narrations make time in the car much more interesting.',
+            text: 'In traffic, the audio provides context and makes the trip lighter without me needing to look at the screen.',
             rating: 5,
             avatar: '/images/avatar-joao.jpg'
           },
           {
-            id: 'camila_sp',
-            name: 'Camila',
-            location: 'São Paulo',
-            role: 'Tourist',
-            text: 'Works very well on main roads. Offline mode is still in testing, but it\'s already worth it.',
-            rating: 4,
+            id: 'camila',
+            name: 'Camila Santos',
+            location: 'Minas Gerais',
+            role: 'Ride-share driver',
+            text: 'When I carry passengers, the narrations become a topic of conversation and make the ride more interesting.',
+            rating: 5,
             avatar: '/images/avatar-camila.jpg'
           },
           {
-            id: 'carlos_rj',
-            name: 'Carlos',
-            location: 'Rio de Janeiro',
-            role: 'Driver',
-            text: 'The content quality impresses. Each point has a story that captures passengers\' attention.',
+            id: 'carlos',
+            name: 'Carlos Ferreira',
+            location: 'Paraná',
+            role: 'User',
+            text: 'The content quality is impressive. Each point has a short and well-explained story.',
             rating: 5,
             avatar: '/images/avatar-carlos.jpg'
           }
         ],
-        stats: [
+        trustItems: [
           {
-            icon: 'building',
-            value: '2',
-            label: 'Pilot cities'
+            icon: 'headphones',
+            label: 'Audio first'
           },
           {
-            icon: 'languages',
-            value: '3',
-            label: 'Available languages'
+            icon: 'message',
+            label: 'Short contextual stories'
           },
           {
-            icon: 'badge-x',
-            value: '0',
-            label: 'Ads'
-          },
-          {
-            icon: 'badge-check',
-            value: 'Free',
-            label: 'Price (beta)'
+            icon: 'volume',
+            label: 'Automatic narration'
           }
         ]
       },
       ES: {
         title: 'Lo que dicen nuestros usuarios',
-        subtitle: 'Historias reales de personas que transformaron sus trayectos.',
-        subheadSecondary: 'Piloto activo en las ciudades de São Paulo y Río de Janeiro (fase beta).',
-        note: 'Sin anuncios. Enfoque total en la experiencia cultural.',
+        subtitle: 'Relatos de quienes usan Tuggi para transformar trayectos en historias.',
         testimonials: [
           {
-            id: 'maria_sp',
-            name: 'Maria',
+            id: 'maria',
+            name: 'Maria Silva',
             location: 'São Paulo',
-            role: 'Turista',
-            text: 'Descubrí lugares por los que pasaba todos los días. Tuggi me hizo ver mi ciudad con otros ojos.',
+            role: 'Usuaria',
+            text: 'Empecé a notar detalles de la ciudad que nunca había percibido. Las historias son cortas y en el tiempo justo.',
             rating: 5,
             avatar: '/images/avatar-maria.jpg'
           },
           {
-            id: 'joao_sp',
-            name: 'João',
-            location: 'São Paulo',
+            id: 'joao',
+            name: 'João Oliveira',
+            location: 'Río de Janeiro',
             role: 'Conductor',
-            text: 'Perfecto para el tráfico de São Paulo. Las narraciones hacen el tiempo en el auto mucho más interesante.',
+            text: 'En el tráfico, el audio da contexto y hace el viaje más ligero sin que tenga que mirar la pantalla.',
             rating: 5,
             avatar: '/images/avatar-joao.jpg'
           },
           {
-            id: 'camila_sp',
-            name: 'Camila',
-            location: 'São Paulo',
-            role: 'Turista',
-            text: 'Funciona muy bien en las vías principales. El modo offline aún está en pruebas, pero ya vale la pena.',
-            rating: 4,
+            id: 'camila',
+            name: 'Camila Santos',
+            location: 'Minas Gerais',
+            role: 'Conductora de aplicación',
+            text: 'Cuando llevo pasajeros, las narraciones se vuelven tema de conversación y hacen el trayecto más interesante.',
+            rating: 5,
             avatar: '/images/avatar-camila.jpg'
           },
           {
-            id: 'carlos_rj',
-            name: 'Carlos',
-            location: 'Río de Janeiro',
-            role: 'Conductor',
-            text: 'La calidad del contenido impresiona. Cada punto tiene una historia que captura la atención de los pasajeros.',
+            id: 'carlos',
+            name: 'Carlos Ferreira',
+            location: 'Paraná',
+            role: 'Usuario',
+            text: 'La calidad del contenido impresiona. Cada punto tiene una historia corta y bien explicada.',
             rating: 5,
             avatar: '/images/avatar-carlos.jpg'
           }
         ],
-        stats: [
+        trustItems: [
           {
-            icon: 'building',
-            value: '2',
-            label: 'Ciudades piloto'
+            icon: 'headphones',
+            label: 'Audio en primer lugar'
           },
           {
-            icon: 'languages',
-            value: '3',
-            label: 'Idiomas disponibles'
+            icon: 'message',
+            label: 'Historias cortas y contextuales'
           },
           {
-            icon: 'badge-x',
-            value: '0',
-            label: 'Anuncios'
-          },
-          {
-            icon: 'badge-check',
-            value: 'Gratis',
-            label: 'Precio (beta)'
+            icon: 'volume',
+            label: 'Narración automática'
           }
         ]
       }
@@ -228,22 +196,14 @@ const TestimonialsV2: React.FC<TestimonialsV2Props> = ({
 
   const getIcon = (iconType: string) => {
     switch (iconType) {
-      case 'building':
-        return <Building2 className="w-5 h-5 text-tuggi-primary" />;
-      case 'languages':
-        return <Languages className="w-5 h-5 text-tuggi-secondary" />;
-      case 'badge-x':
-        return <BadgeX className="w-5 h-5 text-red-500" />;
-      case 'badge-check':
-        return <BadgeCheck className="w-5 h-5 text-green-500" />;
-      case 'users':
-        return <Users className="w-5 h-5 text-tuggi-primary" />;
-      case 'globe':
-        return <Globe className="w-5 h-5 text-tuggi-secondary" />;
-      case 'award':
-        return <Award className="w-5 h-5 text-green-500" />;
+      case 'headphones':
+        return <Headphones className="w-5 h-5 text-tuggi-primary" />;
+      case 'message':
+        return <MessageSquare className="w-5 h-5 text-tuggi-secondary" />;
+      case 'volume':
+        return <Volume2 className="w-5 h-5 text-green-500" />;
       default:
-        return <Users className="w-5 h-5 text-tuggi-primary" />;
+        return <Award className="w-5 h-5 text-tuggi-primary" />;
     }
   };
 
@@ -281,23 +241,13 @@ const TestimonialsV2: React.FC<TestimonialsV2Props> = ({
             {content.title}
           </h2>
           <p 
-            className="text-lg mb-1"
+            className="text-lg"
             style={{ 
               color: 'var(--color-text-muted)',
               fontFamily: 'var(--font-sans)'
             }}
           >
             {content.subtitle}
-          </p>
-          <p 
-            className="text-sm"
-            style={{ 
-              color: 'var(--color-text-muted)',
-              fontFamily: 'var(--font-sans)',
-              fontSize: '15px'
-            }}
-          >
-            {content.subheadSecondary}
           </p>
         </div>
 
@@ -306,7 +256,7 @@ const TestimonialsV2: React.FC<TestimonialsV2Props> = ({
           className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8"
           style={{ marginTop: '24px' }}
         >
-          {content.testimonials.map((testimonial: Testimonial, index: number) => (
+          {content.testimonials.map((testimonial: Testimonial) => (
             <div 
               key={testimonial.id}
               className="bg-white rounded-2xl p-6 shadow-lg"
@@ -390,81 +340,35 @@ const TestimonialsV2: React.FC<TestimonialsV2Props> = ({
           ))}
         </div>
 
-        {/* Note */}
-        <div 
-          className="text-center mb-8"
-          style={{ marginTop: '16px' }}
-        >
-          <p 
-            className="text-sm"
+        {/* Trust Strip */}
+        {content.trustItems && (
+          <div 
+            className="grid grid-cols-1 md:grid-cols-3 gap-6"
             style={{ 
-              color: '#6B7280',
-              fontSize: '14px'
+              marginTop: '40px',
+              paddingTop: '24px',
+              borderTop: '1px solid #E5E7EB'
             }}
           >
-            {content.note}
-          </p>
-        </div>
-
-        {/* KPIs Section */}
-        <div 
-          className="grid grid-cols-2 md:grid-cols-4 gap-4"
-          style={{ 
-            marginTop: '20px',
-            paddingTop: '16px',
-            borderTop: '1px solid #E5E7EB'
-          }}
-        >
-          {content.stats.map((stat: any, index: number) => (
-            <div 
-              key={index} 
-              className="flex items-center gap-2 justify-center"
-              style={{ color: 'var(--color-text)' }}
-            >
-              <div style={{ color: 'var(--color-primary)' }}>
-                {getIcon(stat.icon)}
-              </div>
-              <div>
-                <div 
-                  className="font-bold"
-                  style={{ fontWeight: '700' }}
-                >
-                  {stat.value}
+            {content.trustItems.map((item: any, index: number) => (
+              <div 
+                key={index} 
+                className="flex items-center gap-3 justify-center"
+                style={{ color: 'var(--color-text)' }}
+              >
+                <div style={{ color: 'var(--color-primary)' }}>
+                  {getIcon(item.icon)}
                 </div>
                 <div 
-                  className="text-sm"
-                  style={{ 
-                    color: 'var(--color-text-muted)',
-                    fontSize: '14px'
-                  }}
+                  className="font-semibold text-sm"
+                  style={{ color: 'var(--color-text)', fontSize: '15px' }}
                 >
-                  {stat.label}
+                  {item.label}
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Bottom Bar */}
-        <div 
-          className="text-center mt-8 pt-6"
-          style={{ 
-            borderTop: '1px solid #E5E7EB',
-            marginTop: '20px',
-            paddingTop: '16px'
-          }}
-        >
-          <p 
-            className="text-sm font-medium"
-            style={{ 
-              color: '#6B7280',
-              fontSize: '14px',
-              fontWeight: '500'
-            }}
-          >
-            Piloto ativo em SP e RJ — mais de 5 mil viagens narradas
-          </p>
-        </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

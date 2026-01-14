@@ -1,6 +1,5 @@
 import React from 'react';
 import { Download, ArrowRight, CheckCircle } from 'lucide-react';
-import { layout } from '../../utils/designSystem';
 
 interface CTAFinalV2Props {
   currentLanguage?: string;
@@ -15,44 +14,44 @@ const CTAFinalV2: React.FC<CTAFinalV2Props> = ({
   const getLocalizedContent = (language: string) => {
     const content: Record<string, any> = {
       PT: {
-        title: 'Transforme cada trajeto em uma descoberta.',
-        subtitle: 'Baixe grátis o app que transforma seu tempo no trânsito em experiências culturais reais.',
+        title: 'Dirija com o seu novo copiloto cultural.',
+        subtitle: 'Ouça as histórias da cidade e descubra o mundo ao seu redor sem tirar os olhos da estrada.',
         ctaPrimary: 'Baixar no iOS',
-        ctaSecondary: 'Entrar no Beta Android',
+        ctaSecondary: 'Baixar no Android',
         features: [
-          'Gratuito no beta',
-          'Sem anúncios',
-          'Conteúdo verificado'
+          'Narração automática',
+          'Foco na direção',
+          'Uso mãos livres'
         ],
-        socialProof: '⭐ 4.8 de avaliação média • 5K+ viagens narradas • Disponível em SP e RJ',
+        socialProof: '⭐ 4.8 de avaliação • Disponível nas principais lojas',
         ariaLabelIOS: 'Baixar Tuggi para iOS',
         ariaLabelAndroid: 'Baixar Tuggi para Android'
       },
       EN: {
-        title: 'Transform every journey into a discovery.',
-        subtitle: 'Download the free app that transforms your time in traffic into real cultural experiences.',
+        title: 'Drive with your new cultural copilot.',
+        subtitle: 'Listen to the city\'s stories and discover the world around you without taking your eyes off the road.',
         ctaPrimary: 'Download on iOS',
-        ctaSecondary: 'Join Android Beta',
+        ctaSecondary: 'Download on Android',
         features: [
-          'Free in beta',
-          'No ads',
-          'Verified content'
+          'Automatic narration',
+          'Focus on driving',
+          'Hands-free use'
         ],
-        socialProof: '⭐ 4.8 average rating • 5K+ narrated trips • Available in SP and RJ',
+        socialProof: '⭐ 4.8 rating • Available in major stores',
         ariaLabelIOS: 'Download Tuggi for iOS',
         ariaLabelAndroid: 'Download Tuggi for Android'
       },
       ES: {
-        title: 'Transforma cada trayecto en un descubrimiento.',
-        subtitle: 'Descarga gratis la app que transforma tu tiempo en el tráfico en experiencias culturales reales.',
+        title: 'Conduce con tu nuevo copiloto cultural.',
+        subtitle: 'Escucha las historias de la ciudad y descubre el mundo que te rodea sin quitar la vista de la carretera.',
         ctaPrimary: 'Descargar en iOS',
-        ctaSecondary: 'Unirse al Beta Android',
+        ctaSecondary: 'Descargar en Android',
         features: [
-          'Gratuito en beta',
-          'Sin anuncios',
-          'Contenido verificado'
+          'Narración automática',
+          'Foco en la conducción',
+          'Uso manos libres'
         ],
-        socialProof: '⭐ 4.8 calificación promedio • 5K+ viajes narrados • Disponible en SP y RJ',
+        socialProof: '⭐ 4.8 de calificación • Disponible en las principales tiendas',
         ariaLabelIOS: 'Descargar Tuggi para iOS',
         ariaLabelAndroid: 'Descargar Tuggi para Android'
       }
@@ -127,7 +126,7 @@ const CTAFinalV2: React.FC<CTAFinalV2Props> = ({
             <button 
               onClick={() => {
                 console.log('CTAFinal Android button clicked!');
-                handleCTAClick('android_beta');
+                handleCTAClick('google_play_download');
               }}
               className="group bg-tuggi-primary/20 text-white border-2 border-white px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-300 inline-flex items-center justify-center gap-3 hover:bg-white hover:text-tuggi-primary hover:scale-105 transform min-h-[56px]"
               aria-label={content.ariaLabelAndroid}

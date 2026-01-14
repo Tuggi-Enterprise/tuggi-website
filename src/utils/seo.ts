@@ -65,25 +65,25 @@ export const generateSEOConfig = (
   const seoData: Record<string, Record<string, Partial<SEOConfig>>> = {
     home: {
       EN: {
-        title: 'Tuggi | Cultural audio guide — discover stories while driving',
-        description: 'Tuggi is an automatic cultural narration app that transforms journeys into experiences. Ad-free, multilingual and with verified content.',
-        keywords: 'Tuggi, cultural audio guide, tourism app, local stories, automatic narrations, cultural curiosities, explore cities, travel app, educational tourism, culture on the go',
+        title: 'Tuggi | Cultural copilot for your drive — discover stories',
+        description: 'Tuggi is an automatic cultural narration app that transforms journeys into experiences. Simple, safe, and designed for drivers.',
+        keywords: 'Tuggi, cultural audio guide, tourism app, local stories, automatic narrations, cultural curiosities, explore cities, travel app, audio copilot, culture on the go',
         ogTitle: 'Tuggi — Discover stories while driving',
-        ogDescription: 'Transform your journeys into cultural experiences with automatic narrations and verified content. Available in Portuguese, English and Spanish.'
+        ogDescription: 'Transform your journeys into cultural experiences with automatic narrations. Simple and safe for every driver.'
       },
       PT: {
-        title: 'Tuggi | Guia de áudio cultural — descubra histórias enquanto dirige',
-        description: 'O Tuggi é um app de narrações culturais automáticas que transforma trajetos em experiências. Sem anúncios, multilíngue e com conteúdo verificado.',
-        keywords: 'Tuggi, guia de áudio cultural, app de turismo, narrações automáticas, curiosidades culturais, conteúdo verificado, explorar cidades, aplicativo de cultura, experiências culturais',
-        ogTitle: 'Tuggi — Descubra histórias enquanto dirige',
-        ogDescription: 'Transforme seus trajetos em descobertas culturais com narrações automáticas e conteúdo verificado. Disponível em português, inglês e espanhol.'
+        title: 'Tuggi | Copiloto cultural para quem está dirigindo',
+        description: 'O Tuggi narra o mundo ao seu redor automaticamente. Cultura e contexto no seu trajeto com foco em segurança.',
+        keywords: 'Tuggi, copiloto cultural, guias de áudio, histórias ao dirigir, curiosidades culturais, segurança no trânsito, explorar cidades, narração automática',
+        ogTitle: 'Tuggi — Copiloto cultural para quem está dirigindo',
+        ogDescription: 'Transforme seus trajetos em descobertas. Narração automática de histórias e curiosidades culturais enquanto você dirige.'
       },
       ES: {
-        title: 'Tuggi | Guía de audio cultural — descubre historias mientras conduces',
-        description: 'Tuggi es una app de narraciones culturales automáticas que transforma trayectos en experiencias. Sin anuncios, multilingüe y con contenido verificado.',
-        keywords: 'Tuggi, guía de audio cultural, app de turismo, historias locales, narraciones automáticas, curiosidades culturales, explorar ciudades, aplicación de viaje, turismo educativo, cultura en el trayecto',
+        title: 'Tuggi | Copiloto cultural para quien conduce — descubre historias',
+        description: 'Tuggi es una app de narraciones culturales automáticas que transforma trayectos en descubrimientos. Simple, segura y hecha para conductores.',
+        keywords: 'Tuggi, guía de audio cultural, app de turismo, historias locales, narraciones automáticas, curiosidades culturales, explorar ciudades, aplicación de viaje, copiloto de audio, cultura en el trayecto',
         ogTitle: 'Tuggi — Descubre historias mientras conduces',
-        ogDescription: 'Transforma tus trayectos en experiencias culturales con narraciones automáticas y contenido verificado. Disponible en portugués, inglés y español.'
+        ogDescription: 'Transforma tus trayectos en descubrimientos culturales con narrativas automáticas. Simple y seguro para el conductor.'
       }
     },
     contact: {
@@ -628,9 +628,9 @@ export const trackPageView = (page: string, language: string, measurementId?: st
       console.log('generatePageTitle called with:', { page, language });
       const titles: Record<string, Record<string, string>> = {
         home: {
-          EN: 'Tuggi - Discover culture and stories wherever you go',
-          PT: 'Tuggi - Descubra cultura e histórias por onde você passa',
-          ES: 'Tuggi - Descubre cultura e historias por donde pases'
+          EN: 'Tuggi - Drive with your cultural copilot',
+          PT: 'Tuggi - Copiloto cultural para quem está dirigindo',
+          ES: 'Tuggi - Conduce con tu copiloto cultural'
         },
         purpose: {
           EN: 'Our Purpose - Tuggi',

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ShieldCheck, MapPin, ChevronDown, Globe } from 'lucide-react';
+import { ShieldCheck, MapPin, ChevronDown, Globe, MicOff, Settings, Trash2, ExternalLink } from 'lucide-react';
 import { layout } from '../../utils/designSystem';
 import audioSamples from '../../data/audio-samples.json';
 import AudioCardMultilingual from '../features/AudioCardMultilingual';
@@ -16,117 +16,89 @@ const TrustSectionV2: React.FC<TrustSectionV2Props> = ({
   const getLocalizedContent = (language: string) => {
     const content: Record<string, any> = {
       PT: {
-        title: 'Conteúdo verificado, narrado com responsabilidade',
-        subtitle: 'Cada história vem de fontes oficiais e passa por validação humana antes de ser narrada.',
-        features: [
+        privacyTitle: 'Privacidade por Design',
+        privacySubtitle: 'Seus dados e sua segurança são prioridade.',
+        privacyBullets: [
           {
-            icon: 'shield',
-            title: 'Fontes oficiais e culturais',
-            description: 'Conteúdo baseado em fontes oficiais, museus, instituições culturais e pesquisas acadêmicas verificadas.'
+            icon: 'map-pin',
+            text: 'Localização usada apenas para disparar histórias ao longo do trajeto.'
           },
           {
-            icon: 'award',
-            title: 'Revisão e validação humana',
-            description: 'Cada narrativa passa por revisão de especialistas em história, cultura e turismo antes de ser publicada.'
+            icon: 'mic-off',
+            text: 'Não gravamos conversas. O app só narra conteúdo.'
           },
           {
-            icon: 'users',
-            title: 'Sem anúncios, sem pegadinhas',
-            description: 'Plataforma 100% gratuita, sem anúncios ou conteúdo promocional. Foco exclusivo na experiência cultural.'
+            icon: 'settings',
+            text: 'Controle total de permissões nos ajustes do seu celular.'
+          },
+          {
+            icon: 'trash',
+            text: 'Opção de exclusão total de dados a qualquer momento.'
           }
         ],
-        trustIndicators: [
-          {
-            icon: 'check',
-            text: 'Conteúdo verificado por especialistas'
-          },
-          {
-            icon: 'globe',
-            text: 'Disponível em 3 idiomas'
-          },
-          {
-            icon: 'star',
-            text: 'Mais de 20 cidades ativas'
-          }
-        ],
+        curatedTitle: 'Conteúdo curado',
+        curatedDescription: 'Aprimorado continuamente. Encontrou algo incorreto?',
+        curatedLinkText: 'Fale com a gente',
         samplesTitle: 'Ouça um exemplo real',
-        samplesSubtitle: 'Descubra como o Tuggi transforma lugares comuns em histórias extraordinárias.',
-        bridgeText: 'E se quiser ouvir na prática, aqui estão algumas das histórias que você encontrará no Tuggi.',
+        samplesSubtitle: 'Histórias curtas e contextuais para ouvir enquanto dirige.',
         showMore: 'Ver mais exemplos',
         showLess: 'Ver menos'
       },
       EN: {
-        title: 'Culture shouldn\'t be a destination — it should accompany you on the journey.',
-        subtitle: 'We created Tuggi because we believe that every journey can be an opportunity for discovery.\nWe use technology to bring life to what would normally go unnoticed: streets, buildings, neighborhoods, landscapes.',
-        features: [
+        privacyTitle: 'Privacy by Design',
+        privacySubtitle: 'Your data and security are priority.',
+        privacyBullets: [
           {
-            icon: 'shield',
-            title: 'Spontaneous discovery',
-            description: 'Every place has a story. Our mission is to reveal these narratives while you live your routine, transforming the ordinary into extraordinary.'
+            icon: 'map-pin',
+            text: 'Location used only to trigger stories along your route.'
           },
           {
-            icon: 'award',
-            title: 'Cultural connection',
-            description: 'We believe that knowing the history and culture of places creates a deeper bond with the world around us.'
+            icon: 'mic-off',
+            text: 'We do not record conversations. The app only narrates content.'
           },
           {
-            icon: 'users',
-            title: 'Freedom of exploration',
-            description: 'No predefined routes or obligations. Culture emerges naturally, respecting your pace and choices.'
+            icon: 'settings',
+            text: 'Full control of permissions in your phone settings.'
+          },
+          {
+            icon: 'trash',
+            text: 'Option to delete all your data at any time.'
           }
         ],
-        trustIndicators: [
-          {
-            icon: 'check',
-            text: 'Content verified by experts'
-          },
-          {
-            icon: 'globe',
-            text: 'Available in 3 languages'
-          },
-          {
-            icon: 'star',
-            text: 'More than 20 active cities'
-          }
-        ]
+        curatedTitle: 'Curated content',
+        curatedDescription: 'Continuously improved. Found something incorrect?',
+        curatedLinkText: 'Contact us',
+        samplesTitle: 'Listen to a real example',
+        samplesSubtitle: 'Short, contextual stories to listen to while driving.',
+        showMore: 'Show more examples',
+        showLess: 'Show less'
       },
       ES: {
-        title: 'Contenido verificado, narrado con responsabilidad',
-        subtitle: 'Cada historia proviene de fuentes oficiales y pasa por validación humana antes de ser narrada.',
-        features: [
+        privacyTitle: 'Privacidad por Diseño',
+        privacySubtitle: 'Tus datos y seguridad son prioridad.',
+        privacyBullets: [
           {
-            icon: 'shield',
-            title: 'Fuentes oficiales y culturales',
-            description: 'Basado en datos de museos, organismos de turismo e instituciones culturales.'
+            icon: 'map-pin',
+            text: 'Ubicación utilizada solo para activar historias a lo largo de tu ruta.'
           },
           {
-            icon: 'award',
-            title: 'Revisión y validación humana',
-            description: 'Cada narrativa pasa por curaduría antes de ser publicada.'
+            icon: 'mic-off',
+            text: 'No grabamos conversaciones. La aplicación solo narra contenido.'
           },
           {
-            icon: 'users',
-            title: 'Sin anuncios, sin trampas',
-            description: 'Enfoque exclusivo en la experiencia cultural — sin publicidad ni interrupciones.'
+            icon: 'settings',
+            text: 'Control total de permisos en los ajustes de tu teléfono.'
+          },
+          {
+            icon: 'trash',
+            text: 'Opción de eliminar todos tus datos en cualquier momento.'
           }
         ],
-        trustIndicators: [
-          {
-            icon: 'check',
-            text: 'Contenido verificado por especialistas'
-          },
-          {
-            icon: 'globe',
-            text: 'Disponible en 3 idiomas'
-          },
-          {
-            icon: 'star',
-            text: 'Más de 20 ciudades activas'
-          }
-        ],
+        curatedTitle: 'Contenido curado',
+        curatedDescription: 'Mejorado continuamente. ¿Encontraste algo incorrecto?',
+        curatedLinkText: 'Contáctanos',
         samplesTitle: 'Escucha un ejemplo real',
-        samplesSubtitle: 'Descubre cómo Tuggi transforma lugares comunes en historias extraordinarias.',
-        bridgeText: 'Y si quieres escucharlo en la práctica, aquí tienes algunas de las historias que encontrarás en Tuggi.',
+        samplesSubtitle: 'Historias cortas y contextuales para escuchar mientras conduces.',
         showMore: 'Ver más ejemplos',
         showLess: 'Ver menos'
       }
@@ -160,188 +132,22 @@ const TrustSectionV2: React.FC<TrustSectionV2Props> = ({
         <Globe className="w-32 h-32 text-tuggi-primary" />
       </div>
       <div className={layout.container.base}>
-        {/* Main Content */}
-        <div className="text-center mb-8 lg:mb-12">
-          <h2 
-            className="font-bold mb-4 lg:mb-6 leading-tight"
-            style={{ 
-              color: '#0F172A',
-              fontFamily: 'var(--font-sans)',
-              fontWeight: '700',
-              fontSize: '32px',
-              letterSpacing: '-0.01em'
-            }}
-          >
-            {content.title}
-          </h2>
-          <div className="max-w-4xl mx-auto">
-            <p 
-              className="leading-relaxed mb-8"
-              style={{ 
-                color: '#374151',
-                fontFamily: 'var(--font-sans)',
-                fontSize: '18px',
-                fontWeight: '500'
-              }}
-            >
-              {content.subtitle}
-            </p>
-          </div>
-        </div>
-
-        {/* Badges de Credibilidade */}
-        <div className="flex justify-center gap-4 flex-wrap mb-10">
-          <div 
-            className="flex items-center gap-2 px-4 py-3 rounded-xl"
-            style={{ 
-              background: '#F3F4F6',
-              borderRadius: '12px',
-              padding: '12px 16px',
-              boxShadow: '0 2px 6px rgba(0,0,0,0.08)'
-            }}
-          >
-            <ShieldCheck className="w-4 h-4" style={{ color: '#00A8E8' }} />
-            <span 
-              style={{ 
-                color: '#374151',
-                fontFamily: 'var(--font-sans)',
-                fontSize: '14px'
-              }}
-            >
-              Verificado por especialistas
-            </span>
-          </div>
-          
-          <div 
-            className="flex items-center gap-2 px-4 py-3 rounded-xl"
-            style={{ 
-              background: '#F3F4F6',
-              borderRadius: '12px',
-              padding: '12px 16px',
-              boxShadow: '0 2px 6px rgba(0,0,0,0.08)'
-            }}
-          >
-            <Globe className="w-4 h-4" style={{ color: '#00A8E8' }} />
-            <span 
-              style={{ 
-                color: '#374151',
-                fontFamily: 'var(--font-sans)',
-                fontSize: '14px'
-              }}
-            >
-              Disponível em 3 idiomas
-            </span>
-          </div>
-          
-          <div 
-            className="flex items-center gap-2 px-4 py-3 rounded-xl"
-            style={{ 
-              background: '#F3F4F6',
-              borderRadius: '12px',
-              padding: '12px 16px',
-              boxShadow: '0 2px 6px rgba(0,0,0,0.08)'
-            }}
-          >
-            <MapPin className="w-4 h-4" style={{ color: '#00A8E8' }} />
-            <span 
-              style={{ 
-                color: '#374151',
-                fontFamily: 'var(--font-sans)',
-                fontSize: '14px'
-              }}
-            >
-              Mais de 20 cidades ativas
-            </span>
-          </div>
-        </div>
-
-        {/* Trust Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
-          {content.features.map((feature: any, index: number) => (
-            <div 
-              key={index}
-              className="text-center md:text-left"
-              style={{ maxWidth: '320px', marginInline: 'auto' }}
-            >
-              {/* Content */}
-              <h3 
-                className="font-semibold mb-3"
-                style={{ 
-                  color: '#0F172A',
-                  fontFamily: 'var(--font-sans)',
-                  fontWeight: '600',
-                  fontSize: '18px',
-                  marginBottom: '12px'
-                }}
-              >
-                {feature.title}
-              </h3>
-              <p 
-                className="leading-relaxed"
-                style={{ 
-                  color: '#4B5563',
-                  fontFamily: 'var(--font-sans)',
-                  fontSize: '15px',
-                  lineHeight: '1.6',
-                  maxWidth: '320px',
-                  marginInline: 'auto'
-                }}
-              >
-                {feature.description}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        {/* CTA Indireto */}
-        <div className="text-center mt-12">
-          <p 
-            style={{ 
-              color: 'var(--color-text-muted)',
-              fontFamily: 'var(--font-sans)',
-              fontSize: '16px',
-              fontStyle: 'italic'
-            }}
-          >
-            Ouça um exemplo real abaixo.
-          </p>
-        </div>
-
-        {/* Bridge Text */}
-        <div className="text-center mt-8">
-          <p 
-            style={{ 
-              color: 'var(--color-text-muted)',
-              fontFamily: 'var(--font-sans)',
-              fontSize: '16px'
-            }}
-          >
-            {content.bridgeText}
-          </p>
-        </div>
-
-        {/* Audio Samples Section */}
-        <div className="mt-12">
+        {/* Audio Samples Section - Moved Up */}
+        <div className="mb-24">
           <div className="text-center mb-8">
             <h2 
-              className="font-bold mb-4 leading-tight"
+              className="font-bold mb-4 leading-tight text-[#0F172A] text-[32px] tracking-tight"
               style={{ 
-                color: '#0F172A',
                 fontFamily: 'var(--font-sans)',
                 fontWeight: '700',
-                fontSize: '32px',
-                letterSpacing: '-0.01em'
               }}
             >
               {content.samplesTitle}
             </h2>
             <p 
-              className="max-w-2xl mx-auto leading-relaxed"
+              className="max-w-2xl mx-auto leading-relaxed text-[#374151] font-medium text-lg"
               style={{ 
-                color: '#374151',
                 fontFamily: 'var(--font-sans)',
-                fontSize: '18px',
-                fontWeight: '500'
               }}
             >
               {content.samplesSubtitle}
@@ -382,6 +188,84 @@ const TrustSectionV2: React.FC<TrustSectionV2Props> = ({
                 }`} 
               />
             </button>
+          </div>
+        </div>
+
+        {/* Privacy Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-12 items-start mb-12">
+          <div>
+            <h2 
+              className="font-bold mb-6 leading-tight"
+              style={{ 
+                color: '#0F172A',
+                fontFamily: 'var(--font-sans)',
+                fontWeight: '700',
+                fontSize: '32px',
+                letterSpacing: '-0.01em'
+              }}
+            >
+              {content.privacyTitle}
+            </h2>
+            <p 
+              className="leading-relaxed text-lg mb-8"
+              style={{ 
+                color: '#374151',
+                fontFamily: 'var(--font-sans)',
+                fontWeight: '500'
+              }}
+            >
+              {content.privacySubtitle}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {content.privacyBullets.map((bullet: any, index: number) => (
+              <div 
+                key={index}
+                className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm"
+                style={{ background: '#FFF' }}
+              >
+                <div className="w-10 h-10 rounded-xl bg-tuggi-primary/5 flex items-center justify-center mb-4 text-tuggi-primary">
+                  {bullet.icon === 'map-pin' && <MapPin className="w-5 h-5" />}
+                  {bullet.icon === 'mic-off' && <MicOff className="w-5 h-5" />}
+                  {bullet.icon === 'settings' && <Settings className="w-5 h-5" />}
+                  {bullet.icon === 'trash' && <Trash2 className="w-5 h-5" />}
+                </div>
+                <p 
+                  className="text-sm leading-relaxed"
+                  style={{ color: '#4B5563', fontFamily: 'var(--font-sans)' }}
+                >
+                  {bullet.text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Curated Content Micro-Trust Bar */}
+        <div 
+          className="bg-[#F8FBFF] rounded-2xl py-5 px-8 text-neutral-900 ring-1 ring-tuggi-primary/10 flex flex-col md:flex-row items-center justify-between gap-6"
+          style={{ fontFamily: 'var(--font-sans)' }}
+        >
+          <div className="flex items-center gap-3">
+            <div className="p-1.5 bg-tuggi-primary/10 rounded-lg">
+              <ShieldCheck className="w-5 h-5 text-tuggi-primary" />
+            </div>
+            <span className="font-bold text-sm uppercase tracking-wider text-[#0F172A]">{content.curatedTitle}</span>
+          </div>
+          
+          <p className="text-sm text-neutral-600 font-medium">
+            {content.curatedDescription}
+          </p>
+          
+          <div className="flex items-center gap-2">
+            <a 
+              href="/pt/contact" 
+              className="flex items-center gap-1.5 text-tuggi-primary font-bold text-sm hover:underline"
+            >
+              {content.curatedLinkText}
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
           </div>
         </div>
       </div>

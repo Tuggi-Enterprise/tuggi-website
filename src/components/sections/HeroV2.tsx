@@ -1,6 +1,6 @@
-import React from 'react';
-import { Download, Smartphone, Navigation, Headphones } from 'lucide-react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { Download, Smartphone, Navigation, Headphones, X, ExternalLink } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { layout } from '../../utils/designSystem';
 import { useScrollAnimation, fadeInUp, fadeInLeft, fadeInRight, staggerContainer } from '../../hooks/useScrollAnimation';
 
@@ -13,6 +13,7 @@ const HeroV2: React.FC<HeroV2Props> = ({
   currentLanguage = 'PT',
   onCTAClick 
 }) => {
+  const [showDownloadOptions, setShowDownloadOptions] = useState(false);
   const { ref: heroRef, isInView: heroInView } = useScrollAnimation();
   const { ref: stepsRef, isInView: stepsInView } = useScrollAnimation();
 
@@ -21,61 +22,82 @@ const HeroV2: React.FC<HeroV2Props> = ({
   const getLocalizedContent = (language: string) => {
     const content: Record<string, any> = {
       PT: {
-        headline: 'Descubra histórias enquanto dirige.',
-        subheadline: 'O Tuggi transforma seu trajeto em descobertas culturais narradas em tempo real.',
-        guarantee: 'Sem anúncios. Sem pegadinhas. Conteúdo verificado.',
-        ctaPrimary: 'Entrar no Beta Android',
-        ctaSecondary: 'Baixar no iOS',
-        betaLabel: '🚀 Beta aberto – São Paulo e Rio de Janeiro',
-        ariaLabelAndroid: 'Baixar Tuggi para Android - Versão Beta',
-        ariaLabelIOS: 'Baixar Tuggi para iOS',
+        headline: 'Um copiloto cultural para quem está dirigindo.',
+        subheadline: 'Histórias e contexto surgem automaticamente ao longo do trajeto, com foco em simplicidade e segurança.',
+        ctaPrimary: 'Baixar o app',
+        ctaSecondary: 'Como funciona',
+        microBenefits: [
+          'Áudio automático e contextual',
+          'Foco total na direção',
+          'Simplicidade e segurança'
+        ],
         heroImageAlt: 'Tuggi em funcionamento no painel do carro, narrando histórias durante o trajeto',
-        stepsTitle: 'Em 3 passos, o Tuggi guia você',
-        stepsSubtitle: 'Sem rotas fixas, sem distrações. Você escolhe o caminho, o Tuggi conta a história.',
-        step1Title: 'Instale o Tuggi no seu iOS ou Android.',
-        step1Description: 'Download rápido e instalação simples',
-        step2Title: 'Permita localização e inicie sua jornada.',
-        step2Description: 'Ative o guia e comece a dirigir',
-        step3Title: 'Descubra o que há ao seu redor.',
-        step3Description: 'Ouça narrativas automáticas'
+        stepsTitle: 'Como funciona',
+        stepsSubtitle: 'Você dirige. O Tuggi identifica pontos no caminho e conta a história em áudio.',
+        step1Title: 'Instale e escolha idioma/voz',
+        step1Description: 'Download nas lojas oficiais',
+        step2Title: 'Inicie o modo de viagem',
+        step2Description: 'Ative e siga seu trajeto',
+        step3Title: 'O áudio toca automaticamente',
+        step3Description: 'Ouça histórias ao passar pelos pontos',
+        safetyNote: 'Use com o celular fixo e atenção total ao trânsito.',
+        downloadTitle: 'Escolha sua plataforma',
+        downloadAndroid: 'Baixar no Google Play',
+        downloadIOS: 'Baixar na App Store',
+        androidUrl: 'https://play.google.com/store/apps/details?id=com.tuggidrive.app&pcampaignid=web_share',
+        iosUrl: 'https://apps.apple.com/br/app/tuggi-explore-ao-dirigir/id6744379818'
       },
       EN: {
-        headline: 'Discover stories while you drive.',
-        subheadline: 'Tuggi transforms your journey into narrated cultural discoveries in real-time.',
-        guarantee: 'No ads. No tricks. Verified content.',
-        ctaPrimary: 'Join Android Beta',
-        ctaSecondary: 'Download on iOS',
-        betaLabel: '🚀 Open Beta – São Paulo and Rio de Janeiro',
-        ariaLabelAndroid: 'Download Tuggi for Android - Beta Version',
-        ariaLabelIOS: 'Download Tuggi for iOS',
-        heroImageAlt: 'Tuggi running on car dashboard, narrating stories during the journey',
-        stepsTitle: 'In 3 steps, Tuggi guides you',
-        stepsSubtitle: 'No fixed routes, no distractions. You choose the path, Tuggi tells the story.',
-        step1Title: 'Install Tuggi on your iOS or Android.',
-        step1Description: 'Quick download and simple installation',
-        step2Title: 'Allow location and start your journey.',
-        step2Description: 'Activate the guide and start driving',
-        step3Title: 'Discover what\'s around you.',
-        step3Description: 'Listen to automatic narratives'
+        headline: 'A cultural copilot for your drive.',
+        subheadline: 'Stories and context appear automatically along your route, focusing on simplicity and safety.',
+        ctaPrimary: 'Download the app',
+        ctaSecondary: 'How it works',
+        microBenefits: [
+          'Automatic contextual audio',
+          'Full focus on driving',
+          'Simplicity and safety'
+        ],
+        heroImageAlt: 'Tuggi active on car dashboard, narrating stories during the journey',
+        stepsTitle: 'How it works',
+        stepsSubtitle: 'You drive. Tuggi identifies points on your path and tells the story in audio.',
+        step1Title: 'Install and choose language/voice',
+        step1Description: 'Download from official stores',
+        step2Title: 'Start journey mode',
+        step2Description: 'Activate and follow your route',
+        step3Title: 'Audio plays automatically',
+        step3Description: 'Hear stories as you pass by locations',
+        safetyNote: 'Use with your phone mounted and full attention to traffic.',
+        downloadTitle: 'Choose your platform',
+        downloadAndroid: 'Download on Google Play',
+        downloadIOS: 'Download on App Store',
+        androidUrl: 'https://play.google.com/store/apps/details?id=com.tuggidrive.app&pcampaignid=web_share',
+        iosUrl: 'https://apps.apple.com/br/app/tuggi-explore-ao-dirigir/id6744379818'
       },
       ES: {
-        headline: 'Descubre historias mientras conduces.',
-        subheadline: 'Tuggi transforma tu trayecto en descubrimientos culturales narrados en tiempo real.',
-        guarantee: 'Sin anuncios. Sin trucos. Contenido verificado.',
-        ctaPrimary: 'Unirse al Beta Android',
-        ctaSecondary: 'Descargar en iOS',
-        betaLabel: '🚀 Beta abierto – São Paulo y Río de Janeiro',
-        ariaLabelAndroid: 'Descargar Tuggi para Android - Versión Beta',
-        ariaLabelIOS: 'Descargar Tuggi para iOS',
-        heroImageAlt: 'Tuggi funcionando en el tablero del auto, narrando historias durante el trayecto',
-        stepsTitle: 'En 3 pasos, Tuggi te guía',
-        stepsSubtitle: 'Sin rutas fijas, sin distracciones. Tú eliges el camino, Tuggi cuenta la historia.',
-        step1Title: 'Instala Tuggi en tu iOS o Android.',
-        step1Description: 'Descarga rápida e instalación simple',
-        step2Title: 'Permite la ubicación e inicia tu viaje.',
-        step2Description: 'Activa la guía y comienza a conducir',
-        step3Title: 'Descubre lo que hay a tu alrededor.',
-        step3Description: 'Escucha narraciones automáticas'
+        headline: 'Un copiloto cultural para quien conduce.',
+        subheadline: 'Historias y contexto surgen automáticamente durante el trayecto, con enfoque en simplicidad y seguridad.',
+        ctaPrimary: 'Descargar app',
+        ctaSecondary: 'Cómo funciona',
+        microBenefits: [
+          'Audio automático y contextual',
+          'Foco total en la conducción',
+          'Simplicidad y seguridad'
+        ],
+        heroImageAlt: 'Tuggi funcionando en el panel del auto, narrando historias durante el trayecto',
+        stepsTitle: 'Cómo funciona',
+        stepsSubtitle: 'Tú conduces. Tuggi identifica puntos en el camino y cuenta la historia en audio.',
+        step1Title: 'Instala y elige idioma/voz',
+        step1Description: 'Descarga en tiendas oficiales',
+        step2Title: 'Inicia el modo de viaje',
+        step2Description: 'Activa y sigue tu trayecto',
+        step3Title: 'El audio suena automáticamente',
+        step3Description: 'Escucha historias al pasar por los puntos',
+        safetyNote: 'Usa con el celular fijo y atención total al tránsito.',
+        downloadTitle: 'Elige tu plataforma',
+        downloadAndroid: 'Bajar en Google Play',
+        downloadIOS: 'Bajar en App Store',
+        androidUrl: 'https://play.google.com/store/apps/details?id=com.tuggidrive.app&pcampaignid=web_share',
+        iosUrl: 'https://apps.apple.com/br/app/tuggi-explore-ao-dirigir/id6744379818'
       }
     };
     
@@ -141,31 +163,34 @@ const HeroV2: React.FC<HeroV2Props> = ({
                 {content.subheadline}
               </p>
               
-              {/* Guarantee Line */}
-              <p 
-                className="mb-7"
-                style={{ 
-                  fontSize: '15px',
-                  color: '#4B5563',
-                  fontFamily: 'var(--font-sans)'
-                }}
-              >
-                {content.guarantee}
-              </p>
+              {/* Micro-benefits bullets */}
+              <div className="flex flex-wrap gap-x-6 gap-y-2 mb-8">
+                {content.microBenefits?.map((benefit: string, idx: number) => (
+                  <div key={idx} className="flex items-center gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-tuggi-primary"></div>
+                    <span 
+                      style={{ 
+                        fontSize: '14px', 
+                        fontWeight: '600', 
+                        color: '#4B5563',
+                        fontFamily: 'var(--font-sans)'
+                      }}
+                    >
+                      {benefit}
+                    </span>
+                  </div>
+                ))}
+              </div>
 
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-4 mb-4">
                 <button 
-                  onClick={() => {
-                    console.log('HeroV2 Android button clicked!');
-                    handleCTAClick('android_beta');
-                  }}
+                  onClick={() => setShowDownloadOptions(true)}
                   className="btn-primary inline-flex items-center justify-center gap-3 text-lg min-h-[48px]"
-                  aria-label={content.ariaLabelAndroid}
                   style={{ 
                     height: '48px', 
-                    padding: '0 20px',
-                    minHeight: '48px' // Touch target minimum
+                    padding: '0 32px',
+                    minHeight: '48px'
                   }}
                 >
                   <Download className="w-5 h-5" />
@@ -173,25 +198,22 @@ const HeroV2: React.FC<HeroV2Props> = ({
                 </button>
                 
                 <button 
-                  onClick={() => handleCTAClick('ios_download')}
-                  className="btn-secondary inline-flex items-center justify-center gap-3 text-lg min-h-[48px]"
-                  aria-label={content.ariaLabelIOS}
+                  onClick={() => {
+                    const stepsElement = document.getElementById('como-funciona');
+                    stepsElement?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="inline-flex items-center justify-center gap-2 text-lg font-semibold hover:underline"
                   style={{ 
                     height: '48px', 
-                    padding: '0 20px',
-                    minHeight: '48px' // Touch target minimum
+                    padding: '0 12px',
+                    color: '#00A8E8'
                   }}
                 >
-                  <Download className="w-5 h-5" />
                   <span>{content.ctaSecondary}</span>
                 </button>
               </div>
 
-              {/* Beta Label */}
-              <div className="inline-flex items-center gap-2 bg-tuggi-primary/10 text-tuggi-primary px-4 py-2 rounded-full text-sm font-semibold mt-4">
-                <div className="w-2 h-2 bg-tuggi-primary rounded-full animate-pulse"></div>
-                {content.betaLabel}
-              </div>
+              {/* Removed Beta Labels */}
             </motion.div>
 
             {/* Hero Visual */}
@@ -234,22 +256,7 @@ const HeroV2: React.FC<HeroV2Props> = ({
                 ></div>
               </div>
               
-              {/* Badge Beta */}
-              <div 
-                className="absolute top-4 left-4"
-                style={{
-                  background: 'rgba(255,255,255,0.85)',
-                  backdropFilter: 'blur(6px)',
-                  border: '1px solid #E5E7EB',
-                  color: '#111827',
-                  borderRadius: '999px',
-                  padding: '6px 12px',
-                  fontSize: '13px',
-                  fontWeight: '600'
-                }}
-              >
-                Beta aberto — SP e RJ
-              </div>
+
               
               <figcaption className="sr-only">
                 Aplicativo funcionando em segundo plano enquanto dirige
@@ -259,9 +266,9 @@ const HeroV2: React.FC<HeroV2Props> = ({
         </div>
       </section>
 
-      {/* Section 2: Como Funciona (3 Passos) */}
       <section 
-        className="py-4 lg:py-8"
+        id="como-funciona"
+        className="py-12 lg:py-20"
         style={{ 
           background: '#F9FAFB',
           boxShadow: 'inset 0 -1px 0 rgba(0,0,0,0.05)'
@@ -497,9 +504,98 @@ const HeroV2: React.FC<HeroV2Props> = ({
               </p>
             </motion.div>
             </div>
+            {/* Safety Note */}
+            <motion.div 
+              variants={fadeInUp}
+              className="mt-16 text-center"
+            >
+              <p 
+                style={{ 
+                  color: '#6B7280',
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: '14px',
+                  fontStyle: 'italic'
+                }}
+              >
+                {content.safetyNote}
+              </p>
+            </motion.div>
           </motion.div>
         </div>
       </section>
+
+      {/* Download Modal */}
+      <AnimatePresence>
+        {showDownloadOptions && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setShowDownloadOptions(false)}
+              className="absolute inset-0 bg-neutral-900/60 backdrop-blur-sm"
+            />
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              className="relative w-full max-w-md bg-white rounded-3xl p-8 shadow-2xl"
+              style={{ fontFamily: 'var(--font-sans)' }}
+            >
+              <button 
+                onClick={() => setShowDownloadOptions(false)}
+                className="absolute top-6 right-6 p-2 text-neutral-400 hover:text-neutral-600 transition-colors"
+              >
+                <X className="w-6 h-6" />
+              </button>
+
+              <h3 className="text-2xl font-bold text-neutral-900 mb-6 pr-8">
+                {content.downloadTitle}
+              </h3>
+
+              <div className="space-y-4">
+                <a 
+                  href={content.iosUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between w-full p-4 rounded-2xl bg-neutral-50 border border-neutral-200 hover:border-tuggi-primary hover:bg-tuggi-primary/5 transition-all group"
+                  onClick={() => handleCTAClick('ios_download')}
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-neutral-900 flex items-center justify-center text-white">
+                      <Smartphone className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-neutral-900">{content.downloadIOS}</p>
+                      <p className="text-sm text-neutral-500">App Store</p>
+                    </div>
+                  </div>
+                  <ExternalLink className="w-5 h-5 text-neutral-300 group-hover:text-tuggi-primary transition-colors" />
+                </a>
+
+                <a 
+                  href={content.androidUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between w-full p-4 rounded-2xl bg-neutral-50 border border-neutral-200 hover:border-tuggi-primary hover:bg-tuggi-primary/5 transition-all group"
+                  onClick={() => handleCTAClick('google_play_download')}
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-xl bg-neutral-900 flex items-center justify-center text-white">
+                      <Smartphone className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-neutral-900">{content.downloadAndroid}</p>
+                      <p className="text-sm text-neutral-500">Google Play</p>
+                    </div>
+                  </div>
+                  <ExternalLink className="w-5 h-5 text-neutral-300 group-hover:text-tuggi-primary transition-colors" />
+                </a>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
 
     </>
   );

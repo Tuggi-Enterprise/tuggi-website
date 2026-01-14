@@ -1,6 +1,166 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-tuggi-primary: #00A8E8;
+  --color-tuggi-primary-dark: #0088C7;
+  --color-tuggi-primary-light: #33B9EB;
+  --color-tuggi-secondary: #FF6F00;
+  --color-tuggi-secondary-dark: #E55A2B;
+  --color-tuggi-secondary-light: #FF8A5C;
+
+  --color-tuggi-success: #10B981;
+  --color-tuggi-success-light: #34D399;
+  --color-tuggi-success-dark: #059669;
+  --color-tuggi-warning: #F59E0B;
+  --color-tuggi-warning-light: #FBBF24;
+  --color-tuggi-warning-dark: #D97706;
+  --color-tuggi-error: #EF4444;
+  --color-tuggi-error-light: #F87171;
+  --color-tuggi-error-dark: #DC2626;
+  --color-tuggi-info: #3B82F6;
+  --color-tuggi-info-light: #60A5FA;
+  --color-tuggi-info-dark: #2563EB;
+
+  --color-tuggi-neutral-50: #F9FAFB;
+  --color-tuggi-neutral-100: #F1F5F9;
+  --color-tuggi-neutral-200: #E5E7EB;
+  --color-tuggi-neutral-300: #CBD5E1;
+  --color-tuggi-neutral-400: #94A3B8;
+  --color-tuggi-neutral-500: #4B5563;
+  --color-tuggi-neutral-600: #475569;
+  --color-tuggi-neutral-700: #111827;
+  --color-tuggi-neutral-800: #1E293B;
+  --color-tuggi-neutral-900: #0F172A;
+
+  --color-tuggi-accent-purple: #8B5CF6;
+  --color-tuggi-accent-purple-light: #A78BFA;
+  --color-tuggi-accent-purple-dark: #7C3AED;
+  --color-tuggi-accent-teal: #14B8A6;
+  --color-tuggi-accent-teal-light: #2DD4BF;
+  --color-tuggi-accent-teal-dark: #0D9488;
+  --color-tuggi-accent-pink: #EC4899;
+  --color-tuggi-accent-pink-light: #F472B6;
+  --color-tuggi-accent-pink-dark: #DB2777;
+  --color-tuggi-accent-amber: #F59E0B;
+  --color-tuggi-accent-amber-light: #FBBF24;
+  --color-tuggi-accent-amber-dark: #D97706;
+
+  --font-sans: "Inter", "system-ui", "sans-serif";
+
+  --spacing-0.5: 0.125rem;
+  --spacing-1.5: 0.375rem;
+  --spacing-2.5: 0.625rem;
+  --spacing-3.5: 0.875rem;
+  --spacing-7: 1.75rem;
+  --spacing-9: 2.25rem;
+  --spacing-11: 2.75rem;
+  --spacing-13: 3.25rem;
+  --spacing-15: 3.75rem;
+  --spacing-17: 4.25rem;
+  --spacing-18: 4.5rem;
+  --spacing-19: 4.75rem;
+  --spacing-21: 5.25rem;
+  --spacing-22: 5.5rem;
+  --spacing-23: 5.75rem;
+  --spacing-25: 6.25rem;
+  --spacing-26: 6.5rem;
+  --spacing-27: 6.75rem;
+  --spacing-29: 7.25rem;
+  --spacing-30: 7.5rem;
+  --spacing-31: 7.75rem;
+  --spacing-33: 8.25rem;
+  --spacing-34: 8.5rem;
+  --spacing-35: 8.75rem;
+  --spacing-37: 9.25rem;
+  --spacing-38: 9.5rem;
+  --spacing-39: 9.75rem;
+  --spacing-41: 10.25rem;
+  --spacing-42: 10.5rem;
+  --spacing-43: 10.75rem;
+  --spacing-45: 11.25rem;
+  --spacing-46: 11.5rem;
+  --spacing-47: 11.75rem;
+  --spacing-49: 12.25rem;
+  --spacing-50: 12.5rem;
+  --spacing-51: 12.75rem;
+  --spacing-53: 13.25rem;
+  --spacing-54: 13.5rem;
+  --spacing-55: 13.75rem;
+  --spacing-57: 14.25rem;
+  --spacing-58: 14.5rem;
+  --spacing-59: 14.75rem;
+  --spacing-61: 15.25rem;
+  --spacing-62: 15.5rem;
+  --spacing-63: 15.75rem;
+  --spacing-65: 16.25rem;
+  --spacing-66: 16.5rem;
+  --spacing-67: 16.75rem;
+  --spacing-68: 17rem;
+  --spacing-69: 17.25rem;
+  --spacing-70: 17.5rem;
+  --spacing-71: 17.75rem;
+  --spacing-73: 18.25rem;
+  --spacing-74: 18.5rem;
+  --spacing-75: 18.75rem;
+  --spacing-76: 19rem;
+  --spacing-77: 19.25rem;
+  --spacing-78: 19.5rem;
+  --spacing-79: 19.75rem;
+  --spacing-81: 20.25rem;
+  --spacing-82: 20.5rem;
+  --spacing-83: 20.75rem;
+  --spacing-84: 21rem;
+  --spacing-85: 21.25rem;
+  --spacing-86: 21.5rem;
+  --spacing-87: 21.75rem;
+  --spacing-88: 22rem;
+  --spacing-89: 22.25rem;
+  --spacing-90: 22.5rem;
+  --spacing-91: 22.75rem;
+  --spacing-92: 23rem;
+  --spacing-93: 23.25rem;
+  --spacing-94: 23.5rem;
+  --spacing-95: 23.75rem;
+  --spacing-97: 24.25rem;
+  --spacing-98: 24.5rem;
+  --spacing-99: 24.75rem;
+  --spacing-100: 25rem;
+
+  --radius-sm: 0.125rem;
+  --radius-base: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+
+  --animate-fade-in: fadeIn 0.5s ease-in-out;
+  --animate-slide-up: slideUp 0.5s ease-out;
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-bounce-slow: bounce 2s infinite;
+  --animate-gradient-shift: gradientShift 4s ease infinite;
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  @keyframes slideUp {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+  @keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; background-size: 200% 200%; }
+    50% { background-position: 100% 50%; background-size: 200% 200%; }
+  }
+
+  --background-image-gradient-ocean: linear-gradient(135deg, #00A8E8 0%, #3B82F6 50%, #1E40AF 100%);
+  --background-image-gradient-sunset: linear-gradient(135deg, #FF6F00 0%, #F59E0B 50%, #DC2626 100%);
+  --background-image-gradient-forest: linear-gradient(135deg, #10B981 0%, #059669 50%, #047857 100%);
+  --background-image-gradient-cosmic: linear-gradient(135deg, #8B5CF6 0%, #EC4899 50%, #F59E0B 100%);
+  --background-image-gradient-aurora: linear-gradient(135deg, #00A8E8 0%, #10B981 50%, #8B5CF6 100%);
+  --background-image-gradient-subtle: linear-gradient(135deg, rgba(0, 168, 232, 0.05) 0%, rgba(255, 111, 0, 0.05) 100%);
+  --background-image-gradient-hero: linear-gradient(135deg, #F8FAFC 0%, rgba(0, 168, 232, 0.1) 50%, rgba(255, 111, 0, 0.05) 100%);
+}
 
 @layer base {
   html {

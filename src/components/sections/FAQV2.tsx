@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ChevronDown, ChevronUp, HelpCircle } from 'lucide-react';
-import { layout } from '../../utils/designSystem';
 
 interface FAQItem {
   key: string;
@@ -26,241 +25,61 @@ const FAQV2: React.FC<FAQV2Props> = ({
         faqs: [
           {
             key: 'safe_driving',
-            q: 'É seguro usar dirigindo?',
+            q: 'É seguro usar enquanto dirijo?',
             a: [
-              'Sim. O Tuggi é hands-free: as narrações tocam automaticamente por geolocalização.',
-              'Funciona em segundo plano junto do Waze/Google Maps, sem exigir toques na tela.',
-              'Use o celular em suporte e mantenha o volume em nível confortável.'
+              'Sim. O Tuggi foi desenhado para ser hands-free: as histórias tocam automaticamente por geolocalização.',
+              'Ele funciona em segundo plano junto ao seu app de navegação (Waze, Google Maps), sem exigir interação com a tela.',
+              'Mantenha sempre o foco na estrada e use o celular em um suporte veicular.'
             ]
           },
           {
             key: 'who_is_for',
-            q: 'Para quem é indicado?',
+            q: 'Para quem o Tuggi é indicado?',
             a: [
-              'Motoristas profissionais: experiência diferenciada que aumenta engajamento e avaliações; áudio automático e seguro; compatível com seu app de navegação.',
-              'Turistas: descoberta espontânea sem roteiros rígidos; contexto cultural confiável; conteúdo em 3 idiomas.'
+              'Para qualquer pessoa que queira transformar seus trajetos rotineiros ou viagens em descobertas culturais.',
+              'Seja você um motorista do dia a dia ou alguém explorando uma nova cidade de carro, o Tuggi é seu copiloto cultural.'
             ]
           },
           {
             key: 'offline',
             q: 'Funciona sem internet?',
             a: [
-              'Parte do conteúdo é cacheada e continua disponível sem sinal.',
-              'O modo offline completo está em desenvolvimento; em áreas sem cobertura, algumas narrativas podem não tocar.'
+              'Parte do conteúdo é carregada previamente e pode funcionar com sinal instável.',
+              'Recomendamos o uso com conexão de dados ativa para garantir que todas as histórias sejam disparadas corretamente.'
             ]
           },
           {
             key: 'battery',
             q: 'Consome muita bateria?',
             a: [
-              'Não. O consumo é otimizado para uso contínuo de GPS e áudio.',
-              'Dicas: usar carregador veicular, reduzir brilho e fechar apps em segundo plano.'
-            ]
-          },
-          {
-            key: 'data_usage',
-            q: 'Consome muitos dados (internet)?',
-            a: [
-              'Baixo. As narrativas são curtas e utilizam compactação e pré-carregamento quando possível.',
-              'O consumo é semelhante ao de um app de navegação com voz.'
+              'O consumo é otimizado, semelhante ao de apps de mapas. Recomendamos o uso de carregador veicular em trajetos longos.'
             ]
           },
           {
             key: 'privacy',
-            q: 'Meus dados estão seguros?',
+            q: 'Minha privacidade está protegida?',
             a: [
-              'Sim. Seguimos boas práticas de privacidade e segurança.',
-              'Não gravamos sua voz. Coletamos apenas dados necessários ao funcionamento e melhoria do serviço.',
-              'Detalhes na Política de Privacidade.'
-            ]
-          },
-          {
-            key: 'no_ads',
-            q: 'O app tem anúncios?',
-            a: [
-              'Não exibimos anúncios nem conteúdo promocional em narrativas.',
-              'Foco exclusivo na experiência cultural.'
+              'Sim. Utilizamos sua localização apenas para disparar o áudio no momento certo.',
+              'Não gravamos conversas nem compartilhamos seus dados de trajeto com terceiros para fins publicitários.'
             ]
           },
           {
             key: 'pricing',
-            q: 'É gratuito?',
+            q: 'O app é gratuito?',
             a: [
-              'Durante a fase beta, o Tuggi é 100% grátis.',
-              'Planos pagos podem ser oferecidos no futuro; avisaremos com antecedência.',
-              'Baixe agora na seção de download acima.'
+              'O Tuggi pode ser baixado e utilizado gratuitamente.',
+              'Novas funcionalidades e conteúdos premium podem ser oferecidos no futuro.'
             ]
           },
           {
             key: 'coverage',
             q: 'Onde está disponível?',
             a: [
-              'Piloto ativo em São Paulo e Rio de Janeiro.',
-              'Estamos expandindo gradualmente; acompanhe atualizações no site e nas redes sociais.'
-            ]
-          }
-        ]
-      },
-      EN: {
-        title: 'Frequently asked questions',
-        subtitle: 'Answers to the main questions about Tuggi.',
-        faqs: [
-          {
-            key: 'safe_driving',
-            q: 'Is it safe to use while driving?',
-            a: [
-              'Yes. Tuggi is hands-free: narrations play automatically through geolocation.',
-              'Works in the background alongside Waze/Google Maps, without requiring screen touches.',
-              'Use your phone in a mount and keep the volume at a comfortable level.'
-            ]
-          },
-          {
-            key: 'who_is_for',
-            q: 'Who is it for?',
-            a: [
-              'Professional drivers: differentiated experience that increases engagement and ratings; automatic and safe audio; compatible with your navigation app.',
-              'Tourists: spontaneous discovery without rigid itineraries; reliable cultural context; content in 3 languages.'
-            ]
-          },
-          {
-            key: 'offline',
-            q: 'Does it work without internet?',
-            a: [
-              'Part of the content is cached and remains available without signal.',
-              'Complete offline mode is in development; in areas without coverage, some narratives may not play.'
-            ]
-          },
-          {
-            key: 'battery',
-            q: 'Does it consume a lot of battery?',
-            a: [
-              'No. Consumption is optimized for continuous GPS and audio use.',
-              'Tips: use car charger, reduce brightness and close background apps.'
-            ]
-          },
-          {
-            key: 'data_usage',
-            q: 'Does it consume a lot of data (internet)?',
-            a: [
-              'Low. Narratives are short and use compression and pre-loading when possible.',
-              'Consumption is similar to a voice navigation app.'
-            ]
-          },
-          {
-            key: 'privacy',
-            q: 'Is my data safe?',
-            a: [
-              'Yes. We follow good privacy and security practices.',
-              'We do not record your voice. We only collect data necessary for operation and service improvement.',
-              'Details in the Privacy Policy.'
-            ]
-          },
-          {
-            key: 'no_ads',
-            q: 'Does the app have ads?',
-            a: [
-              'We do not display ads or promotional content in narratives.',
-              'Exclusive focus on cultural experience.'
-            ]
-          },
-          {
-            key: 'pricing',
-            q: 'Is it free?',
-            a: [
-              'During the beta phase, Tuggi is 100% free.',
-              'Paid plans may be offered in the future; we will notify in advance.'
-            ]
-          },
-          {
-            key: 'coverage',
-            q: 'Where is it available?',
-            a: [
-              'Active pilot in São Paulo and Rio de Janeiro.',
-              'We are expanding gradually; follow updates on the website and social media.'
-            ]
-          }
-        ]
-      },
-      ES: {
-        title: 'Preguntas frecuentes',
-        subtitle: 'Respuestas a las principales preguntas sobre Tuggi.',
-        faqs: [
-          {
-            key: 'safe_driving',
-            q: '¿Es seguro usar mientras conduces?',
-            a: [
-              'Sí. Tuggi es manos libres: las narraciones se reproducen automáticamente por geolocalización.',
-              'Funciona en segundo plano junto con Waze/Google Maps, sin requerir toques en pantalla.',
-              'Usa el teléfono en un soporte y mantén el volumen en un nivel cómodo.'
-            ]
-          },
-          {
-            key: 'who_is_for',
-            q: '¿Para quién está indicado?',
-            a: [
-              'Conductores profesionales: experiencia diferenciada que aumenta el compromiso y las calificaciones; audio automático y seguro; compatible con tu app de navegación.',
-              'Turistas: descubrimiento espontáneo sin itinerarios rígidos; contexto cultural confiable; contenido en 3 idiomas.'
-            ]
-          },
-          {
-            key: 'offline',
-            q: '¿Funciona sin internet?',
-            a: [
-              'Parte del contenido está en caché y permanece disponible sin señal.',
-              'El modo offline completo está en desarrollo; en áreas sin cobertura, algunas narraciones pueden no reproducirse.'
-            ]
-          },
-          {
-            key: 'battery',
-            q: '¿Consume mucha batería?',
-            a: [
-              'No. El consumo está optimizado para uso continuo de GPS y audio.',
-              'Consejos: usar cargador vehicular, reducir brillo y cerrar apps en segundo plano.'
-            ]
-          },
-          {
-            key: 'data_usage',
-            q: '¿Consume muchos datos (internet)?',
-            a: [
-              'Bajo. Las narraciones son cortas y utilizan compresión y precarga cuando es posible.',
-              'El consumo es similar al de una app de navegación con voz.'
-            ]
-          },
-          {
-            key: 'privacy',
-            q: '¿Mis datos están seguros?',
-            a: [
-              'Sí. Seguimos buenas prácticas de privacidad y seguridad.',
-              'No grabamos tu voz. Solo recopilamos datos necesarios para el funcionamiento y mejora del servicio.',
-              'Detalles en la Política de Privacidad.'
-            ]
-          },
-          {
-            key: 'no_ads',
-            q: '¿La app tiene anuncios?',
-            a: [
-              'No mostramos anuncios ni contenido promocional en narraciones.',
-              'Enfoque exclusivo en la experiencia cultural.'
-            ]
-          },
-          {
-            key: 'pricing',
-            q: '¿Es gratuito?',
-            a: [
-              'Durante la fase beta, Tuggi es 100% gratuito.',
-              'Los planes pagos pueden ofrecerse en el futuro; avisaremos con anticipación.'
-            ]
-          },
-          {
-            key: 'coverage',
-            q: '¿Dónde está disponible?',
-            a: [
-              'Piloto activo en São Paulo y Río de Janeiro.',
-              'Estamos expandiendo gradualmente; sigue las actualizaciones en el sitio web y redes sociales.'
+              'Já cobrimos as principais vias e pontos históricos de São Paulo e Rio de Janeiro.',
+              'Estamos expandindo constantemente para novas regiões.'
             ]
           }
         ],
-        // Contact section
         contact_question: 'Mais perguntas? Fale conosco.',
         contact_button: 'Enviar e-mail'
       },
@@ -272,78 +91,59 @@ const FAQV2: React.FC<FAQV2Props> = ({
             key: 'safe_driving',
             q: 'Is it safe to use while driving?',
             a: [
-              'Yes. Tuggi is hands-free: narrations play automatically through geolocation.',
-              'Works in the background alongside Waze/Google Maps, without requiring screen touches.',
-              'Use your phone in a mount and keep the volume at a comfortable level.'
+              'Yes. Tuggi is designed to be hands-free: stories play automatically based on geolocation.',
+              'It works in the background with your navigation app (Waze, Google Maps), requiring no screen interaction.',
+              'Always keep your focus on the road and use a phone mount.'
             ]
           },
           {
             key: 'who_is_for',
-            q: 'Who is it for?',
+            q: 'Who is Tuggi for?',
             a: [
-              'Professional drivers: differentiated experience that increases engagement and ratings; automatic and safe audio; compatible with your navigation app.',
-              'Tourists: spontaneous discovery without rigid itineraries; reliable cultural context; content in 3 languages.'
+              'For anyone who wants to turn their daily commutes or trips into cultural discoveries.',
+              'Whether you are a daily driver or exploring a new city by car, Tuggi is your cultural copilot.'
             ]
           },
           {
             key: 'offline',
             q: 'Does it work without internet?',
             a: [
-              'Part of the content is cached and remains available without signal.',
-              'Complete offline mode is in development; in areas without coverage, some narratives may not play.'
+              'Some content is pre-loaded and can work with unstable signals.',
+              'We recommend using an active data connection to ensure all stories trigger correctly.'
             ]
           },
           {
             key: 'battery',
             q: 'Does it consume a lot of battery?',
             a: [
-              'No. Consumption is optimized for continuous GPS and audio use.',
-              'Tips: use car charger, reduce brightness and close background apps.'
-            ]
-          },
-          {
-            key: 'data_usage',
-            q: 'Does it consume a lot of data (internet)?',
-            a: [
-              'Low. Narratives are short and use compression and pre-loading when possible.',
-              'Consumption is similar to a voice navigation app.'
+              'Consumption is optimized, similar to map apps. We recommend using a car charger on long journeys.'
             ]
           },
           {
             key: 'privacy',
-            q: 'Is my data safe?',
+            q: 'Is my privacy protected?',
             a: [
-              'Yes. We follow good privacy and security practices.',
-              'We do not record your voice. We only collect data necessary for operation and service improvement.',
-              'Details in the Privacy Policy.'
-            ]
-          },
-          {
-            key: 'no_ads',
-            q: 'Does the app have ads?',
-            a: [
-              'We do not display ads or promotional content in narratives.',
-              'Exclusive focus on cultural experience.'
+              'Yes. We use your location only to trigger audio at the right time.',
+              'We do not record conversations or share your route data with third parties for advertising purposes.'
             ]
           },
           {
             key: 'pricing',
-            q: 'Is it free?',
+            q: 'Is the app free?',
             a: [
-              'During the beta phase, Tuggi is 100% free.',
-              'Paid plans may be offered in the future; we will notify in advance.'
+              'Tuggi can be downloaded and used for free.',
+              'New features and premium content may be offered in the future.'
             ]
           },
           {
             key: 'coverage',
             q: 'Where is it available?',
             a: [
-              'Active pilot in São Paulo and Rio de Janeiro.',
-              'We are expanding gradually; follow updates on the website and social media.'
+              'We already cover the main roads and historical points of São Paulo and Rio de Janeiro.',
+              'We are constantly expanding to new regions.'
             ]
           }
         ],
-        // Contact section
         contact_question: 'More questions? Contact us.',
         contact_button: 'Send email'
       },
@@ -353,80 +153,61 @@ const FAQV2: React.FC<FAQV2Props> = ({
         faqs: [
           {
             key: 'safe_driving',
-            q: '¿Es seguro usar mientras conduces?',
+            q: '¿Es seguro usar mientras conduzco?',
             a: [
-              'Sí. Tuggi es manos libres: las narraciones se reproducen automáticamente por geolocalización.',
-              'Funciona en segundo plano junto con Waze/Google Maps, sin requerir toques en pantalla.',
-              'Usa el teléfono en un soporte y mantén el volumen en un nivel cómodo.'
+              'Sí. Tuggi está diseñado para ser manos libres: las historias se reproducen automáticamente por geolocalización.',
+              'Funciona en segundo plano con tu app de navegación (Waze, Google Maps), sin requerir interacción con la pantalla.',
+              'Mantén siempre el foco en la carretera y usa un soporte para el móvil.'
             ]
           },
           {
             key: 'who_is_for',
             q: '¿Para quién está indicado?',
             a: [
-              'Conductores profesionales: experiencia diferenciada que aumenta el compromiso y las calificaciones; audio automático y seguro; compatible con tu app de navegación.',
-              'Turistas: descubrimiento espontáneo sin itinerarios rígidos; contexto cultural confiable; contenido en 3 idiomas.'
+              'Para cualquier persona que quiera transformar sus trayectos diarios o viajes en descubrimientos culturales.',
+              'Ya seas un conductor diario o estés explorando una nueva ciudad en coche, Tuggi es tu copiloto cultural.'
             ]
           },
           {
             key: 'offline',
             q: '¿Funciona sin internet?',
             a: [
-              'Parte del contenido está en caché y permanece disponible sin señal.',
-              'El modo offline completo está en desarrollo; en áreas sin cobertura, algunas narraciones pueden no reproducirse.'
+              'Parte del contenido se precarga y puede funcionar con señales inestables.',
+              'Recomendamos el uso con una conexión de datos activa para asegurar que todas las historias se activen correctamente.'
             ]
           },
           {
             key: 'battery',
             q: '¿Consume mucha batería?',
             a: [
-              'No. El consumo está optimizado para uso continuo de GPS y audio.',
-              'Consejos: usar cargador vehicular, reducir brillo y cerrar apps en segundo plano.'
-            ]
-          },
-          {
-            key: 'data_usage',
-            q: '¿Consume muchos datos (internet)?',
-            a: [
-              'Bajo. Las narraciones son cortas y utilizan compresión y precarga cuando es posible.',
-              'El consumo es similar al de una app de navegación con voz.'
+              'El consumo está optimizado, similar al de las apps de mapas. Recomendamos el uso de un cargador vehicular en trayectos largos.'
             ]
           },
           {
             key: 'privacy',
-            q: '¿Mis datos están seguros?',
+            q: '¿Mi privacidad está protegida?',
             a: [
-              'Sí. Seguimos buenas prácticas de privacidad y seguridad.',
-              'No grabamos tu voz. Solo recopilamos datos necesarios para el funcionamiento y mejora del servicio.',
-              'Detalles en la Política de Privacidad.'
-            ]
-          },
-          {
-            key: 'no_ads',
-            q: '¿La app tiene anuncios?',
-            a: [
-              'No mostramos anuncios ni contenido promocional en narraciones.',
-              'Enfoque exclusivo en la experiencia cultural.'
+              'Sí. Utilizamos tu ubicación solo para activar el audio en el momento adecuado.',
+              'No grabamos conversaciones ni compartimos tus datos de trayecto con terceros con fines publicitarios.'
             ]
           },
           {
             key: 'pricing',
             q: '¿Es gratuito?',
             a: [
-              'Durante la fase beta, Tuggi es 100% gratuito.',
-              'Los planes pagos pueden ofrecerse en el futuro; avisaremos con anticipación.'
+              'Tuggi se puede descargar y utilizar de forma gratuita.',
+              'En el futuro se podrían ofrecer nuevas funcionalidades y contenidos premium.'
             ]
           },
           {
             key: 'coverage',
             q: '¿Dónde está disponible?',
             a: [
-              'Piloto activo en São Paulo y Río de Janeiro.',
-              'Estamos expandiendo gradualmente; sigue las actualizaciones en el sitio web y redes sociales.'
+              'Ya cubrimos las principales vías y puntos históricos de São Paulo y Río de Janeiro.',
+              'Estamos expandiéndonos constantemente a nuevas regiones.'
             ]
           }
         ],
-        // Contact section
         contact_question: '¿Más preguntas? Contáctanos.',
         contact_button: 'Enviar correo'
       }
@@ -477,7 +258,7 @@ const FAQV2: React.FC<FAQV2Props> = ({
 
         <div className="max-w-3xl mx-auto">
           <div className="space-y-4">
-            {content.faqs.map((faq: FAQItem, index: number) => (
+            {content.faqs.map((faq: FAQItem) => (
               <div 
                 key={faq.key}
                 className="bg-white rounded-xl overflow-hidden"

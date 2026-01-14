@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Layout from './components/layout/Layout';
 import PurposePage from './pages/PurposePage';
 import ContactPage from './pages/ContactPage';
@@ -250,7 +250,7 @@ function App() {
       // App store links
       const downloadURLs = {
         'app_store_download': 'https://apps.apple.com/us/app/tuggi-drive/id6744379818?l=pt-BR',
-        'google_play_download': 'https://play.google.com/store/apps/details?id=com.tuggi.app', // Placeholder
+        'google_play_download': 'https://play.google.com/store/apps/details?id=com.tuggidrive.app&pcampaignid=web_share',
         'download_free': 'https://apps.apple.com/us/app/tuggi-drive/id6744379818?l=pt-BR', // Default to App Store
         'ios_download': 'https://apps.apple.com/us/app/tuggi-drive/id6744379818?l=pt-BR' // iOS Banner download
       };

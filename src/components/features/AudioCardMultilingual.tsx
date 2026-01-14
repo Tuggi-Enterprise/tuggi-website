@@ -1,26 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import { Play, Pause } from 'lucide-react';
-import { getFlag, getLanguageName, getLocalizedText } from '../../utils/languageUtils';
+import { getFlag } from '../../utils/languageUtils';
 import { trackAudioPlay } from '../../lib/analytics';
 
 interface AudioSample {
   id: string;
   city: string;
-  name: string;
   image: string;
   verified: boolean;
   audios: {
     PT: {
+      name: string;
       url: string;
       duration: string;
       description: string;
     };
     EN: {
+      name: string;
       url: string;
       duration: string;
       description: string;
     };
     ES: {
+      name: string;
       url: string;
       duration: string;
       description: string;
@@ -43,7 +45,6 @@ const AudioCardMultilingual: React.FC<AudioCardMultilingualProps> = ({
   const [loadingLanguage, setLoadingLanguage] = useState<string | null>(null);
   
   // Audio padrão baseado no idioma do site
-  const defaultAudio = sample.audios[currentLanguage];
   const availableLanguages = Object.keys(sample.audios);
   
   const handlePlayAudio = async (language: string) => {
@@ -68,7 +69,7 @@ const AudioCardMultilingual: React.FC<AudioCardMultilingualProps> = ({
       // Criar ou usar audio element
       let audio = audioRefs[language];
       if (!audio) {
-        audio = new Audio(sample.audios[language].url);
+        audio = new Audio(sample.audios[language as 'PT' | 'EN' | 'ES'].url);
         setAudioRefs(prev => ({ ...prev, [language]: audio }));
         
         // Configurar eventos do audio
@@ -102,7 +103,15 @@ const AudioCardMultilingual: React.FC<AudioCardMultilingualProps> = ({
     }
   };
   
-  const getCurrentAudio = () => sample.audios[activeLanguage];
+  const getCurrentAudio = () => sample.audios[activeLanguage as 'PT' | 'EN' | 'ES'];
+  
+  const getLocalizedSource = (lang: string) => {
+    switch (lang) {
+      case 'EN': return 'Source: cultural content validated by experts';
+      case 'ES': return 'Fuente: contenido cultural validado por expertos';
+      default: return 'Fonte: conteúdo cultural validado por especialistas';
+    }
+  };
   
   // Cleanup audio elements on unmount
   useEffect(() => {
@@ -128,7 +137,7 @@ const AudioCardMultilingual: React.FC<AudioCardMultilingualProps> = ({
       <div className="relative">
         <img 
           src={sample.image} 
-          alt={sample.name}
+          alt={getCurrentAudio().name}
           className="w-full h-48 object-cover"
         />
         
@@ -152,7 +161,7 @@ const AudioCardMultilingual: React.FC<AudioCardMultilingualProps> = ({
               textShadow: '0 2px 4px rgba(0,0,0,0.5)'
             }}
           >
-            {sample.name}
+            {getCurrentAudio().name}
           </h3>
         </div>
       </div>
@@ -211,11 +220,12 @@ const AudioCardMultilingual: React.FC<AudioCardMultilingualProps> = ({
             fontStyle: 'italic'
           }}
         >
-          Fonte: conteúdo cultural validado por especialistas
+          {getLocalizedSource(activeLanguage)}
         </p>
       </div>
     </div>
   );
 };
+
 
 export default AudioCardMultilingual;
