@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Mail, Phone, MessageCircle, Send, CheckCircle, AlertCircle, ArrowRight, Globe, TrendingUp, Users, Building2 } from 'lucide-react';
+import React from 'react';
+import { Mail, ArrowRight, Globe, TrendingUp } from 'lucide-react';
 import FinalCTASection from '../components/sections/FinalCTASection';
 import { 
   getButtonClasses, 
@@ -23,22 +23,28 @@ const ContactPage: React.FC<ContactPageProps> = ({
       PT: {
         hero: {
           title: 'Entre em contato',
-          subtitle: 'Queremos ouvir suas ideias, sugestões e possíveis parcerias.'
+          subtitle: 'Sugestões, suporte e parcerias — fale com a Tuggi.'
         },
         email: {
-          title: 'Se você deseja falar com a equipe da Tuggi, envie um e-mail diretamente para:',
+          title: 'Canal oficial por e-mail:',
           address: 'contato@tuggi.app',
-          note: 'No momento, não utilizamos formulários de contato nem atendimento via telefone. Respondemos os e-mails periodicamente, de acordo com a disponibilidade da equipe.'
+          note: 'Este é nosso canal oficial. Para agilizar, envie seu e-mail com um dos assuntos abaixo:',
+          subjects: [
+            'SUPORTE — [seu tema]',
+            'PARCERIA — [empresa/ideia]',
+            'IMPRENSA/INV — [nome]'
+          ],
+          footer: 'No momento, atendemos por e-mail.'
         },
         expansion: {
-          title: 'Quer ver a Tuggi na sua cidade?',
-          description: 'Estamos expandindo gradualmente. Se você gostaria de ter a Tuggi mapeando a sua região, idioma ou país, participe da nossa pesquisa de interesse.',
-          button: 'Preencher formulário de interesse',
-          note: '(Link será adicionado assim que o formulário oficial estiver disponível)'
+          title: 'Quer sugerir sua cidade?',
+          description: 'Envie sua cidade, idioma e tipo de uso (motorista de app ou uso pessoal).',
+          button: 'Enviar sugestão por e-mail',
+          link: 'mailto:contato@tuggi.app?subject=Sugest%C3%A3o%20de%20cidade%20-%20Tuggi'
         },
         investors: {
-          title: 'É investidor ou representa uma aceleradora?',
-          description: 'Temos uma página dedicada com informações sobre nosso propósito, estágio atual e canal de contato direto para investidores.',
+          title: 'Investidores e aceleradoras',
+          description: 'Informações e canal dedicado.',
           button: 'Ir para a página de investidores',
           link: '/investors'
         }
@@ -134,13 +140,13 @@ const ContactPage: React.FC<ContactPageProps> = ({
           {/* Email Contact - Enhanced prominence */}
           <div className="text-center mb-16">
             <div className="max-w-2xl mx-auto">
-              <p className="text-lg sm:text-xl text-neutral-700 mb-8 leading-relaxed">
+              <p className="text-lg sm:text-xl text-neutral-700 mb-8 leading-relaxed font-medium">
                 {content.email.title}
               </p>
               
               {/* Enhanced Email Card */}
               <div 
-                className={`${getCardClasses(true)} p-8 mb-8 relative overflow-hidden group`}
+                className={`${getCardClasses(true)} p-8 mb-10 relative overflow-hidden group`}
                 style={{ background: 'linear-gradient(135deg, rgba(0, 168, 232, 0.08) 0%, rgba(255, 111, 0, 0.08) 100%)' }}
               >
                 {/* Decorative background elements */}
@@ -159,15 +165,31 @@ const ContactPage: React.FC<ContactPageProps> = ({
                   <a 
                     href={`mailto:${content.email.address}`}
                     onClick={() => handleCTAClick('email_contact')}
-                    className="text-2xl sm:text-3xl font-bold text-tuggi-primary hover:text-tuggi-primary-dark transition-colors duration-300 break-all group-hover:scale-105 transform transition-transform duration-300"
+                    className="text-2xl sm:text-3xl font-bold text-tuggi-primary hover:text-tuggi-primary-dark transition-colors duration-300 break-all"
                   >
                     {content.email.address}
                   </a>
                 </div>
               </div>
               
-              <p className="text-base sm:text-lg text-neutral-600 leading-relaxed max-w-3xl mx-auto">
-                {content.email.note}
+              <div className="text-left bg-neutral-50 rounded-2xl p-8 border border-neutral-100 mb-8">
+                <p className="text-base text-neutral-600 mb-6 font-medium">
+                  {content.email.note}
+                </p>
+                {content.email.subjects && (
+                  <ul className="space-y-3">
+                    {content.email.subjects.map((subject: string, idx: number) => (
+                      <li key={idx} className="flex items-center gap-3 text-neutral-700 bg-white p-3 rounded-xl border border-neutral-200/50 shadow-sm">
+                        <div className="w-2 h-2 bg-tuggi-primary rounded-full"></div>
+                        <span className="font-mono text-sm">{subject}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+
+              <p className="text-sm text-neutral-400 font-medium">
+                {content.email.footer || content.email.note}
               </p>
             </div>
           </div>
@@ -175,11 +197,11 @@ const ContactPage: React.FC<ContactPageProps> = ({
           {/* Two Column Layout - Enhanced cards */}
           <div className={`${layout.grid['2']} gap-8 lg:gap-12`}>
             {/* City Expansion Section - Enhanced */}
-            <div className={`${getCardClasses(true)} p-8 relative overflow-hidden group`}>
+            <div className={`${getCardClasses()} p-8 relative overflow-hidden group flex flex-col h-full`}>
               {/* Decorative background */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-tuggi-primary/5 rounded-full blur-3xl group-hover:scale-110 transition-transform duration-500"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-tuggi-primary/5 rounded-full blur-3xl"></div>
               
-              <div className="relative">
+              <div className="relative flex-grow">
                 <div className="flex items-center justify-center mb-6">
                   <div 
                     className="w-12 h-12 rounded-full flex items-center justify-center shadow-md"
@@ -192,31 +214,29 @@ const ContactPage: React.FC<ContactPageProps> = ({
                 <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-4 text-center">
                   {content.expansion.title}
                 </h2>
-                <p className="text-base sm:text-lg text-neutral-700 leading-relaxed mb-8 text-center">
+                <p className="text-base text-neutral-600 leading-relaxed mb-8 text-center">
                   {content.expansion.description}
                 </p>
-                
-                <div className="text-center">
-                  <button 
-                    onClick={() => handleCTAClick('expansion_form')}
-                    className={`${getButtonClasses('primary', 'lg')} inline-flex items-center space-x-2 group-hover:scale-105 transform transition-transform duration-300`}
-                  >
-                    <span>{content.expansion.button}</span>
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
-                  </button>
-                  <p className="text-sm text-neutral-500 italic mt-4">
-                    {content.expansion.note}
-                  </p>
-                </div>
+              </div>
+
+              <div className="text-center mt-auto">
+                <a 
+                  href={content.expansion.link}
+                  onClick={() => handleCTAClick('expansion_suggestion')}
+                  className={`${getButtonClasses('primary', 'lg')} inline-flex items-center space-x-2`}
+                >
+                  <span>{content.expansion.button}</span>
+                  <ArrowRight className="w-5 h-5" />
+                </a>
               </div>
             </div>
 
             {/* Investors Section - Enhanced */}
-            <div className={`${getCardClasses(true)} p-8 relative overflow-hidden group`}>
+            <div className={`${getCardClasses()} p-8 relative overflow-hidden group flex flex-col h-full`}>
               {/* Decorative background */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-tuggi-secondary/5 rounded-full blur-3xl group-hover:scale-110 transition-transform duration-500"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-tuggi-secondary/5 rounded-full blur-3xl"></div>
               
-              <div className="relative">
+              <div className="relative flex-grow">
                 <div className="flex items-center justify-center mb-6">
                   <div 
                     className="w-12 h-12 rounded-full flex items-center justify-center shadow-md"
@@ -229,19 +249,19 @@ const ContactPage: React.FC<ContactPageProps> = ({
                 <h2 className="text-xl sm:text-2xl font-bold text-neutral-900 mb-4 text-center">
                   {content.investors.title}
                 </h2>
-                <p className="text-base sm:text-lg text-neutral-700 leading-relaxed mb-8 text-center">
+                <p className="text-base text-neutral-600 leading-relaxed mb-8 text-center">
                   {content.investors.description}
                 </p>
-                
-                <div className="text-center">
-                  <button 
-                    onClick={() => handleCTAClick('investors_page')}
-                    className={`${getButtonClasses('primary', 'lg')} inline-flex items-center space-x-2 group-hover:scale-105 transform transition-transform duration-300`}
-                  >
-                    <span>{content.investors.button}</span>
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
-                  </button>
-                </div>
+              </div>
+
+              <div className="text-center mt-auto">
+                <button 
+                  onClick={() => handleCTAClick('investors_page')}
+                  className={`${getButtonClasses('primary', 'lg')} inline-flex items-center space-x-2`}
+                >
+                  <span>{content.investors.button}</span>
+                  <ArrowRight className="w-5 h-5" />
+                </button>
               </div>
             </div>
           </div>

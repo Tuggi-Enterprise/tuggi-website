@@ -22,25 +22,25 @@ const FinalCTASection: React.FC<FinalCTASectionProps> = ({
   const getLocalizedContent = (language: string): ContentLanguage => {
     const content: Record<string, ContentLanguage> = {
       PT: {
-        title: 'Comece sua jornada cultural agora mesmo.',
-        description: 'Baixe o app gratuitamente, explore o mundo ao seu redor e nos ajude a construir a Tuggi.',
+        title: 'Baixe o Tuggi nas lojas oficiais.',
+        description: 'Escolha sua plataforma.',
         appStore: 'App Store',
         googlePlay: 'Google Play',
-        comingSoon: 'Em breve'
+        comingSoon: ''
       },
       EN: {
-        title: 'Start your cultural journey right now.',
-        description: 'Download the app for free, explore the world around you and help us build Tuggi.',
+        title: 'Download Tuggi from official stores.',
+        description: 'Choose your platform.',
         appStore: 'App Store',
         googlePlay: 'Google Play',
-        comingSoon: 'Coming soon'
+        comingSoon: ''
       },
       ES: {
-        title: 'Comienza tu viaje cultural ahora mismo.',
-        description: 'Descarga la app gratis, explora el mundo a tu alrededor y ayúdanos a construir Tuggi.',
+        title: 'Descarga Tuggi en las tiendas oficiales.',
+        description: 'Elige tu plataforma.',
         appStore: 'App Store',
         googlePlay: 'Google Play',
-        comingSoon: 'Próximamente'
+        comingSoon: ''
       }
     };
     return content[language] || content['PT'];
@@ -52,31 +52,41 @@ const FinalCTASection: React.FC<FinalCTASectionProps> = ({
     onCTAClick?.(ctaType, currentLanguage);
   };
 
+  const storeUrls = {
+    apple: 'https://apps.apple.com/br/app/tuggi-explore-ao-dirigir/id6744379818',
+    google: 'https://play.google.com/store/apps/details?id=com.tuggidrive.app'
+  };
+
   return (
     <section className={`${layout.section.compact}`} style={{ background: gradients.ocean }}>
       <div className={`${layout.container.base} text-center`}>
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3 lg:mb-4">
           {content.title}
         </h2>
-        <p className="text-base sm:text-lg text-white max-w-3xl mx-auto mb-4 lg:mb-6">
+        <p className="text-base sm:text-lg text-white max-w-3xl mx-auto mb-6 lg:mb-8">
           {content.description}
         </p>
-        <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center">
-          <button 
+        <div className="flex flex-col sm:flex-row gap-4 lg:gap-6 justify-center">
+          <a 
+            href={storeUrls.apple}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => handleCTAClick('app_store_download')}
-            className="bg-white text-tuggi-primary px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-200 inline-flex items-center gap-2 text-sm sm:text-base hover:bg-gray-50 hover:scale-105 transform shadow-lg"
+            className="bg-white text-tuggi-primary px-8 lg:px-10 py-4 rounded-xl font-bold transition-all duration-300 inline-flex items-center gap-3 hover:bg-gray-50 hover:scale-105 transform shadow-xl"
           >
-            <span>📱</span>
+            <span className="text-xl">📱</span>
             <span>{content.appStore}</span>
-          </button>
-          <button 
-            disabled
-            className="bg-neutral-300 text-neutral-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold transition-all duration-200 inline-flex items-center gap-2 text-sm sm:text-base cursor-not-allowed opacity-75"
+          </a>
+          <a 
+            href={storeUrls.google}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => handleCTAClick('google_play_download')}
+            className="bg-white text-tuggi-primary px-8 lg:px-10 py-4 rounded-xl font-bold transition-all duration-300 inline-flex items-center gap-3 hover:bg-gray-50 hover:scale-105 transform shadow-xl"
           >
-            <span>🤖</span>
+            <span className="text-xl">🤖</span>
             <span>{content.googlePlay}</span>
-            <span className="ml-2 bg-neutral-400/30 px-2 py-1 rounded-full text-xs font-medium">{content.comingSoon}</span>
-          </button>
+          </a>
         </div>
       </div>
     </section>

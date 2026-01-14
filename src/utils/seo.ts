@@ -95,11 +95,11 @@ export const generateSEOConfig = (
         ogDescription: 'Get in touch with Tuggi to learn more about our cultural discovery app. Explore cities with real-time audio stories and cultural curiosities.'
       },
       PT: {
-        title: 'Entre em Contato - Tuggi – Descubra cultura e histórias por onde você passa',
-        description: 'Entre em contato com a Tuggi para saber mais sobre nosso app de descoberta cultural. Explore cidades com histórias em áudio em tempo real e curiosidades culturais.',
-        keywords: 'contato tuggi, suporte app cultural, app guia de áudio, app histórias locais, app turismo cultural',
-        ogTitle: 'Entre em Contato - Tuggi – Descubra cultura e histórias por onde você passa',
-        ogDescription: 'Entre em contato com a Tuggi para saber mais sobre nosso app de descoberta cultural. Explore cidades com histórias em áudio em tempo real e curiosidades culturais.'
+        title: 'Contato — Tuggi',
+        description: 'Fale com a Tuggi: suporte, sugestões e parcerias. Canal oficial por e-mail.',
+        keywords: 'contato tuggi, suporte app cultural, app guia de áudio, app histórias locais, parcerias tuggi',
+        ogTitle: 'Contato — Tuggi',
+        ogDescription: 'Fale com a Tuggi: suporte, sugestões e parcerias. Canal oficial por e-mail.'
       },
       ES: {
         title: 'Contáctanos - Tuggi – Descubre cultura e historias donde vayas',
