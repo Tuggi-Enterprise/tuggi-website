@@ -16,7 +16,7 @@ const AudioSamplesSection: React.FC<AudioSamplesSectionProps> = ({
 }) => {
   const [showAllSamples, setShowAllSamples] = useState(false);
 
-  const translations = {
+  const translations: Record<string, any> = {
     PT: {
       samplesTitle: 'Ouça um exemplo real',
       samplesSubtitle: 'Histórias curtas e contextuais para ouvir enquanto dirige.',
@@ -34,10 +34,28 @@ const AudioSamplesSection: React.FC<AudioSamplesSectionProps> = ({
       samplesSubtitle: 'Historias cortas y contextuales para escuchar mientras conduces.',
       showMore: 'Ver más ejemplos',
       showLess: 'Ver menos'
+    },
+    FR: {
+      samplesTitle: 'Écoutez un exemple réel',
+      samplesSubtitle: 'De courtes histoires contextuelles à écouter tout en conduisant.',
+      showMore: 'Voir plus d\'exemples',
+      showLess: 'Voir moins'
+    },
+    DE: {
+      samplesTitle: 'Hören Sie ein echtes Beispiel',
+      samplesSubtitle: 'Kurze, kontextbezogene Geschichten, die Sie während der Fahrt hören können.',
+      showMore: 'Mehr Beispiele anzeigen',
+      showLess: 'Weniger anzeigen'
+    },
+    IT: {
+      samplesTitle: 'Ascolta un esempio reale',
+      samplesSubtitle: 'Brevi storie contestuali da ascoltare durante la guida.',
+      showMore: 'Vedi altri esempi',
+      showLess: 'Vedi meno'
     }
   };
 
-  const t = translations[currentLanguage as keyof typeof translations] || translations.PT;
+  const t = translations[currentLanguage as keyof typeof translations] || translations.EN;
 
   const displayTitle = title || t.samplesTitle;
   const displaySubtitle = subtitle || t.samplesSubtitle;

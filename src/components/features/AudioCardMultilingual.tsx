@@ -8,26 +8,12 @@ interface AudioSample {
   city: string;
   image: string;
   verified: boolean;
-  audios: {
-    PT: {
-      name: string;
-      url: string;
-      duration: string;
-      description: string;
-    };
-    EN: {
-      name: string;
-      url: string;
-      duration: string;
-      description: string;
-    };
-    ES: {
-      name: string;
-      url: string;
-      duration: string;
-      description: string;
-    };
-  };
+  audios: Record<string, {
+    name: string;
+    url: string;
+    duration: string;
+    description: string;
+  }>;
 }
 
 interface AudioCardMultilingualProps {
@@ -69,7 +55,7 @@ const AudioCardMultilingual: React.FC<AudioCardMultilingualProps> = ({
       // Criar ou usar audio element
       let audio = audioRefs[language];
       if (!audio) {
-        audio = new Audio(sample.audios[language as 'PT' | 'EN' | 'ES'].url);
+        audio = new Audio(sample.audios[language].url);
         setAudioRefs(prev => ({ ...prev, [language]: audio }));
         
         // Configurar eventos do audio
@@ -103,12 +89,15 @@ const AudioCardMultilingual: React.FC<AudioCardMultilingualProps> = ({
     }
   };
   
-  const getCurrentAudio = () => sample.audios[activeLanguage as 'PT' | 'EN' | 'ES'];
+  const getCurrentAudio = () => sample.audios[activeLanguage] || sample.audios['EN'] || Object.values(sample.audios)[0];
   
   const getLocalizedSource = (lang: string) => {
     switch (lang) {
       case 'EN': return 'Source: cultural content validated by experts';
       case 'ES': return 'Fuente: contenido cultural validado por expertos';
+      case 'FR': return 'Source : contenu culturel validé par des experts';
+      case 'DE': return 'Quelle: von Experten validierte kulturelle Inhalte';
+      case 'IT': return 'Fonte: contenuti culturali validati da esperti';
       default: return 'Fonte: conteúdo cultural validado por especialistas';
     }
   };

@@ -1,5 +1,6 @@
 import React from 'react';
 import { layout, getButtonClasses, getCardClasses } from '../utils/designSystem';
+import { generateLocalizedUrl } from '../utils/routing';
 import { Shield, ArrowRight, CheckCircle2 } from 'lucide-react';
 
 interface ContentLanguage {
@@ -1023,7 +1024,7 @@ const BusinessPage: React.FC<BusinessPageProps> = ({
             </div>
             <div className="mt-12">
               <a 
-                href={`/pt/contact`} 
+                href={generateLocalizedUrl(currentLanguage, 'contact')} 
                 className="text-tuggi-primary font-bold hover:underline inline-flex items-center gap-2"
               >
                 {content.trust.link}

@@ -19,8 +19,15 @@ const Layout: React.FC<LayoutProps> = ({
 }) => {
   useEffect(() => {
     // Set document language attribute for accessibility
-    document.documentElement.lang = currentLanguage === 'PT' ? 'pt-BR' : 
-                                   currentLanguage === 'ES' ? 'es' : 'en';
+    const langMap: Record<string, string> = {
+      'PT': 'pt-BR',
+      'ES': 'es',
+      'FR': 'fr',
+      'DE': 'de',
+      'IT': 'it',
+      'EN': 'en'
+    };
+    document.documentElement.lang = langMap[currentLanguage || 'EN'] || 'en';
     
     // Set document direction (all supported languages are LTR)
     document.documentElement.dir = 'ltr';

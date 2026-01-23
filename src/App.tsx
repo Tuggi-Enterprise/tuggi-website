@@ -22,21 +22,16 @@ declare global {
 }
 
 function App() {
-  const [currentLanguage, setCurrentLanguage] = useState('PT');
-  const [currentPage, setCurrentPage] = useState('home');
+  // Parse current URL to determine language and page on initial load
+  const { language: initialLang, page: initialPage } = parseUrlPath(window.location.pathname);
+  
+  const [currentLanguage, setCurrentLanguage] = useState(initialLang);
+  const [currentPage, setCurrentPage] = useState(initialPage);
   const [isInitialized, setIsInitialized] = useState(false);
 
   // Initialize app with URL parsing and analytics
   useEffect(() => {
     console.log('App.tsx useEffect - window.location.pathname:', window.location.pathname);
-    // Parse current URL to determine language and page
-    const { language, page } = parseUrlPath(window.location.pathname);
-    console.log('App.tsx useEffect - parsed values:', { language, page });
-    
-    // Set initial state
-    setCurrentLanguage(language);
-    setCurrentPage(page);
-    console.log('App.tsx useEffect - states set to:', { language, page });
     
     // Initialize Google Analytics with enhanced multilingual tracking
     const measurementId = import.meta.env.VITE_GA4_MEASUREMENT_ID || 'G-LFFNJDG7TJ'; // Replace with actual GA4 Measurement ID
@@ -46,10 +41,10 @@ function App() {
     trackPerformanceMetrics();
     
     // Track initial page view
-    trackPageView(page, language, measurementId);
+    trackPageView(currentPage, currentLanguage, measurementId);
     
     // Track user location for geographic analytics
-    trackUserLocation(language).catch(() => {
+    trackUserLocation(currentLanguage).catch(() => {
       // Location tracking failed, but continue normally
     });
     
@@ -193,7 +188,10 @@ function App() {
     const localeMap: Record<string, string> = {
       'EN': 'en-US',
       'PT': 'pt-BR',
-      'ES': 'es-ES'
+      'ES': 'es-ES',
+      'FR': 'fr-FR',
+      'DE': 'de-DE',
+      'IT': 'it-IT'
     };
     return localeMap[language] || 'en-US';
   };
@@ -201,9 +199,12 @@ function App() {
   // Helper function to get the correct form URL based on language
   const getFormURL = (language: string): string => {
     const formURLs = {
-      'EN': 'https://forms.gle/B5VWqtDgjEKEiHv1A',   // English
-      'PT': 'https://forms.gle/B5VWqtDgjEKEiHv1A',   // Portuguese
-      'ES': 'https://forms.gle/B5VWqtDgjEKEiHv1A'    // Spanish
+      'EN': 'https://forms.gle/B5VWqtDgjEKEiHv1A',
+      'PT': 'https://forms.gle/B5VWqtDgjEKEiHv1A',
+      'ES': 'https://forms.gle/B5VWqtDgjEKEiHv1A',
+      'FR': 'https://forms.gle/B5VWqtDgjEKEiHv1A',
+      'DE': 'https://forms.gle/B5VWqtDgjEKEiHv1A',
+      'IT': 'https://forms.gle/B5VWqtDgjEKEiHv1A'
     };
     return formURLs[language as keyof typeof formURLs] || formURLs['EN'];
   };
@@ -447,19 +448,31 @@ function App() {
       case 'privacy-policy':
       case 'politica-de-privacidade':
       case 'politica-de-privacidad':
+      case 'politique-de-confidentialite':
+      case 'datenschutz':
+      case 'informativa-privacy':
         return <PrivacyPolicyPage currentLanguage={currentLanguage} />;
       case 'terms':
       case 'terms-of-use':
       case 'termos-de-uso':
       case 'terminos-de-uso':
+      case 'conditions-d-utilisation':
+      case 'nutzungsbedingungen':
+      case 'termini-di-utilizzo':
         return <TermsOfUsePage currentLanguage={currentLanguage} />;
       case 'cookies':
       case 'cookie-policy':
       case 'politica-de-cookies':
+      case 'politique-cookies':
+      case 'cookie-richtlinie':
+      case 'informativa-cookie':
         return <CookiePolicyPage currentLanguage={currentLanguage} />;
       case 'data-deletion':
       case 'exclusao-de-dados':
       case 'eliminacion-de-datos':
+      case 'suppression-donnees':
+      case 'datenloeschung':
+      case 'cancellazione-dati':
         return <DataDeletionPage currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />;
       case 'business':
       case 'empresas':
@@ -468,7 +481,10 @@ function App() {
       case 'drivers':
       case 'motoristas':
       case 'conductores':
-        return <DriversLandingPage currentLanguage={currentLanguage as 'PT' | 'EN' | 'ES'} onCTAClick={handleCTAClick} />;
+      case 'chauffeurs':
+      case 'fahrer':
+      case 'autisti':
+        return <DriversLandingPage currentLanguage={currentLanguage as 'PT' | 'EN' | 'ES' | 'FR' | 'DE' | 'IT'} onCTAClick={handleCTAClick} />;
         case 'home':
         default:
           return (

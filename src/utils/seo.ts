@@ -84,6 +84,27 @@ export const generateSEOConfig = (
         keywords: 'Tuggi, guía de audio cultural, app de turismo, historias locales, narraciones automáticas, curiosidades culturales, explorar ciudades, aplicación de viaje, copiloto de audio, cultura en el trayecto',
         ogTitle: 'Tuggi — Descubre historias mientras conduces',
         ogDescription: 'Transforma tus trayectos en descubrimientos culturales con narrativas automáticas. Simple y seguro para el conductor.'
+      },
+      FR: {
+        title: 'Tuggi | Copilote culturel pour votre conduite — découvrez des histoires',
+        description: 'Tuggi est une application de narration culturelle automatique qui transforme les trajets en découvertes. Simple, sûre et conçue pour les conducteurs.',
+        keywords: 'Tuggi, guide audio culturel, application de tourisme, histoires locales, narrations automatiques, curiosités culturelles, explorer les villes, application de voyage, copilote audio, culture en route',
+        ogTitle: 'Tuggi — Découvrez des histoires en conduisant',
+        ogDescription: 'Transformez vos trajets en découvertes culturelles avec des récits automatiques. Simple et sûr pour chaque conducteur.'
+      },
+      DE: {
+        title: 'Tuggi | Kultureller Copilot für Ihre Fahrt — Entdecken Sie Geschichten',
+        description: 'Tuggi ist eine automatische kulturelle Erzähl-App, die Fahrten in Entdeckungen verwandelt. Einfach, sicher und für Fahrer konzipiert.',
+        keywords: 'Tuggi, kultureller Audio-Guide, Tourismus-App, lokale Geschichten, automatische Erzählungen, kulturelle Kuriositäten, Städte erkunden, Reise-App, Audio-Copilot, Kultur unterwegs',
+        ogTitle: 'Tuggi — Entdecken Sie Geschichten während der Fahrt',
+        ogDescription: 'Verwandeln Sie Ihre Fahrten in kulturelle Entdeckungen mit automatischen Erzählungen. Einfach und sicher für jeden Fahrer.'
+      },
+      IT: {
+        title: 'Tuggi | Copilota culturale per la tua guida — scopri storie',
+        description: 'Tuggi è un\'app di narrazione culturale automatica que trasforma i viaggi in scoperte. Semplice, sicuro e pensato per i conducenti.',
+        keywords: 'Tuggi, guida audio culturale, app di turismo, storie locali, narrazioni automatiche, curiosità culturali, esplora città, app di viaggio, copilota audio, cultura in movimento',
+        ogTitle: 'Tuggi — Scopri storie mentre guidi',
+        ogDescription: 'Trasforma i tuoi viaggi in scoperte culturali con narrazioni automatiche. Semplice e sicuro per ogni conducente.'
       }
     },
     contact: {
@@ -107,6 +128,27 @@ export const generateSEOConfig = (
         keywords: 'contacto tuggi, soporte app cultural, app guía de audio, app historias locales, app turismo cultural',
         ogTitle: 'Contáctanos - Tuggi – Descubre cultura e historias donde vayas',
         ogDescription: 'Ponte en contacto con Tuggi para conocer más sobre nuestra app de descubrimiento cultural. Explora ciudades con historias de audio en tiempo real y curiosidades culturales.'
+      },
+      FR: {
+        title: 'Contactez-nous - Tuggi – Découvrez culture et histoires où que vous soyez',
+        description: 'Contactez Tuggi pour en savoir plus sur notre application de découverte culturelle. Explorez les villes avec des histoires audio en temps réel et des curiosités culturelles.',
+        keywords: 'contact tuggi, support application culturelle, application guide audio, histoires locales, tourisme culturel',
+        ogTitle: 'Contactez-nous - Tuggi – Découvrez culture et histoires où que vous soyez',
+        ogDescription: 'Explorez les villes avec des histoires audio en temps réel et des curiosités culturelles.'
+      },
+      DE: {
+        title: 'Kontaktieren Sie uns - Tuggi – Entdecken Sie Kultur und Geschichten',
+        description: 'Kontaktieren Sie Tuggi, um mehr über unsere kulturelle Entdeckungs-App zu erfahren. Erkunden Sie Städte mit Audio-Geschichten in Echtzeit.',
+        keywords: 'kontakt tuggi, kultur-app support, audio-guide app, lokale geschichten app',
+        ogTitle: 'Kontaktieren Sie uns - Tuggi – Entdecken Sie Kultur und Geschichten',
+        ogDescription: 'Erkunden Sie Städte mit Audio-Geschichten in Echtzeit und kulturellen Kuriositäten.'
+      },
+      IT: {
+        title: 'Contattaci - Tuggi – Scopri cultura e storie ovunque tu vada',
+        description: 'Contatta Tuggi per saperne di più sulla nostra app di scoperta culturale. Esplora le città con storie audio in tempo reale e curiosità culturali.',
+        keywords: 'contatto tuggi, supporto app culturale, app guida audio, storie locali, turismo culturale',
+        ogTitle: 'Contattaci - Tuggi – Scopri cultura e storie ovunque tu vada',
+        ogDescription: 'Esplora le città con storie audio in tempo reale e curiosità culturali.'
       }
     },
     investors: {
@@ -130,6 +172,27 @@ export const generateSEOConfig = (
         keywords: 'inversores tuggi, tesis inversión, startup movilidad, licenciamiento de datos, marketplace cultura',
         ogTitle: 'Inversores — Tuggi',
         ogDescription: 'Información para inversores: tesis, producto y modelo de negocio de Tuggi — copiloto cultural en audio para trayectos en coche.'
+      },
+      FR: {
+        title: 'Investisseurs — Tuggi',
+        description: 'Informations pour les investisseurs : thèse, produit et modèle d\'affaires de Tuggi — copilote culturel audio.',
+        keywords: 'investisseurs tuggi, startup mobilité, données culturelles, investissement guide audio',
+        ogTitle: 'Investisseurs — Tuggi',
+        ogDescription: 'Informations pour les investisseurs : thèse, produit et modèle d\'affaires.'
+      },
+      DE: {
+        title: 'Investoren — Tuggi',
+        description: 'Informationen für Investoren: Tese, Produkt und Geschäftsmodell von Tuggi — kultureller Audio-Copilot.',
+        keywords: 'tuggi investoren, mobilitäts-startup, kulturelle daten, audio-guide investment',
+        ogTitle: 'Investoren — Tuggi',
+        ogDescription: 'Informationen für Investoren: Tese, Produkt und Geschäftsmodell.'
+      },
+      IT: {
+        title: 'Investitori — Tuggi',
+        description: 'Informazioni per gli investitori: tesi, prodotto e modello di business di Tuggi — copilota culturale audio.',
+        keywords: 'investitori tuggi, startup mobilità, dati culturali, investimento guida audio',
+        ogTitle: 'Investitori — Tuggi',
+        ogDescription: 'Informazioni per gli investitori: tesi, prodotto e modello di business.'
       }
     },
     drivers: {
@@ -153,6 +216,27 @@ export const generateSEOConfig = (
         keywords: 'tuggi conductores, conductores de app, uber, cabify, historias audio conducir, experiencia pasajero',
         ogTitle: 'Para conductores de aplicaciones — Tuggi',
         ogDescription: 'Tuggi para conductores: historias en audio en el camino para que el viaje sea más interesante.'
+      },
+      FR: {
+        title: 'Pour les chauffeurs de VTC — Tuggi',
+        description: 'Tuggi pour les chauffeurs : des histoires audio sur la route pour rendre le trajet plus intéressant. Téléchargez sur les stores officiels.',
+        keywords: 'tuggi pour chauffeurs, expérience VTC, conseils chauffeurs, guide audio pour voitures',
+        ogTitle: 'Pour les chauffeurs de VTC — Tuggi',
+        ogDescription: 'Tuggi pour les chauffeurs : des histoires audio sur la route pour rendre le trajet plus intéressant.'
+      },
+      DE: {
+        title: 'Für Rideshare-Fahrer — Tuggi',
+        description: 'Tuggi für Fahrer: Audio-Geschichten auf dem Weg, um die Fahrt interessanter zu gestalten. In den offiziellen Stores herunterladen.',
+        keywords: 'tuggi für fahrer, rideshare-erfahrung, fahrertipps, audio-guide für autos',
+        ogTitle: 'Für Rideshare-Fahrer — Tuggi',
+        ogDescription: 'Tuggi für Fahrer: Audio-Geschichten auf dem Weg, um die Fahrt interessanter zu gestalten.'
+      },
+      IT: {
+        title: 'Per i conducenti di ridesharing — Tuggi',
+        description: 'Tuggi per i conducenti: storie audio lungo il percorso per rendere il viaggio più interessante. Scarica dagli store ufficiali.',
+        keywords: 'tuggi per conducenti, esperienza ridesharing, consigli per conducenti, guida audio per auto',
+        ogTitle: 'Per i conducenti di ridesharing — Tuggi',
+        ogDescription: 'Tuggi per i conducenti: storie audio lungo il percorso per rendere il viaggio più interessante.'
       }
     },
     purpose: {
@@ -176,6 +260,27 @@ export const generateSEOConfig = (
         keywords: 'propósito tuggi, manifiesto cultural, historias al conducir, copiloto cultural, movilidad urbana, cultura en movimiento',
         ogTitle: 'Nuestro Propósito | Tuggi — Más que una ruta',
         ogDescription: 'El manifiesto de Tuggi: democratizar el acceso a la cultura y transformar los trayectos en descubrimientos.'
+      },
+      FR: {
+        title: 'Notre Raison d\'être | Tuggi — Plus qu\'un trajet',
+        description: 'Le manifeste de Tuggi : démocratiser l\'accès à la culture et transformer les trajets en découvertes.',
+        keywords: 'purpose tuggi, mission découverte culturelle, guide audio, histoires locales',
+        ogTitle: 'Notre Raison d\'être | Tuggi — Plus qu\'un trajet',
+        ogDescription: 'Démocratiser l\'accès à la culture et transformer les trajets en découvertes.'
+      },
+      DE: {
+        title: 'Unser Ziel | Tuggi — Mehr als nur eine Route',
+        description: 'Tuggis Manifest: Demokratisierung des Zugangs zu Kultur und Verwandlung von Fahrten in Entdeckungen.',
+        keywords: 'tuggi ziel, mission kulturelle entdeckung, audio-guide app',
+        ogTitle: 'Unser Ziel | Tuggi — Mehr als nur eine Route',
+        ogDescription: 'Demokratisierung des Zugangs zu Kultur und Verwandlung von Fahrten in Entdeckungen.'
+      },
+      IT: {
+        title: 'Il Nostro Scopo | Tuggi — Oltre il tragitto',
+        description: 'Il manifesto di Tuggi: democratizzare l\'accesso alla cultura e trasformare i viaggi in scoperte.',
+        keywords: 'scopo tuggi, missione scoperta culturale, app guida audio, storie locali',
+        ogTitle: 'Il Nostro Scopo | Tuggi — Oltre il tragitto',
+        ogDescription: 'Democratizzare l\'accesso alla cultura e trasformare i viaggi in scoperte.'
       }
     },
     privacy: {
@@ -199,6 +304,27 @@ export const generateSEOConfig = (
         keywords: 'política privacidad tuggi, protección datos, privacidad app cultural, privacidad guía audio, privacidad app historias locales',
         ogTitle: 'Política de Privacidad - Tuggi – Descubre cultura e historias donde vayas',
         ogDescription: 'Conoce cómo Tuggi protege tu privacidad y datos mientras exploras ciudades con nuestra app de descubrimiento cultural.'
+      },
+      FR: {
+        title: 'Politique de Confidentialité - Tuggi',
+        description: 'Découvrez comment Tuggi protège votre vie privée et vos données.',
+        keywords: 'politique de confidentialité tuggi, protection des données',
+        ogTitle: 'Politique de Confidentialité - Tuggi',
+        ogDescription: 'Découvrez comment Tuggi protège votre vie privée et vos données.'
+      },
+      DE: {
+        title: 'Datenschutzrichtlinie - Tuggi',
+        description: 'Erfahren Sie, wie Tuggi Ihre Privatsphäre und Daten schützt.',
+        keywords: 'tuggi datenschutzrichtlinie, datenschutz',
+        ogTitle: 'Datenschutzrichtlinie - Tuggi',
+        ogDescription: 'Erfahren Sie, wie Tuggi Ihre Privatsphäre und Daten schützt.'
+      },
+      IT: {
+        title: 'Informativa sulla Privacy - Tuggi',
+        description: 'Scopri come Tuggi protegge la tua privacy e i tuoi dati.',
+        keywords: 'informativa privacy tuggi, protezione dati',
+        ogTitle: 'Informativa sulla Privacy - Tuggi',
+        ogDescription: 'Scopri come Tuggi protegge la tua privacy e i tuoi dati.'
       }
     },
     cookies: {
@@ -222,6 +348,27 @@ export const generateSEOConfig = (
         keywords: 'política cookies tuggi, uso cookies, cookies app cultural, cookies guía audio, cookies app historias locales',
         ogTitle: 'Política de Cookies - Tuggi – Descubre cultura e historias donde vayas',
         ogDescription: 'Conoce cómo Tuggi usa cookies para mejorar tu experiencia de descubrimiento cultural y mejorar nuestra app.'
+      },
+      FR: {
+        title: 'Politique de Cookies - Tuggi',
+        description: 'Découvrez comment Tuggi utilise les cookies.',
+        keywords: 'politique de cookies tuggi, utilisation des cookies',
+        ogTitle: 'Politique de Cookies - Tuggi',
+        ogDescription: 'Découvrez comment Tuggi utilise les cookies.'
+      },
+      DE: {
+        title: 'Cookie-Richtlinie - Tuggi',
+        description: 'Erfahren Sie, wie Tuggi Cookies verwendet.',
+        keywords: 'tuggi cookie-richtlinie, cookie-verwendung',
+        ogTitle: 'Cookie-Richtlinie - Tuggi',
+        ogDescription: 'Erfahren Sie, wie Tuggi Cookies verwendet.'
+      },
+      IT: {
+        title: 'Informativa sui Cookie - Tuggi',
+        description: 'Scopri come Tuggi utilizza i cookie.',
+        keywords: 'informativa cookie tuggi, utilizzo dei cookie',
+        ogTitle: 'Informativa sui Cookie - Tuggi',
+        ogDescription: 'Scopri come Tuggi utilizza i cookie.'
       }
     },
 
@@ -246,6 +393,27 @@ export const generateSEOConfig = (
         keywords: 'tuggi para empresas, licencia de datos culturales, api metadatos poi, contenido movilidad, narrativas turismo, api audioguía, datos culturales b2b',
         ogTitle: 'Para empresas | Tuggi — Datos Culturales y Narrativas',
         ogDescription: 'Licenciamiento e integración de contenido cultural en audio y metadatos de POIs para movilidad, turismo y educación.'
+      },
+      FR: {
+        title: 'Pour les entreprises | Tuggi — Données Culturelles et Récits',
+        description: 'Licence et intégration de contenus audio culturels et métadonnées de POI pour la mobilité, le tourisme et l\'éducation. Enrichissez votre produit avec des histoires locales.',
+        keywords: 'tuggi pour entreprises, licence données culturelles, api métadonnées poi, contenu mobilité, tourisme récits, api guide audio, découverte culturelle b2b',
+        ogTitle: 'Pour les entreprises | Tuggi — Données Culturelles et Récits',
+        ogDescription: 'Licence et intégration de contenus audio culturels et métadonnées de POI pour la mobilité, le tourisme et l\'éducation.'
+      },
+      DE: {
+        title: 'Für Unternehmen | Tuggi — Kulturelle Daten & Erzählungen',
+        description: 'Lizenzierung und Integration von kulturellen Audioinhalten und POI-Metadaten für Mobilität, Tourismus und Bildung. Bereichern Sie Ihr Produkt mit lokalen Geschichten.',
+        keywords: 'tuggi für unternehmen, kulturelle datenlizenz, poi-metadaten api, mobilitätsinhalte, tourismus-erzählung, audio-guide api, kulturelle entdeckung b2b',
+        ogTitle: 'Für Unternehmen | Tuggi — Kulturelle Daten & Erzählungen',
+        ogDescription: 'Lizenzierung und Integration von kulturellen Audioinhalten und POI-Metadaten für Mobilität, Tourismus und Bildung.'
+      },
+      IT: {
+        title: 'Per le aziende | Tuggi — Dati Culturali e Narrazioni',
+        description: 'Licenza e integrazione di contenuti audio culturali e metadati POI per mobilità, turismo e istruzione. Arricchisci il tuo prodotto con storie locali.',
+        keywords: 'tuggi per aziende, licenza dati culturali, api metadati poi, contenuti mobilità, narrazioni turismo, api guida audio, scoperta culturale b2b',
+        ogTitle: 'Per le aziende | Tuggi — Dati Culturali e Narrazioni',
+        ogDescription: 'Licenza e integrazione di contenuti audio culturali e metadati POI per mobilità, turismo e istruzione.'
       }
     }
   };
@@ -259,7 +427,7 @@ export const generateSEOConfig = (
   const structuredData = generateStructuredData(page, language, baseUrl);
 
   // Generate canonical URL with proper localized page URL
-  const langCode = language === 'EN' ? 'en' : language === 'PT' ? 'pt' : 'es';
+  const langCode = language.toLowerCase();
   const localizedPageUrl = getLocalizedPageUrl(page, language);
   const canonicalUrl = page === 'home' 
     ? `${baseUrl}/${langCode}/`
@@ -272,7 +440,10 @@ export const generateSEOConfig = (
   const ogImageAltByLang: Record<string, string> = {
     EN: 'Tuggi - Cultural discovery and local stories app',
     PT: 'Tuggi - App de descoberta cultural e histórias locais',
-    ES: 'Tuggi - App de descubrimiento cultural e historias locales'
+    ES: 'Tuggi - App de descubrimiento cultural e historias locales',
+    FR: 'Tuggi - Application de découverte culturelle et histoires locales',
+    DE: 'Tuggi - App für kulturelle Entdeckungen und lokale Geschichten',
+    IT: 'Tuggi - App di scoperta culturale e storie locali'
   };
 
   return {
@@ -311,7 +482,7 @@ export const generateStructuredData = (page: string, language: string, baseUrl: 
       "telephone": "+55-11-994718809",
       "contactType": "customer service",
       "email": "contato@tuggi.app",
-      "availableLanguage": ["Portuguese", "English", "Spanish"]
+      "availableLanguage": ["Portuguese", "English", "Spanish", "French", "German", "Italian"]
     },
     "sameAs": [
       "https://linkedin.com/company/tuggi",
@@ -659,42 +830,66 @@ export const trackPageView = (page: string, language: string, measurementId?: st
         purpose: {
           EN: 'Our Purpose - Tuggi',
           PT: 'Nosso Propósito - Tuggi',
-          ES: 'Nuestro Propósito - Tuggi'
+          ES: 'Nuestro Propósito - Tuggi',
+          FR: 'Notre Raison d\'être - Tuggi',
+          DE: 'Unser Ziel - Tuggi',
+          IT: 'Il Nostro Scopo - Tuggi'
         },
         business: {
           EN: 'For Businesses - Tuggi',
           PT: 'Para Empresas - Tuggi',
-          ES: 'Para Empresas - Tuggi'
+          ES: 'Para Empresas - Tuggi',
+          FR: 'Pour les Entreprises - Tuggi',
+          DE: 'Für Unternehmen - Tuggi',
+          IT: 'Per le Aziende - Tuggi'
         },
         contact: {
           EN: 'Contact - Tuggi',
           PT: 'Contato - Tuggi',
-          ES: 'Contacto - Tuggi'
+          ES: 'Contacto - Tuggi',
+          FR: 'Contact - Tuggi',
+          DE: 'Kontakt - Tuggi',
+          IT: 'Contatti - Tuggi'
         },
         investors: {
           EN: 'Investors - Tuggi',
           PT: 'Investidores - Tuggi',
-          ES: 'Inversores - Tuggi'
+          ES: 'Inversores - Tuggi',
+          FR: 'Investisseurs - Tuggi',
+          DE: 'Investoren - Tuggi',
+          IT: 'Investitori - Tuggi'
         },
         privacy: {
           EN: 'Privacy Policy - Tuggi',
           PT: 'Política de Privacidade - Tuggi',
-          ES: 'Política de Privacidad - Tuggi'
+          ES: 'Política de Privacidad - Tuggi',
+          FR: 'Politique de Confidentialité - Tuggi',
+          DE: 'Datenschutz - Tuggi',
+          IT: 'Privacy Policy - Tuggi'
         },
         terms: {
           EN: 'Terms of Use - Tuggi',
           PT: 'Termos de Uso - Tuggi',
-          ES: 'Términos de Uso - Tuggi'
+          ES: 'Términos de Uso - Tuggi',
+          FR: 'Conditions d\'utilisation - Tuggi',
+          DE: 'Nutzungsbedingungen - Tuggi',
+          IT: 'Termini di Utilizzo - Tuggi'
         },
         cookies: {
           EN: 'Cookie Policy - Tuggi',
           PT: 'Política de Cookies - Tuggi',
-          ES: 'Política de Cookies - Tuggi'
+          ES: 'Política de Cookies - Tuggi',
+          FR: 'Politique de Cookies - Tuggi',
+          DE: 'Cookie-Richtlinie - Tuggi',
+          IT: 'Cookie Policy - Tuggi'
         },
         drivers: {
           EN: 'For Drivers - Tuggi',
           PT: 'Para Motoristas - Tuggi',
-          ES: 'Para Conductores - Tuggi'
+          ES: 'Para Conductores - Tuggi',
+          FR: 'Pour les Conducteurs - Tuggi',
+          DE: 'Für Fahrer - Tuggi',
+          IT: 'Per i Conducenti - Tuggi'
         }
       };
       

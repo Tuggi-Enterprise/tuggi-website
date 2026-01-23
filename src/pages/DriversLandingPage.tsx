@@ -11,11 +11,12 @@ import {
   getCardClasses, 
   layout 
 } from '../utils/designSystem';
+import { generateLocalizedUrl } from '../utils/routing';
 import AudioSamplesSection from '../components/sections/AudioSamplesSection';
 import TestimonialsV2 from '../components/sections/TestimonialsV2';
 
 interface DriversLandingPageProps {
-  currentLanguage?: 'PT' | 'EN' | 'ES';
+  currentLanguage?: 'PT' | 'EN' | 'ES' | 'FR' | 'DE' | 'IT';
   onCTAClick?: (ctaType: string, position?: string) => void;
 }
 
@@ -573,10 +574,18 @@ const DriversLandingPage: React.FC<DriversLandingPageProps> = ({ currentLanguage
               ))}
             </div>
             <div className="flex flex-wrap gap-6 border-t border-neutral-100 pt-8">
-              <a href="/pt/politica-de-privacidade" className="text-tuggi-primary font-bold hover:underline">
+              <a 
+                href={generateLocalizedUrl(currentLanguage, 'privacy')} 
+                onClick={(e) => { e.preventDefault(); onCTAClick?.('privacy_policy', 'drivers_page'); }}
+                className="text-tuggi-primary font-bold hover:underline"
+              >
                 {t.privacy.links.privacy}
               </a>
-              <a href="/pt/data-deletion" className="text-tuggi-primary font-bold hover:underline">
+              <a 
+                href={generateLocalizedUrl(currentLanguage, 'data-deletion')}
+                onClick={(e) => { e.preventDefault(); onCTAClick?.('data_deletion', 'drivers_page'); }}
+                className="text-tuggi-primary font-bold hover:underline"
+              >
                 {t.privacy.links.deletion}
               </a>
             </div>

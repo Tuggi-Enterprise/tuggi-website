@@ -1,6 +1,7 @@
 import React from 'react';
 import { ShieldCheck, MapPin, Globe, MicOff, Settings, Trash2, ExternalLink } from 'lucide-react';
 import { layout } from '../../utils/designSystem';
+import { generateLocalizedUrl } from '../../utils/routing';
 import AudioSamplesSection from './AudioSamplesSection';
 
 interface TrustSectionV2Props {
@@ -254,7 +255,7 @@ const TrustSectionV2: React.FC<TrustSectionV2Props> = ({
           
           <div className="flex items-center gap-2">
             <a 
-              href="/pt/contact" 
+              href={generateLocalizedUrl(currentLanguage, 'contact')} 
               className="flex items-center gap-1.5 text-tuggi-primary font-bold text-sm hover:underline"
             >
               {content.curatedLinkText}

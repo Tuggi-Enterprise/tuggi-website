@@ -197,37 +197,55 @@ export const parseUrlPath = (pathname: string): ParsedUrl => {
   const segments = pathname.replace(/^\/+|\/+$/g, '').split('/').filter(Boolean);
   console.log('parseUrlPath segments:', segments);
   
-  let language = 'PT'; // Default language
+  let language = 'EN'; // Default language changed from PT to EN
   let page = 'home'; // Default page
   
   if (segments.length === 0) {
-    // Root path: / -> default to EN/home
     return { language, page };
   }
   
-  const firstSegment = segments[0].toLowerCase();
-  
-  // Check if first segment is a language code
-  if (firstSegment in SUPPORTED_LANGUAGES) {
-    language = SUPPORTED_LANGUAGES[firstSegment as keyof typeof SUPPORTED_LANGUAGES];
-    
-    // Check if there's a page segment
-    if (segments.length > 1) {
-      const pageSegment = segments[1].toLowerCase();
-      
-      // Check if it's a localized URL that maps to a standard page
-      if (pageSegment in URL_TO_PAGE_MAPPINGS) {
-        page = URL_TO_PAGE_MAPPINGS[pageSegment];
-      } else if ((VALID_PAGES as readonly string[]).includes(pageSegment)) {
-        page = pageSegment;
-      }
+  // 1. Find the first segment that is a language code
+  let langSegmentIndex = -1;
+  for (let i = 0; i < segments.length; i++) {
+    const segment = segments[i].toLowerCase();
+    if (segment in SUPPORTED_LANGUAGES) {
+      language = SUPPORTED_LANGUAGES[segment as keyof typeof SUPPORTED_LANGUAGES];
+      langSegmentIndex = i;
+      break; // Use the first valid language code found
     }
-  } else {
-    // First segment might be a page without language prefix
-    if (firstSegment in URL_TO_PAGE_MAPPINGS) {
-      page = URL_TO_PAGE_MAPPINGS[firstSegment];
-    } else if ((VALID_PAGES as readonly string[]).includes(firstSegment)) {
-      page = firstSegment;
+  }
+  
+  // 2. Find the page segment
+  // If we found a language segment, look at the segments AFTER it first
+  // If not, look from the beginning
+  const startSearchIndex = langSegmentIndex !== -1 ? langSegmentIndex + 1 : 0;
+  
+  for (let i = startSearchIndex; i < segments.length; i++) {
+    const segment = segments[i].toLowerCase();
+    
+    // Check if it's a localized URL that maps to a standard page
+    if (segment in URL_TO_PAGE_MAPPINGS) {
+      page = URL_TO_PAGE_MAPPINGS[segment];
+      break;
+    } else if ((VALID_PAGES as readonly string[]).includes(segment)) {
+      page = segment;
+      break;
+    }
+  }
+  
+  // Special case: if no page found after language but there were segments before it (unlikely)
+  // or if we want to search the entire path for a page if not found yet
+  if (page === 'home' && segments.length > 0) {
+    for (let i = 0; i < segments.length; i++) {
+      if (i === langSegmentIndex) continue;
+      const segment = segments[i].toLowerCase();
+      if (segment in URL_TO_PAGE_MAPPINGS) {
+        page = URL_TO_PAGE_MAPPINGS[segment];
+        break;
+      } else if ((VALID_PAGES as readonly string[]).includes(segment)) {
+        page = segment;
+        break;
+      }
     }
   }
   
@@ -361,7 +379,7 @@ export const getLocaleCode = (language: string): string => {
  * Generate all localized URLs for a page (for hreflang)
  */
 export const generateHreflangUrls = (page: string, baseUrl: string = 'https://tuggi.app'): Array<{lang: string, url: string}> => {
-  return Object.entries(LANGUAGE_CODES).map(([language, code]) => ({
+  return Object.entries(LANGUAGE_CODES).map(([language, _code]) => ({
     lang: getLocaleCode(language),
     url: `${baseUrl}${generateLocalizedUrl(language, page)}`
   }));

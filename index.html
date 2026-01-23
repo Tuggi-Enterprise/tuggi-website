@@ -1,159 +1,204 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
     <title>Tuggi — Discover culture and stories wherever you go</title>
-    <meta name="description" content="A Tuggi revela histórias e curiosidades no trajeto ou pelo mapa. Áudio em PT-BR, ES-ES e EN-US. Sem rotas fixas e com factualidade verificada." />
-    <meta name="keywords" content="app de turismo cultural, guia de áudio, histórias locais, curiosidades culturais, exploração urbana, narrativa em tempo real, descoberta de lugares" />
+    <meta
+      name="description"
+      content="A Tuggi revela histórias e curiosidades no trajeto ou pelo mapa. Áudio em PT-BR, ES-ES e EN-US. Sem rotas fixas e com factualidade verificada."
+    />
+    <meta
+      name="keywords"
+      content="app de turismo cultural, guia de áudio, histórias locais, curiosidades culturais, exploração urbana, narrativa em tempo real, descoberta de lugares"
+    />
     <meta name="author" content="Tuggi Technologies" />
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-    
+    <meta
+      name="robots"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+
     <!-- Theme and mobile optimization -->
     <meta name="theme-color" content="#00A8E8" />
     <meta name="msapplication-TileColor" content="#00A8E8" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="Tuggi Drive" />
-    
+
     <!-- Smart Banner iOS -->
-    <meta name="apple-itunes-app" content="app-id=6744379818, app-argument=tuggi://map" />
-    
+    <meta
+      name="apple-itunes-app"
+      content="app-id=6744379818, app-argument=tuggi://map"
+    />
+
     <!-- Open Graph -->
     <meta property="og:title" content="Tuggi — cultura em movimento" />
-    <meta property="og:description" content="Explore no trajeto ou pelo mapa, com áudio multilíngue e conteúdo verificado." />
+    <meta
+      property="og:description"
+      content="Explore no trajeto ou pelo mapa, com áudio multilíngue e conteúdo verificado."
+    />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://tuggi.app" />
     <meta property="og:site_name" content="Tuggi" />
     <meta property="og:image" content="https://www.tuggi.app/og/home.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Tuggi - App de descoberta cultural e histórias locais" />
+    <meta
+      property="og:image:alt"
+      content="Tuggi - App de descoberta cultural e histórias locais"
+    />
     <meta property="og:locale" content="pt_BR" />
-    
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Tuggi — cultura em movimento" />
-    <meta name="twitter:description" content="Explore no trajeto ou pelo mapa, com áudio multilíngue e conteúdo verificado." />
+    <meta
+      name="twitter:description"
+      content="Explore no trajeto ou pelo mapa, com áudio multilíngue e conteúdo verificado."
+    />
     <meta name="twitter:image" content="https://www.tuggi.app/og/home.jpg" />
     <meta name="twitter:site" content="@tuggi" />
     <meta name="twitter:creator" content="@tuggi" />
-    
+
     <!-- Canonical URL (will be updated dynamically) -->
     <link rel="canonical" href="https://tuggi.app/en/" />
-    
+
     <!-- Hreflang for multilingual support (will be updated dynamically) -->
     <link rel="alternate" hreflang="en-US" href="https://tuggi.app/en/" />
     <link rel="alternate" hreflang="pt-BR" href="https://tuggi.app/pt/" />
     <link rel="alternate" hreflang="es-ES" href="https://tuggi.app/es/" />
+    <link rel="alternate" hreflang="fr-FR" href="https://tuggi.app/fr/" />
+    <link rel="alternate" hreflang="de-DE" href="https://tuggi.app/de/" />
+    <link rel="alternate" hreflang="it-IT" href="https://tuggi.app/it/" />
     <link rel="alternate" hreflang="x-default" href="https://tuggi.app/en/" />
-    
+
     <!-- Preconnect to external domains for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link rel="preconnect" href="https://www.google-analytics.com" />
-    
+
     <!-- DNS prefetch for performance -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
     <link rel="dns-prefetch" href="//www.googletagmanager.com" />
-    
+
     <!-- Inter Font with font-display: swap for performance -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Preload critical resources -->
     <link rel="preload" href="/src/main.tsx" as="script" />
     <link rel="preload" href="/src/index.css" as="style" />
-    
+
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LFFNJDG7TJ"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-LFFNJDG7TJ"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-LFFNJDG7TJ', {
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-LFFNJDG7TJ", {
         page_title: document.title,
         page_location: window.location.href,
         anonymize_ip: true,
         allow_google_signals: false,
-        allow_ad_personalization_signals: false
+        allow_ad_personalization_signals: false,
       });
     </script>
-    
+
     <!-- Structured Data (Schema.org) - will be updated dynamically -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "MobileApplication",
-      "name": "Tuggi",
-      "url": "https://tuggi.app",
-      "logo": "https://tuggi.app/tuggi-logo.png",
-      "description": "Explore a cidade com a Tuggi: um app que narra, por áudio e em tempo real, curiosidades culturais e histórias sobre os lugares ao seu redor. Liberdade para caminhar, dirigir e descobrir.",
-      "applicationCategory": "TravelApplication",
-      "operatingSystem": "iOS, Android",
-      "offers": {
-        "@type": "Offer",
+      {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
         "name": "Tuggi",
-        "description": "App de descoberta cultural e histórias locais em tempo real",
-        "category": "Mobile Application"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Tuggi Technologies",
         "url": "https://tuggi.app",
         "logo": "https://tuggi.app/tuggi-logo.png",
-        "description": "Tecnologia de descoberta cultural e storytelling local",
-        "foundingDate": "2025",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "São Paulo",
-          "addressRegion": "SP",
-          "addressCountry": "BR"
+        "description": "Explore a cidade com a Tuggi: um app que narra, por áudio e em tempo real, curiosidades culturais e histórias sobre os lugares ao seu redor. Liberdade para caminhar, dirigir e descobrir.",
+        "applicationCategory": "TravelApplication",
+        "operatingSystem": "iOS, Android",
+        "offers": {
+          "@type": "Offer",
+          "name": "Tuggi",
+          "description": "App de descoberta cultural e histórias locais em tempo real",
+          "category": "Mobile Application"
         },
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+55-11-994718809",
-          "contactType": "customer service",
-          "email": "contato@tuggi.app",
-          "availableLanguage": ["Portuguese", "English", "Spanish"]
-        },
-        "sameAs": [
-          "https://linkedin.com/company/tuggi",
-          "https://instagram.com/tuggi"
-        ],
-        "industry": "Travel Technology",
-        "numberOfEmployees": "1-10",
-        "keywords": "app de turismo cultural, guia de áudio, histórias locais, curiosidades culturais, exploração urbana, narrativa em tempo real"
+        "publisher": {
+          "@type": "Organization",
+          "name": "Tuggi Technologies",
+          "url": "https://tuggi.app",
+          "logo": "https://tuggi.app/tuggi-logo.png",
+          "description": "Tecnologia de descoberta cultural e storytelling local",
+          "foundingDate": "2025",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "São Paulo",
+            "addressRegion": "SP",
+            "addressCountry": "BR"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+55-11-994718809",
+            "contactType": "customer service",
+            "email": "contato@tuggi.app",
+            "availableLanguage": [
+              "Portuguese",
+              "English",
+              "Spanish",
+              "French",
+              "German",
+              "Italian"
+            ]
+          },
+          "sameAs": [
+            "https://linkedin.com/company/tuggi",
+            "https://instagram.com/tuggi"
+          ],
+          "industry": "Travel Technology",
+          "numberOfEmployees": "1-10",
+          "keywords": "app de turismo cultural, guia de áudio, histórias locais, curiosidades culturais, exploração urbana, narrativa em tempo real"
+        }
       }
-    }
     </script>
-    
+
     <!-- Performance and accessibility optimizations -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
-    
+
     <!-- Security headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com https://tagmanager.google.com https://www.youtube.com https://youtube.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: https://www.google-analytics.com https://ssl.google-analytics.com; media-src 'self' https://*.supabase.co https://*.supabase.in; frame-src 'self' https://www.youtube.com https://youtube.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://ssl.google-analytics.com https://region1.google-analytics.com https://region1.analytics.google.com https://www.googleapis.com https://ipapi.co https://api.country.is https://api.bigdatacloud.net https://*.supabase.co https://*.supabase.in https://www.youtube.com https://youtube.com;" />
-    
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com https://tagmanager.google.com https://www.youtube.com https://youtube.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: https://www.google-analytics.com https://ssl.google-analytics.com; media-src 'self' https://*.supabase.co https://*.supabase.in; frame-src 'self' https://www.youtube.com https://youtube.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://ssl.google-analytics.com https://region1.google-analytics.com https://region1.analytics.google.com https://www.googleapis.com https://ipapi.co https://api.country.is https://api.bigdatacloud.net https://*.supabase.co https://*.supabase.in https://www.youtube.com https://youtube.com;"
+    />
+
     <!-- Favicon and app icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    
+
     <!-- Critical CSS inlined for performance -->
     <style>
       /* Critical above-the-fold styles */
       body {
-        font-family: 'Inter', system-ui, sans-serif;
+        font-family: "Inter", system-ui, sans-serif;
         margin: 0;
         padding: 0;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
       }
-      
+
       /* Loading state */
       .loading {
         display: flex;
@@ -162,21 +207,25 @@
         min-height: 100vh;
         background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
       }
-      
+
       .loading-spinner {
         width: 40px;
         height: 40px;
         border: 4px solid #e2e8f0;
-        border-top: 4px solid #00A8E8;
+        border-top: 4px solid #00a8e8;
         border-radius: 50%;
         animation: spin 1s linear infinite;
       }
-      
+
       @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
       }
-      
+
       /* Accessibility improvements */
       @media (prefers-reduced-motion: reduce) {
         *, *::before, *::after {
@@ -185,7 +234,7 @@
           transition-duration: 0.01ms !important;
         }
       }
-      
+
       /* High contrast mode support */
       @media (prefers-contrast: high) {
         :root {
@@ -193,88 +242,128 @@
           --tuggi-secondary: #cc5500;
         }
       }
-      
+
       /* Focus visible for accessibility */
       .focus-visible {
-        outline: 2px solid #00A8E8;
+        outline: 2px solid #00a8e8;
         outline-offset: 2px;
       }
     </style>
   </head>
   <body>
     <!-- Skip to main content for accessibility -->
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-tuggi-primary text-white px-4 py-2 rounded-lg z-50">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-tuggi-primary text-white px-4 py-2 rounded-lg z-50"
+    >
       Skip to main content
     </a>
-    
+
     <!-- Loading state -->
     <div id="loading" class="loading">
       <div class="loading-spinner" aria-label="Loading"></div>
     </div>
-    
+
     <!-- Main app container -->
-    <div id="root" style="display: none;"></div>
-    
+    <div id="root" style="display: none"></div>
+
     <!-- Performance monitoring script -->
     <script>
       // Performance monitoring with multilingual context
-      if ('performance' in window) {
-        window.addEventListener('load', function() {
+      if ("performance" in window) {
+        window.addEventListener("load", function () {
           // Hide loading, show app
-          document.getElementById('loading').style.display = 'none';
-          document.getElementById('root').style.display = 'block';
-          
+          document.getElementById("loading").style.display = "none";
+          document.getElementById("root").style.display = "block";
+
           // Track performance metrics with language context
-          setTimeout(function() {
+          setTimeout(function () {
             if (window.gtag) {
-              const perfData = performance.getEntriesByType('navigation')[0];
-              const currentLanguage = window.location.pathname.split('/')[1] || 'en';
-              const language = currentLanguage === 'pt' ? 'PT' : currentLanguage === 'es' ? 'ES' : 'EN';
-              
+              const perfData =
+                performance.getEntriesByType("navigation")[0];
+              const currentLanguage =
+                window.location.pathname.split("/")[1] || "en";
+              const language = currentLanguage === "pt"
+                ? "PT"
+                : currentLanguage === "es"
+                ? "ES"
+                : "EN";
+
               if (perfData) {
-                window.gtag('event', 'page_load_performance', {
-                  event_category: 'Performance',
-                  load_time: Math.round(perfData.loadEventEnd - perfData.navigationStart),
-                  dom_content_loaded: Math.round(perfData.domContentLoadedEventEnd - perfData.navigationStart),
-                  first_paint: Math.round(performance.getEntriesByType('paint')[0]?.startTime || 0),
-                  page_type: 'home',
+                window.gtag("event", "page_load_performance", {
+                  event_category: "Performance",
+                  load_time: Math.round(
+                    perfData.loadEventEnd - perfData.navigationStart,
+                  ),
+                  dom_content_loaded: Math.round(
+                    perfData.domContentLoadedEventEnd -
+                      perfData.navigationStart,
+                  ),
+                  first_paint: Math.round(
+                    performance.getEntriesByType("paint")[0]
+                      ?.startTime || 0,
+                  ),
+                  page_type: "home",
                   language: language,
-                  locale: language === 'PT' ? 'pt-BR' : language === 'ES' ? 'es-ES' : 'en-US'
+                  locale: language === "PT"
+                    ? "pt-BR"
+                    : language === "ES"
+                    ? "es-ES"
+                    : "en-US",
                 });
               }
             }
           }, 1000);
         });
       }
-      
+
       // Error tracking with multilingual context
-      window.addEventListener('error', function(e) {
+      window.addEventListener("error", function (e) {
         if (window.gtag) {
-          const currentLanguage = window.location.pathname.split('/')[1] || 'en';
-          const language = currentLanguage === 'pt' ? 'PT' : currentLanguage === 'es' ? 'ES' : 'EN';
-          
-          window.gtag('event', 'javascript_error', {
-            event_category: 'Error',
+          const currentLanguage =
+            window.location.pathname.split("/")[1] || "en";
+          const language = currentLanguage === "pt"
+            ? "PT"
+            : currentLanguage === "es"
+            ? "ES"
+            : "EN";
+
+          window.gtag("event", "javascript_error", {
+            event_category: "Error",
             event_label: e.message,
             error_file: e.filename,
             error_line: e.lineno,
             language: language,
-            locale: language === 'PT' ? 'pt-BR' : language === 'ES' ? 'es-ES' : 'en-US'
+            locale: language === "PT"
+              ? "pt-BR"
+              : language === "ES"
+              ? "es-ES"
+              : "en-US",
           });
         }
       });
-      
+
       // Unhandled promise rejection tracking with multilingual context
-      window.addEventListener('unhandledrejection', function(e) {
+      window.addEventListener("unhandledrejection", function (e) {
         if (window.gtag) {
-          const currentLanguage = window.location.pathname.split('/')[1] || 'en';
-          const language = currentLanguage === 'pt' ? 'PT' : currentLanguage === 'es' ? 'ES' : 'EN';
-          
-          window.gtag('event', 'promise_rejection', {
-            event_category: 'Error',
-            event_label: e.reason?.message || 'Unknown promise rejection',
+          const currentLanguage =
+            window.location.pathname.split("/")[1] || "en";
+          const language = currentLanguage === "pt"
+            ? "PT"
+            : currentLanguage === "es"
+            ? "ES"
+            : "EN";
+
+          window.gtag("event", "promise_rejection", {
+            event_category: "Error",
+            event_label: e.reason?.message ||
+              "Unknown promise rejection",
             language: language,
-            locale: language === 'PT' ? 'pt-BR' : language === 'ES' ? 'es-ES' : 'en-US'
+            locale: language === "PT"
+              ? "pt-BR"
+              : language === "ES"
+              ? "es-ES"
+              : "en-US",
           });
         }
       });
@@ -288,7 +377,7 @@
           ogTitle: "Tuggi – Descubra cultura e histórias por onde você passa",
           ogDescription: "Explore a cidade com a Tuggi: um app que narra, por áudio e em tempo real, curiosidades culturais e histórias sobre os lugares ao seu redor. Liberdade para caminhar, dirigir e descobrir.",
           ogImageAlt: "Tuggi - App de descoberta cultural e histórias locais",
-          locale: "pt_BR"
+          locale: "pt_BR",
         },
         en: {
           title: "Tuggi – Discover culture and stories wherever you go",
@@ -297,7 +386,7 @@
           ogTitle: "Tuggi – Discover culture and stories wherever you go",
           ogDescription: "Explore the city with Tuggi: an app that narrates, through audio and in real-time, cultural curiosities and stories about the places around you. Freedom to walk, drive and discover.",
           ogImageAlt: "Tuggi - Cultural discovery and local stories app",
-          locale: "en_US"
+          locale: "en_US",
         },
         es: {
           title: "Tuggi – Descubre cultura e historias donde vayas",
@@ -306,97 +395,163 @@
           ogTitle: "Tuggi – Descubre cultura e historias donde vayas",
           ogDescription: "Explora la ciudad con Tuggi: una app que narra, por audio y en tiempo real, curiosidades culturales e historias sobre los lugares a tu alrededor. Libertad para caminar, conducir y descubrir.",
           ogImageAlt: "Tuggi - App de descubrimiento cultural e historias locales",
-          locale: "es_ES"
+          locale: "es_ES",
+        },
+        fr: {
+          title: "Tuggi | Copilote culturel pour votre conduite",
+          description: "Tuggi est une application de narration culturelle automatique qui transforme les trajets en découvertes.",
+          keywords: "Tuggi, guide audio culturel, application touristique, histoires locales, narrations automatiques",
+          ogTitle: "Tuggi — Découvrez des histoires en conduisant",
+          ogDescription: "Transformez vos trajets en découvertes culturelles avec des narrations automatiques.",
+          ogImageAlt: "Tuggi - Application de découverte culturelle et histoires locales",
+          locale: "fr_FR"
+        },
+        de: {
+          title: "Tuggi | Kultureller Copilot für Ihre Fahrt",
+          description: "Tuggi ist eine automatische kulturelle Erzähl-App, die Fahrten in Entdeckungen verwandelt.",
+          keywords: "Tuggi, kultureller Audio-Guide, Tourismus-App, lokale Geschichten",
+          ogTitle: "Tuggi — Entdecken Sie Geschichten während der Fahrt",
+          ogDescription: "Verwandeln Sie Ihre Fahrten in kulturelle Entdeckungen mit automatischen Erzählungen.",
+          ogImageAlt: "Tuggi - App für kulturelle Entdeckungen und lokale Geschichten",
+          locale: "de_DE"
+        },
+        it: {
+          title: "Tuggi | Copilota culturale per la tua guida",
+          description: "Tuggi è un'app di narrazione culturale automatica que trasforma i viaggi in scoperte.",
+          keywords: "Tuggi, guida audio culturale, app di turismo, storie locais",
+          ogTitle: "Tuggi — Scopri storie mentre guidi",
+          ogDescription: "Trasforma i tuoi viaggi in scoperte culturali con narrazioni automatiche.",
+          ogImageAlt: "Tuggi - App di scoperta culturale e storie locali",
+          locale: "it_IT"
         }
       };
 
       // Function to update SEO content based on language
       function updateSEOContent(lang) {
         const content = seoContent[lang] || seoContent.pt; // default to Portuguese
-        
+
         // Update title
         document.title = content.title;
-        
+
         // Update meta description
-        const metaDescription = document.querySelector('meta[name="description"]');
-        if (metaDescription) metaDescription.content = content.description;
-        
+        const metaDescription = document.querySelector(
+          'meta[name="description"]',
+        );
+        if (metaDescription) {
+          metaDescription.content = content.description;
+        }
+
         // Update keywords
-        const metaKeywords = document.querySelector('meta[name="keywords"]');
+        const metaKeywords = document.querySelector(
+          'meta[name="keywords"]',
+        );
         if (metaKeywords) metaKeywords.content = content.keywords;
-        
+
         // Update Open Graph
-        const ogTitle = document.querySelector('meta[property="og:title"]');
+        const ogTitle = document.querySelector(
+          'meta[property="og:title"]',
+        );
         if (ogTitle) ogTitle.content = content.ogTitle;
-        
-        const ogDescription = document.querySelector('meta[property="og:description"]');
-        if (ogDescription) ogDescription.content = content.ogDescription;
-        
-        const ogImageAlt = document.querySelector('meta[property="og:image:alt"]');
+
+        const ogDescription = document.querySelector(
+          'meta[property="og:description"]',
+        );
+        if (ogDescription) {
+          ogDescription.content = content.ogDescription;
+        }
+
+        const ogImageAlt = document.querySelector(
+          'meta[property="og:image:alt"]',
+        );
         if (ogImageAlt) ogImageAlt.content = content.ogImageAlt;
-        
-        const ogLocale = document.querySelector('meta[property="og:locale"]');
+
+        const ogLocale = document.querySelector(
+          'meta[property="og:locale"]',
+        );
         if (ogLocale) ogLocale.content = content.locale;
-        
+
         // Update Twitter Card
-        const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+        const twitterTitle = document.querySelector(
+          'meta[name="twitter:title"]',
+        );
         if (twitterTitle) twitterTitle.content = content.ogTitle;
-        
-        const twitterDescription = document.querySelector('meta[name="twitter:description"]');
-        if (twitterDescription) twitterDescription.content = content.ogDescription;
+
+        const twitterDescription = document.querySelector(
+          'meta[name="twitter:description"]',
+        );
+        if (twitterDescription) {
+          twitterDescription.content = content.ogDescription;
+        }
       }
 
       // Detect and redirect to appropriate language version
-      (function() {
+      (function () {
         const currentPath = window.location.pathname;
-        const pathSegments = currentPath.split('/').filter(Boolean);
-        
+        const pathSegments = currentPath.split("/").filter(Boolean);
+
         // If no language in URL, redirect to appropriate language
-        if (pathSegments.length === 0 || !['pt', 'en', 'es'].includes(pathSegments[0])) {
+        if (
+          pathSegments.length === 0 ||
+          !["pt", "en", "es", "fr", "de", "it"].includes(
+            pathSegments[0],
+          )
+        ) {
           const browserLang = navigator.language.toLowerCase();
-          let targetLang = 'en'; // default
-          
-          if (browserLang.startsWith('pt')) targetLang = 'pt';
-          else if (browserLang.startsWith('es')) targetLang = 'es';
-          
+          let targetLang = "en"; // default
+
+          if (browserLang.startsWith("pt")) targetLang = "pt";
+          else if (browserLang.startsWith("es")) targetLang = "es";
+          else if (browserLang.startsWith("fr")) targetLang = "fr";
+          else if (browserLang.startsWith("de")) targetLang = "de";
+          else if (browserLang.startsWith("it")) targetLang = "it";
+
           // Check for stored language preference
-          const storedLang = localStorage.getItem('tuggi_preferred_language');
+          const storedLang = localStorage.getItem(
+            "tuggi_preferred_language",
+          );
           if (storedLang) {
-            const langMap = { 'PT': 'pt', 'EN': 'en', 'ES': 'es' };
+            const langMap = {
+              "PT": "pt",
+              "EN": "en",
+              "ES": "es",
+              "FR": "fr",
+              "DE": "de",
+              "IT": "it",
+            };
             targetLang = langMap[storedLang] || targetLang;
           }
-          
+
           // Redirect to localized URL
-          const newPath = `/${targetLang}/${pathSegments.join('/')}`;
+          const newPath = `/${targetLang}/${pathSegments.join("/")}`;
           if (newPath !== currentPath) {
-            window.history.replaceState(null, '', newPath);
+            window.history.replaceState(null, "", newPath);
           }
         }
-        
+
         // Update SEO content based on current language
-        const currentLang = pathSegments[0] || 'pt';
-        if (['pt', 'en', 'es'].includes(currentLang)) {
+        const currentLang = pathSegments[0] || "en";
+        if (
+          ["pt", "en", "es", "fr", "de", "it"].includes(currentLang)
+        ) {
           updateSEOContent(currentLang);
         }
       })();
     </script>
-    
 
-    
     <!-- Main application script -->
     <script type="module" src="/src/main.tsx"></script>
-    
+
     <!-- Service Worker for PWA capabilities -->
     <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-          navigator.serviceWorker.register('/sw.js')
-          .then(function(registration) {
-            // Service Worker registered successfully
-          })
-          .catch(function(registrationError) {
-            // Service Worker registration failed
-          });
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("/sw.js")
+            .then(function (registration) {
+              // Service Worker registered successfully
+            })
+            .catch(function (registrationError) {
+              // Service Worker registration failed
+            });
         });
       }
     </script>
