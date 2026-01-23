@@ -129,6 +129,117 @@ const DataDeletionPage: React.FC<DataDeletionPageProps> = ({
       invalidEmail: 'Formato de email inválido',
       emailRequired: 'La dirección de email es obligatoria',
       confirmationRequired: 'Debe confirmar que entiende que la eliminación es permanente'
+    },
+    FR: {
+      title: 'Demande de Suppression de Compte et de Données',
+      subtitle: 'Demandez la suppression permanente de votre compte TuggiDrive et de toutes les données associées',
+      whatWillBeDeleted: 'Quelles Données Seront Supprimées',
+      whatWillBeDeletedDesc: 'Lorsque vous demandez la suppression de votre compte, nous supprimerons définitivement :',
+      dataList: [
+        'Votre profil utilisateur et les informations de votre compte',
+        'Tous les itinéraires enregistrés et l\'historique des trajets',
+        'Vos préférences et paramètres d\'application',
+        'Toutes les sessions de voyage et l\'historique de lecture des attractions',
+        'Tous les fichiers audio en cache et le contenu généré par l\'utilisateur',
+        'Toutes les données d\'analyse associées à votre compte'
+      ],
+      importantNotice: 'Avis Important',
+      importantNoticeDesc: 'La suppression du compte est permanente et irréversible. Une fois traitée, vous ne pourrez pas récupérer votre compte, vos itinéraires ou toute autre donnée. Assurez-vous d\'avoir sauvegardé toutes les informations que vous souhaitez conserver avant de continuer.',
+      deletionRequestForm: 'Formulaire de Demande de Suppression',
+      emailLabel: 'Adresse E-mail Associée à Votre Compte *',
+      emailPlaceholder: 'Entrez l\'adresse e-mail que vous avez utilisée pour vous inscrire',
+      reasonLabel: 'Raison de la Suppression (Optionnel)',
+      reasonPlaceholder: 'Veuillez nous indiquer pourquoi vous supprimez votre compte. Cela nous aide à améliorer notre service.',
+      confirmText: 'Je comprends que cette action est permanente et irréversible. Je confirme que je souhaite supprimer définitivement mon compte TuggiDrive et toutes les données associées.',
+      cancelButton: 'Annuler',
+      submitButton: 'Demander la Suppression du Compte',
+      submittingButton: 'Traitement...',
+      successTitle: '✅ Demande de Suppression Envoyée',
+      successMessage: 'Votre demande de suppression de compte a été reçue. Nous traiterons votre demande dans les 30 jours et vous enverrons un e-mail de confirmation une fois terminée.',
+      errorTitle: '❌ Échec de la Demande',
+      errorMessage: 'Une erreur s\'est produite lors du traitement de votre demande. Veuillez réessayer ou contacter notre équipe de support.',
+      needHelp: 'Besoin d\'Aide ?',
+      supportEmail: 'E-mail :',
+      responseTime: 'Temps de Réponse :',
+      responseTimeDesc: 'Nous répondons généralement dans les 24-48 heures',
+      supportDesc: 'Si vous avez des questions sur la suppression des données ou avez besoin d\'assistance, n\'hésitez pas à nous contacter.',
+      invalidEmail: 'Format d\'e-mail invalide',
+      emailRequired: 'L\'adresse e-mail est requise',
+      confirmationRequired: 'Vous devez confirmer que vous comprenez que la suppression est permanente'
+    },
+    DE: {
+      title: 'Antrag auf Konto- und Datenlöschung',
+      subtitle: 'Beantragen Sie die dauerhafte Löschung Ihres TuggiDrive-Kontos und aller zugehörigen Daten',
+      whatWillBeDeleted: 'Welche Daten werden gelöscht',
+      whatWillBeDeletedDesc: 'Wenn Sie die Kontolöschung beantragen, werden wir dauerhaft entfernen:',
+      dataList: [
+        'Ihr Benutzerprofil und Kontoinformationen',
+        'Alle gespeicherten Routen und Reiseverläufe',
+        'Ihre App-Einstellungen und Präferenzen',
+        'Alle Reisesitzungen und Attraktions-Wiedergabeverläufe',
+        'Alle zwischengespeicherten Audiodateien und nutzergenerierten Inhalte',
+        'Alle Analysedaten, die mit Ihrem Konto verknüpft sind'
+      ],
+      importantNotice: 'Wichtiger Hinweis',
+      importantNoticeDesc: 'Die Kontolöschung ist dauerhaft und unwiderruflich. Nach der Bearbeitung können Sie Ihr Konto, Ihre Routen oder andere Daten nicht wiederherstellen. Bitte stellen Sie sicher, dass Sie alle Informationen, die Sie behalten möchten, gesichert haben, bevor Sie fortfahren.',
+      deletionRequestForm: 'Löschantragsformular',
+      emailLabel: 'Mit Ihrem Konto verknüpfte E-Mail-Adresse *',
+      emailPlaceholder: 'Geben Sie die E-Mail-Adresse ein, mit der Sie sich angemeldet haben',
+      reasonLabel: 'Grund für die Löschung (Optional)',
+      reasonPlaceholder: 'Bitte teilen Sie uns mit, warum Sie Ihr Konto löschen. Dies hilft uns, unseren Service zu verbessern.',
+      confirmText: 'Ich verstehe, dass diese Aktion dauerhaft und unwiderruflich ist. Ich bestätige, dass ich mein TuggiDrive-Konto und alle zugehörigen Daten dauerhaft löschen möchte.',
+      cancelButton: 'Abbrechen',
+      submitButton: 'Kontolöschung beantragen',
+      submittingButton: 'Verarbeitung...',
+      successTitle: '✅ Löschantrag gesendet',
+      successMessage: 'Ihr Antrag auf Kontolöschung ist eingegangen. Wir werden Ihren Antrag innerhalb von 30 Tagen bearbeiten und Ihnen nach Abschluss eine Bestätigungs-E-Mail senden.',
+      errorTitle: '❌ Antrag fehlgeschlagen',
+      errorMessage: 'Bei der Verarbeitung Ihres Antrags ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder wenden Sie sich an unser Support-Team.',
+      needHelp: 'Brauchen Sie Hilfe?',
+      supportEmail: 'E-Mail:',
+      responseTime: 'Antwortzeit:',
+      responseTimeDesc: 'Wir antworten in der Regel innerhalb von 24-48 Stunden',
+      supportDesc: 'Wenn Sie Fragen zur Datenlöschung haben oder Unterstützung benötigen, zögern Sie bitte nicht, uns zu kontaktieren.',
+      invalidEmail: 'Ungültiges E-Mail-Format',
+      emailRequired: 'E-Mail-Adresse ist erforderlich',
+      confirmationRequired: 'Sie müssen bestätigen, dass Sie verstehen, dass die Löschung dauerhaft ist'
+    },
+    IT: {
+      title: 'Richiesta di Cancellazione Account e Dati',
+      subtitle: 'Richiedi la cancellazione permanente del tuo account TuggiDrive e di tutti i dati associati',
+      whatWillBeDeleted: 'Quali Dati Saranno Cancellati',
+      whatWillBeDeletedDesc: 'Quando richiedi la cancellazione dell\'account, rimuoveremo permanentemente:',
+      dataList: [
+        'Il tuo profilo utente e le informazioni dell\'account',
+        'Tutti i percorsi salvati e la cronologia dei viaggi',
+        'Le tue preferenze e impostazioni dell\'app',
+        'Tutte le sessioni di viaggio e la cronologia di riproduzione delle attrazioni',
+        'Eventuali file audio nella cache e contenuti generati dall\'utente',
+        'Tutti i dati analitici associati al tuo account'
+      ],
+      importantNotice: 'Avviso Importante',
+      importantNoticeDesc: 'La cancellazione dell\'account è permanente e irreversibile. Una volta elaborata, non potrai recuperare il tuo account, i percorsi o qualsiasi altro dato. Assicurati di aver eseguito il backup di tutte le informazioni che desideri conservare prima di procedere.',
+      deletionRequestForm: 'Modulo di Richiesta Cancellazione',
+      emailLabel: 'Indirizzo Email Associato al Tuo Account *',
+      emailPlaceholder: 'Inserisci l\'indirizzo email che hai usato per iscriverti',
+      reasonLabel: 'Motivo della Cancellazione (Opzionale)',
+      reasonPlaceholder: 'Per favore facci sapere perché stai cancellando il tuo account. Questo ci aiuta a migliorare il nostro servizio.',
+      confirmText: 'Capisco che questa azione è permanente e irreversibile. Confermo di voler cancellare permanentemente il mio account TuggiDrive e tutti i dati associati.',
+      cancelButton: 'Annulla',
+      submitButton: 'Richiedi Cancellazione Account',
+      submittingButton: 'Elaborazione...',
+      successTitle: '✅ Richiesta di Cancellazione Inviata',
+      successMessage: 'La tua richiesta di cancellazione dell\'account è stata ricevuta. Elaboreremo la tua richiesta entro 30 giorni e ti invieremo un\'email di conferma una volta completata.',
+      errorTitle: '❌ Richiesta Fallita',
+      errorMessage: 'Si è verificato un errore durante l\'elaborazione della tua richiesta. Riprova o contatta il nostro team di supporto.',
+      needHelp: 'Hai Bisogno di Aiuto?',
+      supportEmail: 'Email:',
+      responseTime: 'Tempo di Risposta:',
+      responseTimeDesc: 'Rispondiamo tipicamente entro 24-48 ore',
+      supportDesc: 'Se hai domande sulla cancellazione dei dati o hai bisogno di assistenza, non esitare a contattarci.',
+      invalidEmail: 'Formato email non valido',
+      emailRequired: 'L\'indirizzo email è obbligatorio',
+      confirmationRequired: 'Devi confermare di aver compreso che la cancellazione è permanente'
     }
   };
 
@@ -205,9 +316,8 @@ const DataDeletionPage: React.FC<DataDeletionPageProps> = ({
         throw new Error(errorMessage);
       }
 
-      let result;
       try {
-        result = await response.json();
+        await response.json();
       } catch (jsonError) {
         console.error('JSON parse error:', jsonError);
         throw new Error('Invalid response from server');

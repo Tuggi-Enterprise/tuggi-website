@@ -95,6 +95,84 @@ const BenefitsV2: React.FC<BenefitsV2Props> = ({
             description: 'Funciona en segundo plano con Waze y Google Maps.'
           }
         ]
+      },
+      FR: {
+        title: 'Conçu pour les conducteurs',
+        subtitle: 'Simplicité et sécurité pour transformer votre trajet.',
+        benefits: [
+          {
+            icon: 'headphones',
+            title: 'Narration audio',
+            description: 'Expérience mains libres pour garder votre attention sur la route.'
+          },
+          {
+            icon: 'map',
+            title: 'Contenu contextuel',
+            description: 'Des histoires qui surgissent au bon moment, basées sur votre position.'
+          },
+          {
+            icon: 'thumbs-up',
+            title: 'Contrôle et simplicité',
+            description: 'Interface intuitive conçue pour un usage en véhicule.'
+          },
+          {
+            icon: 'navigation',
+            title: 'Compatibilité totale',
+            description: 'Fonctionne en arrière-plan avec Waze et Google Maps.'
+          }
+        ]
+      },
+      DE: {
+        title: 'Für Autofahrer gemacht',
+        subtitle: 'Einfachheit und Sicherheit, um Ihre Fahrt zu verändern.',
+        benefits: [
+          {
+            icon: 'headphones',
+            title: 'Audio-Erzählung',
+            description: 'Freihändiges Erlebnis, damit Sie sich auf die Straße konzentrieren können.'
+          },
+          {
+            icon: 'map',
+            title: 'Kontextbezogener Inhalt',
+            description: 'Geschichten, die zum richtigen Zeitpunkt basierend auf Ihrem Standort erscheinen.'
+          },
+          {
+            icon: 'thumbs-up',
+            title: 'Kontrolle und Einfachheit',
+            description: 'Intuitive Benutzeroberfläche für die Nutzung im Fahrzeug.'
+          },
+          {
+            icon: 'navigation',
+            title: 'Volle Kompatibilität',
+            description: 'Funktioniert im Hintergrund mit Waze und Google Maps.'
+          }
+        ]
+      },
+      IT: {
+        title: 'Fatto per chi guida',
+        subtitle: 'Semplicità e sicurezza per trasformare il tuo viaggio.',
+        benefits: [
+          {
+            icon: 'headphones',
+            title: 'Narrazione audio',
+            description: 'Esperienza vivavoce per mantenere la concentrazione sulla strada.'
+          },
+          {
+            icon: 'map',
+            title: 'Contenuto contestuale',
+            description: 'Storie che appaiono al momento giusto, basate sulla tua posizione.'
+          },
+          {
+            icon: 'thumbs-up',
+            title: 'Controllo e semplicità',
+            description: 'Interfaccia intuitiva progettata per l\'uso veicolare.'
+          },
+          {
+            icon: 'navigation',
+            title: 'Compatibilità totale',
+            description: 'Funziona in background con Waze e Google Maps.'
+          }
+        ]
       }
     };
     return content[language] || content['PT'];

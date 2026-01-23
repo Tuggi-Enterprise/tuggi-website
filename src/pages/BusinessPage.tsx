@@ -453,6 +453,390 @@ const BusinessPage: React.FC<BusinessPageProps> = ({
           button: "Hablar con nuestro equipo",
           secondary: "Ver cómo integrar"
         }
+      },
+      FR: {
+        hero: {
+          h1: "Données culturelles audio à intégrer dans votre expérience.",
+          sub: "Tuggi fournit des descriptions culturelles curées et des métadonnées de points d'intérêt (POI) pour les produits de mobilité, de tourisme et d'éducation — via licence de données ou intégration.",
+          cta_primary: "Parler à notre équipe",
+          cta_secondary: "Voir comment intégrer",
+          email: "enterprise@tuggi.app"
+        },
+        icp: {
+          title: "Pour qui est-ce",
+          cards: [
+            { title: "Apps de mobilité et transport", text: "Enrichissez les trajets avec un contexte culturel audio." },
+            { title: "Opérateurs touristiques et réceptifs", text: "Contenu évolutif pour itinéraires et expériences." },
+            { title: "Destinations (DMO) et entités culturelles", text: "Récits standardisés pour l'activation du territoire." },
+            { title: "Hôtellerie et hospitalité", text: "Histoires locales pour améliorer l'expérience des invités." },
+            { title: "Éducation formelle et informelle", text: "Contenu contextuel pour l'apprentissage dans le monde réel." }
+          ]
+        },
+        deliverables: {
+          title: "Ce que nous livrons",
+          groupA: {
+            title: "Données de POI",
+            items: [
+              "ID unique du point + nom + catégorie",
+              "Coordonnées + zone de couverture (rayon/polygone, le cas échéant)",
+              "Ville/état/pays + contexte local",
+              "Tags par thème (histoire, architecture, culture, etc.)",
+              "Champs de mise à jour (date de révision/mise à jour)"
+            ]
+          },
+          groupB: {
+            title: "Récits (texte et/ou audio)",
+            items: [
+              "Description courte (30–60s) et description longue (le cas échéant)",
+              "Langues supportées (selon disponibilité)",
+              "Texte prêt pour TTS ou audio à la demande"
+            ]
+          },
+          groupC: {
+            title: "Livraison technique",
+            items: [
+              "Exportation en JSON/CSV",
+              "Endpoint de requête (API) par coordonnée et/ou ID",
+              "Filtres par langue, thème et rayon"
+            ]
+          }
+        },
+        integrate: {
+          title: "Comment intégrer",
+          steps: [
+            {
+              title: "1. Entrée (ce que le client envoie)",
+              items: ["Coordonnées (lat/lng) + rayon OU ID du point", "Langue souhaitée", "Contexte optionnel (catégorie, profil utilisateur)"]
+            },
+            {
+              title: "2. Sortie (ce que le client reçoit)",
+              items: ["Métadonnées du POI + texte du récit", "Champs de contrôle (durée estimée, tags, date de mise à jour)", "Références internes (IDs)"]
+            },
+            {
+              title: "3. Opération (comment ça marche en production)",
+              items: ["Cache et versionnage de contenu", "Mises à jour périodiques (cadence convenue)", "Environnement de test + production"]
+            }
+          ],
+          note: "Intégration par API ou licence de base, selon les besoins."
+        },
+        licensing: {
+          title: "Modèles de licence",
+          cards: [
+            { 
+              title: "Licence par territoire", 
+              items: ["Contenu pour un ensemble de villes/itinéraires convenus.", "Mises à jour et expansion définies dans le contrat."] 
+            },
+            { 
+              title: "Licence par volume", 
+              items: ["Par consommation (requêtes API / POI / appels).", "Idéal pour les produits avec trafic variable."] 
+            },
+            { 
+              title: "Projet sur mesure", 
+              items: ["Curation et production pour un thème/itinéraire spécifique.", "Livraison avec validation et révision conjointe."] 
+            }
+          ],
+          note: "Les plans avec support et SLA sont définis dans le contrat."
+        },
+        requirements: {
+          title: "Ce dont nous avons besoin de vous",
+          items: [
+            "Cas d'usage (où le contenu apparaît dans votre produit)",
+            "Format de consommation (API, base sous licence, ou hybride)",
+            "Langues souhaitées",
+            "Règles d'expérience (durée, ton, catégories)"
+          ]
+        },
+        trust: {
+          title: "Fiabilité",
+          items: [
+            "Contenu curé avec l'appui de validations automatisées et d'une révision continue.",
+            "Tout le contenu n'est pas un 'fait' vérifiable ; une partie est un contexte historique et culturel.",
+            "Canal pour corrections et révision via feedback."
+          ],
+          link: "Signaler une correction"
+        },
+        governance: {
+          title: "Gouvernance et Conformité",
+          items: [
+            "LGPD/GDPR : traitement des données selon le contrat et la finalité.",
+            "Rétention : nous définissons les délais et la portée dans l'accord.",
+            "Corrections : canal dédié pour la révision et la mise à jour.",
+            "Droits d'utilisation : licence et limites documentées."
+          ],
+          link: "Demander DPA/Termes"
+        },
+        sample: {
+          title: "Exemple de réponse (échantillon)",
+          disclaimer: "Structure illustrative (les champs peuvent varier selon le contrat).",
+          summary: [
+            "Métadonnées du POI",
+            "Récit textuel",
+            "Champs de mise à jour"
+          ]
+        },
+        finalCta: {
+          title: "Parlez à notre équipe",
+          sub: "Racontez-nous votre cas d'usage et le type d'intégration dont vous avez besoin.",
+          qualifier: "Répondez avec votre cas d'usage et format d'intégration (API ou base).",
+          button: "Parler à notre équipe",
+          secondary: "Voir comment intégrer"
+        }
+      },
+      DE: {
+        hero: {
+          h1: "Kulturelle Audiodaten zur Integration in Ihr Erlebnis.",
+          sub: "Tuggi bietet kuratierte kulturelle Beschreibungen und Point of Interest (POI) Metadaten für Mobilitäts-, Tourismus- und Bildungsprodukte — über Datenlizenz oder Integration.",
+          cta_primary: "Mit unserem Team sprechen",
+          cta_secondary: "Sehen, wie man integriert",
+          email: "enterprise@tuggi.app"
+        },
+        icp: {
+          title: "Für wen ist es",
+          cards: [
+            { title: "Mobilitäts- und Transport-Apps", text: "Bereichern Sie Fahrten mit kulturellem Audiokontext." },
+            { title: "Tourismusbetreiber und Incoming", text: "Skalierbarer Inhalt für Routen und Erlebnisse." },
+            { title: "Destinationen (DMOs) und kulturelle Einrichtungen", text: "Standardisierte Erzählungen zur Gebietsaktivierung." },
+            { title: "Hotellerie und Gastgewerbe", text: "Lokale Geschichten zur Verbesserung des Gästeerlebnisses." },
+            { title: "Formale und informelle Bildung", text: "Kontextbezogener Inhalt für Lernen in der realen Welt." }
+          ]
+        },
+        deliverables: {
+          title: "Was wir liefern",
+          groupA: {
+            title: "POI-Daten",
+            items: [
+              "Eindeutige Punkt-ID + Name + Kategorie",
+              "Koordinaten + Abdeckungsbereich (Radius/Polygon, wo zutreffend)",
+              "Stadt/Staat/Land + lokaler Kontext",
+              "Tags nach Thema (Geschichte, Architektur, Kultur, usw.)",
+              "Aktualisierungsfelder (Überprüfungs-/Aktualisierungsdatum)"
+            ]
+          },
+          groupB: {
+            title: "Erzählungen (Text und/oder Audio)",
+            items: [
+              "Kurzbeschreibung (30–60s) und Langbeschreibung (wo zutreffend)",
+              "Unterstützte Sprachen (nach Verfügbarkeit)",
+              "TTS-fertiger Text oder Audio on demand"
+            ]
+          },
+          groupC: {
+            title: "Technische Lieferung",
+            items: [
+              "JSON/CSV-Export",
+              "Abfrage-Endpoint (API) per Koordinate und/oder ID",
+              "Filter nach Sprache, Thema und Radius"
+            ]
+          }
+        },
+        integrate: {
+          title: "Wie man integriert",
+          steps: [
+            {
+              title: "1. Eingabe (was der Kunde sendet)",
+              items: ["Koordinaten (lat/lng) + Radius ODER Punkt-ID", "Gewünschte Sprache", "Optionaler Kontext (Kategorie, Benutzerprofil)"]
+            },
+            {
+              title: "2. Ausgabe (was der Kunde empfängt)",
+              items: ["POI-Metadaten + Erzähltext", "Kontrollfelder (geschätzte Dauer, Tags, Aktualisierungsdatum)", "Interne Referenzen (IDs)"]
+            },
+            {
+              title: "3. Betrieb (wie es in Produktion läuft)",
+              items: ["Inhalts-Caching und Versionierung", "Periodische Updates (vereinbarter Turnus)", "Test- + Produktionsumgebung"]
+            }
+          ],
+          note: "Integration über API oder Basislizenzierung, je nach Bedarf."
+        },
+        licensing: {
+          title: "Lizenzmodelle",
+          cards: [
+            { 
+              title: "Gebietslizenz", 
+              items: ["Inhalt für eine vereinbarte Reihe von Städten/Routen.", "Updates und Erweiterung im Vertrag definiert."] 
+            },
+            { 
+              title: "Volumenlizenz", 
+              items: ["Nach Verbrauch (API-Abfragen / POIs / Aufrufe).", "Ideal für Produkte mit variablem Verkehr."] 
+            },
+            { 
+              title: "Maßgeschneidertes Projekt", 
+              items: ["Kuratierung und Produktion für ein bestimmtes Thema/Route.", "Lieferung mit gemeinsamer Validierung und Überprüfung."] 
+            }
+          ],
+          note: "Pläne mit Support und SLA werden im Vertrag definiert."
+        },
+        requirements: {
+          title: "Was wir von Ihnen benötigen",
+          items: [
+            "Anwendungsfall (wo der Inhalt in Ihrem Produkt erscheint)",
+            "Verbrauchsformat (API, lizenzierte Basis oder hybrid)",
+            "Gewünschte Sprachen",
+            "Erlebnisregeln (Dauer, Ton, Kategorien)"
+          ]
+        },
+        trust: {
+          title: "Zuverlässigkeit",
+          items: [
+            "Kuratierte Inhalte unterstützt durch automatisierte Validierungen und kontinuierliche Überprüfung.",
+            "Nicht jeder Inhalt ist ein überprüfbarer 'Fakt'; ein Teil ist historischer und kultureller Kontext.",
+            "Kanal für Korrekturen und Überprüfung durch Feedback."
+          ],
+          link: "Korrektur melden"
+        },
+        governance: {
+          title: "Governance und Compliance",
+          items: [
+            "LGPD/GDPR: Datenverarbeitung gemäß Vertrag und Zweck.",
+            "Aufbewahrung: Wir definieren Fristen und Umfang in der Vereinbarung.",
+            "Korrekturen: dedizierter Kanal für Überprüfung und Aktualisierung.",
+            "Nutzungsrechte: dokumentierte Lizenz und Grenzen."
+          ],
+          link: "DPA/Bedingungen anfordern"
+        },
+        sample: {
+          title: "Antwortbeispiel (Muster)",
+          disclaimer: "Illustrative Struktur (Felder können je nach Vertrag variieren).",
+          summary: [
+            "POI-Metadaten",
+            "Texterzählung",
+            "Aktualisierungsfelder"
+          ]
+        },
+        finalCta: {
+          title: "Sprechen Sie mit unserem Team",
+          sub: "Erzählen Sie uns von Ihrem Anwendungsfall und der Art der Integration, die Sie benötigen.",
+          qualifier: "Antworten Sie mit Ihrem Anwendungsfall und Integrationsformat (API oder Basis).",
+          button: "Mit unserem Team sprechen",
+          secondary: "Sehen, wie man integriert"
+        }
+      },
+      IT: {
+        hero: {
+          h1: "Dati culturali audio da integrare nella tua esperienza.",
+          sub: "Tuggi fornisce descrizioni culturali curate e metadati di punti di interesse (POI) per prodotti di mobilità, turismo e istruzione — via licenza dati o integrazione.",
+          cta_primary: "Parla con il nostro team",
+          cta_secondary: "Vedi come integrare",
+          email: "enterprise@tuggi.app"
+        },
+        icp: {
+          title: "Per chi è",
+          cards: [
+            { title: "App di mobilità e trasporto", text: "Arricchisci i tragitti con contesto culturale audio." },
+            { title: "Operatori turistici e ricettivi", text: "Contenuto scalabile per percorsi ed esperienze." },
+            { title: "Destinazioni (DMO) ed enti culturali", text: "Narrazioni standardizzate per l'attivazione del territorio." },
+            { title: "Hôtellerie e ospitalità", text: "Storie locali per migliorare l'esperienza dell'ospite." },
+            { title: "Istruzione formale e informale", text: "Contenuto contestuale per l'apprendimento nel mondo reale." }
+          ]
+        },
+        deliverables: {
+          title: "Cosa consegniamo",
+          groupA: {
+            title: "Dati POI",
+            items: [
+              "ID unico del punto + nome + categoria",
+              "Coordinate + area di copertura (raggio/poligono, ove applicabile)",
+              "Città/stato/paese + contesto locale",
+              "Tag per tema (storia, architettura, cultura, ecc.)",
+              "Campi di aggiornamento (data di revisione/aggiornamento)"
+            ]
+          },
+          groupB: {
+            title: "Narrazioni (testo e/o audio)",
+            items: [
+              "Descrizione breve (30–60s) e descrizione lunga (ove applicabile)",
+              "Lingue supportate (secondo disponibilità)",
+              "Testo pronto per TTS o audio on demand"
+            ]
+          },
+          groupC: {
+            title: "Consegna tecnica",
+            items: [
+              "Esportazione in JSON/CSV",
+              "Endpoint di query (API) per coordinata e/o ID",
+              "Filtri per lingua, tema e raggio"
+            ]
+          }
+        },
+        integrate: {
+          title: "Come integrare",
+          steps: [
+            {
+              title: "1. Input (cosa invia il cliente)",
+              items: ["Coordinate (lat/lng) + raggio O ID del punto", "Lingua desiderata", "Contesto opzionale (categoria, profilo utente)"]
+            },
+            {
+              title: "2. Output (cosa riceve il cliente)",
+              items: ["Metadati POI + testo della narrazione", "Campi di controllo (durata stimata, tag, data di aggiornamento)", "Riferimenti interni (ID)"]
+            },
+            {
+              title: "3. Operazione (come gira in produzione)",
+              items: ["Cache e versionamento contenuti", "Aggiornamenti periodici (cadenza concordata)", "Ambiente di test + produzione"]
+            }
+          ],
+          note: "Integrazione via API o licenza base, secondo necessità."
+        },
+        licensing: {
+          title: "Modelli di licenza",
+          cards: [
+            { 
+              title: "Licenza per territorio", 
+              items: ["Contenuto per un insieme di città/percorsi concordati.", "Aggiornamenti ed espansione definiti nel contratto."] 
+            },
+            { 
+              title: "Licenza per volume", 
+              items: ["A consumo (query API / POI / chiamate).", "Ideale per prodotti con traffico variabile."] 
+            },
+            { 
+              title: "Progetto su misura", 
+              items: ["Curatela e produzione per un tema/percorso specifico.", "Consegna con validazione e revisione congiunta."] 
+            }
+          ],
+          note: "Piani con supporto e SLA sono definiti nel contratto."
+        },
+        requirements: {
+          title: "Cosa ci serve da te",
+          items: [
+            "Caso d'uso (dove appare il contenuto nel tuo prodotto)",
+            "Formato di consumo (API, base in licenza, o ibrido)",
+            "Lingue desiderate",
+            "Regole di esperienza (durata, tono, categorie)"
+          ]
+        },
+        trust: {
+          title: "Affidabilità",
+          items: [
+            "Contenuto curato con supporto di validazioni automatizzate e revisione continua.",
+            "Non tutto il contenuto è un 'fatto' verificabile; parte è contesto storico e culturale.",
+            "Canale per correzioni e revisione tramite feedback."
+          ],
+          link: "Segnala correzione"
+        },
+        governance: {
+          title: "Governance e Conformità",
+          items: [
+            "LGPD/GDPR: trattamento dati secondo contratto e finalità.",
+            "Conservazione: definiamo scadenze e ambito nell'accordo.",
+            "Correzioni: canale dedicato per revisione e aggiornamento.",
+            "Diritti d'uso: licenza e limiti documentati."
+          ],
+          link: "Richiedi DPA/Termini"
+        },
+        sample: {
+          title: "Esempio di risposta (campione)",
+          disclaimer: "Struttura illustrativa (i campi possono variare per contratto).",
+          summary: [
+            "Metadati POI",
+            "Narrazione testuale",
+            "Campi di aggiornamento"
+          ]
+        },
+        finalCta: {
+          title: "Parla con il nostro team",
+          sub: "Raccontaci il tuo caso d'uso e il tipo di integrazione che ti serve.",
+          qualifier: "Rispondi con il tuo caso d'uso e formato di integrazione (API o base).",
+          button: "Parla con il nostro team",
+          secondary: "Vedi come integrare"
+        }
       }
     };
     return content[language] || content['PT'];

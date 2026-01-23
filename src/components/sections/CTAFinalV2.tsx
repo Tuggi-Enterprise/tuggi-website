@@ -54,6 +54,48 @@ const CTAFinalV2: React.FC<CTAFinalV2Props> = ({
         socialProof: '⭐ 4.8 de calificación • Disponible en las principales tiendas',
         ariaLabelIOS: 'Descargar Tuggi para iOS',
         ariaLabelAndroid: 'Descargar Tuggi para Android'
+      },
+      FR: {
+        title: 'Conduisez avec votre nouveau copilote culturel.',
+        subtitle: 'Écoutez les histoires de la ville et découvrez le monde qui vous entoure sans quitter la route des yeux.',
+        ctaPrimary: 'Télécharger sur iOS',
+        ctaSecondary: 'Télécharger sur Android',
+        features: [
+          'Narration automatique',
+          'Focus sur la conduite',
+          'Mains libres'
+        ],
+        socialProof: '⭐ 4.8 d\'évaluation • Disponible sur les principaux stores',
+        ariaLabelIOS: 'Télécharger Tuggi pour iOS',
+        ariaLabelAndroid: 'Télécharger Tuggi pour Android'
+      },
+      DE: {
+        title: 'Fahren Sie mit Ihrem neuen kulturellen Copilot.',
+        subtitle: 'Hören Sie die Geschichten der Stadt und entdecken Sie die Welt um sich herum, ohne den Blick von der Straße zu wenden.',
+        ctaPrimary: 'Auf iOS laden',
+        ctaSecondary: 'Auf Android laden',
+        features: [
+          'Automatische Erzählung',
+          'Fokus auf das Fahren',
+          'Freihändige Nutzung'
+        ],
+        socialProof: '⭐ 4.8 Bewertung • Verfügbar in den wichtigsten Stores',
+        ariaLabelIOS: 'Tuggi für iOS laden',
+        ariaLabelAndroid: 'Tuggi für Android laden'
+      },
+      IT: {
+        title: 'Guida con il tuo nuovo copilota culturale.',
+        subtitle: 'Ascolta le storie della città e scopri il mondo che ti circonda senza distogliere lo sguardo dalla strada.',
+        ctaPrimary: 'Scarica su iOS',
+        ctaSecondary: 'Scarica su Android',
+        features: [
+          'Narrazione automatica',
+          'Focus sulla guida',
+          'Uso vivavoce'
+        ],
+        socialProof: '⭐ Valutazione 4.8 • Disponibile nei principali store',
+        ariaLabelIOS: 'Scarica Tuggi per iOS',
+        ariaLabelAndroid: 'Scarica Tuggi per Android'
       }
     };
     return content[language] || content['PT'];

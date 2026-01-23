@@ -210,6 +210,198 @@ const FAQV2: React.FC<FAQV2Props> = ({
         ],
         contact_question: '¿Más preguntas? Contáctanos.',
         contact_button: 'Enviar correo'
+      },
+      FR: {
+        title: 'Questions fréquentes',
+        subtitle: 'Réponses aux principales questions sur Tuggi.',
+        faqs: [
+          {
+            key: 'safe_driving',
+            q: 'Est-ce sûr de l\'utiliser en conduisant ?',
+            a: [
+              'Oui. Tuggi est conçu pour être mains libres : les histoires se lancent automatiquement par géolocalisation.',
+              'Il fonctionne en arrière-plan avec votre application de navigation (Waze, Google Maps), sans nécessiter d\'interaction avec l\'écran.',
+              'Gardez toujours votre attention sur la route et utilisez un support pour téléphone.'
+            ]
+          },
+          {
+            key: 'who_is_for',
+            q: 'À qui s\'adresse Tuggi ?',
+            a: [
+              'À toute personne souhaitant transformer ses trajets quotidiens ou ses voyages en découvertes culturelles.',
+              'Que vous soyez un conducteur quotidien ou que vous exploriez une nouvelle ville en voiture, Tuggi est votre copilote culturel.'
+            ]
+          },
+          {
+            key: 'offline',
+            q: 'Fonctionne-t-il sans internet ?',
+            a: [
+              'Une partie du contenu est préchargée et peut fonctionner avec un signal instable.',
+              'Nous recommandons de l\'utiliser avec une connexion de données active pour garantir que toutes les histoires se déclenchent correctement.'
+            ]
+          },
+          {
+            key: 'battery',
+            q: 'Consomme-t-il beaucoup de batterie ?',
+            a: [
+              'La consommation est optimisée, similaire aux applications de cartes. Nous recommandons l\'utilisation d\'un chargeur de voiture pour les longs trajets.'
+            ]
+          },
+          {
+            key: 'privacy',
+            q: 'Ma vie privée est-elle protégée ?',
+            a: [
+              'Oui. Nous utilisons votre position uniquement pour déclencher l\'audio au bon moment.',
+              'Nous n\'enregistrons pas les conversations et ne partageons pas vos données de trajet avec des tiers à des fins publicitaires.'
+            ]
+          },
+          {
+            key: 'pricing',
+            q: 'L\'application est-elle gratuite ?',
+            a: [
+              'Tuggi peut être téléchargé et utilisé gratuitement.',
+              'De nouvelles fonctionnalités et du contenu premium pourront être proposés à l\'avenir.'
+            ]
+          },
+          {
+            key: 'coverage',
+            q: 'Où est-ce disponible ?',
+            a: [
+              'Nous couvrons déjà les principales routes et points historiques de São Paulo et Rio de Janeiro.',
+              'Nous nous développons constamment vers de nouvelles régions.'
+            ]
+          }
+        ],
+        contact_question: 'Plus de questions ? Contactez-nous.',
+        contact_button: 'Envoyer un email'
+      },
+      DE: {
+        title: 'Häufig gestellte Fragen',
+        subtitle: 'Antworten auf die wichtigsten Fragen zu Tuggi.',
+        faqs: [
+          {
+            key: 'safe_driving',
+            q: 'Ist die Nutzung während der Fahrt sicher?',
+            a: [
+              'Ja. Tuggi ist für die freihändige Nutzung konzipiert: Geschichten werden automatisch per Geolokalisierung abgespielt.',
+              'Es funktioniert im Hintergrund mit Ihrer Navigations-App (Waze, Google Maps) und erfordert keine Bildschirminteraktion.',
+              'Halten Sie Ihren Fokus immer auf der Straße und verwenden Sie eine Handyhalterung.'
+            ]
+          },
+          {
+            key: 'who_is_for',
+            q: 'Für wen ist Tuggi geeignet?',
+            a: [
+              'Für jeden, der seine täglichen Fahrten oder Reisen in kulturelle Entdeckungen verwandeln möchte.',
+              'Ob Alltagsfahrer oder Entdecker einer neuen Stadt mit dem Auto, Tuggi ist Ihr kultureller Copilot.'
+            ]
+          },
+          {
+            key: 'offline',
+            q: 'Funktioniert es ohne Internet?',
+            a: [
+              'Ein Teil der Inhalte wird vorgeladen und kann bei instabilem Signal funktionieren.',
+              'Wir empfehlen die Nutzung mit aktiver Datenverbindung, um sicherzustellen, dass alle Geschichten korrekt ausgelöst werden.'
+            ]
+          },
+          {
+            key: 'battery',
+            q: 'Verbraucht es viel Akku?',
+            a: [
+              'Der Verbrauch ist optimiert, ähnlich wie bei Karten-Apps. Wir empfehlen die Verwendung eines Autoladegeräts bei längeren Fahrten.'
+            ]
+          },
+          {
+            key: 'privacy',
+            q: 'Ist meine Privatsphäre geschützt?',
+            a: [
+              'Ja. Wir verwenden Ihren Standort nur, um das Audio zum richtigen Zeitpunkt auszulösen.',
+              'Wir zeichnen keine Gespräche auf und teilen Ihre Routendaten nicht zu Werbezwecken mit Dritten.'
+            ]
+          },
+          {
+            key: 'pricing',
+            q: 'Ist die App kostenlos?',
+            a: [
+              'Tuggi kann kostenlos heruntergeladen und genutzt werden.',
+              'Neue Funktionen und Premium-Inhalte könnten in Zukunft angeboten werden.'
+            ]
+          },
+          {
+            key: 'coverage',
+            q: 'Wo ist es verfügbar?',
+            a: [
+              'Wir decken bereits die wichtigsten Straßen und historischen Punkte von São Paulo und Rio de Janeiro ab.',
+              'Wir expandieren ständig in neue Regionen.'
+            ]
+          }
+        ],
+        contact_question: 'Noch Fragen? Kontaktieren Sie uns.',
+        contact_button: 'E-Mail senden'
+      },
+      IT: {
+        title: 'Domande frequenti',
+        subtitle: 'Risposte alle principali domande su Tuggi.',
+        faqs: [
+          {
+            key: 'safe_driving',
+            q: 'È sicuro da usare mentre guido?',
+            a: [
+              'Sì. Tuggi è progettato per essere hands-free: le storie vengono riprodotte automaticamente tramite geolocalizzazione.',
+              'Funziona in background con la tua app di navigazione (Waze, Google Maps), senza richiedere interazione con lo schermo.',
+              'Mantieni sempre la concentrazione sulla strada e usa un supporto per telefono.'
+            ]
+          },
+          {
+            key: 'who_is_for',
+            q: 'Per chi è indicato Tuggi?',
+            a: [
+              'Per chiunque voglia trasformare i propri tragitti quotidiani o viaggi in scoperte culturali.',
+              'Che tu sia un guidatore abituale o stia esplorando una nuova città in auto, Tuggi è il tuo copilota culturale.'
+            ]
+          },
+          {
+            key: 'offline',
+            q: 'Funziona senza internet?',
+            a: [
+              'Parte del contenuto è precaricato e può funzionare con segnale instabile.',
+              'Raccomandiamo l\'uso con connessione dati attiva per garantire che tutte le storie vengano attivate correttamente.'
+            ]
+          },
+          {
+            key: 'battery',
+            q: 'Consuma molta batteria?',
+            a: [
+              'Il consumo è ottimizzato, simile alle app di mappe. Raccomandiamo l\'uso di un caricabatterie per auto nei tragitti lunghi.'
+            ]
+          },
+          {
+            key: 'privacy',
+            q: 'La mia privacy è protetta?',
+            a: [
+              'Sì. Utilizziamo la tua posizione solo per attivare l\'audio al momento giusto.',
+              'Non registriamo conversazioni né condividiamo i tuoi dati di percorso con terze parti per scopi pubblicitari.'
+            ]
+          },
+          {
+            key: 'pricing',
+            q: 'L\'app è gratuita?',
+            a: [
+              'Tuggi può essere scaricato e utilizzato gratuitamente.',
+              'Nuove funzionalità e contenuti premium potranno essere offerti in futuro.'
+            ]
+          },
+          {
+            key: 'coverage',
+            q: 'Dove è disponibile?',
+            a: [
+              'Copriamo già le principali strade e punti storici di San Paolo e Rio de Janeiro.',
+              'Ci stiamo espandendo costantemente verso nuove regioni.'
+            ]
+          }
+        ],
+        contact_question: 'Altre domande? Contattaci.',
+        contact_button: 'Invia email'
       }
     };
     return content[language] || content['PT'];

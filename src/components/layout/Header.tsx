@@ -69,6 +69,24 @@ const Header: React.FC<HeaderProps> = ({
         { label: 'Nuestro Propósito', page: 'purpose' },
         { label: 'Para Empresas', page: 'empresas' },
         { label: 'Contacto', page: 'contact' },
+      ],
+      FR: [
+        { label: 'Accueil', page: 'home' },
+        { label: 'Notre Raison d\'être', page: 'purpose' },
+        { label: 'Pour les Entreprises', page: 'empresas' },
+        { label: 'Contact', page: 'contact' },
+      ],
+      DE: [
+        { label: 'Startseite', page: 'home' },
+        { label: 'Unser Ziel', page: 'purpose' },
+        { label: 'Für Unternehmen', page: 'empresas' },
+        { label: 'Kontakt', page: 'contact' },
+      ],
+      IT: [
+        { label: 'Home', page: 'home' },
+        { label: 'Il Nostro Scopo', page: 'purpose' },
+        { label: 'Per le Aziende', page: 'empresas' },
+        { label: 'Contatti', page: 'contact' },
       ]
     };
     
@@ -81,6 +99,9 @@ const Header: React.FC<HeaderProps> = ({
     { code: 'PT', label: getLanguageName('PT'), flag: getLanguageFlag('PT') },
     { code: 'EN', label: getLanguageName('EN'), flag: getLanguageFlag('EN') },
     { code: 'ES', label: getLanguageName('ES'), flag: getLanguageFlag('ES') },
+    { code: 'FR', label: getLanguageName('FR'), flag: getLanguageFlag('FR') },
+    { code: 'DE', label: getLanguageName('DE'), flag: getLanguageFlag('DE') },
+    { code: 'IT', label: getLanguageName('IT'), flag: getLanguageFlag('IT') },
   ];
 
   const currentLang = languages.find(lang => lang.code === currentLanguage) || languages[1];

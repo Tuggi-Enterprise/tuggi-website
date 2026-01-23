@@ -204,6 +204,189 @@ const DriversLandingPage: React.FC<DriversLandingPageProps> = ({ currentLanguage
       },
       legalNote: 'Tuggi funciona en segundo plano junto con Waze, Maps y apps de movilidad.'
     },
+    FR: {
+      hero: {
+        title: 'Rendez le trajet plus intéressant avec des histoires sur la route.',
+        subtitle: 'Tuggi raconte de courtes histoires sur les lieux du parcours, basées sur votre localisation.',
+        bullets: [
+          'Audio automatique sur la route',
+          'Fonctionne avec Waze, Maps et Uber',
+          'Moins d\'écran, plus de concentration'
+        ],
+        setup: 'Installez → ouvrez → lancez le mode voyage.',
+        trust: 'Utilisez avec le téléphone fixé et une attention totale à la circulation.',
+        secondaryCTA: 'Comment utiliser pendant la course'
+      },
+      benefits: {
+        title: 'Pourquoi les conducteurs l\'utilisent',
+        items: [
+          {
+            title: 'Crée de la conversation',
+            description: 'De courtes histoires pour rendre le voyage fluide.'
+          },
+          {
+            title: 'Expérience plus agréable',
+            description: 'Le trajet semble plus léger et plus intéressant.'
+          },
+          {
+            title: 'Audio par localisation',
+            description: 'Les histoires se jouent automatiquement lorsque vous passez des points.'
+          },
+          {
+            title: 'Fait pour la voiture',
+            description: 'Conçu pour l\'audio, aucune interaction avec l\'écran requise.'
+          }
+        ]
+      },
+      howItWorks: {
+        title: 'Comment utiliser pendant la course',
+        steps: [
+          'Téléchargez l\'app et choisissez la langue/voix',
+          'Lancez le mode voyage',
+          'L\'audio se joue en passant les points'
+        ],
+        safety: 'Ne manipulez pas votre téléphone en conduisant.'
+      },
+      privacy: {
+        title: 'Confidentialité dès la conception',
+        items: [
+          'Localisation utilisée pour déclencher des histoires sur le trajet.',
+          'Nous n\'enregistrons pas les conversations ; pas d\'écoute passive.',
+          'Vous contrôlez les permissions et pouvez les révoquer à tout moment.'
+        ],
+        links: {
+          privacy: 'Politique de Confidentialité',
+          deletion: 'Suppression des Données'
+        }
+      },
+      finalCTA: {
+        title: 'Prêt pour votre prochain trajet ?',
+        subtitle: 'Téléchargez Tuggi et testez-le lors d’une course.'
+      },
+      legalNote: 'Tuggi fonctionne en arrière-plan avec Waze, Maps et les apps de mobilité.'
+    },
+    DE: {
+      hero: {
+        title: 'Machen Sie die Fahrt interessanter mit Geschichten auf dem Weg.',
+        subtitle: 'Tuggi erzählt kurze Geschichten über Orte auf dem Weg, basierend auf Ihrem Standort.',
+        bullets: [
+          'Automatisches Audio auf dem Weg',
+          'Funktioniert mit Waze, Maps und Uber',
+          'Weniger Bildschirm, mehr Fokus'
+        ],
+        setup: 'Installieren → öffnen → Reisemodus starten.',
+        trust: 'Nutzen Sie es mit festem Handy und voller Aufmerksamkeit auf den Verkehr.',
+        secondaryCTA: 'Wie man es während der Fahrt nutzt'
+      },
+      benefits: {
+        title: 'Warum Fahrer es nutzen',
+        items: [
+          {
+            title: 'Schafft Gesprächsstoff',
+            description: 'Kurze Geschichten, damit die Reise fließt.'
+          },
+          {
+            title: 'Angenehmeres Erlebnis',
+            description: 'Die Fahrt fühlt sich leichter und interessanter an.'
+          },
+          {
+            title: 'Audio nach Standort',
+            description: 'Geschichten spielen automatisch ab, wenn Sie Punkte passieren.'
+          },
+          {
+            title: 'Für das Auto gemacht',
+            description: 'Für Audio konzipiert, keine Bildschirminteraktion erforderlich.'
+          }
+        ]
+      },
+      howItWorks: {
+        title: 'Wie man es während der Fahrt nutzt',
+        steps: [
+          'App laden und Sprache/Stimme wählen',
+          'Reisemodus starten',
+          'Audio spielt beim Passieren von Punkten'
+        ],
+        safety: 'Bedienen Sie Ihr Telefon nicht während der Fahrt.'
+      },
+      privacy: {
+        title: 'Datenschutz durch Design',
+        items: [
+          'Standort genutzt, um Geschichten auf dem Weg auszulösen.',
+          'Wir zeichnen keine Gespräche auf; kein passives Zuhören.',
+          'Sie kontrollieren Berechtigungen und können sie jederzeit widerrufen.'
+        ],
+        links: {
+          privacy: 'Datenschutzrichtlinie',
+          deletion: 'Datenlöschung'
+        }
+      },
+      finalCTA: {
+        title: 'Bereit für Ihre nächste Fahrt?',
+        subtitle: 'Laden Sie Tuggi und testen Sie es auf einer Fahrt.'
+      },
+      legalNote: 'Tuggi läuft im Hintergrund zusammen mit Waze, Maps und Mobilitäts-Apps.'
+    },
+    IT: {
+      hero: {
+        title: 'Rendi la corsa più interessante con storie lungo il tragitto.',
+        subtitle: 'Tuggi narra brevi storie sui luoghi lungo il percorso, in base alla tua posizione.',
+        bullets: [
+          'Audio automatico lungo il percorso',
+          'Funziona con Waze, Maps e Uber',
+          'Meno schermo, più focus'
+        ],
+        setup: 'Installa → apri → avvia modalità viaggio.',
+        trust: 'Usa con il cellulare fissato e massima attenzione al traffico.',
+        secondaryCTA: 'Come usare durante la corsa'
+      },
+      benefits: {
+        title: 'Perché i conducenti lo usano',
+        items: [
+          {
+            title: 'Crea conversazione',
+            description: 'Brevi storie per far scorrere meglio il viaggio.'
+          },
+          {
+            title: 'Esperienza più piacevole',
+            description: 'Il tragitto sembra più leggero e interessante.'
+          },
+          {
+            title: 'Audio per posizione',
+            description: 'Le storie partono automaticamente quando passi i punti.'
+          },
+          {
+            title: 'Fatto per l\'auto',
+            description: 'Progettato per l\'audio, nessuna interazione con lo schermo richiesta.'
+          }
+        ]
+      },
+      howItWorks: {
+        title: 'Come usare durante la corsa',
+        steps: [
+          'Scarica l\'app e scegli lingua/voce',
+          'Avvia modalità viaggio',
+          'L\'audio parte passando i punti'
+        ],
+        safety: 'Non maneggiare il telefono mentre guidi.'
+      },
+      privacy: {
+        title: 'Privacy by design',
+        items: [
+          'Posizione usata per attivare storie lungo il tragitto.',
+          'Non registriamo conversazioni; nessun ascolto passivo.',
+          'Tu controlli i permessi e puoi revocarli quando vuoi.'
+        ],
+        links: {
+          privacy: 'Informativa sulla Privacy',
+          deletion: 'Cancellazione Dati'
+        }
+      },
+      finalCTA: {
+        title: 'Pronto per il tuo prossimo viaggio?',
+        subtitle: 'Scarica Tuggi e provalo in una corsa.'
+      },
+      legalNote: 'Tuggi funziona in background insieme a Waze, Maps e app di mobilità.'
+    }
   } as const;
 
   const t = content[currentLanguage];

@@ -211,7 +211,7 @@ const PurposePage: React.FC<PurposePageProps> = ({
             text: 'La experiencia está pensada para audio y uso con el móvil fijo. Atención total al tráfico.'
           },
           privacy: {
-            title: 'Privacidad por design',
+            title: 'Privacidad por diseño',
             bullets: [
               'Ubicación usada solo para activar historias a lo largo del trayecto.',
               'No grabamos conversaciones; no hacemos escucha pasiva.',
@@ -232,6 +232,222 @@ const PurposePage: React.FC<PurposePageProps> = ({
         finalCta: {
           title: 'Comienza tu viaje cultural en el camino.',
           subtitle: 'Descarga el app en las tiendas oficiales.'
+        }
+      },
+      FR: {
+        hero: {
+          title: 'Notre raison d\'être',
+          subtitle: 'La culture ne devrait pas être confinée aux livres ou aux salles de classe. Tuggi existe pour mettre des histoires sur votre chemin — légèrement, en audio, pendant que vous conduisez.'
+        },
+        block1: {
+          title: 'Culture en mouvement',
+          text: 'Nous croyons que la culture vit dans le trajet. Au lieu de vous lier à un itinéraire, Tuggi révèle contexte et histoires au moment où vous passez par les lieux.'
+        },
+        block2: {
+          title: 'Qu\'est-ce que Tuggi aujourd\'hui',
+          text: 'Aujourd\'hui, Tuggi est un copilote culturel audio pour ceux qui conduisent. Il identifie des points sur le chemin et narre des histoires courtes et contextuelles, sans exiger d\'attention à l\'écran.'
+        },
+        targetAudience: {
+          drivers: {
+            title: 'Chauffeurs VTC',
+            text: 'Une façon simple de rendre le trajet plus intéressant pour le passager — avec contrôle sur lecture et pause.',
+            link: 'Voir pour chauffeurs'
+          },
+          daily: {
+            title: 'Ceux qui conduisent au quotidien',
+            text: 'Transformez déplacements et voyages en découvertes culturelles, à votre rythme.'
+          }
+        },
+        values: {
+          title: 'Nos valeurs fondamentales',
+          items: [
+            { id: 'trajeto', title: 'Découverte sur le trajet', description: 'Histoires sur le chemin, au bon moment.' },
+            { id: 'contexto', title: 'Clarté et contexte', description: 'Contenu court, direct et bien expliqué.' },
+            { id: 'autonomia', title: 'Autonomie de l\'utilisateur', description: 'Vous décidez quand écouter et mettre en pause.' },
+            { id: 'simplicidade', title: 'Sécurité et simplicité', description: 'Audio d\'abord, peu d\'écran.' },
+            { id: 'dados', title: 'Responsabilité des données', description: 'Confidentialité et contrôle entre vos mains.' }
+          ]
+        },
+        whatWeAreNot: {
+          title: 'Ce que Tuggi N\'EST PAS',
+          bullets: [
+            'Ce n\'est pas un guide qui exige de regarder l\'écran.',
+            'Ce n\'est pas une radio continue : vous contrôlez quand écouter.',
+            'Il n\'enregistre pas les conversations et ne fait pas d\'écoute passive.'
+          ]
+        },
+        responsibility: {
+          title: 'Responsabilité',
+          safety: {
+            title: 'Sécurité',
+            text: 'L\'expérience est pensée pour l\'audio et l\'utilisation avec le téléphone fixé. Attention totale à la circulation.'
+          },
+          privacy: {
+            title: 'Confidentialité dès la conception',
+            bullets: [
+              'Position utilisée uniquement pour déclencher des histoires le long du trajet.',
+              'Nous n\'enregistrons pas les conversations ; nous ne faisons pas d\'écoute passive.',
+              'Vous contrôlez les permissions et pouvez les révoquer quand vous voulez.',
+              'Vous pouvez demander la suppression des données.'
+            ],
+            links: {
+              privacy: 'Politique de Confidentialité',
+              dataDeletion: 'Suppression des Données'
+            }
+          }
+        },
+        community: {
+          title: 'Construit avec la communauté',
+          text: 'Vous voulez suggérer des points, signaler quelque chose d\'incorrect ou envoyer une idée ? Nous lisons et priorisons les améliorations continuellement.',
+          cta: 'Parler avec nous'
+        },
+        finalCta: {
+          title: 'Commencez votre voyage culturel sur la route.',
+          subtitle: 'Téléchargez l\'app sur les stores officiels.'
+        }
+      },
+      DE: {
+        hero: {
+          title: 'Unser Daseinszweck',
+          subtitle: 'Kultur sollte nicht auf Bücher oder Klassenzimmer beschränkt sein. Tuggi existiert, um Geschichten auf Ihren Weg zu bringen — leicht, per Audio, während Sie fahren.'
+        },
+        block1: {
+          title: 'Kultur in Bewegung',
+          text: 'Wir glauben, dass Kultur auf dem Weg lebt. Anstatt Sie an eine Route zu binden, enthüllt Tuggi Kontext und Geschichten in dem Moment, in dem Sie an Orten vorbeikommen.'
+        },
+        block2: {
+          title: 'Was Tuggi heute ist',
+          text: 'Heute ist Tuggi ein kultureller Audio-Copilot für Autofahrer. Es identifiziert Punkte auf dem Weg und erzählt kurze, kontextbezogene Geschichten, ohne Aufmerksamkeit auf den Bildschirm zu erfordern.'
+        },
+        targetAudience: {
+          drivers: {
+            title: 'App-Fahrer',
+            text: 'Ein einfacher Weg, die Fahrt für den Fahrgast interessanter zu machen — mit Kontrolle über Wiedergabe und Pause.',
+            link: 'Für Fahrer ansehen'
+          },
+          daily: {
+            title: 'Tägliche Fahrer',
+            text: 'Verwandeln Sie Pendelfahrten und Reisen in kulturelle Entdeckungen, in Ihrem eigenen Tempo.'
+          }
+        },
+        values: {
+          title: 'Unsere Grundwerte',
+          items: [
+            { id: 'trajeto', title: 'Entdeckung auf dem Weg', description: 'Geschichten auf dem Weg, zur richtigen Zeit.' },
+            { id: 'contexto', title: 'Klarheit und Kontext', description: 'Kurzer, direkter und gut erklärter Inhalt.' },
+            { id: 'autonomia', title: 'Nutzerautonomie', description: 'Sie entscheiden, wann Sie zuhören und pausieren.' },
+            { id: 'simplicidade', title: 'Sicherheit und Einfachheit', description: 'Audio zuerst, wenig Bildschirm.' },
+            { id: 'dados', title: 'Datenverantwortung', description: 'Datenschutz und Kontrolle in Ihren Händen.' }
+          ]
+        },
+        whatWeAreNot: {
+          title: 'Was Tuggi NICHT ist',
+          bullets: [
+            'Es ist kein Reiseführer, der verlangt, auf den Bildschirm zu schauen.',
+            'Es ist kein ständiges Radio: Sie steuern, wann Sie zuhören.',
+            'Es zeichnet keine Gespräche auf und hört nicht passiv zu.'
+          ]
+        },
+        responsibility: {
+          title: 'Verantwortung',
+          safety: {
+            title: 'Sicherheit',
+            text: 'Das Erlebnis ist für Audio und Nutzung mit fester Handyhalterung konzipiert. Volle Aufmerksamkeit auf den Verkehr.'
+          },
+          privacy: {
+            title: 'Datenschutz durch Design',
+            bullets: [
+              'Standort nur verwendet, um Geschichten entlang der Route auszulösen.',
+              'Wir zeichnen keine Gespräche auf; wir hören nicht passiv zu.',
+              'Sie kontrollieren Berechtigungen und können diese jederzeit widerrufen.',
+              'Sie können Datenlöschung beantragen.'
+            ],
+            links: {
+              privacy: 'Datenschutzrichtlinie',
+              dataDeletion: 'Datenlöschung'
+            }
+          }
+        },
+        community: {
+          title: 'Mit der Community gebaut',
+          text: 'Möchten Sie Punkte vorschlagen, etwas Falsches melden oder eine Idee senden? Wir lesen und priorisieren Verbesserungen kontinuierlich.',
+          cta: 'Sprechen Sie mit uns'
+        },
+        finalCta: {
+          title: 'Starten Sie Ihre kulturelle Reise auf der Straße.',
+          subtitle: 'Laden Sie die App in den offiziellen Stores herunter.'
+        }
+      },
+      IT: {
+        hero: {
+          title: 'La nostra ragion d\'essere',
+          subtitle: 'La cultura non dovrebbe essere confinata a libri o aule. Tuggi esiste per mettere storie sul tuo cammino — in modo leggero, via audio, mentre guidi.'
+        },
+        block1: {
+          title: 'Cultura in movimento',
+          text: 'Crediamo che la cultura viva nel tragitto. Invece di legarti a un percorso, Tuggi rivela contesto e storie nel momento in cui passi per i luoghi.'
+        },
+        block2: {
+          title: 'Cos\'è Tuggi oggi',
+          text: 'Oggi, Tuggi è un copilota culturale audio per chi guida. Identifica punti sul percorso e narra storie brevi e contestuali, senza richiedere attenzione allo schermo.'
+        },
+        targetAudience: {
+          drivers: {
+            title: 'Autisti di app',
+            text: 'Un modo semplice per rendere il viaggio più interessante per il passeggero — con controllo su riproduzione e pausa.',
+            link: 'Vedi per autisti'
+          },
+          daily: {
+            title: 'Chi guida quotidianamente',
+            text: 'Trasforma spostamenti e viaggi in scoperte culturali, con i tuoi tempi.'
+          }
+        },
+        values: {
+          title: 'I nostri valori fondamentali',
+          items: [
+            { id: 'trajeto', title: 'Scoperta sul tragitto', description: 'Storie lungo il cammino, al momento giusto.' },
+            { id: 'contexto', title: 'Chiarezza e contesto', description: 'Contenuto breve, diretto e ben spiegato.' },
+            { id: 'autonomia', title: 'Autonomia dell\'utente', description: 'Tu decidi quando ascoltare e mettere in pausa.' },
+            { id: 'simplicidade', title: 'Sicurezza e semplicità', description: 'Audio al primo posto, poco schermo.' },
+            { id: 'dados', title: 'Responsabilità sui dati', description: 'Privacy e controllo nelle tue mani.' }
+          ]
+        },
+        whatWeAreNot: {
+          title: 'Cosa Tuggi NON è',
+          bullets: [
+            'Non è una guida che richiede di guardare lo schermo.',
+            'Non è radio continua: tu controlli quando ascoltare.',
+            'Non registra conversazioni e non fa ascolto passivo.'
+          ]
+        },
+        responsibility: {
+          title: 'Responsabilità',
+          safety: {
+            title: 'Sicurezza',
+            text: 'L\'esperienza è pensata per l\'audio e l\'uso con telefono fissato. Massima attenzione al traffico.'
+          },
+          privacy: {
+            title: 'Privacy by design',
+            bullets: [
+              'Posizione usata solo per attivare storie lungo il percorso.',
+              'Non registriamo conversazioni; non facciamo ascolto passivo.',
+              'Tu controlli le autorizzazioni e puoi revocarle quando vuoi.',
+              'Puoi richiedere la cancellazione dei dati.'
+            ],
+            links: {
+              privacy: 'Informativa sulla Privacy',
+              dataDeletion: 'Cancellazione Dati'
+            }
+          }
+        },
+        community: {
+          title: 'Costruito con la community',
+          text: 'Vuoi suggerire punti, segnalare qualcosa di errato o inviare un\'idea? Leggiamo e priorizziamo miglioramenti continuamente.',
+          cta: 'Parla con noi'
+        },
+        finalCta: {
+          title: 'Inizia il tuo viaggio culturale su strada.',
+          subtitle: 'Scarica l\'app negli store ufficiali.'
         }
       }
     };

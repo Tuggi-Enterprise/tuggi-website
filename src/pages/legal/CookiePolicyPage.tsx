@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Cookie, Shield, Eye, Settings, ExternalLink, ChevronDown, ChevronUp, BarChart3, Info, CheckCircle, Globe, FileText } from 'lucide-react';
+import React, { useState } from 'react';
+import { Cookie, Shield, Eye, Settings, BarChart3, Info, CheckCircle, Globe, FileText } from 'lucide-react';
 
 interface CookiePolicyPageProps {
   currentLanguage?: string;
@@ -695,6 +695,687 @@ Su uso continuado de nuestros servicios después de cambios en la política cons
           acceptAll: 'Aceptar Todas',
           rejectAll: 'Rechazar Todas (Mantener Necesarias)',
           saved: '¡Preferencias Guardadas!'
+        }
+      },
+      FR: {
+        title: 'Politique de Cookies',
+        lastUpdated: 'Dernière mise à jour : 15 janvier 2024',
+        effectiveDate: 'Date d\'entrée en vigueur : 15 janvier 2024',
+        introduction: {
+          title: 'À propos de cette Politique de Cookies',
+          content: `Cette Politique de Cookies explique comment Tuggi Technologies ("nous", "notre" ou "nos") utilise des cookies et des technologies de suivi similaires sur notre site web, l'application audio de navigation Tuggi Drive et les services connexes. Cette politique doit être lue conjointement avec notre Politique de Confidentialité.
+
+Les cookies sont de petits fichiers texte qui sont placés sur votre appareil lorsque vous visitez notre site web ou utilisez nos services. Ils nous aident à vous offrir une meilleure expérience en se souvenant de vos préférences, en analysant comment vous utilisez nos services et en améliorant notre technologie.
+
+Nous nous engageons à la transparence concernant notre utilisation des cookies et vous donnons le contrôle sur les cookies non essentiels. Vous pouvez gérer vos préférences en matière de cookies à tout moment en utilisant les contrôles fournis sur cette page.`
+        },
+        whatAreCookies: {
+          title: 'Qu\'est-ce que les Cookies ?',
+          content: `Les cookies sont de petits fichiers texte que les sites web et les applications stockent sur votre appareil (ordinateur, smartphone, tablette) lorsque vous les visitez. Ils contiennent des informations qui peuvent être lues par le site web ou l'application lorsque vous revenez.
+
+**Types de Cookies :**
+• **Cookies de Session** : Cookies temporaires qui sont supprimés lorsque vous fermez votre navigateur
+• **Cookies Persistants** : Restent sur votre appareil pendant une période définie ou jusqu'à ce que vous les supprimiez
+• **Cookies Internes** : Définis par le site web que vous visitez (tuggi.com)
+• **Cookies Tiers** : Définis par des services externes que nous utilisons (analyse, publicité)
+
+**Technologies Similaires :**
+Nous utilisons également des technologies similaires comme les balises web, les pixels et le stockage local pour améliorer votre expérience et comprendre comment nos services sont utilisés.`
+        },
+        cookieTypes: {
+          title: 'Types de Cookies que Nous Utilisons',
+          categories: [
+            {
+              name: 'Cookies Strictement Nécessaires',
+              icon: Shield,
+              required: true,
+              description: 'Essentiels pour que le site web et l\'application fonctionnent correctement. Ne peuvent pas être désactivés.',
+              purpose: 'Activer les fonctionnalités principales comme la sécurité, l\'authentification et la navigation de base',
+              examples: [
+                'Authentification de l\'utilisateur et gestion de session',
+                'Sécurité et prévention de la fraude',
+                'Préférences de langue et de région',
+                'Panier d\'achat et données de formulaire',
+                'Équilibrage de charge et optimisation des performances'
+              ],
+              retention: 'Session à 1 an',
+              thirdParties: 'Aucun - tous cookies internes'
+            },
+            {
+              name: 'Cookies d\'Analyse',
+              icon: BarChart3,
+              required: false,
+              description: 'Nous aident à comprendre comment les visiteurs interagissent avec notre site web et notre application.',
+              purpose: 'Analyser les modèles d\'utilisation, mesurer les performances et améliorer nos services',
+              examples: [
+                'Vues de page et suivi du parcours utilisateur',
+                'Métriques d\'utilisation des fonctionnalités et d\'engagement',
+                'Surveillance des performances et suivi des erreurs',
+                'Tests A/B et optimisation',
+                'Suivi des conversions et des objectifs'
+              ],
+              retention: '2 ans',
+              thirdParties: 'Google Analytics, Mixpanel'
+            },
+            {
+              name: 'Cookies Fonctionnels',
+              icon: Settings,
+              required: false,
+              description: 'Activent des fonctionnalités améliorées et des fonctionnalités de personnalisation.',
+              purpose: 'Se souvenir de vos préférences et fournir des expériences personnalisées',
+              examples: [
+                'Préférences de langue et de région',
+                'Personnalisation de l\'interface utilisateur et thèmes',
+                'Contenu récemment consulté',
+                'Recherches et filtres enregistrés',
+                'Paramètres d\'accessibilité'
+              ],
+              retention: '1 an',
+              thirdParties: 'Aucun - tous cookies internes'
+            },
+            {
+              name: 'Cookies Marketing',
+              icon: Eye,
+              required: false,
+              description: 'Utilisés pour diffuser des publicités pertinentes et mesurer l\'efficacité des campagnes.',
+              purpose: 'Afficher des publicités pertinentes et mesurer les performances des campagnes marketing',
+              examples: [
+                'Publicité ciblée basée sur les intérêts',
+                'Campagnes de reciblage et de remarketing',
+                'Intégration et partage sur les réseaux sociaux',
+                'Attribution de campagne et suivi du ROI',
+                'Identification de l\'utilisateur sur plusieurs appareils'
+              ],
+              retention: '1-2 ans',
+              thirdParties: 'Google Ads, Facebook Pixel, LinkedIn Insight'
+            }
+          ]
+        },
+        cookieManagement: {
+          title: 'Gérer Vos Préférences de Cookies',
+          content: `Vous avez plusieurs options pour gérer les cookies :
+
+**Sur Ce Site Web :**
+Utilisez le centre de préférences des cookies ci-dessous pour activer ou désactiver les cookies non essentiels. Vos choix seront mémorisés pour les visites futures.
+
+**Paramètres du Navigateur :**
+La plupart des navigateurs vous permettent de :
+• Afficher et supprimer les cookies existants
+• Bloquer tous les cookies ou uniquement les cookies tiers
+• Définir des préférences pour des sites web spécifiques
+• Recevoir des notifications lorsque des cookies sont définis
+
+**Instructions Spécifiques au Navigateur :**
+• **Chrome** : Paramètres > Confidentialité et sécurité > Cookies et autres données de site
+• **Firefox** : Paramètres > Vie privée et sécurité > Cookies et données de site
+• **Safari** : Préférences > Confidentialité > Gérer les données du site web
+• **Edge** : Paramètres > Cookies et autorisations de site > Cookies et données de site
+
+**Appareils Mobiles :**
+• **iOS** : Réglages > Safari > Confidentialité et sécurité
+• **Android** : Appli Chrome > Paramètres > Paramètres du site > Cookies
+
+**Remarque** : La désactivation de certains cookies peut affecter la fonctionnalité du site web et votre expérience utilisateur.`
+        },
+        thirdPartyServices: {
+          title: 'Services Tiers et Cookies',
+          services: [
+            {
+              name: 'Google Analytics',
+              purpose: 'Analyse de l\'utilisation du site web et de l\'application',
+              cookies: '_ga, _ga_*, _gid, _gat',
+              retention: '2 ans',
+              optOut: 'https://tools.google.com/dlpage/gaoptout',
+              privacy: 'https://policies.google.com/privacy'
+            },
+            {
+              name: 'Google Ads',
+              purpose: 'Publicité et remarketing',
+              cookies: '_gcl_*, _gac_*, IDE, DSID',
+              retention: '1-2 ans',
+              optOut: 'https://adssettings.google.com',
+              privacy: 'https://policies.google.com/privacy'
+            },
+            {
+              name: 'Facebook Pixel',
+              purpose: 'Publicité sur les réseaux sociaux et analyse',
+              cookies: '_fbp, _fbc, fr',
+              retention: '90 jours - 2 ans',
+              optOut: 'https://www.facebook.com/settings?tab=ads',
+              privacy: 'https://www.facebook.com/privacy/explanation'
+            },
+            {
+              name: 'LinkedIn Insight',
+              purpose: 'Publicité de réseau professionnel',
+              cookies: 'li_*, UserMatchHistory, AnalyticsSyncHistory',
+              retention: '2 ans',
+              optOut: 'https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out',
+              privacy: 'https://www.linkedin.com/legal/privacy-policy'
+            },
+            {
+              name: 'Stripe',
+              purpose: 'Traitement des paiements et prévention de la fraude',
+              cookies: '__stripe_*, m, private_machine_identifier',
+              retention: '1 an',
+              optOut: 'Non applicable (nécessaire pour le traitement des paiements)',
+              privacy: 'https://stripe.com/privacy'
+            }
+          ]
+        },
+        internationalTransfers: {
+          title: 'Transferts Internationaux de Données',
+          content: `Certains de nos fournisseurs de cookies tiers peuvent transférer vos données à l'international :
+
+**États-Unis** : Google, Facebook, LinkedIn et Stripe sont basés aux États-Unis et peuvent y transférer des données
+**Union Européenne** : Nous assurons une protection adéquate par le biais de Clauses Contractuelles Types et de décisions d'adéquation
+**Autres Pays** : Tout transfert est conforme aux lois applicables sur la protection des données et comprend des garanties appropriées
+
+Nous examinons régulièrement nos fournisseurs tiers pour nous assurer qu'ils maintiennent des normes de protection des données adéquates.`
+        },
+        userRights: {
+          title: 'Vos Droits Concernant les Cookies',
+          rights: [
+            'Droit d\'être informé sur l\'utilisation des cookies (cette politique)',
+            'Droit de consentir aux cookies non essentiels',
+            'Droit de retirer son consentement à tout moment',
+            'Droit d\'accéder aux informations sur les cookies que nous utilisons',
+            'Droit de s\'opposer au traitement à des fins de marketing',
+            'Droit à la portabilité des données liées aux cookies',
+            'Droit de déposer une plainte auprès des autorités de contrôle'
+          ]
+        },
+        contact: {
+          title: 'Coordonnées',
+          content: `Pour toute question concernant notre utilisation des cookies ou pour exercer vos droits :
+
+**Délégué à la Protection des Données**
+E-mail : privacy@tuggi.app
+Téléphone : +55 (11) 9.9471-8809
+
+**Adresse Postale :**
+Tuggi Technologies
+Département Confidentialité
+123 Innovation Drive
+San Francisco, CA 94105
+États-Unis
+
+**Représentant UE :**
+Pour les résidents de l'UE : eu-privacy@tuggi.app
+
+Nous répondrons à vos demandes dans un délai de 30 jours.`
+        },
+        changes: {
+          title: 'Modifications de Cette Politique de Cookies',
+          content: `Nous pouvons mettre à jour cette Politique de Cookies pour refléter les changements dans nos pratiques ou les lois applicables. Lorsque nous apportons des modifications :
+
+• Nous publierons la politique mise à jour avec une nouvelle date de "Dernière Mise à Jour"
+• Pour les changements importants, nous vous informerons par e-mail ou par un avis bien visible sur le site web
+• Nous fournirons un préavis de 30 jours avant que les changements importants n'entrent en vigueur
+• Les versions précédentes seront disponibles sur demande
+
+Votre utilisation continue de nos services après les modifications de la politique constitue une acceptation des conditions mises à jour.`
+        },
+        preferences: {
+          title: 'Préférences de Cookies',
+          description: 'Gérez vos préférences de cookies ci-dessous. Les cookies strictement nécessaires ne peuvent pas être désactivés car ils sont essentiels au fonctionnement du site web.',
+          saveButton: 'Enregistrer les Préférences',
+          acceptAll: 'Tout Accepter',
+          rejectAll: 'Tout Rejeter (Garder les Nécessaires)',
+          saved: 'Préférences Enregistrées !'
+        }
+      },
+      DE: {
+        title: 'Cookie-Richtlinie',
+        lastUpdated: 'Letzte Aktualisierung: 15. Januar 2024',
+        effectiveDate: 'Datum des Inkrafttretens: 15. Januar 2024',
+        introduction: {
+          title: 'Über diese Cookie-Richtlinie',
+          content: `Diese Cookie-Richtlinie erklärt, wie Tuggi Technologies ("wir", "unser" oder "uns") Cookies und ähnliche Tracking-Technologien auf unserer Website, der Tuggi Drive Navigations-Audio-App und den damit verbundenen Diensten verwendet. Diese Richtlinie sollte zusammen mit unserer Datenschutzrichtlinie gelesen werden.
+
+Cookies sind kleine Textdateien, die auf Ihrem Gerät platziert werden, wenn Sie unsere Website besuchen oder unsere Dienste nutzen. Sie helfen uns, Ihnen ein besseres Erlebnis zu bieten, indem sie sich an Ihre Präferenzen erinnern, analysieren, wie Sie unsere Dienste nutzen, und unsere Technologie verbessern.
+
+Wir verpflichten uns zur Transparenz über unsere Verwendung von Cookies und geben Ihnen die Kontrolle über nicht wesentliche Cookies. Sie können Ihre Cookie-Einstellungen jederzeit über die auf dieser Seite bereitgestellten Steuerelemente verwalten.`
+        },
+        whatAreCookies: {
+          title: 'Was sind Cookies?',
+          content: `Cookies sind kleine Textdateien, die Websites und Anwendungen auf Ihrem Gerät (Computer, Smartphone, Tablet) speichern, wenn Sie diese besuchen. Sie enthalten Informationen, die von der Website oder App gelesen werden können, wenn Sie zurückkehren.
+
+**Arten von Cookies:**
+• **Sitzungscookies**: Temporäre Cookies, die gelöscht werden, wenn Sie Ihren Browser schließen
+• **Permanente Cookies**: Bleiben für einen festgelegten Zeitraum auf Ihrem Gerät oder bis Sie sie löschen
+• **Erstanbieter-Cookies**: Von der Website gesetzt, die Sie besuchen (tuggi.com)
+• **Drittanbieter-Cookies**: Von externen Diensten gesetzt, die wir nutzen (Analyse, Werbung)
+
+**Ähnliche Technologien:**
+Wir verwenden auch ähnliche Technologien wie Web Beacons, Pixel und lokalen Speicher, um Ihr Erlebnis zu verbessern und zu verstehen, wie unsere Dienste genutzt werden.`
+        },
+        cookieTypes: {
+          title: 'Arten von Cookies, die wir verwenden',
+          categories: [
+            {
+              name: 'Unbedingt erforderliche Cookies',
+              icon: Shield,
+              required: true,
+              description: 'Unerlässlich, damit die Website und die App ordnungsgemäß funktionieren. Können nicht deaktiviert werden.',
+              purpose: 'Aktivieren von Kernfunktionen wie Sicherheit, Authentifizierung und grundlegende Navigation',
+              examples: [
+                'Benutzerauthentifizierung und Sitzungsverwaltung',
+                'Sicherheit und Betrugsprävention',
+                'Sprach- und Regionspräferenzen',
+                'Warenkorb und Formulardaten',
+                'Lastausgleich und Leistungsoptimierung'
+              ],
+              retention: 'Sitzung bis 1 Jahr',
+              thirdParties: 'Keine - alle Erstanbieter-Cookies'
+            },
+            {
+              name: 'Analyse-Cookies',
+              icon: BarChart3,
+              required: false,
+              description: 'Helfen uns zu verstehen, wie Besucher mit unserer Website und App interagieren.',
+              purpose: 'Nutzungsmuster analysieren, Leistung messen und unsere Dienste verbessern',
+              examples: [
+                'Seitenaufrufe und Verfolgung der Benutzerreise',
+                'Funktionsnutzungs- und Engagement-Metriken',
+                'Leistungsüberwachung und Fehlerverfolgung',
+                'A/B-Tests und Optimierung',
+                'Konversions- und Zielverfolgung'
+              ],
+              retention: '2 Jahre',
+              thirdParties: 'Google Analytics, Mixpanel'
+            },
+            {
+              name: 'Funktionale Cookies',
+              icon: Settings,
+              required: false,
+              description: 'Ermöglichen verbesserte Funktionalität und Personalisierungsfunktionen.',
+              purpose: 'Erinnern an Ihre Präferenzen und Bereitstellung personalisierter Erlebnisse',
+              examples: [
+                'Sprach- und Regionspräferenzen',
+                'UI-Anpassung und Themen',
+                'Kürzlich angesehene Inhalte',
+                'Gespeicherte Suchen und Filter',
+                'Barrierefreiheitseinstellungen'
+              ],
+              retention: '1 Jahr',
+              thirdParties: 'Keine - alle Erstanbieter-Cookies'
+            },
+            {
+              name: 'Marketing-Cookies',
+              icon: Eye,
+              required: false,
+              description: 'Werden verwendet, um relevante Werbung bereitzustellen und die Wirksamkeit von Kampagnen zu messen.',
+              purpose: 'Anzeige relevanter Anzeigen und Messung der Leistung von Marketingkampagnen',
+              examples: [
+                'Gezielte Werbung basierend auf Interessen',
+                'Retargeting- und Remarketing-Kampagnen',
+                'Social-Media-Integration und Teilen',
+                'Kampagnenattribution und ROI-Verfolgung',
+                'Geräteübergreifende Benutzeridentifikation'
+              ],
+              retention: '1-2 Jahre',
+              thirdParties: 'Google Ads, Facebook Pixel, LinkedIn Insight'
+            }
+          ]
+        },
+        cookieManagement: {
+          title: 'Verwaltung Ihrer Cookie-Einstellungen',
+          content: `Sie haben mehrere Möglichkeiten, Cookies zu verwalten:
+
+**Auf dieser Website:**
+Verwenden Sie das Cookie-Einstellungszentrum unten, um nicht wesentliche Cookies zu aktivieren oder zu deaktivieren. Ihre Auswahl wird für zukünftige Besuche gespeichert.
+
+**Browsereinstellungen:**
+Die meisten Browser ermöglichen Ihnen:
+• Vorhandene Cookies anzeigen und löschen
+• Alle Cookies oder nur Drittanbieter-Cookies blockieren
+• Einstellungen für bestimmte Websites festlegen
+• Benachrichtigungen erhalten, wenn Cookies gesetzt werden
+
+**Browser-spezifische Anweisungen:**
+• **Chrome**: Einstellungen > Datenschutz und Sicherheit > Cookies und andere Websitedaten
+• **Firefox**: Einstellungen > Datenschutz & Sicherheit > Cookies und Website-Daten
+• **Safari**: Einstellungen > Datenschutz > Websitedaten verwalten
+• **Edge**: Einstellungen > Cookies und Websiteberechtigungen > Cookies und Websitedaten
+
+**Mobilgeräte:**
+• **iOS**: Einstellungen > Safari > Datenschutz & Sicherheit
+• **Android**: Chrome-App > Einstellungen > Website-Einstellungen > Cookies
+
+**Hinweis**: Das Deaktivieren bestimmter Cookies kann die Funktionalität der Website und Ihr Benutzererlebnis beeinträchtigen.`
+        },
+        thirdPartyServices: {
+          title: 'Dienste von Drittanbietern und Cookies',
+          services: [
+            {
+              name: 'Google Analytics',
+              purpose: 'Analyse der Website- und App-Nutzung',
+              cookies: '_ga, _ga_*, _gid, _gat',
+              retention: '2 Jahre',
+              optOut: 'https://tools.google.com/dlpage/gaoptout',
+              privacy: 'https://policies.google.com/privacy'
+            },
+            {
+              name: 'Google Ads',
+              purpose: 'Werbung und Remarketing',
+              cookies: '_gcl_*, _gac_*, IDE, DSID',
+              retention: '1-2 Jahre',
+              optOut: 'https://adssettings.google.com',
+              privacy: 'https://policies.google.com/privacy'
+            },
+            {
+              name: 'Facebook Pixel',
+              purpose: 'Social-Media-Werbung und Analyse',
+              cookies: '_fbp, _fbc, fr',
+              retention: '90 Tage - 2 Jahre',
+              optOut: 'https://www.facebook.com/settings?tab=ads',
+              privacy: 'https://www.facebook.com/privacy/explanation'
+            },
+            {
+              name: 'LinkedIn Insight',
+              purpose: 'Werbung im professionellen Netzwerk',
+              cookies: 'li_*, UserMatchHistory, AnalyticsSyncHistory',
+              retention: '2 Jahre',
+              optOut: 'https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out',
+              privacy: 'https://www.linkedin.com/legal/privacy-policy'
+            },
+            {
+              name: 'Stripe',
+              purpose: 'Zahlungsabwicklung und Betrugsprävention',
+              cookies: '__stripe_*, m, private_machine_identifier',
+              retention: '1 Jahr',
+              optOut: 'Nicht zutreffend (notwendig für die Zahlungsabwicklung)',
+              privacy: 'https://stripe.com/privacy'
+            }
+          ]
+        },
+        internationalTransfers: {
+          title: 'Internationale Datenübermittlungen',
+          content: `Einige unserer Drittanbieter-Cookie-Anbieter können Ihre Daten international übertragen:
+
+**Vereinigte Staaten**: Google, Facebook, LinkedIn und Stripe haben ihren Sitz in den USA und können Daten dorthin übertragen
+**Europäische Union**: Wir gewährleisten einen angemessenen Schutz durch Standardvertragsklauseln und Angemessenheitsbeschlüsse
+**Andere Länder**: Alle Übertragungen entsprechen den geltenden Datenschutzgesetzen und beinhalten angemessene Schutzmaßnahmen
+
+Wir überprüfen regelmäßig unsere Drittanbieter, um sicherzustellen, dass sie angemessene Datenschutzstandards einhalten.`
+        },
+        userRights: {
+          title: 'Ihre Rechte in Bezug auf Cookies',
+          rights: [
+            'Recht auf Information über die Verwendung von Cookies (diese Richtlinie)',
+            'Recht auf Einwilligung zu nicht wesentlichen Cookies',
+            'Recht auf jederzeitigen Widerruf der Einwilligung',
+            'Recht auf Auskunft über die von uns verwendeten Cookies',
+            'Recht auf Widerspruch gegen die Verarbeitung zu Marketingzwecken',
+            'Recht auf Datenübertragbarkeit für cookie-bezogene Daten',
+            'Recht auf Beschwerde bei Aufsichtsbehörden'
+          ]
+        },
+        contact: {
+          title: 'Kontaktinformationen',
+          content: `Bei Fragen zu unserer Verwendung von Cookies oder zur Ausübung Ihrer Rechte:
+
+**Datenschutzbeauftragter**
+E-Mail: privacy@tuggi.app
+Telefon: +55 (11) 9.9471-8809
+
+**Postanschrift:**
+Tuggi Technologies
+Datenschutzabteilung
+123 Innovation Drive
+San Francisco, CA 94105
+Vereinigte Staaten
+
+**EU-Vertreter:**
+Für EU-Einwohner: eu-privacy@tuggi.app
+
+Wir werden Ihre Anfragen innerhalb von 30 Tagen beantworten.`
+        },
+        changes: {
+          title: 'Änderungen an dieser Cookie-Richtlinie',
+          content: `Wir können diese Cookie-Richtlinie aktualisieren, um Änderungen in unseren Praktiken oder geltenden Gesetzen widerzuspiegeln. Wenn wir Änderungen vornehmen:
+
+• Wir werden die aktualisierte Richtlinie mit einem neuen Datum "Letzte Aktualisierung" veröffentlichen
+• Bei wesentlichen Änderungen werden wir Sie per E-Mail oder durch einen deutlichen Hinweis auf der Website benachrichtigen
+• Wir werden 30 Tage vor Inkrafttreten wesentlicher Änderungen Bescheid geben
+• Frühere Versionen sind auf Anfrage erhältlich
+
+Ihre fortgesetzte Nutzung unserer Dienste nach Änderungen der Richtlinie stellt die Annahme der aktualisierten Bedingungen dar.`
+        },
+        preferences: {
+          title: 'Cookie-Einstellungen',
+          description: 'Verwalten Sie Ihre Cookie-Einstellungen unten. Unbedingt erforderliche Cookies können nicht deaktiviert werden, da sie für das Funktionieren der Website unerlässlich sind.',
+          saveButton: 'Einstellungen speichern',
+          acceptAll: 'Alle akzeptieren',
+          rejectAll: 'Alle ablehnen (Erforderliche behalten)',
+          saved: 'Einstellungen gespeichert!'
+        }
+      },
+      IT: {
+        title: 'Informativa sui Cookie',
+        lastUpdated: 'Ultimo aggiornamento: 15 gennaio 2024',
+        effectiveDate: 'Data di entrata in vigore: 15 gennaio 2024',
+        introduction: {
+          title: 'Informazioni su questa Informativa sui Cookie',
+          content: `Questa Informativa sui Cookie spiega come Tuggi Technologies ("noi", "nostro" o "ci") utilizza cookie e tecnologie di tracciamento simili sul nostro sito web, sull'app di navigazione audio Tuggi Drive e sui servizi correlati. Questa politica deve essere letta insieme alla nostra Informativa sulla Privacy.
+
+I cookie sono piccoli file di testo che vengono posizionati sul tuo dispositivo quando visiti il nostro sito web o utilizzi i nostri servizi. Ci aiutano a offrirti un'esperienza migliore ricordando le tue preferenze, analizzando come utilizzi i nostri servizi e migliorando la nostra tecnologia.
+
+Ci impegniamo alla trasparenza riguardo al nostro utilizzo dei cookie e ti diamo il controllo sui cookie non essenziali. Puoi gestire le tue preferenze sui cookie in qualsiasi momento utilizzando i controlli forniti in questa pagina.`
+        },
+        whatAreCookies: {
+          title: 'Cosa sono i Cookie?',
+          content: `I cookie sono piccoli file di testo che i siti web e le applicazioni memorizzano sul tuo dispositivo (computer, smartphone, tablet) quando li visiti. Contengono informazioni che possono essere lette dal sito web o dall'app quando ritorni.
+
+**Tipi di Cookie:**
+• **Cookie di Sessione**: Cookie temporanei che vengono eliminati quando chiudi il browser
+• **Cookie Persistenti**: Rimangono sul tuo dispositivo per un periodo stabilito o finché non li elimini
+• **Cookie di Prima Parte**: Impostati dal sito web che stai visitando (tuggi.com)
+• **Cookie di Terze Parti**: Impostati da servizi esterni che utilizziamo (analisi, pubblicità)
+
+**Tecnologie Simili:**
+Utilizziamo anche tecnologie simili come web beacon, pixel e archiviazione locale per migliorare la tua esperienza e capire come vengono utilizzati i nostri servizi.`
+        },
+        cookieTypes: {
+          title: 'Tipi di Cookie che Utilizziamo',
+          categories: [
+            {
+              name: 'Cookie Strettamente Necessari',
+              icon: Shield,
+              required: true,
+              description: 'Essenziali per il corretto funzionamento del sito web e dell\'app. Non possono essere disabilitati.',
+              purpose: 'Abilitare funzionalità principali come sicurezza, autenticazione e navigazione di base',
+              examples: [
+                'Autenticazione utente e gestione sessione',
+                'Sicurezza e prevenzione frodi',
+                'Preferenze di lingua e regione',
+                'Carrello e dati modulo',
+                'Bilanciamento del carico e ottimizzazione delle prestazioni'
+              ],
+              retention: 'Sessione a 1 anno',
+              thirdParties: 'Nessuno - tutti cookie di prima parte'
+            },
+            {
+              name: 'Cookie Analitici',
+              icon: BarChart3,
+              required: false,
+              description: 'Ci aiutano a capire come i visitatori interagiscono con il nostro sito web e l\'app.',
+              purpose: 'Analizzare modelli di utilizzo, misurare prestazioni e migliorare i nostri servizi',
+              examples: [
+                'Visualizzazioni pagina e tracciamento percorso utente',
+                'Metriche di utilizzo funzionalità e coinvolgimento',
+                'Monitoraggio prestazioni e tracciamento errori',
+                'Test A/B e ottimizzazione',
+                'Tracciamento conversioni e obiettivi'
+              ],
+              retention: '2 anni',
+              thirdParties: 'Google Analytics, Mixpanel'
+            },
+            {
+              name: 'Cookie Funzionali',
+              icon: Settings,
+              required: false,
+              description: 'Abilitano funzionalità avanzate e opzioni di personalizzazione.',
+              purpose: 'Ricordare le tue preferenze e fornire esperienze personalizzate',
+              examples: [
+                'Preferenze di lingua e regione',
+                'Personalizzazione UI e temi',
+                'Contenuti visualizzati di recente',
+                'Ricerche e filtri salvati',
+                'Impostazioni di accessibilità'
+              ],
+              retention: '1 anno',
+              thirdParties: 'Nessuno - tutti cookie di prima parte'
+            },
+            {
+              name: 'Cookie di Marketing',
+              icon: Eye,
+              required: false,
+              description: 'Utilizzati per fornire annunci pertinenti e misurare l\'efficacia delle campagne.',
+              purpose: 'Mostrare annunci pertinenti e misurare le prestazioni delle campagne di marketing',
+              examples: [
+                'Pubblicità mirata basata sugli interessi',
+                'Campagne di retargeting e remarketing',
+                'Integrazione e condivisione social media',
+                'Attribuzione campagna e tracciamento ROI',
+                'Identificazione utente cross-device'
+              ],
+              retention: '1-2 anni',
+              thirdParties: 'Google Ads, Facebook Pixel, LinkedIn Insight'
+            }
+          ]
+        },
+        cookieManagement: {
+          title: 'Gestione delle tue Preferenze sui Cookie',
+          content: `Hai diverse opzioni per gestire i cookie:
+
+**Su Questo Sito Web:**
+Utilizza il centro preferenze cookie qui sotto per abilitare o disabilitare i cookie non essenziali. Le tue scelte saranno ricordate per le visite future.
+
+**Impostazioni del Browser:**
+La maggior parte dei browser ti consente di:
+• Visualizzare ed eliminare i cookie esistenti
+• Bloccare tutti i cookie o solo i cookie di terze parti
+• Impostare preferenze per siti web specifici
+• Ricevere notifiche quando vengono impostati cookie
+
+**Istruzioni Specifiche per Browser:**
+• **Chrome**: Impostazioni > Privacy e sicurezza > Cookie e altri dati dei siti
+• **Firefox**: Impostazioni > Privacy e sicurezza > Cookie e dati dei siti web
+• **Safari**: Preferenze > Privacy > Gestisci dati sito web
+• **Edge**: Impostazioni > Cookie e autorizzazioni sito > Cookie e dati sito
+
+**Dispositivi Mobili:**
+• **iOS**: Impostazioni > Safari > Privacy e sicurezza
+• **Android**: App Chrome > Impostazioni > Impostazioni sito > Cookie
+
+**Nota**: Disabilitare alcuni cookie potrebbe influire sulla funzionalità del sito web e sulla tua esperienza utente.`
+        },
+        thirdPartyServices: {
+          title: 'Servizi di Terze Parti e Cookie',
+          services: [
+            {
+              name: 'Google Analytics',
+              purpose: 'Analisi utilizzo sito web e app',
+              cookies: '_ga, _ga_*, _gid, _gat',
+              retention: '2 anni',
+              optOut: 'https://tools.google.com/dlpage/gaoptout',
+              privacy: 'https://policies.google.com/privacy'
+            },
+            {
+              name: 'Google Ads',
+              purpose: 'Pubblicità e remarketing',
+              cookies: '_gcl_*, _gac_*, IDE, DSID',
+              retention: '1-2 anni',
+              optOut: 'https://adssettings.google.com',
+              privacy: 'https://policies.google.com/privacy'
+            },
+            {
+              name: 'Facebook Pixel',
+              purpose: 'Pubblicità social media e analisi',
+              cookies: '_fbp, _fbc, fr',
+              retention: '90 giorni - 2 anni',
+              optOut: 'https://www.facebook.com/settings?tab=ads',
+              privacy: 'https://www.facebook.com/privacy/explanation'
+            },
+            {
+              name: 'LinkedIn Insight',
+              purpose: 'Pubblicità rete professionale',
+              cookies: 'li_*, UserMatchHistory, AnalyticsSyncHistory',
+              retention: '2 anni',
+              optOut: 'https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out',
+              privacy: 'https://www.linkedin.com/legal/privacy-policy'
+            },
+            {
+              name: 'Stripe',
+              purpose: 'Elaborazione pagamenti e prevenzione frodi',
+              cookies: '__stripe_*, m, private_machine_identifier',
+              retention: '1 anno',
+              optOut: 'Non applicabile (necessario per elaborazione pagamenti)',
+              privacy: 'https://stripe.com/privacy'
+            }
+          ]
+        },
+        internationalTransfers: {
+          title: 'Trasferimenti Internazionali di Dati',
+          content: `Alcuni dei nostri fornitori di cookie di terze parti potrebbero trasferire i tuoi dati a livello internazionale:
+
+**Stati Uniti**: Google, Facebook, LinkedIn e Stripe hanno sede negli USA e potrebbero trasferire dati lì
+**Unione Europea**: Garantiamo una protezione adeguata attraverso Clausole Contrattuali Standard e decisioni di adeguatezza
+**Altri Paesi**: Qualsiasi trasferimento è conforme alle leggi sulla protezione dei dati applicabili e include garanzie appropriate
+
+Esaminiamo regolarmente i nostri fornitori terzi per garantire che mantengano standard adeguati di protezione dei dati.`
+        },
+        userRights: {
+          title: 'I Tuoi Diritti Riguardo ai Cookie',
+          rights: [
+            'Diritto di essere informato sull\'uso dei cookie (questa informativa)',
+            'Diritto di acconsentire ai cookie non essenziali',
+            'Diritto di revocare il consenso in qualsiasi momento',
+            'Diritto di accedere alle informazioni sui cookie che utilizziamo',
+            'Diritto di opporsi al trattamento per scopi di marketing',
+            'Diritto alla portabilità dei dati relativi ai cookie',
+            'Diritto di presentare reclamo alle autorità di controllo'
+          ]
+        },
+        contact: {
+          title: 'Informazioni di Contatto',
+          content: `Per domande sul nostro utilizzo dei cookie o per esercitare i tuoi diritti:
+
+**Responsabile della Protezione dei Dati**
+Email: privacy@tuggi.app
+Telefono: +55 (11) 9.9471-8809
+
+**Indirizzo Postale:**
+Tuggi Technologies
+Dipartimento Privacy
+123 Innovation Drive
+San Francisco, CA 94105
+Stati Uniti
+
+**Rappresentante UE:**
+Per residenti UE: eu-privacy@tuggi.app
+
+Risponderemo alle tue richieste entro 30 giorni.`
+        },
+        changes: {
+          title: 'Modifiche a Questa Informativa sui Cookie',
+          content: `Potremmo aggiornare questa Informativa sui Cookie per riflettere cambiamenti nelle nostre pratiche o leggi applicabili. Quando apportiamo modifiche:
+
+• Pubblicheremo l'informativa aggiornata con una nuova data di "Ultimo Aggiornamento"
+• Per modifiche sostanziali, ti notificheremo via email o avviso evidente sul sito web
+• Forniremo un preavviso di 30 giorni prima che le modifiche sostanziali entrino in vigore
+• Versioni precedenti saranno disponibili su richiesta
+
+Il tuo uso continuato dei nostri servizi dopo modifiche all'informativa costituisce accettazione dei termini aggiornati.`
+        },
+        preferences: {
+          title: 'Preferenze Cookie',
+          description: 'Gestisci le tue preferenze sui cookie qui sotto. I cookie strettamente necessari non possono essere disabilitati poiché sono essenziali per il funzionamento del sito web.',
+          saveButton: 'Salva Preferenze',
+          acceptAll: 'Accetta Tutto',
+          rejectAll: 'Rifiuta Tutto (Mantieni Necessari)',
+          saved: 'Preferenze Salvate!'
         }
       }
     };

@@ -94,6 +94,75 @@ const ContactPage: React.FC<ContactPageProps> = ({
           button: 'Ir a la página de inversores',
           link: '/investors'
         }
+      },
+      FR: {
+        hero: {
+          title: 'Contactez-nous',
+          subtitle: 'Nous voulons entendre vos idées, suggestions et partenariats potentiels.'
+        },
+        email: {
+          title: 'Si vous souhaitez parler à l\'équipe Tuggi, envoyez un email directement à :',
+          address: 'contato@tuggi.app',
+          note: 'Actuellement, nous n\'utilisons pas de formulaires de contact ni d\'assistance téléphonique. Nous répondons aux emails périodiquement, selon la disponibilité de l\'équipe.'
+        },
+        expansion: {
+          title: 'Vous voulez voir Tuggi dans votre ville ?',
+          description: 'Nous nous développons progressivement. Si vous souhaitez que Tuggi cartographie votre région, langue ou pays, participez à notre enquête d\'intérêt.',
+          button: 'Remplir le formulaire d\'intérêt',
+          note: '(Le lien sera ajouté une fois le formulaire officiel disponible)'
+        },
+        investors: {
+          title: 'Vous êtes investisseur ou représentez un accélérateur ?',
+          description: 'Nous avons une page dédiée avec des informations sur notre raison d\'être, notre stade actuel et un canal de contact direct pour les investisseurs.',
+          button: 'Aller à la page investisseurs',
+          link: '/investors'
+        }
+      },
+      DE: {
+        hero: {
+          title: 'Kontaktieren Sie uns',
+          subtitle: 'Wir möchten Ihre Ideen, Vorschläge und potenziellen Partnerschaften hören.'
+        },
+        email: {
+          title: 'Wenn Sie mit dem Tuggi-Team sprechen möchten, senden Sie eine E-Mail direkt an:',
+          address: 'contato@tuggi.app',
+          note: 'Derzeit verwenden wir keine Kontaktformulare oder telefonischen Support. Wir beantworten E-Mails regelmäßig, je nach Verfügbarkeit des Teams.'
+        },
+        expansion: {
+          title: 'Möchten Sie Tuggi in Ihrer Stadt sehen?',
+          description: 'Wir expandieren schrittweise. Wenn Sie möchten, dass Tuggi Ihre Region, Sprache oder Ihr Land kartiert, nehmen Sie an unserer Interessenumfrage teil.',
+          button: 'Interessenformular ausfüllen',
+          note: '(Link wird hinzugefügt, sobald das offizielle Formular verfügbar ist)'
+        },
+        investors: {
+          title: 'Sind Sie Investor oder vertreten Sie einen Accelerator?',
+          description: 'Wir haben eine spezielle Seite mit Informationen über unseren Zweck, das aktuelle Stadium und einen direkten Kontaktkanal für Investoren.',
+          button: 'Zur Investorenseite gehen',
+          link: '/investors'
+        }
+      },
+      IT: {
+        hero: {
+          title: 'Mettiti in contatto',
+          subtitle: 'Vogliamo ascoltare le tue idee, suggerimenti e potenziali partnership.'
+        },
+        email: {
+          title: 'Se vuoi parlare con il team di Tuggi, invia un\'email direttamente a:',
+          address: 'contato@tuggi.app',
+          note: 'Attualmente non utilizziamo moduli di contatto o supporto telefonico. Rispondiamo alle email periodicamente, in base alla disponibilità del team.'
+        },
+        expansion: {
+          title: 'Vuoi vedere Tuggi nella tua città?',
+          description: 'Ci stiamo espandendo gradualmente. Se ti piacerebbe avere Tuggi che mappa la tua regione, lingua o paese, partecipa al nostro sondaggio di interesse.',
+          button: 'Compila il modulo di interesse',
+          note: '(Il link verrà aggiunto una volta disponibile il modulo ufficiale)'
+        },
+        investors: {
+          title: 'Sei un investitore o rappresenti un acceleratore?',
+          description: 'Abbiamo una pagina dedicata con informazioni sul nostro scopo, stadio attuale e canale di contatto diretto per gli investitori.',
+          button: 'Vai alla pagina investitori',
+          link: '/investors'
+        }
       }
     };
     return content[language] || content['PT'];

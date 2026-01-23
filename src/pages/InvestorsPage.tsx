@@ -214,6 +214,198 @@ const InvestorsPage: React.FC<InvestorsPageProps> = ({
           secondary: 'contato@tuggi.app'
         },
         footnote: 'Materiales complementarios (deck, métricas y roadmap) disponibles bajo solicitud.'
+      },
+      FR: {
+        hero: {
+          title: 'Pour les investisseurs',
+          subtitle: 'Tuggi est un copilote culturel audio pour les trajets en voiture — avec un potentiel de distribution via les chauffeurs VTC.'
+        },
+        thesis: {
+          title: 'Thèse',
+          items: [
+            {
+              title: 'Culture sur le trajet',
+              text: 'Histoires courtes, contextuelles et déclenchées par la localisation.'
+            },
+            {
+              title: 'Faible friction',
+              text: 'Expérience audio axée sur la simplicité et la sécurité.'
+            },
+            {
+              title: 'Distribution',
+              text: 'Les chauffeurs VTC comme canal naturel d\'adoption.'
+            }
+          ]
+        },
+        product: {
+          title: 'Produit aujourd\'hui',
+          description: 'L\'application délivre des narrations automatiques aux points du trajet pour ceux qui conduisent. Le contenu est curé et évolue continuellement.',
+          cta: 'Voir le produit'
+        },
+        businessModel: {
+          title: 'Modèle d\'affaires',
+          cardA: {
+            title: 'B2C (utilisateur final)',
+            text: 'Accès à l\'application avec des plans et une évolution des fonctionnalités au fil du temps.'
+          },
+          cardB: {
+            title: 'B2B (données et intégration)',
+            text: 'Licences de contenu et métadonnées de POI pour les produits de mobilité, tourisme et éducation.',
+            cta: 'Voir la page entreprises'
+          }
+        },
+        reliability: {
+          title: 'Fiabilité',
+          items: [
+            'Contenu curé avec l\'appui de validations automatisées et d\'une révision continue.',
+            'Une partie du contenu est un contexte historique et culturel, pas un \'fait\' absolu.',
+            'Canal pour corrections et révision via feedback.'
+          ],
+          cta: 'Signaler une correction'
+        },
+        seeking: {
+          title: 'Ce que nous recherchons',
+          items: [
+            'Investisseurs et accélérateurs avec expérience dans les marketplaces, la mobilité ou le voyage.',
+            'Soutien dans la distribution, les partenariats et la structuration commerciale.',
+            'Connexions pour des pilotes commerciaux B2B (le cas échéant) et des canaux d\'acquisition.'
+          ]
+        },
+        contact: {
+          title: 'Parlons-en',
+          description: 'Envoyez un e-mail avec une brève description de votre profil et de votre intérêt.',
+          primary: 'investidores@tuggi.app',
+          secondary: 'contato@tuggi.app'
+        },
+        footnote: 'Matériaux complémentaires (deck, métriques et roadmap) disponibles sur demande.'
+      },
+      DE: {
+        hero: {
+          title: 'Für Investoren',
+          subtitle: 'Tuggi ist ein kultureller Audio-Copilot für Autofahrten — mit Vertriebspotenzial über App-Fahrer.'
+        },
+        thesis: {
+          title: 'These',
+          items: [
+            {
+              title: 'Kultur auf dem Weg',
+              text: 'Kurze, kontextbezogene und standortgesteuerte Geschichten.'
+            },
+            {
+              title: 'Geringe Reibung',
+              text: 'Audio-Erlebnis mit Fokus auf Einfachheit und Sicherheit.'
+            },
+            {
+              title: 'Vertrieb',
+              text: 'App-Fahrer als natürlicher Kanal für die Adoption.'
+            }
+          ]
+        },
+        product: {
+          title: 'Produkt heute',
+          description: 'Die App liefert automatische Erzählungen an Punkten entlang des Weges für Fahrer. Der Inhalt wird kuratiert und entwickelt sich ständig weiter.',
+          cta: 'Produkt sehen'
+        },
+        businessModel: {
+          title: 'Geschäftsmodell',
+          cardA: {
+            title: 'B2C (Endnutzer)',
+            text: 'App-Zugang mit Plänen und Funktionsentwicklung im Laufe der Zeit.'
+          },
+          cardB: {
+            title: 'B2B (Daten & Integration)',
+            text: 'Lizenzierung von Inhalten und POI-Metadaten für Mobilitäts-, Tourismus- und Bildungsprodukte.',
+            cta: 'Seite für Unternehmen sehen'
+          }
+        },
+        reliability: {
+          title: 'Zuverlässigkeit',
+          items: [
+            'Kuratierte Inhalte unterstützt durch automatisierte Validierungen und kontinuierliche Überprüfung.',
+            'Ein Teil des Inhalts ist historischer und kultureller Kontext, kein absoluter \'Fakt\'.',
+            'Kanal für Korrekturen und Überprüfung durch Feedback.'
+          ],
+          cta: 'Korrektur melden'
+        },
+        seeking: {
+          title: 'Was wir suchen',
+          items: [
+            'Investoren und Acceleratoren mit Erfahrung in Marktplätzen, Mobilität oder Reisen.',
+            'Unterstützung bei Vertrieb, Partnerschaften und kommerzieller Strukturierung.',
+            'Verbindungen für kommerzielle B2B-Piloten (wo zutreffend) und Akquisitionskanäle.'
+          ]
+        },
+        contact: {
+          title: 'Lassen Sie uns sprechen',
+          description: 'Senden Sie eine E-Mail mit einer kurzen Beschreibung Ihres Profils und Interesses.',
+          primary: 'investidores@tuggi.app',
+          secondary: 'contato@tuggi.app'
+        },
+        footnote: 'Ergänzende Materialien (Deck, Metriken und Roadmap) auf Anfrage erhältlich.'
+      },
+      IT: {
+        hero: {
+          title: 'Per gli investitori',
+          subtitle: 'Tuggi è un copilota culturale audio per viaggi in auto — con potenziale di distribuzione tramite autisti di app.'
+        },
+        thesis: {
+          title: 'Tesi',
+          items: [
+            {
+              title: 'Cultura sul tragitto',
+              text: 'Storie brevi, contestuali e attivate dalla posizione.'
+            },
+            {
+              title: 'Bassa frizione',
+              text: 'Esperienza audio focalizzata su semplicità e sicurezza.'
+            },
+            {
+              title: 'Distribuzione',
+              text: 'Autisti di app come canale naturale di adozione.'
+            }
+          ]
+        },
+        product: {
+          title: 'Prodotto oggi',
+          description: 'L\'app fornisce narrazioni automatiche nei punti lungo il percorso per chi guida. Il contenuto è curato ed evoluto continuamente.',
+          cta: 'Vedi prodotto'
+        },
+        businessModel: {
+          title: 'Modello di business',
+          cardA: {
+            title: 'B2C (utente finale)',
+            text: 'Accesso all\'app con piani ed evoluzione delle funzionalità nel tempo.'
+          },
+          cardB: {
+            title: 'B2B (dati e integrazione)',
+            text: 'Licenza di contenuti e metadati di POI per prodotti di mobilità, turismo ed istruzione.',
+            cta: 'Vedi pagina per aziende'
+          }
+        },
+        reliability: {
+          title: 'Affidabilità',
+          items: [
+            'Contenuto curato con supporto di validazioni automatizzate e revisione continua.',
+            'Parte del contenuto è contesto storico e culturale, non \'fatto\' assoluto.',
+            'Canale per correzioni e revisione tramite feedback.'
+          ],
+          cta: 'Segnala correzione'
+        },
+        seeking: {
+          title: 'Cosa cerchiamo',
+          items: [
+            'Investitori e acceleratori con esperienza in marketplace, mobilità o viaggi.',
+            'Supporto nella distribuzione, partnership e strutturazione commerciale.',
+            'Connessioni per piloti commerciali B2B (dove applicabile) e canali di acquisizione.'
+          ]
+        },
+        contact: {
+          title: 'Parliamone',
+          description: 'Invia un\'email con una breve descrizione del tuo profilo e interesse.',
+          primary: 'investidores@tuggi.app',
+          secondary: 'contato@tuggi.app'
+        },
+        footnote: 'Materiali complementari (deck, metriche e roadmap) disponibili su richiesta.'
       }
     };
     return content[language] || content['PT'];

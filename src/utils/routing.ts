@@ -9,13 +9,19 @@ export interface ParsedUrl {
 export const SUPPORTED_LANGUAGES = {
   'pt': 'PT',
   'en': 'EN', 
-  'es': 'ES'
+  'es': 'ES',
+  'fr': 'FR',
+  'de': 'DE',
+  'it': 'IT'
 } as const;
 
 export const LANGUAGE_CODES = {
   'PT': 'pt',
   'EN': 'en',
-  'ES': 'es'
+  'ES': 'es',
+  'FR': 'fr',
+  'DE': 'de',
+  'IT': 'it'
 } as const;
 
 // Valid page routes with multilingual URL mappings
@@ -31,21 +37,36 @@ export const VALID_PAGES = [
   'drivers',
   'motoristas',
   'conductores',
+  'chauffeurs',
+  'fahrer',
+  'autisti',
   // Legal and policy pages
   'privacy',
   'privacy-policy',
   'politica-de-privacidade',
   'politica-de-privacidad',
+  'politique-de-confidentialite',
+  'datenschutz',
+  'informativa-privacy',
   'terms',
   'terms-of-use',
   'termos-de-uso',
   'terminos-de-uso',
+  'conditions-d-utilisation',
+  'nutzungsbedingungen',
+  'termini-di-utilizzo',
   'cookies',
   'cookie-policy',
   'politica-de-cookies',
+  'politique-cookies',
+  'cookie-richtlinie',
+  'informativa-cookie',
   'data-deletion',
   'exclusao-de-dados',
-  'eliminacion-de-datos'
+  'eliminacion-de-datos',
+  'suppression-donnees',
+  'datenloeschung',
+  'cancellazione-dati'
 ] as const;
 
 // Page URL mappings for different languages
@@ -53,38 +74,59 @@ export const PAGE_URL_MAPPINGS: Record<string, Record<string, string>> = {
   'investors': {
     'EN': 'investors',
     'PT': 'investidores',
-    'ES': 'inversores'
+    'ES': 'inversores',
+    'FR': 'investisseurs',
+    'DE': 'investoren',
+    'IT': 'investitori'
   },
   'business': {
     'EN': 'business',
     'PT': 'empresas',
-    'ES': 'empresas'
+    'ES': 'empresas',
+    'FR': 'entreprises',
+    'DE': 'unternehmen',
+    'IT': 'aziende'
   },
   // New drivers page localized mappings
   'drivers': {
     'EN': 'drivers',
     'PT': 'motoristas',
-    'ES': 'conductores'
+    'ES': 'conductores',
+    'FR': 'chauffeurs',
+    'DE': 'fahrer',
+    'IT': 'autisti'
   },
   'privacy': {
     'EN': 'privacy-policy',
     'PT': 'politica-de-privacidade',
-    'ES': 'politica-de-privacidad'
+    'ES': 'politica-de-privacidad',
+    'FR': 'politique-de-confidentialite',
+    'DE': 'datenschutz',
+    'IT': 'informativa-privacy'
   },
   'terms': {
     'EN': 'terms-of-use',
     'PT': 'termos-de-uso',
-    'ES': 'terminos-de-uso'
+    'ES': 'terminos-de-uso',
+    'FR': 'conditions-d-utilisation',
+    'DE': 'nutzungsbedingungen',
+    'IT': 'termini-di-utilizzo'
   },
   'cookies': {
     'EN': 'cookie-policy',
     'PT': 'politica-de-cookies',
-    'ES': 'politica-de-cookies'
+    'ES': 'politica-de-cookies',
+    'FR': 'politique-cookies',
+    'DE': 'cookie-richtlinie',
+    'IT': 'informativa-cookie'
   },
   'data-deletion': {
     'EN': 'data-deletion',
     'PT': 'exclusao-de-dados',
-    'ES': 'eliminacion-de-datos'
+    'ES': 'eliminacion-de-datos',
+    'FR': 'suppression-donnees',
+    'DE': 'datenloeschung',
+    'IT': 'cancellazione-dati'
   }
 };
 
@@ -93,24 +135,51 @@ export const URL_TO_PAGE_MAPPINGS: Record<string, string> = {
   'investors': 'investors',
   'investidores': 'investors',
   'inversores': 'investors',
+  'investisseurs': 'investors',
+  'investoren': 'investors',
+  'investitori': 'investors',
+  
   'business': 'business',
   'empresas': 'business',
   'empresa': 'business',
+  'entreprises': 'business',
+  'unternehmen': 'business',
+  'aziende': 'business',
+  
   // New drivers reverse mappings
   'drivers': 'drivers',
   'motoristas': 'drivers',
   'conductores': 'drivers',
+  'chauffeurs': 'drivers',
+  'fahrer': 'drivers',
+  'autisti': 'drivers',
+  
   'privacy-policy': 'privacy',
   'politica-de-privacidade': 'privacy',
   'politica-de-privacidad': 'privacy',
+  'politique-de-confidentialite': 'privacy',
+  'datenschutz': 'privacy',
+  'informativa-privacy': 'privacy',
+  
   'terms-of-use': 'terms',
   'termos-de-uso': 'terms',
   'terminos-de-uso': 'terms',
+  'conditions-d-utilisation': 'terms',
+  'nutzungsbedingungen': 'terms',
+  'termini-di-utilizzo': 'terms',
+  
   'cookie-policy': 'cookies',
   'politica-de-cookies': 'cookies',
+  'politique-cookies': 'cookies',
+  'cookie-richtlinie': 'cookies',
+  'informativa-cookie': 'cookies',
+  
   'data-deletion': 'data-deletion',
   'exclusao-de-dados': 'data-deletion',
-  'eliminacion-de-datos': 'data-deletion'
+  'eliminacion-de-datos': 'data-deletion',
+  'suppression-donnees': 'data-deletion',
+  'datenloeschung': 'data-deletion',
+  'cancellazione-dati': 'data-deletion'
 };
 
 /**
@@ -202,6 +271,9 @@ export const getDefaultLanguage = (): string => {
   // Map browser language to our supported languages
   if (browserLang.startsWith('pt')) return 'PT';
   if (browserLang.startsWith('es')) return 'ES';
+  if (browserLang.startsWith('fr')) return 'FR';
+  if (browserLang.startsWith('de')) return 'DE';
+  if (browserLang.startsWith('it')) return 'IT';
   
   return 'EN'; // Default fallback
 };
@@ -227,7 +299,10 @@ export const getLanguageName = (language: string): string => {
   const names: Record<string, string> = {
     'EN': 'English',
     'PT': 'Português', 
-    'ES': 'Español'
+    'ES': 'Español',
+    'FR': 'Français',
+    'DE': 'Deutsch',
+    'IT': 'Italiano'
   };
   return names[language] || 'English';
 };
@@ -239,7 +314,10 @@ export const getLanguageFlag = (language: string): string => {
   const flags: Record<string, string> = {
     'EN': '🇺🇸',
     'PT': '🇧🇷',
-    'ES': '🇪🇸'
+    'ES': '🇪🇸',
+    'FR': '🇫🇷',
+    'DE': '🇩🇪',
+    'IT': '🇮🇹'
   };
   return flags[language] || '🇺🇸';
 };
@@ -251,7 +329,10 @@ export const getFlagAccessibilityProps = (language: string): { role: string; 'ar
   const fullNames: Record<string, string> = {
     'EN': 'English (United States)',
     'PT': 'Português (Brasil)',
-    'ES': 'Español (España)'
+    'ES': 'Español (España)',
+    'FR': 'Français (France)',
+    'DE': 'Deutsch (Deutschland)',
+    'IT': 'Italiano (Italia)'
   };
   
   return {
@@ -267,7 +348,10 @@ export const getLocaleCode = (language: string): string => {
   const localeCodes: Record<string, string> = {
     'PT': 'pt-BR',
     'EN': 'en-US',
-    'ES': 'es-ES'
+    'ES': 'es-ES',
+    'FR': 'fr-FR',
+    'DE': 'de-DE',
+    'IT': 'it-IT'
   };
   
   return localeCodes[language] || 'en-US';

@@ -187,6 +187,174 @@ const TestimonialsV2: React.FC<TestimonialsV2Props> = ({
             label: 'Narración automática'
           }
         ]
+      },
+      FR: {
+        title: 'Ce que disent nos utilisateurs',
+        subtitle: 'Témoignages de ceux qui utilisent Tuggi pour transformer leurs trajets en histoires.',
+        testimonials: [
+          {
+            id: 'maria',
+            name: 'Maria Silva',
+            location: 'São Paulo',
+            role: 'Utilisatrice',
+            text: 'J\'ai commencé à remarquer des détails de la ville que je n\'avais jamais perçus. Les histoires sont courtes et au bon moment.',
+            rating: 5,
+            avatar: '/images/avatar-maria.jpg'
+          },
+          {
+            id: 'joao',
+            name: 'João Oliveira',
+            location: 'Rio de Janeiro',
+            role: 'Conducteur',
+            text: 'Dans les embouteillages, l\'audio donne du contexte et rend le voyage plus léger sans avoir à regarder l\'écran.',
+            rating: 5,
+            avatar: '/images/avatar-joao.jpg'
+          },
+          {
+            id: 'camila',
+            name: 'Camila Santos',
+            location: 'Minas Gerais',
+            role: 'Chauffeur VTC',
+            text: 'Quand j\'ai des passagers, les narrations deviennent un sujet de conversation et rendent le trajet plus intéressant.',
+            rating: 5,
+            avatar: '/images/avatar-camila.jpg'
+          },
+          {
+            id: 'carlos',
+            name: 'Carlos Ferreira',
+            location: 'Paraná',
+            role: 'Utilisateur',
+            text: 'La qualité du contenu impressionne. Chaque point a une histoire courte et bien expliquée.',
+            rating: 5,
+            avatar: '/images/avatar-carlos.jpg'
+          }
+        ],
+        trustItems: [
+          {
+            icon: 'headphones',
+            label: 'L\'audio d\'abord'
+          },
+          {
+            icon: 'message',
+            label: 'Histoires courtes et contextuelles'
+          },
+          {
+            icon: 'volume',
+            label: 'Narration automatique'
+          }
+        ]
+      },
+      DE: {
+        title: 'Was unsere Nutzer sagen',
+        subtitle: 'Berichte von Menschen, die Tuggi nutzen, um Fahrten in Geschichten zu verwandeln.',
+        testimonials: [
+          {
+            id: 'maria',
+            name: 'Maria Silva',
+            location: 'São Paulo',
+            role: 'Nutzerin',
+            text: 'Ich begann Details der Stadt zu bemerken, die ich nie zuvor wahrgenommen hatte. Die Geschichten sind kurz und genau richtig getimt.',
+            rating: 5,
+            avatar: '/images/avatar-maria.jpg'
+          },
+          {
+            id: 'joao',
+            name: 'João Oliveira',
+            location: 'Rio de Janeiro',
+            role: 'Fahrer',
+            text: 'Im Verkehr gibt das Audio Kontext und macht die Reise leichter, ohne dass ich auf den Bildschirm schauen muss.',
+            rating: 5,
+            avatar: '/images/avatar-joao.jpg'
+          },
+          {
+            id: 'camila',
+            name: 'Camila Santos',
+            location: 'Minas Gerais',
+            role: 'Fahrgemeinschaftsfahrerin',
+            text: 'Wenn ich Fahrgäste habe, werden die Erzählungen zum Gesprächsstoff und machen die Fahrt interessanter.',
+            rating: 5,
+            avatar: '/images/avatar-camila.jpg'
+          },
+          {
+            id: 'carlos',
+            name: 'Carlos Ferreira',
+            location: 'Paraná',
+            role: 'Nutzer',
+            text: 'Die Inhaltsqualität beeindruckt. Jeder Punkt hat eine kurze und gut erklärte Geschichte.',
+            rating: 5,
+            avatar: '/images/avatar-carlos.jpg'
+          }
+        ],
+        trustItems: [
+          {
+            icon: 'headphones',
+            label: 'Audio zuerst'
+          },
+          {
+            icon: 'message',
+            label: 'Kurze kontextbezogene Geschichten'
+          },
+          {
+            icon: 'volume',
+            label: 'Automatische Erzählung'
+          }
+        ]
+      },
+      IT: {
+        title: 'Cosa dicono i nostri utenti',
+        subtitle: 'Racconti di chi usa Tuggi per trasformare i tragitti in storie.',
+        testimonials: [
+          {
+            id: 'maria',
+            name: 'Maria Silva',
+            location: 'San Paolo',
+            role: 'Utente',
+            text: 'Ho iniziato a notare dettagli della città che non avevo mai percepito. Le storie sono brevi e al momento giusto.',
+            rating: 5,
+            avatar: '/images/avatar-maria.jpg'
+          },
+          {
+            id: 'joao',
+            name: 'João Oliveira',
+            location: 'Rio de Janeiro',
+            role: 'Autista',
+            text: 'Nel traffico, l\'audio dà contesto e rende il viaggio più leggero senza dover guardare lo schermo.',
+            rating: 5,
+            avatar: '/images/avatar-joao.jpg'
+          },
+          {
+            id: 'camila',
+            name: 'Camila Santos',
+            location: 'Minas Gerais',
+            role: 'Autista di app',
+            text: 'Quando porto passeggeri, le narrazioni diventano argomento di conversazione e rendono il tragitto più interessante.',
+            rating: 5,
+            avatar: '/images/avatar-camila.jpg'
+          },
+          {
+            id: 'carlos',
+            name: 'Carlos Ferreira',
+            location: 'Paraná',
+            role: 'Utente',
+            text: 'La qualità del contenuto impressiona. Ogni punto ha una storia breve e ben spiegata.',
+            rating: 5,
+            avatar: '/images/avatar-carlos.jpg'
+          }
+        ],
+        trustItems: [
+          {
+            icon: 'headphones',
+            label: 'Audio al primo posto'
+          },
+          {
+            icon: 'message',
+            label: 'Storie brevi e contestuali'
+          },
+          {
+            icon: 'volume',
+            label: 'Narrazione automatica'
+          }
+        ]
       }
     };
     return content[language] || content['PT'];

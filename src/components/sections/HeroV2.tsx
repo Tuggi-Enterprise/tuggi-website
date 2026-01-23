@@ -98,6 +98,84 @@ const HeroV2: React.FC<HeroV2Props> = ({
         downloadIOS: 'Bajar en App Store',
         androidUrl: 'https://play.google.com/store/apps/details?id=com.tuggidrive.app&pcampaignid=web_share',
         iosUrl: 'https://apps.apple.com/br/app/tuggi-explore-ao-dirigir/id6744379818'
+      },
+      FR: {
+        headline: 'Un copilote culturel pour votre conduite.',
+        subheadline: 'Histoires et contexte surgissent automatiquement sur votre trajet, axés sur la simplicité et la sécurité.',
+        ctaPrimary: 'Télécharger l\'app',
+        ctaSecondary: 'Comment ça marche',
+        microBenefits: [
+          'Audio contextuel automatique',
+          'Concentration totale sur la conduite',
+          'Simplicité et sécurité'
+        ],
+        heroImageAlt: 'Tuggi en fonctionnement sur le tableau de bord, narrant des histoires pendant le trajet',
+        stepsTitle: 'Comment ça marche',
+        stepsSubtitle: 'Vous conduisez. Tuggi identifie des points sur le chemin et raconte l\'histoire en audio.',
+        step1Title: 'Installez et choisissez langue/voix',
+        step1Description: 'Téléchargement sur les stores officiels',
+        step2Title: 'Lancez le mode voyage',
+        step2Description: 'Activez et suivez votre trajet',
+        step3Title: 'L\'audio se lance automatiquement',
+        step3Description: 'Écoutez des histoires en passant près des lieux',
+        safetyNote: 'Utilisez avec le téléphone fixé et attention totale à la circulation.',
+        downloadTitle: 'Choisissez votre plateforme',
+        downloadAndroid: 'Télécharger sur Google Play',
+        downloadIOS: 'Télécharger sur l\'App Store',
+        androidUrl: 'https://play.google.com/store/apps/details?id=com.tuggidrive.app&pcampaignid=web_share',
+        iosUrl: 'https://apps.apple.com/br/app/tuggi-explore-ao-dirigir/id6744379818'
+      },
+      DE: {
+        headline: 'Ein kultureller Copilot für Ihre Fahrt.',
+        subheadline: 'Geschichten und Kontext erscheinen automatisch entlang Ihrer Route – einfach und sicher.',
+        ctaPrimary: 'App herunterladen',
+        ctaSecondary: 'Wie es funktioniert',
+        microBenefits: [
+          'Automatisches kontextbezogenes Audio',
+          'Voller Fokus auf das Fahren',
+          'Einfachheit und Sicherheit'
+        ],
+        heroImageAlt: 'Tuggi aktiv auf dem Armaturenbrett, erzählt Geschichten während der Fahrt',
+        stepsTitle: 'Wie es funktioniert',
+        stepsSubtitle: 'Sie fahren. Tuggi erkennt Punkte auf Ihrem Weg und erzählt die Geschichte per Audio.',
+        step1Title: 'Installieren und Sprache/Stimme wählen',
+        step1Description: 'Download in offiziellen Stores',
+        step2Title: 'Reisemodus starten',
+        step2Description: 'Aktivieren und Route folgen',
+        step3Title: 'Audio spielt automatisch',
+        step3Description: 'Hören Sie Geschichten, wenn Sie an Orten vorbeifahren',
+        safetyNote: 'Nutzen Sie die App mit Handyhalterung und voller Aufmerksamkeit auf den Verkehr.',
+        downloadTitle: 'Wählen Sie Ihre Plattform',
+        downloadAndroid: 'Bei Google Play laden',
+        downloadIOS: 'Im App Store laden',
+        androidUrl: 'https://play.google.com/store/apps/details?id=com.tuggidrive.app&pcampaignid=web_share',
+        iosUrl: 'https://apps.apple.com/br/app/tuggi-explore-ao-dirigir/id6744379818'
+      },
+      IT: {
+        headline: 'Un copilota culturale per la tua guida.',
+        subheadline: 'Storie e contesto appaiono automaticamente lungo il percorso, puntando su semplicità e sicurezza.',
+        ctaPrimary: 'Scarica l\'app',
+        ctaSecondary: 'Come funziona',
+        microBenefits: [
+          'Audio contestuale automatico',
+          'Focus totale sulla guida',
+          'Semplicità e sicurezza'
+        ],
+        heroImageAlt: 'Tuggi attivo sul cruscotto, narra storie durante il tragitto',
+        stepsTitle: 'Come funziona',
+        stepsSubtitle: 'Tu guidi. Tuggi identifica i punti sul percorso e racconta la storia in audio.',
+        step1Title: 'Installa e scegli lingua/voce',
+        step1Description: 'Scarica dagli store ufficiali',
+        step2Title: 'Avvia la modalità viaggio',
+        step2Description: 'Attiva e segui il tuo tragitto',
+        step3Title: 'L\'audio parte automaticamente',
+        step3Description: 'Ascolta le storie passando vicino ai luoghi',
+        safetyNote: 'Usa con il telefono fissato e massima attenzione al traffico.',
+        downloadTitle: 'Scegli la tua piattaforma',
+        downloadAndroid: 'Scarica su Google Play',
+        downloadIOS: 'Scarica su App Store',
+        androidUrl: 'https://play.google.com/store/apps/details?id=com.tuggidrive.app&pcampaignid=web_share',
+        iosUrl: 'https://apps.apple.com/br/app/tuggi-explore-ao-dirigir/id6744379818'
       }
     };
     

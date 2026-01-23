@@ -40,6 +40,30 @@ const VideoV2: React.FC<VideoV2Props> = ({
         videoTitle: '45s: Tuggi en uso real',
         videoDescription: 'Demostración real de Tuggi en uso durante un trayecto urbano',
         youtubeId: 'XvQfdfWDpVQ'
+      },
+      FR: {
+        title: 'Voyez-le en action',
+        subtitle: 'Scène réelle en voiture avec narration automatique.',
+        description: 'Tuggi parle, vous découvrez.',
+        videoTitle: '45s : Tuggi en utilisation réelle',
+        videoDescription: 'Démonstration réelle de Tuggi en cours d\'utilisation lors d\'un trajet urbain',
+        youtubeId: 'XvQfdfWDpVQ'
+      },
+      DE: {
+        title: 'Sehen Sie es in Aktion',
+        subtitle: 'Echte Szene im Auto mit automatischer Erzählung.',
+        description: 'Tuggi spricht, Sie entdecken.',
+        videoTitle: '45s: Tuggi im realen Einsatz',
+        videoDescription: 'Echte Demonstration von Tuggi im Einsatz während einer Stadtfahrt',
+        youtubeId: 'XvQfdfWDpVQ'
+      },
+      IT: {
+        title: 'Guardalo in azione',
+        subtitle: 'Scena reale in auto con narrazione automatica.',
+        description: 'Tuggi parla, tu scopri.',
+        videoTitle: '45s: Tuggi nell\'uso reale',
+        videoDescription: 'Dimostrazione reale di Tuggi in uso durante un tragitto urbano',
+        youtubeId: 'XvQfdfWDpVQ'
       }
     };
     return content[language] || content['PT'];

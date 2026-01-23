@@ -87,6 +87,81 @@ const TrustSectionV2: React.FC<TrustSectionV2Props> = ({
         curatedTitle: 'Contenido curado',
         curatedDescription: 'Mejorado continuamente. ¿Encontraste algo incorrecto?',
         curatedLinkText: 'Contáctanos'
+      },
+      FR: {
+        privacyTitle: 'Confidentialité dès la conception',
+        privacySubtitle: 'Vos données et votre sécurité sont notre priorité.',
+        privacyBullets: [
+          {
+            icon: 'map-pin',
+            text: 'Position utilisée uniquement pour déclencher des histoires sur votre trajet.'
+          },
+          {
+            icon: 'mic-off',
+            text: 'Nous n\'enregistrons pas les conversations. L\'application ne fait que narrer du contenu.'
+          },
+          {
+            icon: 'settings',
+            text: 'Contrôle total des permissions dans les réglages de votre téléphone.'
+          },
+          {
+            icon: 'trash',
+            text: 'Option de suppression totale des données à tout moment.'
+          }
+        ],
+        curatedTitle: 'Contenu curé',
+        curatedDescription: 'Amélioré en continu. Vous avez trouvé une erreur ?',
+        curatedLinkText: 'Contactez-nous'
+      },
+      DE: {
+        privacyTitle: 'Datenschutz durch Design',
+        privacySubtitle: 'Ihre Daten und Sicherheit haben Priorität.',
+        privacyBullets: [
+          {
+            icon: 'map-pin',
+            text: 'Standort wird nur verwendet, um Geschichten entlang Ihrer Route auszulösen.'
+          },
+          {
+            icon: 'mic-off',
+            text: 'Wir zeichnen keine Gespräche auf. Die App erzählt nur Inhalte.'
+          },
+          {
+            icon: 'settings',
+            text: 'Volle Kontrolle über Berechtigungen in Ihren Telefoneinstellungen.'
+          },
+          {
+            icon: 'trash',
+            text: 'Option zur vollständigen Datenlöschung jederzeit möglich.'
+          }
+        ],
+        curatedTitle: 'Kuratierte Inhalte',
+        curatedDescription: 'Kontinuierlich verbessert. Etwas Falsches gefunden?',
+        curatedLinkText: 'Kontaktieren Sie uns'
+      },
+      IT: {
+        privacyTitle: 'Privacy by Design',
+        privacySubtitle: 'I tuoi dati e la tua sicurezza sono la priorità.',
+        privacyBullets: [
+          {
+            icon: 'map-pin',
+            text: 'Posizione usata solo per attivare storie lungo il tuo percorso.'
+          },
+          {
+            icon: 'mic-off',
+            text: 'Non registriamo conversazioni. L\'app narra solo contenuti.'
+          },
+          {
+            icon: 'settings',
+            text: 'Controllo completo delle autorizzazioni nelle impostazioni del telefono.'
+          },
+          {
+            icon: 'trash',
+            text: 'Opzione di cancellazione totale dei dati in qualsiasi momento.'
+          }
+        ],
+        curatedTitle: 'Contenuto curato',
+        curatedDescription: 'Migliorato continuamente. Hai trovato qualcosa di errato?',
+        curatedLinkText: 'Contattaci'
       }
     };
     return content[language] || content['PT'];

@@ -107,6 +107,75 @@ const Footer: React.FC<FooterProps> = ({
         termsOfUse: 'Términos de Uso',
         dataDeletion: 'Eliminación de Datos',
         logoAlt: 'Logo de Tuggi'
+      },
+      FR: {
+        aboutTitle: 'À propos de Tuggi',
+        aboutDescription: 'Tuggi est un copilote culturel qui transforme vos trajets en moments de découverte. Grâce à une narration automatique géolocalisée, nous vous apportons connaissances et histoires sur les lieux qui vous entourent — tout en vous laissant libre de vos mouvements.',
+        contactTitle: 'Contact',
+        quickLinksTitle: 'Liens Rapides',
+        quickLinks: [
+          { label: 'Accueil', page: 'home' },
+          { label: 'Notre Raison d\'être', page: 'purpose' },
+          { label: 'Pour les Entreprises', page: 'empresas' },
+          { label: 'Contact', page: 'contact' },
+          { label: 'Investisseurs', page: 'investors' }
+        ],
+        languageTitle: 'Langue',
+        newsletterTitle: 'Restez Informé',
+        newsletterDescription: 'Recevez nos actualités et lancements.',
+        emailPlaceholder: 'Entrez votre email',
+        subscribe: 'S\'abonner',
+        allRightsReserved: 'Tous droits réservés.',
+        privacyPolicy: 'Politique de Confidentialité',
+        termsOfUse: 'Conditions d\'Utilisation',
+        dataDeletion: 'Suppression des Données',
+        logoAlt: 'Logo Tuggi'
+      },
+      DE: {
+        aboutTitle: 'Über Tuggi',
+        aboutDescription: 'Tuggi ist ein kultureller Copilot, der Ihre Fahrten in Entdeckungsreisen verwandelt. Durch automatische standortbezogene Erzählungen liefern wir Wissen und Geschichten über die Orte um Sie herum – während Sie sich frei bewegen.',
+        contactTitle: 'Kontakt',
+        quickLinksTitle: 'Schnelllinks',
+        quickLinks: [
+          { label: 'Startseite', page: 'home' },
+          { label: 'Unser Ziel', page: 'purpose' },
+          { label: 'Für Unternehmen', page: 'empresas' },
+          { label: 'Kontakt', page: 'contact' },
+          { label: 'Investoren', page: 'investors' }
+        ],
+        languageTitle: 'Sprache',
+        newsletterTitle: 'Auf dem Laufenden bleiben',
+        newsletterDescription: 'Bleiben Sie über unsere Neuigkeiten und Starts informiert.',
+        emailPlaceholder: 'E-Mail eingeben',
+        subscribe: 'Abonnieren',
+        allRightsReserved: 'Alle Rechte vorbehalten.',
+        privacyPolicy: 'Datenschutzrichtlinie',
+        termsOfUse: 'Nutzungsbedingungen',
+        dataDeletion: 'Datenlöschung',
+        logoAlt: 'Tuggi Logo'
+      },
+      IT: {
+        aboutTitle: 'Su Tuggi',
+        aboutDescription: 'Tuggi è un copilota culturale che trasforma i tuoi viaggi in momenti di scoperta. Attraverso la narrazione automatica basata sulla posizione, ti offriamo conoscenze e storie sui luoghi che ti circondano — mentre ti muovi liberamente.',
+        contactTitle: 'Contatti',
+        quickLinksTitle: 'Link Rapidi',
+        quickLinks: [
+          { label: 'Home', page: 'home' },
+          { label: 'Il Nostro Scopo', page: 'purpose' },
+          { label: 'Per le Aziende', page: 'empresas' },
+          { label: 'Contatti', page: 'contact' },
+          { label: 'Investitori', page: 'investors' }
+        ],
+        languageTitle: 'Lingua',
+        newsletterTitle: 'Resta Aggiornato',
+        newsletterDescription: 'Resta aggiornato con le nostre notizie e lanci.',
+        emailPlaceholder: 'Inserisci la tua email',
+        subscribe: 'Iscriviti',
+        allRightsReserved: 'Tutti i diritti riservati.',
+        privacyPolicy: 'Informativa sulla Privacy',
+        termsOfUse: 'Termini di Utilizzo',
+        dataDeletion: 'Cancellazione Dati',
+        logoAlt: 'Logo Tuggi'
       }
     };
     return content[language] || content['EN'];

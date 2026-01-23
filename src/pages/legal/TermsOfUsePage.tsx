@@ -914,6 +914,912 @@ https://www.tuggi.app/es/terms-of-use
 Respondemos en hasta 30 días hábiles.`
           }
         ]
+      },
+      FR: {
+        title: 'Conditions d\'Utilisation',
+        lastUpdated: 'Dernière mise à jour : Janvier 2025',
+        introduction: 'Ces Conditions d\'Utilisation décrivent les conditions d\'utilisation de l\'application Tuggi et du site officiel tuggi.app. En créant un compte, en installant, en accédant ou en utilisant nos services, vous acceptez expressément ces conditions. Si vous n\'acceptez pas ces conditions, n\'utilisez pas nos services.',
+        sections: [
+          {
+            title: '1. Acceptation des Conditions',
+            content: `En utilisant l'application Tuggi ou le site tuggi.app, vous confirmez que :
+
+• Vous avez lu, compris et accepté ces Conditions d'Utilisation et notre Politique de Confidentialité
+• Vous avez au moins 13 ans (ou l'âge minimum légal dans votre pays pour consentir à l'utilisation de services)
+• Vous avez la capacité juridique de conclure des contrats
+• Vous n'êtes pas interdit d'utiliser nos services en vertu des lois applicables
+• Vous fournirez des informations vraies et exactes lors de la création de votre compte
+
+**Si vous avez moins de 18 ans**, vous déclarez avoir le consentement de vos parents ou tuteurs légaux pour utiliser nos services.
+
+En continuant à utiliser nos services après des modifications de ces conditions, vous acceptez les modifications.`
+          },
+          {
+            title: '2. Objectif de l\'Application',
+            content: `Tuggi est un copilote culturel qui fournit des conseils audio sur les points d'intérêt (POI) en fonction de votre localisation.
+
+**Fonctionnalités Principales :**
+• Les narrations sont déclenchées automatiquement lorsque vous vous déplacez
+• L'app fonctionne en arrière-plan et peut fonctionner pendant les déplacements
+• La couverture géographique varie selon la région
+• L'app détecte automatiquement lorsque vous vous approchez des POI
+• Fonctionnalité hors ligne disponible pour les POI et audios pré-téléchargés
+
+**Objectif :**
+Tuggi est un guide de voyage et un outil éducatif. L'app ne remplace pas les systèmes de navigation professionnels et ne doit pas être utilisée comme seule source d'orientation pendant les voyages.`
+          },
+          {
+            title: '3. Responsabilités de l\'Utilisateur',
+            subsections: [
+              {
+                subtitle: '3.1 Sécurité Pendant l\'Utilisation',
+                content: `**L'Utilisation Sûre est Obligatoire :**
+
+• **N'interagissez JAMAIS avec l'app en conduisant** - L'app ne doit être utilisée que par des passagers ou lorsque le véhicule est à l'arrêt
+• Maintenez une attention totale à la route et aux conditions de circulation
+• Respectez toutes les lois locales sur la circulation
+• N'utilisez pas l'app d'une manière qui pourrait distraire le conducteur ou compromettre la sécurité
+• Utilisez l'app uniquement lorsqu'il est sûr de le faire
+
+**Attention :** Une mauvaise utilisation de l'app pendant la conduite peut entraîner des accidents graves. Vous êtes entièrement responsable de l'utilisation sûre de l'app.`
+              },
+              {
+                subtitle: '3.2 Compte et Identifiants',
+                content: `Vous êtes responsable de :
+
+• Protéger vos identifiants d'accès (e-mail, mot de passe)
+• Ne pas partager votre compte avec des tiers
+• Activer l'authentification biométrique si disponible pour une sécurité accrue
+• Notifier immédiatement Tuggi en cas d'accès non autorisé ou de suspicion de violation de sécurité
+• Maintenir vos informations de compte à jour et exactes
+• Utiliser un mot de passe fort et unique`
+              },
+              {
+                subtitle: '3.3 Utilisation Appropriée du Service',
+                content: `Vous acceptez d'utiliser nos services uniquement à des fins légales et appropriées :
+
+• N'utilisez pas l'app pour des activités illégales, frauduleuses ou malveillantes
+• N'utilisez pas l'app pour collecter des données d'autres utilisateurs sans autorisation
+• N'essayez pas d'accéder à des zones non autorisées de l'app ou des systèmes
+• N'interférez pas avec le fonctionnement de l'app ou n'essayez pas de contourner les mesures de sécurité
+• N'utilisez pas l'app pour envoyer du spam, des virus ou du code malveillant
+• Respectez les droits de propriété intellectuelle de tiers`
+              },
+              {
+                subtitle: '3.4 Exactitude des Informations',
+                content: `Vous êtes responsable de :
+
+• Fournir des informations vraies, exactes et complètes lors de la création de votre compte
+• Maintenir vos informations à jour
+• Ne pas fournir d'informations fausses ou trompeuses
+• Nous notifier immédiatement de tout changement dans les informations fournies
+
+**Attention :** Des informations inexactes peuvent affecter le fonctionnement du service et entraîner la suspension du compte.`
+              },
+              {
+                subtitle: '3.5 Responsabilité des Données de Localisation',
+                content: `En utilisant l'app, vous comprenez et acceptez que :
+
+• L'app collecte et utilise des données de localisation en temps réel
+• Vous êtes responsable de vous assurer que vous avez le droit de fournir des données de localisation
+• Vous êtes responsable d'utiliser l'app dans des endroits où il est légal et approprié de le faire
+• Tuggi n'est pas responsable des conséquences de l'utilisation de données de localisation dans des endroits où une telle utilisation peut être restreinte ou interdite
+• Vous devez respecter les lois locales concernant la collecte et l'utilisation de données de localisation`
+              }
+            ]
+          },
+          {
+            title: '4. Autorisations et Collecte de Données',
+            subsections: [
+              {
+                subtitle: '4.1 Autorisations Obligatoires',
+                content: `Pour fonctionner correctement, l'app nécessite les autorisations suivantes :
+
+• **Localisation (au 1er et 2e plan) :** Obligatoire pour détecter votre position et déclencher automatiquement les narrations de POI. L'app ne fonctionne pas sans cette autorisation.
+• **Audio :** Nécessaire pour la lecture des narrations
+
+**Important :** L'autorisation de localisation est essentielle pour le fonctionnement de l'app. Sans elle, l'app ne peut pas fournir les services de guide de voyage.`
+              },
+              {
+                subtitle: '4.2 Autorisations Facultatives',
+                content: `Les autorisations suivantes sont facultatives mais améliorent l'expérience :
+
+• **Notifications :** Pour des alertes sur les POI proches, les mises à jour de l'app et les recommandations
+• **Biométrie :** Pour une connexion plus sûre et pratique
+• **Caméra (futurement) :** Pour prendre une photo de profil, si souhaité
+
+Vous pouvez révoquer les autorisations facultatives à tout moment dans les paramètres de l'appareil, mais cela peut affecter certaines fonctionnalités.`
+              },
+              {
+                subtitle: '4.3 Données de Tiers',
+                content: `L'app utilise des services de tiers qui peuvent collecter des données :
+
+• **Service de Cartographie :** Utilisé pour le rendu des cartes et les services de géocodage. L'utilisation est soumise aux conditions de service du fournisseur.
+• **Services d'Analytics et de Surveillance :** Utilisés pour l'analyse, le rapport de crash et les notifications push, conformément à notre Politique de Confidentialité.
+• **Fournisseur de Backend :** Utilisé pour le stockage des données et l'authentification, conformément à notre Politique de Confidentialité.
+
+En utilisant l'app, vous acceptez également les conditions de service de ces fournisseurs le cas échéant. Consultez notre [Politique de Confidentialité](/privacy) pour plus de détails sur la façon dont nous traitons vos données.`
+              }
+            ]
+          },
+          {
+            title: '5. Limitations du Service',
+            content: `L'app est soumise aux limitations techniques suivantes :
+
+• **Exigences de l'Appareil :** Un appareil avec GPS et accès Internet est nécessaire lors de l'installation initiale
+• **Stockage :** L'app nécessite environ 50 Mo d'espace libre pour le cache audio
+• **Compatibilité :** Compatible avec iOS 12+ et Android 5.0+
+• **Couverture :** La couverture des POI peut être limitée dans certaines régions géographiques
+• **Connectivité :** Certaines fonctionnalités nécessitent une connexion Internet, bien que la fonctionnalité hors ligne soit disponible pour le contenu pré-téléchargé
+• **Précision :** La précision de la localisation dépend de conditions externes (GPS, signal, qualité de l'appareil)
+
+Tuggi ne garantit pas que le service sera toujours disponible, ininterrompu ou sans erreur.`
+          },
+          {
+            title: '6. Utilisation Appropriée et Restrictions',
+            content: `En utilisant nos services, vous acceptez de :
+
+• Utiliser l'app uniquement aux fins prévues et légales
+• Ne pas modifier, adapter, pirater, distribuer ou décompiler l'application
+• Ne pas utiliser l'app pour des activités illégales, frauduleuses ou commerciales sans autorisation expresse
+• Ne pas tenter d'accéder à des zones non autorisées de l'app ou des systèmes connexes
+• Ne pas interférer avec le fonctionnement de l'app ou tenter de contourner les mesures de sécurité
+• Ne pas utiliser l'app d'une manière qui viole les droits de tiers
+• Ne pas collecter de données d'autres utilisateurs sans autorisation
+
+**La violation de ces règles peut entraîner la suspension ou la résiliation immédiate du compte.**`
+          },
+          {
+            title: '7. Propriété Intellectuelle',
+            content: `Tous les droits de propriété intellectuelle liés à nos services appartiennent à Tuggi ou à ses concédants de licence :
+
+• **Contenu de l'App :** Les narrations, textes, images, audios, conceptions et tout le contenu de l'app sont protégés par le droit d'auteur et d'autres lois sur la propriété intellectuelle
+• **Marque et Identité :** La marque Tuggi, les logos, les noms commerciaux et les éléments visuels sont la propriété exclusive de Tuggi
+• **Logiciel :** Le code de l'application, les algorithmes et la technologie sont protégés par le droit d'auteur et les secrets commerciaux
+• **Feedback :** Vous conservez les droits sur les commentaires, suggestions ou remarques soumis, mais accordez à Tuggi une licence mondiale, non exclusive et gratuite pour utiliser, modifier et intégrer ce feedback dans nos services
+
+Vous ne pouvez pas copier, modifier, distribuer, vendre ou louer une partie de nos services sans autorisation écrite expresse.`
+          },
+          {
+            title: '8. Limitation de Responsabilité',
+            content: `**AVIS DE NON-RESPONSABILITÉ :**
+
+Dans toute la mesure permise par la loi, Tuggi ne sera pas responsable de :
+
+• **Dommages Directs, Indirects ou Consécutifs :** Perte de données, bénéfices, revenus, opportunités commerciales ou dommages moraux résultant de l'utilisation ou de l'impossibilité d'utiliser l'app
+• **Exactitude des Informations :** Les informations racontées peuvent ne pas refléter des données mises à jour, complètes ou exactes. L'app ne garantit pas l'exactitude absolue des informations fournies
+• **Conditions Externes :** La précision de la localisation et la fonctionnalité de l'app dépendent de conditions externes (GPS, signal, qualité de l'appareil, conditions météorologiques) hors du contrôle de Tuggi
+• **Utilisation Inappropriée :** Tuggi n'est pas responsable des dommages résultant d'une utilisation inappropriée de l'app, y compris l'utilisation pendant la conduite ou dans des endroits interdits
+• **Interruptions :** Tuggi ne garantit pas un fonctionnement ininterrompu ou sans erreur du service
+
+**L'app est fournie "EN L'ÉTAT" et "SELON LA DISPONIBILITÉ", sans garanties d'aucune sorte.**`
+          },
+          {
+            title: '9. Limitations de Garantie',
+            content: `**EXCLUSION DE GARANTIES :**
+
+Dans toute la mesure permise par la loi, Tuggi décline toutes les garanties, expresses ou implicites, y compris, mais sans s'y limiter :
+
+• Garanties de qualité marchande, d'adéquation à un usage particulier ou de non-violation
+• Garanties que le service sera ininterrompu, sécurisé, sans erreur ou sans virus
+• Garanties sur l'exactitude, la fiabilité ou l'actualité des informations fournies
+• Garanties que les défauts seront corrigés ou que le service répondra à vos attentes
+
+**L'app ne remplace pas les systèmes de navigation professionnels** et ne doit pas être utilisée comme seule source d'orientation pendant les voyages. L'app est un guide culturel et éducatif, pas un système de navigation en temps réel.`
+          },
+          {
+            title: '10. Suspension et Résiliation de Compte',
+            content: `**Résiliation par Tuggi :**
+Tuggi peut suspendre ou résilier votre compte et l'accès aux services immédiatement, sans préavis, si :
+
+• Vous violez ces Conditions d'Utilisation ou notre Politique de Confidentialité
+• Vous utilisez l'app de manière illégale, frauduleuse ou inappropriée
+• Vous fournissez des informations fausses ou trompeuses
+• Tuggi détermine, à sa seule discrétion, que votre utilisation représente un risque pour d'autres utilisateurs ou pour Tuggi
+
+**Résiliation par l'Utilisateur :**
+Vous pouvez résilier votre compte à tout moment via les paramètres de l'app ou en nous contactant.
+
+**Effets de la Résiliation :**
+• Votre droit d'utiliser l'app cessera immédiatement
+• Certaines données peuvent être conservées conformément aux obligations légales ou à des fins d'audit
+• Les données personnelles seront traitées conformément à notre Politique de Confidentialité et au LGPD/RGPD`
+          },
+          {
+            title: '11. Modifications et Mises à jour',
+            subsections: [
+              {
+                subtitle: '11.1 Mises à jour de l\'App',
+                content: `Tuggi peut modifier, mettre à jour ou interrompre des fonctionnalités de l'app à tout moment. Vous pouvez être tenu de mettre à jour l'app pour continuer à utiliser les services. Nous ne garantissons pas que les anciennes versions de l'app continueront de fonctionner.`
+              },
+              {
+                subtitle: '11.2 Mises à jour des Conditions',
+                content: `Tuggi peut modifier ces Conditions d'Utilisation périodiquement. Les changements importants seront communiqués :
+
+• Via l'app (notification push ou bannière)
+• Par e-mail à l'adresse associée à votre compte
+• Publication de la date de "dernière mise à jour" en haut de cette page
+
+**Acceptation Continue :**
+En continuant à utiliser nos services après des modifications des conditions, vous acceptez les modifications. Si vous n'êtes pas d'accord avec les modifications, vous devez résilier votre compte et cesser d'utiliser les services.
+
+**Examen Périodique :**
+Nous vous recommandons de revoir ces conditions périodiquement pour être informé de tout changement.`
+              }
+            ]
+          },
+          {
+            title: '12. Résolution des Litiges',
+            subsections: [
+              {
+                subtitle: '12.1 Loi Applicable',
+                content: `Ces Conditions d'Utilisation sont régies par les lois de la République Fédérative du Brésil, sans tenir compte de ses principes de conflit de lois.
+
+Pour les utilisateurs hors du Brésil, les lois de votre pays peuvent s'appliquer, mais ces conditions seront interprétées conformément aux lois brésiliennes dans la mesure du possible.`
+              },
+              {
+                subtitle: '12.2 Juridiction',
+                content: `Tout litige lié à ces conditions ou à nos services sera résolu devant les tribunaux compétents de São Paulo, SP, Brésil, et vous acceptez la compétence exclusive de ces tribunaux.
+
+Pour les litiges impliquant des utilisateurs de l'Union Européenne, vous pouvez avoir le droit supplémentaire de déposer une plainte auprès de l'autorité de protection des données de votre pays.`
+              },
+              {
+                subtitle: '12.3 Résolution Amiable',
+                content: `Avant d'engager toute procédure judiciaire formelle, vous acceptez de :
+
+• Tenter de résoudre les litiges à l'amiable par une communication directe avec Tuggi
+• Fournir des détails écrits sur le litige
+• Attendre un délai raisonnable (30 jours) pour la réponse de Tuggi
+
+Tuggi s'engage à répondre aux litiges de bonne foi et à rechercher des solutions mutuellement acceptables.`
+              },
+              {
+                subtitle: '12.4 Arbitrage (si applicable)',
+                content: `Pour les litiges qui ne peuvent être résolus à l'amiable, vous et Tuggi acceptez de tenter de résoudre par arbitrage conformément aux règles de la Chambre d'Arbitrage applicable, sauf si la loi exige une procédure différente.`
+              }
+            ]
+          },
+          {
+            title: '13. Dispositions Générales',
+            subsections: [
+              {
+                subtitle: '13.1 Accord Complet',
+                content: `Ces Conditions d'Utilisation, ainsi que notre Politique de Confidentialité et notre Politique de Cookies, constituent l'accord complet entre vous et Tuggi concernant l'utilisation des services.`
+              },
+              {
+                subtitle: '13.2 Divisibilité',
+                content: `Si une disposition de ces conditions est jugée invalide ou inapplicable, les dispositions restantes resteront pleinement en vigueur.`
+              },
+              {
+                subtitle: '13.3 Renonciation',
+                content: `Le défaut de Tuggi d'exercer un droit en vertu de ces conditions ne constitue pas une renonciation à ce droit.`
+              },
+              {
+                subtitle: '13.4 Cession',
+                content: `Vous ne pouvez pas transférer ou céder vos droits ou obligations en vertu de ces conditions. Tuggi peut transférer ou céder ses droits et obligations à tout moment, y compris en cas de fusion, d'acquisition ou de vente d'actifs.`
+              }
+            ]
+          },
+          {
+            title: '14. Contact',
+            content: `Pour des questions concernant ces Conditions d'Utilisation, contactez-nous :
+
+**E-mail :**
+**contato@tuggi.app**
+
+**Site Web :**
+https://www.tuggi.app/fr/terms-of-use
+
+**Pour les Questions Juridiques :**
+**contato@tuggi.app** (sujet : "Conditions d'Utilisation")
+
+Nous répondons dans les 30 jours ouvrables.`
+          }
+        ]
+      },
+      DE: {
+        title: 'Nutzungsbedingungen',
+        lastUpdated: 'Letzte Aktualisierung: Januar 2025',
+        introduction: 'Diese Nutzungsbedingungen beschreiben die Bedingungen für die Nutzung der Tuggi-Anwendung und der offiziellen Website tuggi.app. Durch das Erstellen eines Kontos, die Installation, den Zugriff oder die Nutzung unserer Dienste stimmen Sie diesen Bedingungen ausdrücklich zu. Wenn Sie diesen Bedingungen nicht zustimmen, nutzen Sie unsere Dienste nicht.',
+        sections: [
+          {
+            title: '1. Annahme der Bedingungen',
+            content: `Durch die Nutzung der Tuggi-App oder der Website tuggi.app bestätigen Sie, dass:
+
+• Sie diese Nutzungsbedingungen und unsere Datenschutzrichtlinie gelesen, verstanden und akzeptiert haben
+• Sie mindestens 13 Jahre alt sind (oder das gesetzliche Mindestalter in Ihrem Land, um der Nutzung von Diensten zuzustimmen)
+• Sie die Rechtsfähigkeit haben, Verträge abzuschließen
+• Es Ihnen nach geltendem Recht nicht untersagt ist, unsere Dienste zu nutzen
+• Sie bei der Erstellung Ihres Kontos wahre und genaue Informationen angeben werden
+
+**Wenn Sie unter 18 Jahre alt sind**, erklären Sie, dass Sie die Zustimmung Ihrer Eltern oder Erziehungsberechtigten zur Nutzung unserer Dienste haben.
+
+Durch die fortgesetzte Nutzung unserer Dienste nach Änderungen dieser Bedingungen akzeptieren Sie die Änderungen.`
+          },
+          {
+            title: '2. Zweck der App',
+            content: `Tuggi ist ein kultureller Copilot, der Audio-Anleitungen zu Points of Interest (POIs) basierend auf Ihrem Standort bietet.
+
+**Hauptfunktionen:**
+• Erzählungen werden automatisch ausgelöst, während Sie sich bewegen
+• Die App läuft im Hintergrund und kann während der Reise betrieben werden
+• Die geografische Abdeckung variiert je nach Region
+• Die App erkennt automatisch, wenn Sie sich POIs nähern
+• Offline-Funktionalität für vorab heruntergeladene POIs und Audios verfügbar
+
+**Zweck:**
+Tuggi ist ein Reiseführer und ein Bildungsinstrument. Die App ersetzt keine professionellen Navigationssysteme und sollte nicht als einzige Orientierungsquelle während Reisen verwendet werden.`
+          },
+          {
+            title: '3. Verantwortlichkeiten des Benutzers',
+            subsections: [
+              {
+                subtitle: '3.1 Sicherheit während der Nutzung',
+                content: `**Sichere Nutzung ist obligatorisch:**
+
+• **Interagieren Sie NIEMALS mit der App während der Fahrt** - Die App sollte nur von Passagieren oder bei stehendem Fahrzeug verwendet werden
+• Achten Sie voll und ganz auf die Straße und die Verkehrsbedingungen
+• Respektieren Sie alle lokalen Verkehrsgesetze
+• Verwenden Sie die App nicht auf eine Weise, die den Fahrer ablenken oder die Sicherheit gefährden könnte
+• Verwenden Sie die App nur, wenn dies sicher möglich ist
+
+**Warnung:** Unsachgemäße Nutzung der App während der Fahrt kann zu schweren Unfällen führen. Sie sind allein dafür verantwortlich, die App sicher zu nutzen.`
+              },
+              {
+                subtitle: '3.2 Konto und Anmeldeinformationen',
+                content: `Sie sind verantwortlich für:
+
+• Schutz Ihrer Zugangsdaten (E-Mail, Passwort)
+• Nichtweitergabe Ihres Kontos an Dritte
+• Aktivierung der biometrischen Authentifizierung (falls verfügbar) für erhöhte Sicherheit
+• Sofortige Benachrichtigung von Tuggi bei unbefugtem Zugriff oder Verdacht auf Sicherheitsverletzung
+• Aktualisierung und Genauigkeit Ihrer Kontoinformationen
+• Verwendung eines starken und einzigartigen Passworts`
+              },
+              {
+                subtitle: '3.3 Angemessene Nutzung des Dienstes',
+                content: `Sie stimmen zu, unsere Dienste nur für rechtmäßige und angemessene Zwecke zu nutzen:
+
+• Verwenden Sie die App nicht für illegale, betrügerische oder böswillige Aktivitäten
+• Verwenden Sie die App nicht, um Daten von anderen Benutzern ohne Genehmigung zu sammeln
+• Versuchen Sie nicht, auf nicht autorisierte Bereiche der App oder Systeme zuzugreifen
+• Stören Sie nicht die Funktionalität der App oder versuchen Sie nicht, Sicherheitsmaßnahmen zu umgehen
+• Verwenden Sie die App nicht zum Versenden von Spam, Viren oder bösartigem Code
+• Respektieren Sie die geistigen Eigentumsrechte Dritter`
+              },
+              {
+                subtitle: '3.4 Genauigkeit der Informationen',
+                content: `Sie sind verantwortlich für:
+
+• Bereitstellung wahrer, genauer und vollständiger Informationen bei der Erstellung Ihres Kontos
+• Aktualisierung Ihrer Informationen
+• Keine Bereitstellung falscher oder irreführender Informationen
+• Sofortige Benachrichtigung über Änderungen der bereitgestellten Informationen
+
+**Warnung:** Ungenaue Informationen können die Funktionalität des Dienstes beeinträchtigen und zur Kontosperrung führen.`
+              },
+              {
+                subtitle: '3.5 Verantwortung für Standortdaten',
+                content: `Durch die Nutzung der App verstehen und akzeptieren Sie, dass:
+
+• Die App Echtzeit-Standortdaten sammelt und verwendet
+• Sie dafür verantwortlich sind, sicherzustellen, dass Sie das Recht haben, Standortdaten bereitzustellen
+• Sie dafür verantwortlich sind, die App an Orten zu nutzen, an denen dies legal und angemessen ist
+• Tuggi nicht verantwortlich ist für Konsequenzen der Nutzung von Standortdaten an Orten, an denen eine solche Nutzung eingeschränkt oder verboten sein kann
+• Sie lokale Gesetze bezüglich der Sammlung und Nutzung von Standortdaten respektieren müssen`
+              }
+            ]
+          },
+          {
+            title: '4. Berechtigungen und Datenerfassung',
+            subsections: [
+              {
+                subtitle: '4.1 Erforderliche Berechtigungen',
+                content: `Damit die App ordnungsgemäß funktioniert, sind folgende Berechtigungen erforderlich:
+
+• **Standort (im Vorder- und Hintergrund):** Erforderlich, um Ihre Position zu erkennen und POI-Erzählungen automatisch auszulösen. Die App funktioniert ohne diese Berechtigung nicht.
+• **Audio:** Notwendig für die Wiedergabe von Erzählungen
+
+**Wichtig:** Die Standortberechtigung ist für die Funktionalität der App unerlässlich. Ohne sie kann die App keine Reiseführerdienste bereitstellen.`
+              },
+              {
+                subtitle: '4.2 Optionale Berechtigungen',
+                content: `Die folgenden Berechtigungen sind optional, verbessern aber das Erlebnis:
+
+• **Benachrichtigungen:** Für Warnungen zu nahegelegenen POIs, App-Updates und Empfehlungen
+• **Biometrie:** Für sichereren und bequemeren Login
+• **Kamera (zukünftig):** Um ein Profilfoto aufzunehmen, falls gewünscht
+
+Sie können optionale Berechtigungen jederzeit in den Geräteeinstellungen widerrufen, dies kann jedoch einige Funktionen beeinträchtigen.`
+              },
+              {
+                subtitle: '4.3 Daten von Dritten',
+                content: `Die App nutzt Dienste von Dritten, die Daten sammeln können:
+
+• **Kartendienst:** Verwendet für Karten rendering und Geocodierungsdienste. Die Nutzung unterliegt den Nutzungsbedingungen des Anbieters.
+• **Analyse- und Überwachungsdienste:** Verwendet für Analytics, Crash Reporting und Push-Benachrichtigungen gemäß unserer Datenschutzrichtlinie.
+• **Backend-Anbieter:** Verwendet für Datenspeicherung und Authentifizierung gemäß unserer Datenschutzrichtlinie.
+
+Durch die Nutzung der App stimmen Sie auch den Nutzungsbedingungen dieser Anbieter zu, sofern anwendbar. Siehe unsere [Datenschutzrichtlinie](/privacy) für Details, wie wir Ihre Daten behandeln.`
+              }
+            ]
+          },
+          {
+            title: '5. Dienstbeschränkungen',
+            content: `Die App unterliegt folgenden technischen Beschränkungen:
+
+• **Geräteanforderungen:** Gerät mit GPS und Internetzugang bei der Erstinstallation erforderlich
+• **Speicher:** App benötigt ca. 50 MB freien Speicherplatz für Audio-Cache
+• **Kompatibilität:** Kompatibel mit iOS 12+ und Android 5.0+
+• **Abdeckung:** POI-Abdeckung kann in einigen geografischen Regionen eingeschränkt sein
+• **Konnektivität:** Einige Funktionen erfordern eine Internetverbindung, obwohl Offline-Funktionalität für vorab heruntergeladene Inhalte verfügbar ist
+• **Genauigkeit:** Standortgenauigkeit hängt von externen Bedingungen ab (GPS, Signal, Gerätequalität)
+
+Tuggi garantiert nicht, dass der Dienst immer verfügbar, ununterbrochen oder fehlerfrei ist.`
+          },
+          {
+            title: '6. Angemessene Nutzung und Einschränkungen',
+            content: `Bei der Nutzung unserer Dienste stimmen Sie zu:
+
+• Die App nur für die vorgesehenen und rechtmäßigen Zwecke zu nutzen
+• Die Anwendung nicht zu modifizieren, anzupassen, zu hacken, zu verteilen oder zu dekompilieren
+• Die App nicht für illegale, betrügerische oder kommerzielle Aktivitäten ohne ausdrückliche Genehmigung zu nutzen
+• Nicht zu versuchen, auf nicht autorisierte Bereiche der App oder verwandte Systeme zuzugreifen
+• Die Funktionalität der App nicht zu stören oder zu versuchen, Sicherheitsmaßnahmen zu umgehen
+• Die App nicht auf eine Weise zu nutzen, die Rechte Dritter verletzt
+• Keine Daten von anderen Benutzern ohne Genehmigung zu sammeln
+
+**Verstöße gegen diese Regeln können zur sofortigen Kontosperrung oder -kündigung führen.**`
+          },
+          {
+            title: '7. Geistiges Eigentum',
+            content: `Alle geistigen Eigentumsrechte im Zusammenhang mit unseren Diensten gehören Tuggi oder seinen Lizenzgebern:
+
+• **App-Inhalt:** Erzählungen, Texte, Bilder, Audios, Designs und alle App-Inhalte sind durch Urheberrechte und andere Gesetze zum geistigen Eigentum geschützt
+• **Marke und Identität:** Die Marke Tuggi, Logos, Handelsnamen und visuelle Elemente sind ausschließliches Eigentum von Tuggi
+• **Software:** Anwendungscode, Algorithmen und Technologie sind durch Urheberrechte und Geschäftsgeheimnisse geschützt
+• **Feedback:** Sie behalten die Rechte an eingereichtem Feedback, Vorschlägen oder Kommentaren, gewähren Tuggi jedoch eine weltweite, nicht exklusive, gebührenfreie Lizenz zur Nutzung, Änderung und Einbeziehung dieses Feedbacks in unsere Dienste
+
+Sie dürfen keinen Teil unserer Dienste ohne ausdrückliche schriftliche Genehmigung kopieren, modifizieren, verteilen, verkaufen oder vermieten.`
+          },
+          {
+            title: '8. Haftungsbeschränkung',
+            content: `**HAFTUNGSAUSSCHLUSS:**
+
+Im gesetzlich zulässigen Umfang haftet Tuggi nicht für:
+
+• **Direkte, indirekte oder Folgeschäden:** Datenverlust, entgangener Gewinn, Umsatz, Geschäftsmöglichkeiten oder immaterielle Schäden, die aus der Nutzung oder Unmöglichkeit der Nutzung der App entstehen
+• **Informationsgenauigkeit:** Erzählte Informationen spiegeln möglicherweise keine aktuellen, vollständigen oder genauen Daten wider. Die App garantiert nicht die absolute Genauigkeit der bereitgestellten Informationen
+• **Externe Bedingungen:** Standortgenauigkeit und App-Funktionalität hängen von externen Bedingungen ab (GPS, Signal, Gerätequalität, Wetterbedingungen), die außerhalb der Kontrolle von Tuggi liegen
+• **Unsachgemäße Nutzung:** Tuggi ist nicht verantwortlich für Schäden, die aus unsachgemäßer Nutzung der App resultieren, einschließlich Nutzung während der Fahrt oder an verbotenen Orten
+• **Unterbrechungen:** Tuggi garantiert keinen ununterbrochenen oder fehlerfreien Betrieb des Dienstes
+
+**Die App wird "WIE BESEHEN" und "NACH VERFÜGBARKEIT" ohne Garantien jeglicher Art bereitgestellt.**`
+          },
+          {
+            title: '9. Gewährleistungsbeschränkungen',
+            content: `**GEWÄHRLEISTUNGSAUSSCHLUSS:**
+
+Im gesetzlich zulässigen Umfang lehnt Tuggi alle Garantien ab, ob ausdrücklich oder stillschweigend, einschließlich, aber nicht beschränkt auf:
+
+• Garantien der Marktgängigkeit, Eignung für einen bestimmten Zweck oder Nichtverletzung
+• Garantien, dass der Dienst ununterbrochen, sicher, fehlerfrei oder virenfrei ist
+• Garantien über die Genauigkeit, Zuverlässigkeit oder Aktualität der bereitgestellten Informationen
+• Garantien, dass Mängel behoben werden oder dass der Dienst Ihren Erwartungen entspricht
+
+**Die App ersetzt keine professionellen Navigationssysteme** und sollte nicht als einzige Orientierungsquelle während Reisen verwendet werden. Die App ist ein kultureller und pädagogischer Führer, kein Echtzeit-Navigationssystem.`
+          },
+          {
+            title: '10. Kontosperrung und -kündigung',
+            content: `**Kündigung durch Tuggi:**
+Tuggi kann Ihr Konto und den Zugang zu Diensten sofort und ohne vorherige Ankündigung sperren oder kündigen, wenn:
+
+• Sie diese Nutzungsbedingungen oder unsere Datenschutzrichtlinie verletzen
+• Sie die App illegal, betrügerisch oder unangemessen nutzen
+• Sie falsche oder irreführende Informationen bereitstellen
+• Tuggi nach eigenem Ermessen feststellt, dass Ihre Nutzung ein Risiko für andere Benutzer oder für Tuggi darstellt
+
+**Kündigung durch den Benutzer:**
+Sie können Ihr Konto jederzeit über die App-Einstellungen oder durch Kontaktaufnahme mit uns kündigen.
+
+**Auswirkungen der Kündigung:**
+• Ihr Recht zur Nutzung der App erlischt sofort
+• Einige Daten können gemäß gesetzlichen Verpflichtungen oder zu Audit-Zwecken aufbewahrt werden
+• Personenbezogene Daten werden gemäß unserer Datenschutzrichtlinie und LGPD/DSGVO behandelt`
+          },
+          {
+            title: '11. Änderungen und Aktualisierungen',
+            subsections: [
+              {
+                subtitle: '11.1 App-Updates',
+                content: `Tuggi kann App-Funktionen jederzeit ändern, aktualisieren oder einstellen. Möglicherweise müssen Sie die App aktualisieren, um die Dienste weiterhin nutzen zu können. Wir garantieren nicht, dass ältere Versionen der App weiterhin funktionieren.`
+              },
+              {
+                subtitle: '11.2 Aktualisierungen der Bedingungen',
+                content: `Tuggi kann diese Nutzungsbedingungen regelmäßig ändern. Wesentliche Änderungen werden kommuniziert:
+
+• Über die App (Push-Benachrichtigung oder Banner)
+• Per E-Mail an die mit Ihrem Konto verknüpfte Adresse
+• Veröffentlichung des Datums der "letzten Aktualisierung" oben auf dieser Seite
+
+**Fortgesetzte Akzeptanz:**
+Durch die fortgesetzte Nutzung unserer Dienste nach Änderungen der Bedingungen stimmen Sie den Änderungen zu. Wenn Sie den Änderungen nicht zustimmen, müssen Sie Ihr Konto kündigen und die Nutzung der Dienste einstellen.
+
+**Regelmäßige Überprüfung:**
+Wir empfehlen Ihnen, diese Bedingungen regelmäßig zu überprüfen, um über Änderungen informiert zu sein.`
+              }
+            ]
+          },
+          {
+            title: '12. Streitbeilegung',
+            subsections: [
+              {
+                subtitle: '12.1 Anwendbares Recht',
+                content: `Diese Nutzungsbedingungen unterliegen den Gesetzen der Föderativen Republik Brasilien, ohne Berücksichtigung ihrer kollisionsrechtlichen Grundsätze.
+
+Für Benutzer außerhalb Brasiliens können die Gesetze Ihres Landes gelten, aber diese Bedingungen werden soweit möglich nach brasilianischem Recht ausgelegt.`
+              },
+              {
+                subtitle: '12.2 Gerichtsstand',
+                content: `Alle Streitigkeiten im Zusammenhang mit diesen Bedingungen oder unseren Diensten werden vor den zuständigen Gerichten von São Paulo, SP, Brasilien, beigelegt, und Sie stimmen der ausschließlichen Zuständigkeit dieser Gerichte zu.
+
+Für Streitigkeiten mit Benutzern aus der Europäischen Union haben Sie möglicherweise das zusätzliche Recht, Beschwerde bei der Datenschutzbehörde Ihres Landes einzureichen.`
+              },
+              {
+                subtitle: '12.3 Gütliche Einigung',
+                content: `Bevor Sie ein formelles Gerichtsverfahren einleiten, stimmen Sie zu:
+
+• Zu versuchen, Streitigkeiten gütlich durch direkte Kommunikation mit Tuggi beizulegen
+• Schriftliche Details zum Streitfall bereitzustellen
+• Einen angemessenen Zeitraum (30 Tage) auf die Antwort von Tuggi zu warten
+
+Tuggi verpflichtet sich, auf Streitigkeiten in gutem Glauben zu reagieren und nach gegenseitig akzeptablen Lösungen zu suchen.`
+              },
+              {
+                subtitle: '12.4 Schiedsgerichtsbarkeit (falls anwendbar)',
+                content: `Für Streitigkeiten, die nicht gütlich beigelegt werden können, stimmen Sie und Tuggi zu, eine Lösung durch Schiedsgerichtsbarkeit gemäß den Regeln der zuständigen Schiedskammer zu versuchen, es sei denn, das Gesetz schreibt ein anderes Verfahren vor.`
+              }
+            ]
+          },
+          {
+            title: '13. Allgemeine Bestimmungen',
+            subsections: [
+              {
+                subtitle: '13.1 Gesamte Vereinbarung',
+                content: `Diese Nutzungsbedingungen stellen zusammen mit unserer Datenschutzrichtlinie und Cookie-Richtlinie die gesamte Vereinbarung zwischen Ihnen und Tuggi bezüglich der Nutzung der Dienste dar.`
+              },
+              {
+                subtitle: '13.2 Teilnichtigkeit',
+                content: `Sollte eine Bestimmung dieser Bedingungen für ungültig oder nicht durchsetzbar befunden werden, bleiben die übrigen Bestimmungen vollumfänglich wirksam.`
+              },
+              {
+                subtitle: '13.3 Verzicht',
+                content: `Das Versäumnis von Tuggi, ein Recht aus diesen Bedingungen auszuüben, stellt keinen Verzicht auf dieses Recht dar.`
+              },
+              {
+                subtitle: '13.4 Abtretung',
+                content: `Sie dürfen Ihre Rechte oder Pflichten aus diesen Bedingungen nicht übertragen oder abtreten. Tuggi kann seine Rechte und Pflichten jederzeit übertragen oder abtreten, einschließlich im Falle einer Fusion, Übernahme oder eines Verkaufs von Vermögenswerten.`
+              }
+            ]
+          },
+          {
+            title: '14. Kontakt',
+            content: `Bei Fragen zu diesen Nutzungsbedingungen kontaktieren Sie uns:
+
+**E-Mail:**
+**contato@tuggi.app**
+
+**Website:**
+https://www.tuggi.app/de/terms-of-use
+
+**Für rechtliche Fragen:**
+**contato@tuggi.app** (Betreff: "Nutzungsbedingungen")
+
+Wir antworten innerhalb von 30 Werktagen.`
+          }
+        ]
+      },
+      IT: {
+        title: 'Termini di Utilizzo',
+        lastUpdated: 'Ultimo aggiornamento: Gennaio 2025',
+        introduction: 'Questi Termini di Utilizzo descrivono le condizioni per l\'uso dell\'applicazione Tuggi e del sito ufficiale tuggi.app. Creando un account, installando, accedendo o utilizzando i nostri servizi, accetti espressamente questi termini. Se non sei d\'accordo con questi termini, non utilizzare i nostri servizi.',
+        sections: [
+          {
+            title: '1. Accettazione dei Termini',
+            content: `Utilizzando l'applicazione Tuggi o il sito tuggi.app, confermi che:
+
+• Hai letto, compreso e accetti questi Termini di Utilizzo e la nostra Informativa sulla Privacy
+• Hai almeno 13 anni (o l'età minima legale nel tuo paese per acconsentire all'uso dei servizi)
+• Hai la capacità legale di stipulare contratti
+• Non ti è vietato utilizzare i nostri servizi secondo le leggi applicabili
+• Fornirai informazioni veritiere e accurate durante la creazione del tuo account
+
+**Se hai meno di 18 anni**, dichiari di avere il consenso dei tuoi genitori o tutori legali per utilizzare i nostri servizi.
+
+Continuando a utilizzare i nostri servizi dopo modifiche a questi termini, accetti le modifiche.`
+          },
+          {
+            title: '2. Scopo dell\'Applicazione',
+            content: `Tuggi è un copilota culturale che fornisce orientamenti audio su punti di interesse (POI) basati sulla tua posizione.
+
+**Funzionalità Principali:**
+• Le narrazioni vengono attivate automaticamente mentre ti muovi
+• L'app funziona in background e può operare durante gli spostamenti
+• La copertura geografica varia per regione
+• L'app rileva automaticamente quando ti avvicini ai POI
+• Funzionalità offline disponibile per POI e audio pre-scaricati
+
+**Scopo:**
+Tuggi è una guida di viaggio e uno strumento educativo. L'app non sostituisce i sistemi di navigazione professionali né deve essere utilizzata come unica fonte di orientamento durante i viaggi.`
+          },
+          {
+            title: '3. Responsabilità dell\'Utente',
+            subsections: [
+              {
+                subtitle: '3.1 Sicurezza Durante l\'Uso',
+                content: `**L'Uso Sicuro è Obbligatorio:**
+
+• **Non interagire MAI con l'app mentre guidi** - L'app deve essere utilizzata solo da passeggeri o quando il veicolo è fermo
+• Mantieni totale attenzione alla strada e alle condizioni del traffico
+• Rispetta tutte le leggi locali sul traffico
+• Non utilizzare l'app in modo che possa distrarre il conducente o compromettere la sicurezza
+• Utilizza l'app solo quando è sicuro farlo
+
+**Attenzione:** L'uso improprio dell'app durante la guida può causare incidenti gravi. Sei totalmente responsabile dell'uso sicuro dell'app.`
+              },
+              {
+                subtitle: '3.2 Account e Credenziali',
+                content: `Sei responsabile per:
+
+• Proteggere le tue credenziali di accesso (email, password)
+• Non condividere il tuo account con terzi
+• Attivare l'autenticazione biometrica se disponibile per una maggiore sicurezza
+• Notificare immediatamente Tuggi in caso di accesso non autorizzato o sospetta violazione della sicurezza
+• Mantenere le tue informazioni account aggiornate e accurate
+• Utilizzare una password forte e unica`
+              },
+              {
+                subtitle: '3.3 Uso Appropriato del Servizio',
+                content: `Accetti di utilizzare i nostri servizi solo per scopi legali e appropriati:
+
+• Non utilizzare l'app per attività illegali, fraudolente o dannose
+• Non utilizzare l'app per raccogliere dati di altri utenti senza autorizzazione
+• Non tentare di accedere ad aree non autorizzate dell'app o dei sistemi
+• Non interferire con il funzionamento dell'app o tentare di aggirare le misure di sicurezza
+• Non utilizzare l'app per inviare spam, virus o codice dannoso
+• Rispetta i diritti di proprietà intellettuale di terzi`
+              },
+              {
+                subtitle: '3.4 Accuratezza delle Informazioni',
+                content: `Sei responsabile per:
+
+• Fornire informazioni veritiere, accurate e complete durante la creazione del tuo account
+• Mantenere le tue informazioni aggiornate
+• Non fornire informazioni false o fuorvianti
+• Notificarci immediatamente qualsiasi cambiamento nelle informazioni fornite
+
+**Attenzione:** Informazioni inaccurate possono influenzare il funzionamento del servizio e comportare la sospensione dell'account.`
+              },
+              {
+                subtitle: '3.5 Responsabilità per Dati di Posizione',
+                content: `Utilizzando l'app, comprendi e accetti che:
+
+• L'app raccoglie e utilizza dati di posizione in tempo reale
+• Sei responsabile di garantire di avere il diritto di fornire dati di posizione
+• Sei responsabile di utilizzare l'app in luoghi in cui è legale e appropriato farlo
+• Tuggi non è responsabile per conseguenze dell'uso di dati di posizione in luoghi in cui tale uso possa essere limitato o proibito
+• Devi rispettare le leggi locali sulla raccolta e l'uso dei dati di posizione`
+              }
+            ]
+          },
+          {
+            title: '4. Permessi e Raccolta Dati',
+            subsections: [
+              {
+                subtitle: '4.1 Permessi Obbligatori',
+                content: `Per funzionare correttamente, l'app richiede i seguenti permessi:
+
+• **Posizione (in primo e secondo piano):** Obbligatoria per rilevare la tua posizione e attivare automaticamente le narrazioni dei POI. L'app non funziona senza questo permesso.
+• **Audio:** Necessaria per la riproduzione delle narrazioni
+
+**Importante:** Il permesso di posizione è essenziale per il funzionamento dell'app. Senza di esso, l'app non può fornire i servizi di guida di viaggio.`
+              },
+              {
+                subtitle: '4.2 Permessi Opzionali',
+                content: `I seguenti permessi sono opzionali ma migliorano l'esperienza:
+
+• **Notifiche:** Per avvisi su POI vicini, aggiornamenti dell'app e raccomandazioni
+• **Biometria:** Per login più sicuro e conveniente
+• **Fotocamera (futuramente):** Per scattare foto profilo, se desiderato
+
+Puoi revocare i permessi opzionali in qualsiasi momento nelle impostazioni del dispositivo, ma ciò può influenzare alcune funzionalità.`
+              },
+              {
+                subtitle: '4.3 Dati di Terze Parti',
+                content: `L'app utilizza servizi di terze parti che possono raccogliere dati:
+
+• **Servizio Mappe:** Utilizzato per rendering mappe e servizi di geocodifica. L'uso è soggetto ai termini di servizio del fornitore.
+• **Servizi di Analytics e Monitoraggio:** Utilizzati per analytics, crash reporting e notifiche push, secondo la nostra Informativa sulla Privacy.
+• **Fornitore Backend:** Utilizzato per archiviazione dati e autenticazione, secondo la nostra Informativa sulla Privacy.
+
+Utilizzando l'app, accetti anche i termini di servizio di questi fornitori quando applicabile. Consulta la nostra [Informativa sulla Privacy](/privacy) per dettagli su come trattiamo i tuoi dati.`
+              }
+            ]
+          },
+          {
+            title: '5. Limitazioni del Servizio',
+            content: `L'app è soggetta alle seguenti limitazioni tecniche:
+
+• **Requisiti Dispositivo:** È necessario dispositivo con GPS e accesso internet all'installazione iniziale
+• **Archiviazione:** L'app richiede circa 50MB di spazio libero per cache audio
+• **Compatibilità:** Compatibile con iOS 12+ e Android 5.0+
+• **Copertura:** La copertura dei POI può essere limitata in alcune regioni geografiche
+• **Connettività:** Alcune funzionalità richiedono connessione internet, sebbene funzionalità offline sia disponibile per contenuto pre-scaricato
+• **Precisione:** La precisione della posizione dipende da condizioni esterne (GPS, segnale, qualità dispositivo)
+
+Tuggi non garantisce che il servizio sarà sempre disponibile, ininterrotto o privo di errori.`
+          },
+          {
+            title: '6. Uso Appropriato e Restrizioni',
+            content: `Utilizzando i nostri servizi, accetti di:
+
+• Utilizzare l'app solo per i fini previsti e legali
+• Non modificare, adattare, hackerare, distribuire o decompilare l'applicazione
+• Non utilizzare l'app per attività illegali, fraudolente o commerciali senza autorizzazione espressa
+• Non tentare di accedere ad aree non autorizzate dell'app o sistemi correlati
+• Non interferire con il funzionamento dell'app o tentare di aggirare le misure di sicurezza
+• Non utilizzare l'app in modo che violi diritti di terzi
+• Non raccogliere dati di altri utenti senza autorizzazione
+
+**La violazione di queste regole può comportare sospensione o terminazione immediata dell'account.**`
+          },
+          {
+            title: '7. Proprietà Intellettuale',
+            content: `Tutti i diritti di proprietà intellettuale relativi ai nostri servizi appartengono a Tuggi o ai suoi licenziatari:
+
+• **Contenuto App:** Narrazioni, testi, immagini, audio, design e tutto il contenuto dell'app sono protetti da copyright e altre leggi sulla proprietà intellettuale
+• **Marchio e Identità:** Il marchio Tuggi, i loghi, i nomi commerciali e gli elementi visivi sono proprietà esclusiva di Tuggi
+• **Software:** Il codice dell'applicazione, gli algoritmi e la tecnologia sono protetti da copyright e segreti commerciali
+• **Feedback:** Mantieni i diritti su feedback, suggerimenti o commenti inviati, ma concedi a Tuggi una licenza mondiale, non esclusiva e gratuita per usare, modificare e incorporare tale feedback nei nostri servizi
+
+Non puoi copiare, modificare, distribuire, vendere o affittare alcuna parte dei nostri servizi senza autorizzazione scritta espressa.`
+          },
+          {
+            title: '8. Limitazione di Responsabilità',
+            content: `**ESCLUSIONE DI RESPONSABILITÀ:**
+
+Nella massima misura consentita dalla legge, Tuggi non sarà responsabile per:
+
+• **Danni Diretti, Indiretti o Conseguenti:** Perdita di dati, profitti, ricavi, opportunità di business o danni morali derivanti dall'uso o impossibilità d'uso dell'app
+• **Accuratezza Informazioni:** Le informazioni narrate possono non riflettere dati aggiornati, completi o accurati. L'app non garantisce l'accuratezza assoluta delle informazioni fornite
+• **Condizioni Esterne:** L'accuratezza della posizione e la funzionalità dell'app dipendono da condizioni esterne (GPS, segnale, qualità dispositivo, condizioni meteo) fuori dal controllo di Tuggi
+• **Uso Improprio:** Tuggi non è responsabile per danni risultanti da uso improprio dell'app, incluso uso durante guida o in luoghi proibiti
+• **Interruzioni:** Tuggi non garantisce funzionamento ininterrotto o privo di errori del servizio
+
+**L'app è fornita "COSÌ COM'È" e "COME DISPONIBILE", senza garanzie di alcun tipo.**`
+          },
+          {
+            title: '9. Limitazioni di Garanzia',
+            content: `**ESCLUSIONE DI GARANZIE:**
+
+Nella massima misura consentita dalla legge, Tuggi declina tutte le garanzie, espresse o implicite, incluse ma non limitate a:
+
+• Garanzie di commerciabilità, idoneità per uno scopo particolare o non violazione
+• Garanzie che il servizio sarà ininterrotto, sicuro, privo di errori o virus
+• Garanzie sull'accuratezza, affidabilità o tempestività delle informazioni fornite
+• Garanzie che i difetti saranno corretti o che il servizio soddisferà le tue aspettative
+
+**L'app non sostituisce i sistemi di navigazione professionali** e non deve essere utilizzata come unica fonte di orientamento durante i viaggi. L'app è una guida culturale ed educativa, non un sistema di navigazione in tempo reale.`
+          },
+          {
+            title: '10. Sospensione e Terminazione Account',
+            content: `**Terminazione da parte di Tuggi:**
+Tuggi può sospendere o terminare il tuo account e accesso ai servizi immediatamente, senza preavviso, se:
+
+• Violi questi Termini di Utilizzo o la nostra Informativa sulla Privacy
+• Usi l'app in modo illegale, fraudolento o inappropriato
+• Fornisci informazioni false o fuorvianti
+• Tuggi determina, a sua esclusiva discrezione, che il tuo uso rappresenta rischio per altri utenti o per Tuggi
+
+**Terminazione da parte dell'Utente:**
+Puoi terminare il tuo account in qualsiasi momento tramite le impostazioni dell'app o contattandoci.
+
+**Effetti della Terminazione:**
+• Il tuo diritto di utilizzare l'app cesserà immediatamente
+• Alcuni dati possono essere mantenuti secondo obblighi legali o per fini di audit
+• I dati personali saranno trattati secondo la nostra Informativa sulla Privacy e LGPD/GDPR`
+          },
+          {
+            title: '11. Modifiche e Aggiornamenti',
+            subsections: [
+              {
+                subtitle: '11.1 Aggiornamenti App',
+                content: `Tuggi può modificare, aggiornare o interrompere funzionalità dell'app in qualsiasi momento. Potresti dover aggiornare l'app per continuare a usare i servizi. Non garantiamo che versioni precedenti dell'app continueranno a funzionare.`
+              },
+              {
+                subtitle: '11.2 Aggiornamenti Termini',
+                content: `Tuggi può modificare questi Termini di Utilizzo periodicamente. Modifiche significative saranno comunicate:
+
+• Tramite l'app (notifica push o banner)
+• Via email all'indirizzo associato al tuo account
+• Pubblicazione della data di "ultimo aggiornamento" in cima a questa pagina
+
+**Accettazione Continua:**
+Continuando a usare i nostri servizi dopo modifiche ai termini, accetti le modifiche. Se non sei d'accordo con le modifiche, devi terminare il tuo account e smettere di usare i servizi.
+
+**Revisione Periodica:**
+Ti raccomandiamo di rivedere questi termini periodicamente per essere a conoscenza di eventuali modifiche.`
+              }
+            ]
+          },
+          {
+            title: '12. Risoluzione Controversie',
+            subsections: [
+              {
+                subtitle: '12.1 Legge Applicabile',
+                content: `Questi Termini di Utilizzo sono regolati dalle leggi della Repubblica Federativa del Brasile, senza riguardo ai suoi principi di conflitto di leggi.
+
+Per utenti fuori dal Brasile, le leggi del tuo paese possono applicarsi, ma questi termini saranno interpretati secondo le leggi brasiliane nella misura del possibile.`
+              },
+              {
+                subtitle: '12.2 Giurisdizione',
+                content: `Qualsiasi controversia relativa a questi termini o ai nostri servizi sarà risolta nei tribunali competenti di San Paolo, SP, Brasile, e accetti la giurisdizione esclusiva di questi tribunali.
+
+Per controversie coinvolgenti utenti dell'Unione Europea, potresti avere diritto aggiuntivo di presentare reclamo presso l'autorità di protezione dati del tuo paese.`
+              },
+              {
+                subtitle: '12.3 Risoluzione Amichevole',
+                content: `Prima di iniziare qualsiasi processo giudiziario formale, accetti di:
+
+• Tentare di risolvere controversie amichevolmente tramite comunicazione diretta con Tuggi
+• Fornire dettagli scritti sulla controversia
+• Attendere un periodo ragionevole (30 giorni) per risposta da Tuggi
+
+Tuggi si impegna a rispondere a controversie in buona fede e cercare soluzioni mutuamente accettabili.`
+              },
+              {
+                subtitle: '12.4 Arbitrato (se applicabile)',
+                content: `Per controversie che non possono essere risolte amichevolmente, tu e Tuggi accettate di tentare risoluzione tramite arbitrato secondo le regole della Camera Arbitrale applicabile, a meno che la legge richieda procedura diversa.`
+              }
+            ]
+          },
+          {
+            title: '13. Disposizioni Generali',
+            subsections: [
+              {
+                subtitle: '13.1 Intero Accordo',
+                content: `Questi Termini di Utilizzo, insieme alla nostra Informativa sulla Privacy e Informativa sui Cookie, costituiscono l'intero accordo tra te e Tuggi riguardante l'uso dei servizi.`
+              },
+              {
+                subtitle: '13.2 Separabilità',
+                content: `Se qualsiasi disposizione di questi termini è ritenuta invalida o inapplicabile, le disposizioni rimanenti rimarranno in pieno vigore ed effetto.`
+              },
+              {
+                subtitle: '13.3 Rinuncia',
+                content: `Il mancato esercizio da parte di Tuggi di qualsiasi diritto ai sensi di questi termini non costituisce rinuncia a tale diritto.`
+              },
+              {
+                subtitle: '13.4 Cessione',
+                content: `Non puoi trasferire o cedere i tuoi diritti o obblighi ai sensi di questi termini. Tuggi può trasferire o cedere i suoi diritti e obblighi in qualsiasi momento, incluso in caso di fusione, acquisizione o vendita di asset.`
+              }
+            ]
+          },
+          {
+            title: '14. Contatto',
+            content: `Per domande su questi Termini di Utilizzo, contattaci:
+
+**Email:**
+**contato@tuggi.app**
+
+**Sito Web:**
+https://www.tuggi.app/it/terms-of-use
+
+**Per Questioni Legali:**
+**contato@tuggi.app** (oggetto: "Termini di Utilizzo")
+
+Rispondiamo entro 30 giorni lavorativi.`
+          }
+        ]
       }
     };
 
