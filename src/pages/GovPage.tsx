@@ -488,7 +488,7 @@ const getLocalizedContent = (language: string): ContentLanguage => {
           'Roadmap de implementação'
         ],
         button: 'Agendar Apresentação',
-        contact: 'Ou contacte diretamente:',
+        contact: 'Ou entre em contato diretamente com:',
         qrLabel: 'Scan para esta página'
       },
       nav: {
@@ -496,7 +496,7 @@ const getLocalizedContent = (language: string): ContentLanguage => {
         proof: 'Prova',
         implementation: 'Implementação',
         governance: 'Governança',
-        contact: 'Contacto'
+        contact: 'Contato'
       }
     },
     'ES': {
@@ -2164,11 +2164,11 @@ const GovPage: React.FC<GovPageProps> = ({
               href="mailto:leandro.ramos@tuggi.app" 
               className="text-tuggi-primary hover:text-tuggi-primary-dark font-medium text-lg"
             >
-              leandro@tuggi.app
+              leandro.ramos@tuggi.app
             </a>
 
             {/* QR Code Placeholder */}
-            <div className="mt-12 pt-8 border-t border-neutral-200">
+            {/* <div className="mt-12 pt-8 border-t border-neutral-200">
               <p className="text-sm text-neutral-500 mb-4">{content.finalCta.qrLabel}</p>
               <div className="w-32 h-32 bg-neutral-100 rounded-xl mx-auto flex items-center justify-center">
                 <div className="grid grid-cols-4 gap-1">
@@ -2180,7 +2180,7 @@ const GovPage: React.FC<GovPageProps> = ({
                   ))}
                 </div>
               </div>
-            </div>
+            </div> */}
           </motion.div>
         </div>
       </section>
