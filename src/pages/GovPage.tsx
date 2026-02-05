@@ -140,8 +140,8 @@ const getLocalizedContent = (language: string): ContentLanguage => {
           'Municipal editorial control (City OS / CMS)',
           'Measurable outcomes: engagement, dispersion, insights'
         ],
-        ctaPrimary: 'Schedule a Technical Presentation',
-        ctaSecondary: 'Download Executive Summary (PDF)'
+        ctaPrimary: 'Schedule Presentation',
+        ctaSecondary: 'Download Summary'
       },
       silentTerritory: {
         title: 'The Silent Territory',
@@ -294,7 +294,7 @@ const getLocalizedContent = (language: string): ContentLanguage => {
         ]
       },
       finalCta: {
-        title: 'Schedule a Technical Presentation',
+        title: 'Schedule Presentation',
         subtitle: 'See the platform in action and discuss implementation for your municipality.',
         duration: 'Duration: 30–45 minutes',
         includes: [
@@ -324,8 +324,8 @@ const getLocalizedContent = (language: string): ContentLanguage => {
           'Controlo editorial municipal (City OS / CMS)',
           'Resultados mensuráveis: engagement, dispersão, insights'
         ],
-        ctaPrimary: 'Agendar Apresentação Técnica',
-        ctaSecondary: 'Descarregar Resumo Executivo (PDF)'
+        ctaPrimary: 'Agendar Apresentação',
+        ctaSecondary: 'Descarregar Resumo'
       },
       silentTerritory: {
         title: 'O Território Silencioso',
@@ -478,7 +478,7 @@ const getLocalizedContent = (language: string): ContentLanguage => {
         ]
       },
       finalCta: {
-        title: 'Agendar Apresentação Técnica',
+        title: 'Agendar Apresentação',
         subtitle: 'Veja a plataforma em ação e discuta a implementação para o seu município.',
         duration: 'Duração: 30–45 minutos',
         includes: [
@@ -508,8 +508,8 @@ const getLocalizedContent = (language: string): ContentLanguage => {
           'Control editorial municipal (City OS / CMS)',
           'Resultados medibles: engagement, dispersión, insights'
         ],
-        ctaPrimary: 'Programar Presentación Técnica',
-        ctaSecondary: 'Descargar Resumen Ejecutivo (PDF)'
+        ctaPrimary: 'Agendar Presentación',
+        ctaSecondary: 'Descargar Resumen'
       },
       silentTerritory: {
         title: 'El Territorio Silencioso',
@@ -662,7 +662,7 @@ const getLocalizedContent = (language: string): ContentLanguage => {
         ]
       },
       finalCta: {
-        title: 'Programar Presentación Técnica',
+        title: 'Agendar Presentación',
         subtitle: 'Vea la plataforma en acción y discuta la implementación para su municipio.',
         duration: 'Duración: 30–45 minutos',
         includes: [
@@ -692,8 +692,8 @@ const getLocalizedContent = (language: string): ContentLanguage => {
           'Contrôle éditorial municipal (City OS / CMS)',
           'Résultats mesurables : engagement, dispersion, insights'
         ],
-        ctaPrimary: 'Planifier une Présentation Technique',
-        ctaSecondary: 'Télécharger le Résumé Exécutif (PDF)'
+        ctaPrimary: 'Planifier Présentation',
+        ctaSecondary: 'Télécharger Résumé'
       },
       silentTerritory: {
         title: 'Le Territoire Silencieux',
@@ -846,7 +846,7 @@ const getLocalizedContent = (language: string): ContentLanguage => {
         ]
       },
       finalCta: {
-        title: 'Planifier une Présentation Technique',
+        title: 'Planifier Présentation',
         subtitle: 'Voyez la plateforme en action et discutez de l\'implémentation pour votre municipalité.',
         duration: 'Durée : 30–45 minutes',
         includes: [
@@ -876,8 +876,8 @@ const getLocalizedContent = (language: string): ContentLanguage => {
           'Kommunale redaktionelle Kontrolle (City OS / CMS)',
           'Messbare Ergebnisse: Engagement, Verteilung, Insights'
         ],
-        ctaPrimary: 'Technische Präsentation vereinbaren',
-        ctaSecondary: 'Executive Summary herunterladen (PDF)'
+        ctaPrimary: 'Präsentation vereinbaren',
+        ctaSecondary: 'Zusammenfassung laden'
       },
       silentTerritory: {
         title: 'Das Stille Territorium',
@@ -1030,7 +1030,7 @@ const getLocalizedContent = (language: string): ContentLanguage => {
         ]
       },
       finalCta: {
-        title: 'Technische Präsentation vereinbaren',
+        title: 'Präsentation vereinbaren',
         subtitle: 'Sehen Sie die Plattform in Aktion und besprechen Sie die Implementierung.',
         duration: 'Dauer: 30–45 Minuten',
         includes: [
@@ -1060,8 +1060,8 @@ const getLocalizedContent = (language: string): ContentLanguage => {
           'Controllo editoriale comunale (City OS / CMS)',
           'Risultati misurabili: coinvolgimento, dispersione, insights'
         ],
-        ctaPrimary: 'Programma Presentazione Tecnica',
-        ctaSecondary: 'Scarica Executive Summary (PDF)'
+        ctaPrimary: 'Programma Presentazione',
+        ctaSecondary: 'Scarica Riassunto'
       },
       silentTerritory: {
         title: 'Il Territorio Silenzioso',
@@ -1214,7 +1214,7 @@ const getLocalizedContent = (language: string): ContentLanguage => {
         ]
       },
       finalCta: {
-        title: 'Programma Presentazione Tecnica',
+        title: 'Programma Presentazione',
         subtitle: 'Vedi la piattaforma in azione e discuti l\'implementazione per il tuo comune.',
         duration: 'Durata: 30–45 minuti',
         includes: [
@@ -1485,6 +1485,11 @@ const GovPage: React.FC<GovPageProps> = ({
         (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
       )
     });
+
+    // Handle external links
+    if (ctaType === 'cta_meeting_click') {
+      window.open('https://calendar.app.google/vXKcgKDz8oo4eTyG9', '_blank');
+    }
   };
 
   const scrollToSection = (sectionId: string) => {
