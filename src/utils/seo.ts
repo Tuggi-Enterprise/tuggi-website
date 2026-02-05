@@ -418,44 +418,44 @@ export const generateSEOConfig = (
     },
     'gov': {
       EN: {
-        title: 'Smart Tourism Infrastructure for Municipalities | Tuggi',
-        description: 'Official audio infrastructure for territories. Municipal editorial control, heritage education, flow management, and civic communication. Schedule a technical presentation.',
-        keywords: 'smart tourism infrastructure, municipal tourism, portugal municipalities, cultural tourism, smart city, audio guide infrastructure, city os, tourism governance, visitor dispersion, heritage education',
-        ogTitle: 'Smart Tourism Infrastructure for Municipalities | Tuggi',
+        title: 'Official Smart Tourism Infrastructure for Municipalities | Tuggi',
+        description: 'Official digital audio infrastructure for territories. Municipal editorial control (City OS), heritage education, flow management, and civic communication. Schedule a technical presentation.',
+        keywords: 'smart tourism infrastructure, municipal tourism, portugal municipalities, cultural tourism, smart city, audio guide infrastructure, city os, tourism governance, visitor dispersion, heritage education, b2g travel tech',
+        ogTitle: 'Official Smart Tourism Infrastructure for Municipalities | Tuggi',
         ogDescription: 'Turn mobility into cultural intelligence — with full municipal governance of the narrative. White-label audio layer for your territory.'
       },
       PT: {
         title: 'Infraestrutura Oficial de Turismo Inteligente para Municípios | Tuggi',
-        description: 'Camada de áudio oficial para o território. Controlo editorial municipal, educação patrimonial, gestão de fluxos e comunicação cívica. Agende uma apresentação técnica.',
-        keywords: 'infraestrutura turismo inteligente, turismo municipal, câmaras municipais portugal, turismo cultural, smart city, infraestrutura audioguia, city os, governança turismo, dispersão visitantes, educação patrimonial',
+        description: 'Camada de áudio oficial para o território (Câmara Municipal). Controlo editorial municipal (City OS), educação patrimonial, coesão territorial e comunicação cívica. Agende uma apresentação técnica.',
+        keywords: 'infraestrutura turismo inteligente, turismo municipal, câmaras municipais portugal, turismo cultural, smart city, infraestrutura audioguia, city os, governação turismo, dispersão visitantes, educação patrimonial, b2g',
         ogTitle: 'Infraestrutura Oficial de Turismo Inteligente para Municípios | Tuggi',
-        ogDescription: 'Transformar mobilidade em inteligência cultural — com governança editorial municipal. Camada white label de áudio para o seu território.'
+        ogDescription: 'Transformar mobilidade em inteligência cultural — com governação editorial municipal. Camada white label de áudio para o seu território (Câmara Municipal).'
       },
       ES: {
         title: 'Infraestructura Oficial de Turismo Inteligente para Municipios | Tuggi',
-        description: 'Capa de audio oficial para el territorio. Control editorial municipal, educación patrimonial, gestión de flujos y comunicación cívica.',
-        keywords: 'infraestructura turismo inteligente, turismo municipal, ayuntamientos, turismo cultural, smart city, guía audio, city os, gobernanza turismo',
+        description: 'Capa de audio oficial para el territorio. Control editorial municipal (City OS), educación patrimonial, gestión de flujos y comunicación cívica.',
+        keywords: 'infraestructura turismo inteligente, turismo municipal, ayuntamientos, turismo cultural, smart city, guía audio, city os, gobernanza turismo, b2g',
         ogTitle: 'Infraestructura Oficial de Turismo Inteligente para Municipios | Tuggi',
         ogDescription: 'Transformar movilidad en inteligencia cultural — con gobernanza editorial municipal.'
       },
       FR: {
         title: 'Infrastructure Officielle de Tourisme Intelligent pour les Municipalités | Tuggi',
-        description: 'Couche audio officielle pour le territoire. Contrôle éditorial municipal, éducation patrimoniale, gestion des flux et communication civique.',
-        keywords: 'infrastructure tourisme intelligent, tourisme municipal, mairies, tourisme culturel, smart city, guide audio, city os, gouvernance tourisme',
+        description: 'Couche audio officielle pour le territoire. Contrôle éditorial municipal (City OS), éducation patrimoniale, gestion des flux et communication civique.',
+        keywords: 'infrastructure tourisme intelligent, tourisme municipal, mairies, tourisme culturel, smart city, guide audio, city os, gouvernance tourisme, b2g',
         ogTitle: 'Infrastructure Officielle de Tourisme Intelligent pour les Municipalités | Tuggi',
         ogDescription: 'Transformer la mobilité en intelligence culturelle — avec gouvernance éditoriale municipale.'
       },
       DE: {
         title: 'Offizielle Smart-Tourismus-Infrastruktur für Gemeinden | Tuggi',
-        description: 'Offizielle Audio-Schicht für das Territorium. Kommunale redaktionelle Kontrolle, Kulturerbe-Bildung, Besucherfluss-Management.',
-        keywords: 'smart tourismus infrastruktur, kommunaler tourismus, gemeinden, kultureller tourismus, smart city, audio guide, city os',
+        description: 'Offizielle Audio-Schicht für das Territorium. Kommunale redaktionelle Kontrolle (City OS), Kulturerbe-Bildung, Besucherfluss-Management.',
+        keywords: 'smart tourismus infrastruktur, kommunaler tourismus, gemeinden, kultureller tourismus, smart city, audio guide, city os, b2g',
         ogTitle: 'Offizielle Smart-Tourismus-Infrastruktur für Gemeinden | Tuggi',
         ogDescription: 'Mobilität in kulturelle Intelligenz verwandeln — mit kommunaler redaktioneller Kontrolle.'
       },
       IT: {
         title: 'Infrastruttura Ufficiale di Turismo Intelligente per i Comuni | Tuggi',
-        description: 'Layer audio ufficiale per il territorio. Controllo editoriale comunale, educazione al patrimonio, gestione dei flussi e comunicazione civica.',
-        keywords: 'infrastruttura turismo intelligente, turismo comunale, comuni, turismo culturale, smart city, guida audio, city os',
+        description: 'Layer audio ufficiale per il territorio. Controllo editoriale comunale (City OS), educazione al patrimonio, gestione dei flussi e comunicazione civica.',
+        keywords: 'infrastruttura turismo intelligente, turismo comunale, comuni, turismo culturale, smart city, guida audio, city os, b2g',
         ogTitle: 'Infrastruttura Ufficiale di Turismo Intelligente per i Comuni | Tuggi',
         ogDescription: 'Trasformare la mobilità in intelligenza culturale — con governance editoriale comunale.'
       }
@@ -736,7 +736,7 @@ export const generateStructuredData = (page: string, language: string, baseUrl: 
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "Smart Tourism Infrastructure for Municipalities",
-        "description": "Official audio infrastructure for territories with municipal editorial control",
+        "description": "Official b2g digital audio infrastructure for territories with municipal editorial control",
         "mainEntity": organizationData,
         "inLanguage": getLocaleCode(language),
         "about": {
@@ -744,10 +744,14 @@ export const generateStructuredData = (page: string, language: string, baseUrl: 
           "name": "Tuggi City OS",
           "description": "Municipal digital infrastructure for official, geo-located audio narratives",
           "provider": organizationData,
-          "serviceType": "Smart Tourism Infrastructure",
+          "serviceType": "Government Infrastructure Service",
           "areaServed": {
             "@type": "Country",
             "name": "Portugal"
+          },
+          "audience": {
+            "@type": "Audience",
+            "audienceType": "Municipal IT and Procurement Stakeholders"
           }
         },
         "potentialAction": {
@@ -755,7 +759,7 @@ export const generateStructuredData = (page: string, language: string, baseUrl: 
           "name": "Schedule Technical Presentation",
           "target": {
             "@type": "EntryPoint",
-            "urlTemplate": `${baseUrl}/${language.toLowerCase()}/gov/portugal#contact`
+            "urlTemplate": `${baseUrl}/${language.toLowerCase()}/gov#contact`
           }
         }
       };
@@ -808,6 +812,7 @@ export const updatePageSEO = (seoConfig: SEOConfig) => {
   updateMetaTag('og:image:width', '1200', true);
   updateMetaTag('og:image:height', '630', true);
   updateMetaTag('og:image:alt', seoConfig.ogImageAlt || 'Tuggi — cultura em movimento', true);
+  updateMetaTag('og:locale', getLocaleCode(seoConfig.hreflang.find(h => h.url === seoConfig.canonicalUrl)?.lang || 'EN').replace('-', '_'), true);
 
   // Update Twitter Card tags
   updateMetaTag('twitter:card', 'summary_large_image');

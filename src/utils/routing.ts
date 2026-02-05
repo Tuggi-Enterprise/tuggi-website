@@ -354,7 +354,7 @@ export const getLanguageName = (language: string): string => {
  */
 export const getLocaleCode = (language: string): string => {
   const localeCodes: Record<string, string> = {
-    'PT': 'pt-BR',
+    'PT': 'pt-PT',
     'EN': 'en-US',
     'ES': 'es-ES',
     'FR': 'fr-FR',

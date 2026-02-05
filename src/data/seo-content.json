@@ -3,7 +3,7 @@
   "languages": ["en", "pt", "es", "fr", "de", "it"],
   "locales": {
     "en": "en_US",
-    "pt": "pt_BR",
+    "pt": "pt_PT",
     "es": "es_ES",
     "fr": "fr_FR",
     "de": "de_DE",
@@ -84,10 +84,10 @@
       },
       "pt": {
         "title": "Infraestrutura Oficial de Turismo Inteligente para Municípios | Tuggi",
-        "description": "Camada de áudio oficial para o território. Controlo editorial municipal, educação patrimonial, gestão de fluxos e comunicação cívica. Agende uma apresentação técnica.",
-        "keywords": "infraestrutura turismo inteligente, turismo municipal, câmaras municipais portugal, turismo cultural, smart city, infraestrutura audioguia, city os, governança turismo, dispersão visitantes, educação patrimonial",
+        "description": "Camada de áudio oficial para o território. Controlo editorial municipal, educação patrimonial, governação de fluxos e comunicação cívica. Agende uma apresentação técnica.",
+        "keywords": "infraestrutura turismo inteligente, turismo municipal, câmaras municipais portugal, turismo cultural, smart city, governação turismo, dispersão visitantes, educação patrimonial",
         "ogTitle": "Infraestrutura Oficial de Turismo Inteligente para Municípios | Tuggi",
-        "ogDescription": "Transformar mobilidade em inteligência cultural — com governança editorial municipal. Camada white label de áudio para o seu território.",
+        "ogDescription": "Transformar mobilidade em inteligência cultural — com governação editorial municipal. Camada white label de áudio para o seu território.",
         "ogImage": "/og/gov.jpg"
       },
       "es": {

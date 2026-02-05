@@ -61,13 +61,18 @@ interface ContentLanguage {
     title: string;
     subtitle: string;
     videoLabel: string;
+    videoValidation: string;
     appScreensLabel: string;
+    appValidation: string;
     cmsScreensLabel: string;
+    cmsValidation: string;
     reportLabel: string;
+    reportValidation: string;
   };
   operations: {
     title: string;
     subtitle: string;
+    modelLine: string;
     municipalityTitle: string;
     municipalityItems: string[];
     tuggiTitle: string;
@@ -138,24 +143,24 @@ const getLocalizedContent = (language: string): ContentLanguage => {
         bullets: [
           'White-label official audio layer for the territory',
           'Municipal editorial control (City OS / CMS)',
-          'Measurable outcomes: engagement, dispersion, insights'
+          'Monthly reports with metrics and heat maps'
         ],
         ctaPrimary: 'Schedule Presentation',
         ctaSecondary: 'Download Summary'
       },
       silentTerritory: {
         title: 'The Silent Territory',
-        intro: 'Every day, thousands move through your municipality without cultural context:',
+        intro: 'Every day, thousands move through the Municipality without cultural mediation:',
         problems: [
-          'Daily flows without cultural context or local identity',
-          'Lost opportunity for heritage education and visitor dispersion',
-          'Dependence on external content without municipal governance'
+          'Flows without territorial reading. Daily commutes cross heritage sites without mediation.',
+          'Underutilized public opportunity. Heritage education and local identity out of routine.',
+          'Concentration and pressure in the center. Lack of instrument to guide dispersion and measure results.'
         ]
       },
       whatIsTuggi: {
         title: 'What Tuggi Is',
         oneLiner: 'A municipal digital infrastructure layer for official, geo-located audio narratives.',
-        paragraph: 'Tuggi is infrastructure, not a campaign. Not a generic tourism app. It\'s an official municipal asset that transforms every commute and journey into an opportunity for heritage education and civic connection.',
+        paragraph: 'The Council defines, approves, and publishes; Tuggi operates the infrastructure and provides metrics. Tuggi is an official municipal asset that transforms every commute into an opportunity for heritage education and civic connection.',
         diagram: {
           city: 'City Council',
           platform: 'Tuggi City OS',
@@ -173,7 +178,7 @@ const getLocalizedContent = (language: string): ContentLanguage => {
               'Informal education during daily mobility',
               'Citizens become heritage ambassadors'
             ],
-            indicator: 'Indicators: plays per zone, retention rate, top narratives'
+            indicator: 'Indicators: plays per zone, retention, top narratives'
           },
           {
             title: 'Narrative Sovereignty (Governance)',
@@ -182,7 +187,7 @@ const getLocalizedContent = (language: string): ContentLanguage => {
               'Historical accuracy guaranteed',
               'Official multilingual versions'
             ],
-            indicator: 'Indicators: publication logs, editorial trail, language versions'
+            indicator: 'Indicators: language versions, editorial logs, publication status'
           },
           {
             title: 'Territorial Cohesion & Flow Management',
@@ -191,7 +196,7 @@ const getLocalizedContent = (language: string): ContentLanguage => {
               'Reduce pressure on historic center',
               'Distribute tourist spending geographically'
             ],
-            indicator: 'Indicators: heatmaps, visits per cluster, routes consumed'
+            indicator: 'Indicators: heatmaps, consumption by zone, secondary POIs'
           },
           {
             title: 'Civic Communication & Public Utility',
@@ -200,7 +205,7 @@ const getLocalizedContent = (language: string): ContentLanguage => {
               'Contextual communication by zone',
               'Direct reach during transit'
             ],
-            indicator: 'Indicators: reach by area, time window analytics'
+            indicator: 'Indicators: reach by area and time window'
           }
         ]
       },
@@ -208,24 +213,29 @@ const getLocalizedContent = (language: string): ContentLanguage => {
         title: 'Evidence That It Works',
         subtitle: 'Real product, real results — see for yourself',
         videoLabel: 'Product Demo (60s)',
+        videoValidation: 'Trigger by geolocation + language switching',
         appScreensLabel: 'App Screenshots',
+        appValidation: 'User experience in transit',
         cmsScreensLabel: 'CMS / City OS',
-        reportLabel: 'Sample Monthly Report'
+        cmsValidation: 'Editorial control + versions',
+        reportLabel: 'Sample Monthly Report',
+        reportValidation: 'Monthly metrics + heatmaps'
       },
       operations: {
         title: 'How the City Operates It',
         subtitle: 'Clear roles, minimal municipal overhead',
-        municipalityTitle: 'Municipality',
+        modelLine: 'Operation model: clear responsibilities, minimal municipal effort.',
+        municipalityTitle: 'City Council',
         municipalityItems: [
-          'Historical validation and institutional tone',
-          'Priority zone definition (center, parishes, corridors)',
-          'Editorial calendar approval'
+          'Validates historical accuracy and institutional tone',
+          'Approves editorial calendar and priority zones',
+          'Defines strategic heritage objectives'
         ],
         tuggiTitle: 'Tuggi',
         tuggiItems: [
-          'Technical setup, POI ingestion, white-label configuration',
-          'Narrative playbook and quality standards',
-          'Operation + reports + seasonal updates'
+          'Configures technical setup, POIs, and white-label',
+          'Operates the infrastructure and quality control',
+          'Maintains, reports and performs seasonal updates'
         ],
         lifecycleTitle: 'Content Lifecycle',
         lifecycleSteps: ['Draft', 'Review', 'Publish', 'Measure', 'Improve']
@@ -238,24 +248,24 @@ const getLocalizedContent = (language: string): ContentLanguage => {
             title: 'Phase 1: Setup & Digitization',
             duration: 'Months 1–2',
             items: [
-              'POI inventory and curation',
-              'White-label configuration',
-              'Baseline analytics + first publication'
+              'Official POI inventory published',
+              'White label configured and ready to operate',
+              'First editorial cycle approved (content + languages)'
             ]
           },
           {
             title: 'Phase 2: Operation & Intelligence',
             duration: 'Months 3–12',
             items: [
-              'Monthly operation',
-              'Reports + seasonal adjustments',
-              'Coverage expansion (parishes / routes)'
+              'Monthly report and recommendations',
+              'Seasonal updates and cultural agenda',
+              'Expansion by zones and thematic routes'
             ]
           }
         ],
         timeToValue: {
           title: 'Time-to-Value',
-          description: 'Working product live within 60 days. Measurable engagement from day one of operation.'
+          description: 'First value in 30–60 days: platform published and measuring.'
         }
       },
       governance: {
@@ -265,22 +275,22 @@ const getLocalizedContent = (language: string): ContentLanguage => {
           {
             icon: 'minimize',
             title: 'Data Minimization',
-            description: 'Only essential data collected for service operation'
+            description: 'Essential and anonymized data only.'
           },
           {
             icon: 'privacy',
             title: 'Privacy by Design',
-            description: 'Anonymization and user controls built-in'
+            description: 'User controls and GDPR compliance.'
           },
           {
             icon: 'security',
-            title: 'Security & Audit',
-            description: 'CMS access control, full audit trail'
+            title: 'Audit Trail',
+            description: 'Access by profiles, logs, and audit trail.'
           },
           {
             icon: 'hosting',
-            title: 'EU Hosting',
-            description: 'Content and logs hosted in EU-compliant infrastructure'
+            title: 'IT Documentation',
+            description: 'Minimization, anonymization, and security available.'
           }
         ],
         procurementNote: 'Procurement-ready documentation and SLA terms available upon request.'
@@ -318,30 +328,30 @@ const getLocalizedContent = (language: string): ContentLanguage => {
     'PT': {
       hero: {
         headline: 'Infraestrutura Oficial de Turismo Inteligente',
-        subheadline: 'Transformar mobilidade em inteligência cultural — com governança editorial municipal.',
+        subheadline: 'Transformar mobilidade em inteligência cultural — com autonomia e gestão editorial.',
         bullets: [
           'Camada White Label de áudio oficial para o território',
-          'Controlo editorial municipal (City OS / CMS)',
-          'Resultados mensuráveis: engagement, dispersão, insights'
+          'Gestão editorial municipal (City OS / CMS)',
+          'Relatórios mensais com métricas e mapas de calor'
         ],
         ctaPrimary: 'Agendar Apresentação',
-        ctaSecondary: 'Baixar Resumo'
+        ctaSecondary: 'Download do Resumo'
       },
       silentTerritory: {
         title: 'O Território Silencioso',
-        intro: 'Todos os dias, milhares atravessam o seu município sem contexto cultural:',
+        intro: 'Todos os dias, milhares atravessam o Município sem mediação cultural:',
         problems: [
-          'Fluxos diários sem contexto cultural ou identidade local',
-          'Oportunidade perdida de educação patrimonial e dispersão de visitantes',
-          'Dependência de conteúdos externos sem governança municipal'
+          'Fluxos sem leitura do território. Deslocações diárias atravessam locais históricos sem mediação.',
+          'Oportunidade pública subaproveitada. Educação cultural e identidade local fora da rotina.',
+          'Concentração e pressão no centro. Falta instrumento para orientar dispersão e medir resultados.'
         ]
       },
       whatIsTuggi: {
         title: 'O que é a Tuggi',
-        oneLiner: 'Uma camada de infraestrutura digital municipal para narrativas áudio oficiais e geolocalizadas.',
-        paragraph: 'A Tuggi é infraestrutura, não uma campanha. Não é uma app de turismo genérica. É um ativo municipal oficial que transforma cada deslocação e viagem numa oportunidade de educação patrimonial e conexão cívica.',
+        oneLiner: 'Uma camada de infraestrutura digital para narrativas áudio oficiais e geolocalizadas.',
+        paragraph: 'O Município define, aprova e publica; a Tuggi opera a infraestrutura e fornece métricas. A Tuggi é um ativo oficial que transforma cada deslocação numa oportunidade de valorização cultural e conexão cívica.',
         diagram: {
-          city: 'Câmara Municipal',
+          city: 'Gestão Municipal',
           platform: 'Tuggi City OS',
           citizens: 'Cidadãos e Visitantes'
         }
@@ -351,40 +361,40 @@ const getLocalizedContent = (language: string): ContentLanguage => {
         subtitle: 'Quatro pilares de impacto municipal mensurável',
         pillars: [
           {
-            title: 'Orgulho Cívico e Educação Patrimonial',
+            title: 'Orgulho Cívico e Identidade Local',
             bullets: [
-              'Reduzir a "cegueira do residente" ao património local',
+              'Reduzir a "cegueira do residente" à história local',
               'Educação informal durante a mobilidade diária',
-              'Munícipes tornam-se embaixadores do património'
+              'Moradores tornam-se embaixadores da cidade'
             ],
-            indicator: 'Indicadores: plays por zona, taxa de retenção, narrativas mais ouvidas'
+            indicator: 'Indicadores: plays por zona, retenção, principais narrativas'
           },
           {
-            title: 'Soberania Narrativa (Governança)',
+            title: 'Soberania Narrativa (Gestão Editorial)',
             bullets: [
-              'Controlo editorial municipal total',
+              'Autonomia editorial total',
               'Rigor histórico garantido',
               'Versões multilingues oficiais'
             ],
-            indicator: 'Indicadores: logs de publicação, trilha editorial, versões por idioma'
+            indicator: 'Indicadores: versões por idioma, logs de atividade, status de publicação'
           },
           {
-            title: 'Coesão Territorial e Gestão de Fluxos',
+            title: 'Coesão Territorial e Fluxos',
             bullets: [
-              'Dispersão para freguesias e POIs secundários',
+              'Dispersão para novas zonas e pontos de interesse',
               'Reduzir pressão sobre o centro histórico',
-              'Distribuir gasto turístico geograficamente'
+              'Distribuir o gasto turístico geograficamente'
             ],
-            indicator: 'Indicadores: mapas de calor, visitas por cluster, rotas consumidas'
+            indicator: 'Indicadores: mapas de calor, consumo por zona, POIs secundários'
           },
           {
             title: 'Comunicação Cívica e Utilidade Pública',
             bullets: [
               'Canal institucional em áudio (agenda, alertas)',
-              'Comunicação contextual por zona',
+              'Comunicação contextual por área',
               'Alcance direto durante o trânsito'
             ],
-            indicator: 'Indicadores: alcance por área, janela temporal de analytics'
+            indicator: 'Indicadores: alcance por área e janela temporal'
           }
         ]
       },
@@ -392,24 +402,29 @@ const getLocalizedContent = (language: string): ContentLanguage => {
         title: 'Evidência de que Funciona',
         subtitle: 'Produto real, resultados reais — veja você mesmo',
         videoLabel: 'Demo do Produto (60s)',
+        videoValidation: 'Trigger por geolocalização + troca de idioma',
         appScreensLabel: 'Screenshots da App',
+        appValidation: 'Experiência de quem utiliza em trânsito',
         cmsScreensLabel: 'CMS / City OS',
-        reportLabel: 'Relatório Mensal de Exemplo'
+        cmsValidation: 'Gestão editorial + versões',
+        reportLabel: 'Relatório Mensal de Exemplo',
+        reportValidation: 'Métricas mensais + mapas de calor'
       },
       operations: {
-        title: 'Como a Câmara Opera',
-        subtitle: 'Papéis claros, overhead municipal mínimo',
+        title: 'Modelo de Operação',
+        subtitle: 'Papéis claros, overhead operacional mínimo',
+        modelLine: 'Modelo de operação: responsabilidades claras, esforço municipal mínimo.',
         municipalityTitle: 'Município',
         municipalityItems: [
-          'Validação histórica e tom institucional',
-          'Definição de zonas prioritárias (centro, freguesias, corredores)',
-          'Aprovação do calendário editorial'
+          'Valida o tom e a identidade institucional',
+          'Aprova o calendário editorial e zonas prioritárias',
+          'Define os objetivos estratégicos de cultura'
         ],
         tuggiTitle: 'Tuggi',
         tuggiItems: [
-          'Setup técnico, ingestão de POIs, configuração white label',
-          'Playbook de narrativa e padrões de qualidade',
-          'Operação + relatórios + atualizações sazonais'
+          'Configura o setup técnico, POIs e white-label',
+          'Opera a infraestrutura e gestão de qualidade',
+          'Mantém, reporta e realiza as atualizações sazonais'
         ],
         lifecycleTitle: 'Ciclo de Vida do Conteúdo',
         lifecycleSteps: ['Rascunho', 'Revisão', 'Publicar', 'Medir', 'Melhorar']
@@ -422,49 +437,49 @@ const getLocalizedContent = (language: string): ContentLanguage => {
             title: 'Fase 1: Setup e Digitalização',
             duration: 'Meses 1–2',
             items: [
-              'Inventário e curadoria de POIs',
-              'Configuração white label',
-              'Analytics baseline + primeira publicação'
+              'Inventário oficial de POIs publicado',
+              'White label configurado e pronto a operar',
+              'Primeiro ciclo editorial aprovado (conteúdos + idiomas)'
             ]
           },
           {
             title: 'Fase 2: Operação e Inteligência',
             duration: 'Meses 3–12',
             items: [
-              'Operação mensal',
-              'Relatórios + ajustes sazonais',
-              'Expansão de cobertura (freguesias / rotas)'
+              'Relatório mensal e recomendações',
+              'Atualizações sazonais e agenda cultural',
+              'Expansão por zonas e rotas temáticas'
             ]
           }
         ],
         timeToValue: {
           title: 'Time-to-Value',
-          description: 'Produto funcional em 60 dias. Engagement mensurável desde o primeiro dia de operação.'
+          description: 'Primeiro valor em 30–60 dias: plataforma publicada e a medir.'
         }
       },
       governance: {
-        title: 'Dados, Governança e Conformidade',
+        title: 'Dados, Gestão e Conformidade',
         subtitle: 'Construído para requisitos do setor público',
         items: [
           {
             icon: 'minimize',
             title: 'Minimização de Dados',
-            description: 'Apenas dados essenciais recolhidos para operação do serviço'
+            description: 'Apenas dados essenciais e anonimizados.'
           },
           {
             icon: 'privacy',
-            title: 'Privacidade por Desenho',
-            description: 'Anonimização e controlos do utilizador integrados'
+            title: 'Privacidade de Dados',
+            description: 'Autonomia para quem usa e conformidade (RGPD/LGPD).'
           },
           {
             icon: 'security',
-            title: 'Segurança e Auditoria',
-            description: 'Controlo de acesso ao CMS, trilha de auditoria completa'
+            title: 'Trilha de Auditoria',
+            description: 'Acessos por perfis, registos de publicação e auditoria.'
           },
           {
             icon: 'hosting',
-            title: 'Alojamento UE',
-            description: 'Conteúdos e logs alojados em infraestrutura conforme UE'
+            title: 'Documentação de TI',
+            description: 'Minimização, anonimização e segurança disponível.'
           }
         ],
         procurementNote: 'Documentação pronta para contratação pública e termos de SLA disponíveis mediante pedido.'
@@ -473,7 +488,7 @@ const getLocalizedContent = (language: string): ContentLanguage => {
         title: 'Porquê Agora',
         points: [
           'Pronto antes da próxima época alta de turismo',
-          'Infraestrutura reutilizável para eventos e campanhas',
+          'Infraestrutura reutilizable para eventos e campanhas',
           'Continuidade política: torna-se ativo municipal entre mandatos'
         ]
       },
@@ -495,7 +510,7 @@ const getLocalizedContent = (language: string): ContentLanguage => {
         value: 'Valor',
         proof: 'Prova',
         implementation: 'Implementação',
-        governance: 'Governança',
+        governance: 'Governação',
         contact: 'Contato'
       }
     },
@@ -506,24 +521,24 @@ const getLocalizedContent = (language: string): ContentLanguage => {
         bullets: [
           'Capa de audio oficial marca blanca para el territorio',
           'Control editorial municipal (City OS / CMS)',
-          'Resultados medibles: engagement, dispersión, insights'
+          'Informes mensuales con métricas y mapas de calor'
         ],
         ctaPrimary: 'Agendar Presentación',
         ctaSecondary: 'Descargar Resumen'
       },
       silentTerritory: {
         title: 'El Territorio Silencioso',
-        intro: 'Cada día, miles atraviesan su municipio sin contexto cultural:',
+        intro: 'Cada día, miles atraviesan el Municipio sin mediación cultural:',
         problems: [
-          'Flujos diarios sin contexto cultural o identidad local',
-          'Oportunidad perdida de educación patrimonial y dispersión de visitantes',
-          'Dependencia de contenido externo sin gobernanza municipal'
+          'Flujos sin lectura del territorio. Los desplazamientos diarios cruzan el patrimonio sin mediación.',
+          'Oportunidade pública infrautilizada. Educación patrimonial e identidad local fuera de la rutina.',
+          'Concentración y presión en el centro. Falta de instrumento para orientar la dispersión y medir resultados.'
         ]
       },
       whatIsTuggi: {
         title: 'Qué es Tuggi',
         oneLiner: 'Una capa de infraestructura digital municipal para narrativas de audio oficiales y geolocalizadas.',
-        paragraph: 'Tuggi es infraestructura, no una campaña. No es una app de turismo genérica. Es un activo municipal oficial que transforma cada viaje en una oportunidad de educación patrimonial y conexión cívica.',
+        paragraph: 'El Ayuntamiento define, aprueba y publica; Tuggi opera la infraestructura y proporciona métricas. Tuggi es un activo municipal oficial que transforma cada viaje en una oportunidad de educación patrimonial y conexión cívica.',
         diagram: {
           city: 'Ayuntamiento',
           platform: 'Tuggi City OS',
@@ -541,25 +556,25 @@ const getLocalizedContent = (language: string): ContentLanguage => {
               'Educación informal durante la movilidad diaria',
               'Los ciudadanos se convierten en embajadores del patrimonio'
             ],
-            indicator: 'Indicadores: reproducciones por zona, tasa de retención, narrativas top'
+            indicator: 'Indicadores: reproducciones por zona, retención, narrativas top'
           },
           {
             title: 'Soberanía Narrativa (Gobernanza)',
             bullets: [
               'Control editorial municipal total',
               'Rigor histórico garantizado',
-              'Versiones multilingües oficiales'
+              'Versiones multilingues oficiales'
             ],
-            indicator: 'Indicadores: registros de publicación, rastro editorial, versiones por idioma'
+            indicator: 'Indicadores: versiones por idioma, logs editoriais, estado de publicación'
           },
           {
-            title: 'Cohesión Territorial y Gestión de Flujos',
+            title: 'Cohesión Territorial e Gestión de Fluxos',
             bullets: [
               'Dispersión a parroquias y POIs secundarios',
               'Reducir presión sobre el centro histórico',
               'Distribuir gasto turístico geográficamente'
             ],
-            indicator: 'Indicadores: mapas de calor, visitas por clúster, rutas consumidas'
+            indicator: 'Indicadores: mapas de calor, consumo por zona, POIs secundarios'
           },
           {
             title: 'Comunicación Cívica y Utilidad Pública',
@@ -568,7 +583,7 @@ const getLocalizedContent = (language: string): ContentLanguage => {
               'Comunicación contextual por zona',
               'Alcance directo durante el tránsito'
             ],
-            indicator: 'Indicadores: alcance por área, analítica por franja horaria'
+            indicator: 'Indicadores: alcance por área y ventana temporal'
           }
         ]
       },
@@ -576,24 +591,29 @@ const getLocalizedContent = (language: string): ContentLanguage => {
         title: 'Evidencia de que Funciona',
         subtitle: 'Producto real, resultados reales — véalo usted mismo',
         videoLabel: 'Demo del Producto (60s)',
+        videoValidation: 'Trigger por geolocalización + cambio de idioma',
         appScreensLabel: 'Capturas de la App',
+        appValidation: 'Experiencia del usuario en tránsito',
         cmsScreensLabel: 'CMS / City OS',
-        reportLabel: 'Informe Mensual de Ejemplo'
+        cmsValidation: 'Control editorial + versiones',
+        reportLabel: 'Informe Mensual de Ejemplo',
+        reportValidation: 'Métricas mensuales + mapas de calor'
       },
       operations: {
         title: 'Cómo lo Opera la Ciudad',
         subtitle: 'Roles claros, gastos generales municipales mínimos',
-        municipalityTitle: 'Municipio',
+        modelLine: 'Modelo de operación: responsabilidades claras, esfuerzo municipal mínimo.',
+        municipalityTitle: 'Ayuntamiento',
         municipalityItems: [
-          'Validación histórica y tono institucional',
-          'Definición de zonas prioritarias (centro, barrios, corredores)',
-          'Aprobación del calendario editorial'
+          'Valida el rigor histórico y el tono institucional',
+          'Aprueba o calendario editorial y zonas prioritarias',
+          'Define los objetivos estratégicos de patrimonio'
         ],
         tuggiTitle: 'Tuggi',
         tuggiItems: [
-          'Configuración técnica, ingesta de POIs, configuración marca blanca',
-          'Playbook de narrativa y estándares de calidad',
-          'Operación + informes + actualizaciones estacionales'
+          'Configura o setup técnico, POIs y white-label',
+          'Opera la infraestructura y control de calidad',
+          'Mantiene, informa y realiza actualizaciones estacionales'
         ],
         lifecycleTitle: 'Ciclo de Vida del Contenido',
         lifecycleSteps: ['Borrador', 'Revisión', 'Publicar', 'Medir', 'Mejorar']
@@ -603,62 +623,62 @@ const getLocalizedContent = (language: string): ContentLanguage => {
         subtitle: 'Enfoque por fases y de bajo riesgo',
         phases: [
           {
-            title: 'Fase 1: Configuración y Digitalización',
+            title: 'Fase 1: Configuração e Digitalização',
             duration: 'Meses 1–2',
             items: [
-              'Inventario y curación de POIs',
-              'Configuración marca blanca',
-              'Analítica base + primera publicación'
+              'Inventario oficial de POIs publicado',
+              'White label configurado y listo para operar',
+              'Primer ciclo editorial aprobado (contenido + idiomas)'
             ]
           },
           {
             title: 'Fase 2: Operación e Inteligencia',
             duration: 'Meses 3–12',
             items: [
-              'Operación mensual',
-              'Informes + ajustes estacionales',
-              'Expansión de cobertura (barrios / rutas)'
+              'Informe mensual y recomendaciones',
+              'Actualizaciones estacionales y agenda cultural',
+              'Expansión por zonas e rutas temáticas'
             ]
           }
         ],
         timeToValue: {
-          title: 'Tiempo de Valor',
-          description: 'Producto funcional en 60 días. Engagement medible desde el primer día de operación.'
+          title: 'Time-to-Value',
+          description: 'Primer valor en 30–60 dias: plataforma publicada y midiendo.'
         }
       },
       governance: {
-        title: 'Datos, Gobernanza y Cumplimiento',
+        title: 'Datos, Gobernanza y Conformidad',
         subtitle: 'Construido para requisitos del sector público',
         items: [
           {
             icon: 'minimize',
             title: 'Minimización de Datos',
-            description: 'Solo datos esenciales recolectados para la operación del servicio'
+            description: 'Solo datos esenciales y anonimizados.'
           },
           {
             icon: 'privacy',
             title: 'Privacidad por Diseño',
-            description: 'Anonimización y controles de usuario integrados'
+            description: 'Control de usuario y cumplimiento con GDPR.'
           },
           {
             icon: 'security',
-            title: 'Seguridad y Auditoría',
-            description: 'Control de acceso al CMS, rastro de auditoría completo'
+            title: 'Rastro de Auditoría',
+            description: 'Acceso por perfiles, registros de publicación y auditoría.'
           },
           {
             icon: 'hosting',
-            title: 'Alojamiento UE',
-            description: 'Contenidos y registros alojados en infraestructura conforme a la UE'
+            title: 'Documentación de TI',
+            description: 'Minimización, anonimización y seguridad disponible.'
           }
         ],
-        procurementNote: 'Documentación lista para contratación y términos SLA disponibles bajo petición.'
+        procurementNote: 'Documentación lista para contratación pública y términos de SLA disponibles bajo petición.'
       },
       whyNow: {
-        title: 'Por Qué Ahora',
+        title: 'Por qué ahora',
         points: [
           'Listo antes de la próxima temporada alta de turismo',
           'Infraestructura reutilizable para eventos y campañas',
-          'Continuidad política: se convierte en activo municipal entre mandatos'
+          'Continuidad política: se convierte en un activo municipal entre mandatos'
         ]
       },
       finalCta: {
@@ -666,14 +686,14 @@ const getLocalizedContent = (language: string): ContentLanguage => {
         subtitle: 'Vea la plataforma en acción y discuta la implementación para su municipio.',
         duration: 'Duración: 30–45 minutos',
         includes: [
-          'Demostración de la app en vivo',
+          'Demostración de la aplicación en vivo',
           'Recorrido por CMS / City OS',
           'Informe de analítica de ejemplo',
           'Hoja de ruta de implementación'
         ],
-        button: 'Programar Presentación',
-        contact: 'O contacte directamente:',
-        qrLabel: 'Escanear para esta página'
+        button: 'Agendar Presentación',
+        contact: 'O contacte directamente con:',
+        qrLabel: 'Scan para esta página'
       },
       nav: {
         value: 'Valor',
@@ -685,56 +705,56 @@ const getLocalizedContent = (language: string): ContentLanguage => {
     },
     'FR': {
       hero: {
-        headline: 'Infrastructure Touristique Intelligente',
-        subheadline: 'Transformez la mobilité en intelligence culturelle — avec une gouvernance municipale totale.',
+        headline: 'Infrastructure de Tourisme Intelligent',
+        subheadline: 'Transformer la mobilité en intelligence culturelle — avec une gouvernance éditoriale municipale complète.',
         bullets: [
-          'Couche audio officielle marque blanche pour le territoire',
+          'Couche audio officielle en marque blanche pour le territoire',
           'Contrôle éditorial municipal (City OS / CMS)',
-          'Résultats mesurables : engagement, dispersion, insights'
+          'Rapports mensuels avec métriques et cartes de chaleur'
         ],
-        ctaPrimary: 'Planifier Présentation',
-        ctaSecondary: 'Télécharger Résumé'
+        ctaPrimary: 'Planifier une Présentation',
+        ctaSecondary: 'Télécharger le Résumé'
       },
       silentTerritory: {
         title: 'Le Territoire Silencieux',
-        intro: 'Chaque jour, des milliers traversent votre municipalité sans contexte culturel :',
+        intro: 'Chaque jour, des milliers de personnes traversent la Commune sans médiation culturelle :',
         problems: [
-          'Flux quotidiens sans contexte culturel ou identité locale',
-          'Occasion manquée d\'éducation patrimoniale et de dispersion des visiteurs',
-          'Dépendance au contenu externe sans gouvernance municipale'
+          'Flux sans lecture du territoire. Les déplacements quotidiens croisent le patrimoine sans médiation.',
+          'Opportunité publique sous-exploitée. Éducation patrimoniale et identité locale hors routine.',
+          'Concentration et pression au centre. Manque d\'instrument pour guider la dispersion et mesurer les résultats.'
         ]
       },
       whatIsTuggi: {
         title: 'Qu\'est-ce que Tuggi',
-        oneLiner: 'Une infrastructure numérique municipale pour des récits audio officiels et géolocalisés.',
-        paragraph: 'Tuggi est une infrastructure, pas une campagne. Pas une application touristique générique. C\'est un actif municipal officiel qui transforme chaque trajet en opportunité d\'éducation patrimoniale et de connexion civique.',
+        oneLiner: 'Une couche d\'infrastructure numérique municipale pour des récits audio officiels et géolocalisés.',
+        paragraph: 'La Mairie définit, approuve et publie ; Tuggi gère l\'infrastructure et fournit des métriques. Tuggi est um atout municipal officiel qui transforme chaque trajet en une opportunité d\'éducation patrimoniale et de connexion civique.',
         diagram: {
           city: 'Mairie',
           platform: 'Tuggi City OS',
-          citizens: 'Citoyens et Visiteurs'
+          citizens: 'Citoyens & Visiteurs'
         }
       },
       publicValue: {
-        title: 'Valeur Publique Délivrée',
+        title: 'Valeur Publique Livrée',
         subtitle: 'Quatre piliers d\'impact municipal mesurable',
         pillars: [
           {
             title: 'Fierté Civique & Éducation Patrimoniale',
             bullets: [
-              'Réduire la "cécité du résident" envers le patrimoine local',
-              'Éducation informelle durant la mobilité quotidienne',
-              'Les citoyens deviennent ambassadeurs du patrimoine'
+              'Réduire la "cécité des résidents" face au patrimoine local',
+              'Éducation informelle pendant la mobilité quotidienne',
+              'Les citoyens deviennent des ambassadeurs du patrimoine'
             ],
-            indicator: 'Indicateurs : écoutes par zone, taux de rétention, top récits'
+            indicator: 'Indicateurs : écoutes par zone, rétention, tops récits'
           },
           {
             title: 'Souveraineté Narrative (Gouvernance)',
             bullets: [
-              'Contrôle éditorial municipal total',
+              'Contrôle éditorial municipal complet',
               'Rigueur historique garantie',
               'Versions multilingues officielles'
             ],
-            indicator: 'Indicateurs : journaux de publication, traçabilité, versions linguistiques'
+            indicator: 'Indicateurs : versions par langue, journaux éditoriaux, statut de publication'
           },
           {
             title: 'Cohésion Territoriale & Gestion des Flux',
@@ -743,71 +763,76 @@ const getLocalizedContent = (language: string): ContentLanguage => {
               'Réduire la pression sur le centre historique',
               'Distribuer les dépenses touristiques géographiquement'
             ],
-            indicator: 'Indicateurs : cartes thermiques, visites par cluster, itinéraires'
+            indicator: 'Indicateurs : cartes de chaleur, consommation par zone, POI secondaires'
           },
           {
             title: 'Communication Civique & Utilité Publique',
             bullets: [
               'Canal audio institutionnel (agenda, alertes)',
               'Communication contextuelle par zone',
-              'Portée directe durant le transit'
+              'Portée directe pendant le transit'
             ],
-            indicator: 'Indicateurs : portée par zone, analytique temporelle'
+            indicator: 'Indicateurs : portée par zone et fenêtre temporelle'
           }
         ]
       },
       evidence: {
         title: 'Preuve que ça Marche',
         subtitle: 'Produit réel, résultats réels — voyez par vous-même',
-        videoLabel: 'Démo Produit (60s)',
-        appScreensLabel: 'Captures d\'écran App',
+        videoLabel: 'Démo du Produit (60s)',
+        videoValidation: 'Déclenchement par géolocalisation + changement de langue',
+        appScreensLabel: 'Captures d\'écran de l\'App',
+        appValidation: 'Expérience utilisateur en transit',
         cmsScreensLabel: 'CMS / City OS',
-        reportLabel: 'Exemple de Rapport Mensuel'
+        cmsValidation: 'Contrôle éditorial + versions',
+        reportLabel: 'Exemple de Rapport Mensuel',
+        reportValidation: 'Métriques mensuelles + cartes de chaleur'
       },
       operations: {
-        title: 'Comment la Ville l\'Opère',
-        subtitle: 'Rôles clairs, charge municipale minimale',
-        municipalityTitle: 'Municipalité',
+        title: 'How the City Operates It',
+        subtitle: 'Clear roles, minimal municipal overhead',
+        modelLine: 'Operation model: clear responsibilities, minimal municipal effort.',
+        municipalityTitle: 'Mairie',
         municipalityItems: [
-          'Validation historique et ton institutionnel',
-          'Définition des zones prioritaires (centro, quartiers, corridors)',
-          'Approbation du calendrier éditorial'
+          'Valide la rigueur historique et le ton institutionnel',
+          'Approuve le calendrier éditorial et les zones prioritaires',
+          'Définit les objectifs patrimoniaux stratégiques'
         ],
         tuggiTitle: 'Tuggi',
         tuggiItems: [
-          'Configuration technique, ingestion POI, configuration marque blanche',
-          'Playbook narratif et standards de qualité',
-          'Opération + rapports + mises à jour saisonnières'
+          'Configure l\'installation technique, les POI et la marque blanche',
+          'Gère l\'infrastructure et le contrôle de qualité',
+          'Entretient, rapporte et effectue les mises à jour saisonnières'
         ],
-        lifecycleTitle: 'Cycle de Vie du Contenu',
+        lifecycleTitle: 'Cycle de vie du Contenu',
         lifecycleSteps: ['Brouillon', 'Révision', 'Publier', 'Mesurer', 'Améliorer']
       },
       implementation: {
-        title: 'Modèle d\'Implémentation',
+        title: 'Modèle de Mise en Œuvre',
         subtitle: 'Approche par phases et à faible risque',
         phases: [
           {
-            title: 'Phase 1 : Configuration & Digitalisation',
+            title: 'Phase 1 : Setup & Numérisation',
             duration: 'Mois 1–2',
             items: [
-              'Inventaire et curation des POI',
-              'Configuration marque blanche',
-              'Analytique de base + première publication'
+              'Inventaire officiel des POI publié',
+              'Marque blanche configurée et prête à l\'emploi',
+              'Premier cycle éditorial approuvé (contenu + langues)'
             ]
           },
           {
             title: 'Phase 2 : Opération & Intelligence',
             duration: 'Mois 3–12',
             items: [
-              'Opération mensuelle',
-              'Rapports + ajustements saisonniers',
-              'Expansion de la couverture (quartiers / itinéraires)'
+              'Rapport mensuel et recommandations',
+              'Mises à jour saisonnières et agenda culturel',
+              'Expansion par zones et itinéraires thématiques'
             ]
           }
         ],
         timeToValue: {
-          title: 'Temps de Valorisation',
-          description: 'Produit fonctionnel en 60 jours. Engagement mesurable dès le premier jour d\'opération.'
+          title: 'Délai de rentabilisation',
+          description: 'Première valeur sous 30–60 jours : plateforme publiée et mesurée.'
         }
       },
       governance: {
@@ -817,81 +842,81 @@ const getLocalizedContent = (language: string): ContentLanguage => {
           {
             icon: 'minimize',
             title: 'Minimisation des Données',
-            description: 'Seules les données essentielles collectées pour l\'opération'
+            description: 'Données essentielles et anonymisées uniquement.'
           },
           {
             icon: 'privacy',
-            title: 'Confidentialité par Conception',
-            description: 'Anonymisation et contrôles utilisateur intégrés'
+            title: 'Confidentialité par Design',
+            description: 'Contrôles utilisateur et conformité RGPD.'
           },
           {
             icon: 'security',
-            title: 'Sécurité & Audit',
-            description: 'Contrôle d\'accès CMS, piste d\'audit complète'
+            title: 'Piste d\'Audit',
+            description: 'Accès par profils, journaux et piste d\'audit.'
           },
           {
             icon: 'hosting',
-            title: 'Hébergement UE',
-            description: 'Contenus et journaux hébergés sur infrastructure conforme UE'
+            title: 'Documentation IT',
+            description: 'Minimisation, anonymisation et sécurité disponibles.'
           }
         ],
-        procurementNote: 'Documentation prête pour marché public et termes SLA disponibles sur demande.'
+        procurementNote: 'Documentation prête pour les marchés publics et conditions de SLA disponibles sur demande.'
       },
       whyNow: {
         title: 'Pourquoi Maintenant',
         points: [
           'Prêt avant la prochaine haute saison touristique',
           'Infrastructure réutilisable pour événements et campagnes',
-          'Continuité politique : devient un actif municipal entre mandats'
+          'Continuité politique : devient un atout municipal entre les mandats'
         ]
       },
       finalCta: {
-        title: 'Planifier Présentation',
-        subtitle: 'Voyez la plateforme en action et discutez de l\'implémentation pour votre municipalité.',
+        title: 'Planifier une Présentation',
+        subtitle: 'Découvrez la plateforme en action et discutez de l\'mise en œuvre pour votre commune.',
         duration: 'Durée : 30–45 minutes',
         includes: [
-          'Démonstration de l\'app en direct',
-          'Visite guidée CMS / City OS',
-          'Exemple de rapport analytique',
-          'Feuille de route d\'implémentation'
+          'Démonstration en direct de l\'application',
+          'Visite guidée du CMS / City OS',
+          'Exemple de rapport d\'analyse',
+          'Feuille de route de mise en œuvre'
         ],
-        button: 'Planifier Présentation',
+        button: 'Planifier une Présentation',
         contact: 'Ou contactez directement :',
-        qrLabel: 'Scanner pour cette page'
+        qrLabel: 'Scan pour cette page'
       },
       nav: {
         value: 'Valeur',
         proof: 'Preuve',
-        implementation: 'Implémentation',
+        implementation: 'Mise en œuvre',
         governance: 'Gouvernance',
         contact: 'Contact'
       }
     },
     'DE': {
       hero: {
-        headline: 'Smarte Tourismus-Infrastruktur',
+        headline: 'Smarte Tourismus-Infrastruktur für Kommunen',
         subheadline: 'Verwandeln Sie Mobilität in kulturelle Intelligenz — mit voller kommunaler Governance.',
         bullets: [
           'Offizielle White-Label-Audioebene für das Gebiet',
           'Kommunale redaktionelle Kontrolle (City OS / CMS)',
-          'Messbare Ergebnisse: Engagement, Verteilung, Insights'
+          'Monatliche Berichte mit Metriken und Heatmaps'
         ],
         ctaPrimary: 'Präsentation vereinbaren',
         ctaSecondary: 'Zusammenfassung laden'
       },
       silentTerritory: {
         title: 'Das Stille Territorium',
-        intro: 'Täglich durchqueren Tausende Ihre Gemeinde ohne kulturellen Kontext:',
+        intro: 'Täglich durchqueren Tausende die Gemeinde ohne kulturelle Vermittlung:',
         problems: [
-          'Tägliche Ströme ohne kulturellen Kontext oder lokale Identität',
-          'Verpasste Chance zur Kulturerbe-Bildung und Besucherverteilung',
-          'Abhängigkeit von externen Inhalten ohne kommunale Kontrolle'
+          'Ströme ohne Gebietslektüre. Tägliche Fahrten führen ohne Vermittlung an Kulturerbe vorbei.',
+          'Untergenutzte öffentliche Chance. Erbebildung und lokale Identität außerhalb der Routine.',
+          'Konzentration und Druck im Zentrum. Fehlen eines Instruments zur Steuerung der Verteilung und Ergebnismessung.'
         ]
       },
       whatIsTuggi: {
         title: 'Was Tuggi ist',
         oneLiner: 'Eine kommunale digitale Infrastrukturebene für offizielle, geolokalisierte Audio-Narrative.',
-        paragraph: 'Tuggi ist Infrastruktur, keine Kampagne. Keine generische Tourismus-App. Es ist ein offizieller kommunaler Vermögenswert, der jede Fahrt in eine Gelegenheit für Bildung und bürgerschaftliche Verbindung verwandelt.',
+        paragraph: 'Die Kommune definiert, genehmigt und veröffentlicht; Tuggi betreibt die Infrastruktur und liefert Metriken. Tuggi ist ein offizieller kommunaler Vermögenswert, der jede Fahrt in eine Gelegenheit für Erbebildung und bürgerschaftliche Verbindung verwandelt.',
         diagram: {
           city: 'Stadtverwaltung',
           platform: 'Tuggi City OS',
@@ -903,13 +928,13 @@ const getLocalizedContent = (language: string): ContentLanguage => {
         subtitle: 'Vier Säulen messbarer kommunaler Wirkung',
         pillars: [
           {
-            title: 'Bürgerstolz & Kulturerbe-Bildung',
+            title: 'Bürgerstolz & Erbebildung',
             bullets: [
               'Reduzierung der "Bewohner-Blindheit" gegenüber lokalem Erbe',
               'Informelle Bildung während der täglichen Mobilität',
               'Bürger werden zu Botschaftern des Erbes'
             ],
-            indicator: 'Indikatoren: Abspielungen pro Zone, Bindungsrate, Top-Narrative'
+            indicator: 'Indikatoren: Wiedergaben pro Zone, Bindung, Top-Narrative'
           },
           {
             title: 'Narrative Souveränität (Governance)',
@@ -918,7 +943,7 @@ const getLocalizedContent = (language: string): ContentLanguage => {
               'Historische Genauigkeit garantiert',
               'Offizielle mehrsprachige Versionen'
             ],
-            indicator: 'Indikatoren: Veröffentlichungsprotokolle, redaktioneller Pfad, Sprachversionen'
+            indicator: 'Indikatoren: Versionen pro Sprache, redaktionelle Protokolle, Veröffentlichungsstatus'
           },
           {
             title: 'Territorialer Zusammenhalt & Flussmanagement',
@@ -927,7 +952,7 @@ const getLocalizedContent = (language: string): ContentLanguage => {
               'Druck auf das historische Zentrum reduzieren',
               'Touristische Ausgaben geografisch verteilen'
             ],
-            indicator: 'Indikatoren: Heatmaps, Besuche pro Cluster, konsumierte Routen'
+            indicator: 'Indikatoren: Heatmaps, Konsum pro Zone, sekundäre POIs'
           },
           {
             title: 'Bürgerkommunikation & Öffentlicher Nutzen',
@@ -936,7 +961,7 @@ const getLocalizedContent = (language: string): ContentLanguage => {
               'Kontextbezogene Kommunikation nach Zone',
               'Direkte Reichweite während des Transits'
             ],
-            indicator: 'Indikatoren: Reichweite nach Gebiet, Zeitfenster-Analytik'
+            indicator: 'Indikatoren: Reichweite nach Gebiet und Zeitfenster'
           }
         ]
       },
@@ -944,24 +969,29 @@ const getLocalizedContent = (language: string): ContentLanguage => {
         title: 'Beweis, dass es funktioniert',
         subtitle: 'Echtes Produkt, echte Ergebnisse — sehen Sie selbst',
         videoLabel: 'Produkt-Demo (60s)',
+        videoValidation: 'Trigger durch Geolokalisierung + Sprachwechsel',
         appScreensLabel: 'App-Screenshots',
+        appValidation: 'Benutzererfahrung während der Fahrt',
         cmsScreensLabel: 'CMS / City OS',
-        reportLabel: 'Beispiel Monatsbericht'
+        cmsValidation: 'Redaktionelle Kontrolle + Versionen',
+        reportLabel: 'Beispiel Monatsbericht',
+        reportValidation: 'Monatliche Metriken + Heatmaps'
       },
       operations: {
         title: 'Wie die Stadt es betreibt',
         subtitle: 'Klare Rollen, minimaler kommunaler Aufwand',
+        modelLine: 'Betriebsmodell: klare Verantwortlichkeiten, minimaler kommunaler Aufwand.',
         municipalityTitle: 'Gemeinde',
         municipalityItems: [
-          'Historische Validierung und institutioneller Ton',
-          'Definition von Prioritätszonen (Zentrum, Viertel, Korridore)',
-          'Genehmigung des Redaktionskalenders'
+          'Validiert historische Genauigkeit und institutionellen Ton',
+          'Genehmigt Redaktionskalender und Prioritätszonen',
+          'Definiert strategische Erbeziele'
         ],
         tuggiTitle: 'Tuggi',
         tuggiItems: [
-          'Technisches Setup, POI-Ingestion, White-Label-Konfiguration',
-          'Narrativ-Playbook und Qualitätsstandards',
-          'Betrieb + Berichte + saisonale Updates'
+          'Konfiguriert technisches Setup, POIs und White-Label',
+          'Betreibt Infrastruktur und Qualitätskontrolle',
+          'Wartet, berichtet und führt saisonale Updates durch'
         ],
         lifecycleTitle: 'Inhalts-Lebenszyklus',
         lifecycleSteps: ['Entwurf', 'Überprüfung', 'Veröffentlichen', 'Messen', 'Verbessern']
@@ -974,24 +1004,24 @@ const getLocalizedContent = (language: string): ContentLanguage => {
             title: 'Phase 1: Setup & Digitalisierung',
             duration: 'Monate 1–2',
             items: [
-              'POI-Inventar und Kuration',
-              'White-Label-Konfiguration',
-              'Basis-Analytik + erste Veröffentlichung'
+              'Offizielles POI-Inventar veröffentlicht',
+              'White-Label konfiguriert und betriebsbereit',
+              'Erster Redaktionszyklus genehmigt (Inhalte + Sprachen)'
             ]
           },
           {
             title: 'Phase 2: Betrieb & Intelligenz',
             duration: 'Monate 3–12',
             items: [
-              'Monatlicher Betrieb',
-              'Berichte + saisonale Anpassungen',
-              'Erweiterung der Abdeckung (Viertel / Routen)'
+              'Monatsbericht und Empfehlungen',
+              'Saisonale Updates und Kulturagenda',
+              'Erweiterung nach Zonen und Themenrouten'
             ]
           }
         ],
         timeToValue: {
           title: 'Time-to-Value',
-          description: 'Funktionierendes Produkt live innerhalb von 60 Tagen. Messbares Engagement ab dem ersten Betriebstag.'
+          description: 'Erster Wert in 30–60 Tagen: Plattform veröffentlicht und messend.'
         }
       },
       governance: {
@@ -1001,22 +1031,22 @@ const getLocalizedContent = (language: string): ContentLanguage => {
           {
             icon: 'minimize',
             title: 'Datenminimierung',
-            description: 'Nur essentielle Daten für den Servicebetrieb gesammelt'
+            description: 'Nur essentielle und anonymisierte Daten.'
           },
           {
             icon: 'privacy',
             title: 'Privacy by Design',
-            description: 'Anonymisierung und Nutzerkontrollen integriert'
+            description: 'Nutzerkontrolle und DSGVO-Konformität.'
           },
           {
             icon: 'security',
-            title: 'Sicherheit & Audit',
-            description: 'CMS-Zugriffssteuerung, vollständiger Prüfpfad'
+            title: 'Audit-Trail',
+            description: 'Profilbasierte Zugriffe, Veröffentlichungsprotokolle und Audit.'
           },
           {
             icon: 'hosting',
-            title: 'EU-Hosting',
-            description: 'Inhalte und Protokolle auf EU-konformer Infrastruktur gehostet'
+            title: 'IT-Dokumentation',
+            description: 'Minimierung, Anonymisierung und Sicherheit verfügbar.'
           }
         ],
         procurementNote: 'Vergabe-reife Dokumentation und SLA-Bedingungen auf Anfrage verfügbar.'
@@ -1031,7 +1061,7 @@ const getLocalizedContent = (language: string): ContentLanguage => {
       },
       finalCta: {
         title: 'Präsentation vereinbaren',
-        subtitle: 'Sehen Sie die Plattform in Aktion und besprechen Sie die Implementierung.',
+        subtitle: 'Sehen Sie die Plattform in Aktion und besprechen Sie die Implementierung für Ihre Gemeinde.',
         duration: 'Dauer: 30–45 Minuten',
         includes: [
           'Live-App-Demonstration',
@@ -1053,29 +1083,29 @@ const getLocalizedContent = (language: string): ContentLanguage => {
     },
     'IT': {
       hero: {
-        headline: 'Infrastruttura Turistica Intelligente',
+        headline: 'Infrastruttura di Turismo Intelligente per i Comuni',
         subheadline: 'Trasforma la mobilità in intelligenza culturale — con piena governance editoriale comunale.',
         bullets: [
           'Layer audio ufficiale white label per il territorio',
           'Controllo editoriale comunale (City OS / CMS)',
-          'Risultati misurabili: coinvolgimento, dispersione, insights'
+          'Report mensili con metriche e mappe di calore'
         ],
         ctaPrimary: 'Programma Presentazione',
         ctaSecondary: 'Scarica Riassunto'
       },
       silentTerritory: {
         title: 'Il Territorio Silenzioso',
-        intro: 'Ogni giorno, migliaia attraversano il tuo comune senza contesto culturale:',
+        intro: 'Ogni giorno, migliaia attraversano il Comune senza mediazione culturale:',
         problems: [
-          'Flussi giornalieri senza contesto culturale o identità locale',
-          'Occasioni perse per educazione al patrimonio e dispersione dei visitatori',
-          'Dipendenza da contenuti esterni senza governance comunale'
+          'Flussi senza lettura del territorio. Gli spostamenti quotidiani incrociano il patrimonio senza mediazione.',
+          'Opportunità pubblica sottoutilizzata. Educazione al patrimonio e identità locale fuori dalla routine.',
+          'Concentrazione e pressione al centro. Manca uno strumento per guidare la dispersione e misurare i risultati.'
         ]
       },
       whatIsTuggi: {
         title: 'Cos\'è Tuggi',
         oneLiner: 'Uno strato di infrastruttura digitale comunale per narrazioni audio ufficiali e geolocalizzate.',
-        paragraph: 'Tuggi è infrastruttura, non una campagna. Non un\'app turistica generica. È un asset comunale ufficiale che trasforma ogni spostamento in un\'opportunità di educazione al patrimonio e connessione civica.',
+        paragraph: 'Il Comune definisce, approva e pubblica; Tuggi gestisce l\'infrastruttura e fornisce le metriche. Tuggi è un asset comunale ufficiale che trasforma ogni spostamento in un\'opportunità di educazione al patrimonio e connessione civica.',
         diagram: {
           city: 'Comune',
           platform: 'Tuggi City OS',
@@ -1093,7 +1123,7 @@ const getLocalizedContent = (language: string): ContentLanguage => {
               'Educazione informale durante la mobilità quotidiana',
               'I cittadini diventano ambasciatori del patrimonio'
             ],
-            indicator: 'Indicatori: ascolti per zona, tasso di ritenzione, narrazioni top'
+            indicator: 'Indicatori: ascolti per zona, retention, top narrazioni'
           },
           {
             title: 'Sovranità Narrativa (Governance)',
@@ -1102,7 +1132,7 @@ const getLocalizedContent = (language: string): ContentLanguage => {
               'Accuratezza storica garantita',
               'Versioni multilingue ufficiali'
             ],
-            indicator: 'Indicatori: log di pubblicazione, traccia editoriale, versioni linguistiche'
+            indicator: 'Indicatori: versioni per lingua, log editoriali, stato di pubblicazione'
           },
           {
             title: 'Coesione Territoriale & Gestione dei Flussi',
@@ -1111,7 +1141,7 @@ const getLocalizedContent = (language: string): ContentLanguage => {
               'Ridurre la pressione sul centro storico',
               'Distribuire la spesa turistica geograficamente'
             ],
-            indicator: 'Indicatori: mappe di calore, visite per cluster, percorsi consumati'
+            indicator: 'Indicatori: mappe di calore, consumo per zona, POI secondari'
           },
           {
             title: 'Comunicazione Civica & Utilità Pubblica',
@@ -1120,7 +1150,7 @@ const getLocalizedContent = (language: string): ContentLanguage => {
               'Comunicazione contestuale per zona',
               'Portata diretta durante il transito'
             ],
-            indicator: 'Indicatori: portata per area, analisi per fascia oraria'
+            indicator: 'Indicatori: portata per area e fascia oraria'
           }
         ]
       },
@@ -1128,24 +1158,29 @@ const getLocalizedContent = (language: string): ContentLanguage => {
         title: 'Prova che Funziona',
         subtitle: 'Prodotto reale, risultati reali — guarda tu stesso',
         videoLabel: 'Demo Prodotto (60s)',
-        appScreensLabel: 'Screenshot App',
+        videoValidation: 'Trigger per geolocalizzazione + cambio lingua',
+        appScreensLabel: 'Screenshot dell\'App',
+        appValidation: 'Esperienza utente durante il transito',
         cmsScreensLabel: 'CMS / City OS',
-        reportLabel: 'Esempio Report Mensile'
+        cmsValidation: 'Controllo editoriale + versioni',
+        reportLabel: 'Esempio Report Mensile',
+        reportValidation: 'Metriche mensili + mappe di calore'
       },
       operations: {
         title: 'Come il Comune lo Opera',
         subtitle: 'Ruoli chiari, onere comunale minimo',
+        modelLine: 'Modello operativo: responsabilità chiare, sforzo comunale minimo.',
         municipalityTitle: 'Comune',
         municipalityItems: [
-          'Validazione storica e tono istituzionale',
-          'Definizione zone prioritarie (centro, quartieri, corridoi)',
-          'Approvazione calendario editoriale'
+          'Valida l\'accuratezza storica e il tono istituzionale',
+          'Approva il calendario editoriale e le zone prioritarie',
+          'Definisce gli obiettivi strategici del patrimonio'
         ],
         tuggiTitle: 'Tuggi',
         tuggiItems: [
-          'Setup tecnico, ingestione POI, configurazione white label',
-          'Playbook narrativo e standard di qualità',
-          'Operazione + report + aggiornamenti stagionali'
+          'Configura il setup tecnico, i POI e la white-label',
+          'Gestisce l\'infrastruttura e il controllo qualità',
+          'Mantiene, riporta ed esegue gli aggiornamenti stagionali'
         ],
         lifecycleTitle: 'Ciclo di Vita del Contenuto',
         lifecycleSteps: ['Bozza', 'Revisione', 'Pubblica', 'Misura', 'Migliora']
@@ -1158,24 +1193,24 @@ const getLocalizedContent = (language: string): ContentLanguage => {
             title: 'Fase 1: Setup & Digitalizzazione',
             duration: 'Mesi 1–2',
             items: [
-              'Inventario e curatela POI',
-              'Configurazione white label',
-              'Analisi base + prima pubblicazione'
+              'Inventario ufficiale dei POI pubblicato',
+              'White label configurata e pronta all\'uso',
+              'Primo ciclo editoriale approvato (contenuti + lingue)'
             ]
           },
           {
             title: 'Fase 2: Operazione & Intelligenza',
             duration: 'Mesi 3–12',
             items: [
-              'Operazione mensile',
-              'Report + aggiustamenti stagionali',
-              'Espansione copertura (quartieri / percorsi)'
+              'Report mensile e raccomandazioni',
+              'Aggiornamenti stagionali e agenda culturale',
+              'Espansione per zone e percorsi tematici'
             ]
           }
         ],
         timeToValue: {
           title: 'Time-to-Value',
-          description: 'Prodotto funzionante in 60 giorni. Coinvolgimento misurabile dal primo giorno di operazione.'
+          description: 'Primo valore in 30–60 giorni: piattaforma pubblicata e attiva.'
         }
       },
       governance: {
@@ -1185,22 +1220,22 @@ const getLocalizedContent = (language: string): ContentLanguage => {
           {
             icon: 'minimize',
             title: 'Minimizzazione Dati',
-            description: 'Solo dati essenziali raccolti per l\'operazione del servizio'
+            description: 'Solo dati essenziali e anonimizzati.'
           },
           {
             icon: 'privacy',
             title: 'Privacy by Design',
-            description: 'Anonimizzazione e controlli utente integrati'
+            description: 'Controllo utente e conformità GDPR.'
           },
           {
             icon: 'security',
-            title: 'Sicurezza & Audit',
-            description: 'Controllo accessi CMS, audit trail completo'
+            title: 'Audit Trail',
+            description: 'Accessi per profilo, registri di pubblicazione e audit.'
           },
           {
             icon: 'hosting',
-            title: 'Hosting UE',
-            description: 'Contenuti e log ospitati in infrastruttura conforme UE'
+            title: 'Documentazione IT',
+            description: 'Minimizzazione, anonimizzazione e sicurezza disponibili.'
           }
         ],
         procurementNote: 'Documentazione pronta per appalti e termini SLA disponibili su richiesta.'
@@ -1225,7 +1260,7 @@ const getLocalizedContent = (language: string): ContentLanguage => {
         ],
         button: 'Programma Presentazione',
         contact: 'O contatta direttamente:',
-        qrLabel: 'Scansiona per questa pagina'
+        qrLabel: 'Scan per questa pagina'
       },
       nav: {
         value: 'Valore',
@@ -1489,6 +1524,8 @@ const GovPage: React.FC<GovPageProps> = ({
     // Handle external links
     if (ctaType === 'cta_meeting_click') {
       window.open('https://calendar.app.google/vXKcgKDz8oo4eTyG9', '_blank');
+    } else if (ctaType === 'pdf_download') {
+      window.open('/assets/tuggi-gov-summary.pdf', '_blank');
     }
   };
 
@@ -1809,7 +1846,8 @@ const GovPage: React.FC<GovPageProps> = ({
                   <Play className="w-8 h-8 text-white ml-1" />
                 </div>
               </div>
-              <h3 className="font-semibold text-white">{content.evidence.videoLabel}</h3>
+              <h3 className="font-semibold text-white mb-1">{content.evidence.videoLabel}</h3>
+              <p className="text-xs text-tuggi-primary font-medium">{content.evidence.videoValidation}</p>
             </motion.div>
 
             {/* App Screenshots */}
@@ -1823,7 +1861,8 @@ const GovPage: React.FC<GovPageProps> = ({
               <div className="aspect-video rounded-xl overflow-hidden mb-4 bg-neutral-900">
                 <img src="/images/gov/app_collage.png" alt="Tuggi App Screenshots" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               </div>
-              <h3 className="font-semibold text-white">{content.evidence.appScreensLabel}</h3>
+              <h3 className="font-semibold text-white mb-1">{content.evidence.appScreensLabel}</h3>
+              <p className="text-xs text-tuggi-primary font-medium">{content.evidence.appValidation}</p>
             </motion.div>
 
             {/* CMS Screenshots */}
@@ -1837,7 +1876,8 @@ const GovPage: React.FC<GovPageProps> = ({
               <div className="aspect-video rounded-xl overflow-hidden mb-4 bg-neutral-900">
                 <img src="/images/gov/city_os_dashboard.png" alt="City OS Dashboard" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               </div>
-              <h3 className="font-semibold text-white">{content.evidence.cmsScreensLabel}</h3>
+              <h3 className="font-semibold text-white mb-1">{content.evidence.cmsScreensLabel}</h3>
+              <p className="text-xs text-tuggi-primary font-medium">{content.evidence.cmsValidation}</p>
             </motion.div>
 
             {/* Sample Report */}
@@ -1851,7 +1891,8 @@ const GovPage: React.FC<GovPageProps> = ({
               <div className="aspect-video rounded-xl overflow-hidden mb-4 bg-neutral-900">
                 <img src="/images/gov/monthly_report.png" alt="Monthly Report Sample" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
               </div>
-              <h3 className="font-semibold text-white">{content.evidence.reportLabel}</h3>
+              <h3 className="font-semibold text-white mb-1">{content.evidence.reportLabel}</h3>
+              <p className="text-xs text-tuggi-primary font-medium">{content.evidence.reportValidation}</p>
             </motion.div>
           </div>
         </div>
@@ -1872,8 +1913,11 @@ const GovPage: React.FC<GovPageProps> = ({
             <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-4">
               {content.operations.title}
             </h2>
-            <p className="text-lg text-neutral-600">
+            <p className="text-lg text-neutral-600 mb-4">
               {content.operations.subtitle}
+            </p>
+            <p className="text-neutral-500 max-w-2xl mx-auto italic">
+              {content.operations.modelLine}
             </p>
           </motion.div>
 
