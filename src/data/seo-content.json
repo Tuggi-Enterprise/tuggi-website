@@ -1,0 +1,577 @@
+{
+  "baseUrl": "https://www.tuggi.app",
+  "languages": ["en", "pt", "es", "fr", "de", "it"],
+  "locales": {
+    "en": "en_US",
+    "pt": "pt_BR",
+    "es": "es_ES",
+    "fr": "fr_FR",
+    "de": "de_DE",
+    "it": "it_IT"
+  },
+  "pageUrls": {
+    "home": { "en": "", "pt": "", "es": "", "fr": "", "de": "", "it": "" },
+    "gov": { "en": "gov", "pt": "gov", "es": "gov", "fr": "gov", "de": "gov", "it": "gov" },
+    "contact": { "en": "contact", "pt": "contact", "es": "contact", "fr": "contact", "de": "contact", "it": "contact" },
+    "investors": { "en": "investors", "pt": "investidores", "es": "inversores", "fr": "investisseurs", "de": "investoren", "it": "investitori" },
+    "purpose": { "en": "purpose", "pt": "proposito", "es": "proposito", "fr": "mission", "de": "zweck", "it": "scopo" },
+    "business": { "en": "business", "pt": "empresas", "es": "empresas", "fr": "entreprises", "de": "unternehmen", "it": "aziende" },
+    "drivers": { "en": "drivers", "pt": "motoristas", "es": "conductores", "fr": "chauffeurs", "de": "fahrer", "it": "autisti" },
+    "privacy": { "en": "privacy", "pt": "politica-de-privacidade", "es": "politica-de-privacidad", "fr": "politique-de-confidentialite", "de": "datenschutz", "it": "informativa-privacy" },
+    "terms": { "en": "terms", "pt": "termos-de-uso", "es": "terminos-de-uso", "fr": "conditions-d-utilisation", "de": "nutzungsbedingungen", "it": "termini-di-utilizzo" },
+    "cookies": { "en": "cookies", "pt": "politica-de-cookies", "es": "politica-de-cookies", "fr": "politique-cookies", "de": "cookie-richtlinie", "it": "informativa-cookie" },
+    "data-deletion": { "en": "data-deletion", "pt": "exclusao-de-dados", "es": "eliminacion-de-datos", "fr": "suppression-donnees", "de": "datenloeschung", "it": "cancellazione-dati" }
+  },
+  "pages": {
+    "home": {
+      "en": {
+        "title": "Tuggi | Cultural copilot for your drive — discover stories",
+        "description": "Tuggi is an automatic cultural narration app that transforms journeys into experiences. Simple, safe, and designed for drivers.",
+        "keywords": "Tuggi, cultural audio guide, tourism app, local stories, automatic narrations, cultural curiosities, explore cities, travel app, audio copilot, culture on the go",
+        "ogTitle": "Tuggi — Discover stories while driving",
+        "ogDescription": "Transform your journeys into cultural experiences with automatic narrations. Simple and safe for every driver.",
+        "ogImage": "/og/home.jpg"
+      },
+      "pt": {
+        "title": "Tuggi | Copiloto cultural para quem está dirigindo",
+        "description": "O Tuggi narra o mundo ao seu redor automaticamente. Cultura e contexto no seu trajeto com foco em segurança.",
+        "keywords": "Tuggi, copiloto cultural, guias de áudio, histórias ao dirigir, curiosidades culturais, segurança no trânsito, explorar cidades, narração automática",
+        "ogTitle": "Tuggi — Copiloto cultural para quem está dirigindo",
+        "ogDescription": "Transforme seus trajetos em descobertas. Narração automática de histórias e curiosidades culturais enquanto você dirige.",
+        "ogImage": "/og/home.jpg"
+      },
+      "es": {
+        "title": "Tuggi | Copiloto cultural para quien conduce — descubre historias",
+        "description": "Tuggi es una app de narraciones culturales automáticas que transforma trayectos en descubrimientos. Simple, segura y hecha para conductores.",
+        "keywords": "Tuggi, guía de audio cultural, app de turismo, historias locales, narraciones automáticas, curiosidades culturales, explorar ciudades, aplicación de viaje, copiloto de audio, cultura en el trayecto",
+        "ogTitle": "Tuggi — Descubre historias mientras conduces",
+        "ogDescription": "Transforma tus trayectos en descubrimientos culturales con narrativas automáticas. Simple y seguro para el conductor.",
+        "ogImage": "/og/home.jpg"
+      },
+      "fr": {
+        "title": "Tuggi | Copilote culturel pour votre conduite — découvrez des histoires",
+        "description": "Tuggi est une application de narration culturelle automatique qui transforme les trajets en découvertes. Simple, sûre et conçue pour les conducteurs.",
+        "keywords": "Tuggi, guide audio culturel, application de tourisme, histoires locales, narrations automatiques, curiosités culturelles, explorer les villes, application de voyage, copilote audio, culture en route",
+        "ogTitle": "Tuggi — Découvrez des histoires en conduisant",
+        "ogDescription": "Transformez vos trajets en découvertes culturelles avec des récits automatiques. Simple et sûr pour chaque conducteur.",
+        "ogImage": "/og/home.jpg"
+      },
+      "de": {
+        "title": "Tuggi | Kultureller Copilot für Ihre Fahrt — Entdecken Sie Geschichten",
+        "description": "Tuggi ist eine automatische kulturelle Erzähl-App, die Fahrten in Entdeckungen verwandelt. Einfach, sicher und für Fahrer konzipiert.",
+        "keywords": "Tuggi, kultureller Audio-Guide, Tourismus-App, lokale Geschichten, automatische Erzählungen, kulturelle Kuriositäten, Städte erkunden, Reise-App, Audio-Copilot, Kultur unterwegs",
+        "ogTitle": "Tuggi — Entdecken Sie Geschichten während der Fahrt",
+        "ogDescription": "Verwandeln Sie Ihre Fahrten in kulturelle Entdeckungen mit automatischen Erzählungen. Einfach und sicher für jeden Fahrer.",
+        "ogImage": "/og/home.jpg"
+      },
+      "it": {
+        "title": "Tuggi | Copilota culturale per la tua guida — scopri storie",
+        "description": "Tuggi è un'app di narrazione culturale automatica che trasforma i viaggi in scoperte. Semplice, sicuro e pensato per i conducenti.",
+        "keywords": "Tuggi, guida audio culturale, app di turismo, storie locali, narrazioni automatiche, curiosità culturali, esplora città, app di viaggio, copilota audio, cultura in movimento",
+        "ogTitle": "Tuggi — Scopri storie mentre guidi",
+        "ogDescription": "Trasforma i tuoi viaggi in scoperte culturali con narrazioni automatiche. Semplice e sicuro per ogni conducente.",
+        "ogImage": "/og/home.jpg"
+      }
+    },
+    "gov": {
+      "en": {
+        "title": "Smart Tourism Infrastructure for Municipalities | Tuggi",
+        "description": "Official audio infrastructure for territories. Municipal editorial control, heritage education, flow management, and civic communication. Schedule a technical presentation.",
+        "keywords": "smart tourism infrastructure, municipal tourism, portugal municipalities, cultural tourism, smart city, audio guide infrastructure, city os, tourism governance, visitor dispersion, heritage education",
+        "ogTitle": "Smart Tourism Infrastructure for Municipalities | Tuggi",
+        "ogDescription": "Turn mobility into cultural intelligence — with full municipal governance of the narrative. White-label audio layer for your territory.",
+        "ogImage": "/og/gov.jpg"
+      },
+      "pt": {
+        "title": "Infraestrutura Oficial de Turismo Inteligente para Municípios | Tuggi",
+        "description": "Camada de áudio oficial para o território. Controlo editorial municipal, educação patrimonial, gestão de fluxos e comunicação cívica. Agende uma apresentação técnica.",
+        "keywords": "infraestrutura turismo inteligente, turismo municipal, câmaras municipais portugal, turismo cultural, smart city, infraestrutura audioguia, city os, governança turismo, dispersão visitantes, educação patrimonial",
+        "ogTitle": "Infraestrutura Oficial de Turismo Inteligente para Municípios | Tuggi",
+        "ogDescription": "Transformar mobilidade em inteligência cultural — com governança editorial municipal. Camada white label de áudio para o seu território.",
+        "ogImage": "/og/gov.jpg"
+      },
+      "es": {
+        "title": "Infraestructura Oficial de Turismo Inteligente para Municipios | Tuggi",
+        "description": "Capa de audio oficial para el territorio. Control editorial municipal, educación patrimonial, gestión de flujos y comunicación cívica.",
+        "keywords": "infraestructura turismo inteligente, turismo municipal, ayuntamientos, turismo cultural, smart city, guía audio, city os, gobernanza turismo",
+        "ogTitle": "Infraestructura Oficial de Turismo Inteligente para Municipios | Tuggi",
+        "ogDescription": "Transformar movilidad en inteligencia cultural — con gobernanza editorial municipal.",
+        "ogImage": "/og/gov.jpg"
+      },
+      "fr": {
+        "title": "Infrastructure Officielle de Tourisme Intelligent pour les Municipalités | Tuggi",
+        "description": "Couche audio officielle pour le territoire. Contrôle éditorial municipal, éducation patrimoniale, gestion des flux et communication civique.",
+        "keywords": "infrastructure tourisme intelligent, tourisme municipal, mairies, tourisme culturel, smart city, guide audio, city os, gouvernance tourisme",
+        "ogTitle": "Infrastructure Officielle de Tourisme Intelligent pour les Municipalités | Tuggi",
+        "ogDescription": "Transformer la mobilité en intelligence culturelle — avec gouvernance éditoriale municipale.",
+        "ogImage": "/og/gov.jpg"
+      },
+      "de": {
+        "title": "Offizielle Smart-Tourismus-Infrastruktur für Gemeinden | Tuggi",
+        "description": "Offizielle Audio-Schicht für das Territorium. Kommunale redaktionelle Kontrolle, Kulturerbe-Bildung, Besucherfluss-Management.",
+        "keywords": "smart tourismus infrastruktur, kommunaler tourismus, gemeinden, kultureller tourismus, smart city, audio guide, city os",
+        "ogTitle": "Offizielle Smart-Tourismus-Infrastruktur für Gemeinden | Tuggi",
+        "ogDescription": "Mobilität in kulturelle Intelligenz verwandeln — mit kommunaler redaktioneller Kontrolle.",
+        "ogImage": "/og/gov.jpg"
+      },
+      "it": {
+        "title": "Infrastruttura Ufficiale di Turismo Intelligente per i Comuni | Tuggi",
+        "description": "Layer audio ufficiale per il territorio. Controllo editoriale comunale, educazione al patrimonio, gestione dei flussi e comunicazione civica.",
+        "keywords": "infrastruttura turismo intelligente, turismo comunale, comuni, turismo culturale, smart city, guida audio, city os",
+        "ogTitle": "Infrastruttura Ufficiale di Turismo Intelligente per i Comuni | Tuggi",
+        "ogDescription": "Trasformare la mobilità in intelligenza culturale — con governance editoriale comunale.",
+        "ogImage": "/og/gov.jpg"
+      }
+    },
+    "contact": {
+      "en": {
+        "title": "Contact Us | Tuggi",
+        "description": "Get in touch with Tuggi to learn more about our cultural discovery app. Explore cities with real-time audio stories and cultural curiosities.",
+        "keywords": "contact tuggi, cultural app support, audio guide app, local stories app, cultural tourism app",
+        "ogTitle": "Contact Us | Tuggi",
+        "ogDescription": "Get in touch with Tuggi to learn more about our cultural discovery app.",
+        "ogImage": "/og/home.jpg"
+      },
+      "pt": {
+        "title": "Contato | Tuggi",
+        "description": "Fale com a Tuggi: suporte, sugestões e parcerias. Canal oficial por e-mail.",
+        "keywords": "contato tuggi, suporte app cultural, app guia de áudio, app histórias locais, parcerias tuggi",
+        "ogTitle": "Contato | Tuggi",
+        "ogDescription": "Fale com a Tuggi: suporte, sugestões e parcerias. Canal oficial por e-mail.",
+        "ogImage": "/og/home.jpg"
+      },
+      "es": {
+        "title": "Contacto | Tuggi",
+        "description": "Ponte en contacto con Tuggi para conocer más sobre nuestra app de descubrimiento cultural.",
+        "keywords": "contacto tuggi, soporte app cultural, app guía de audio, app historias locales, app turismo cultural",
+        "ogTitle": "Contacto | Tuggi",
+        "ogDescription": "Ponte en contacto con Tuggi para conocer más sobre nuestra app de descubrimiento cultural.",
+        "ogImage": "/og/home.jpg"
+      },
+      "fr": {
+        "title": "Contact | Tuggi",
+        "description": "Contactez Tuggi pour en savoir plus sur notre application de découverte culturelle.",
+        "keywords": "contact tuggi, support application culturelle, application guide audio, histoires locales, tourisme culturel",
+        "ogTitle": "Contact | Tuggi",
+        "ogDescription": "Contactez Tuggi pour en savoir plus sur notre application de découverte culturelle.",
+        "ogImage": "/og/home.jpg"
+      },
+      "de": {
+        "title": "Kontakt | Tuggi",
+        "description": "Kontaktieren Sie Tuggi, um mehr über unsere kulturelle Entdeckungs-App zu erfahren.",
+        "keywords": "kontakt tuggi, kultur-app support, audio-guide app, lokale geschichten app",
+        "ogTitle": "Kontakt | Tuggi",
+        "ogDescription": "Kontaktieren Sie Tuggi, um mehr über unsere kulturelle Entdeckungs-App zu erfahren.",
+        "ogImage": "/og/home.jpg"
+      },
+      "it": {
+        "title": "Contatto | Tuggi",
+        "description": "Contatta Tuggi per saperne di più sulla nostra app di scoperta culturale.",
+        "keywords": "contatto tuggi, supporto app culturale, app guida audio, storie locali, turismo culturale",
+        "ogTitle": "Contatto | Tuggi",
+        "ogDescription": "Contatta Tuggi per saperne di più sulla nostra app di scoperta culturale.",
+        "ogImage": "/og/home.jpg"
+      }
+    },
+    "investors": {
+      "en": {
+        "title": "Investors | Tuggi",
+        "description": "Information for investors: Tuggi's thesis, product, and business model — cultural audio copilot for car journeys.",
+        "keywords": "tuggi investors, mobility startup, cultural data, audio guide investment, b2b data licensing",
+        "ogTitle": "Investors | Tuggi",
+        "ogDescription": "Information for investors: Tuggi's thesis, product, and business model.",
+        "ogImage": "/og/home.jpg"
+      },
+      "pt": {
+        "title": "Investidores | Tuggi",
+        "description": "Informações para investidores: tese, produto e modelo de negócio da Tuggi — copiloto cultural em áudio para trajetos de carro.",
+        "keywords": "investidores tuggi, tese investimento, startup mobilidade, licenciamento de dados, marketplace cultura",
+        "ogTitle": "Investidores | Tuggi",
+        "ogDescription": "Informações para investidores: tese, produto e modelo de negócio da Tuggi.",
+        "ogImage": "/og/home.jpg"
+      },
+      "es": {
+        "title": "Inversores | Tuggi",
+        "description": "Información para inversores: tesis, producto y modelo de negocio de Tuggi — copiloto cultural en audio para trayectos en coche.",
+        "keywords": "inversores tuggi, tesis inversión, startup movilidad, licenciamiento de datos, marketplace cultura",
+        "ogTitle": "Inversores | Tuggi",
+        "ogDescription": "Información para inversores: tesis, producto y modelo de negocio de Tuggi.",
+        "ogImage": "/og/home.jpg"
+      },
+      "fr": {
+        "title": "Investisseurs | Tuggi",
+        "description": "Informations pour les investisseurs : thèse, produit et modèle d'affaires de Tuggi — copilote culturel audio.",
+        "keywords": "investisseurs tuggi, startup mobilité, données culturelles, investissement guide audio",
+        "ogTitle": "Investisseurs | Tuggi",
+        "ogDescription": "Informations pour les investisseurs : thèse, produit et modèle d'affaires.",
+        "ogImage": "/og/home.jpg"
+      },
+      "de": {
+        "title": "Investoren | Tuggi",
+        "description": "Informationen für Investoren: These, Produkt und Geschäftsmodell von Tuggi — kultureller Audio-Copilot.",
+        "keywords": "tuggi investoren, mobilitäts-startup, kulturelle daten, audio-guide investment",
+        "ogTitle": "Investoren | Tuggi",
+        "ogDescription": "Informationen für Investoren: These, Produkt und Geschäftsmodell.",
+        "ogImage": "/og/home.jpg"
+      },
+      "it": {
+        "title": "Investitori | Tuggi",
+        "description": "Informazioni per gli investitori: tesi, prodotto e modello di business di Tuggi — copilota culturale audio.",
+        "keywords": "investitori tuggi, startup mobilità, dati culturali, investimento guida audio",
+        "ogTitle": "Investitori | Tuggi",
+        "ogDescription": "Informazioni per gli investitori: tesi, prodotto e modello di business.",
+        "ogImage": "/og/home.jpg"
+      }
+    },
+    "purpose": {
+      "en": {
+        "title": "Our Purpose | Tuggi",
+        "description": "Discover Tuggi's mission to connect people with local culture through real-time audio stories and cultural discovery.",
+        "keywords": "tuggi mission, cultural discovery, audio storytelling, local heritage, travel technology",
+        "ogTitle": "Our Purpose | Tuggi",
+        "ogDescription": "Discover Tuggi's mission to connect people with local culture.",
+        "ogImage": "/og/home.jpg"
+      },
+      "pt": {
+        "title": "Nosso Propósito | Tuggi",
+        "description": "Descubra a missão da Tuggi de conectar pessoas com a cultura local através de histórias em áudio em tempo real.",
+        "keywords": "missão tuggi, descoberta cultural, narrativa em áudio, patrimônio local, tecnologia de viagem",
+        "ogTitle": "Nosso Propósito | Tuggi",
+        "ogDescription": "Descubra a missão da Tuggi de conectar pessoas com a cultura local.",
+        "ogImage": "/og/home.jpg"
+      },
+      "es": {
+        "title": "Nuestro Propósito | Tuggi",
+        "description": "Descubre la misión de Tuggi de conectar personas con la cultura local a través de historias de audio en tiempo real.",
+        "keywords": "misión tuggi, descubrimiento cultural, narrativa en audio, patrimonio local, tecnología de viaje",
+        "ogTitle": "Nuestro Propósito | Tuggi",
+        "ogDescription": "Descubre la misión de Tuggi de conectar personas con la cultura local.",
+        "ogImage": "/og/home.jpg"
+      },
+      "fr": {
+        "title": "Notre Mission | Tuggi",
+        "description": "Découvrez la mission de Tuggi de connecter les gens avec la culture locale à travers des histoires audio en temps réel.",
+        "keywords": "mission tuggi, découverte culturelle, narration audio, patrimoine local, technologie de voyage",
+        "ogTitle": "Notre Mission | Tuggi",
+        "ogDescription": "Découvrez la mission de Tuggi de connecter les gens avec la culture locale.",
+        "ogImage": "/og/home.jpg"
+      },
+      "de": {
+        "title": "Unser Zweck | Tuggi",
+        "description": "Entdecken Sie Tuggis Mission, Menschen mit der lokalen Kultur durch Echtzeit-Audio-Geschichten zu verbinden.",
+        "keywords": "tuggi mission, kulturelle entdeckung, audio storytelling, lokales erbe, reisetechnologie",
+        "ogTitle": "Unser Zweck | Tuggi",
+        "ogDescription": "Entdecken Sie Tuggis Mission, Menschen mit der lokalen Kultur zu verbinden.",
+        "ogImage": "/og/home.jpg"
+      },
+      "it": {
+        "title": "Il Nostro Scopo | Tuggi",
+        "description": "Scopri la missione di Tuggi di connettere le persone con la cultura locale attraverso storie audio in tempo reale.",
+        "keywords": "missione tuggi, scoperta culturale, narrazione audio, patrimonio locale, tecnologia di viaggio",
+        "ogTitle": "Il Nostro Scopo | Tuggi",
+        "ogDescription": "Scopri la missione di Tuggi di connettere le persone con la cultura locale.",
+        "ogImage": "/og/home.jpg"
+      }
+    },
+    "business": {
+      "en": {
+        "title": "For Business | Tuggi — Cultural Data & Narratives",
+        "description": "License and integrate cultural audio content and POI metadata for mobility, tourism, and education. Enrich your product with local stories.",
+        "keywords": "tuggi business, cultural data licensing, poi metadata, audio content api, tourism technology b2b",
+        "ogTitle": "For Business | Tuggi — Cultural Data & Narratives",
+        "ogDescription": "License and integrate cultural audio content and POI metadata for mobility, tourism, and education.",
+        "ogImage": "/og/home.jpg"
+      },
+      "pt": {
+        "title": "Para Empresas | Tuggi — Dados Culturais e Narrativas",
+        "description": "Licencie e integre conteúdos de áudio culturais e metadados de POI para mobilidade, turismo e educação. Enriqueça seu produto com histórias locais.",
+        "keywords": "tuggi empresas, licenciamento dados culturais, metadados poi, api conteúdo áudio, tecnologia turismo b2b",
+        "ogTitle": "Para Empresas | Tuggi — Dados Culturais e Narrativas",
+        "ogDescription": "Licencie e integre conteúdos de áudio culturais e metadados de POI para mobilidade, turismo e educação.",
+        "ogImage": "/og/home.jpg"
+      },
+      "es": {
+        "title": "Para Empresas | Tuggi — Datos Culturales y Narrativas",
+        "description": "Licencia e integre contenidos de audio culturales y metadatos de POI para movilidad, turismo y educación.",
+        "keywords": "tuggi empresas, licenciamiento datos culturales, metadatos poi, api contenido audio, tecnología turismo b2b",
+        "ogTitle": "Para Empresas | Tuggi — Datos Culturales y Narrativas",
+        "ogDescription": "Licencia e integre contenidos de audio culturales y metadatos de POI para movilidad, turismo y educación.",
+        "ogImage": "/og/home.jpg"
+      },
+      "fr": {
+        "title": "Pour les Entreprises | Tuggi — Données Culturelles et Récits",
+        "description": "Licence et intégration de contenus audio culturels et métadonnées POI pour la mobilité, le tourisme et l'éducation.",
+        "keywords": "tuggi entreprises, licence données culturelles, métadonnées poi, api contenu audio, technologie tourisme b2b",
+        "ogTitle": "Pour les Entreprises | Tuggi — Données Culturelles et Récits",
+        "ogDescription": "Licence et intégration de contenus audio culturels et métadonnées POI pour la mobilité, le tourisme et l'éducation.",
+        "ogImage": "/og/home.jpg"
+      },
+      "de": {
+        "title": "Für Unternehmen | Tuggi — Kulturelle Daten & Erzählungen",
+        "description": "Lizenzierung und Integration von kulturellen Audioinhalten und POI-Metadaten für Mobilität, Tourismus und Bildung.",
+        "keywords": "tuggi unternehmen, lizenzierung kulturelle daten, poi metadaten, audio content api, tourismus technologie b2b",
+        "ogTitle": "Für Unternehmen | Tuggi — Kulturelle Daten & Erzählungen",
+        "ogDescription": "Lizenzierung und Integration von kulturellen Audioinhalten und POI-Metadaten für Mobilität, Tourismus und Bildung.",
+        "ogImage": "/og/home.jpg"
+      },
+      "it": {
+        "title": "Per le Aziende | Tuggi — Dati Culturali e Narrazioni",
+        "description": "Licenza e integrazione di contenuti audio culturali e metadati POI per mobilità, turismo e istruzione.",
+        "keywords": "tuggi aziende, licenza dati culturali, metadati poi, api contenuto audio, tecnologia turismo b2b",
+        "ogTitle": "Per le Aziende | Tuggi — Dati Culturali e Narrazioni",
+        "ogDescription": "Licenza e integrazione di contenuti audio culturali e metadati POI per mobilità, turismo e istruzione.",
+        "ogImage": "/og/home.jpg"
+      }
+    },
+    "drivers": {
+      "en": {
+        "title": "For Rideshare Drivers | Tuggi",
+        "description": "Turn your rides into 5-star experiences. While you drive, Tuggi tells cultural stories to your passengers automatically.",
+        "keywords": "rideshare drivers, uber driver tips, lyft driver app, passenger entertainment, 5 star ratings, driver tools",
+        "ogTitle": "For Rideshare Drivers | Tuggi",
+        "ogDescription": "Turn your rides into 5-star experiences. While you drive, Tuggi tells cultural stories to your passengers automatically.",
+        "ogImage": "/og/drivers.jpg"
+      },
+      "pt": {
+        "title": "Para Motoristas de App | Tuggi",
+        "description": "Transforme suas corridas em experiências 5 estrelas. Enquanto você dirige, o Tuggi conta histórias culturais aos seus passageiros automaticamente.",
+        "keywords": "motoristas de app, dicas uber, app lyft, entretenimento passageiros, avaliações 5 estrelas, ferramentas motorista",
+        "ogTitle": "Para Motoristas de App | Tuggi",
+        "ogDescription": "Transforme suas corridas em experiências 5 estrelas. Enquanto você dirige, o Tuggi conta histórias culturais aos seus passageiros automaticamente.",
+        "ogImage": "/og/drivers.jpg"
+      },
+      "es": {
+        "title": "Para Conductores de App | Tuggi",
+        "description": "Convierte tus viajes en experiencias 5 estrellas. Mientras conduces, Tuggi cuenta historias culturales a tus pasajeros automáticamente.",
+        "keywords": "conductores de app, tips uber, app lyft, entretenimiento pasajeros, calificaciones 5 estrellas, herramientas conductor",
+        "ogTitle": "Para Conductores de App | Tuggi",
+        "ogDescription": "Convierte tus viajes en experiencias 5 estrellas. Mientras conduces, Tuggi cuenta historias culturales a tus pasajeros automáticamente.",
+        "ogImage": "/og/drivers.jpg"
+      },
+      "fr": {
+        "title": "Pour les Chauffeurs VTC | Tuggi",
+        "description": "Transformez vos courses en expériences 5 étoiles. Pendant que vous conduisez, Tuggi raconte des histoires culturelles à vos passagers automatiquement.",
+        "keywords": "chauffeurs vtc, astuces uber, app lyft, divertissement passagers, notes 5 étoiles, outils chauffeur",
+        "ogTitle": "Pour les Chauffeurs VTC | Tuggi",
+        "ogDescription": "Transformez vos courses en expériences 5 étoiles. Pendant que vous conduisez, Tuggi raconte des histoires culturelles à vos passagers automatiquement.",
+        "ogImage": "/og/drivers.jpg"
+      },
+      "de": {
+        "title": "Für Rideshare-Fahrer | Tuggi",
+        "description": "Verwandeln Sie Ihre Fahrten in 5-Sterne-Erlebnisse. Während Sie fahren, erzählt Tuggi Ihren Fahrgästen automatisch kulturelle Geschichten.",
+        "keywords": "rideshare fahrer, uber tipps, lyft app, fahrgast unterhaltung, 5 sterne bewertungen, fahrer tools",
+        "ogTitle": "Für Rideshare-Fahrer | Tuggi",
+        "ogDescription": "Verwandeln Sie Ihre Fahrten in 5-Sterne-Erlebnisse. Während Sie fahren, erzählt Tuggi Ihren Fahrgästen automatisch kulturelle Geschichten.",
+        "ogImage": "/og/drivers.jpg"
+      },
+      "it": {
+        "title": "Per Autisti App | Tuggi",
+        "description": "Trasforma le tue corse in esperienze 5 stelle. Mentre guidi, Tuggi racconta storie culturali ai tuoi passeggeri automaticamente.",
+        "keywords": "autisti app, consigli uber, app lyft, intrattenimento passeggeri, valutazioni 5 stelle, strumenti autista",
+        "ogTitle": "Per Autisti App | Tuggi",
+        "ogDescription": "Trasforma le tue corse in esperienze 5 stelle. Mentre guidi, Tuggi racconta storie culturali ai tuoi passeggeri automaticamente.",
+        "ogImage": "/og/drivers.jpg"
+      }
+    },
+    "privacy": {
+      "en": {
+        "title": "Privacy Policy | Tuggi",
+        "description": "Privacy policy and data protection information for Tuggi cultural discovery app.",
+        "keywords": "tuggi privacy, data protection, gdpr, privacy policy, user data",
+        "ogTitle": "Privacy Policy | Tuggi",
+        "ogDescription": "Privacy policy and data protection information for Tuggi.",
+        "ogImage": "/og/home.jpg"
+      },
+      "pt": {
+        "title": "Política de Privacidade | Tuggi",
+        "description": "Política de privacidade e informações sobre proteção de dados do aplicativo Tuggi.",
+        "keywords": "privacidade tuggi, proteção de dados, lgpd, política de privacidade, dados do usuário",
+        "ogTitle": "Política de Privacidade | Tuggi",
+        "ogDescription": "Política de privacidade e informações sobre proteção de dados do aplicativo Tuggi.",
+        "ogImage": "/og/home.jpg"
+      },
+      "es": {
+        "title": "Política de Privacidad | Tuggi",
+        "description": "Política de privacidad e información sobre protección de datos de la aplicación Tuggi.",
+        "keywords": "privacidad tuggi, protección de datos, rgpd, política de privacidad, datos de usuario",
+        "ogTitle": "Política de Privacidad | Tuggi",
+        "ogDescription": "Política de privacidad e información sobre protección de datos de la aplicación Tuggi.",
+        "ogImage": "/og/home.jpg"
+      },
+      "fr": {
+        "title": "Politique de Confidentialité | Tuggi",
+        "description": "Politique de confidentialité et informations sur la protection des données pour l'application Tuggi.",
+        "keywords": "confidentialité tuggi, protection des données, rgpd, politique de confidentialité, données utilisateur",
+        "ogTitle": "Politique de Confidentialité | Tuggi",
+        "ogDescription": "Politique de confidentialité et informations sur la protection des données pour l'application Tuggi.",
+        "ogImage": "/og/home.jpg"
+      },
+      "de": {
+        "title": "Datenschutzrichtlinie | Tuggi",
+        "description": "Datenschutzrichtlinie und Informationen zum Datenschutz für die Tuggi-App.",
+        "keywords": "tuggi datenschutz, dsgvo, datenschutzrichtlinie, nutzerdaten",
+        "ogTitle": "Datenschutzrichtlinie | Tuggi",
+        "ogDescription": "Datenschutzrichtlinie und Informationen zum Datenschutz für die Tuggi-App.",
+        "ogImage": "/og/home.jpg"
+      },
+      "it": {
+        "title": "Informativa sulla Privacy | Tuggi",
+        "description": "Informativa sulla privacy e informazioni sulla protezione dei dati per l'app Tuggi.",
+        "keywords": "privacy tuggi, protezione dati, gdpr, informativa privacy, dati utente",
+        "ogTitle": "Informativa sulla Privacy | Tuggi",
+        "ogDescription": "Informativa sulla privacy e informazioni sulla protezione dei dati per l'app Tuggi.",
+        "ogImage": "/og/home.jpg"
+      }
+    },
+    "terms": {
+      "en": {
+        "title": "Terms of Use | Tuggi",
+        "description": "Terms of use and service conditions for Tuggi cultural discovery app.",
+        "keywords": "tuggi terms, terms of use, service conditions, user agreement",
+        "ogTitle": "Terms of Use | Tuggi",
+        "ogDescription": "Terms of use and service conditions for Tuggi.",
+        "ogImage": "/og/home.jpg"
+      },
+      "pt": {
+        "title": "Termos de Uso | Tuggi",
+        "description": "Termos de uso e condições de serviço do aplicativo Tuggi.",
+        "keywords": "termos tuggi, termos de uso, condições de serviço, acordo do usuário",
+        "ogTitle": "Termos de Uso | Tuggi",
+        "ogDescription": "Termos de uso e condições de serviço do aplicativo Tuggi.",
+        "ogImage": "/og/home.jpg"
+      },
+      "es": {
+        "title": "Términos de Uso | Tuggi",
+        "description": "Términos de uso y condiciones de servicio de la aplicación Tuggi.",
+        "keywords": "términos tuggi, términos de uso, condiciones de servicio, acuerdo del usuario",
+        "ogTitle": "Términos de Uso | Tuggi",
+        "ogDescription": "Términos de uso y condiciones de servicio de la aplicación Tuggi.",
+        "ogImage": "/og/home.jpg"
+      },
+      "fr": {
+        "title": "Conditions d'Utilisation | Tuggi",
+        "description": "Conditions d'utilisation et conditions de service pour l'application Tuggi.",
+        "keywords": "conditions tuggi, conditions d'utilisation, conditions de service, accord utilisateur",
+        "ogTitle": "Conditions d'Utilisation | Tuggi",
+        "ogDescription": "Conditions d'utilisation et conditions de service pour l'application Tuggi.",
+        "ogImage": "/og/home.jpg"
+      },
+      "de": {
+        "title": "Nutzungsbedingungen | Tuggi",
+        "description": "Nutzungsbedingungen und Servicebedingungen für die Tuggi-App.",
+        "keywords": "tuggi nutzungsbedingungen, servicebedingungen, nutzervereinbarung",
+        "ogTitle": "Nutzungsbedingungen | Tuggi",
+        "ogDescription": "Nutzungsbedingungen und Servicebedingungen für die Tuggi-App.",
+        "ogImage": "/og/home.jpg"
+      },
+      "it": {
+        "title": "Termini d'Uso | Tuggi",
+        "description": "Termini d'uso e condizioni di servizio per l'app Tuggi.",
+        "keywords": "termini tuggi, termini d'uso, condizioni di servizio, accordo utente",
+        "ogTitle": "Termini d'Uso | Tuggi",
+        "ogDescription": "Termini d'uso e condizioni di servizio per l'app Tuggi.",
+        "ogImage": "/og/home.jpg"
+      }
+    },
+    "cookies": {
+      "en": {
+        "title": "Cookie Policy | Tuggi",
+        "description": "Cookie policy and information about how Tuggi uses cookies.",
+        "keywords": "tuggi cookies, cookie policy, website cookies, tracking cookies",
+        "ogTitle": "Cookie Policy | Tuggi",
+        "ogDescription": "Cookie policy and information about how Tuggi uses cookies.",
+        "ogImage": "/og/home.jpg"
+      },
+      "pt": {
+        "title": "Política de Cookies | Tuggi",
+        "description": "Política de cookies e informações sobre como o Tuggi usa cookies.",
+        "keywords": "cookies tuggi, política de cookies, cookies do site, cookies de rastreamento",
+        "ogTitle": "Política de Cookies | Tuggi",
+        "ogDescription": "Política de cookies e informações sobre como o Tuggi usa cookies.",
+        "ogImage": "/og/home.jpg"
+      },
+      "es": {
+        "title": "Política de Cookies | Tuggi",
+        "description": "Política de cookies e información sobre cómo Tuggi usa cookies.",
+        "keywords": "cookies tuggi, política de cookies, cookies del sitio, cookies de seguimiento",
+        "ogTitle": "Política de Cookies | Tuggi",
+        "ogDescription": "Política de cookies e información sobre cómo Tuggi usa cookies.",
+        "ogImage": "/og/home.jpg"
+      },
+      "fr": {
+        "title": "Politique de Cookies | Tuggi",
+        "description": "Politique de cookies et informations sur la façon dont Tuggi utilise les cookies.",
+        "keywords": "cookies tuggi, politique de cookies, cookies du site, cookies de suivi",
+        "ogTitle": "Politique de Cookies | Tuggi",
+        "ogDescription": "Politique de cookies et informations sur la façon dont Tuggi utilise les cookies.",
+        "ogImage": "/og/home.jpg"
+      },
+      "de": {
+        "title": "Cookie-Richtlinie | Tuggi",
+        "description": "Cookie-Richtlinie und Informationen darüber, wie Tuggi Cookies verwendet.",
+        "keywords": "tuggi cookies, cookie-richtlinie, website cookies, tracking cookies",
+        "ogTitle": "Cookie-Richtlinie | Tuggi",
+        "ogDescription": "Cookie-Richtlinie und Informationen darüber, wie Tuggi Cookies verwendet.",
+        "ogImage": "/og/home.jpg"
+      },
+      "it": {
+        "title": "Informativa sui Cookie | Tuggi",
+        "description": "Informativa sui cookie e informazioni su come Tuggi utilizza i cookie.",
+        "keywords": "cookie tuggi, informativa cookie, cookie del sito, cookie di tracciamento",
+        "ogTitle": "Informativa sui Cookie | Tuggi",
+        "ogDescription": "Informativa sui cookie e informazioni su come Tuggi utilizza i cookie.",
+        "ogImage": "/og/home.jpg"
+      }
+    },
+    "data-deletion": {
+      "en": {
+        "title": "Data Deletion | Tuggi",
+        "description": "Request deletion of your data from Tuggi.",
+        "keywords": "data deletion, delete my data, remove account, gdpr request",
+        "ogTitle": "Data Deletion | Tuggi",
+        "ogDescription": "Request deletion of your data from Tuggi.",
+        "ogImage": "/og/home.jpg"
+      },
+      "pt": {
+        "title": "Exclusão de Dados | Tuggi",
+        "description": "Solicite a exclusão dos seus dados do Tuggi.",
+        "keywords": "exclusão de dados, deletar meus dados, remover conta, solicitação lgpd",
+        "ogTitle": "Exclusão de Dados | Tuggi",
+        "ogDescription": "Solicite a exclusão dos seus dados do Tuggi.",
+        "ogImage": "/og/home.jpg"
+      },
+      "es": {
+        "title": "Eliminación de Datos | Tuggi",
+        "description": "Solicite la eliminación de sus datos de Tuggi.",
+        "keywords": "eliminación de datos, eliminar mis datos, eliminar cuenta, solicitud rgpd",
+        "ogTitle": "Eliminación de Datos | Tuggi",
+        "ogDescription": "Solicite la eliminación de sus datos de Tuggi.",
+        "ogImage": "/og/home.jpg"
+      },
+      "fr": {
+        "title": "Suppression des Données | Tuggi",
+        "description": "Demandez la suppression de vos données de Tuggi.",
+        "keywords": "suppression des données, supprimer mes données, supprimer compte, demande rgpd",
+        "ogTitle": "Suppression des Données | Tuggi",
+        "ogDescription": "Demandez la suppression de vos données de Tuggi.",
+        "ogImage": "/og/home.jpg"
+      },
+      "de": {
+        "title": "Datenlöschung | Tuggi",
+        "description": "Beantragen Sie die Löschung Ihrer Daten bei Tuggi.",
+        "keywords": "datenlöschung, meine daten löschen, konto entfernen, dsgvo anfrage",
+        "ogTitle": "Datenlöschung | Tuggi",
+        "ogDescription": "Beantragen Sie die Löschung Ihrer Daten bei Tuggi.",
+        "ogImage": "/og/home.jpg"
+      },
+      "it": {
+        "title": "Cancellazione Dati | Tuggi",
+        "description": "Richiedi la cancellazione dei tuoi dati da Tuggi.",
+        "keywords": "cancellazione dati, cancella i miei dati, rimuovi account, richiesta gdpr",
+        "ogTitle": "Cancellazione Dati | Tuggi",
+        "ogDescription": "Richiedi la cancellazione dei tuoi dati da Tuggi.",
+        "ogImage": "/og/home.jpg"
+      }
+    }
+  }
+}
