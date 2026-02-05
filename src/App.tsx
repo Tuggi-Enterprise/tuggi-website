@@ -12,6 +12,7 @@ import { parseUrlPath, generateLocalizedUrl, isValidLanguage } from './utils/rou
 import { useSEO } from './hooks/useSEO';
 import { initializeAnalytics, trackPerformanceMetrics, trackPageView, trackLanguageChange, trackUserLocation } from './utils/seo';
 import DriversLandingPage from './pages/DriversLandingPage';
+import GovPage from './pages/GovPage';
 import HomeV2 from './pages/HomeV2';
 
 // Extend Window interface for gtag
@@ -485,6 +486,8 @@ function App() {
       case 'fahrer':
       case 'autisti':
         return <DriversLandingPage currentLanguage={currentLanguage as 'PT' | 'EN' | 'ES' | 'FR' | 'DE' | 'IT'} onCTAClick={handleCTAClick} />;
+      case 'gov':
+        return <GovPage currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />;
         case 'home':
         default:
           return (

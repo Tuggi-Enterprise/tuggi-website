@@ -66,7 +66,9 @@ export const VALID_PAGES = [
   'eliminacion-de-datos',
   'suppression-donnees',
   'datenloeschung',
-  'cancellazione-dati'
+  'cancellazione-dati',
+  // Government/Municipal landing pages
+  'gov'
 ] as const;
 
 // Page URL mappings for different languages
@@ -127,6 +129,15 @@ export const PAGE_URL_MAPPINGS: Record<string, Record<string, string>> = {
     'FR': 'suppression-donnees',
     'DE': 'datenloeschung',
     'IT': 'cancellazione-dati'
+  },
+  // Government/Municipal landing pages
+  'gov': {
+    'EN': 'gov',
+    'PT': 'gov',
+    'ES': 'gov',
+    'FR': 'gov',
+    'DE': 'gov',
+    'IT': 'gov'
   }
 };
 
@@ -179,7 +190,10 @@ export const URL_TO_PAGE_MAPPINGS: Record<string, string> = {
   'eliminacion-de-datos': 'data-deletion',
   'suppression-donnees': 'data-deletion',
   'datenloeschung': 'data-deletion',
-  'cancellazione-dati': 'data-deletion'
+  'cancellazione-dati': 'data-deletion',
+  
+  // Government/Municipal landing pages
+  'gov': 'gov'
 };
 
 /**
@@ -220,16 +234,26 @@ export const parseUrlPath = (pathname: string): ParsedUrl => {
   // If not, look from the beginning
   const startSearchIndex = langSegmentIndex !== -1 ? langSegmentIndex + 1 : 0;
   
-  for (let i = startSearchIndex; i < segments.length; i++) {
-    const segment = segments[i].toLowerCase();
-    
-    // Check if it's a localized URL that maps to a standard page
-    if (segment in URL_TO_PAGE_MAPPINGS) {
-      page = URL_TO_PAGE_MAPPINGS[segment];
-      break;
-    } else if ((VALID_PAGES as readonly string[]).includes(segment)) {
-      page = segment;
-      break;
+  // Check for composite paths first (e.g., "gov/portugal")
+  // Join remaining segments and check if it matches a composite mapping
+  if (startSearchIndex < segments.length) {
+    const remainingPath = segments.slice(startSearchIndex).join('/').toLowerCase();
+    if (remainingPath in URL_TO_PAGE_MAPPINGS) {
+      page = URL_TO_PAGE_MAPPINGS[remainingPath];
+    } else {
+      // Fall back to checking individual segments
+      for (let i = startSearchIndex; i < segments.length; i++) {
+        const segment = segments[i].toLowerCase();
+        
+        // Check if it's a localized URL that maps to a standard page
+        if (segment in URL_TO_PAGE_MAPPINGS) {
+          page = URL_TO_PAGE_MAPPINGS[segment];
+          break;
+        } else if ((VALID_PAGES as readonly string[]).includes(segment)) {
+          page = segment;
+          break;
+        }
+      }
     }
   }
   
