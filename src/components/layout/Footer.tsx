@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, ChevronDown, Globe } from 'lucide-react';
-import { getLanguageName, getLocaleCode } from '../../utils/routing';
+import { Mail, ChevronDown, Globe } from 'lucide-react';
+import { getLanguageName } from '../../utils/routing';
 import LocationDisplay from '../ui/LocationDisplay';
 import { useAnalytics } from '../../hooks/useAnalytics';
 
@@ -18,20 +18,21 @@ const Footer: React.FC<FooterProps> = ({
   onPageChange 
 }) => {
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
-  const [email, setEmail] = useState('');
   const currentYear = new Date().getFullYear();
   
   // Analytics tracking
   const {
     trackFooterClick,
-    trackLanguageSwitch,
-    trackNewsletterSignup
+    trackLanguageSwitch
   } = useAnalytics(currentPage, currentLanguage);
 
   const languages = [
     { code: 'PT', label: getLanguageName('PT') },
     { code: 'EN', label: getLanguageName('EN') },
     { code: 'ES', label: getLanguageName('ES') },
+    { code: 'FR', label: getLanguageName('FR') },
+    { code: 'DE', label: getLanguageName('DE') },
+    { code: 'IT', label: getLanguageName('IT') },
   ];
 
   const currentLang = languages.find(lang => lang.code === currentLanguage) || languages[1];
@@ -200,22 +201,6 @@ const Footer: React.FC<FooterProps> = ({
     }
   };
 
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email.trim()) return;
-    
-    // Simulate newsletter signup (replace with actual implementation)
-    const success = email.includes('@') && email.includes('.');
-    
-    // Track newsletter signup
-    trackNewsletterSignup(email, success);
-    
-    if (success) {
-      setEmail('');
-      // Show success message (you can add a toast notification here)
-    }
-  };
-
   const handleEmailClick = () => {
     trackFooterClick('Email Contact', 'mailto:contato@tuggi.app');
   };
@@ -293,7 +278,7 @@ const Footer: React.FC<FooterProps> = ({
               <div className="relative">
                 <button
                   onClick={() => setIsLanguageOpen(!isLanguageOpen)}
-                  className="flex items-center space-x-3 px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg hover:border-tuggi-primary transition-all duration-200 w-full"
+                  className="flex items-center space-x-3 px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg hover:border-tuggi-primary transition-all duration-200 w-48"
                   aria-label={`Select Language - Current: ${currentLang.label}`}
                   aria-expanded={isLanguageOpen}
                 >
@@ -304,7 +289,7 @@ const Footer: React.FC<FooterProps> = ({
                 </button>
                 
                 {isLanguageOpen && (
-                  <div className="absolute bottom-full mb-2 left-0 py-2 w-full bg-neutral-800 rounded-lg shadow-xl border border-neutral-700 z-10">
+                  <div className="absolute bottom-full mb-2 left-0 py-2 w-48 bg-neutral-800 rounded-lg shadow-xl border border-neutral-700 z-10">
                     {languages.map((lang) => (
                       <button
                         key={lang.code}

@@ -129,12 +129,7 @@ const Header: React.FC<HeaderProps> = ({
     }
   };
 
-  const handleMobileMenuToggle = () => {
-    setIsMenuOpen(!isMenuOpen);
-    
-    // Track mobile menu interaction
-    trackHeaderClick('Mobile Menu Toggle', '');
-  };
+
 
   return (
     // Fixed wrapper for header only
