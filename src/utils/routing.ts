@@ -350,40 +350,6 @@ export const getLanguageName = (language: string): string => {
 };
 
 /**
- * Get language flag emoji
- */
-export const getLanguageFlag = (language: string): string => {
-  const flags: Record<string, string> = {
-    'EN': '🇺🇸',
-    'PT': '🇧🇷',
-    'ES': '🇪🇸',
-    'FR': '🇫🇷',
-    'DE': '🇩🇪',
-    'IT': '🇮🇹'
-  };
-  return flags[language] || '🇺🇸';
-};
-
-/**
- * Get flag accessibility attributes with full language name
- */
-export const getFlagAccessibilityProps = (language: string): { role: string; 'aria-label': string } => {
-  const fullNames: Record<string, string> = {
-    'EN': 'English (United States)',
-    'PT': 'Português (Brasil)',
-    'ES': 'Español (España)',
-    'FR': 'Français (France)',
-    'DE': 'Deutsch (Deutschland)',
-    'IT': 'Italiano (Italia)'
-  };
-  
-  return {
-    role: 'img',
-    'aria-label': `${fullNames[language] || fullNames['EN']} flag`
-  };
-};
-
-/**
  * Get locale code for analytics and SEO
  */
 export const getLocaleCode = (language: string): string => {

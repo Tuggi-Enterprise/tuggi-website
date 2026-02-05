@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import { getLanguageFlag, getLanguageName, getFlagAccessibilityProps } from '../../utils/routing';
+import { getLanguageName } from '../../utils/routing';
 import TuggiLogo from '../ui/TuggiLogo';
 import { useAnalytics } from '../../hooks/useAnalytics';
 
@@ -96,12 +96,12 @@ const Header: React.FC<HeaderProps> = ({
   const navigationItems = getNavigationItems(currentLanguage);
 
   const languages = [
-    { code: 'PT', label: getLanguageName('PT'), flag: getLanguageFlag('PT') },
-    { code: 'EN', label: getLanguageName('EN'), flag: getLanguageFlag('EN') },
-    { code: 'ES', label: getLanguageName('ES'), flag: getLanguageFlag('ES') },
-    { code: 'FR', label: getLanguageName('FR'), flag: getLanguageFlag('FR') },
-    { code: 'DE', label: getLanguageName('DE'), flag: getLanguageFlag('DE') },
-    { code: 'IT', label: getLanguageName('IT'), flag: getLanguageFlag('IT') },
+    { code: 'PT', label: getLanguageName('PT') },
+    { code: 'EN', label: getLanguageName('EN') },
+    { code: 'ES', label: getLanguageName('ES') },
+    { code: 'FR', label: getLanguageName('FR') },
+    { code: 'DE', label: getLanguageName('DE') },
+    { code: 'IT', label: getLanguageName('IT') },
   ];
 
   const currentLang = languages.find(lang => lang.code === currentLanguage) || languages[1];
@@ -195,15 +195,11 @@ const Header: React.FC<HeaderProps> = ({
                     e.stopPropagation();
                     setIsLanguageOpen(!isLanguageOpen);
                   }}
-                  className="flex items-center space-x-2 px-3 py-2 rounded-lg border border-neutral-200 hover:border-tuggi-primary hover:bg-tuggi-primary/5 transition-all duration-200 min-w-[80px]"
+                  className="flex items-center space-x-2 px-3 py-2 rounded-lg border border-neutral-200 hover:border-tuggi-primary hover:bg-tuggi-primary/5 transition-all duration-200"
                   aria-label={`Select Language - Current: ${currentLang.label}`}
                   aria-expanded={isLanguageOpen}
-                  aria-haspopup="true"
                 >
-                  <span className="text-lg" {...getFlagAccessibilityProps(currentLanguage)}>
-                    {currentLang.flag}
-                  </span>
-                  <span className="text-sm font-medium text-neutral-700 hidden sm:inline">
+                  <span className="text-sm font-medium text-neutral-700">
                     {currentLang.code}
                   </span>
                   <ChevronDown className={`w-4 h-4 text-neutral-600 transition-transform duration-200 ${isLanguageOpen ? 'rotate-180' : ''}`} />
@@ -222,9 +218,6 @@ const Header: React.FC<HeaderProps> = ({
                         }`}
                         aria-current={currentLanguage === lang.code ? 'true' : undefined}
                       >
-                        <span className="text-lg" {...getFlagAccessibilityProps(lang.code)}>
-                          {lang.flag}
-                        </span>
                         <span className="font-medium">{lang.label}</span>
                         {currentLanguage === lang.code && (
                           <div className="ml-auto w-2 h-2 bg-tuggi-primary rounded-full"></div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, MapPin, ChevronDown, Globe } from 'lucide-react';
-import { getLanguageFlag, getLanguageName, getLocaleCode } from '../../utils/routing';
+import { getLanguageName, getLocaleCode } from '../../utils/routing';
 import LocationDisplay from '../ui/LocationDisplay';
 import { useAnalytics } from '../../hooks/useAnalytics';
 
@@ -29,9 +29,9 @@ const Footer: React.FC<FooterProps> = ({
   } = useAnalytics(currentPage, currentLanguage);
 
   const languages = [
-    { code: 'PT', label: getLanguageName('PT'), flag: getLanguageFlag('PT') },
-    { code: 'EN', label: getLanguageName('EN'), flag: getLanguageFlag('EN') },
-    { code: 'ES', label: getLanguageName('ES'), flag: getLanguageFlag('ES') },
+    { code: 'PT', label: getLanguageName('PT') },
+    { code: 'EN', label: getLanguageName('EN') },
+    { code: 'ES', label: getLanguageName('ES') },
   ];
 
   const currentLang = languages.find(lang => lang.code === currentLanguage) || languages[1];
@@ -297,9 +297,6 @@ const Footer: React.FC<FooterProps> = ({
                   aria-label={`Select Language - Current: ${currentLang.label}`}
                   aria-expanded={isLanguageOpen}
                 >
-                  <span className="text-lg" role="img" aria-label={`${currentLang.label} flag`}>
-                    {currentLang.flag}
-                  </span>
                   <span className="text-sm font-medium text-white flex-1 text-left">
                     {currentLang.label}
                   </span>
@@ -319,9 +316,6 @@ const Footer: React.FC<FooterProps> = ({
                         }`}
                         aria-current={currentLanguage === lang.code ? 'true' : undefined}
                       >
-                        <span className="text-lg" role="img" aria-label={`${lang.label} flag`}>
-                          {lang.flag}
-                        </span>
                         <span className="font-medium">{lang.label}</span>
                         {currentLanguage === lang.code && (
                           <div className="ml-auto w-2 h-2 bg-tuggi-primary rounded-full"></div>
