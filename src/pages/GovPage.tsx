@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Building2, 
@@ -1267,28 +1267,234 @@ const GovPage: React.FC<GovPageProps> = ({
   onCTAClick 
 }) => {
   const content = getLocalizedContent(currentLanguage);
+  const pageLoadTime = useRef(Date.now());
+  const trackedScrollMilestones = useRef(new Set<number>());
+  const trackedTimeMilestones = useRef(new Set<number>());
+  const sectionVisibility = useRef<Record<string, { startTime: number; maxVisibility: number }>>({});
+
+  // Helper to send GA4 events
+  const trackEvent = useCallback((eventName: string, params: Record<string, any>) => {
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', eventName, {
+        page_type: 'gov',
+        language: currentLanguage,
+        ...params
+      });
+    }
+    // Dev logging
+    if (process.env.NODE_ENV === 'development') {
+      console.log('📊 Gov Analytics:', eventName, params);
+    }
+  }, [currentLanguage]);
+
+  // ============================================================================
+  // ANALYTICS: Page View + Referrer + Device Info
+  // ============================================================================
+  useEffect(() => {
+    const referrer = document.referrer;
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    trackEvent('gov_page_view', {
+      event_category: 'Gov Landing',
+      referrer: referrer || 'direct',
+      referrer_domain: referrer ? new URL(referrer).hostname : 'direct',
+      utm_source: urlParams.get('utm_source') || 'none',
+      utm_medium: urlParams.get('utm_medium') || 'none',
+      utm_campaign: urlParams.get('utm_campaign') || 'none',
+      utm_content: urlParams.get('utm_content') || 'none',
+      device_type: /Mobile|Android|iPhone/i.test(navigator.userAgent) ? 'mobile' : 'desktop',
+      screen_width: window.innerWidth,
+      screen_height: window.innerHeight,
+      viewport_width: document.documentElement.clientWidth,
+      browser: navigator.userAgent.includes('Chrome') ? 'Chrome' : 
+               navigator.userAgent.includes('Firefox') ? 'Firefox' :
+               navigator.userAgent.includes('Safari') ? 'Safari' : 'Other',
+      timestamp: new Date().toISOString()
+    });
+  }, [trackEvent]);
+
+  // ============================================================================
+  // ANALYTICS: Scroll Depth Tracking
+  // ============================================================================
+  useEffect(() => {
+    const milestones = [25, 50, 75, 90, 100];
+    
+    const handleScroll = () => {
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = scrollHeight > 0 ? Math.round((window.scrollY / scrollHeight) * 100) : 0;
+      
+      milestones.forEach(milestone => {
+        if (scrollPercent >= milestone && !trackedScrollMilestones.current.has(milestone)) {
+          trackedScrollMilestones.current.add(milestone);
+          trackEvent('gov_scroll_depth', {
+            event_category: 'Gov Engagement',
+            scroll_percentage: milestone,
+            time_to_scroll: Math.round((Date.now() - pageLoadTime.current) / 1000)
+          });
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [trackEvent]);
+
+  // ============================================================================
+  // ANALYTICS: Time on Page Milestones
+  // ============================================================================
+  useEffect(() => {
+    const timeMilestones = [30, 60, 120, 180, 300]; // seconds
+    
+    const interval = setInterval(() => {
+      const timeSpent = Math.floor((Date.now() - pageLoadTime.current) / 1000);
+      
+      timeMilestones.forEach(milestone => {
+        if (timeSpent >= milestone && !trackedTimeMilestones.current.has(milestone)) {
+          trackedTimeMilestones.current.add(milestone);
+          trackEvent('gov_time_on_page', {
+            event_category: 'Gov Engagement',
+            time_milestone_seconds: milestone,
+            scroll_depth_at_milestone: Math.round(
+              (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+            )
+          });
+        }
+      });
+    }, 5000); // Check every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [trackEvent]);
+
+  // ============================================================================
+  // ANALYTICS: Section Visibility (Intersection Observer)
+  // ============================================================================
+  useEffect(() => {
+    const sections = [
+      { id: 'gov-hero', name: 'Hero' },
+      { id: 'gov-silent-territory', name: 'Silent Territory' },
+      { id: 'gov-solution', name: 'Solution' },
+      { id: 'gov-pillars', name: 'Three Pillars' },
+      { id: 'gov-evidence', name: 'Evidence' },
+      { id: 'gov-lifecycle', name: 'Content Lifecycle' },
+      { id: 'gov-cta', name: 'Final CTA' }
+    ];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const sectionId = entry.target.id;
+          const sectionName = sections.find(s => s.id === sectionId)?.name || sectionId;
+          
+          if (entry.isIntersecting) {
+            if (!sectionVisibility.current[sectionId]) {
+              sectionVisibility.current[sectionId] = {
+                startTime: Date.now(),
+                maxVisibility: 0
+              };
+              trackEvent('gov_section_enter', {
+                event_category: 'Gov Engagement',
+                section_name: sectionName,
+                time_to_section: Math.round((Date.now() - pageLoadTime.current) / 1000)
+              });
+            }
+            sectionVisibility.current[sectionId].maxVisibility = Math.max(
+              sectionVisibility.current[sectionId].maxVisibility,
+              Math.round(entry.intersectionRatio * 100)
+            );
+          } else if (sectionVisibility.current[sectionId]) {
+            const timeVisible = Math.round((Date.now() - sectionVisibility.current[sectionId].startTime) / 1000);
+            if (timeVisible > 1) {
+              trackEvent('gov_section_exit', {
+                event_category: 'Gov Engagement',
+                section_name: sectionName,
+                time_visible_seconds: timeVisible,
+                max_visibility_percent: sectionVisibility.current[sectionId].maxVisibility
+              });
+            }
+            delete sectionVisibility.current[sectionId];
+          }
+        });
+      },
+      { threshold: [0, 0.25, 0.5, 0.75, 1.0] }
+    );
+
+    sections.forEach(({ id }) => {
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, [trackEvent]);
+
+  // ============================================================================
+  // ANALYTICS: Exit Intent Detection
+  // ============================================================================
+  useEffect(() => {
+    let hasTrackedExit = false;
+    
+    const handleMouseLeave = (e: MouseEvent) => {
+      if (e.clientY <= 0 && !hasTrackedExit) {
+        hasTrackedExit = true;
+        const timeOnPage = Math.round((Date.now() - pageLoadTime.current) / 1000);
+        const scrollDepth = Math.round(
+          (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+        );
+        
+        trackEvent('gov_exit_intent', {
+          event_category: 'Gov Engagement',
+          time_on_page_seconds: timeOnPage,
+          scroll_depth_at_exit: scrollDepth,
+          sections_viewed: Object.keys(sectionVisibility.current).length
+        });
+      }
+    };
+
+    // Track page unload
+    const handleBeforeUnload = () => {
+      const timeOnPage = Math.round((Date.now() - pageLoadTime.current) / 1000);
+      trackEvent('gov_page_exit', {
+        event_category: 'Gov Engagement',
+        total_time_seconds: timeOnPage,
+        final_scroll_depth: Math.round(
+          (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+        )
+      });
+    };
+
+    document.addEventListener('mouseleave', handleMouseLeave);
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    
+    return () => {
+      document.removeEventListener('mouseleave', handleMouseLeave);
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, [trackEvent]);
 
   const handleCTAClick = (ctaType: string, position: string = 'unknown') => {
     if (onCTAClick) {
       onCTAClick(ctaType, position);
     }
     
-    // Track GA4 event
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', `gov_${ctaType}`, {
-        event_category: 'Gov Landing',
-        event_label: ctaType,
-        page_type: 'gov-portugal',
-        language: currentLanguage,
-        position: position
-      });
-    }
+    // Track GA4 event with enhanced data
+    trackEvent(`gov_cta_${ctaType}`, {
+      event_category: 'Gov Landing',
+      event_label: ctaType,
+      position: position,
+      time_to_click: Math.round((Date.now() - pageLoadTime.current) / 1000),
+      scroll_depth_at_click: Math.round(
+        (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+      )
+    });
   };
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+      trackEvent('gov_internal_navigation', {
+        event_category: 'Gov Navigation',
+        target_section: sectionId
+      });
     }
   };
 
@@ -1335,7 +1541,7 @@ const GovPage: React.FC<GovPageProps> = ({
       {/* ================================================================== */}
       {/* HERO SECTION */}
       {/* ================================================================== */}
-      <section className="relative py-20 lg:py-28 bg-gradient-to-br from-slate-50 via-white to-tuggi-primary/5 overflow-hidden">
+      <section id="gov-hero" className="relative py-20 lg:py-28 bg-gradient-to-br from-slate-50 via-white to-tuggi-primary/5 overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMwMEE4RTgiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -1415,7 +1621,7 @@ const GovPage: React.FC<GovPageProps> = ({
       {/* ================================================================== */}
       {/* THE SILENT TERRITORY */}
       {/* ================================================================== */}
-      <section className="py-16 lg:py-20 bg-neutral-50">
+      <section id="gov-silent-territory" className="py-16 lg:py-20 bg-neutral-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -1447,7 +1653,7 @@ const GovPage: React.FC<GovPageProps> = ({
       {/* ================================================================== */}
       {/* WHAT TUGGI IS */}
       {/* ================================================================== */}
-      <section className="py-16 lg:py-20">
+      <section id="gov-solution" className="py-16 lg:py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -1507,7 +1713,7 @@ const GovPage: React.FC<GovPageProps> = ({
       {/* PUBLIC VALUE DELIVERED */}
       {/* ================================================================== */}
       <SectionAnchor id="value" />
-      <section className="py-16 lg:py-24 bg-gradient-to-b from-white to-neutral-50">
+      <section id="gov-pillars" className="py-16 lg:py-24 bg-gradient-to-b from-white to-neutral-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -1566,7 +1772,7 @@ const GovPage: React.FC<GovPageProps> = ({
       {/* EVIDENCE THAT IT WORKS */}
       {/* ================================================================== */}
       <SectionAnchor id="proof" />
-      <section className="py-16 lg:py-24 bg-neutral-900 text-white">
+      <section id="gov-evidence" className="py-16 lg:py-24 bg-neutral-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -1880,7 +2086,7 @@ const GovPage: React.FC<GovPageProps> = ({
       {/* ================================================================== */}
       {/* WHY NOW */}
       {/* ================================================================== */}
-      <section className="py-16 lg:py-20 bg-gradient-to-br from-tuggi-primary to-tuggi-primary-dark text-white">
+      <section id="gov-cta" className="py-16 lg:py-20 bg-gradient-to-br from-tuggi-primary to-tuggi-primary-dark text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
