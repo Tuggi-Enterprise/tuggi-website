@@ -1525,7 +1525,16 @@ const GovPage: React.FC<GovPageProps> = ({
     if (ctaType === 'cta_meeting_click') {
       window.open('https://calendar.app.google/vXKcgKDz8oo4eTyG9', '_blank');
     } else if (ctaType === 'pdf_download') {
-      window.open('/assets/tuggi-gov-summary.pdf', '_blank');
+      const pdfMap: Record<string, string> = {
+        'PT': 'tuggi-smart-tour-infra-pt.pdf',
+        'ES': 'tuggi-smart-tour-infra-es.pdf',
+        'EN': 'tuggi-smart-tour-infra-en.pdf'
+      };
+      
+      const fileName = pdfMap[currentLanguage] || pdfMap['EN'];
+      // Usar origin para garantir que o caminho seja absoluto da raiz e não relativo ao idioma
+      const fileUrl = `${window.location.origin}/assets/${fileName}`;
+      window.open(fileUrl, '_blank');
     }
   };
 
