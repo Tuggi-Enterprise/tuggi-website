@@ -7,7 +7,7 @@
     "dev": "vite",
     "api": "node server.js",
     "dev:all": "concurrently \"npm run dev\" \"npm run api\"",
-    "build": "vite build",
+    "build": "vite build && node scripts/prerender-seo.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },
