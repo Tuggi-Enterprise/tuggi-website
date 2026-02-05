@@ -2156,7 +2156,7 @@ const GovPage: React.FC<GovPageProps> = ({
 
             <p className="text-neutral-500 mb-2">{content.finalCta.contact}</p>
             <a 
-              href="mailto:leandro@tuggi.app" 
+              href="mailto:leandro.ramos@tuggi.app" 
               className="text-tuggi-primary hover:text-tuggi-primary-dark font-medium text-lg"
             >
               leandro@tuggi.app
