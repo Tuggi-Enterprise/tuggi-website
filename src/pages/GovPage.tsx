@@ -325,7 +325,7 @@ const getLocalizedContent = (language: string): ContentLanguage => {
           'Resultados mensuráveis: engagement, dispersão, insights'
         ],
         ctaPrimary: 'Agendar Apresentação',
-        ctaSecondary: 'Descarregar Resumo'
+        ctaSecondary: 'Baixar Resumo'
       },
       silentTerritory: {
         title: 'O Território Silencioso',
