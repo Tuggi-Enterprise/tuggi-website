@@ -13,6 +13,8 @@ import { useSEO } from './hooks/useSEO';
 import { initializeAnalytics, trackPerformanceMetrics, trackPageView, trackLanguageChange, trackUserLocation } from './utils/seo';
 import DriversLandingPage from './pages/DriversLandingPage';
 import GovPage from './pages/GovPage';
+import GovPrivacyPolicyPage from './pages/legal/GovPrivacyPolicyPage';
+import GovTermsOfUsePage from './pages/legal/GovTermsOfUsePage';
 import HomeV2 from './pages/HomeV2';
 
 // Extend Window interface for gtag
@@ -323,6 +325,20 @@ function App() {
     ];
 
     if (legalCTAs.includes(ctaType)) {
+      // Se estiver no contexto GOV, redireciona para as versões gov
+      if (['gov', 'govPrivacy', 'govTerms'].includes(currentPage)) {
+        const govPageMap: Record<string, string> = {
+          'privacy_policy': 'govPrivacy',
+          'terms_of_use': 'govTerms',
+          'data_deletion': 'data-deletion' // Mantém o padrão para deleção
+        };
+        const targetPage = govPageMap[ctaType];
+         if (targetPage) {
+          handlePageChange(targetPage);
+          return;
+        }
+      }
+
       const pageMap: Record<string, string> = {
         'privacy_policy': 'privacy',
         'terms_of_use': 'terms',
@@ -486,13 +502,17 @@ function App() {
       case 'fahrer':
       case 'autisti':
         return <DriversLandingPage currentLanguage={currentLanguage as 'PT' | 'EN' | 'ES' | 'FR' | 'DE' | 'IT'} onCTAClick={handleCTAClick} />;
+      case 'govPrivacy':
+        return <GovPrivacyPolicyPage currentLanguage={currentLanguage} onBack={() => handlePageChange('gov')} />;
+      case 'govTerms':
+        return <GovTermsOfUsePage currentLanguage={currentLanguage} onBack={() => handlePageChange('gov')} />;
       case 'gov':
         return <GovPage currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />;
-        case 'home':
-        default:
-          return (
-            <HomeV2 currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
-          );
+      case 'home':
+      default:
+        return (
+          <HomeV2 currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />
+        );
     }
   };
 
@@ -513,6 +533,8 @@ function App() {
       onLanguageChange={handleLanguageChange}
       currentPage={currentPage}
       onPageChange={handlePageChange}
+      hideFooter={currentPage === 'gov' || currentPage === 'govPrivacy' || currentPage === 'govTerms'}
+      hideHeader={['govPrivacy', 'govTerms'].includes(currentPage)}
     >
       {renderPage()}
     </Layout>

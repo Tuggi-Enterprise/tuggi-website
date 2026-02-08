@@ -57,6 +57,315 @@ export interface SEOConfig {
   ogImageAlt?: string;
 }
 
+// Generate structured data (Schema.org) for different page types
+export const generateStructuredData = (page: string, language: string, baseUrl: string) => {
+  const organizationData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Tuggi",
+    "url": baseUrl,
+    "logo": `${baseUrl}/logo.png`,
+    "description": "Cultural discovery and local stories app that narrates real-time audio stories about places around you",
+    "foundingDate": "2025",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "São Paulo",
+      "addressRegion": "SP",
+      "addressCountry": "BR"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+55-11-994718809",
+      "contactType": "customer service",
+      "email": "contato@tuggi.app",
+      "availableLanguage": ["Portuguese", "English", "Spanish", "French", "German", "Italian"]
+    },
+    "sameAs": [
+      "https://linkedin.com/company/tuggi",
+      "https://instagram.com/tuggi"
+    ],
+    "industry": "Travel Technology",
+    "numberOfEmployees": "1-10",
+    "keywords": "cultural tourism app, audio guide, local stories, cultural curiosities, urban exploration, real-time narrative",
+    "offers": {
+      "@type": "Offer",
+      "name": "Tuggi",
+      "description": "Cultural discovery and local stories app with real-time audio narration",
+      "category": "Mobile Application"
+    }
+  };
+
+  switch (page) {
+    case 'contact':
+      return {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contact Tuggi",
+        "description": "Contact Tuggi to learn more about our cultural discovery app and real-time audio stories",
+        "mainEntity": organizationData,
+        "inLanguage": getLocaleCode(language),
+        "potentialAction": {
+          "@type": "ContactAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": `${baseUrl}/${language.toLowerCase()}/contact`,
+            "actionPlatform": [
+              "http://schema.org/DesktopWebPlatform",
+              "http://schema.org/MobileWebPlatform"
+            ]
+          }
+        }
+      };
+
+    case 'purpose':
+      return {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "Our Purpose - Connecting People with Local Culture",
+        "description": "Discover Tuggi's mission to connect people with local culture through real-time audio stories and cultural discovery",
+        "mainEntity": organizationData,
+        "inLanguage": getLocaleCode(language),
+        "about": {
+          "@type": "Thing",
+          "name": "Cultural Discovery Technology",
+          "description": "Technology that connects people with local culture through audio stories"
+        }
+      };
+
+    case 'privacy':
+      return {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Privacy Policy - Tuggi",
+        "description": "Privacy policy and data protection information for Tuggi cultural discovery app",
+        "mainEntity": organizationData,
+        "inLanguage": getLocaleCode(language),
+        "about": {
+          "@type": "Thing",
+          "name": "Privacy Policy",
+          "description": "Data protection and privacy rights information"
+        },
+        "datePublished": "2024-01-15",
+        "dateModified": "2024-01-15"
+      };
+
+    case 'govPrivacy':
+      return {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Public Data Privacy Policy - Tuggi City OS",
+        "description": "Privacy policy for Tuggi City OS government infrastructure, focusing on public data sovereignty and citizen anonymity",
+        "mainEntity": organizationData,
+        "inLanguage": getLocaleCode(language),
+        "about": {
+          "@type": "Thing",
+          "name": "Government Data Privacy",
+          "description": "Public sector data protection standards and sovereignty"
+        },
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "Government Officials"
+        },
+        "datePublished": "2026-02-08",
+        "dateModified": "2026-02-08"
+      };
+
+    case 'govTerms':
+      return {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Terms of Use for Public Administration - Tuggi City OS",
+        "description": "Terms of use and SaaS licensing agreement for Tuggi City OS government infrastructure",
+        "mainEntity": organizationData,
+        "inLanguage": getLocaleCode(language),
+        "about": {
+          "@type": "Thing",
+          "name": "SaaS Government License",
+          "description": "Software as a Service licensing terms for public administration"
+        },
+        "audience": {
+           "@type": "Audience",
+           "audienceType": "Government Procurement Officers"
+        },
+        "datePublished": "2026-02-08",
+        "dateModified": "2026-02-08"
+      };
+
+    case 'cookies':
+      return {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Cookie Policy - Tuggi",
+        "description": "Cookie usage policy and privacy controls for Tuggi cultural discovery app",
+        "mainEntity": organizationData,
+        "inLanguage": getLocaleCode(language),
+        "about": {
+          "@type": "Thing",
+          "name": "Cookie Policy",
+          "description": "Cookie usage and privacy control information"
+        },
+        "datePublished": "2024-01-15",
+        "dateModified": "2024-01-15"
+      };
+
+    case 'drivers':
+      const driversFaqData: Record<string, Array<{"@type": string, name: string, acceptedAnswer: {"@type": string, text: string}}>> = {
+        PT: [
+          {"@type":"Question","name":"Como o Tuggi ajuda motoristas de aplicativo?","acceptedAnswer":{"@type":"Answer","text":"O Tuggi transforma suas corridas em experiências culturais, oferecendo narrações automáticas que encantam passageiros e melhoram avaliações."}},
+          {"@type":"Question","name":"Preciso mudar minha rotina para usar o Tuggi?","acceptedAnswer":{"@type":"Answer","text":"Não. O Tuggi funciona em segundo plano, junto com seu app de navegação, e narra histórias automaticamente."}},
+          {"@type":"Question","name":"O Tuggi aumenta meus ganhos?","acceptedAnswer":{"@type":"Answer","text":"Sim. Ao oferecer uma experiência diferenciada aos passageiros, motoristas tendem a receber melhores avaliações e mais gorjetas."}}
+        ],
+        EN: [
+          {"@type":"Question","name":"How does Tuggi help ride-hailing drivers?","acceptedAnswer":{"@type":"Answer","text":"Tuggi allows drivers to offer cultural experiences during rides, increasing ratings and building passenger loyalty."}},
+          {"@type":"Question","name":"Can I use Tuggi with Waze or Google Maps?","acceptedAnswer":{"@type":"Answer","text":"Yes. Tuggi works in the background, automatically narrating while the driver uses the navigation app."}},
+          {"@type":"Question","name":"Does Tuggi help earn more?","acceptedAnswer":{"@type":"Answer","text":"Yes. Drivers who offer differentiated experiences are more likely to receive tips and better ratings."}}
+        ],
+        ES: [
+          {"@type":"Question","name":"¿Cómo ayuda Tuggi a los conductores de apps?","acceptedAnswer":{"@type":"Answer","text":"Tuggi permite que los conductores ofrezcan experiencias culturales durante los viajes, aumentando las valoraciones y fidelizando pasajeros."}},
+          {"@type":"Question","name":"¿Puedo usar Tuggi junto con Waze o Google Maps?","acceptedAnswer":{"@type":"Answer","text":"Sí. Tuggi funciona en segundo plano, narrando automáticamente mientras el conductor usa la app de navegación."}},
+          {"@type":"Question","name":"¿Tuggi ayuda a ganar más?","acceptedAnswer":{"@type":"Answer","text":"Sí. Los conductores que ofrecen experiencias diferenciadas tienen más posibilidades de recibir propinas y mejores valoraciones."}}
+        ]
+      };
+      
+      return {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": driversFaqData[language] || driversFaqData.PT,
+        "inLanguage": getLocaleCode(language),
+        "about": organizationData
+      };
+
+    case 'business':
+      const businessFaqData: Record<string, Array<{"@type": string, name: string, acceptedAnswer: {"@type": string, text: string}}>> = {
+        PT: [
+          {"@type":"Question","name":"Como o Tuggi pode ajudar minha empresa?","acceptedAnswer":{"@type":"Answer","text":"O Tuggi permite integrar experiências culturais em rotas e trajetos, agregando valor à jornada dos clientes e reforçando o posicionamento da marca."}},
+          {"@type":"Question","name":"Quais empresas podem se beneficiar?","acceptedAnswer":{"@type":"Answer","text":"Empresas de transporte, turismo, hotelaria e mobilidade urbana que desejam oferecer uma experiência diferenciada e cultural aos clientes."}},
+          {"@type":"Question","name":"O Tuggi pode ser personalizado para minha marca?","acceptedAnswer":{"@type":"Answer","text":"Sim. O Tuggi oferece opções de personalização e integração com identidade visual e narrativas específicas de parceiros corporativos."}}
+        ],
+        EN: [
+          {"@type":"Question","name":"How can Tuggi help my business?","acceptedAnswer":{"@type":"Answer","text":"Tuggi offers partnerships for transportation and tourism companies, allowing them to offer differentiated cultural experiences to customers."}},
+          {"@type":"Question","name":"What types of businesses can benefit?","acceptedAnswer":{"@type":"Answer","text":"Transportation companies, tourism agencies, bus operators, shuttle services and any business that wants to offer cultural value to customers."}},
+          {"@type":"Question","name":"How does partnership with Tuggi work?","acceptedAnswer":{"@type":"Answer","text":"We offer customized solutions to integrate Tuggi into your company's services, creating unique and differentiated experiences."}}
+        ],
+        ES: [
+          {"@type":"Question","name":"¿Cómo puede ayudar Tuggi a mi empresa?","acceptedAnswer":{"@type":"Answer","text":"Tuggi ofrece alianzas para empresas de transporte y turismo, permitiendo que ofrezcan experiencias culturales diferenciadas a los clientes."}},
+          {"@type":"Question","name":"¿Qué tipos de empresas pueden beneficiarse?","acceptedAnswer":{"@type":"Answer","text":"Empresas de transporte, agencias de turismo, operadores de autobuses, servicios de shuttle y cualquier negocio que quiera ofrecer valor cultural a los clientes."}},
+          {"@type":"Question","name":"¿Cómo funciona la alianza con Tuggi?","acceptedAnswer":{"@type":"Answer","text":"Ofrecemos soluciones personalizadas para integrar Tuggi a los servicios de su empresa, creando experiencias únicas y diferenciadas."}}
+        ]
+      };
+      
+      return {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": businessFaqData[language] || businessFaqData.PT,
+        "inLanguage": getLocaleCode(language),
+        "about": organizationData
+      };
+
+    case 'home':
+      const faqData: Record<string, Array<{"@type": string, name: string, acceptedAnswer: {"@type": string, text: string}}>> = {
+        PT: [
+          {"@type":"Question","name":"O que é o Tuggi?","acceptedAnswer":{"@type":"Answer","text":"O Tuggi é um aplicativo de guia de áudio cultural que narra automaticamente histórias e curiosidades sobre lugares próximos a você."}},
+          {"@type":"Question","name":"Em quais idiomas o Tuggi está disponível?","acceptedAnswer":{"@type":"Answer","text":"O Tuggi está disponível em português, inglês e espanhol."}},
+          {"@type":"Question","name":"O Tuggi funciona sem internet?","acceptedAnswer":{"@type":"Answer","text":"Parte do conteúdo é cacheado e pode ser acessado offline, mas o uso completo requer conexão ativa."}}
+        ],
+        EN: [
+          {"@type":"Question","name":"What is Tuggi?","acceptedAnswer":{"@type":"Answer","text":"Tuggi is a cultural audio guide app that automatically narrates stories about places around you while you drive or explore."}},
+          {"@type":"Question","name":"Do I need to follow a route?","acceptedAnswer":{"@type":"Answer","text":"No. Tuggi works at your pace, without fixed routes — it identifies the location and narrates automatically."}},
+          {"@type":"Question","name":"What languages is Tuggi available in?","acceptedAnswer":{"@type":"Answer","text":"The app is available in Portuguese, English and Spanish, with more languages in development."}}
+        ],
+        ES: [
+          {"@type":"Question","name":"¿Qué es Tuggi?","acceptedAnswer":{"@type":"Answer","text":"Tuggi es una app de guía de audio cultural que narra automáticamente historias sobre los lugares a tu alrededor mientras conduces o exploras."}},
+          {"@type":"Question","name":"¿Necesito seguir una ruta?","acceptedAnswer":{"@type":"Answer","text":"No. Tuggi funciona a tu ritmo, sin rutas fijas — identifica la ubicación y narra automáticamente."}},
+          {"@type":"Question","name":"¿En qué idiomas está disponible Tuggi?","acceptedAnswer":{"@type":"Answer","text":"La app está disponible en portugués, inglés y español, con más idiomas en desarrollo."}}
+        ]
+      };
+      
+      // Organization Schema
+      const organizationSchema = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Tuggi",
+        "url": "https://www.tuggi.app/",
+        "logo": "https://www.tuggi.app/og/logo.png",
+        "contactPoint": [{
+          "@type": "ContactPoint",
+          "email": "contato@tuggi.app",
+          "contactType": "customer support",
+          "areaServed": "BR"
+        }]
+      };
+      
+      // MobileApplication Schema
+      const mobileAppSchema = {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "Tuggi",
+        "operatingSystem": "iOS",
+        "applicationCategory": "TravelApplication",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "BRL"
+        },
+        "inLanguage": ["pt-BR", "es-ES", "en-US"],
+        "url": "https://www.tuggi.app/",
+        "installUrl": "APP_STORE_URL"
+      };
+      
+      // FAQ Schema
+      const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqData[language] || faqData.PT,
+        "inLanguage": getLocaleCode(language),
+        "about": organizationData
+      };
+      
+      // Return array of schemas for home page
+      return [organizationSchema, mobileAppSchema, faqSchema];
+
+    case 'gov':
+      return {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Smart Tourism Infrastructure for Municipalities",
+        "description": "Official b2g digital audio infrastructure for territories with municipal editorial control",
+        "mainEntity": organizationData,
+        "inLanguage": getLocaleCode(language),
+        "about": {
+          "@type": "Service",
+          "name": "Tuggi City OS",
+          "description": "Municipal digital infrastructure for official, geo-located audio narratives",
+          "provider": organizationData,
+          "serviceType": "Government Infrastructure Service",
+          "areaServed": {
+            "@type": "Country",
+            "name": "Portugal"
+          },
+          "audience": {
+            "@type": "Audience",
+            "audienceType": "Municipal IT and Procurement Stakeholders"
+          }
+        },
+        "potentialAction": {
+          "@type": "ContactAction",
+          "name": "Schedule Technical Presentation",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": `${baseUrl}/${language.toLowerCase()}/gov#contact`
+          }
+        }
+      };
+
+    default:
+      return {
+        ...organizationData,
+        "inLanguage": getLocaleCode(language)
+      };
+  }
+};
+
 export const generateSEOConfig = (
   page: string,
   language: string,
@@ -459,6 +768,95 @@ export const generateSEOConfig = (
         ogTitle: 'Infrastruttura Ufficiale di Turismo Intelligente per i Comuni | Tuggi',
         ogDescription: 'Trasformare la mobilità in intelligenza culturale — con governance editoriale comunale.'
       }
+
+    },
+    govPrivacy: {
+      EN: {
+        title: 'Public Data Privacy Policy | Tuggi City OS',
+        description: 'Privacy policy for Tuggi City OS government infrastructure. Compliance with GDPR public data sovereignty and citizen anonymity standards.',
+        keywords: 'government data privacy, public sector gdpr compliance, data sovereignty, citizen anonymity, smart city privacy, city os data protection',
+        ogTitle: 'Public Data Privacy Policy | Tuggi City OS',
+        ogDescription: 'Privacy policy for Tuggi City OS government infrastructure. Compliance with GDPR public data sovereignty.'
+      },
+      PT: {
+        title: 'Política de Privacidade de Dados Públicos | Tuggi City OS',
+        description: 'Política de privacidade para infraestrutura governamental Tuggi City OS. Conformidade com LGPD, soberania de dados públicos e anonimização do cidadão.',
+        keywords: 'privacidade dados governamentais, lgpd setor público, soberania de dados, anonimização cidadão, privacidade smart city, proteção dados city os',
+        ogTitle: 'Política de Privacidade de Dados Públicos | Tuggi City OS',
+        ogDescription: 'Política de privacidade para infraestrutura governamental Tuggi City OS. Conformidade com LGPD e soberania de dados.'
+      },
+      ES: {
+        title: 'Política de Privacidad de Datos Públicos | Tuggi City OS',
+        description: 'Política de privacidad para infraestructura gubernamental Tuggi City OS. Cumplimiento con RGPD, soberanía de datos públicos y anonimato ciudadano.',
+        keywords: 'privacidad datos gobierno, rgpd sector público, soberanía de datos, anonimato ciudadano, privacidad smart city',
+        ogTitle: 'Política de Privacidad de Datos Públicos | Tuggi City OS',
+        ogDescription: 'Política de privacidad para infraestructura gubernamental Tuggi City OS. Cumplimiento con RGPD y soberanía de datos.'
+      },
+      FR: {
+        title: 'Politique de Confidentialité des Données Publiques | Tuggi City OS',
+        description: 'Politique de confidentialité pour l\'infrastructure gouvernementale Tuggi City OS. Conformité RGPD et souveraineté des données publiques.',
+        keywords: 'confidentialité données gouvernementales, rgpd secteur public, souveraineté des données, anonymat citoyen',
+        ogTitle: 'Politique de Confidentialité des Données Publiques | Tuggi City OS',
+        ogDescription: 'Politique de confidentialité pour l\'infrastructure gouvernementale Tuggi City OS. Conformité RGPD.'
+      },
+      DE: {
+        title: 'Datenschutzrichtlinie für Öffentliche Daten | Tuggi City OS',
+        description: 'Datenschutzrichtlinie für Tuggi City OS Regierungsinfrastruktur. Einhaltung der DSGVO und Datensouveränität.',
+        keywords: 'datenschutz öffentliche daten, dsgvo öffentlicher sektor, datensouveränität, smart city datenschutz',
+        ogTitle: 'Datenschutzrichtlinie für Öffentliche Daten | Tuggi City OS',
+        ogDescription: 'Datenschutzrichtlinie für Tuggi City OS Regierungsinfrastruktur. Einhaltung der DSGVO.'
+      },
+      IT: {
+        title: 'Informativa sulla Privacy dei Dati Pubblici | Tuggi City OS',
+        description: 'Informativa sulla privacy per l\'infrastruttura governativa Tuggi City OS. Conformità GDPR e sovranità dei dati pubblici.',
+        keywords: 'privacy dati governativi, gdpr settore pubblico, sovranità dei dati, anonimato cittadino',
+        ogTitle: 'Informativa sulla Privacy dei Dati Pubblici | Tuggi City OS',
+        ogDescription: 'Informativa sulla privacy per l\'infrastruttura governativa Tuggi City OS. Conformità GDPR.'
+      }
+    },
+    govTerms: {
+      EN: {
+        title: 'Terms of Use for Public Administration | Tuggi City OS',
+        description: 'Terms of use and SaaS licensing for Tuggi City OS government infrastructure. SLA, editorial responsibility, and public sector usage rights.',
+        keywords: 'government saas terms, public sector software license, city os sla, municipal software agreement, smart city procurement',
+        ogTitle: 'Terms of Use for Public Administration | Tuggi City OS',
+        ogDescription: 'Terms of use and SaaS licensing for Tuggi City OS government infrastructure.'
+      },
+      PT: {
+        title: 'Termos de Uso para Administração Pública | Tuggi City OS',
+        description: 'Termos de uso e licenciamento SaaS da infraestrutura governamental Tuggi City OS. SLA, responsabilidade editorial e direitos de uso do setor público.',
+        keywords: 'termos uso governo, licença software público, sla city os, contrato software municipal, procurement smart city',
+        ogTitle: 'Termos de Uso para Administração Pública | Tuggi City OS',
+        ogDescription: 'Termos de uso e licenciamento SaaS da infraestrutura governamental Tuggi City OS.'
+      },
+      ES: {
+        title: 'Términos de Uso para Administración Pública | Tuggi City OS',
+        description: 'Términos de uso y licencia SaaS para infraestructura gubernamental Tuggi City OS. SLA, responsabilidad editorial y derechos de uso.',
+        keywords: 'términos uso gobierno, licencia software público, sla city os, contrato software municipal',
+        ogTitle: 'Términos de Uso para Administración Pública | Tuggi City OS',
+        ogDescription: 'Términos de uso y licencia SaaS para infraestructura gubernamental Tuggi City OS.'
+      },
+      FR: {
+        title: 'Conditions d\'Utilisation pour l\'Administration Publique | Tuggi City OS',
+        description: 'Conditions d\'utilisation et licence SaaS pour l\'infrastructure gouvernementale Tuggi City OS.',
+        keywords: 'conditions utilisation gouvernement, licence logiciel public, sla city os',
+        ogTitle: 'Conditions d\'Utilisation pour l\'Administration Publique | Tuggi City OS',
+        ogDescription: 'Conditions d\'utilisation et licence SaaS pour l\'infrastructure gouvernementale Tuggi City OS.'
+      },
+      DE: {
+        title: 'Nutzungsbedingungen für die Öffentliche Verwaltung | Tuggi City OS',
+        description: 'Nutzungsbedingungen und SaaS-Lizenzierung für Tuggi City OS Regierungsinfrastruktur.',
+        keywords: 'nutzungsbedingungen verwaltung, softwarelizenz öffentlich, sla city os',
+        ogTitle: 'Nutzungsbedingungen für die Öffentliche Verwaltung | Tuggi City OS',
+        ogDescription: 'Nutzungsbedingungen und SaaS-Lizenzierung für Tuggi City OS Regierungsinfrastruktur.'
+      },
+      IT: {
+        title: 'Termini di Utilizzo per la Pubblica Amministrazione | Tuggi City OS',
+        description: 'Termini di utilizzo e licenza SaaS per l\'infrastruttura governativa Tuggi City OS.',
+        keywords: 'termini utilizzo pubblica amministrazione, licenza software pubblico, sla city os',
+        ogTitle: 'Termini di Utilizzo per la Pubblica Amministrazione | Tuggi City OS',
+        ogDescription: 'Termini di utilizzo e licenza SaaS per l\'infrastruttura governativa Tuggi City OS.'
+      }
     }
   };
 
@@ -491,11 +889,11 @@ export const generateSEOConfig = (
   };
 
   return {
-    title: pageData.title || 'Tuggi – Discover culture and stories wherever you go',
-    description: pageData.description || 'Explore the city with Tuggi: an app that narrates, through audio and in real-time, cultural curiosities and stories about the places around you.',
-    keywords: pageData.keywords || 'cultural tourism app, audio guide, local stories, cultural curiosities, urban exploration, real-time narrative',
-    ogTitle: pageData.ogTitle || pageData.title || 'Tuggi – Discover culture and stories wherever you go',
-    ogDescription: pageData.ogDescription || pageData.description || 'Explore the city with Tuggi: an app that narrates, through audio and in real-time, cultural curiosities and stories about the places around you.',
+    title: pageData?.title || 'Tuggi – Discover culture and stories wherever you go',
+    description: pageData?.description || 'Explore the city with Tuggi: an app that narrates, through audio and in real-time, cultural curiosities and stories about the places around you.',
+    keywords: pageData?.keywords || 'cultural tourism app, audio guide, local stories, cultural curiosities, urban exploration, real-time narrative',
+    ogTitle: pageData?.ogTitle || pageData?.title || 'Tuggi – Discover culture and stories wherever you go',
+    ogDescription: pageData?.ogDescription || pageData?.description || 'Explore the city with Tuggi: an app that narrates, through audio and in real-time, cultural curiosities and stories about the places around you.',
     canonicalUrl,
     hreflang,
     structuredData,
@@ -505,272 +903,7 @@ export const generateSEOConfig = (
   };
 };
 
-// Generate structured data (Schema.org) for different page types
-export const generateStructuredData = (page: string, language: string, baseUrl: string) => {
-  const organizationData = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Tuggi",
-    "url": baseUrl,
-    "logo": `${baseUrl}/logo.png`,
-    "description": "Cultural discovery and local stories app that narrates real-time audio stories about places around you",
-    "foundingDate": "2025",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "São Paulo",
-      "addressRegion": "SP",
-      "addressCountry": "BR"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+55-11-994718809",
-      "contactType": "customer service",
-      "email": "contato@tuggi.app",
-      "availableLanguage": ["Portuguese", "English", "Spanish", "French", "German", "Italian"]
-    },
-    "sameAs": [
-      "https://linkedin.com/company/tuggi",
-      "https://instagram.com/tuggi"
-    ],
-    "industry": "Travel Technology",
-    "numberOfEmployees": "1-10",
-    "keywords": "cultural tourism app, audio guide, local stories, cultural curiosities, urban exploration, real-time narrative",
-    "offers": {
-      "@type": "Offer",
-      "name": "Tuggi",
-      "description": "Cultural discovery and local stories app with real-time audio narration",
-      "category": "Mobile Application"
-    }
-  };
 
-  switch (page) {
-    case 'contact':
-      return {
-        "@context": "https://schema.org",
-        "@type": "ContactPage",
-        "name": "Contact Tuggi",
-        "description": "Contact Tuggi to learn more about our cultural discovery app and real-time audio stories",
-        "mainEntity": organizationData,
-        "inLanguage": getLocaleCode(language),
-        "potentialAction": {
-          "@type": "ContactAction",
-          "target": {
-            "@type": "EntryPoint",
-            "urlTemplate": `${baseUrl}/${language.toLowerCase()}/contact`,
-            "actionPlatform": [
-              "http://schema.org/DesktopWebPlatform",
-              "http://schema.org/MobileWebPlatform"
-            ]
-          }
-        }
-      };
-
-    case 'purpose':
-      return {
-        "@context": "https://schema.org",
-        "@type": "AboutPage",
-        "name": "Our Purpose - Connecting People with Local Culture",
-        "description": "Discover Tuggi's mission to connect people with local culture through real-time audio stories and cultural discovery",
-        "mainEntity": organizationData,
-        "inLanguage": getLocaleCode(language),
-        "about": {
-          "@type": "Thing",
-          "name": "Cultural Discovery Technology",
-          "description": "Technology that connects people with local culture through audio stories"
-        }
-      };
-
-    case 'privacy':
-      return {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Privacy Policy - Tuggi",
-        "description": "Privacy policy and data protection information for Tuggi cultural discovery app",
-        "mainEntity": organizationData,
-        "inLanguage": getLocaleCode(language),
-        "about": {
-          "@type": "Thing",
-          "name": "Privacy Policy",
-          "description": "Data protection and privacy rights information"
-        },
-        "datePublished": "2024-01-15",
-        "dateModified": "2024-01-15"
-      };
-
-    case 'cookies':
-      return {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Cookie Policy - Tuggi",
-        "description": "Cookie usage policy and privacy controls for Tuggi cultural discovery app",
-        "mainEntity": organizationData,
-        "inLanguage": getLocaleCode(language),
-        "about": {
-          "@type": "Thing",
-          "name": "Cookie Policy",
-          "description": "Cookie usage and privacy control information"
-        },
-        "datePublished": "2024-01-15",
-        "dateModified": "2024-01-15"
-      };
-
-    case 'drivers':
-      const driversFaqData: Record<string, Array<{"@type": string, name: string, acceptedAnswer: {"@type": string, text: string}}>> = {
-        PT: [
-          {"@type":"Question","name":"Como o Tuggi ajuda motoristas de aplicativo?","acceptedAnswer":{"@type":"Answer","text":"O Tuggi transforma suas corridas em experiências culturais, oferecendo narrações automáticas que encantam passageiros e melhoram avaliações."}},
-          {"@type":"Question","name":"Preciso mudar minha rotina para usar o Tuggi?","acceptedAnswer":{"@type":"Answer","text":"Não. O Tuggi funciona em segundo plano, junto com seu app de navegação, e narra histórias automaticamente."}},
-          {"@type":"Question","name":"O Tuggi aumenta meus ganhos?","acceptedAnswer":{"@type":"Answer","text":"Sim. Ao oferecer uma experiência diferenciada aos passageiros, motoristas tendem a receber melhores avaliações e mais gorjetas."}}
-        ],
-        EN: [
-          {"@type":"Question","name":"How does Tuggi help ride-hailing drivers?","acceptedAnswer":{"@type":"Answer","text":"Tuggi allows drivers to offer cultural experiences during rides, increasing ratings and building passenger loyalty."}},
-          {"@type":"Question","name":"Can I use Tuggi with Waze or Google Maps?","acceptedAnswer":{"@type":"Answer","text":"Yes. Tuggi works in the background, automatically narrating while the driver uses the navigation app."}},
-          {"@type":"Question","name":"Does Tuggi help earn more?","acceptedAnswer":{"@type":"Answer","text":"Yes. Drivers who offer differentiated experiences are more likely to receive tips and better ratings."}}
-        ],
-        ES: [
-          {"@type":"Question","name":"¿Cómo ayuda Tuggi a los conductores de apps?","acceptedAnswer":{"@type":"Answer","text":"Tuggi permite que los conductores ofrezcan experiencias culturales durante los viajes, aumentando las valoraciones y fidelizando pasajeros."}},
-          {"@type":"Question","name":"¿Puedo usar Tuggi junto con Waze o Google Maps?","acceptedAnswer":{"@type":"Answer","text":"Sí. Tuggi funciona en segundo plano, narrando automáticamente mientras el conductor usa la app de navegación."}},
-          {"@type":"Question","name":"¿Tuggi ayuda a ganar más?","acceptedAnswer":{"@type":"Answer","text":"Sí. Los conductores que ofrecen experiencias diferenciadas tienen más posibilidades de recibir propinas y mejores valoraciones."}}
-        ]
-      };
-      
-      return {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": driversFaqData[language] || driversFaqData.PT,
-        "inLanguage": getLocaleCode(language),
-        "about": organizationData
-      };
-
-    case 'business':
-      const businessFaqData: Record<string, Array<{"@type": string, name: string, acceptedAnswer: {"@type": string, text: string}}>> = {
-        PT: [
-          {"@type":"Question","name":"Como o Tuggi pode ajudar minha empresa?","acceptedAnswer":{"@type":"Answer","text":"O Tuggi permite integrar experiências culturais em rotas e trajetos, agregando valor à jornada dos clientes e reforçando o posicionamento da marca."}},
-          {"@type":"Question","name":"Quais empresas podem se beneficiar?","acceptedAnswer":{"@type":"Answer","text":"Empresas de transporte, turismo, hotelaria e mobilidade urbana que desejam oferecer uma experiência diferenciada e cultural aos clientes."}},
-          {"@type":"Question","name":"O Tuggi pode ser personalizado para minha marca?","acceptedAnswer":{"@type":"Answer","text":"Sim. O Tuggi oferece opções de personalização e integração com identidade visual e narrativas específicas de parceiros corporativos."}}
-        ],
-        EN: [
-          {"@type":"Question","name":"How can Tuggi help my business?","acceptedAnswer":{"@type":"Answer","text":"Tuggi offers partnerships for transportation and tourism companies, allowing them to offer differentiated cultural experiences to customers."}},
-          {"@type":"Question","name":"What types of businesses can benefit?","acceptedAnswer":{"@type":"Answer","text":"Transportation companies, tourism agencies, bus operators, shuttle services and any business that wants to offer cultural value to customers."}},
-          {"@type":"Question","name":"How does partnership with Tuggi work?","acceptedAnswer":{"@type":"Answer","text":"We offer customized solutions to integrate Tuggi into your company's services, creating unique and differentiated experiences."}}
-        ],
-        ES: [
-          {"@type":"Question","name":"¿Cómo puede ayudar Tuggi a mi empresa?","acceptedAnswer":{"@type":"Answer","text":"Tuggi ofrece alianzas para empresas de transporte y turismo, permitiendo que ofrezcan experiencias culturales diferenciadas a los clientes."}},
-          {"@type":"Question","name":"¿Qué tipos de empresas pueden beneficiarse?","acceptedAnswer":{"@type":"Answer","text":"Empresas de transporte, agencias de turismo, operadores de autobuses, servicios de shuttle y cualquier negocio que quiera ofrecer valor cultural a los clientes."}},
-          {"@type":"Question","name":"¿Cómo funciona la alianza con Tuggi?","acceptedAnswer":{"@type":"Answer","text":"Ofrecemos soluciones personalizadas para integrar Tuggi a los servicios de su empresa, creando experiencias únicas y diferenciadas."}}
-        ]
-      };
-      
-      return {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": businessFaqData[language] || businessFaqData.PT,
-        "inLanguage": getLocaleCode(language),
-        "about": organizationData
-      };
-
-    case 'home':
-      const faqData: Record<string, Array<{"@type": string, name: string, acceptedAnswer: {"@type": string, text: string}}>> = {
-        PT: [
-          {"@type":"Question","name":"O que é o Tuggi?","acceptedAnswer":{"@type":"Answer","text":"O Tuggi é um aplicativo de guia de áudio cultural que narra automaticamente histórias e curiosidades sobre lugares próximos a você."}},
-          {"@type":"Question","name":"Em quais idiomas o Tuggi está disponível?","acceptedAnswer":{"@type":"Answer","text":"O Tuggi está disponível em português, inglês e espanhol."}},
-          {"@type":"Question","name":"O Tuggi funciona sem internet?","acceptedAnswer":{"@type":"Answer","text":"Parte do conteúdo é cacheado e pode ser acessado offline, mas o uso completo requer conexão ativa."}}
-        ],
-        EN: [
-          {"@type":"Question","name":"What is Tuggi?","acceptedAnswer":{"@type":"Answer","text":"Tuggi is a cultural audio guide app that automatically narrates stories about places around you while you drive or explore."}},
-          {"@type":"Question","name":"Do I need to follow a route?","acceptedAnswer":{"@type":"Answer","text":"No. Tuggi works at your pace, without fixed routes — it identifies the location and narrates automatically."}},
-          {"@type":"Question","name":"What languages is Tuggi available in?","acceptedAnswer":{"@type":"Answer","text":"The app is available in Portuguese, English and Spanish, with more languages in development."}}
-        ],
-        ES: [
-          {"@type":"Question","name":"¿Qué es Tuggi?","acceptedAnswer":{"@type":"Answer","text":"Tuggi es una app de guía de audio cultural que narra automáticamente historias sobre los lugares a tu alrededor mientras conduces o exploras."}},
-          {"@type":"Question","name":"¿Necesito seguir una ruta?","acceptedAnswer":{"@type":"Answer","text":"No. Tuggi funciona a tu ritmo, sin rutas fijas — identifica la ubicación y narra automáticamente."}},
-          {"@type":"Question","name":"¿En qué idiomas está disponible Tuggi?","acceptedAnswer":{"@type":"Answer","text":"La app está disponible en portugués, inglés y español, con más idiomas en desarrollo."}}
-        ]
-      };
-      
-      // Organization Schema
-      const organizationSchema = {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Tuggi",
-        "url": "https://www.tuggi.app/",
-        "logo": "https://www.tuggi.app/og/logo.png",
-        "contactPoint": [{
-          "@type": "ContactPoint",
-          "email": "contato@tuggi.app",
-          "contactType": "customer support",
-          "areaServed": "BR"
-        }]
-      };
-      
-      // MobileApplication Schema
-      const mobileAppSchema = {
-        "@context": "https://schema.org",
-        "@type": "MobileApplication",
-        "name": "Tuggi",
-        "operatingSystem": "iOS",
-        "applicationCategory": "TravelApplication",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "BRL"
-        },
-        "inLanguage": ["pt-BR", "es-ES", "en-US"],
-        "url": "https://www.tuggi.app/",
-        "installUrl": "APP_STORE_URL"
-      };
-      
-      // FAQ Schema
-      const faqSchema = {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": faqData[language] || faqData.PT,
-        "inLanguage": getLocaleCode(language),
-        "about": organizationData
-      };
-      
-      // Return array of schemas for home page
-      return [organizationSchema, mobileAppSchema, faqSchema];
-
-    case 'gov':
-      return {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Smart Tourism Infrastructure for Municipalities",
-        "description": "Official b2g digital audio infrastructure for territories with municipal editorial control",
-        "mainEntity": organizationData,
-        "inLanguage": getLocaleCode(language),
-        "about": {
-          "@type": "Service",
-          "name": "Tuggi City OS",
-          "description": "Municipal digital infrastructure for official, geo-located audio narratives",
-          "provider": organizationData,
-          "serviceType": "Government Infrastructure Service",
-          "areaServed": {
-            "@type": "Country",
-            "name": "Portugal"
-          },
-          "audience": {
-            "@type": "Audience",
-            "audienceType": "Municipal IT and Procurement Stakeholders"
-          }
-        },
-        "potentialAction": {
-          "@type": "ContactAction",
-          "name": "Schedule Technical Presentation",
-          "target": {
-            "@type": "EntryPoint",
-            "urlTemplate": `${baseUrl}/${language.toLowerCase()}/gov#contact`
-          }
-        }
-      };
-
-    default:
-      return {
-        ...organizationData,
-        "inLanguage": getLocaleCode(language)
-      };
-  }
-};
 
 export const updatePageSEO = (seoConfig: SEOConfig) => {
   // Update document title

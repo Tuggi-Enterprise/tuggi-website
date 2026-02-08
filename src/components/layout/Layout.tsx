@@ -8,6 +8,8 @@ interface LayoutProps {
   onLanguageChange?: (lang: string) => void;
   currentPage?: string;
   onPageChange?: (page: string) => void;
+  hideHeader?: boolean;
+  hideFooter?: boolean;
 }
 
 const Layout: React.FC<LayoutProps> = ({ 
@@ -15,7 +17,9 @@ const Layout: React.FC<LayoutProps> = ({
   currentLanguage, 
   onLanguageChange,
   currentPage,
-  onPageChange
+  onPageChange,
+  hideHeader = false,
+  hideFooter = false
 }) => {
   useEffect(() => {
     // Set document language attribute for accessibility
@@ -38,12 +42,14 @@ const Layout: React.FC<LayoutProps> = ({
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header 
-        currentLanguage={currentLanguage}
-        onLanguageChange={onLanguageChange}
-        currentPage={currentPage}
-        onPageChange={onPageChange}
-      />
+      {!hideHeader && (
+        <Header 
+          currentLanguage={currentLanguage}
+          onLanguageChange={onLanguageChange}
+          currentPage={currentPage}
+          onPageChange={onPageChange}
+        />
+      )}
       <main 
         id="main-content"
         className="flex-1 pt-12 sm:pt-12 lg:pt-16"
@@ -52,12 +58,14 @@ const Layout: React.FC<LayoutProps> = ({
       >
         {children}
       </main>
-      <Footer 
-        currentLanguage={currentLanguage}
-        onLanguageChange={onLanguageChange}
-        currentPage={currentPage}
-        onPageChange={onPageChange}
-      />
+      {!hideFooter && (
+        <Footer 
+          currentLanguage={currentLanguage}
+          onLanguageChange={onLanguageChange}
+          currentPage={currentPage}
+          onPageChange={onPageChange}
+        />
+      )}
     </div>
   );
 };
