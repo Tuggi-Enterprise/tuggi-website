@@ -861,14 +861,13 @@ const GovPage: React.FC<GovPageProps> = ({
       <section id="video-demo" className="py-24 bg-white border-t border-slate-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative aspect-video rounded-3xl overflow-hidden shadow-2xl bg-slate-900 border border-slate-100 group">
-             <div className="absolute inset-0 flex items-center justify-center bg-slate-900">
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white mb-4 mx-auto group-hover:scale-110 transition-transform cursor-pointer border border-white/20">
-                    <Play className="w-8 h-8 fill-white ml-1" />
-                  </div>
-                  <p className="text-slate-400 font-medium">{t.video.placeholder}</p>
-                </div>
-             </div>
+             <iframe 
+                src="https://www.youtube.com/embed/SYnEr5GZ0Mc" 
+                title="Tuggi City OS Presentation"
+                className="w-full h-full border-0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowFullScreen
+             />
           </div>
         </div>
       </section>
