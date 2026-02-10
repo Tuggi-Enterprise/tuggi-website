@@ -52,7 +52,7 @@ const Layout: React.FC<LayoutProps> = ({
       )}
       <main 
         id="main-content"
-        className="flex-1 pt-12 sm:pt-12 lg:pt-16"
+        className="flex-1 pt-14 lg:pt-18"
         role="main"
         aria-label="Main content"
       >

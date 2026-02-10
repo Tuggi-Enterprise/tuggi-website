@@ -144,7 +144,7 @@ const Header: React.FC<HeaderProps> = ({
         role="banner"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 lg:h-18">
+          <div className="flex items-center justify-between h-14 lg:h-18">
             {/* Logo */}
             <div className="flex-shrink-0">
               <button 
@@ -181,10 +181,10 @@ const Header: React.FC<HeaderProps> = ({
               ))}
             </nav>
 
-            {/* Language Selector & Mobile Menu */}
+            {/* Language Selector (Desktop) & Mobile Menu Toggle */}
             <div className="flex items-center space-x-3">
-              {/* Language Selector */}
-              <div className="relative language-selector">
+              {/* Language Selector - Desktop Only */}
+              <div className="hidden lg:relative lg:block language-selector">
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
@@ -237,13 +237,13 @@ const Header: React.FC<HeaderProps> = ({
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <div className="lg:hidden py-4 border-t border-neutral-200 animate-fade-in">
+            <div className="lg:hidden py-4 border-t border-neutral-200 animate-fade-in max-h-[80vh] overflow-y-auto">
               <nav className="flex flex-col space-y-1" role="navigation" aria-label="Mobile navigation">
                 {navigationItems.map((item) => (
                   <button
                     key={item.page}
                     onClick={() => handleNavClick(item.page)}
-                    className={`text-left font-medium py-3 px-4 rounded-lg transition-all duration-200 ${
+                    className={`text-left font-bold py-3 px-4 rounded-lg transition-all duration-200 ${
                       currentPage === item.page
                         ? 'text-tuggi-primary bg-tuggi-primary/5'
                         : 'text-neutral-700 hover:text-tuggi-primary hover:bg-tuggi-primary/5'
@@ -254,6 +254,26 @@ const Header: React.FC<HeaderProps> = ({
                   </button>
                 ))}
               </nav>
+
+              {/* Language Selection in Mobile Menu */}
+              <div className="mt-6 pt-6 border-t border-neutral-100 px-4">
+                <p className="text-xs font-black text-neutral-400 uppercase tracking-widest mb-4">Idioma / Language</p>
+                <div className="grid grid-cols-2 gap-2">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => handleLanguageClick(lang.code)}
+                      className={`flex items-center justify-center space-x-2 py-3 rounded-xl border text-sm font-bold transition-all ${
+                        currentLanguage === lang.code
+                          ? 'bg-tuggi-primary border-tuggi-primary text-white shadow-md'
+                          : 'bg-white border-neutral-200 text-neutral-600 hover:border-tuggi-primary'
+                      }`}
+                    >
+                      <span>{lang.label}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
           )}
         </div>

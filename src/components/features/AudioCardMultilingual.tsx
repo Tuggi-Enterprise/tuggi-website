@@ -19,11 +19,13 @@ interface AudioSample {
 interface AudioCardMultilingualProps {
   sample: AudioSample;
   currentLanguage: string;
+  hideImage?: boolean;
 }
 
 const AudioCardMultilingual: React.FC<AudioCardMultilingualProps> = ({ 
   sample, 
-  currentLanguage 
+  currentLanguage,
+  hideImage = false
 }) => {
   const [playingLanguage, setPlayingLanguage] = useState<string | null>(null);
   const [activeLanguage, setActiveLanguage] = useState<string>(currentLanguage);
@@ -123,37 +125,39 @@ const AudioCardMultilingual: React.FC<AudioCardMultilingualProps> = ({
       }}
     >
       {/* Image with Overlay */}
-      <div className="relative">
-        <img 
-          src={sample.image} 
-          alt={getCurrentAudio().name}
-          className="w-full h-48 object-cover"
-        />
-        
-        {/* Overlay with Location and Title */}
-        <div 
-          className="absolute bottom-0 left-0 right-0 p-4"
-          style={{
-            background: 'linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%)'
-          }}
-        >
-          {/* Location */}
-          <div className="flex items-center gap-2 mb-1">
-            <span className="text-sm text-white font-medium"> {sample.city}</span>
-          </div>
+      {!hideImage && (
+        <div className="relative">
+          <img 
+            src={sample.image} 
+            alt={getCurrentAudio().name}
+            className="w-full h-48 object-cover"
+          />
           
-          {/* Title */}
-          <h3 
-            className="font-bold text-lg leading-tight text-white"
-            style={{ 
-              fontFamily: 'var(--font-sans)',
-              textShadow: '0 2px 4px rgba(0,0,0,0.5)'
+          {/* Overlay with Location and Title */}
+          <div 
+            className="absolute bottom-0 left-0 right-0 p-4"
+            style={{
+              background: 'linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%)'
             }}
           >
-            {getCurrentAudio().name}
-          </h3>
+            {/* Location */}
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-sm text-white font-medium"> {sample.city}</span>
+            </div>
+            
+            {/* Title */}
+            <h3 
+              className="font-bold text-lg leading-tight text-white"
+              style={{ 
+                fontFamily: 'var(--font-sans)',
+                textShadow: '0 2px 4px rgba(0,0,0,0.5)'
+              }}
+            >
+              {getCurrentAudio().name}
+            </h3>
+          </div>
         </div>
-      </div>
+      )}
       
       {/* Content */}
       <div className="p-6">

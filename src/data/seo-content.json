@@ -17,6 +17,9 @@
     "purpose": { "en": "purpose", "pt": "proposito", "es": "proposito", "fr": "mission", "de": "zweck", "it": "scopo" },
     "business": { "en": "business", "pt": "empresas", "es": "empresas", "fr": "entreprises", "de": "unternehmen", "it": "aziende" },
     "drivers": { "en": "drivers", "pt": "motoristas", "es": "conductores", "fr": "chauffeurs", "de": "fahrer", "it": "autisti" },
+    "motoristas-a": { "en": "drivers-a", "pt": "motoristas-a", "es": "conductores-a", "fr": "chauffeurs-a", "de": "fahrer-a", "it": "autisti-a" },
+    "motoristas-b": { "en": "drivers-b", "pt": "motoristas-b", "es": "conductores-b", "fr": "chauffeurs-b", "de": "fahrer-b", "it": "autisti-b" },
+    "motoristas-c": { "en": "drivers-c", "pt": "motoristas-c", "es": "conductores-c", "fr": "chauffeurs-c", "de": "fahrer-c", "it": "autisti-c" },
     "privacy": { "en": "privacy", "pt": "politica-de-privacidade", "es": "politica-de-privacidad", "fr": "politique-de-confidentialite", "de": "datenschutz", "it": "informativa-privacy" },
     "terms": { "en": "terms", "pt": "termos-de-uso", "es": "terminos-de-uso", "fr": "conditions-d-utilisation", "de": "nutzungsbedingungen", "it": "termini-di-utilizzo" },
     "cookies": { "en": "cookies", "pt": "politica-de-cookies", "es": "politica-de-cookies", "fr": "politique-cookies", "de": "cookie-richtlinie", "it": "informativa-cookie" },
@@ -371,6 +374,156 @@
         "ogTitle": "Per Autisti App | Tuggi",
         "ogDescription": "Trasforma le tue corse in esperienze 5 stelle. Mentre guidi, Tuggi racconta storie culturali ai tuoi passeggeri automaticamente.",
         "ogImage": "/og/drivers.jpg"
+      }
+    },
+    "motoristas-a": {
+      "en": {
+        "title": "For Rideshare Drivers | Tuggi (A)",
+        "description": "Turn your rides into 5-star experiences. While you drive, Tuggi tells cultural stories to your passengers automatically.",
+        "keywords": "rideshare drivers, uber driver tips, lyft driver app, passenger entertainment, 5 star ratings, driver tools",
+        "ogTitle": "For Rideshare Drivers | Tuggi",
+        "ogDescription": "Turn your rides into 5-star experiences. While you drive, Tuggi tells cultural stories to your passengers automatically.",
+        "ogImage": "/og/drivers.jpg"
+      },
+      "pt": {
+        "title": "Para Motoristas de App | Tuggi (A)",
+        "description": "Transforme suas corridas em experiências 5 estrelas. Enquanto você dirige, o Tuggi conta histórias culturais aos seus passageiros automaticamente.",
+        "keywords": "motoristas de app, dicas uber, app lyft, entretenimento passageiros, avaliações 5 estrelas, ferramentas motorista",
+        "ogTitle": "Para Motoristas de App | Tuggi",
+        "ogDescription": "Transforme suas corridas em experiências 5 estrelas. Enquanto você dirige, o Tuggi conta histórias culturais aos seus passageiros automaticamente.",
+        "ogImage": "/og/drivers.jpg"
+      },
+      "es": {
+        "title": "Para Conductores de App | Tuggi (A)",
+        "description": "Convierte tus viajes en experiencias 5 estrellas. Mientras conduces, Tuggi cuenta historias culturales a tus pasajeros automáticamente.",
+        "keywords": "conductores de app, tips uber, app lyft, entretenimiento pasajeros, calificaciones 5 estrellas, herramientas conductor",
+        "ogTitle": "Para Conductores de App | Tuggi",
+        "ogDescription": "Convierte tus viajes en experiencias 5 estrellas. Mientras conduces, Tuggi cuenta historias culturales a tus pasajeros automáticamente.",
+        "ogImage": "/og/drivers.jpg"
+      },
+      "fr": {
+        "title": "Pour les Chauffeurs VTC | Tuggi (A)",
+        "description": "Transformez vos courses en expériences 5 étoiles. Pendant que vous conduisez, Tuggi raconte des histoires culturelles à vos passagers automatiquement.",
+        "keywords": "chauffeurs vtc, astuces uber, app lyft, divertissement passagers, notes 5 étoiles, outils chauffeur",
+        "ogTitle": "Pour les Chauffeurs VTC | Tuggi",
+        "ogDescription": "Transformez vos courses en expériences 5 étoiles. Pendant que vous conduisez, Tuggi raconte des histoires culturelles à vos passagers automatiquement.",
+        "ogImage": "/og/drivers.jpg"
+      },
+      "de": {
+        "title": "Für Rideshare-Fahrer | Tuggi (A)",
+        "description": "Verwandeln Sie Ihre Fahrten in 5-Sterne-Erlebnisse. Während Sie fahren, erzählt Tuggi Ihren Fahrgästen automatisch kulturelle Geschichten.",
+        "keywords": "rideshare fahrer, uber tipps, lyft app, fahrgast unterhaltung, 5 sterne bewertungen, fahrer tools",
+        "ogTitle": "Für Rideshare-Fahrer | Tuggi",
+        "ogDescription": "Verwandeln Sie Ihre Fahrten in 5-Sterne-Erlebnisse. Während Sie fahren, erzählt Tuggi Ihren Fahrgästen automatisch kulturelle Geschichten.",
+        "ogImage": "/og/drivers.jpg"
+      },
+      "it": {
+        "title": "Per Autisti App | Tuggi (A)",
+        "description": "Trasforma le tue corse in esperienze 5 stelle. Mentre guidi, Tuggi racconta storie culturali ai tuoi passeggeri automaticamente.",
+        "keywords": "autisti app, consigli uber, app lyft, intrattenimento passeggeri, valutazioni 5 stelle, strumenti autista",
+        "ogTitle": "Per Autisti App | Tuggi",
+        "ogDescription": "Trasforma le tue corse in esperienze 5 stelle. Mentre guidi, Tuggi racconta storie culturali ai tuoi passeggeri automaticamente.",
+        "ogImage": "/og/drivers.jpg"
+      }
+    },
+    "motoristas-b": {
+      "en": {
+        "title": "Discover your path | Tuggi (B)",
+        "description": "Discover where you're passing without a route. Stories about the right place, at the right time. Works walking, driving, bus, or train.",
+        "keywords": "rideshare drivers, uber driver tips, lyft driver app, passenger entertainment, 5 star ratings, driver tools",
+        "ogTitle": "Discover your path | Tuggi",
+        "ogDescription": "Discover where you're passing without a route. Stories about the right place, at the right time.",
+        "ogImage": "/og/drivers.jpg"
+      },
+      "pt": {
+        "title": "Descubra por onde passa | Tuggi (B)",
+        "description": "Descubra por onde você está passando — sem precisar de roteiro. Histórias do lugar certo, na hora certa.",
+        "keywords": "motoristas de app, dicas uber, app lyft, entretenimento passageiros, avaliações 5 estrelas, ferramentas motorista",
+        "ogTitle": "Descubra por onde passa | Tuggi",
+        "ogDescription": "Descubra por onde você está passando — sem precisar de roteiro. Histórias do lugar certo, na hora certa.",
+        "ogImage": "/og/drivers.jpg"
+      },
+      "es": {
+        "title": "Descubre tu camino | Tuggi (B)",
+        "description": "Descubre por dónde pasas — sin ruta fija. Historias del lugar correcto, en el momento justo.",
+        "keywords": "conductores de app, tips uber, app lyft, entretenimiento pasajeros, calificaciones 5 estrellas, herramientas conductor",
+        "ogTitle": "Descubre tu camino | Tuggi",
+        "ogDescription": "Descubre por dónde pasas — sin ruta fija. Historias del lugar correcto, en el momento justo.",
+        "ogImage": "/og/drivers.jpg"
+      },
+      "fr": {
+        "title": "Découvrez votre chemin | Tuggi (B)",
+        "description": "Découvrez où vous passez — sans itinéraire. Des histoires au bon endroit, au bon moment.",
+        "keywords": "chauffeurs vtc, astuces uber, app lyft, divertissement passagers, notes 5 étoiles, outils chauffeur",
+        "ogTitle": "Découvrez votre chemin | Tuggi",
+        "ogDescription": "Découvrez où vous passez — sans itinéraire. Des histoires au bon endroit, au bon moment.",
+        "ogImage": "/og/drivers.jpg"
+      },
+      "de": {
+        "title": "Entdecken Sie Ihren Weg | Tuggi (B)",
+        "description": "Entdecken Sie Ihren Weg — ohne Route. Geschichten am richtigen Ort, zur richtigen Zeit.",
+        "keywords": "rideshare fahrer, uber tipps, lyft app, fahrgast unterhaltung, 5 sterne bewertungen, fahrer tools",
+        "ogTitle": "Entdecken Sie Ihren Weg | Tuggi",
+        "ogDescription": "Entdecken Sie Ihren Weg — ohne Route. Geschichten am richtigen Ort, zur richtigen Zeit.",
+        "ogImage": "/og/drivers.jpg"
+      },
+      "it": {
+        "title": "Scopri il tuo percorso | Tuggi (B)",
+        "description": "Scopri dove stai passando — senza itinerario. Storie nel posto giusto, al momento giusto.",
+        "keywords": "autisti app, consigli uber, app lyft, intrattenimento passeggeri, valutazioni 5 stelle, strumenti autista",
+        "ogTitle": "Scopri il tuo percorso | Tuggi",
+        "ogDescription": "Scopri dove stai passando — senza itinerario. Storie nel posto giusto, al momento giusto.",
+        "ogImage": "/og/drivers.jpg"
+      }
+    },
+    "motoristas-c": {
+      "en": {
+        "title": "Tuggi (C) | Explore freely. We tell the stories.",
+        "description": "Wherever you are - on the way to the hotel, restaurant, or castle - every street has a story. You don't need to plan anything.",
+        "keywords": "audio guide, cultural stories, tourism app, automatic audio guide, travel freely",
+        "ogTitle": "Tuggi | Explore freely. We tell the stories.",
+        "ogDescription": "Wherever you are - on the way to the hotel, restaurant, or castle - every street has a story.",
+        "ogImage": "/og/drivers-c.jpg"
+      },
+      "pt": {
+        "title": "Tuggi (C) | Explore livremente. Nós contamos as histórias.",
+        "description": "Onde você estiver - no caminho pro hotel, restaurante ou castelo - toda rua tem uma história. Você não precisa planejar nada.",
+        "keywords": "áudio guia, histórias culturais, app turismo, guia turistico, audioguia automatico, explorar livremente",
+        "ogTitle": "Tuggi | Explore livremente. Nós contamos as histórias.",
+        "ogDescription": "Onde você estiver - no caminho pro hotel, restaurante ou castelo - toda rua tem uma história. Você não precisa planejar nada.",
+        "ogImage": "/og/drivers-c.jpg"
+      },
+      "es": {
+        "title": "Tuggi (C) | Explora libremente. Nosotros contamos las historias.",
+        "description": "Dondequiera que estés, de camino al hotel, restaurante o castillo, cada calle tiene una historia. No necesitas planificar nada.",
+        "keywords": "audioguía, historias culturales, app turismo, guía turística, audioguía automática, explorar libremente",
+        "ogTitle": "Tuggi | Explora libremente. Nosotros contamos las historias.",
+        "ogDescription": "Dondequiera que estés, de camino al hotel, restaurante o castillo, cada calle tiene una historia.",
+        "ogImage": "/og/drivers-c.jpg"
+      },
+      "fr": {
+        "title": "Tuggi (C) | Explorez librement. Nous racontons les histoires.",
+        "description": "Où que vous soyez, sur le chemin de l'hôtel, du restaurant ou du château, chaque rue a une histoire. Vous n'avez rien à planifier.",
+        "keywords": "guide audio, histoires culturelles, app tourisme, guide touristique, audioguide automatique",
+        "ogTitle": "Tuggi | Explorez librement. Nous racontons les histoires.",
+        "ogDescription": "Où que vous soyez, sur le chemin de l'hôtel, du restaurant ou du château, chaque rue a une histoire.",
+        "ogImage": "/og/drivers-c.jpg"
+      },
+      "de": {
+        "title": "Tuggi (C) | Erkunden Sie frei. Wir erzählen die Geschichten.",
+        "description": "Wo immer Sie sind – auf dem Weg zum Hotel, Restaurant oder Schloss – jede Straße hat eine Geschichte. Sie müssen nichts planen.",
+        "keywords": "audioguide, kulturgeschichten, tourismus-app, reiseführer, automatischer audioguide",
+        "ogTitle": "Tuggi | Erkunden Sie frei. Wir erzählen die Geschichten.",
+        "ogDescription": "Wo immer Sie sind – auf dem Weg zum Hotel, Restaurant oder Schloss – jede Straße hat eine Geschichte.",
+        "ogImage": "/og/drivers-c.jpg"
+      },
+      "it": {
+        "title": "Tuggi (C) | Esplora liberamente. Raccontiamo noi le storie.",
+        "description": "Ovunque tu sia - sulla strada per l'hotel, il ristorante o il castello - ogni strada ha una storia. Non devi pianificare nulla.",
+        "keywords": "audioguida, storie culturali, app turismo, guida turistica, audioguida automatica",
+        "ogTitle": "Tuggi | Esplora liberamente. Raccontiamo noi le storie.",
+        "ogDescription": "Ovunque tu sia - sulla strada per l'hotel, il ristorante o il castello - ogni strada ha una storia.",
+        "ogImage": "/og/drivers-c.jpg"
       }
     },
     "privacy": {

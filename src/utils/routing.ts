@@ -40,6 +40,12 @@ export const VALID_PAGES = [
   'chauffeurs',
   'fahrer',
   'autisti',
+  // A/B Test Routes
+  'drivers-a', 'motoristas-a', 'conductores-a', 'chauffeurs-a', 'fahrer-a', 'autisti-a',
+  'drivers-b', 'motoristas-b', 'conductores-b', 'chauffeurs-b', 'fahrer-b', 'autisti-b',
+  'drivers-c', 'motoristas-c', 'conductores-c', 'chauffeurs-c', 'fahrer-c', 'autisti-c',
+  'drivers-d', 'motoristas-d', 'conductores-d', 'chauffeurs-d', 'fahrer-d', 'autisti-d',
+  'drivers-e', 'motoristas-e', 'conductores-e', 'chauffeurs-e', 'fahrer-e', 'autisti-e',
   // Legal and policy pages
   'privacy',
   'privacy-policy',
@@ -97,6 +103,46 @@ export const PAGE_URL_MAPPINGS: Record<string, Record<string, string>> = {
     'FR': 'chauffeurs',
     'DE': 'fahrer',
     'IT': 'autisti'
+  },
+  'motoristas-a': {
+    'EN': 'drivers-a',
+    'PT': 'motoristas-a',
+    'ES': 'conductores-a',
+    'FR': 'chauffeurs-a',
+    'DE': 'fahrer-a',
+    'IT': 'autisti-a'
+  },
+  'motoristas-b': {
+    'EN': 'drivers-b',
+    'PT': 'motoristas-b',
+    'ES': 'conductores-b',
+    'FR': 'chauffeurs-b',
+    'DE': 'fahrer-b',
+    'IT': 'autisti-b'
+  },
+  'motoristas-c': {
+    'EN': 'drivers-c',
+    'PT': 'motoristas-c',
+    'ES': 'conductores-c',
+    'FR': 'chauffeurs-c',
+    'DE': 'fahrer-c',
+    'IT': 'autisti-c'
+  },
+  'motoristas-d': {
+    'EN': 'drivers-d',
+    'PT': 'motoristas-d',
+    'ES': 'conductores-d',
+    'FR': 'chauffeurs-d',
+    'DE': 'fahrer-d',
+    'IT': 'autisti-d'
+  },
+  'motoristas-e': {
+    'EN': 'drivers-e',
+    'PT': 'motoristas-e',
+    'ES': 'conductores-e',
+    'FR': 'chauffeurs-e',
+    'DE': 'fahrer-e',
+    'IT': 'autisti-e'
   },
   'privacy': {
     'EN': 'privacy-policy',
@@ -164,6 +210,43 @@ export const URL_TO_PAGE_MAPPINGS: Record<string, string> = {
   'chauffeurs': 'drivers',
   'fahrer': 'drivers',
   'autisti': 'drivers',
+  
+  // New drivers A/B test reverse mappings
+  'drivers-a': 'motoristas-a',
+  'motoristas-a': 'motoristas-a',
+  'conductores-a': 'motoristas-a',
+  'chauffeurs-a': 'motoristas-a',
+  'fahrer-a': 'motoristas-a',
+  'autisti-a': 'motoristas-a',
+  
+  'drivers-b': 'motoristas-b',
+  'motoristas-b': 'motoristas-b',
+  'conductores-b': 'motoristas-b',
+  'chauffeurs-b': 'motoristas-b',
+  'fahrer-b': 'motoristas-b',
+  'autisti-b': 'motoristas-b',
+  
+  'drivers-c': 'motoristas-c',
+  'motoristas-c': 'motoristas-c',
+  'conductores-c': 'motoristas-c',
+  'chauffeurs-c': 'motoristas-c',
+  'fahrer-c': 'motoristas-c',
+  'autisti-c': 'motoristas-c',
+  
+  'drivers-d': 'motoristas-d',
+  'motoristas-d': 'motoristas-d',
+  'conductores-d': 'motoristas-d',
+  'chauffeurs-d': 'motoristas-d',
+  'fahrer-d': 'motoristas-d',
+  'autisti-d': 'motoristas-d',
+
+  'drivers-e': 'motoristas-e',
+  'motoristas-e': 'motoristas-e',
+  'conductores-e': 'motoristas-e',
+  'chauffeurs-e': 'motoristas-e',
+  'fahrer-e': 'motoristas-e',
+  'autisti-e': 'motoristas-e',
+  
   
   'privacy-policy': 'privacy',
   'politica-de-privacidade': 'privacy',

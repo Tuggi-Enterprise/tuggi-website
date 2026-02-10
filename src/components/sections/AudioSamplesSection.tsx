@@ -7,12 +7,18 @@ interface AudioSamplesSectionProps {
   currentLanguage?: string;
   title?: string;
   subtitle?: string;
+  hideImages?: boolean;
+  limit?: number;
+  hideShowMore?: boolean;
 }
 
 const AudioSamplesSection: React.FC<AudioSamplesSectionProps> = ({ 
   currentLanguage = 'PT',
   title,
-  subtitle
+  subtitle,
+  hideImages = false,
+  limit,
+  hideShowMore = false
 }) => {
   const [showAllSamples, setShowAllSamples] = useState(false);
 
@@ -61,6 +67,7 @@ const AudioSamplesSection: React.FC<AudioSamplesSectionProps> = ({
   const displaySubtitle = subtitle || t.samplesSubtitle;
 
   const getDisplaySamples = () => {
+    if (limit) return audioSamples.slice(0, limit);
     return showAllSamples ? audioSamples.slice(0, 6) : audioSamples.slice(0, 3);
   };
 
@@ -92,33 +99,36 @@ const AudioSamplesSection: React.FC<AudioSamplesSectionProps> = ({
             key={sample.id}
             sample={sample}
             currentLanguage={currentLanguage}
+            hideImage={hideImages}
           />
         ))}
       </div>
 
-      <div className="text-center mt-8">
-        <button
-          onClick={() => setShowAllSamples(!showAllSamples)}
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors duration-200"
-          style={{ 
-            background: 'transparent',
-            color: '#374151',
-            border: '1px solid #D1D5DB',
-            borderRadius: '24px',
-            padding: '12px 24px',
-            fontFamily: 'var(--font-sans)',
-            fontSize: '14px',
-            fontWeight: '500'
-          }}
-        >
-          {showAllSamples ? t.showLess : t.showMore}
-          <ChevronDown 
-            className={`w-4 h-4 transition-transform duration-200 ${
-              showAllSamples ? 'rotate-180' : ''
-            }`} 
-          />
-        </button>
-      </div>
+      {!limit && !hideShowMore && (
+        <div className="text-center mt-8">
+          <button
+            onClick={() => setShowAllSamples(!showAllSamples)}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors duration-200"
+            style={{ 
+              background: 'transparent',
+              color: '#374151',
+              border: '1px solid #D1D5DB',
+              borderRadius: '24px',
+              padding: '12px 24px',
+              fontFamily: 'var(--font-sans)',
+              fontSize: '14px',
+              fontWeight: '500'
+            }}
+          >
+            {showAllSamples ? t.showLess : t.showMore}
+            <ChevronDown 
+              className={`w-4 h-4 transition-transform duration-200 ${
+                showAllSamples ? 'rotate-180' : ''
+              }`} 
+            />
+          </button>
+        </div>
+      )}
     </div>
   );
 };

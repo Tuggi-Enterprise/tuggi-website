@@ -11,7 +11,8 @@ import DataDeletionPage from './pages/legal/DataDeletionPage';
 import { parseUrlPath, generateLocalizedUrl, isValidLanguage } from './utils/routing';
 import { useSEO } from './hooks/useSEO';
 import { initializeAnalytics, trackPerformanceMetrics, trackPageView, trackLanguageChange, trackUserLocation } from './utils/seo';
-import DriversLandingPage from './pages/DriversLandingPage';
+import DriversLandingPageC from './pages/DriversLandingPageC';
+import DriversLandingPageE from './pages/DriversLandingPageE';
 import GovPage from './pages/GovPage';
 import GovPrivacyPolicyPage from './pages/legal/GovPrivacyPolicyPage';
 import GovTermsOfUsePage from './pages/legal/GovTermsOfUsePage';
@@ -501,7 +502,13 @@ function App() {
       case 'chauffeurs':
       case 'fahrer':
       case 'autisti':
-        return <DriversLandingPage currentLanguage={currentLanguage as 'PT' | 'EN' | 'ES' | 'FR' | 'DE' | 'IT'} onCTAClick={handleCTAClick} />;
+      case 'motoristas-a':
+      case 'motoristas-b':
+      case 'motoristas-c':
+      case 'motoristas-d':
+        return <DriversLandingPageC currentLanguage={currentLanguage as 'PT' | 'EN' | 'ES' | 'FR' | 'DE' | 'IT'} onCTAClick={handleCTAClick} />;
+      case 'motoristas-e': // Variant E (Free Interpretation / Dark Mode)
+        return <DriversLandingPageE currentLanguage={currentLanguage as 'PT' | 'EN' | 'ES' | 'FR' | 'DE' | 'IT'} onCTAClick={handleCTAClick} />;
       case 'govPrivacy':
         return <GovPrivacyPolicyPage currentLanguage={currentLanguage} onBack={() => handlePageChange('gov')} />;
       case 'govTerms':
@@ -534,7 +541,7 @@ function App() {
       currentPage={currentPage}
       onPageChange={handlePageChange}
       hideFooter={currentPage === 'gov' || currentPage === 'govPrivacy' || currentPage === 'govTerms'}
-      hideHeader={['govPrivacy', 'govTerms'].includes(currentPage)}
+      hideHeader={['govPrivacy', 'govTerms', 'motoristas-d', 'motoristas-e'].includes(currentPage)}
     >
       {renderPage()}
     </Layout>
