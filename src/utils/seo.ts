@@ -1638,33 +1638,28 @@ export const trackLinkClick = (linkType: string, destination: string, language: 
 // Initialize Google Analytics with enhanced multilingual configuration
 export const initializeAnalytics = (measurementId: string) => {
   if (typeof window !== 'undefined') {
-    // Initializing Google Analytics
-    
-    // Load Google Analytics script
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
-    
-    // Add load and error event listeners
-    script.onload = () => {
-      // Google Analytics script loaded successfully
-    };
-    
-    script.onerror = () => {
-      // Failed to load Google Analytics script
-    };
-    
-    document.head.appendChild(script);
-    // GA script added to document head
+    // Check if GA is already initialized
+    if (window.gtag && document.querySelector(`script[src*="gtag/js?id=${measurementId}"]`)) {
+      console.log('Google Analytics already initialized, skipping injection.');
+      return;
+    }
 
-    // Initialize gtag with enhanced multilingual configuration
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function(...args: unknown[]) {
-      // gtag call executed
-      window.dataLayer?.push(args);
-    };
-    window.gtag('js', new Date());
-    // gtag function initialized
+    // Load Google Analytics script only if not already present
+    if (!document.querySelector(`script[src*="gtag/js?id=${measurementId}"]`)) {
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+      document.head.appendChild(script);
+    }
+
+    // Initialize gtag if not already defined
+    if (!window.gtag) {
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function(...args: unknown[]) {
+        window.dataLayer?.push(args);
+      };
+      window.gtag('js', new Date());
+    }
     
     // Enhanced configuration for multilingual tracking
     window.gtag('config', measurementId, {

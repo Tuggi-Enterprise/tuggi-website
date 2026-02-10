@@ -718,10 +718,11 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
 
             <a 
               href="#como-funciona" 
-              className="mt-8 text-gray-500 hover:text-white transition-colors flex flex-col items-center gap-2 animate-bounce cursor-pointer group"
+              className="mt-8 flex flex-col items-center gap-2 text-white/60 hover:text-white transition-all animate-bounce"
               onClick={(e) => {
                 e.preventDefault();
                 document.getElementById('como-funciona')?.scrollIntoView({ behavior: 'smooth' });
+                onCTAClick?.('scroll_to_how_it_works', 'hero_bottom');
               }}
             >
               <span className="text-xs font-bold uppercase tracking-widest">{t.howItWorks.seeHow}</span>
@@ -1024,7 +1025,16 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
                   {Object.keys(t.tabs.items).map((key) => (
                      <button 
                         key={key}
-                        onClick={() => setActiveTab(key)}
+                        onClick={() => {
+                          setActiveTab(key);
+                          if (window.gtag) {
+                            window.gtag('event', 'tab_selection', {
+                              event_category: 'User Interaction',
+                              event_label: key,
+                              page_type: 'drivers_landing_c'
+                            });
+                          }
+                        }}
                         className={`px-6 py-3 rounded-xl font-black text-sm transition-all duration-300 whitespace-nowrap ${
                           activeTab === key 
                             ? 'bg-blue-600 text-white shadow-lg scale-105' 
@@ -1230,10 +1240,20 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
             <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden divide-y divide-gray-100">
                {t.faq.items.map((item: { q: string; a: string }, idx: number) => (
                   <div key={idx} className="c-accordion-item border-none">
-                     <button 
-                        className="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gray-50 transition-colors group"
-                        onClick={() => setActiveFaq(activeFaq === idx ? null : idx)}
-                     >
+                      <button 
+                         className="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gray-50 transition-colors group"
+                         onClick={() => {
+                           const isOpening = activeFaq !== idx;
+                           setActiveFaq(isOpening ? idx : null);
+                           if (isOpening && window.gtag) {
+                             window.gtag('event', 'faq_open', {
+                               event_category: 'User Interaction',
+                               event_label: item.q,
+                               page_type: 'drivers_landing_c'
+                             });
+                           }
+                         }}
+                      >
                         <span className="font-bold text-gray-900 text-lg">{item.q}</span>
                         <div className={`transform transition-transform duration-200 ${activeFaq === idx ? 'rotate-45' : ''}`}>
                            <Plus size={20} className={activeFaq === idx ? 'text-[#1D1DFF]' : 'text-gray-400 group-hover:text-[#1D1DFF]'} />
