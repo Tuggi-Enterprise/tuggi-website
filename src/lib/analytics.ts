@@ -1,13 +1,17 @@
+import LogRocket from 'logrocket';
+
 /**
  * Analytics Helper - GA4 Events
  * 
  * Centralized analytics tracking for institutional Home V2
  */
 
-interface AnalyticsEvent {
-  event: string;
-  parameters?: Record<string, any>;
-}
+export const initAnalytics = () => {
+  // Only initialize in production
+  if (process.env.NODE_ENV === 'production' || window.location.hostname !== 'localhost') {
+    LogRocket.init('yhyg9h/tuggi-site');
+  }
+};
 
 // Stub function for analytics tracking
 export const track = (event: string, params?: Record<string, any>) => {
@@ -15,6 +19,9 @@ export const track = (event: string, params?: Record<string, any>) => {
   if (process.env.NODE_ENV === 'development') {
     console.log('📊 Analytics Event:', event, params);
   }
+
+  // Send to LogRocket
+  LogRocket.track(event, params);
 
   // In production, send to GA4
   if (typeof window !== 'undefined' && window.gtag) {
@@ -102,6 +109,6 @@ export const trackFinalCTA = (ctaType: 'ios' | 'android') => {
 // Extend Window interface for gtag
 declare global {
   interface Window {
-    gtag?: (...args: any[]) => void;
+    gtag?: (...args: unknown[]) => void;
   }
 }
