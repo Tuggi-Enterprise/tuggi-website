@@ -1717,6 +1717,30 @@ export const initializeAnalytics = (measurementId: string) => {
   }
 };
 
+/**
+ * High-level initialization of all tracking services based on consent
+ */
+import { clarity } from 'react-microsoft-clarity';
+import { getConsent } from './consent';
+
+export const initAllTracking = (measurementId: string, clarityId: string) => {
+  const consent = getConsent();
+  
+  // If no consent exists yet, do nothing (wait for user)
+  if (!consent) return;
+
+  // Initialize Analytics if consented
+  if (consent.analytics) {
+    initializeAnalytics(measurementId);
+    trackPerformanceMetrics();
+  }
+
+  // Initialize Clarity if consented
+  if (consent.clarity && clarityId) {
+    clarity.init(clarityId);
+  }
+};
+
 // Performance monitoring with multilingual context
 export const trackPerformanceMetrics = () => {
   if (typeof window !== 'undefined' && 'performance' in window) {

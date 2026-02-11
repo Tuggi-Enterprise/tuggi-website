@@ -10,8 +10,8 @@ import BusinessPage from './pages/BusinessPage';
 import DataDeletionPage from './pages/legal/DataDeletionPage';
 import { parseUrlPath, generateLocalizedUrl, isValidLanguage } from './utils/routing';
 import { useSEO } from './hooks/useSEO';
-import { initializeAnalytics, trackPerformanceMetrics, trackPageView, trackLanguageChange, trackUserLocation } from './utils/seo';
-import { clarity } from 'react-microsoft-clarity';
+import { trackPageView, trackLanguageChange, trackUserLocation, initAllTracking } from './utils/seo';
+import CookieConsent from './components/ui/CookieConsent';
 import DriversLandingPageC from './pages/DriversLandingPageC';
 import DriversLandingPageE from './pages/DriversLandingPageE';
 import GovPage from './pages/GovPage';
@@ -37,23 +37,22 @@ function App() {
 
   // Initialize app with URL parsing and analytics
   useEffect(() => {
-    console.log('App.tsx useEffect - window.location.pathname:', window.location.pathname);
+    // Initialize tracking if consent exists
+    const measurementId = import.meta.env.VITE_GA4_MEASUREMENT_ID || 'G-LFFNJDG7TJ';
+    const clarityId = 'vfsv6axr3i';
     
-    // Initialize Google Analytics with enhanced multilingual tracking
-    const measurementId = import.meta.env.VITE_GA4_MEASUREMENT_ID || 'G-LFFNJDG7TJ'; // Replace with actual GA4 Measurement ID
-    initializeAnalytics(measurementId);
-
-    // Initialize Microsoft Clarity
-    const clarityId = 'vfsv6axr3i'; // Project ID from original script
-    if (clarityId) {
-      clarity.init(clarityId);
-    }
+    initAllTracking(measurementId, clarityId);
     
-    // Initialize performance monitoring
-    trackPerformanceMetrics();
-    
-    // Track initial page view
+    // Track initial page view (tracking will be blocked if no consent exists)
     trackPageView(currentPage, currentLanguage, measurementId);
+    
+    // Listen for consent updates
+    const handleConsentUpdate = () => {
+      initAllTracking(measurementId, clarityId);
+      // Re-track page view now that we have consent
+      trackPageView(currentPage, currentLanguage, measurementId);
+    };
+    window.addEventListener('tuggi_consent_updated', handleConsentUpdate);
     
     // Track user location for geographic analytics
     trackUserLocation(currentLanguage).catch(() => {
@@ -82,6 +81,7 @@ function App() {
     
     return () => {
       observer.disconnect();
+      window.removeEventListener('tuggi_consent_updated', handleConsentUpdate);
     };
   }, []);
 
@@ -557,6 +557,7 @@ function App() {
       hideHeader={['govPrivacy', 'govTerms', 'motoristas-d', 'motoristas-e'].includes(currentPage)}
     >
       {renderPage()}
+      <CookieConsent currentLanguage={currentLanguage} />
     </Layout>
   );
 }
