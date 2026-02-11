@@ -7,21 +7,26 @@ import LogRocket from 'logrocket';
  */
 
 export const initAnalytics = () => {
-  // Only initialize in production
-  if (process.env.NODE_ENV === 'production' || window.location.hostname !== 'localhost') {
+  // Use Vite's way to detect production or check if not on localhost
+  const isProduction = import.meta.env.PROD || (typeof window !== 'undefined' && window.location.hostname !== 'localhost');
+
+  if (isProduction) {
     LogRocket.init('yhyg9h/tuggi-site');
+    console.log('🚀 LogRocket initialized');
   }
 };
 
-// Stub function for analytics tracking
+// Function for analytics tracking
 export const track = (event: string, params?: Record<string, any>) => {
   // In development, log to console
-  if (process.env.NODE_ENV === 'development') {
+  if (import.meta.env.DEV) {
     console.log('📊 Analytics Event:', event, params);
   }
 
   // Send to LogRocket
-  LogRocket.track(event, params);
+  if (import.meta.env.PROD || window.location.hostname !== 'localhost') {
+    LogRocket.track(event, params);
+  }
 
   // In production, send to GA4
   if (typeof window !== 'undefined' && window.gtag) {
