@@ -11,6 +11,7 @@ import DataDeletionPage from './pages/legal/DataDeletionPage';
 import { parseUrlPath, generateLocalizedUrl, isValidLanguage } from './utils/routing';
 import { useSEO } from './hooks/useSEO';
 import { initializeAnalytics, trackPerformanceMetrics, trackPageView, trackLanguageChange, trackUserLocation } from './utils/seo';
+import { clarity } from 'react-microsoft-clarity';
 import DriversLandingPageC from './pages/DriversLandingPageC';
 import DriversLandingPageE from './pages/DriversLandingPageE';
 import GovPage from './pages/GovPage';
@@ -22,6 +23,7 @@ import HomeV2 from './pages/HomeV2';
 declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
+    clarity?: (...args: unknown[]) => void;
   }
 }
 
@@ -40,6 +42,12 @@ function App() {
     // Initialize Google Analytics with enhanced multilingual tracking
     const measurementId = import.meta.env.VITE_GA4_MEASUREMENT_ID || 'G-LFFNJDG7TJ'; // Replace with actual GA4 Measurement ID
     initializeAnalytics(measurementId);
+
+    // Initialize Microsoft Clarity
+    const clarityId = 'vfsv6axr3i'; // Project ID from original script
+    if (clarityId) {
+      clarity.init(clarityId);
+    }
     
     // Initialize performance monitoring
     trackPerformanceMetrics();
@@ -228,6 +236,11 @@ function App() {
         user_journey_stage: getUserJourneyStage(currentPage),
         conversion_value: getCTAValue(ctaType)
       });
+    }
+
+    // Track Custom Event in Microsoft Clarity (for Smart Events)
+    if (typeof window !== 'undefined' && window.clarity) {
+      window.clarity("event", ctaType);
     }
 
     // Handle app store downloads
