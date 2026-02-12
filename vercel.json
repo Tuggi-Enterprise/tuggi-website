@@ -15,14 +15,6 @@
       "destination": "/api/:path*"
     },
     {
-      "source": "/:lang(en|pt|es|fr|de|it)",
-      "destination": "/:lang/index.html"
-    },
-    {
-      "source": "/:lang(en|pt|es|fr|de|it)/:path*",
-      "destination": "/:lang/:path*/index.html"
-    },
-    {
       "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
