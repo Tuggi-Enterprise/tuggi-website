@@ -74,7 +74,22 @@ export const VALID_PAGES = [
   'datenloeschung',
   'cancellazione-dati',
   // Government/Municipal landing pages
-  'gov'
+  'gov',
+  'gov-privacy',
+  'gov-privacy-policy',
+  'gov-termos-de-uso',
+  'gov-terms',
+  'gov-terms-of-use',
+  'gov-politica-de-privacidade',
+  'gov-politica-de-privacidad',
+  'gov-politique-de-confidentialite',
+  'gov-datenschutz',
+  'gov-informativa-privacy',
+  'gov-termos-de-uso',
+  'gov-terminos-de-uso',
+  'gov-conditions-d-utilisation',
+  'gov-nutzungsbedingungen',
+  'gov-termini-di-utilizzo'
 ] as const;
 
 // Page URL mappings for different languages
@@ -184,6 +199,22 @@ export const PAGE_URL_MAPPINGS: Record<string, Record<string, string>> = {
     'FR': 'gov',
     'DE': 'gov',
     'IT': 'gov'
+  },
+  'govPrivacy': {
+    'EN': 'gov-privacy-policy',
+    'PT': 'gov-politica-de-privacidade',
+    'ES': 'gov-politica-de-privacidad',
+    'FR': 'gov-politique-de-confidentialite',
+    'DE': 'gov-datenschutz',
+    'IT': 'gov-informativa-privacy'
+  },
+  'govTerms': {
+    'EN': 'gov-terms-of-use',
+    'PT': 'gov-termos-de-uso',
+    'ES': 'gov-terminos-de-uso',
+    'FR': 'gov-conditions-d-utilisation',
+    'DE': 'gov-nutzungsbedingungen',
+    'IT': 'gov-termini-di-utilizzo'
   }
 };
 
@@ -276,7 +307,23 @@ export const URL_TO_PAGE_MAPPINGS: Record<string, string> = {
   'cancellazione-dati': 'data-deletion',
   
   // Government/Municipal landing pages
-  'gov': 'gov'
+  'gov': 'gov',
+  
+  // Gov Privacy Policy
+  'gov-privacy-policy': 'govPrivacy',
+  'gov-politica-de-privacidade': 'govPrivacy',
+  'gov-politica-de-privacidad': 'govPrivacy',
+  'gov-politique-de-confidentialite': 'govPrivacy',
+  'gov-datenschutz': 'govPrivacy',
+  'gov-informativa-privacy': 'govPrivacy',
+  
+  // Gov Terms of Use
+  'gov-terms-of-use': 'govTerms',
+  'gov-termos-de-uso': 'govTerms',
+  'gov-terminos-de-uso': 'govTerms',
+  'gov-conditions-d-utilisation': 'govTerms',
+  'gov-nutzungsbedingungen': 'govTerms',
+  'gov-termini-di-utilizzo': 'govTerms'
 };
 
 /**

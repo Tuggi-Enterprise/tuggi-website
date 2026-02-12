@@ -20,9 +20,9 @@
     "motoristas-a": { "en": "drivers-a", "pt": "motoristas-a", "es": "conductores-a", "fr": "chauffeurs-a", "de": "fahrer-a", "it": "autisti-a" },
     "motoristas-b": { "en": "drivers-b", "pt": "motoristas-b", "es": "conductores-b", "fr": "chauffeurs-b", "de": "fahrer-b", "it": "autisti-b" },
     "motoristas-c": { "en": "drivers-c", "pt": "motoristas-c", "es": "conductores-c", "fr": "chauffeurs-c", "de": "fahrer-c", "it": "autisti-c" },
-    "privacy": { "en": "privacy", "pt": "politica-de-privacidade", "es": "politica-de-privacidad", "fr": "politique-de-confidentialite", "de": "datenschutz", "it": "informativa-privacy" },
-    "terms": { "en": "terms", "pt": "termos-de-uso", "es": "terminos-de-uso", "fr": "conditions-d-utilisation", "de": "nutzungsbedingungen", "it": "termini-di-utilizzo" },
-    "cookies": { "en": "cookies", "pt": "politica-de-cookies", "es": "politica-de-cookies", "fr": "politique-cookies", "de": "cookie-richtlinie", "it": "informativa-cookie" },
+    "privacy": { "en": "privacy-policy", "pt": "politica-de-privacidade", "es": "politica-de-privacidad", "fr": "politique-de-confidentialite", "de": "datenschutz", "it": "informativa-privacy" },
+    "terms": { "en": "terms-of-use", "pt": "termos-de-uso", "es": "terminos-de-uso", "fr": "conditions-d-utilisation", "de": "nutzungsbedingungen", "it": "termini-di-utilizzo" },
+    "cookies": { "en": "cookie-policy", "pt": "politica-de-cookies", "es": "politica-de-cookies", "fr": "politique-cookies", "de": "cookie-richtlinie", "it": "informativa-cookie" },
     "data-deletion": { "en": "data-deletion", "pt": "exclusao-de-dados", "es": "eliminacion-de-datos", "fr": "suppression-donnees", "de": "datenloeschung", "it": "cancellazione-dati" }
   },
   "pages": {
