@@ -537,11 +537,11 @@ const itContent: ContentStructure = {
     h1: "Il Copilota Culturale che eleva il tuo servizio.",
     sub: "Tuggi intrattiene i passeggeri con storie geolocalizzate di alta qualità. Ideale per NCC, Taxi e Uber che puntano all'eccellenza.",
     trust: [
-      { icon: Check, text: "Funziona in background con Waze, Google Maps e Spotify." },
-      { icon: Globe, text: "Premium include offline + 8 lingue." }
+      { icon: Check, text: "Compatibile con Uber/Taxi/NCC. Non blocca il navigatore." },
+      { icon: Smartphone, text: "Installazione immediata. Nessun hardware richiesto." }
     ],
-    trustLine: "Prova gratis senza carta di credito",
-    cta: "Scarica ora",
+    trustLine: "🔒 Prova gratuita illimitata. Nessuna carta di credito richiesta.",
+    cta: "Inizia la Prova Gratuita",
     appleLabel: "iPhone / iPad",
     androidLabel: "Android",
     modalTitle: "Scarica Tuggi Gratis",
@@ -587,10 +587,10 @@ const itContent: ContentStructure = {
   tabs: {
     title: "PER CHI?",
     items: {
-      turistas: { label: "Turisti", title: "TURISTI", desc: "Oltre la guida.", bullets: ["No planning", "8 lingue"], cta: "Vedi Piani" },
-      exploradores: { label: "Esploratori", title: "LOCALS", desc: "Riscopri la tua città.", bullets: ["Inedito", "Offline Premium"], cta: "Gratis" },
-      motoristas: { label: "Driver Pro", title: "DRIVER PROFESSIONISTI", desc: "Eleva il tuo business.", bullets: ["Clienti soddisfatti", "Mance extra"], cta: "Vedi Piani" },
-      familias: { label: "Famiglie", title: "FAMIGLIE", desc: "Cultura per tutti.", bullets: ["Educativo", "In famiglia"], cta: "Prova Gratis" }
+      turistas: { label: "Turisti", title: "TURISTI", desc: "Oltre la guida.", bullets: ["Nessuna pianificazione necessaria", "Disponibile in 8 lingue", "Scoperta spontanea", "Funziona offline"], cta: "Vedi Piani" },
+      exploradores: { label: "Esploratori", title: "LOCALS", desc: "Riscopri la tua città.", bullets: ["Storie inedite e curiosità", "Riscopri il tuo quartiere", "Perfetto per passeggiate", "Audio di alta qualità"], cta: "Gratis" },
+      motoristas: { label: "Driver Pro", title: "DRIVER PROFESSIONISTI", desc: "Eleva il tuo business.", bullets: ["Distinguiti dalla concorrenza", "Mance più alte garantite", "Recensioni 5 stelle facili", "Intrattenimento VIP automatico"], cta: "Vedi Piani" },
+      familias: { label: "Famiglie", title: "FAMIGLIE", desc: "Cultura per tutti.", bullets: ["Educativo e divertente", "Niente schermi, solo audio", "Imparare viaggiando", "Adatto a tutte le età"], cta: "Prova Gratis" }
     }
   },
   pricing: {
