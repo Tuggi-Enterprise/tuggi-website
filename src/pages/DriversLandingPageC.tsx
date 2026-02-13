@@ -540,7 +540,7 @@ const itContent: ContentStructure = {
       { icon: Check, text: "Compatibile con Uber/Taxi/NCC. Non blocca il navigatore." },
       { icon: Smartphone, text: "Installazione immediata. Nessun hardware richiesto." }
     ],
-    trustLine: "🔒 Prova gratuita illimitata. Nessuna carta di credito richiesta.",
+    trustLine: "Prova gratuita illimitata. Nessuna carta di credito richiesta.",
     cta: "Inizia la Prova Gratuita",
     appleLabel: "iPhone / iPad",
     androidLabel: "Android",
