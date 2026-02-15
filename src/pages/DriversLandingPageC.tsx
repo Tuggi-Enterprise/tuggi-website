@@ -4,7 +4,7 @@ import {
   Volume2, Navigation, Car, 
   Apple, Smartphone, RouteOff, Activity, Footprints,
   Check, Star, Shield, 
-  Plus, Lock, Globe,
+  Plus, Lock, Globe, Info,
   ChevronDown, Bus, Train
 } from 'lucide-react';
 import './DriversLandingPageC.css';
@@ -75,6 +75,12 @@ interface ContentStructure {
   testimonials: { title: string; sub: string; items: { name: string; role: string; text: string; location: string; img?: string }[]; avgRating: string; storeDownloads: string; nativeVoices: string; nativeVoicesLabel: string };
   faq: { title: string; items: { q: string; a: string }[] };
   final: { h2: string; p: string; benefits: string[]; downloadOn: string; getItOn: string; trustLine: string };
+  driverTypes: {
+    title: string;
+    sub: string;
+    usual: { title: string; price: string; features: string[] };
+    pro: { title: string; price: string; features: string[]; cta: string };
+  };
 }
 // ==========================================
 // Content & Translations
@@ -82,18 +88,19 @@ interface ContentStructure {
 
 const ptContent: ContentStructure = {
   hero: {
-    h1: "Transforme corridas chatas em experiências 5 estrelas.",
-    sub: "Surpreenda seus passageiros com histórias dos lugares por onde passa. Ganhe mais gorjetas e melhores avaliações.",
+    h1: "Transforme seu carro em um Guia Turístico e ofereça uma experiência VIP.",
+    sub: "O Copiloto Cultural que narra a cidade para seus passageiros. Receba a Licença Profissional Gratuita (exclusiva para parceiros) e diferencie o seu atendimento.",
     trust: [
-      { icon: Check, text: "Roda junto com Waze/Maps e Spotify." },
-      { icon: Star, text: "O segredo dos motoristas VIP." }
+      { icon: Star, text: "Aumente suas chances de gorjeta." },
+      { icon: Check, text: "Melhore sua avaliação no app." },
+      { icon: Car, text: "Para Motoristas de Aplicativo, Táxi e Transfer." }
     ],
-    trustLine: "Teste grátis agora mesmo",
-    cta: "Baixar Grátis",
+    trustLine: "No app, selecione o perfil Motorista Profissional para liberar sua licença",
+    cta: "Ativar Minha Licença Grátis",
     appleLabel: "iPhone / iPad",
     androidLabel: "Android",
-    modalTitle: "Comece a ganhar mais",
-    modalSub: "Baixe o aplicativo agora",
+    modalTitle: "Ative sua conta Pro",
+    modalSub: "Baixe o App para começar",
     videoAlt: "Assista ao vídeo demonstrativo",
     appleAlt: "Baixar na App Store",
     googleAlt: "Disponível no Google Play"
@@ -163,32 +170,48 @@ const ptContent: ContentStructure = {
   faq: { 
     title: "DÚVIDAS FREQUENTES", 
     items: [
-      { q: "Gasta muita internet?", a: "No plano PRO, você baixa tudo no Wi-Fi e não gasta nada do seu 4G na rua." },
+      { q: "É realmente gratuito?", a: "Sim. Se você roda profissionalmente (App/Táxi), o Tuggi é sua ferramenta de trabalho e não cobramos por isso." },
+      { q: "Como diferencio minha conta?", a: "No cadastro, selecione 'Motorista Profissional'. Sua licença será ativada automaticamente." },
+      { q: "Gasta muita internet?", a: "Não. O app é otimizado e você pode baixar as rotas no Wi-Fi para não gastar dados." },
       { q: "Atrapalha o Waze?", a: "Não! O Tuggi abaixa o som quando fala e o Waze continua funcionando normal por cima." },
-      { q: "O passageiro vai gostar?", a: "Sim! As histórias são curtas (1 min) e interessantes. Não é aquela narração chata de museum." },
-      { q: "Preciso ficar mexendo no celular?", a: "Não. Deixe no suporte. O app fala sozinho quando passa perto de algo legal." },
-      { q: "Posso cancelar se não gostar?", a: "Claro. Cancela na hora direto na loja de aplicativos." },
-      { q: "Serve para gringo?", a: "Demais! O app tem inglês, espanhol, francês... O gringo vai achar que você contratou um guia." }
+      { q: "O passageiro vai gostar?", a: "Sim! As histórias são curtas (1 min) e interessantes. Não é aquela narração chata de museu." },
+      { q: "Preciso ficar mexendo no celular?", a: "Não. Deixe no suporte. O app fala sozinho quando passa perto de algo legal." }
     ] 
+  },
+  driverTypes: {
+    title: "COMO ATIVAR SUA LICENÇA",
+    sub: "O Tuggi é pago para turistas, mas gratuito para você que é nossa infraestrutura.",
+    usual: {
+      title: "Turista (Cliente)",
+      price: "R$ 39,90/mês",
+      features: ["Paga mensalidade", "Uso pessoal em viagens", "Sem ferramentas pro"]
+    },
+    pro: {
+      title: "Motorista (Parceiro)",
+      price: "100% Subsidiado",
+      features: ["Licença Corporativa", "Painel de Ganhos/Gorjetas", "Material de Divulgação", "Suporte Prioritário"],
+      cta: "SOU PARCEIRO"
+    }
   },
   final: { h2: "QUER GANHAR MAIS ESTRELAS?", p: "Baixe o Tuggi e faça o teste na sua próxima corrida.", benefits: ["Grátis para testar", "Aumente seus ganhos", "Cancele fácil"], downloadOn: "Baixar na", getItOn: "Disponível no", trustLine: "Teste grátis agora mesmo" }
 };
 
 const enContent: ContentStructure = {
   hero: {
-    h1: "Upgrade your ride experience. Boost your tips.",
-    sub: "Tuggi entertains your passengers with high-quality audio stories. You drive, we narrate.",
+    h1: "Upgrade your Ride: Turn Silence into Higher Tips.",
+    sub: "The audio co-pilot that narrates the city. Claim your Free Professional License and give tourists a reason to rate you higher.",
     trust: [
-      { icon: Check, text: "Works in background with Google Maps & Waze." },
-      { icon: Star, text: "The secret to 5-star ratings." }
+      { icon: Star, text: "Create a 5-star experience." },
+      { icon: Check, text: "Narrates automatically while you drive." },
+      { icon: Car, text: "For Rideshare & Taxi Professionals." }
     ],
-    trustLine: "Start your free trial today",
-    cta: "Download Free",
+    trustLine: "Select the Professional Driver profile in the app to activate your license",
+    cta: "Get Free Driver License",
     appleLabel: "iPhone / iPad",
     androidLabel: "Android",
-    modalTitle: "Start earning more",
-    modalSub: "Select your app store",
-    videoAlt: "Watch the demo video",
+    modalTitle: "Activate Pro Account",
+    modalSub: "Download App to start",
+    videoAlt: "Watch demo video",
     appleAlt: "Download on the App Store",
     googleAlt: "Get it on Google Play"
   },
@@ -257,32 +280,48 @@ const enContent: ContentStructure = {
   faq: { 
     title: "FAQ", 
     items: [
+      { q: "Is it really free?", a: "Yes. If you drive professionally (App/Taxi), Tuggi is your work tool and we don't charge for it." },
+      { q: "How do I start?", a: "Download and select 'Professional Driver'. Your license will be legally active." },
       { q: "Data usage?", a: "With PRO, you download everything on Wi-Fi and use 0 data while driving." },
       { q: "Does it block Waze?", a: "No! Tuggi lowers volume when speaking, so you never miss a turn instruction." },
       { q: "Will passengers like it?", a: "Yes! Stories are short (1 min) and fascinating. It's not a boring lecture." },
-      { q: "Do I need to touch the phone?", a: "No. Leave it in the mount. It plays automatically when near a landmark." },
-      { q: "Can I cancel?", a: "Yes, anytime directly in the App Store/Play Store." },
-      { q: "Foreign passengers?", a: "Perfect! It speaks 8 languages. They'll think you hired a personal guide." }
+      { q: "Do I need to touch the phone?", a: "No. Leave it in the mount. It plays automatically when near a landmark." }
     ] 
+  },
+  driverTypes: {
+    title: "HOW TO ACTIVATE YOUR LICENSE",
+    sub: "Tuggi is paid for tourists, but free for you as our infrastructure partner.",
+    usual: {
+      title: "Tourist (Customer)",
+      price: "$ 9.99/mo",
+      features: ["Pays monthly fee", "Personal travel use", "No pro tools"]
+    },
+    pro: {
+      title: "Driver (Partner)",
+      price: "Waived (Sponsored)",
+      features: ["Corporate License", "Earnings Dashboard", "Marketing Kit", "Priority Support"],
+      cta: "I AM A PARTNER"
+    }
   },
   final: { h2: "Ready to Upgrade Your Ride?", p: "Download Tuggi and try it on your next trip.", benefits: ["Free to test", "Boost your tips", "Easy to cancel"], downloadOn: "Download on", getItOn: "Get it on", trustLine: "Start your free trial today" }
 };
 
 const esContent: ContentStructure = {
   hero: {
-    h1: "Convierte tu taxi en un tour privado.",
-    sub: "Ofrece una experiencia premium a tus pasajeros sin esfuerzo. Historias automáticas por GPS.",
+    h1: "Convierte cada viaje en una Experiencia Turística Premium.",
+    sub: "Tu copiloto cultural. Accede a la Licencia Profesional sin coste y ofrece un servicio superior a tus pasajeros.",
     trust: [
-      { icon: Check, text: "Funciona con Waze, Google Maps y Spotify." },
-      { icon: Star, text: "Consigue mejores reseñas y propinas." }
+      { icon: Star, text: "Potencia tus valoraciones y propinas." },
+      { icon: Check, text: "Entretenimiento automático en ruta." },
+      { icon: Car, text: "Para Taxi y conductores VTC (Apps)." }
     ],
-    trustLine: "Pruébalo gratis hoy mismo",
-    cta: "Descargar Gratis",
+    trustLine: "En la app, selecciona el perfil Conductor Profesional para activar tu cuenta",
+    cta: "Quiero mi Licencia PRO Gratis",
     appleLabel: "iPhone / iPad",
     androidLabel: "Android",
-    modalTitle: "Empieza a ganar más",
-    modalSub: "Descarga la app ahora",
-    videoAlt: "Ver el vídeo de demostración",
+    modalTitle: "Activa tu cuenta Pro",
+    modalSub: "Descarga la App para empezar",
+    videoAlt: "Ver vídeo demo",
     appleAlt: "Descargar en App Store",
     googleAlt: "Disponible en Google Play"
   },
@@ -351,31 +390,47 @@ const esContent: ContentStructure = {
   faq: { 
     title: "PREGUNTAS FRECUENTES", 
     items: [
+      { q: "¿Es realmente gratis?", a: "Sí. Si conduces profesionalmente, Tuggi es tu herramienta de trabajo y no cobramos por ello." },
+      { q: "¿Como empiezo?", a: "Descarga y selecciona 'Conductor Profesional'. Tu licencia se activará automáticamente." },
       { q: "¿Gasta muchos datos?", a: "Con el plan PRO, descargas todo con Wi-Fi y no gastas nada de datos móviles trabajando." },
       { q: "¿Tapa las instrucciones del Waze?", a: "¡No! Tuggi baja el volumen suavemente al hablar, así nunca pierdes un giro." },
       { q: "¿Le gustará al pasajero?", a: "¡Sí! Son historias cortas y curiosas. No es una audioguía aburrida de museo." },
-      { q: "¿Tengo que tocar el móvil?", a: "No. Déjalo en el soporte. Funciona solo por GPS." },
-      { q: "¿Puedo cancelar?", a: "Sí, cuando quieras desde la tienda de apps." },
-      { q: "¿Sirve para extranjeros?", a: "¡Perfecto! Tiene inglés, francés, alemán... Pensarán que eres un guía privado." }
+      { q: "¿Tengo que tocar el móvil?", a: "No. Déjalo en el soporte. Funciona solo por GPS." }
     ] 
+  },
+  driverTypes: {
+    title: "CÓMO ACTIVAR TU LICENCIA",
+    sub: "Tuggi es de pago para turistas, pero gratuito para ti que eres nuestra infraestructura.",
+    usual: {
+      title: "Turista (Cliente)",
+      price: "9,99 €/mes",
+      features: ["Paga mensualidad", "Uso personal en viajes", "Sin herramientas pro"]
+    },
+    pro: {
+      title: "Conductor (Socio)",
+      price: "100% Bonificado",
+      features: ["Licencia Corporativa", "Panel de Ingresos", "Kit de Marketing", "Soporte Prioritario"],
+      cta: "SOY SOCIO"
+    }
   },
   final: { h2: "¿Listo para mejorar tu servicio?", p: "Descarga Tuggi y pruébalo en tu próximo viaje.", benefits: ["Prueba gratis", "Mejores propinas", "Cancela fácil"], downloadOn: "Descargar en", getItOn: "Disponible en", trustLine: "Pruébalo gratis hoy mismo" }
 };
 
 const frContent: ContentStructure = {
   hero: {
-    h1: "L'élégance d'un voyage culturel, sans effort.",
-    sub: "Faites vivre une expérience 5 étoiles à vos passagers. Idéal pour VTC et Taxis premium.",
+    h1: "Transformez votre véhicule en Guide Touristique et offrez un service VIP.",
+    sub: "Le copilote culturel audio qui raconte la ville. Obtenez votre Licence Professionnelle Gratuite et valorisez votre service.",
     trust: [
-      { icon: Check, text: "Compatible avec Waze et Google Maps." },
-      { icon: Star, text: "Augmentez vos pourboires et notes." }
+      { icon: Star, text: "Augmentez vos chances de pourboire." },
+      { icon: Check, text: "Visez de meilleures notes." },
+      { icon: Car, text: "Pour Taxi et chauffeurs VTC (Apps)." }
     ],
-    trustLine: "Essai gratuit sans carte de crédit",
-    cta: "Télécharger Gratuitement",
+    trustLine: "Dans l'app, sélectionnez le profil Chauffeur Professionnel pour activer votre licence",
+    cta: "Activer ma Licence Gratuite",
     appleLabel: "iPhone / iPad",
     androidLabel: "Android",
-    modalTitle: "Télécharger Tuggi",
-    modalSub: "Choisissez votre magasin",
+    modalTitle: "Activer compte Pro",
+    modalSub: "Télécharger l'App pour commencer",
     videoAlt: "Regarder la vidéo de démonstration",
     appleAlt: "Télécharger sur l'App Store",
     googleAlt: "Disponible sur Google Play"
@@ -445,31 +500,47 @@ const frContent: ContentStructure = {
   faq: { 
     title: "QUESTIONS FRÉQUENTES", 
     items: [
+      { q: "Est-ce vraiment gratuit ?", a: "Oui. Si vous conduisez professionnellement (VTC/Taxi), Tuggi est votre outil de travail et nous ne vous facturons pas." },
+      { q: "Comment commencer ?", a: "Téléchargez et sélectionnez 'Chauffeur Professionnel'. Votre licence sera active légalement." },
       { q: "Consommation de données ?", a: "Avec le mode PRO, téléchargez tout en Wi-Fi. Souscrivez à un plan pour ne rien consommer sur la route." },
       { q: "Gênant pour le GPS ?", a: "Non ! Tuggi baisse le volume quand il parle. Vous ne ratez aucune instruction." },
       { q: "Le client va aimer ?", a: "Oui ! Les histoires sont courtes et captivantes. Ce n'est pas un cours d'histoire ennuyeux." },
-      { q: "Dois-je manipuler le téléphone ?", a: "Non. Laissez-le sur le support. Tout est automatique par GPS." },
-      { q: "Puis-je résilier ?", a: "Oui, à tout moment via l'App Store." },
-      { q: "Pour les étrangers ?", a: "Parfait ! Il parle 8 langues. Ils penseront que vous êtes bilingue." }
+      { q: "Dois-je manipuler le téléphone ?", a: "Non. Laissez-le sur le support. Tout est automatique par GPS." }
     ] 
+  },
+  driverTypes: {
+    title: "COMMENT ACTIVER VOTRE LICENCE",
+    sub: "Tuggi est payant pour les touristes, mais gratuit pour vous qui êtes notre infrastructure.",
+    usual: {
+      title: "Touriste (Client)",
+      price: "9,99 €/mois",
+      features: ["Paiement mensuel", "Usage personnel", "Pas d'outils pro"]
+    },
+    pro: {
+      title: "Chauffeur (Partenaire)",
+      price: "100% Pris en Charge",
+      features: ["Licence Corporate", "Tableau de Bord Gains", "Kit Marketing", "Support Prioritaire"],
+      cta: "JE SUIS PARTENAIRE"
+    }
   },
   final: { h2: "Prêt à transformer vos trajets ?", p: "Téléchargez Tuggi e testez-le lors de votre prochaine course.", benefits: ["Essai gratuit", "Plus de pourboires", "Annulation facile"], downloadOn: "Télécharger sur", getItOn: "Disponible sur", trustLine: "Essai gratuit sans carte de crédit" }
 };
 
 const deContent: ContentStructure = {
   hero: {
-    h1: "Mehrwert für Ihre Fahrgäste. Automatisch.",
-    sub: "Tuggi verwandelt Ihre Taxifahrt in eine 5-Sterne-Erfahrung. Einfach, effizient, lukrativ.",
+    h1: "Verwandeln Sie Ihre Fahrt in eine smarte Stadtführung.",
+    sub: "Bieten Sie internationalen Gästen mehr Service. Sichern Sie sich Ihre Tuggi Host Lizenz kostenlos und begeistern Sie Ihre Fahrgäste.",
     trust: [
-      { icon: Check, text: "Läuft im Hintergrund mit Google Maps & Waze." },
-      { icon: Star, text: "Besseres Trinkgeld & Bewertungen." }
+      { icon: Check, text: "Steigern Sie Ihre Service-Bewertung." },
+      { icon: Star, text: "Mehr Trinkgeld-Potenzial." },
+      { icon: Car, text: "Für Taxi- und Mietwagen-Fahrer." }
     ],
-    trustLine: "Kostenlos testen. Sofort startklar.",
-    cta: "Kostenlos Herunterladen",
+    trustLine: "Wählen Sie in der App das Profil Berufskraftfahrer, um Ihre Lizenz zu aktivieren",
+    cta: "Kostenlose Lizenz Aktivieren",
     appleLabel: "iPhone / iPad",
     androidLabel: "Android",
-    modalTitle: "Mehr verdienen",
-    modalSub: "Laden Sie die App",
+    modalTitle: "Pro-Konto aktivieren",
+    modalSub: "App laden zum Starten",
     videoAlt: "Demo-Video ansehen",
     appleAlt: "Laden im App Store",
     googleAlt: "Erhältlich bei Google Play"
@@ -539,32 +610,48 @@ const deContent: ContentStructure = {
   faq: { 
     title: "HÄUFIGE FRAGEN", 
     items: [
+      { q: "Ist es wirklich kostenlos?", a: "Ja. Wenn Sie beruflich fahren (Taxi/App), ist Tuggi Ihr Arbeitsgerät und wir berechnen nichts." },
+      { q: "Wie fange ich an?", a: "Laden Sie die App und wählen Sie 'Berufsfahrer'. Ihre Lizenz wird automatisch aktiviert." },
       { q: "Datenverbrauch?", a: "Mit PRO laden Sie alles im WLAN. Unterwegs 0 Datenverbrauch." },
       { q: "Stört das Navi?", a: "Nein! Tuggi wird leiser, wenn es spricht. Sie hören jede Abbiegehinweise." },
       { q: "Mögen Gäste das?", a: "Ja! Die Stories sind kurz und spannend. Kein langweiliger Vortrag." },
-      { q: "Muss ich das Handy bedienen?", a: "Nein. In die Halterung stecken. GPS macht den Rest automatisch." },
-      { q: "Kann ich kündigen?", a: "Ja, jederzeit direkt im App Store." },
-      { q: "Ausländische Gäste?", a: "Perfekt! 8 Sprachen verfügbar. Wirkt wie ein persönlicher Guide." }
+      { q: "Muss ich das Handy bedienen?", a: "Nein. In die Halterung stecken. GPS macht den Rest automatisch." }
     ] 
+  },
+  driverTypes: {
+    title: "LIZENZ AKTIVIEREN",
+    sub: "Tuggi kostet für Touristen Geld, ist aber für Sie als Partner kostenlos.",
+    usual: {
+      title: "Tourist (Kunde)",
+      price: "9,99 €/Monat",
+      features: ["Zahlt monatlich", "Private Nutzung", "Keine Profi-Tools"]
+    },
+    pro: {
+      title: "Fahrer (Partner)",
+      price: "Lizenz Gesponsert",
+      features: ["Firmenlizenz", "Einnahmen-Dashboard", "Marketing-Kit", "Priorisierter Support"],
+      cta: "ICH BIN PARTNER"
+    }
   },
   final: { h2: "Bereit für mehr 5-Sterne-Fahrten?", p: "Laden Sie Tuggi herunter und testen Sie es bei Ihrer nächsten Fahrt.", benefits: ["Kostenlos testen", "Mehr Trinkgeld", "Einfach kündigen"], downloadOn: "Laden im", getItOn: "Erhältlich bei", trustLine: "Kostenlos testen. Sofort startklar." }
 };
 
 const itContent: ContentStructure = {
   hero: {
-    h1: "Il Copilota Silenzioso per un Servizio a 5 Stelle.",
-    sub: "Distinguiti con classe. Tuggi racconta il territorio ai tuoi passeggeri mentre tu ti concentri sulla guida perfetta.",
+    h1: "Offri un servizio turistico d'eccellenza con la tua auto.",
+    sub: "Il copilota intelligente che racconta la città. Ottieni la Licenza Host PRO gratuitamente e distinguiti dagli altri autisti.",
     trust: [
-      { icon: Check, text: "Zero Distrazioni. Tu guidi, l'app racconta." },
-      { icon: Smartphone, text: "Massima Discrezione. Mai invasivo." }
+      { icon: Star, text: "Migliora l'esperienza del passeggero." },
+      { icon: Check, text: "Punta a recensioni migliori." },
+      { icon: Car, text: "Per Taxi, NCC e autisti di app." }
     ],
-    trustLine: "Prova gratuita illimitata. Nessuna carta richiesta.",
-    cta: "Inizia la Prova Gratuita",
+    trustLine: "Nell'app, seleziona il profilo Autista Professionista per attivare la licenza",
+    cta: "Attiva Licenza Host Gratuita",
     appleLabel: "iPhone / iPad",
     androidLabel: "Android",
-    modalTitle: "Scarica Tuggi Gratis",
-    modalSub: "Scegli il tuo store",
-    videoAlt: "Guarda il video dimostrativo",
+    modalTitle: "Attiva account Pro",
+    modalSub: "Scarica l'App per iniziare",
+    videoAlt: "Guarda video demo",
     appleAlt: "Scarica su App Store",
     googleAlt: "Disponibile su Google Play"
   },
@@ -633,13 +720,28 @@ const itContent: ContentStructure = {
   faq: { 
     title: "DOMANDE FREQUENTI", 
     items: [
-      { q: "Funziona con Waze e Google Maps?", a: "Certamente. Tuggi lavora in background. Tu segui il navigatore, lui racconta." },
-      { q: "Devo interagire con l'app mentre guido?", a: "Assolutamente no. Una volta avviato, fa tutto da solo basandosi sul GPS. Guida in sicurezza." },
-      { q: "Le storie sono in altre lingue?", a: "Sì, copriamo 8 lingue (Inglese, Francese, Spagnolo, Tedesco...). Rileva la lingua del telefono o la imposti tu." },
-      { q: "Posso scaricarlo sul tablet dell'auto?", a: "Sì, se è Android o iPad. Oppure usi il tuo telefono via Bluetooth dell'auto." },
-      { q: "È un costo deducibile?", a: "Per i professionisti sì, è un software di servizio deducibile al 100%." },
-      { q: "Come gestisco la musica?", a: "Tuggi abbassa automaticamente la tua musica (Spotify/Radio) quando parla, e la rialza dopo." }
+      { q: "È davvero gratis?", a: "Sì. Se guidi per professione (NCC/Taxi), Tuggi è il tuo strumento di lavoro e non ti facciamo pagare." },
+      { q: "Come inizio?", a: "Scarica e seleziona 'Driver Professionista'. La tua licenza sarà attiva legalmente." },
+      { q: "Consumo dati?", a: "Con il piano PRO, scarichi tutto in Wi-Fi e non consumi nulla mentre guidi." },
+      { q: "Disturba Waze?", a: "No! Tuggi abbassa il volume quando parla e Waze continua a funzionare normalmente sopra." },
+      { q: "Piacerà al passeggero?", a: "Sì! Le storie sono brevi (1 min) e interessanti. Non è la solita guida noiosa da museo." },
+      { q: "Devo toccare il telefono?", a: "No. Lascialo nel supporto. L'app parla da sola quando passi vicino a qualcosa di bello." }
     ] 
+  },
+  driverTypes: {
+    title: "COME ATTIVARE LA LICENZA",
+    sub: "Tuggi si paga per i turisti, ma è gratis per te che sei la nostra infrastruttura.",
+    usual: {
+      title: "Turista (Cliente)",
+      price: "19,99 €/mese",
+      features: ["Paga mensilmente", "Uso personale in viaggio", "Niente strumenti pro"]
+    },
+    pro: {
+      title: "Driver (Partner)",
+      price: "100% Sponsorizzata",
+      features: ["Licenza Corporate", "Dashboard Guadagni", "Kit Marketing", "Supporto Prioritario"],
+      cta: "SONO UN PARTNER"
+    }
   },
   final: { h2: "Vuoi più recensioni a 5 stelle?", p: "Scarica Tuggi e provalo durante la tua prossima corsa.", benefits: ["Prova gratuita", "Guadagni extra", "Cancella quando vuoi"], downloadOn: "Scarica su", getItOn: "Disponibile su", trustLine: "Prova gratuita illimitata. Nessuna carta richiesta." }
 };
@@ -788,7 +890,7 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
               ))}
               <div className="flex items-center gap-3 text-white/90 bg-white/5 backdrop-blur-md p-3.5 rounded-[20px] border border-white/10 shadow-xl group">
                   <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white flex-shrink-0 group-hover:bg-blue-500 transition-colors">
-                    <Lock className="w-5 h-5" />
+                    <Info className="w-5 h-5" />
                   </div>
                   <span className="text-sm font-bold tracking-tight text-left leading-tight">{t.hero.trustLine}.</span>
               </div>
@@ -1218,7 +1320,58 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
          </div>
       </section>
 
-      {/* PRICING */}
+      {/* DRIVER TYPE SELECTION (Replaces Pricing) */}
+      <section className="c-section bg-gray-50" id="licenca">
+        <div className="c-container max-w-5xl">
+          <div className="text-center mb-16">
+            <span className="text-blue-600 font-bold tracking-wider text-sm uppercase mb-3 block">{t.driverTypes.title}</span>
+            <h2 className="c-h2 mb-6 text-gray-900">{t.driverTypes.sub}</h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Standard User Card */}
+            <div className="bg-white rounded-3xl p-8 border border-gray-100 opacity-60 hover:opacity-100 transition-opacity">
+               <h3 className="text-xl font-bold text-gray-500 mb-2">{t.driverTypes.usual.title}</h3>
+               <div className="text-3xl font-black text-gray-400 mb-6">{t.driverTypes.usual.price}</div>
+               <ul className="space-y-4 mb-8">
+                  {t.driverTypes.usual.features.map((item: string, i: number) => (
+                     <li key={i} className="flex items-center gap-3 text-gray-500">
+                        <div className="w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0">
+                           <X size={12} className="text-gray-400" />
+                        </div>
+                        {item}
+                     </li>
+                  ))}
+               </ul>
+            </div>
+
+            {/* Pro Driver Card */}
+            <div className="bg-gray-900 text-white rounded-3xl p-8 border-2 border-blue-500 shadow-2xl relative overflow-hidden transform md:scale-105">
+               <div className="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-bl-xl">RECOMMENDED</div>
+               <h3 className="text-xl font-bold text-blue-400 mb-2">{t.driverTypes.pro.title}</h3>
+               <div className="text-4xl font-black text-white mb-6">{t.driverTypes.pro.price}</div>
+               <ul className="space-y-4 mb-8">
+                  {t.driverTypes.pro.features.map((item: string, i: number) => (
+                     <li key={i} className="flex items-center gap-3">
+                        <div className="w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                           <Check size={14} className="text-blue-400" />
+                        </div>
+                        <span className="font-medium">{item}</span>
+                     </li>
+                  ))}
+               </ul>
+               <button 
+                  onClick={() => handleCTA('pro_driver_select', 'pricing_section')}
+                  className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-blue-900/50 flex items-center justify-center gap-2"
+               >
+                  {t.driverTypes.pro.cta}
+               </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PRICING HIDDEN */ false && (
       <section className="c-section bg-gray-50" id="precos">
          <div className="c-container">
             <h2 className="c-h2 text-center mb-4 fade-in-up">{t.pricing.title}</h2>
@@ -1295,6 +1448,7 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
             </div>
          </div>
       </section>
+      )}
 
       {/* TESTIMONIALS */}
       <section className="c-section bg-white">
