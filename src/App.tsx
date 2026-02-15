@@ -265,20 +265,28 @@ function App() {
         });
       }
       
-      // App store links
+      // Smart App Store Logic
+      const ua = typeof navigator !== 'undefined' ? navigator.userAgent || navigator.vendor : '';
+      const isAndroid = /android/i.test(ua);
+
       const downloadURLs = {
         'app_store_download': 'https://apps.apple.com/us/app/tuggi-drive/id6744379818?l=pt-BR',
         'google_play_download': 'https://play.google.com/store/apps/details?id=com.tuggidrive.app&pcampaignid=web_share',
-        'download_free': 'https://apps.apple.com/us/app/tuggi-drive/id6744379818?l=pt-BR', // Default to App Store
-        'ios_download': 'https://apps.apple.com/us/app/tuggi-drive/id6744379818?l=pt-BR' // iOS Banner download
+        'ios_download': 'https://apps.apple.com/us/app/tuggi-drive/id6744379818?l=pt-BR'
       };
       
-      const url = downloadURLs[ctaType as keyof typeof downloadURLs];
+      let url = downloadURLs[ctaType as keyof typeof downloadURLs];
+
+      // Fallback/Generic handling for 'download_free'
+      if (!url && ctaType === 'download_free') {
+        url = isAndroid 
+          ? downloadURLs.google_play_download 
+          : downloadURLs.app_store_download;
+      }
+
       if (url) {
-        window.open(url, '_blank');
-      } else {
-        // Fallback: show coming soon message
-        alert('App disponível em breve! Em breve você poderá baixar o Tuggi nas lojas de aplicativos.');
+        // Use location.href for store links to avoid popup blockers and maintain user intent on mobile
+        window.location.href = url;
       }
       return;
     }

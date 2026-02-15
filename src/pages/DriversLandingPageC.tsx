@@ -647,22 +647,45 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [showDownloadSheet, setShowDownloadSheet] = useState(false);
 
+  const getMobileOS = () => {
+    if (typeof window === 'undefined') return 'other';
+    const ua = navigator.userAgent || navigator.vendor || (window as any).opera;
+    if (/android/i.test(ua)) return 'android';
+    if (/iPad|iPhone|iPod/.test(ua) && !(window as any).MSStream) return 'ios';
+    return 'other';
+  };
+
   const handleDownloadSheet = (e?: React.MouseEvent) => {
     e?.preventDefault();
+    const os = getMobileOS();
+    
+    // Direct redirect for mobile to reduce friction
+    if (os === 'ios') {
+      handleStoreClick('apple', 'direct_mobile');
+      return;
+    }
+    if (os === 'android') {
+      handleStoreClick('google', 'direct_mobile');
+      return;
+    }
+
     setShowDownloadSheet(true);
   };
 
   const handleStoreClick = (store: 'apple' | 'google', position: string) => {
-    onCTAClick?.(store, position);
-    const url = store === 'apple' 
-      ? 'https://apps.apple.com/br/app/tuggi-explore-ao-dirigir/id6744379818'
-      : 'https://play.google.com/store/apps/details?id=com.tuggidrive.app';
-    window.open(url, '_blank');
+    // onCTAClick in App.tsx now handles the redirection safely for all devices
+    onCTAClick?.(store === 'apple' ? 'app_store_download' : 'google_play_download', position);
   };
 
 
 
   const handleCTA = (type: string, position: string) => {
+    // If it's a general download intent, use the smart handler
+    if (type.includes('download') || type.includes('free_plan')) {
+      handleDownloadSheet();
+      return;
+    }
+    
     onCTAClick?.(type, position);
     setShowDownloadSheet(true);
   };
@@ -1327,7 +1350,7 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
 
       {/* BOTTOM SHEET MODAL */}
       {showDownloadSheet && (
-         <div className="fixed inset-0 z-[100] flex items-end justify-center sm:items-center p-4 animate-in fade-in duration-200">
+         <div className="fixed inset-0 z-[10001] flex items-end justify-center sm:items-center p-4 animate-in fade-in duration-200">
             <div 
               className="absolute inset-0 bg-black/80 backdrop-blur-md"
               onClick={() => setShowDownloadSheet(false)}
@@ -1340,15 +1363,29 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
                <p className="text-center text-gray-500 font-medium mb-8 text-sm">{t.hero.modalSub}</p>
                
                <div className="flex flex-col gap-4">
-                  <button onClick={() => handleStoreClick('apple', 'modal')} className="w-full bg-gray-900 text-white hover:bg-black py-5 px-6 rounded-2xl font-black text-lg flex items-center justify-center gap-4 transition-all active:scale-95 shadow-lg">
+                  <a 
+                    href="https://apps.apple.com/br/app/tuggi-explore-ao-dirigir/id6744379818"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleStoreClick('apple', 'modal');
+                    }}
+                    className="w-full bg-gray-900 text-white hover:bg-black py-5 px-6 rounded-2xl font-black text-lg flex items-center justify-center gap-4 transition-all active:scale-95 shadow-lg"
+                  >
                      <Apple className="w-7 h-7" fill="currentColor" />
                      <span>{t.hero.appleLabel}</span>
-                  </button>
-                  <button onClick={() => handleStoreClick('google', 'modal')} className="w-full bg-white text-gray-900 border-2 border-gray-100 hover:border-gray-200 py-5 px-6 rounded-2xl font-black text-lg flex items-center justify-center gap-4 transition-all active:scale-95 shadow-sm">
+                  </a>
+                  <a 
+                    href="https://play.google.com/store/apps/details?id=com.tuggidrive.app"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleStoreClick('google', 'modal');
+                    }}
+                    className="w-full bg-white text-gray-900 border-2 border-gray-100 hover:border-gray-200 py-5 px-6 rounded-2xl font-black text-lg flex items-center justify-center gap-4 transition-all active:scale-95 shadow-sm"
+                  >
                      <Smartphone className="w-7 h-7" />
                      <span>{t.hero.androidLabel}</span>
-                  </button>
-               </div>
+                  </a>
+                </div>
 
                <p className="text-center text-[10px] text-gray-400 mt-8 font-bold uppercase tracking-widest">
                   {t.hero.trustLine}
