@@ -148,12 +148,12 @@ const ptContent: ContentStructure = {
     items: [{ title: "Uber/99", desc: "Destaque-se na categoria." }, { title: "Táxi", desc: "Modernize seu serviço." }, { title: "Transfer", desc: "Profissionalismo total." }, { title: "Particular", desc: "Fidelize seus clientes." }]
   },
   tabs: {
-    title: "PARA QUEM É O TUGGI?",
+    title: "ENCANTE CADA TIPO DE PASSAGEIRO",
     items: {
-      turistas: { label: "Turistas", title: "TURISTAS", desc: "Seu guia de bolso.", bullets: ["Não precisa de roteiro", "8 idiomas"], cta: "Ver Planos" },
-      exploradores: { label: "Exploradores", title: "CURIOSOS", desc: "Redescubra sua cidade.", bullets: ["Histórias que ninguém conta", "Olhe a cidade com outros olhos"], cta: "Baixar Grátis" },
-      motoristas: { label: "Motoristas", title: "MOTORISTAS DE APP", desc: "Suba de categoria.", bullets: ["Aumente suas gorjetas", "Melhore sua nota", "Ofereça 'mimos' digitais", "Diferencie-se da multidão"], cta: "Ver Planos" },
-      familias: { label: "Famílias", title: "FAMÍLIAS", desc: "Passeio sem tédio.", bullets: ["As crianças aprendem", "Diversão no trânsito"], cta: "Testar Grátis" }
+      turistas: { label: "Turistas", title: "TURISTAS", desc: "Eles querem saber tudo sobre a cidade.", bullets: ["Não precisa explicar nada", "8 idiomas disponíveis", "Histórias curtas e interessantes"], cta: "Ver Planos" },
+      exploradores: { label: "Locais", title: "LOCAIS", desc: "Surpreenda até quem mora aqui.", bullets: ["Curiosidades que ninguém sabe", "Redescobrem o próprio bairro", "Valorizam seu conhecimento"], cta: "Baixar Grátis" },
+      motoristas: { label: "Executivos", title: "EXECUTIVOS", desc: "Sofisticação sem ser intrusivo.", bullets: ["Conteúdo cultural de alto nível", "Respeita o silêncio quando preciso", "Impressiona clientes VIP"], cta: "Ver Planos" },
+      familias: { label: "Famílias", title: "FAMÍLIAS", desc: "Paz no banco de trás.", bullets: ["Crianças aprendem se divertindo", "Menos barulho e confusão", "Pais agradecem a viagem tranquila"], cta: "Testar Grátis" }
     }
   },
   pricing: {
@@ -263,12 +263,12 @@ const enContent: ContentStructure = {
     items: [{ title: "Uber/Lyft", desc: "Stand out from other drivers." }, { title: "Limo/Black", desc: "Add a concierge touch." }, { title: "Taxi", desc: "Modernize your service." }, { title: "Private", desc: "Retain your VIP clients." }]
   },
   tabs: {
-    title: "WHO IS IT FOR?",
+    title: "DELIGHT EVERY PASSENGER",
     items: {
-      turistas: { label: "Tourists", title: "TRAVELERS", desc: "Your pocket guide.", bullets: ["No planning needed", "8 languages"], cta: "View Plans" },
-      exploradores: { label: "Explorers", title: "LOCALS", desc: "Rediscover your city.", bullets: ["Hidden gems", "New perspective"], cta: "Download Free" },
-      motoristas: { label: "Drivers", title: "PRO DRIVERS", desc: "Level up your business.", bullets: ["Boost your tips", "Get 5-star ratings", "Digital amenities", "Stand out"], cta: "View Plans" },
-      familias: { label: "Families", title: "FAMILIES", desc: "Fun for everyone.", bullets: ["Kids learn history", "Entertainment on the go"], cta: "Try Free" }
+      turistas: { label: "Tourists", title: "TOURISTS", desc: "They want to know everything.", bullets: ["No need to be a tour guide", "Available in 8 languages", "Short, engaging stories"], cta: "View Plans" },
+      exploradores: { label: "Locals", title: "LOCALS", desc: "Surprise even those who live here.", bullets: ["Hidden gems they didn't know", "Rediscover their own city", "They appreciate the insight"], cta: "Download Free" },
+      motoristas: { label: "Business", title: "BUSINESS", desc: "Sophisticated, non-intrusive.", bullets: ["High-level cultural content", "Respects silence when needed", "Impresses VIP clients"], cta: "View Plans" },
+      familias: { label: "Families", title: "FAMILIES", desc: "Peace in the back seat.", bullets: ["Kids learn while having fun", "Less noise and chaos", "Parents thank you for the smooth ride"], cta: "Try Free" }
     }
   },
   pricing: {
@@ -378,12 +378,12 @@ const esContent: ContentStructure = {
     items: [{ title: "Taxi", desc: "Moderniza tu servicio." }, { title: "VTC/Uber", desc: "Destaca entre miles." }, { title: "Transfer", desc: "Profesionalidad total." }, { title: "Privado", desc: "Fideliza clientes." }]
   },
   tabs: {
-    title: "¿PARA QUIÉN ES?",
+    title: "ENCANTA A CADA PASAJERO",
     items: {
-      turistas: { label: "Turistas", title: "VIAJEROS", desc: "Tu guía personal.", bullets: ["Sin planes", "8 idiomas"], cta: "Ver Planes" },
-      exploradores: { label: "Exploradores", title: "CURIOSOS", desc: "Redescubre tu ciudad.", bullets: ["Secretos locales", "Nueva visión"], cta: "Descargar" },
-      motoristas: { label: "Conductores", title: "CONDUCTORES PRO", desc: "Mejora tu negocio.", bullets: ["Más propinas", "5 estrellas", "Amenidad digital", "Destaca"], cta: "Ver Planes" },
-      familias: { label: "Familias", title: "FAMILIAS", desc: "Cultura divertida.", bullets: ["Educativo", "Sin pantallas"], cta: "Probar" }
+      turistas: { label: "Turistas", title: "TURISTAS", desc: "Quieren saberlo todo.", bullets: ["No necesitas explicar nada", "Disponible en 8 idiomas", "Historias cortas e interesantes"], cta: "Ver Planes" },
+      exploradores: { label: "Locales", title: "LOCALES", desc: "Sorprende incluso a los locales.", bullets: ["Curiosidades que no sabían", "Redescubren su propio barrio", "Valoran tu conocimiento"], cta: "Descargar" },
+      motoristas: { label: "Ejecutivos", title: "EJECUTIVOS", desc: "Sofisticado y no intrusivo.", bullets: ["Contenido cultural de nivel", "Respeta el silencio si es necesario", "Impresiona a clientes VIP"], cta: "Ver Planes" },
+      familias: { label: "Familias", title: "FAMILIAS", desc: "Paz en el asiento trasero.", bullets: ["Los niños aprenden divirtiéndose", "Menos ruido y caos", "Los padres agradecen el viaje tranquilo"], cta: "Probar" }
     }
   },
   pricing: {
@@ -493,12 +493,12 @@ const frContent: ContentStructure = {
     items: [{ title: "VTC", desc: "Montez en gamme." }, { title: "Taxi", desc: "Fidélisez votre clientèle." }, { title: "Navette", desc: "Transformez le trajet." }, { title: "Privé", desc: "Service 5 étoiles." }]
   },
   tabs: {
-    title: "POUR QUI ?",
+    title: "RAVISSEZ CHAQUE PASSAGER",
     items: {
-      turistas: { label: "Touristes", title: "VOYAGEURS", desc: "Votre guide personnel.", bullets: ["Sans effort", "8 langues"], cta: "Voir les Plans" },
-      exploradores: { label: "Explorateurs", title: "LOCAUX", desc: "Redécouvrez la ville.", bullets: ["Secrets cachés", "Nouvelle vision"], cta: "Gratuit" },
-      motoristas: { label: "Chauffeurs", title: "CHAUFFEURS PRO", desc: "Valorisez votre service.", bullets: ["Meilleures notes", "Service VIP", "Outil pro", "Démarquez-vous"], cta: "Voir les Plans" },
-      familias: { label: "Familles", title: "FAMILLES", desc: "Culture ludique.", bullets: ["Éducatif", "Sans écran"], cta: "Essayer" }
+      turistas: { label: "Touristes", title: "TOURISTES", desc: "Ils veulent tout savoir.", bullets: ["Pas besoin de guide", "Disponible en 8 langues", "Histoires courtes et captivantes"], cta: "Voir les Plans" },
+      exploradores: { label: "Locaux", title: "LOCAUX", desc: "Surprenez même les habitants.", bullets: ["Pépites méconnues", "Redécouverte du quartier", "Ils apprécient l'info"], cta: "Gratuit" },
+      motoristas: { label: "Affaires", title: "AFFAIRES", desc: "Sophistiqué et discret.", bullets: ["Contenu culturel de haut niveau", "Respecte le silence si besoin", "Impressionne les clients VIP"], cta: "Voir les Plans" },
+      familias: { label: "Familles", title: "FAMILLES", desc: "La paix à l'arrière.", bullets: ["Les enfants apprennent en s'amusant", "Moins de bruit, plus de calme", "Les parents vous remercieront"], cta: "Essayer" }
     }
   },
   pricing: {
@@ -608,12 +608,12 @@ const deContent: ContentStructure = {
     items: [{ title: "Taxi", desc: "Modernisieren Sie Ihren Service." }, { title: "Mietwagen", desc: "Exklusive Kundschaft." }, { title: "Uber/Bolt", desc: "Hervorstechen." }, { title: "Privat", desc: "Stammkunden binden." }]
   },
   tabs: {
-    title: "FÜR WEN?",
+    title: "BEGEISTERN SIE JEDEN FAHRGAST",
     items: {
-      turistas: { label: "Touristen", title: "REISENDE", desc: "Ihr Pocket-Guide.", bullets: ["Keine Planung", "8 Sprachen"], cta: "Pläne ansehen" },
-      exploradores: { label: "Entdecker", title: "LOCALS", desc: "Stadt neu entdecken.", bullets: ["Geheimtipps", "Neue Perspektive"], cta: "Gratis laden" },
-      motoristas: { label: "Fahrer", title: "PROFI-FAHRER", desc: "Business-Upgrade.", bullets: ["Mehr Trinkgeld", "Top Bewertungen", "Digitaler Service", "Konkurrenzvorteil"], cta: "Pläne ansehen" },
-      familias: { label: "Familien", title: "FAMILIEN", desc: "Spaß für alle.", bullets: ["Bildung", "Keine Bildschirme"], cta: "Testen" }
+      turistas: { label: "Touristen", title: "TOURISTEN", desc: "Sie wollen alles wissen.", bullets: ["Kein Reiseleiter nötig", "In 8 Sprachen verfügbar", "Kurze, spannende Stories"], cta: "Pläne ansehen" },
+      exploradores: { label: "Einheimische", title: "EINHEIMISCHE", desc: "Überraschen Sie sogar Locals.", bullets: ["Unbekannte Fakten", "Die eigene Stadt neu entdecken", "Wertschätzung für Ihr Wissen"], cta: "Gratis laden" },
+      motoristas: { label: "Business", title: "BUSINESS", desc: "Anspruchsvoll und dezent.", bullets: ["Kultureller Inhalt auf hohem Niveau", "Respektiert Ruhephasen", "Beeindruckt VIP-Gäste"], cta: "Pläne ansehen" },
+      familias: { label: "Familien", title: "FAMILIEN", desc: "Ruhe auf der Rückbank.", bullets: ["Kinder lernen spielerisch", "Weniger Lärm und Chaos", "Eltern danken Ihnen"], cta: "Testen" }
     }
   },
   pricing: {
@@ -723,12 +723,12 @@ const itContent: ContentStructure = {
     items: [{ title: "NCC & Limo", desc: "Servizio VIP imperdibile." }, { title: "Taxi", desc: "Distinguiti dalla concorrenza." }, { title: "Uber Black", desc: "Il dettaglio che fa la differenza." }, { title: "Transfer", desc: "Rendi il viaggio memorabile." }]
   },
   tabs: {
-    title: "PER CHI?",
+    title: "INCANTA OGNI PASSEGGERO",
     items: {
-      turistas: { label: "Turisti", title: "TURISTI", desc: "Oltre la guida.", bullets: ["Nessuna pianificazione necessaria", "Disponibile in 8 lingue", "Scoperta spontanea", "Funziona offline"], cta: "Vedi Piani" },
-      exploradores: { label: "Esploratori", title: "LOCALS", desc: "Riscopri la tua città.", bullets: ["Storie inedite e curiosità", "Riscopri il tuo quartiere", "Perfetto per passeggiate", "Audio di alta qualità"], cta: "Gratis" },
-      motoristas: { label: "Driver Pro", title: "DRIVER PROFESSIONISTI", desc: "Eleva il tuo business.", bullets: ["Distinguiti dalla concorrenza", "Mance più alte garantite", "Recensioni 5 stelle facili", "Intrattenimento VIP automatico"], cta: "Vedi Piani" },
-      familias: { label: "Famiglie", title: "FAMIGLIE", desc: "Cultura per tutti.", bullets: ["Educativo e divertente", "Niente schermi, solo audio", "Imparare viaggiando", "Adatto a tutte le età"], cta: "Prova Gratis" }
+      turistas: { label: "Turisti", title: "TURISTI", desc: "Vogliono sapere tutto.", bullets: ["Non devi spiegare nulla", "Disponibile in 8 lingue", "Storie brevi e coinvolgenti"], cta: "Vedi Piani" },
+      exploradores: { label: "Locali", title: "LOCALI", desc: "Sorprendi anche chi vive qui.", bullets: ["Curiosità che nessuno sa", "Riscoprono il loro quartiere", "Apprezzano la professionalità"], cta: "Gratis" },
+      motoristas: { label: "Business", title: "BUSINESS", desc: "Sofisticato e non invadente.", bullets: ["Contenuti culturali di livello", "Rispetta il silenzio se serve", "Colpisce i clienti VIP"], cta: "Vedi Piani" },
+      familias: { label: "Famiglie", title: "FAMIGLIE", desc: "Pace sui sedili posteriori.", bullets: ["I bambini imparano divertendosi", "Meno caos in auto", "I genitori ti ringrazieranno"], cta: "Prova Gratis" }
     }
   },
   pricing: {
