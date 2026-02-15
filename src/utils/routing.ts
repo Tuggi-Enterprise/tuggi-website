@@ -89,7 +89,14 @@ export const VALID_PAGES = [
   'gov-terminos-de-uso',
   'gov-conditions-d-utilisation',
   'gov-nutzungsbedingungen',
-  'gov-termini-di-utilizzo'
+  'gov-termini-di-utilizzo',
+  // Driver Terms
+  'drivers-terms',
+  'termos-motoristas',
+  'terminos-conductores',
+  'conditions-chauffeurs',
+  'fahrer-bedingungen',
+  'termini-driver'
 ] as const;
 
 // Page URL mappings for different languages
@@ -215,6 +222,14 @@ export const PAGE_URL_MAPPINGS: Record<string, Record<string, string>> = {
     'FR': 'gov-conditions-d-utilisation',
     'DE': 'gov-nutzungsbedingungen',
     'IT': 'gov-termini-di-utilizzo'
+  },
+  'drivers-terms': {
+    'EN': 'drivers-terms',
+    'PT': 'termos-motoristas',
+    'ES': 'terminos-conductores',
+    'FR': 'conditions-chauffeurs',
+    'DE': 'fahrer-bedingungen',
+    'IT': 'termini-driver'
   }
 };
 
@@ -323,7 +338,15 @@ export const URL_TO_PAGE_MAPPINGS: Record<string, string> = {
   'gov-terminos-de-uso': 'govTerms',
   'gov-conditions-d-utilisation': 'govTerms',
   'gov-nutzungsbedingungen': 'govTerms',
-  'gov-termini-di-utilizzo': 'govTerms'
+  'gov-termini-di-utilizzo': 'govTerms',
+
+  // Driver Terms
+  'drivers-terms': 'drivers-terms',
+  'termos-motoristas': 'drivers-terms',
+  'terminos-conductores': 'drivers-terms',
+  'conditions-chauffeurs': 'drivers-terms',
+  'fahrer-bedingungen': 'drivers-terms',
+  'termini-driver': 'drivers-terms'
 };
 
 /**

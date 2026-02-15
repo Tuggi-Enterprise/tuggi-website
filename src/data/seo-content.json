@@ -23,6 +23,7 @@
     "privacy": { "en": "privacy-policy", "pt": "politica-de-privacidade", "es": "politica-de-privacidad", "fr": "politique-de-confidentialite", "de": "datenschutz", "it": "informativa-privacy" },
     "terms": { "en": "terms-of-use", "pt": "termos-de-uso", "es": "terminos-de-uso", "fr": "conditions-d-utilisation", "de": "nutzungsbedingungen", "it": "termini-di-utilizzo" },
     "cookies": { "en": "cookie-policy", "pt": "politica-de-cookies", "es": "politica-de-cookies", "fr": "politique-cookies", "de": "cookie-richtlinie", "it": "informativa-cookie" },
+    "drivers-terms": { "en": "drivers-terms", "pt": "termos-motoristas", "es": "terminos-conductores", "fr": "conditions-chauffeurs", "de": "fahrer-bedingungen", "it": "termini-driver" },
     "data-deletion": { "en": "data-deletion", "pt": "exclusao-de-dados", "es": "eliminacion-de-datos", "fr": "suppression-donnees", "de": "datenloeschung", "it": "cancellazione-dati" }
   },
   "pages": {
@@ -724,6 +725,56 @@
         "ogTitle": "Cancellazione Dati | Tuggi",
         "ogDescription": "Richiedi la cancellazione dei tuoi dati da Tuggi.",
         "ogImage": "/og/home.jpg"
+      }
+    },
+    "drivers-terms": {
+      "en": {
+        "title": "Host License Terms (Drivers) | Tuggi",
+        "description": "Specific Terms of Use for the Professional Host License for drivers.",
+        "keywords": "host license terms, driver terms, professional driver license, tuggi driver terms",
+        "ogTitle": "Host License Terms (Drivers) | Tuggi",
+        "ogDescription": "Specific Terms of Use for the Professional Host License for drivers.",
+        "ogImage": "/og/drivers.jpg"
+      },
+      "pt": {
+        "title": "Termos da Licença Host (Motoristas) | Tuggi",
+        "description": "Termos de Uso Específicos para a Licença Profissional Host para motoristas.",
+        "keywords": "termos licença host, termos motorista, licença profissional motorista, termos tuggi motorista",
+        "ogTitle": "Termos da Licença Host (Motoristas) | Tuggi",
+        "ogDescription": "Termos de Uso Específicos para a Licença Profissional Host para motoristas.",
+        "ogImage": "/og/drivers.jpg"
+      },
+      "es": {
+        "title": "Términos de Licencia Host (Conductores) | Tuggi",
+        "description": "Términos de Uso Específicos para la Licencia Profesional Host para conductores.",
+        "keywords": "términos licencia host, términos conductor, licencia profesional conductor, términos tuggi conductor",
+        "ogTitle": "Términos de Licencia Host (Conductores) | Tuggi",
+        "ogDescription": "Términos de Uso Específicos para la Licencia Profesional Host para conductores.",
+        "ogImage": "/og/drivers.jpg"
+      },
+      "fr": {
+        "title": "Conditions Licence Host (Chauffeurs) | Tuggi",
+        "description": "Conditions d'Utilisation Spécifiques pour la Licence Professionnelle Host pour chauffeurs.",
+        "keywords": "conditions licence host, conditions chauffeur, licence professionnelle chauffeur, conditions tuggi chauffeur",
+        "ogTitle": "Conditions Licence Host (Chauffeurs) | Tuggi",
+        "ogDescription": "Conditions d'Utilisation Spécifiques pour la Licence Professionnelle Host pour chauffeurs.",
+        "ogImage": "/og/drivers.jpg"
+      },
+      "de": {
+        "title": "Host-Lizenzbedingungen (Fahrer) | Tuggi",
+        "description": "Spezifische Nutzungsbedingungen für die professionelle Host-Lizenz für Fahrer.",
+        "keywords": "host lizenz bedingungen, fahrer bedingungen, berufskraftfahrer lizenz, tuggi fahrer bedingungen",
+        "ogTitle": "Host-Lizenzbedingungen (Fahrer) | Tuggi",
+        "ogDescription": "Spezifische Nutzungsbedingungen für die professionelle Host-Lizenz für Fahrer.",
+        "ogImage": "/og/drivers.jpg"
+      },
+      "it": {
+        "title": "Termini Licenza Host (Driver) | Tuggi",
+        "description": "Termini di Utilizzo Specifici per la Licenza Professionale Host per autisti.",
+        "keywords": "termini licenza host, termini driver, licenza professionale driver, termini tuggi driver",
+        "ogTitle": "Termini Licenza Host (Driver) | Tuggi",
+        "ogDescription": "Termini di Utilizzo Specifici per la Licenza Professionale Host per autisti.",
+        "ogImage": "/og/drivers.jpg"
       }
     }
   }

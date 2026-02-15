@@ -81,6 +81,11 @@ interface ContentStructure {
     usual: { title: string; price: string; features: string[] };
     pro: { title: string; price: string; features: string[]; cta: string };
   };
+  footer: {
+    terms: string;
+    privacy: string;
+    copyright: string;
+  };
 }
 // ==========================================
 // Content & Translations
@@ -193,7 +198,12 @@ const ptContent: ContentStructure = {
       cta: "SOU PARCEIRO"
     }
   },
-  final: { h2: "QUER GANHAR MAIS ESTRELAS?", p: "Baixe o Tuggi e faça o teste na sua próxima corrida.", benefits: ["Grátis para testar", "Aumente seus ganhos", "Cancele fácil"], downloadOn: "Baixar na", getItOn: "Disponível no", trustLine: "Teste grátis agora mesmo" }
+  final: { h2: "QUER GANHAR MAIS ESTRELAS?", p: "Baixe o Tuggi e faça o teste na sua próxima corrida.", benefits: ["Grátis para testar", "Aumente seus ganhos", "Cancele fácil"], downloadOn: "Baixar na", getItOn: "Disponível no", trustLine: "Teste grátis agora mesmo" },
+  footer: {
+    terms: "Termos de Uso (Motoristas)",
+    privacy: "Política de Privacidade",
+    copyright: "© 2026 Tuggi Drive. Todos os direitos reservados."
+  }
 };
 
 const enContent: ContentStructure = {
@@ -303,7 +313,12 @@ const enContent: ContentStructure = {
       cta: "I AM A PARTNER"
     }
   },
-  final: { h2: "Ready to Upgrade Your Ride?", p: "Download Tuggi and try it on your next trip.", benefits: ["Free to test", "Boost your tips", "Easy to cancel"], downloadOn: "Download on", getItOn: "Get it on", trustLine: "Start your free trial today" }
+  final: { h2: "Ready to Upgrade Your Ride?", p: "Download Tuggi and try it on your next trip.", benefits: ["Free to test", "Boost your tips", "Easy to cancel"], downloadOn: "Download on", getItOn: "Get it on", trustLine: "Start your free trial today" },
+  footer: {
+    terms: "Terms of Use (Drivers)",
+    privacy: "Privacy Policy",
+    copyright: "© 2026 Tuggi Drive. All rights reserved."
+  }
 };
 
 const esContent: ContentStructure = {
@@ -413,7 +428,12 @@ const esContent: ContentStructure = {
       cta: "SOY SOCIO"
     }
   },
-  final: { h2: "¿Listo para mejorar tu servicio?", p: "Descarga Tuggi y pruébalo en tu próximo viaje.", benefits: ["Prueba gratis", "Mejores propinas", "Cancela fácil"], downloadOn: "Descargar en", getItOn: "Disponible en", trustLine: "Pruébalo gratis hoy mismo" }
+  final: { h2: "¿Listo para mejorar tu servicio?", p: "Descarga Tuggi y pruébalo en tu próximo viaje.", benefits: ["Prueba gratis", "Mejores propinas", "Cancela fácil"], downloadOn: "Descargar en", getItOn: "Disponible en", trustLine: "Pruébalo gratis hoy mismo" },
+  footer: {
+    terms: "Términos de Uso (Conductores)",
+    privacy: "Política de Privacidad",
+    copyright: "© 2026 Tuggi Drive. Todos los derechos reservados."
+  }
 };
 
 const frContent: ContentStructure = {
@@ -523,7 +543,12 @@ const frContent: ContentStructure = {
       cta: "JE SUIS PARTENAIRE"
     }
   },
-  final: { h2: "Prêt à transformer vos trajets ?", p: "Téléchargez Tuggi e testez-le lors de votre prochaine course.", benefits: ["Essai gratuit", "Plus de pourboires", "Annulation facile"], downloadOn: "Télécharger sur", getItOn: "Disponible sur", trustLine: "Essai gratuit sans carte de crédit" }
+  final: { h2: "Prêt à transformer vos trajets ?", p: "Téléchargez Tuggi e testez-le lors de votre prochaine course.", benefits: ["Essai gratuit", "Plus de pourboires", "Annulation facile"], downloadOn: "Télécharger sur", getItOn: "Disponible sur", trustLine: "Essai gratuit sans carte de crédit" },
+  footer: {
+    terms: "Conditions d'Utilisation (Chauffeurs)",
+    privacy: "Politique de Confidentialité",
+    copyright: "© 2026 Tuggi Drive. Tous droits réservés."
+  }
 };
 
 const deContent: ContentStructure = {
@@ -633,7 +658,12 @@ const deContent: ContentStructure = {
       cta: "ICH BIN PARTNER"
     }
   },
-  final: { h2: "Bereit für mehr 5-Sterne-Fahrten?", p: "Laden Sie Tuggi herunter und testen Sie es bei Ihrer nächsten Fahrt.", benefits: ["Kostenlos testen", "Mehr Trinkgeld", "Einfach kündigen"], downloadOn: "Laden im", getItOn: "Erhältlich bei", trustLine: "Kostenlos testen. Sofort startklar." }
+  final: { h2: "Bereit für mehr 5-Sterne-Fahrten?", p: "Laden Sie Tuggi herunter und testen Sie es bei Ihrer nächsten Fahrt.", benefits: ["Kostenlos testen", "Mehr Trinkgeld", "Einfach kündigen"], downloadOn: "Laden im", getItOn: "Erhältlich bei", trustLine: "Kostenlos testen. Sofort startklar." },
+  footer: {
+    terms: "Nutzungsbedingungen (Fahrer)",
+    privacy: "Datenschutzrichtlinie",
+    copyright: "© 2026 Tuggi Drive. Alle Rechte vorbehalten."
+  }
 };
 
 const itContent: ContentStructure = {
@@ -743,7 +773,12 @@ const itContent: ContentStructure = {
       cta: "SONO UN PARTNER"
     }
   },
-  final: { h2: "Vuoi più recensioni a 5 stelle?", p: "Scarica Tuggi e provalo durante la tua prossima corsa.", benefits: ["Prova gratuita", "Guadagni extra", "Cancella quando vuoi"], downloadOn: "Scarica su", getItOn: "Disponibile su", trustLine: "Prova gratuita illimitata. Nessuna carta richiesta." }
+  final: { h2: "Vuoi più recensioni a 5 stelle?", p: "Scarica Tuggi e provalo durante la tua prossima corsa.", benefits: ["Prova gratuita", "Guadagni extra", "Cancella quando vuoi"], downloadOn: "Scarica su", getItOn: "Disponibile su", trustLine: "Prova gratuita illimitata. Nessuna carta richiesta." },
+  footer: {
+    terms: "Termini di Utilizzo (Driver)",
+    privacy: "Privacy Policy",
+    copyright: "© 2026 Tuggi Drive. Tutti i diritti riservati."
+  }
 };
 
 const content: Record<Language, ContentStructure> = {
@@ -1664,6 +1699,21 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
             <ChevronDown size={18} className="-rotate-90" />
          </button>
       </div>
+
+      {/* MINIMALIST FOOTER */}
+      <footer className="bg-gray-50 border-t border-gray-100 py-12 pb-24 md:pb-12 text-center text-sm text-gray-500">
+        <div className="c-container flex flex-col items-center gap-6">
+          <div className="flex flex-wrap justify-center gap-6 font-medium">
+             <button onClick={() => onCTAClick?.('driver_terms')} className="hover:text-blue-600 transition-colors">
+                {t.footer.terms}
+             </button>
+             <button onClick={() => onCTAClick?.('privacy_policy')} className="hover:text-blue-600 transition-colors">
+                {t.footer.privacy}
+             </button>
+          </div>
+          <p className="opacity-60">{t.footer.copyright}</p>
+        </div>
+      </footer>
 
     </div>
   );

@@ -17,6 +17,7 @@ import DriversLandingPageE from './pages/DriversLandingPageE';
 import GovPage from './pages/GovPage';
 import GovPrivacyPolicyPage from './pages/legal/GovPrivacyPolicyPage';
 import GovTermsOfUsePage from './pages/legal/GovTermsOfUsePage';
+import TermsOfUseDriversPage from './pages/legal/TermsOfUseDriversPage';
 import HomeV2 from './pages/HomeV2';
 
 // Extend Window interface for gtag
@@ -373,6 +374,20 @@ function App() {
       return;
     }
 
+    // Handle Driver Terms
+    if (ctaType === 'driver_terms') {
+      const termsMap: Record<string, string> = {
+        'PT': 'termos-motoristas',
+        'EN': 'drivers-terms',
+        'ES': 'terminos-conductores',
+        'FR': 'conditions-chauffeurs',
+        'DE': 'fahrer-bedingungen',
+        'IT': 'termini-driver'
+      };
+      handlePageChange(termsMap[currentLanguage] || 'drivers-terms');
+      return;
+    }
+
     // Handle investors page navigation
     if (ctaType === 'investors_page') {
       handlePageChange('investors');
@@ -499,6 +514,13 @@ function App() {
       case 'nutzungsbedingungen':
       case 'termini-di-utilizzo':
         return <TermsOfUsePage currentLanguage={currentLanguage} />;
+      case 'drivers-terms':
+      case 'termos-motoristas':
+      case 'terminos-conductores':
+      case 'conditions-chauffeurs':
+      case 'fahrer-bedingungen':
+      case 'termini-driver':
+        return <TermsOfUseDriversPage currentLanguage={currentLanguage} />;
       case 'cookies':
       case 'cookie-policy':
       case 'politica-de-cookies':
@@ -561,7 +583,23 @@ function App() {
       onLanguageChange={handleLanguageChange}
       currentPage={currentPage}
       onPageChange={handlePageChange}
-      hideFooter={currentPage === 'gov' || currentPage === 'govPrivacy' || currentPage === 'govTerms'}
+      hideFooter={
+        currentPage === 'gov' || 
+        currentPage === 'govPrivacy' || 
+        currentPage === 'govTerms' || 
+        currentPage.includes('motoristas') || 
+        currentPage.includes('drivers') || 
+        currentPage.includes('conductores') || 
+        currentPage.includes('chauffeurs') || 
+        currentPage.includes('fahrer') || 
+        currentPage.includes('autisti') || 
+        currentPage === 'drivers-terms' ||
+        currentPage === 'termos-motoristas' ||
+        currentPage === 'terminos-conductores' ||
+        currentPage === 'conditions-chauffeurs' ||
+        currentPage === 'fahrer-bedingungen' ||
+        currentPage === 'termini-driver'
+      }
       hideHeader={['govPrivacy', 'govTerms'].includes(currentPage)}
       minimalHeader={currentPage.includes('motoristas') || currentPage.includes('drivers')}
     >
