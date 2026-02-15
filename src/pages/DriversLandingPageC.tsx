@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { 
   X, Download, 
-  Volume2, Navigation, Music, Car, 
+  Volume2, Navigation, Car, 
   Apple, Smartphone, RouteOff, Activity, Footprints,
   Check, Star, Shield, 
   Plus, Lock, Globe,
-  ChevronDown, Map, Bus, Train
+  ChevronDown, Bus, Train
 } from 'lucide-react';
 import './DriversLandingPageC.css';
 
@@ -105,7 +105,7 @@ const ptContent: ContentStructure = {
       { title: "Dirija Tranquilo", desc: "Concentre-se no trânsito. O Tuggi fala nos momentos certos." },
       { title: "Encante o Passageiro", desc: "Histórias curiosas quebram o gelo e criam uma experiência única." }
     ],
-    compat: "Funciona perfeitamente com:",
+    compat: "100% COMPATÍVEL COM SEUS APPS FAVORITOS",
     highlight: "Zero esforço.<br/>Muitas estrelas."
   },
   difference: {
@@ -199,7 +199,7 @@ const enContent: ContentStructure = {
       { title: "Drive Smoothly", desc: "Focus on the road. Tuggi plays stories automatically via GPS." },
       { title: "Delight Riders", desc: "Guests love the local insights. Silence becomes an experience." }
     ],
-    compat: "Works flawlessly with:",
+    compat: "100% COMPATIBLE WITH YOUR FAVORITE APPS",
     highlight: "Zero effort.<br/>Better Ratings."
   },
   difference: {
@@ -293,7 +293,7 @@ const esContent: ContentStructure = {
       { title: "Conduce normal", desc: "Tuggi cuenta historias cuando pasas cerca de algo interesante." },
       { title: "Sorprende al cliente", desc: "El pasajero disfruta del viaje y valora tu servicio extra." }
     ],
-    compat: "Compatible con:",
+    compat: "100% COMPATIBLE CON TUS APPS FAVORITAS",
     highlight: "Cero esfuerzo.<br/>Servicio VIP."
   },
   difference: {
@@ -387,7 +387,7 @@ const frContent: ContentStructure = {
       { title: "Conduisez sereinement", desc: "L'app détecte les lieux et raconte l'histoire automatiquement." },
       { title: "Impressionnez", desc: "Votre passager profite d'un service de conciergerie digitale." }
     ],
-    compat: "Compatible avec :",
+    compat: "100% COMPATIBLE AVEC VOS APPS PRÉFÉRÉES",
     highlight: "Zéro distraction.<br/>Service Premium."
   },
   difference: {
@@ -481,7 +481,7 @@ const deContent: ContentStructure = {
       { title: "Fahren", desc: "Konzentrieren Sie sich auf den Verkehr. Tuggi erzählt automatisch." },
       { title: "Begeistern", desc: "Gäste genießen hochwertige Audio-Inhalte statt Stille." }
     ],
-    compat: "Kompatibel mit:",
+    compat: "100% KOMPATIBEL MIT DEINEN LIEBLINGS-APPS",
     highlight: "Null Aufwand.<br/>Maximaler Service."
   },
   difference: {
@@ -575,7 +575,7 @@ const itContent: ContentStructure = {
       { title: "Guida in Silenzio", desc: "Evita le chiacchiere forzate. Offri un ambiente rilassato e professionale." },
       { title: "Il Cliente Scopre", desc: "L'audio geolocalizzato si attiva solo nei punti di interesse. Magia pura." }
     ],
-    compat: "Ideale per:",
+    compat: "100% COMPATIBILE CON LE TUE APP PREFERITE",
     highlight: "Il tocco di classe<br/>che mancava."
   },
   difference: {
@@ -827,15 +827,32 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
       </section>
 
       {/* TRUST BAR (Compatible Apps) */}
-      <section className="bg-white py-8 border-b border-gray-100 overflow-hidden">
+      <section className="bg-white py-12 border-b border-gray-100 overflow-hidden">
          <div className="c-container">
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-30 grayscale hover:grayscale-0 transition-all duration-500">
-               <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Uber_logo_2018.svg" alt="Uber" className="h-5 md:h-7" />
-               <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Waze_logo.svg" alt="Waze" className="h-6 md:h-8" />
-               <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_with_text.svg" alt="Spotify" className="h-6 md:h-8" />
-               <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" className="h-6 md:h-8" />
-               <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" className="h-6 md:h-8" />
-               <div className="text-xs font-black uppercase tracking-tight text-gray-400 hidden lg:block">100% COMPATÍVEL</div>
+            <div className="flex flex-wrap justify-center items-center gap-10 md:gap-20 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
+               <div className="flex items-center gap-3">
+                  <img src="https://cdn.simpleicons.org/uber/4B5563" alt="Uber" className="h-6 md:h-8" />
+                  <span className="font-bold text-gray-400 text-lg">Uber</span>
+               </div>
+               <div className="flex items-center gap-3">
+                  <img src="https://cdn.simpleicons.org/waze/4B5563" alt="Waze" className="h-6 md:h-8" />
+                  <span className="font-bold text-gray-400 text-lg">Waze</span>
+               </div>
+               <div className="flex items-center gap-2">
+                  <img src="https://cdn.simpleicons.org/spotify/4B5563" alt="Spotify" className="h-6 md:h-8" />
+                  <span className="font-bold text-gray-400 text-lg">Spotify</span>
+               </div>
+               <div className="flex items-center gap-2">
+                  <img src="https://cdn.simpleicons.org/google/4B5563" alt="Google" className="h-6 md:h-8" />
+                  <span className="font-bold text-gray-400 text-lg">Google</span>
+               </div>
+               <div className="flex items-center gap-2">
+                  <img src="https://cdn.simpleicons.org/apple/4B5563" alt="Apple" className="h-6 md:h-8" />
+                  <span className="font-bold text-gray-400 text-lg">Apple</span>
+               </div>
+            </div>
+            <div className="mt-8 text-center">
+               <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-300">{t.howItWorks.compat}</span>
             </div>
          </div>
       </section>
@@ -901,26 +918,8 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
              <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-600/20 rounded-full blur-[90px] -ml-32 -mb-32"></div>
              
              <div className="relative z-10 flex flex-col items-center">
-                <h3 className="text-4xl md:text-6xl font-black mb-6 text-white tracking-tighter leading-tight" dangerouslySetInnerHTML={{ __html: t.howItWorks.highlight }}>
+                <h3 className="text-4xl md:text-6xl font-black mb-2 text-white tracking-tighter leading-tight" dangerouslySetInnerHTML={{ __html: t.howItWorks.highlight }}>
                 </h3>
-                <p className="text-gray-400 font-bold mb-10 text-xs md:text-sm uppercase tracking-widest px-4">
-                   {t.howItWorks.compat}
-                </p>
-                
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 w-full max-w-3xl mx-auto">
-                   <div className="flex items-center justify-center gap-2 bg-white/5 border border-white/10 px-3 py-4 rounded-2xl backdrop-blur-sm text-[11px] md:text-sm font-bold text-gray-200">
-                      <Navigation size={16} className="text-blue-400" /> <span className="whitespace-nowrap">Apple Maps</span>
-                   </div>
-                   <div className="flex items-center justify-center gap-2 bg-white/5 border border-white/10 px-3 py-4 rounded-2xl backdrop-blur-sm text-[11px] md:text-sm font-bold text-gray-200">
-                      <Map size={16} className="text-blue-400" /> <span className="whitespace-nowrap">Google Maps</span>
-                   </div>
-                   <div className="flex items-center justify-center gap-2 bg-white/5 border border-white/10 px-3 py-4 rounded-2xl backdrop-blur-sm text-[11px] md:text-sm font-bold text-gray-200">
-                      <Music size={16} className="text-green-400" /> <span className="whitespace-nowrap">Spotify</span>
-                   </div>
-                   <div className="flex items-center justify-center gap-2 bg-white/5 border border-white/10 px-3 py-4 rounded-2xl backdrop-blur-sm text-[11px] md:text-sm font-bold text-gray-200">
-                      <Car size={16} className="text-blue-400" /> <span className="whitespace-nowrap">Waze</span>
-                   </div>
-                </div>
              </div>
           </div>
 
