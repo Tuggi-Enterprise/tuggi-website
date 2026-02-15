@@ -9,6 +9,7 @@ interface LayoutProps {
   currentPage?: string;
   onPageChange?: (page: string) => void;
   hideHeader?: boolean;
+  minimalHeader?: boolean;
   hideFooter?: boolean;
 }
 
@@ -19,6 +20,7 @@ const Layout: React.FC<LayoutProps> = ({
   currentPage,
   onPageChange,
   hideHeader = false,
+  minimalHeader = false,
   hideFooter = false
 }) => {
   useEffect(() => {
@@ -48,6 +50,7 @@ const Layout: React.FC<LayoutProps> = ({
           onLanguageChange={onLanguageChange}
           currentPage={currentPage}
           onPageChange={onPageChange}
+          minimal={minimalHeader}
         />
       )}
       <main 

@@ -9,13 +9,15 @@ interface HeaderProps {
   onLanguageChange?: (lang: string) => void;
   currentPage?: string;
   onPageChange?: (page: string) => void;
+  minimal?: boolean;
 }
 
 const Header: React.FC<HeaderProps> = ({ 
   currentLanguage = 'PT', 
   onLanguageChange,
   currentPage = 'home',
-  onPageChange
+  onPageChange,
+  minimal = false
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -161,25 +163,27 @@ const Header: React.FC<HeaderProps> = ({
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-1" role="navigation" aria-label="Main navigation">
-              {navigationItems.map((item) => (
-                <button
-                  key={item.page}
-                  onClick={() => handleNavClick(item.page, item.label)}
-                  className={`px-4 py-2 font-medium transition-all duration-200 relative group rounded-lg hover:bg-tuggi-primary/5 ${
-                    currentPage === item.page
-                      ? 'text-tuggi-primary'
-                      : 'text-neutral-700 hover:text-tuggi-primary'
-                  }`}
-                  aria-current={currentPage === item.page ? 'page' : undefined}
-                >
-                  {item.label}
-                  <span className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-tuggi-primary transition-all duration-200 rounded-full ${
-                    currentPage === item.page ? 'w-6' : 'w-0 group-hover:w-6'
-                  }`}></span>
-                </button>
-              ))}
-            </nav>
+            {!minimal && (
+              <nav className="hidden lg:flex items-center space-x-1" role="navigation" aria-label="Main navigation">
+                {navigationItems.map((item) => (
+                  <button
+                    key={item.page}
+                    onClick={() => handleNavClick(item.page, item.label)}
+                    className={`px-4 py-2 font-medium transition-all duration-200 relative group rounded-lg hover:bg-tuggi-primary/5 ${
+                      currentPage === item.page
+                        ? 'text-tuggi-primary'
+                        : 'text-neutral-700 hover:text-tuggi-primary'
+                    }`}
+                    aria-current={currentPage === item.page ? 'page' : undefined}
+                  >
+                    {item.label}
+                    <span className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-tuggi-primary transition-all duration-200 rounded-full ${
+                      currentPage === item.page ? 'w-6' : 'w-0 group-hover:w-6'
+                    }`}></span>
+                  </button>
+                ))}
+              </nav>
+            )}
 
             {/* Language Selector (Desktop) & Mobile Menu Toggle */}
             <div className="flex items-center space-x-3">
@@ -238,22 +242,24 @@ const Header: React.FC<HeaderProps> = ({
           {/* Mobile Navigation */}
           {isMenuOpen && (
             <div className="lg:hidden py-4 border-t border-neutral-200 animate-fade-in max-h-[80vh] overflow-y-auto">
-              <nav className="flex flex-col space-y-1" role="navigation" aria-label="Mobile navigation">
-                {navigationItems.map((item) => (
-                  <button
-                    key={item.page}
-                    onClick={() => handleNavClick(item.page)}
-                    className={`text-left font-bold py-3 px-4 rounded-lg transition-all duration-200 ${
-                      currentPage === item.page
-                        ? 'text-tuggi-primary bg-tuggi-primary/5'
-                        : 'text-neutral-700 hover:text-tuggi-primary hover:bg-tuggi-primary/5'
-                    }`}
-                    aria-current={currentPage === item.page ? 'page' : undefined}
-                  >
-                    {item.label}
-                  </button>
-                ))}
-              </nav>
+              {!minimal && (
+                <nav className="flex flex-col space-y-1" role="navigation" aria-label="Mobile navigation">
+                  {navigationItems.map((item) => (
+                    <button
+                      key={item.page}
+                      onClick={() => handleNavClick(item.page)}
+                      className={`text-left font-bold py-3 px-4 rounded-lg transition-all duration-200 ${
+                        currentPage === item.page
+                          ? 'text-tuggi-primary bg-tuggi-primary/5'
+                          : 'text-neutral-700 hover:text-tuggi-primary hover:bg-tuggi-primary/5'
+                      }`}
+                      aria-current={currentPage === item.page ? 'page' : undefined}
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </nav>
+              )}
 
               {/* Language Selection in Mobile Menu */}
               <div className="mt-6 pt-6 border-t border-neutral-100 px-4">

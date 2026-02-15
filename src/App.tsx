@@ -562,7 +562,8 @@ function App() {
       currentPage={currentPage}
       onPageChange={handlePageChange}
       hideFooter={currentPage === 'gov' || currentPage === 'govPrivacy' || currentPage === 'govTerms'}
-      hideHeader={['govPrivacy', 'govTerms', 'motoristas-d', 'motoristas-e'].includes(currentPage)}
+      hideHeader={['govPrivacy', 'govTerms'].includes(currentPage)}
+      minimalHeader={currentPage.includes('motoristas') || currentPage.includes('drivers')}
     >
       {renderPage()}
       <CookieConsent currentLanguage={currentLanguage} />

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   X, Download, 
   Volume2, Navigation, Music, Car, 
@@ -32,6 +32,9 @@ interface ContentStructure {
     androidLabel: string;
     modalTitle: string;
     modalSub: string;
+    videoAlt: string;
+    appleAlt: string;
+    googleAlt: string;
   };
   howItWorks: { 
     title: string; 
@@ -90,7 +93,10 @@ const ptContent: ContentStructure = {
     appleLabel: "iPhone / iPad",
     androidLabel: "Android",
     modalTitle: "Comece a ganhar mais",
-    modalSub: "Baixe o aplicativo agora"
+    modalSub: "Baixe o aplicativo agora",
+    videoAlt: "Assista ao vídeo demonstrativo",
+    appleAlt: "Baixar na App Store",
+    googleAlt: "Disponível no Google Play"
   },
   howItWorks: {
     title: "COMO FUNCIONA", slogan: "Simples, rápido, lucrativo.", seeHow: "Ver como funciona",
@@ -181,7 +187,10 @@ const enContent: ContentStructure = {
     appleLabel: "iPhone / iPad",
     androidLabel: "Android",
     modalTitle: "Start earning more",
-    modalSub: "Select your app store"
+    modalSub: "Select your app store",
+    videoAlt: "Watch the demo video",
+    appleAlt: "Download on the App Store",
+    googleAlt: "Get it on Google Play"
   },
   howItWorks: {
     title: "HOW IT WORKS", slogan: "Drive. Entertain. Earn.", seeHow: "See it in action",
@@ -272,7 +281,10 @@ const esContent: ContentStructure = {
     appleLabel: "iPhone / iPad",
     androidLabel: "Android",
     modalTitle: "Empieza a ganar más",
-    modalSub: "Descarga la app ahora"
+    modalSub: "Descarga la app ahora",
+    videoAlt: "Ver el vídeo de demostración",
+    appleAlt: "Descargar en App Store",
+    googleAlt: "Disponible en Google Play"
   },
   howItWorks: {
     title: "CÓMO FUNCIONA", slogan: "Conduce. Entretiene. Gana.", seeHow: "Ver demo",
@@ -363,7 +375,10 @@ const frContent: ContentStructure = {
     appleLabel: "iPhone / iPad",
     androidLabel: "Android",
     modalTitle: "Télécharger Tuggi",
-    modalSub: "Choisissez votre magasin"
+    modalSub: "Choisissez votre magasin",
+    videoAlt: "Regarder la vidéo de démonstration",
+    appleAlt: "Télécharger sur l'App Store",
+    googleAlt: "Disponible sur Google Play"
   },
   howItWorks: {
     title: "COMMENT ÇA MARCHE", slogan: "Service. Excellence. Simplicité.", seeHow: "Voir la démo",
@@ -454,7 +469,10 @@ const deContent: ContentStructure = {
     appleLabel: "iPhone / iPad",
     androidLabel: "Android",
     modalTitle: "Mehr verdienen",
-    modalSub: "Laden Sie die App"
+    modalSub: "Laden Sie die App",
+    videoAlt: "Demo-Video ansehen",
+    appleAlt: "Laden im App Store",
+    googleAlt: "Erhältlich bei Google Play"
   },
   howItWorks: {
     title: "SO FUNKTIONIERT ES", slogan: "Fahren. Unterhalten. Verdienen.", seeHow: "Demo ansehen",
@@ -545,7 +563,10 @@ const itContent: ContentStructure = {
     appleLabel: "iPhone / iPad",
     androidLabel: "Android",
     modalTitle: "Scarica Tuggi Gratis",
-    modalSub: "Scegli il tuo store"
+    modalSub: "Scegli il tuo store",
+    videoAlt: "Guarda il video dimostrativo",
+    appleAlt: "Scarica su App Store",
+    googleAlt: "Disponibile su Google Play"
   },
   howItWorks: {
     title: "L'ESPERIENZA", slogan: "Elogianza. Semplicità.", seeHow: "Vedi come funziona",
@@ -646,6 +667,8 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
   const [activeTab, setActiveTab] = useState('turistas');
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [showDownloadSheet, setShowDownloadSheet] = useState(false);
+  const [isStickyVisible, setIsStickyVisible] = useState(false);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
   const getMobileOS = () => {
     if (typeof window === 'undefined') return 'other';
@@ -671,6 +694,15 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
 
     setShowDownloadSheet(true);
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show sticky CTA after HERO section (usually 600-800px)
+      setIsStickyVisible(window.scrollY > 400);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleStoreClick = (store: 'apple' | 'google', position: string) => {
     // onCTAClick in App.tsx now handles the redirection safely for all devices
@@ -698,7 +730,7 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
         <div className="absolute inset-0 z-0 opacity-20 contrast-125 mix-blend-overlay">
           <img 
             src="https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=2676&auto=format&fit=crop" 
-            alt="Explorando a cidade"
+            alt={t.hero.videoAlt}
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-gray-900/60 via-gray-900/90 to-gray-900 z-10"></div>
@@ -737,6 +769,22 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
                   </div>
                   <span className="text-sm font-bold tracking-tight text-left leading-tight">{t.hero.trustLine}.</span>
               </div>
+            </div>
+
+            {/* Desktop Authority Badges */}
+            <div className="hidden md:flex items-center gap-4 mt-8 opacity-70 hover:opacity-100 transition-opacity">
+               <img 
+                  src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1314144000&h=70" 
+                  alt={t.hero.appleAlt} 
+                  className="h-10 cursor-pointer"
+                  onClick={() => handleStoreClick('apple', 'hero_badge')}
+               />
+               <img 
+                  src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" 
+                  alt={t.hero.googleAlt} 
+                  className="h-10 cursor-pointer"
+                  onClick={() => handleStoreClick('google', 'hero_badge')}
+               />
             </div>
 
             <a 
@@ -960,15 +1008,37 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
               <p className="text-xl text-gray-500 font-medium leading-relaxed">{t.audio.sub}</p>
             </div>
 
-            <div className="relative w-full max-w-[340px] aspect-[9/16] rounded-[48px] overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.3)] border-[8px] border-neutral-900 group">
-               <iframe 
-                 className="w-full h-full"
-                 src="https://www.youtube.com/embed/pTgNlvI6pjU?autoplay=0&mute=0&loop=1&playlist=pTgNlvI6pjU&controls=1&showinfo=1&rel=0" 
-                 title="Tuggi App Preview"
-                 frameBorder="0"
-                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                 allowFullScreen
-               ></iframe>
+            <div className="relative w-full max-w-[340px] aspect-[9/16] rounded-[48px] overflow-hidden shadow-[0_32px_64px_-16px_rgba(0,0,0,0.3)] border-[8px] border-neutral-900 group bg-gray-100">
+               {!isVideoLoaded ? (
+                 <div 
+                   className="absolute inset-0 cursor-pointer flex items-center justify-center transition-transform group-hover:scale-105"
+                   onClick={() => setIsVideoLoaded(true)}
+                 >
+                    <img 
+                      src="https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=800&auto=format&fit=crop" 
+                      className="w-full h-full object-cover opacity-60"
+                      alt={t.hero.videoAlt}
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                       <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-2xl group-hover:bg-blue-500 transition-colors">
+                          <Plus size={40} className="rotate-45" fill="white" />
+                       </div>
+                    </div>
+                    {/* Floating help text */}
+                    <div className="absolute bottom-10 inset-x-0 text-center">
+                       <span className="bg-black/60 backdrop-blur-md px-4 py-2 rounded-full text-white text-xs font-black uppercase tracking-widest">{t.audio.demo}</span>
+                    </div>
+                 </div>
+               ) : (
+                 <iframe 
+                   className="w-full h-full"
+                   src="https://www.youtube.com/embed/pTgNlvI6pjU?autoplay=1&mute=0&loop=1&playlist=pTgNlvI6pjU&controls=1&showinfo=1&rel=0" 
+                   title="Tuggi App Preview"
+                   frameBorder="0"
+                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                   allowFullScreen
+                 ></iframe>
+               )}
                
                {/* Overlay Decoration */}
                <div className="absolute inset-0 pointer-events-none border-[2px] border-white/10 rounded-[40px]"></div>
@@ -1393,6 +1463,17 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
             </div>
          </div>
       )}
+
+      {/* STICKY MOBILE CTA */}
+      <div className={`c-sticky-cta md:hidden ${isStickyVisible ? 'visible' : ''}`}>
+         <button 
+           onClick={handleDownloadSheet}
+           className="w-full bg-[#1D1DFF] text-white py-4 rounded-xl font-black text-lg shadow-xl shadow-blue-600/20 active:scale-95 transition-all flex items-center justify-center gap-3"
+         >
+            {t.hero.cta}
+            <ChevronDown size={18} className="-rotate-90" />
+         </button>
+      </div>
 
     </div>
   );
