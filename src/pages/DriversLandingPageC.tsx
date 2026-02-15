@@ -74,7 +74,7 @@ interface ContentStructure {
   };
   testimonials: { title: string; sub: string; items: { name: string; role: string; text: string; location: string; img?: string }[]; avgRating: string; storeDownloads: string; nativeVoices: string; nativeVoicesLabel: string };
   faq: { title: string; items: { q: string; a: string }[] };
-  final: { h2: string; p: string; benefits: string[]; downloadOn: string; getItOn: string };
+  final: { h2: string; p: string; benefits: string[]; downloadOn: string; getItOn: string; trustLine: string };
 }
 // ==========================================
 // Content & Translations
@@ -165,13 +165,13 @@ const ptContent: ContentStructure = {
     items: [
       { q: "Gasta muita internet?", a: "No plano PRO, você baixa tudo no Wi-Fi e não gasta nada do seu 4G na rua." },
       { q: "Atrapalha o Waze?", a: "Não! O Tuggi abaixa o som quando fala e o Waze continua funcionando normal por cima." },
-      { q: "O passageiro vai gostar?", a: "Sim! As histórias são curtas (1 min) e interessantes. Não é aquela narração chata de museu." },
+      { q: "O passageiro vai gostar?", a: "Sim! As histórias são curtas (1 min) e interessantes. Não é aquela narração chata de museum." },
       { q: "Preciso ficar mexendo no celular?", a: "Não. Deixe no suporte. O app fala sozinho quando passa perto de algo legal." },
       { q: "Posso cancelar se não gostar?", a: "Claro. Cancela na hora direto na loja de aplicativos." },
       { q: "Serve para gringo?", a: "Demais! O app tem inglês, espanhol, francês... O gringo vai achar que você contratou um guia." }
     ] 
   },
-  final: { h2: "QUER GANHAR MAIS ESTRELAS?", p: "Baixe o Tuggi e faça o teste na sua próxima corrida.", benefits: ["Grátis para testar", "Aumente seus ganhos", "Cancele fácil"], downloadOn: "Baixar na", getItOn: "Disponível no" }
+  final: { h2: "QUER GANHAR MAIS ESTRELAS?", p: "Baixe o Tuggi e faça o teste na sua próxima corrida.", benefits: ["Grátis para testar", "Aumente seus ganhos", "Cancele fácil"], downloadOn: "Baixar na", getItOn: "Disponível no", trustLine: "Teste grátis agora mesmo" }
 };
 
 const enContent: ContentStructure = {
@@ -265,7 +265,7 @@ const enContent: ContentStructure = {
       { q: "Foreign passengers?", a: "Perfect! It speaks 8 languages. They'll think you hired a personal guide." }
     ] 
   },
-  final: { h2: "WANT BETTER RATINGS?", p: "Download Tuggi and test it on your next ride.", benefits: ["Free to start", "Increase earnings", "Easy cancel"], downloadOn: "Download on", getItOn: "Get it on" }
+  final: { h2: "Ready to Upgrade Your Ride?", p: "Download Tuggi and try it on your next trip.", benefits: ["Free to test", "Boost your tips", "Easy to cancel"], downloadOn: "Download on", getItOn: "Get it on", trustLine: "Start your free trial today" }
 };
 
 const esContent: ContentStructure = {
@@ -359,7 +359,7 @@ const esContent: ContentStructure = {
       { q: "¿Sirve para extranjeros?", a: "¡Perfecto! Tiene inglés, francés, alemán... Pensarán que eres un guía privado." }
     ] 
   },
-  final: { h2: "¿QUIERES MÁS ESTRELLAS?", p: "Descarga Tuggi y pruébalo en tu próximo viaje.", benefits: ["Gratis para probar", "Mejora ingresos", "Fácil de usar"], downloadOn: "Descargar en", getItOn: "Disponible en" }
+  final: { h2: "¿Listo para mejorar tu servicio?", p: "Descarga Tuggi y pruébalo en tu próximo viaje.", benefits: ["Prueba gratis", "Mejores propinas", "Cancela fácil"], downloadOn: "Descargar en", getItOn: "Disponible en", trustLine: "Pruébalo gratis hoy mismo" }
 };
 
 const frContent: ContentStructure = {
@@ -445,7 +445,7 @@ const frContent: ContentStructure = {
   faq: { 
     title: "QUESTIONS FRÉQUENTES", 
     items: [
-      { q: "Consommation de données ?", a: "Avec le mode PRO, téléchargez tout en Wi-Fi et ne consommez rien sur la route." },
+      { q: "Consommation de données ?", a: "Avec le mode PRO, téléchargez tout en Wi-Fi. Souscrivez à un plan pour ne rien consommer sur la route." },
       { q: "Gênant pour le GPS ?", a: "Non ! Tuggi baisse le volume quand il parle. Vous ne ratez aucune instruction." },
       { q: "Le client va aimer ?", a: "Oui ! Les histoires sont courtes et captivantes. Ce n'est pas un cours d'histoire ennuyeux." },
       { q: "Dois-je manipuler le téléphone ?", a: "Non. Laissez-le sur le support. Tout est automatique par GPS." },
@@ -453,7 +453,7 @@ const frContent: ContentStructure = {
       { q: "Pour les étrangers ?", a: "Parfait ! Il parle 8 langues. Ils penseront que vous êtes bilingue." }
     ] 
   },
-  final: { h2: "VISEZ L'EXCELLENCE", p: "Téléchargez Tuggi et testez-le sur votre prochaine course.", benefits: ["Gratuit pour tester", "Boostez vos revenus", "Sans engagement"], downloadOn: "Télécharger sur", getItOn: "Disponible sur" }
+  final: { h2: "Prêt à transformer vos trajets ?", p: "Téléchargez Tuggi e testez-le lors de votre prochaine course.", benefits: ["Essai gratuit", "Plus de pourboires", "Annulation facile"], downloadOn: "Télécharger sur", getItOn: "Disponible sur", trustLine: "Essai gratuit sans carte de crédit" }
 };
 
 const deContent: ContentStructure = {
@@ -547,7 +547,7 @@ const deContent: ContentStructure = {
       { q: "Ausländische Gäste?", a: "Perfekt! 8 Sprachen verfügbar. Wirkt wie ein persönlicher Guide." }
     ] 
   },
-  final: { h2: "BESSERE BEWERTUNG?", p: "Laden Sie Tuggi und testen Sie es bei der nächsten Fahrt.", benefits: ["Gratis testen", "Mehr Umsatz", "Einfach kündbar"], downloadOn: "Laden im", getItOn: "Erhältlich bei" }
+  final: { h2: "Bereit für mehr 5-Sterne-Fahrten?", p: "Laden Sie Tuggi herunter und testen Sie es bei Ihrer nächsten Fahrt.", benefits: ["Kostenlos testen", "Mehr Trinkgeld", "Einfach kündigen"], downloadOn: "Laden im", getItOn: "Erhältlich bei", trustLine: "Kostenlos testen. Sofort startklar." }
 };
 
 const itContent: ContentStructure = {
@@ -641,7 +641,7 @@ const itContent: ContentStructure = {
       { q: "Come gestisco la musica?", a: "Tuggi abbassa automaticamente la tua musica (Spotify/Radio) quando parla, e la rialza dopo." }
     ] 
   },
-  final: { h2: "PORTA IL TUO SERVIZIO AL LIVELLO SUCCESSIVO.", p: "Scarica Tuggi e fai la prova su strada oggi stesso.", benefits: ["Prova gratuita", "Qualità garantita", "Nessun vincolo"], downloadOn: "Scarica su", getItOn: "Disponibile su" }
+  final: { h2: "Vuoi più recensioni a 5 stelle?", p: "Scarica Tuggi e provalo durante la tua prossima corsa.", benefits: ["Prova gratuita", "Guadagni extra", "Cancella quando vuoi"], downloadOn: "Scarica su", getItOn: "Disponibile su", trustLine: "Prova gratuita illimitata. Nessuna carta richiesta." }
 };
 
 const content: Record<Language, ContentStructure> = {
@@ -701,7 +701,30 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
       setIsStickyVisible(window.scrollY > 400);
     };
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    
+    // Intersection Observer for scroll reveal animations
+    const observerOptions = {
+      threshold: 0.15,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          // Once visible, we can stop observing this element
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    const animatedElements = document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right');
+    animatedElements.forEach(el => observer.observe(el));
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
+    };
   }, []);
 
   const handleStoreClick = (store: 'apple' | 'google', position: string) => {
@@ -741,7 +764,7 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
             {t.hero.h1}
           </h1>
           
-          <p className="text-lg md:text-2xl text-gray-400 mb-8 md:mb-12 leading-relaxed font-medium mx-auto max-w-2xl">
+          <p className="text-lg md:text-2xl text-gray-400 mb-8 md:mb-12 leading-relaxed font-medium mx-auto max-w-2xl fade-in-up">
             {t.hero.sub}
           </p>
 
@@ -803,6 +826,20 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
         </div>
       </section>
 
+      {/* TRUST BAR (Compatible Apps) */}
+      <section className="bg-white py-8 border-b border-gray-100 overflow-hidden">
+         <div className="c-container">
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-30 grayscale hover:grayscale-0 transition-all duration-500">
+               <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Uber_logo_2018.svg" alt="Uber" className="h-5 md:h-7" />
+               <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Waze_logo.svg" alt="Waze" className="h-6 md:h-8" />
+               <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_with_text.svg" alt="Spotify" className="h-6 md:h-8" />
+               <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" className="h-6 md:h-8" />
+               <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" className="h-6 md:h-8" />
+               <div className="text-xs font-black uppercase tracking-tight text-gray-400 hidden lg:block">100% COMPATÍVEL</div>
+            </div>
+         </div>
+      </section>
+
       {/* REDESIGNED HOW IT WORKS (Connected Path) */}
       <section className="py-24 bg-white relative overflow-hidden" id="como-funciona">
         {/* Abstract background elements */}
@@ -810,7 +847,7 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-50 translate-x-1/2 translate-y-1/2"></div>
 
         <div className="c-container relative z-10">
-          <div className="text-center mb-20">
+          <div className="text-center mb-20 fade-in-up">
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tight relative inline-block">
                {t.howItWorks.title}
                <div className="h-1.5 w-full bg-blue-600 rounded-full mt-2"></div>
@@ -822,7 +859,7 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
             {/* Visual Line (Desktop) */}
             <div className="absolute top-1/2 left-0 w-full h-0.5 bg-dashed bg-gradient-to-r from-blue-100 via-blue-500 to-blue-100 hidden md:block -translate-y-12"></div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative fade-in-up">
                {t.howItWorks.steps.map((step: { title: string; desc: string }, i: number) => {
                  const Icons = [Download, Navigation, Volume2];
                  const Icon = Icons[i];
@@ -859,7 +896,7 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
           </div>
 
           {/* HIGH-IMPACT HIGHLIGHT BOX */}
-          <div className="mt-24 max-w-4xl mx-auto bg-neutral-900 rounded-[40px] p-10 md:p-16 overflow-hidden shadow-2xl relative border border-white/5 text-center">
+          <div className="mt-24 max-w-4xl mx-auto bg-neutral-900 rounded-[40px] p-10 md:p-16 overflow-hidden shadow-2xl relative border border-white/5 text-center fade-in-up">
              <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/20 rounded-full blur-[90px] -mr-32 -mt-32"></div>
              <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-600/20 rounded-full blur-[90px] -ml-32 -mb-32"></div>
              
@@ -904,7 +941,7 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
       {/* WHY DIFFERENT & REAL EXAMPLE UNIFIED */}
       <section className="c-section bg-gray-50/50 overflow-hidden" id="diferencial">
         <div className="c-container">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 fade-in-up">
             <h2 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tight">
                {t.difference.title}
             </h2>
@@ -912,7 +949,7 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
           </div>
           
           <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-0 rounded-[48px] overflow-hidden shadow-2xl border border-gray-200">
+            <div className="grid md:grid-cols-2 gap-0 rounded-[48px] overflow-hidden shadow-2xl border border-gray-200 fade-in-up">
               {/* Traditional */}
               <div className="bg-white p-8 md:p-14 flex flex-col border-b md:border-b-0 md:border-r border-gray-100 opacity-60 hover:opacity-100 transition-opacity">
                  <div className="mb-8 flex justify-center bg-gray-50 w-20 h-20 rounded-2xl items-center"><RouteOff size={40} className="text-gray-300"/></div>
@@ -944,7 +981,7 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
             </div>
 
             {/* INTEGRATED REAL EXAMPLE BOX */}
-            <div className="mt-8 bg-white rounded-[40px] p-8 md:p-16 shadow-xl border border-blue-50 relative overflow-hidden group">
+            <div className="mt-8 bg-white rounded-[40px] p-8 md:p-16 shadow-xl border border-blue-50 relative overflow-hidden group fade-in-up">
                <div className="absolute top-0 right-0 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-30 -mr-48 -mt-48 group-hover:bg-blue-100 transition-colors"></div>
                
                <div className="flex flex-col lg:flex-row gap-16 items-center relative z-10">
@@ -1140,7 +1177,7 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
                </div>
             </div>
             
-            <div className="bg-gray-50 rounded-[32px] p-8 md:p-16 shadow-none border border-gray-100 min-h-[400px]">
+            <div className="bg-gray-50 rounded-[32px] p-8 md:p-16 shadow-none border border-gray-100 min-h-[400px] fade-in-up">
                {Object.entries(t.tabs.items).map(([key, item]) => (
                   activeTab === key && (
                     <div key={key} className="grid md:grid-cols-2 gap-16 items-center w-full animate-fadeIn">
@@ -1185,10 +1222,10 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
       {/* PRICING */}
       <section className="c-section bg-gray-50" id="precos">
          <div className="c-container">
-            <h2 className="c-h2 text-center mb-4">{t.pricing.title}</h2>
-            <p className="text-center text-gray-600 mb-16">{t.pricing.sub}</p>
+            <h2 className="c-h2 text-center mb-4 fade-in-up">{t.pricing.title}</h2>
+            <p className="text-center text-gray-600 mb-16 fade-in-up">{t.pricing.sub}</p>
             
-            <div className="grid md:grid-cols-3 gap-8 items-start max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-8 items-start max-w-6xl mx-auto fade-in-up">
                {/* Free */}
                <div className="c-card border border-gray-200 hover:shadow-lg flex flex-col p-8 bg-white rounded-2xl">
                   <h3 className="text-gray-900 font-bold mb-4">{t.pricing.free.name}</h3>
@@ -1327,7 +1364,7 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
 
       {/* FAQ */}
       <section className="c-section bg-gray-50" id="faq">
-         <div className="c-container max-w-3xl">
+         <div className="c-container max-w-3xl fade-in-up">
             <h2 className="c-h2 text-center mb-12">{t.faq.title}</h2>
             
             <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden divide-y divide-gray-100">
