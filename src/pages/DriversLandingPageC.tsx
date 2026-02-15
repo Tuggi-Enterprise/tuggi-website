@@ -3,7 +3,7 @@ import {
   X, Download, 
   Volume2, Navigation, Music, Car, 
   Apple, Smartphone, RouteOff, Activity, Footprints,
-  Check, Star, Shield, CreditCard, 
+  Check, Star, Shield, 
   Plus, Lock, Globe,
   ChevronDown, Map, Bus, Train
 } from 'lucide-react';
@@ -79,468 +79,468 @@ interface ContentStructure {
 
 const ptContent: ContentStructure = {
   hero: {
-    h1: "Histórias em áudio, no exato lugar onde você está.",
-    sub: "O Tuggi toca automaticamente quando você caminha, dirige ou viaja.",
+    h1: "Transforme corridas chatas em experiências 5 estrelas.",
+    sub: "Surpreenda seus passageiros com histórias dos lugares por onde passa. Ganhe mais gorjetas e melhores avaliações.",
     trust: [
-      { icon: Check, text: "Funciona em segundo plano com Maps e Spotify." },
-      { icon: Globe, text: "Premium tem offline + 8 idiomas." }
+      { icon: Check, text: "Roda junto com Waze/Maps e Spotify." },
+      { icon: Star, text: "O segredo dos motoristas VIP." }
     ],
-    trustLine: "Teste grátis sem cartão de crédito",
-    cta: "Baixar agora",
+    trustLine: "Teste grátis agora mesmo",
+    cta: "Baixar Grátis",
     appleLabel: "iPhone / iPad",
     androidLabel: "Android",
-    modalTitle: "Baixar Tuggi Grátis",
-    modalSub: "Escolha sua loja de aplicativos"
+    modalTitle: "Comece a ganhar mais",
+    modalSub: "Baixe o aplicativo agora"
   },
   howItWorks: {
-    title: "COMO FUNCIONA", slogan: "Simples. Sem complicações.", seeHow: "Veja como funciona",
+    title: "COMO FUNCIONA", slogan: "Simples, rápido, lucrativo.", seeHow: "Ver como funciona",
     steps: [
-      { title: "Baixe e aperte Play", desc: "Não precisa escolher rotas ou planejar. Grátis para começar." },
-      { title: "Vá para qualquer lugar", desc: "Hotel, restaurante, castelo... não importa. Liberdade total." },
-      { title: "As histórias tocam sozinhas", desc: "Onde você estiver, contamos a história automaticamente. Sem você fazer nada." }
+      { title: "Dê o Play", desc: "Ligue o app no começo da corrida. Não precisa configurar nada." },
+      { title: "Dirija Tranquilo", desc: "Concentre-se no trânsito. O Tuggi fala nos momentos certos." },
+      { title: "Encante o Passageiro", desc: "Histórias curiosas quebram o gelo e criam uma experiência única." }
     ],
-    compat: "Funciona em segundo plano com:",
-    highlight: "Zero preparação.<br/>Máxima descoberta."
+    compat: "Funciona perfeitamente com:",
+    highlight: "Zero esforço.<br/>Muitas estrelas."
   },
   difference: {
-    title: "POR QUE O TUGGI É DIFERENTE",
-    sub: "A liberdade que você não encontra em guias comuns.",
-    bestChoice: "A melhor escolha",
-    caseStudy: "ESTUDO DE CASO",
+    title: "POR QUE USAR O TUGGI?",
+    sub: "A diferença entre uma corrida comum e uma inesquecível.",
+    bestChoice: "O melhor investimento",
+    caseStudy: "NA PRÁTICA",
     traditional: {
-      title: "Audioguias Tradicionais",
-      items: ["Compra de rota por cidade (ex: Roma Tour €59,90)", "Você deve planejar e criar sua rota", "Segue um caminho fixo e rígido", "Perde pontos históricos fora da rota"]
+      title: "Corrida Comum",
+      items: ["Silêncio constrangedor", "Rádio com propagandas chatas", "Passageiro no celular o tempo todo", "Apenas o valor da corrida"]
     },
     tuggi: {
-      title: "Com o Tuggi",
-      items: ["Assinatura única. Tudo liberado em todo o mundo.", "Funciona onde você estiver, sem GPS fixo", "Zero planejamento: é só baixar e apertar play", "Histórias em áudio em todo o trajeto"]
+      title: "Corrida com Tuggi",
+      items: ["Conteúdo interessante e culto", "Quebra-gelo natural", "Passageiro valoriza o serviço", "Mais chances de gorjeta"]
     },
     exampleBox: {
       title: "O PULO DO GATO",
-      p1: "Imagine que você planejou visitar o Coliseu hoje.",
-      p2: "Mas quem te conta sobre os 30 minutos de caminhada até lá?",
-      bullets: ["A rua romana de 2000 anos sob seus pés", "A fonte barroca onde soldados descansavam", "O portal medieval que o turismo ignora"],
-      footer: "O TUGGI CONTA ESTA JORNADA COMPLETA.",
-      cta: "Experimentar a Liberdade"
+      p1: "Pegou um passageiro indo para o Aeroporto?",
+      p2: "Em vez do silêncio, ele ouve do Tuggi: 'À sua direita, este prédio histórico foi...'",
+      bullets: ["Passageiro tira os fones", "Começa a prestar atenção", "Te agradece pela viagem diferenciada"],
+      footer: "VOCÊ VIRA O GUIA VIP, SEM ESFORÇO.",
+      cta: "Quero testar"
     }
   },
-  audio: { title: "VEJA COMO FUNCIONA NA PRÁTICA", sub: "Histórias imersivas e multilinguagem que tocam no lugar e momento certos.", demo: "Demonstração em tempo real" },
+  audio: { title: "OUÇA UM EXEMPLO", sub: "Qualidade de rádio, sincronia de GPS.", demo: "Ouvir demonstração" },
   where: {
-    title: "FUNCIONA EM QUALQUER TRAJETO", sub: "Não importa para onde você vai. Nós te acompanhamos.",
-    items: [{ title: "De carro", desc: "Perfeito para motoristas." }, { title: "No ônibus", desc: "Transforme cada trajeto." }, { title: "A pé", desc: "Descubra cada detalhe." }, { title: "No trem", desc: "Acompanhe a paisagem." }]
+    title: "FUNCIONA EM TODO LUGAR", sub: "Não importa a rota do app.",
+    items: [{ title: "Uber/99", desc: "Destaque-se na categoria." }, { title: "Táxi", desc: "Modernize seu serviço." }, { title: "Transfer", desc: "Profissionalismo total." }, { title: "Particular", desc: "Fidelize seus clientes." }]
   },
   tabs: {
     title: "PARA QUEM É O TUGGI?",
     items: {
-      turistas: { label: "Turistas", title: "TURISTAS E VIAJANTES", desc: "Vá além do guia turístico.", bullets: ["Não perca tempo planejando", "8 idiomas disponíveis"], cta: "Ver Planos" },
-      exploradores: { label: "Exploradores", title: "EXPLORADORES LOCAIS", desc: "Redescubra sua própria cidade.", bullets: ["Histórias inéditas", "Offline no Premium"], cta: "Baixar Grátis" },
-      motoristas: { label: "Motoristas", title: "MOTORISTAS", desc: "Torne suas viagens interessantes.", bullets: ["Ofereça experiência única", "Melhore suas avaliações"], cta: "Ver Planos" },
-      familias: { label: "Famílias", title: "FAMÍLIAS", desc: "Entretenimento cultural para todos.", bullets: ["Educativo sem ser chato", "Aprenda em família"], cta: "Experimentar Grátis" }
+      turistas: { label: "Turistas", title: "TURISTAS", desc: "Seu guia de bolso.", bullets: ["Não precisa de roteiro", "8 idiomas"], cta: "Ver Planos" },
+      exploradores: { label: "Exploradores", title: "CURIOSOS", desc: "Redescubra sua cidade.", bullets: ["Histórias que ninguém conta", "Olhe a cidade com outros olhos"], cta: "Baixar Grátis" },
+      motoristas: { label: "Motoristas", title: "MOTORISTAS DE APP", desc: "Suba de categoria.", bullets: ["Aumente suas gorjetas", "Melhore sua nota", "Ofereça 'mimos' digitais", "Diferencie-se da multidão"], cta: "Ver Planos" },
+      familias: { label: "Famílias", title: "FAMÍLIAS", desc: "Passeio sem tédio.", bullets: ["As crianças aprendem", "Diversão no trânsito"], cta: "Testar Grátis" }
     }
   },
   pricing: {
-    title: "ESCOLHA SEU PLANO", sub: "Comece grátis. Faça upgrade quando quiser.", trust: "Seguro e criptografado · Cancele a qualquer momento",
-    mostPopular: "Mais Vendido", allPlansInclude: "Todos os planos incluem", background: "Segundo plano", maps: "Compatível com Maps", curation: "Curadoria Cultural",
-    free: { name: "GRATUITO", price: "R$ 0", features: ["Histórias limitadas por dia", "Segundo plano", "Idioma do dispositivo", "Sempre online (sem cache)"], cta: "Começar Grátis" },
-    travel: { name: "VIAGEM (7 DIAS)", price: "R$ 14,90", features: ["Histórias ilimitadas", "Todos os idiomas", "Funciona Offline", "Narração Profissional", "Não renova automaticamente"], cta: "Começar 7 Dias" },
-    monthly: { name: "PREMIUM (ASSINATURA)", price: "R$ 39,90", features: ["30 dias recorrentes", "Histórias ilimitadas", "Todos os idiomas", "Funciona Offline", "Recomendado para profissionais", "Cancele quando quiser"], cta: "Assinar Premium" }
+    title: "INVISTA EM VOCÊ", sub: "Custa menos que uma bala por dia. Se paga na primeira gorjeta.", trust: "Cancele quando quiser",
+    mostPopular: "O preferido", allPlansInclude: "Tudo liberado", background: "Modo Background", maps: "Roda com Waze", curation: "Histórias Curadas",
+    free: { name: "GRÁTIS", price: "R$ 0", features: ["Histórias limitadas por dia", "Teste o impacto no passageiro", "Funciona com tela bloqueada"], cta: "Começar Agora" },
+    travel: { name: "SEMANAL", price: "R$ 14,90", features: ["Ideal para testar", "Tudo liberado", "Baixe offline para não gastar dados", "Áudio ilimitado"], cta: "Testar 7 Dias" },
+    monthly: { name: "PRO MENSAL", price: "R$ 39,90", features: ["O melhor custo-benefício", "R$ 1,33 por dia", "Economia de dados (Offline)", "Acesso total a 8 idiomas"], cta: "Assinar PRO" }
   },
   testimonials: {
-    title: "O QUE DIZEM NOSSOS USUÁRIOS", sub: "Mais de 5.000 pessoas já usam o Tuggi.",
-    avgRating: "Avaliação Média", storeDownloads: "Downloads Lojas", nativeVoices: "8 Idiomas", nativeVoicesLabel: "Vozes Nativas",
+    title: "QUEM USA APROVA", sub: "Milhares de motoristas já estão faturando mais.",
+    avgRating: "Nota Média", storeDownloads: "Downloads", nativeVoices: "8 Idiomas", nativeVoicesLabel: "Vozes Nativas",
     items: [
-      { name: "Giulia Mancini", role: "Turista", location: "Milão, Itália", text: "Usei o Tuggi durante as Olimpíadas. Foi incrível!", img: "/testimonials/giulia.png" },
-      { name: "Giuseppe Rossi", role: "Turista", location: "Lisboa, Portugal", text: "Baixei o plano grátis e me apaixonei.", img: "/testimonials/giuseppe.png" },
-      { name: "João Oliveira", role: "Motorista Uber", location: "Rio de Janeiro, Brasil", text: "Meus passageiros adoram!", img: "/testimonials/joao.png" }
+      { name: "Carlos Mendes", role: "Motorista Black", location: "São Paulo", text: "Cara, mudou meu jogo. O passageiro entra, ouve a história e já elogia. A gorjeta vem garantida.", img: "/testimonials/joao.png" },
+      { name: "Fernanda Lima", role: "Uber X", location: "Rio de Janeiro", text: "Uso para distrair o passageiro no trânsito. Eles param de reclamar da demora e prestam atenção na história.", img: "/testimonials/giulia.png" },
+      { name: "Roberto S.", role: "Taxista", location: "Curitiba", text: "Meus clientes fixos adoram. Dizem que meu táxi é o mais culto da cidade.", img: "/testimonials/giuseppe.png" }
     ]
   },
   faq: { 
-    title: "PERGUNTAS FREQUENTES", 
+    title: "DÚVIDAS FREQUENTES", 
     items: [
-      { q: "É grátis?", a: "Sim! Você tem histórias gratuitas limitadas por dia para sempre, sem precisar de cartão de crédito." },
-      { q: "Preciso planejar rotas?", a: "NÃO! Esse é o nosso diferencial. Vá para onde quiser, nós contamos a história sozinhos." },
-      { q: "Funciona com Waze ou Google Maps?", a: "Perfeitamente! Ele roda em segundo plano enquanto você usa seu GPS favorito." },
-      { q: "Preciso segurar o celular?", a: "Não! Coloque no suporte ou no bolso. As histórias tocam sozinhas via GPS." },
-      { q: "Gasta muita internet?", a: "Na versão grátis sim. O Premium permite baixar tudo e usar offline." },
-      { q: "Posso cancelar quando quiser?", a: "Claro! Você cancela a assinatura a qualquer momento com um clique." }
+      { q: "Gasta muita internet?", a: "No plano PRO, você baixa tudo no Wi-Fi e não gasta nada do seu 4G na rua." },
+      { q: "Atrapalha o Waze?", a: "Não! O Tuggi abaixa o som quando fala e o Waze continua funcionando normal por cima." },
+      { q: "O passageiro vai gostar?", a: "Sim! As histórias são curtas (1 min) e interessantes. Não é aquela narração chata de museu." },
+      { q: "Preciso ficar mexendo no celular?", a: "Não. Deixe no suporte. O app fala sozinho quando passa perto de algo legal." },
+      { q: "Posso cancelar se não gostar?", a: "Claro. Cancela na hora direto na loja de aplicativos." },
+      { q: "Serve para gringo?", a: "Demais! O app tem inglês, espanhol, francês... O gringo vai achar que você contratou um guia." }
     ] 
   },
-  final: { h2: "PRONTO PARA DESCOBRIR?", p: "Baixe grátis e comece agora.", benefits: ["Grátis todos os dias", "Sem cartão de crédito", "Cancele quando quiser"], downloadOn: "Baixar na", getItOn: "Disponível no" }
+  final: { h2: "QUER GANHAR MAIS ESTRELAS?", p: "Baixe o Tuggi e faça o teste na sua próxima corrida.", benefits: ["Grátis para testar", "Aumente seus ganhos", "Cancele fácil"], downloadOn: "Baixar na", getItOn: "Disponível no" }
 };
 
 const enContent: ContentStructure = {
   hero: {
-    h1: "Audio stories at the exact place where you are.",
-    sub: "Tuggi plays automatically as you walk, drive, or travel.",
+    h1: "Upgrade your ride experience. Boost your tips.",
+    sub: "Tuggi entertains your passengers with high-quality audio stories. You drive, we narrate.",
     trust: [
-      { icon: Check, text: "Works in background with Maps & Spotify." },
-      { icon: Globe, text: "Premium includes offline + 8 languages." }
+      { icon: Check, text: "Works in background with Google Maps & Waze." },
+      { icon: Star, text: "The secret to 5-star ratings." }
     ],
-    trustLine: "Free trial without credit card",
-    cta: "Download now",
+    trustLine: "Start your free trial today",
+    cta: "Download Free",
     appleLabel: "iPhone / iPad",
     androidLabel: "Android",
-    modalTitle: "Download Tuggi Free",
-    modalSub: "Choose your app store"
+    modalTitle: "Start earning more",
+    modalSub: "Select your app store"
   },
   howItWorks: {
-    title: "HOW IT WORKS", slogan: "Simple. Hassle-free.", seeHow: "See how it works",
+    title: "HOW IT WORKS", slogan: "Drive. Entertain. Earn.", seeHow: "See it in action",
     steps: [
-      { title: "Download & Press Play", desc: "No need to choose routes or plan. Free to start." },
-      { title: "Go Anywhere", desc: "Hotel, restaurant, castle... wherever. Total freedom." },
-      { title: "Stories Play Automatically", desc: "Wherever you are, we tell the story automatically." }
+      { title: "Press Play", desc: "Start the app when the ride begins. No setup needed." },
+      { title: "Drive Smoothly", desc: "Focus on the road. Tuggi plays stories automatically via GPS." },
+      { title: "Delight Riders", desc: "Guests love the local insights. Silence becomes an experience." }
     ],
-    compat: "Works in background with:",
-    highlight: "Zero preparation.<br/>Maximum discovery."
+    compat: "Works flawlessly with:",
+    highlight: "Zero effort.<br/>Better Ratings."
   },
   difference: {
-    title: "WHY TUGGI IS DIFFERENT",
-    sub: "The freedom you won't find in common guides.",
-    bestChoice: "Best Choice",
-    caseStudy: "CASE STUDY",
+    title: "WHY USE TUGGI?",
+    sub: "Turn a simple A-to-B ride into a premium service.",
+    bestChoice: "Best for Business",
+    caseStudy: "REAL SCENARIO",
     traditional: {
-      title: "Traditional Audio Guides",
-      items: ["Buy route per city (€59.90)", "You must plan and create your route", "Follow a fixed, rigid path", "Miss history hidden outside the route"]
+      title: "Standard Ride",
+      items: ["Awkward silence", "Generic radio ads", "Passenger on phone/bored", "Standard fare only"]
     },
     tuggi: {
-      title: "With Tuggi",
-      items: ["Single subscription. Worldwide access.", "Works where you are, no fixed GPS", "Zero planning: download and play", "Audio stories during the whole journey"]
+      title: "Ride with Tuggi",
+      items: ["Curated local storytelling", "Natural ice-breaker", "Passenger feels VIP", "Higher tip potential"]
     },
     exampleBox: {
-      title: "THE GAME CHANGER",
-      p1: "Imagine you planned to visit the Colosseum today.",
-      p2: "But who tells you about the 30-minute walk getting there?",
-      bullets: ["The 2000-year-old Roman street", "The baroque fountain", "The medieval portal"],
-      footer: "TUGGI NARRATES THE ENTIRE JOURNEY.",
-      cta: "Experience Freedom"
+      title: "THE TIP BOOSTER",
+      p1: "Taking a tourist to the Airport?",
+      p2: "Instead of silence, they hear: 'On your left, this historic building was...'",
+      bullets: ["Rider removes headphones", "Starts engaging with you", "Thanks you for the 'tour'"],
+      footer: "YOU BECOME A PRIVATE GUIDE, EFFORTLESSLY.",
+      cta: "Try it Free"
     }
   },
-  audio: { title: "SEE IT IN ACTION", sub: "Immersive multi-language stories.", demo: "Real-time demo" },
+  audio: { title: "HEAR THE QUALITY", sub: "Studio-recorded professional narration.", demo: "Listen to demo" },
   where: {
-    title: "WORKS ON ANY ROUTE", sub: "No matter where you go.",
-    items: [{ title: "By car", desc: "Perfect for drivers." }, { title: "Bus", desc: "Turn commute into fun." }, { title: "Walking", desc: "Discover every detail." }, { title: "Train", desc: "View with stories." }]
+    title: "WORKS EVERYWHERE", sub: "Compatible with any ride-share platform.",
+    items: [{ title: "Uber/Lyft", desc: "Stand out from other drivers." }, { title: "Limo/Black", desc: "Add a concierge touch." }, { title: "Taxi", desc: "Modernize your service." }, { title: "Private", desc: "Retain your VIP clients." }]
   },
   tabs: {
-    title: "WHO IS TUGGI FOR?",
+    title: "WHO IS IT FOR?",
     items: {
-      turistas: { label: "Tourists", title: "TRAVELERS & TOURISTS", desc: "Go beyond the tour guide.", bullets: ["Don't waste time planning", "8 languages available"], cta: "View Plans" },
-      exploradores: { label: "Explorers", title: "LOCAL EXPLORERS", desc: "Rediscover your city.", bullets: ["Unique stories", "Offline in Premium"], cta: "Download Free" },
-      motoristas: { label: "Drivers", title: "DRIVERS", desc: "Make trips interesting.", bullets: ["Unique experience", "Improve ratings"], cta: "View Plans" },
-      familias: { label: "Families", title: "FAMILIES", desc: "Cultural entertainment for all.", bullets: ["Educational content", "Learn as a family"], cta: "Try for Free" }
+      turistas: { label: "Tourists", title: "TRAVELERS", desc: "Your pocket guide.", bullets: ["No planning needed", "8 languages"], cta: "View Plans" },
+      exploradores: { label: "Explorers", title: "LOCALS", desc: "Rediscover your city.", bullets: ["Hidden gems", "New perspective"], cta: "Download Free" },
+      motoristas: { label: "Drivers", title: "PRO DRIVERS", desc: "Level up your business.", bullets: ["Boost your tips", "Get 5-star ratings", "Digital amenities", "Stand out"], cta: "View Plans" },
+      familias: { label: "Families", title: "FAMILIES", desc: "Fun for everyone.", bullets: ["Kids learn history", "Entertainment on the go"], cta: "Try Free" }
     }
   },
   pricing: {
-    title: "CHOOSE YOUR PLAN", sub: "Start free. Upgrade anytime.", trust: "Secure & Encrypted · Cancel anytime",
-    mostPopular: "Most Popular", allPlansInclude: "All plans include", background: "Background mode", maps: "Maps compatible", curation: "Cultural Curation",
-    free: { name: "FREE", price: "$ 0", features: ["Limited stories per day", "Background mode", "Device language", "Always online (no cache)"], cta: "Start Free" },
-    travel: { name: "TRAVEL (7 DAYS)", price: "$ 9.99", features: ["Unlimited stories", "All languages", "Works Offline", "Professional Narration", "No auto-renewal"], cta: "Start 7 Days" },
-    monthly: { name: "PREMIUM", price: "$ 24.99", features: ["30 days recurring", "Unlimited stories", "All languages", "Works Offline", "Recommended for pros", "Cancel anytime"], cta: "Subscribe Premium" }
+    title: "SMART INVESTMENT", sub: "Costs less than a gum. Pays for itself with one good tip.", trust: "Cancel anytime",
+    mostPopular: "Best Value", allPlansInclude: "All features included", background: "Background Mode", maps: "Waze Compatible", curation: "Premium Content",
+    free: { name: "FREE", price: "$ 0", features: ["Limited daily stories", "Test passenger reaction", "Works in background"], cta: "Start Free" },
+    travel: { name: "WEEKLY", price: "$ 9.99", features: ["Great for testing", "Unlimited access", "Offline mode (save data)", "All 8 languages"], cta: "Try 7 Days" },
+    monthly: { name: "PRO MONTHLY", price: "$ 24.99", features: ["Best value for pros", "$0.83 per day", "Offline mode", "Tax deductible expense"], cta: "Go PRO" }
   },
   testimonials: {
-    title: "WHAT OUR USERS SAY", sub: "Over 5,000 people use Tuggi.",
-    avgRating: "Average Rating", storeDownloads: "Store Downloads", nativeVoices: "8 Languages", nativeVoicesLabel: "Native Voices",
+    title: "DRIVER SAYS", sub: "Thousands of drivers are upgrading their service.",
+    avgRating: "Avg Rating", storeDownloads: "Downloads", nativeVoices: "8 Languages", nativeVoicesLabel: "Native Voices",
     items: [
-      { name: "Giulia Mancini", role: "Tourist", location: "Milan, Italy", text: "I used Tuggi during the Olympics in Milan. It was amazing to rediscover the city!", img: "/testimonials/giulia.png" },
-      { name: "Giuseppe Rossi", role: "Tourist", location: "Lisbon, Portugal", text: "I fell in love with the free plan. It's like having a local history expert in your pocket.", img: "/testimonials/giuseppe.png" },
-      { name: "João Oliveira", role: "Uber Driver", location: "Brazil", text: "My passengers love it! It creates natural conversations and my tips have definitely increased.", img: "/testimonials/joao.png" }
+      { name: "Michael T.", role: "Uber Black", location: "New York", text: "Game changer. Tourists love it and my tips have gone up significantly since I started using it.", img: "/testimonials/joao.png" },
+      { name: "Sarah J.", role: "Lyft Driver", location: "London", text: "I use it to fill the awkward silence. It works like a charm and passengers always ask about the app.", img: "/testimonials/giulia.png" },
+      { name: "David R.", role: "Taxi Driver", location: "San Francisco", text: "Finally something that adds value. I just drive, the app does the talking. Brilliant.", img: "/testimonials/giuseppe.png" }
     ]
   },
   faq: { 
-    title: "FREQUENTLY ASKED QUESTIONS", 
+    title: "FAQ", 
     items: [
-      { q: "Is it really free?", a: "Yes! You get limited free stories every day forever, no credit card required." },
-      { q: "Do I need to plan routes?", a: "NO! That's our difference. Go anywhere you want, and we tell the story automatically." },
-      { q: "Does it work with Waze or Google Maps?", a: "Perfectly! It runs in the background while you use your favorite GPS app." },
-      { q: "Do I need to hold the phone?", a: "No! Just put it in the holder or your pocket. Stories play automatically via GPS." },
-      { q: "Does it use a lot of data?", a: "In the free version, yes. Premium allows you to download everything and use it offline." },
-      { q: "Can I cancel whenever I want?", a: "Of course! You can cancel your subscription at any time with one click." }
+      { q: "Data usage?", a: "With PRO, you download everything on Wi-Fi and use 0 data while driving." },
+      { q: "Does it block Waze?", a: "No! Tuggi lowers volume when speaking, so you never miss a turn instruction." },
+      { q: "Will passengers like it?", a: "Yes! Stories are short (1 min) and fascinating. It's not a boring lecture." },
+      { q: "Do I need to touch the phone?", a: "No. Leave it in the mount. It plays automatically when near a landmark." },
+      { q: "Can I cancel?", a: "Yes, anytime directly in the App Store/Play Store." },
+      { q: "Foreign passengers?", a: "Perfect! It speaks 8 languages. They'll think you hired a personal guide." }
     ] 
   },
-  final: { h2: "READY TO DISCOVER?", p: "Download for free and start now.", benefits: ["Free stories daily", "No credit card", "Cancel anytime"], downloadOn: "Download on the", getItOn: "Get it on" }
+  final: { h2: "WANT BETTER RATINGS?", p: "Download Tuggi and test it on your next ride.", benefits: ["Free to start", "Increase earnings", "Easy cancel"], downloadOn: "Download on", getItOn: "Get it on" }
 };
 
 const esContent: ContentStructure = {
   hero: {
-    h1: "Historias en audio, exactamente donde estás.",
-    sub: "Tuggi se activa automáticamente mientras caminas, conduces o viajas.",
+    h1: "Convierte tu taxi en un tour privado.",
+    sub: "Ofrece una experiencia premium a tus pasajeros sin esfuerzo. Historias automáticas por GPS.",
     trust: [
-      { icon: Check, text: "Funciona en segundo plano con Maps y Spotify." },
-      { icon: Globe, text: "Premium incluye offline + 8 idiomas." }
+      { icon: Check, text: "Funciona con Waze, Google Maps y Spotify." },
+      { icon: Star, text: "Consigue mejores reseñas y propinas." }
     ],
-    trustLine: "Prueba gratis sin tarjeta de crédito",
-    cta: "Descargar ahora",
+    trustLine: "Pruébalo gratis hoy mismo",
+    cta: "Descargar Gratis",
     appleLabel: "iPhone / iPad",
     androidLabel: "Android",
-    modalTitle: "Descargar Tuggi Gratis",
-    modalSub: "Elige tu tienda"
+    modalTitle: "Empieza a ganar más",
+    modalSub: "Descarga la app ahora"
   },
   howItWorks: {
-    title: "CÓMO FUNCIONA", slogan: "Simple. Sin complicaciones.", seeHow: "Mira cómo funciona",
+    title: "CÓMO FUNCIONA", slogan: "Conduce. Entretiene. Gana.", seeHow: "Ver demo",
     steps: [
-      { title: "Descarga y pulsa Play", desc: "No necesita planificación. Gratis para empezar." },
-      { title: "Ve a cualquier parte", desc: "Hotel, restaurante... no importa. Libertad total." },
-      { title: "Las historias suenan solas", desc: "Donde estés, contamos la historia automáticamente." }
+      { title: "Dale al Play", desc: "Inicia la app al empezar la carrera. Sin configuraciones." },
+      { title: "Conduce normal", desc: "Tuggi cuenta historias cuando pasas cerca de algo interesante." },
+      { title: "Sorprende al cliente", desc: "El pasajero disfruta del viaje y valora tu servicio extra." }
     ],
-    compat: "Funciona en segundo plano con:",
-    highlight: "Cero preparación.<br/>Máximo descubrimiento."
+    compat: "Compatible con:",
+    highlight: "Cero esfuerzo.<br/>Servicio VIP."
   },
   difference: {
-    title: "POR QUÉ TUGGI ES DIFERENTE",
-    sub: "La libertad que no encuentras en guías comunes.",
-    bestChoice: "La mejor elección",
-    caseStudy: "ESTUDIO DE CASO",
+    title: "TU VENTAJA COMPETITIVA",
+    sub: "La diferencia entre un simple transporte y un servicio excelente.",
+    bestChoice: "Mejor Elección",
+    caseStudy: "EJEMPLO REAL",
     traditional: {
-      title: "Audio Guías Tradicionales",
-      items: ["Compra de ruta por ciudad", "Debes planificar tu ruta", "Camino fijo y rígido", "Pierdes la historia fuera de ruta"]
+      title: "Viaje Estándar",
+      items: ["Silencio incómodo", "Radio genérica", "Pasajero aburrido", "Tarifa básica"]
     },
     tuggi: {
-      title: "Con Tuggi",
-      items: ["Suscripción única. Todo el mundo.", "Funciona donde estés, sin GPS fijo", "Cero planificación: descarga y play", "Historias en audio todo el trayecto"]
+      title: "Viaje con Tuggi",
+      items: ["Narración cultural interesante", "Rompe el hielo natural", "Pasajero se siente VIP", "Mayor propina"]
     },
     exampleBox: {
-      title: "EL DIFERENCIAL",
-      p1: "Imagina que planeaste visitar el Coliseo.",
-      p2: "¿Pero quién te cuenta sobre la caminata?",
-      bullets: ["La calle romana antigua", "La fuente barroca", "El portal medieval"],
-      footer: "TUGGI NARRA ESTE VIAJE COMPLETO.",
-      cta: "Experimentar la Libertad"
+      title: "EL SECRETO",
+      p1: "¿Llevas a un turista al aeropuerto?",
+      p2: "En lugar de silencio, escuchan: 'A tu derecha, este edificio fue...'",
+      bullets: ["El cliente se quita los auriculares", "Muestra interés", "Te agradece el tour"],
+      footer: "TE CONVIERTES EN EL MEJOR ANFITRIÓN.",
+      cta: "Probar Gratis"
     }
   },
-  audio: { title: "MIRA CÓMO FUNCIONA", sub: "Historias inmersivas y multilingües.", demo: "Demo en tiempo real" },
+  audio: { title: "ESCUCHA LA CALIDAD", sub: "Narración profesional de estudio.", demo: "Demo en tiempo real" },
   where: {
-    title: "FUNCIONA EN CUALQUIER TRAYECTO", sub: "No importa a dónde vayas.",
-    items: [{ title: "Coche", desc: "Para conductores." }, { title: "Autobús", desc: "Viaje divertido." }, { title: "A pie", desc: "Detalles de tu ciudad." }, { title: "Tren", desc: "Paisaje con historia." }]
+    title: "FUNCIONA SIEMPRE", sub: "Sea cual sea tu plataforma.",
+    items: [{ title: "Taxi", desc: "Moderniza tu servicio." }, { title: "VTC/Uber", desc: "Destaca entre miles." }, { title: "Transfer", desc: "Profesionalidad total." }, { title: "Privado", desc: "Fideliza clientes." }]
   },
   tabs: {
-    title: "¿PARA QUIÉN ES TUGGI?",
+    title: "¿PARA QUIÉN ES?",
     items: {
-      turistas: { label: "Turistas", title: "TURISTAS Y VIAJEROS", desc: "Ve más allá de la guía.", bullets: ["Sin planning", "8 idiomas"], cta: "Ver Planes" },
-      exploradores: { label: "Exploradores", title: "EXPLORADORES LOCALES", desc: "Redescubre tu ciudad.", bullets: ["Historias inéditas", "Offline Premium"], cta: "Descargar Gratis" },
-      motoristas: { label: "Conductores", title: "CONDUCTORES", desc: "Viajes interesantes.", bullets: ["Experiencia única", "Mejora calificaciones"], cta: "Ver Planes" },
-      familias: { label: "Familias", title: "FAMILIAS", desc: "Cultura para todos.", bullets: ["Educativo", "En familia"], cta: "Probar Gratis" }
+      turistas: { label: "Turistas", title: "VIAJEROS", desc: "Tu guía personal.", bullets: ["Sin planes", "8 idiomas"], cta: "Ver Planes" },
+      exploradores: { label: "Exploradores", title: "CURIOSOS", desc: "Redescubre tu ciudad.", bullets: ["Secretos locales", "Nueva visión"], cta: "Descargar" },
+      motoristas: { label: "Conductores", title: "CONDUCTORES PRO", desc: "Mejora tu negocio.", bullets: ["Más propinas", "5 estrellas", "Amenidad digital", "Destaca"], cta: "Ver Planes" },
+      familias: { label: "Familias", title: "FAMILIAS", desc: "Cultura divertida.", bullets: ["Educativo", "Sin pantallas"], cta: "Probar" }
     }
   },
   pricing: {
-    title: "ELIGE TU PLAN", sub: "Empieza gratis. Sube cuando quieras.", trust: "Seguro y Cifrado · Cancela cuando quieras",
-    mostPopular: "Lo más vendido", allPlansInclude: "Todos los planes incluyen", background: "Segundo plano", maps: "Compatible con Maps", curation: "Curaduría Cultural",
-    free: { name: "GRATUITO", price: "0 €", features: ["Historias limitadas por día", "Modo fondo", "Idioma del dispositivo", "Siempre online (sin caché)"], cta: "Empezar Gratis" },
-    travel: { name: "VIAJE (7 DÍAS)", price: "9,99 €", features: ["Historias ilimitadas", "Todos los idiomas", "Funciona Offline", "Narración Profesional", "Sin renovación automática"], cta: "Empezar 7 Días" },
-    monthly: { name: "PREMIUM", price: "24,99 €", features: ["30 días recurrentes", "Historias ilimitadas", "Todos los idiomas", "Funciona Offline", "Recomendado para profesionales", "Cancela cuando quieras"], cta: "Suscribirse" }
+    title: "INVERSIÓN INTELIGENTE", sub: "Cuesta menos que un café. Se paga con una sola propina.", trust: "Deducible · Cancela cuando quieras",
+    mostPopular: "Más Popular", allPlansInclude: "Todo incluido", background: "Modo Segundo Plano", maps: "Compatible GPS", curation: "Contenido Premium",
+    free: { name: "GRATIS", price: "0 €", features: ["Prueba el impacto hoy", "Modo fondo", "Historias limitadas", "Online"], cta: "Empezar Gratis" },
+    travel: { name: "SEMANAL", price: "6,99 €", features: ["Ideal para probar", "Acceso ilimitado", "Modo Offline (ahorra datos)", "Todos los idiomas"], cta: "Probar 7 Días" },
+    monthly: { name: "PRO MENSUAL", price: "24,99 €", features: ["El favorito de los pros", "0,83 € al día", "Offline total", "Gasto deducible"], cta: "Ser PRO" }
   },
   testimonials: {
-    title: "LO QUE DICEN NUESTROS USUARIOS", sub: "Más de 5.000 personas usan Tuggi.",
-    avgRating: "Valoración Media", storeDownloads: "Descargas", nativeVoices: "8 Idiomas", nativeVoicesLabel: "Voces Nativas",
+    title: "OPINIÓN DE COMPAÑEROS", sub: "Miles de conductores ya lo usan.",
+    avgRating: "Valoración", storeDownloads: "Descargas", nativeVoices: "8 Idiomas", nativeVoicesLabel: "Voces Nativas",
     items: [
-      { name: "Giulia Mancini", role: "Turista", location: "Milán, Italia", text: "¡Usé Tuggi durante las Olimpiadas en Milán y fue increíble redescubrir la ciudad!", img: "/testimonials/giulia.png" },
-      { name: "Giuseppe Rossi", role: "Turista", location: "Lisboa, Portugal", text: "Me enamoré del plan gratis. Es como tener un experto en historia local en el bolsillo.", img: "/testimonials/giuseppe.png" },
-      { name: "João Oliveira", role: "Conductor Uber", location: "Brasil", text: "¡A mis pasajeros les encanta! Crea conversaciones naturales y mis propinas han subido.", img: "/testimonials/joao.png" }
+      { name: "Carlos R.", role: "Uber", location: "Madrid", text: "Mis pasajeros alucinan. Es un detalle que marca la diferencia y siempre comentan lo bueno que es.", img: "/testimonials/joao.png" },
+      { name: "Lucía M.", role: "Taxista", location: "Barcelona", text: "Perfecto para los trayectos al aeropuerto. Los turistas agradecen mucho la información en su idioma.", img: "/testimonials/giulia.png" },
+      { name: "Javier S.", role: "Cabify", location: "Sevilla", text: "Me ayuda a conseguir las 5 estrellas. Es fácil de usar y no molesta al GPS.", img: "/testimonials/giuseppe.png" }
     ]
   },
   faq: { 
     title: "PREGUNTAS FRECUENTES", 
     items: [
-      { q: "¿Es realmente gratis?", a: "¡Sí! Tienes historias gratuitas limitadas cada día para siempre, sin tarjeta de crédito." },
-      { q: "¿Debo planear rutas?", a: "¡NO! Esa es nuestra diferencia. Ve a donde quieras y nosotros contamos la historia solos." },
-      { q: "¿Funciona con Waze o Google Maps?", a: "¡Perfectamente! Funciona en segundo plano mientras usas tu app de navegación favorita." },
-      { q: "¿Debo sostener el móvil?", a: "¡No! Ponlo en el soporte o bolsillo. Las historias suenan solas por GPS." },
-      { q: "¿Consume muchos datos?", a: "La versión gratis sí. El Premium te permite descargar todo para usarlo offline." },
-      { q: "¿Puedo cancelar cuando quiera?", a: "¡Claro! Puedes cancelar tu suscripción en cualquier momento con un clic." }
+      { q: "¿Gasta muchos datos?", a: "Con el plan PRO, descargas todo con Wi-Fi y no gastas nada de datos móviles trabajando." },
+      { q: "¿Tapa las instrucciones del Waze?", a: "¡No! Tuggi baja el volumen suavemente al hablar, así nunca pierdes un giro." },
+      { q: "¿Le gustará al pasajero?", a: "¡Sí! Son historias cortas y curiosas. No es una audioguía aburrida de museo." },
+      { q: "¿Tengo que tocar el móvil?", a: "No. Déjalo en el soporte. Funciona solo por GPS." },
+      { q: "¿Puedo cancelar?", a: "Sí, cuando quieras desde la tienda de apps." },
+      { q: "¿Sirve para extranjeros?", a: "¡Perfecto! Tiene inglés, francés, alemán... Pensarán que eres un guía privado." }
     ] 
   },
-  final: { h2: "¿LISTO?", p: "Descarga gratis y comienza.", benefits: ["Gratis todos los días", "Sin tarjeta", "Cancela cuando quieras"], downloadOn: "Descargar en", getItOn: "Disponible en" }
+  final: { h2: "¿QUIERES MÁS ESTRELLAS?", p: "Descarga Tuggi y pruébalo en tu próximo viaje.", benefits: ["Gratis para probar", "Mejora ingresos", "Fácil de usar"], downloadOn: "Descargar en", getItOn: "Disponible en" }
 };
 
 const frContent: ContentStructure = {
   hero: {
-    h1: "Histoires audio, exactement là où vous êtes.",
-    sub: "Tuggi se lance automatiquement quand vous marchez, conduisez ou voyagez.",
+    h1: "L'élégance d'un voyage culturel, sans effort.",
+    sub: "Faites vivre une expérience 5 étoiles à vos passagers. Idéal pour VTC et Taxis premium.",
     trust: [
-      { icon: Check, text: "Fonctionne en arrière-plan avec Maps et Spotify." },
-      { icon: Globe, text: "Premium inclut le mode hors ligne + 8 langues." }
+      { icon: Check, text: "Compatible avec Waze et Google Maps." },
+      { icon: Star, text: "Augmentez vos pourboires et notes." }
     ],
     trustLine: "Essai gratuit sans carte de crédit",
-    cta: "Télécharger maintenant",
+    cta: "Télécharger Gratuitement",
     appleLabel: "iPhone / iPad",
     androidLabel: "Android",
-    modalTitle: "Télécharger Tuggi Gratuit",
-    modalSub: "Choisissez votre boutique"
+    modalTitle: "Télécharger Tuggi",
+    modalSub: "Choisissez votre magasin"
   },
   howItWorks: {
-    title: "COMMENT ÇA MARCHE", slogan: "Simple. Sans tracas.", seeHow: "Voir comment ça marche",
+    title: "COMMENT ÇA MARCHE", slogan: "Service. Excellence. Simplicité.", seeHow: "Voir la démo",
     steps: [
-      { title: "Téléchargez et lancez", desc: "Pas besoin de planifier. Gratuit pour commencer." },
-      { title: "Allez partout", desc: "Hôtel, restaurant... peu importe. Liberté totale." },
-      { title: "Histoires automatiques", desc: "Où que vous soyez, l'histoire se lance." }
+      { title: "Lancez l'app", desc: "Activez Tuggi au début de la course. C'est tout." },
+      { title: "Conduisez sereinement", desc: "L'app détecte les lieux et raconte l'histoire automatiquement." },
+      { title: "Impressionnez", desc: "Votre passager profite d'un service de conciergerie digitale." }
     ],
-    compat: "Fonctionne en arrière-plan avec :",
-    highlight: "Zéro préparation.<br/>Découverte maximale."
+    compat: "Compatible avec :",
+    highlight: "Zéro distraction.<br/>Service Premium."
   },
   difference: {
-    title: "POURQUOI TUGGI EST DIFFÉRENT",
-    sub: "La liberté que vous ne trouvez pas dans les guides classiques.",
-    bestChoice: "Le meilleur choix",
-    caseStudy: "ÉTUDE DE CAS",
+    title: "VOTRE ATOUT MAJEUR",
+    sub: "La touche qui fait toute la différence.",
+    bestChoice: "Le choix des Pros",
+    caseStudy: "EN SITUATION",
     traditional: {
-      title: "Audio Guides Classiques",
-      items: ["Achat par ville", "Itinéraire à planifier", "Chemin fixe", "Rate l'histoire hors trajet"]
+      title: "Course Classique",
+      items: ["Silence pesant", "Radio générique", "Passager indifferent", "Tarif standard"]
     },
     tuggi: {
-      title: "Avec Tuggi",
-      items: ["Abonnement unique. Monde entier.", "Fonctionne partout, sans GPS fixe", "Zéro planning : téléchargez et play", "Audio tout le trajet"]
+      title: "Course avec Tuggi",
+      items: ["Atmosphère culturelle", "Bris de glace élégant", "Passager valorisé", "Gratification supérieure"]
     },
     exampleBox: {
-      title: "LE PETIT PLUS",
-      p1: "Imaginez visiter le Colisée.",
-      p2: "Qui raconte la marche ?",
-      bullets: ["Rue romaine 2000 ans", "Fontaine baroque", "Portail médiéval"],
-      footer: "TUGGI RACONTE TOUT LE VOYAGE.",
-      cta: "Découvrir la Liberté"
+      title: "L'EFFET WOW",
+      p1: "Vous conduisez un touriste vers la Tour Eiffel ?",
+      p2: "Au lieu du silence, il entend : 'Sur votre gauche, ce palais a été construit...'",
+      bullets: ["Le client est captivé", "Il retire ses écouteurs", "Il vous remercie pour la découverte"],
+      footer: "VOUS DEVENEZ SON GUIDE PRIVÉ.",
+      cta: "Essayer l'Excellence"
     }
   },
-  audio: { title: "VOYEZ ÇA", sub: "Histoires immersives multi-langues.", demo: "Démo temps réel" },
+  audio: { title: "ÉCOUTEZ LA QUALITÉ", sub: "Narration studio professionnelle.", demo: "Démo temps réel" },
   where: {
-    title: "TOUT TRAJET", sub: "Peu importe où vous allez.",
-    items: [{ title: "Voiture", desc: "Pour conducteurs." }, { title: "Bus", desc: "Trajet plaisir." }, { title: "À pied", desc: "Détails de ville." }, { title: "Train", desc: "Paysage et histoires." }]
+    title: "PARTOUT EN FRANCE", sub: "Quelle que soit votre activité.",
+    items: [{ title: "VTC", desc: "Montez en gamme." }, { title: "Taxi", desc: "Fidélisez votre clientèle." }, { title: "Navette", desc: "Transformez le trajet." }, { title: "Privé", desc: "Service 5 étoiles." }]
   },
   tabs: {
     title: "POUR QUI ?",
     items: {
-      turistas: { label: "Touristes", title: "VOYAGEURS", desc: "Au-delà du guide.", bullets: ["Pas de planning", "8 langues"], cta: "Voir les Plans" },
-      exploradores: { label: "Explorateurs", title: "LOCAUX", desc: "Redécouvrez votre ville.", bullets: ["Inédit", "Hors ligne Premium"], cta: "Gratuit" },
-      motoristas: { label: "Chauffeurs", title: "CHAUFFEURS", desc: "Voyages intéressants.", bullets: ["Unique", "Meilleures notes"], cta: "Voir les Plans" },
-      familias: { label: "Familles", title: "FAMILLES", desc: "Culture pour tous.", bullets: ["Éducatif", "En famille"], cta: "Essayer Gratuit" }
+      turistas: { label: "Touristes", title: "VOYAGEURS", desc: "Votre guide personnel.", bullets: ["Sans effort", "8 langues"], cta: "Voir les Plans" },
+      exploradores: { label: "Explorateurs", title: "LOCAUX", desc: "Redécouvrez la ville.", bullets: ["Secrets cachés", "Nouvelle vision"], cta: "Gratuit" },
+      motoristas: { label: "Chauffeurs", title: "CHAUFFEURS PRO", desc: "Valorisez votre service.", bullets: ["Meilleures notes", "Service VIP", "Outil pro", "Démarquez-vous"], cta: "Voir les Plans" },
+      familias: { label: "Familles", title: "FAMILLES", desc: "Culture ludique.", bullets: ["Éducatif", "Sans écran"], cta: "Essayer" }
     }
   },
   pricing: {
-    title: "PLAN", sub: "Gratuit. Évoluez quand vous voulez.", trust: "Sécurisé · Annulez à tout moment",
-    mostPopular: "Populaire", allPlansInclude: "Tout inclus", background: "Arrière-plan", maps: "Maps", curation: "Curation",
-    free: { name: "GRATUITO", price: "0 €", features: ["Histoires limitées par jour", "Mode arrière-plan", "Langue du système", "Toujours en ligne (pas de cache)"], cta: "Commencer" },
-    travel: { name: "VOYAGE", price: "9,99 €", features: ["Histoires illimitées", "Toutes les langues", "Fonctionne hors ligne", "Narration Professionnelle", "Pas de renouvellement automatique"], cta: "7 Jours" },
-    monthly: { name: "PREMIUM", price: "24,99 €", features: ["30 jours récurrents", "Histoires illimitées", "Toutes les langues", "Fonctionne hors ligne", "Conseillé pour les pros", "Annulez quand vous voulez"], cta: "S'abonner" }
+    title: "INVESTISSEMENT RENTABLE", sub: "Moins cher qu'un café. Remboursé dès le premier pourboire.", trust: "Déductible · Sans engagement",
+    mostPopular: "Best Seller", allPlansInclude: "Tout inclus", background: "Mode Arrière-plan", maps: "Compatible GPS", curation: "Contenu Premium",
+    free: { name: "GRATUIT", price: "0 €", features: ["Testez l'impact ajourd'hui", "Mode arrière-plan", "Histoires limitées", "En ligne"], cta: "Commencer" },
+    travel: { name: "SEMAINE", price: "9,99 €", features: ["Idéal pour tester", "Accès illimité", "Mode Hors Ligne (économisez la data)", "Toutes les langues"], cta: "Essai 7 Jours" },
+    monthly: { name: "PRO MENSUEL", price: "24,99 €", features: ["Le choix des pros", "0,83 € par jour", "Hors ligne total", "Frais déductibles"], cta: "Devenir PRO" }
   },
   testimonials: {
-    title: "CE QUE DISENT NOS UTILISATEURS", sub: "Plus de 5000 personnes utilisent Tuggi.",
+    title: "L'AVIS DES PROS", sub: "Déjà adopté par l'élite des VTC.",
     avgRating: "Note Moyenne", storeDownloads: "Téléchargements", nativeVoices: "8 Langues", nativeVoicesLabel: "Voix Natives",
     items: [
-      { name: "Giulia Mancini", role: "Touriste", location: "Milan, Italie", text: "J'ai utilisé Tuggi pendant les JO à Milan. C'était incroyable de redécouvrir la ville !", img: "/testimonials/giulia.png" },
-      { name: "Giuseppe Rossi", role: "Touriste", location: "Lisbonne, Portugal", text: "Je suis tombé amoureux du plan gratuit. C'est comme avoir un expert en histoire dans sa poche.", img: "/testimonials/giuseppe.png" },
-      { name: "João Oliveira", role: "Chauffeur Uber", location: "Brésil", text: "Mes passagers adorent ! Ça crée des conversations naturelles et mes pourboires ont augmenté.", img: "/testimonials/joao.png" }
+      { name: "Thomas L.", role: "VTC", location: "Paris", text: "Mes clients internationaux adorent. C'est le petit plus qui me garantit 5 étoiles à chaque fois.", img: "/testimonials/giulia.png" },
+      { name: "Sophie M.", role: "Taxi", location: "Nice", text: "Parfait pour les trajets aéroport. Les touristes découvrent la Côte d'Azur sans que j'aie à parler anglais.", img: "/testimonials/giuseppe.png" },
+      { name: "Karim B.", role: "Chauffeur Privé", location: "Lyon", text: "Un outil indispensable pour se démarquer de la concurrence. Très simple à utiliser.", img: "/testimonials/joao.png" }
     ]
   },
   faq: { 
     title: "QUESTIONS FRÉQUENTES", 
     items: [
-      { q: "Est-ce vraiment gratuit ?", a: "Oui ! Vous avez des histoires gratuites limitées chaque jour, sans carte de crédit." },
-      { q: "Faut-il planifier des itinéraires ?", a: "NON ! C'est notre différence. Allez où vous voulez, Tuggi raconte tout seul." },
-      { q: "Est-ce que ça marche avec Waze ou Google Maps ?", a: "Parfaitement ! Ça tourne en arrière-plan pendant que vous utilisez votre GPS habituel." },
-      { q: "Dois-je tenir le téléphone ?", a: "Non ! Dans le support ou la poche. Les histoires se lancent d'elles-mêmes via GPS." },
-      { q: "Est-ce que ça consomme beaucoup de data ?", a: "La version gratuite oui. Le Premium permet de tout télécharger pour une utilisation hors ligne." },
-      { q: "Puis-je annuler quand je veux ?", a: "Absolument ! Vous pouvez annuler votre abonnement à tout moment en un clic." }
+      { q: "Consommation de données ?", a: "Avec le mode PRO, téléchargez tout en Wi-Fi et ne consommez rien sur la route." },
+      { q: "Gênant pour le GPS ?", a: "Non ! Tuggi baisse le volume quand il parle. Vous ne ratez aucune instruction." },
+      { q: "Le client va aimer ?", a: "Oui ! Les histoires sont courtes et captivantes. Ce n'est pas un cours d'histoire ennuyeux." },
+      { q: "Dois-je manipuler le téléphone ?", a: "Non. Laissez-le sur le support. Tout est automatique par GPS." },
+      { q: "Puis-je résilier ?", a: "Oui, à tout moment via l'App Store." },
+      { q: "Pour les étrangers ?", a: "Parfait ! Il parle 8 langues. Ils penseront que vous êtes bilingue." }
     ] 
   },
-  final: { h2: "PRÊT ?", p: "Téléchargez.", benefits: ["Gratuit", "Pas de carte", "Annulez"], downloadOn: "Télécharger sur", getItOn: "Disponible sur" }
+  final: { h2: "VISEZ L'EXCELLENCE", p: "Téléchargez Tuggi et testez-le sur votre prochaine course.", benefits: ["Gratuit pour tester", "Boostez vos revenus", "Sans engagement"], downloadOn: "Télécharger sur", getItOn: "Disponible sur" }
 };
 
 const deContent: ContentStructure = {
   hero: {
-    h1: "Audiogeschichten, genau dort, wo du bist.",
-    sub: "Tuggi schaltet sich automatisch ein, wenn du gehst, fährst oder reist.",
+    h1: "Mehrwert für Ihre Fahrgäste. Automatisch.",
+    sub: "Tuggi verwandelt Ihre Taxifahrt in eine 5-Sterne-Erfahrung. Einfach, effizient, lukrativ.",
     trust: [
-      { icon: Check, text: "Funktioniert im Hintergrund mit Maps & Spotify." },
-      { icon: Globe, text: "Premium beinhaltet Offline-Modus + 8 Sprachen." }
+      { icon: Check, text: "Läuft im Hintergrund mit Google Maps & Waze." },
+      { icon: Star, text: "Besseres Trinkgeld & Bewertungen." }
     ],
-    trustLine: "Kostenlos testen ohne Kreditkarte",
-    cta: "Jetzt herunterladen",
+    trustLine: "Kostenlos testen. Sofort startklar.",
+    cta: "Kostenlos Herunterladen",
     appleLabel: "iPhone / iPad",
     androidLabel: "Android",
-    modalTitle: "Tuggi kostenlos laden",
-    modalSub: "Wähle deinen Store"
+    modalTitle: "Mehr verdienen",
+    modalSub: "Laden Sie die App"
   },
   howItWorks: {
-    title: "SO FUNKTIONIERT ES", slogan: "Einfach. Stressfrei.", seeHow: "So funktioniert es",
+    title: "SO FUNKTIONIERT ES", slogan: "Fahren. Unterhalten. Verdienen.", seeHow: "Demo ansehen",
     steps: [
-      { title: "Laden & Play", desc: "Keine Planung nötig. Gratis starten." },
-      { title: "Überallhin", desc: "Hotel, Schloss... egal. Freiheit." },
-      { title: "Automatisch", desc: "Wo du bist, erzählen wir die Story." }
+      { title: "Starten", desc: "App bei Fahrtbeginn öffnen. Keine Einrichtung nötig." },
+      { title: "Fahren", desc: "Konzentrieren Sie sich auf den Verkehr. Tuggi erzählt automatisch." },
+      { title: "Begeistern", desc: "Gäste genießen hochwertige Audio-Inhalte statt Stille." }
     ],
-    compat: "Hintergrundmodus mit:",
-    highlight: "Null Vorbereitung.<br/>Maximales Erlebnis."
+    compat: "Kompatibel mit:",
+    highlight: "Null Aufwand.<br/>Maximaler Service."
   },
   difference: {
-    title: "DARUM IST TUGGI ANDERS",
-    sub: "Die Freiheit, die Sie in gewöhnlichen Reiseführern nicht finden.",
-    bestChoice: "Die beste Wahl",
-    caseStudy: "FALLSTUDIE",
+    title: "IHR VORTEIL",
+    sub: "Der Unterschied zwischen Transport und Service.",
+    bestChoice: "Beste Wahl",
+    caseStudy: "BEISPIEL",
     traditional: {
-      title: "Klassische Guides",
-      items: ["Kauf pro Stadt", "Eigene Planung", "Starrer Weg", "Verpasst Geschichte"]
+      title: "Standard Fahrt",
+      items: ["Unangenehme Stille", "Radio-Werbung", "Gast gelangweilt", "Nur Fahrpreis"]
     },
     tuggi: {
-      title: "Mit Tuggi",
-      items: ["Ein Abo. Ganze Welt.", "Überall ohne festes GPS", "Keine Planung", "Audio die ganze Zeit"]
+      title: "Fahrt mit Tuggi",
+      items: ["Kultur & Geschichte", "Eisbrecher", "Premium-Gefühl", "Höheres Trinkgeld"]
     },
     exampleBox: {
-      title: "DER VORTEIL",
-      p1: "Besuch im Kolosseum.",
-      p2: "Wer erzählt vom Weg?",
-      bullets: ["2000 Jahre alte Straße", "Barockbrunnen", "Mittelalterliches Portal"],
-      footer: "TUGGI ERZÄHLT ALLES.",
-      cta: "Freiheit erleben"
+      title: "DER TIP-BOOSTER",
+      p1: "Fahrt zum Flughafen oder Hotel?",
+      p2: "Statt Schweigen hören sie: 'Rechts sehen Sie das historische Rathaus...'",
+      bullets: ["Gast nimmt Kopfhörer ab", "Hört interessiert zu", "Bedankt sich für die Tour"],
+      footer: "SIE WERDEN ZUM PRIVAT-GUIDE.",
+      cta: "Jetzt Testen"
     }
   },
-  audio: { title: "AKTION", sub: "Immersive Geschichten.", demo: "Echtzeit-Demo" },
+  audio: { title: "QUALITÄT HÖREN", sub: "Professionelle Studio-Aufnahmen.", demo: "Live-Demo hören" },
   where: {
-    title: "ÜBERALL", sub: "Egal wohin du gehst.",
-    items: [{ title: "Auto", desc: "Für Fahrer." }, { title: "Bus", desc: "Spaß beim Pendeln." }, { title: "Zu Fuß", desc: "Alle Details." }, { title: "Zug", desc: "Aussicht & Story." }]
+    title: "ÜBERALL EINSATZBEREIT", sub: "Für jeden Fahrer geeignet.",
+    items: [{ title: "Taxi", desc: "Modernisieren Sie Ihren Service." }, { title: "Mietwagen", desc: "Exklusive Kundschaft." }, { title: "Uber/Bolt", desc: "Hervorstechen." }, { title: "Privat", desc: "Stammkunden binden." }]
   },
   tabs: {
     title: "FÜR WEN?",
     items: {
-      turistas: { label: "Touristen", title: "REISENDE", desc: "Mehr als ein Guide.", bullets: ["Keine Planung", "8 Sprachen"], cta: "Pläne ansehen" },
-      exploradores: { label: "Entdecker", title: "LOCALS", desc: "Stadt neu entdecken.", bullets: ["Unveröffentlicht", "Offline Premium"], cta: "Gratis" },
-      motoristas: { label: "Fahrer", title: "FAHRER", desc: "Interessante Fahrten.", bullets: ["Einzigartig", "Bessere Bewertungen"], cta: "Pläne" },
-      familias: { label: "Familien", title: "FAMILIEN", desc: "Kultur für alle.", bullets: ["Lehrreich", "In der Familie"], cta: "Gratis testen" }
+      turistas: { label: "Touristen", title: "REISENDE", desc: "Ihr Pocket-Guide.", bullets: ["Keine Planung", "8 Sprachen"], cta: "Pläne ansehen" },
+      exploradores: { label: "Entdecker", title: "LOCALS", desc: "Stadt neu entdecken.", bullets: ["Geheimtipps", "Neue Perspektive"], cta: "Gratis laden" },
+      motoristas: { label: "Fahrer", title: "PROFI-FAHRER", desc: "Business-Upgrade.", bullets: ["Mehr Trinkgeld", "Top Bewertungen", "Digitaler Service", "Konkurrenzvorteil"], cta: "Pläne ansehen" },
+      familias: { label: "Familien", title: "FAMILIEN", desc: "Spaß für alle.", bullets: ["Bildung", "Keine Bildschirme"], cta: "Testen" }
     }
   },
   pricing: {
-    title: "PLAN", sub: "Gratis. Upgrade jederzeit.", trust: "Sicher · Jederzeit kündbar",
-    mostPopular: "Beliebt", allPlansInclude: "Alles inklusive", background: "Hintergrund", maps: "Maps", curation: "Kuration",
-    free: { name: "GRATIS", price: "0 €", features: ["Begrenzte Geschichten pro Tag", "Hintergrundmodus", "Gerätesprache", "Immer online (kein Cache)"], cta: "Start" },
-    travel: { name: "REISE", price: "9,99 €", features: ["Unbegrenzte Geschichten", "Alle Sprachen", "Offline-Modus", "Professionelle Sprecher", "Keine automatische Verlängerung"], cta: "7 Tage" },
-    monthly: { name: "PREMIUM", price: "24,99 €", features: ["30 Tage wiederkehrend", "Unbegrenzte Geschichten", "Alle Sprachen", "Offline-Modus", "Empfohlen für Profis", "Jederzeit kündbar"], cta: "Abonnieren" }
+    title: "SMARTE INVESTITION", sub: "Kostet weniger als ein Kaffee. Zahlt sich mit einem Trinkgeld aus.", trust: "Steuerlich absetzbar · Jederzeit kündbar",
+    mostPopular: "Bestseller", allPlansInclude: "Alles inklusive", background: "Hintergrund-Modus", maps: "Navi-Kompatibel", curation: "Premium Inhalt",
+    free: { name: "GRATIS", price: "0 €", features: ["Wirkung testen", "Hintergrund-Modus", "Limitierte Stories", "Online"], cta: "Gratis Starten" },
+    travel: { name: "WOCHE", price: "9,99 €", features: ["Ideal zum Testen", "Unbegrenzter Zugang", "Offline-Modus (Daten sparen)", "Alle Sprachen"], cta: "7 Tage Testen" },
+    monthly: { name: "PRO MONAT", price: "24,99 €", features: ["Profi-Wahl", "0,83 € pro Tag", "Voll Offline", "Absetzbare Kosten"], cta: "PRO werden" }
   },
   testimonials: {
-    title: "WAS UNSERE NUTZER SAGEN", sub: "Über 5.000 Menschen nutzen bereits Tuggi.",
-    avgRating: "Durchschnitt", storeDownloads: "Downloads", nativeVoices: "8 Sprachen", nativeVoicesLabel: "Native Stimmen",
+    title: "DAS SAGEN KOLLEGEN", sub: "Tausende Fahrer nutzen es bereits.",
+    avgRating: "Bewertung", storeDownloads: "Downloads", nativeVoices: "8 Sprachen", nativeVoicesLabel: "Native Speaker",
     items: [
-      { name: "Giulia Mancini", role: "Tourist", location: "Mailand, Italien", text: "Ich habe Tuggi während der Olympischen Spiele in Mailand benutzt. Es war unglaublich, die Stadt neu zu entdecken!", img: "/testimonials/giulia.png" },
-      { name: "Giuseppe Rossi", role: "Tourist", location: "Lissabon, Portugal", text: "Ich habe mich in die Gratis-Version verliebt. Es ist, als hätte man einen lokalen Geschichtsexperten in der Tasche.", img: "/testimonials/giuseppe.png" },
-      { name: "João Oliveira", role: "Uber-Fahrer", location: "Brasilien", text: "Meine Fahrgäste lieben es! Es entstehen tolle Gespräche und meine Trinkgelder sind gestiegen.", img: "/testimonials/joao.png" }
+      { name: "Markus Schmidt", role: "Taxi", location: "Berlin", text: "Meine Fahrgäste sind begeistert. Endlich habe ich etwas, das mich von Uber unterscheidet.", img: "/testimonials/joao.png" },
+      { name: "Lisa M.", role: "Mietwagen", location: "München", text: "Super für Flughafentransfers. Die Touristen lieben die Infos über Bayern.", img: "/testimonials/giulia.png" },
+      { name: "Ali K.", role: "Uber", location: "Frankfurt", text: "Hilft mir sehr bei den Bewertungen. Die App läuft einfach mit.", img: "/testimonials/giuseppe.png" }
     ]
   },
   faq: { 
-    title: "HÄUFIG GESTELLTE FRAGEN", 
+    title: "HÄUFIGE FRAGEN", 
     items: [
-      { q: "Ist es wirklich kostenlos?", a: "Ja! Du bekommst jeden Tag begrenzte Gratis-Geschichten, ganz ohne Kreditkarte." },
-      { q: "Muss ich Routen planen?", a: "NEIN! Das ist unser Vorteil. Geh wohin du willst, wir erzählen die Geschichte." },
-      { q: "Funktioniert es mit Waze oder Google Maps?", a: "Perfekt! Es läuft im Hintergrund, während du deine Lieblings-Navi-App nutzt." },
-      { q: "Muss ich das Handy halten?", a: "Nein! Ab in die Halterung oder Tasche. Stories starten automatisch per GPS." },
-      { q: "Verbraucht es viel Datenvolumen?", a: "In der Gratis-Version ja. Premium erlaubt den Download aller Inhalte für offline." },
-      { q: "Kann ich jederzeit kündigen?", a: "Natürlich! Du kannst dein Abo jederzeit mit einem Klick beenden." }
+      { q: "Datenverbrauch?", a: "Mit PRO laden Sie alles im WLAN. Unterwegs 0 Datenverbrauch." },
+      { q: "Stört das Navi?", a: "Nein! Tuggi wird leiser, wenn es spricht. Sie hören jede Abbiegehinweise." },
+      { q: "Mögen Gäste das?", a: "Ja! Die Stories sind kurz und spannend. Kein langweiliger Vortrag." },
+      { q: "Muss ich das Handy bedienen?", a: "Nein. In die Halterung stecken. GPS macht den Rest automatisch." },
+      { q: "Kann ich kündigen?", a: "Ja, jederzeit direkt im App Store." },
+      { q: "Ausländische Gäste?", a: "Perfekt! 8 Sprachen verfügbar. Wirkt wie ein persönlicher Guide." }
     ] 
   },
-  final: { h2: "BEREIT?", p: "Laden.", benefits: ["Gratis", "Keine Karte", "Kündbar"], downloadOn: "Laden im", getItOn: "Erhältlich bei" }
+  final: { h2: "BESSERE BEWERTUNG?", p: "Laden Sie Tuggi und testen Sie es bei der nächsten Fahrt.", benefits: ["Gratis testen", "Mehr Umsatz", "Einfach kündbar"], downloadOn: "Laden im", getItOn: "Erhältlich bei" }
 };
 
 const itContent: ContentStructure = {
   hero: {
-    h1: "Il Copilota Culturale che eleva il tuo servizio.",
-    sub: "Tuggi intrattiene i passeggeri con storie geolocalizzate di alta qualità. Ideale per NCC, Taxi e Uber che puntano all'eccellenza.",
+    h1: "Il Copilota Silenzioso per un Servizio a 5 Stelle.",
+    sub: "Distinguiti con classe. Tuggi racconta il territorio ai tuoi passeggeri mentre tu ti concentri sulla guida perfetta.",
     trust: [
-      { icon: Check, text: "Compatibile con Uber/Taxi/NCC. Non blocca il navigatore." },
-      { icon: Smartphone, text: "Installazione immediata. Nessun hardware richiesto." }
+      { icon: Check, text: "Zero Distrazioni. Tu guidi, l'app racconta." },
+      { icon: Smartphone, text: "Massima Discrezione. Mai invasivo." }
     ],
-    trustLine: "Prova gratuita illimitata. Nessuna carta di credito richiesta.",
+    trustLine: "Prova gratuita illimitata. Nessuna carta richiesta.",
     cta: "Inizia la Prova Gratuita",
     appleLabel: "iPhone / iPad",
     androidLabel: "Android",
@@ -548,34 +548,34 @@ const itContent: ContentStructure = {
     modalSub: "Scegli il tuo store"
   },
   howItWorks: {
-    title: "COME FUNZIONA", slogan: "Efficienza pura. Zero distrazioni.", seeHow: "Vedi come funziona",
+    title: "L'ESPERIENZA", slogan: "Elogianza. Semplicità.", seeHow: "Vedi come funziona",
     steps: [
-      { title: "Scarica e Parti", desc: "Nessuna configurazione complessa. Pronto in un click." },
-      { title: "Guida Liberamente", desc: "Tu guidi, Tuggi si occupa dell'intrattenimento." },
-      { title: "Valore Aggiunto Automatico", desc: "Narrazione professionale in 8 lingue, perfettamente sincronizzata." }
+      { title: "Attiva in 1 Click", desc: "Prima di partire, apri l'app. Nessuna configurazione complessa." },
+      { title: "Guida in Silenzio", desc: "Evita le chiacchiere forzate. Offri un ambiente rilassato e professionale." },
+      { title: "Il Cliente Scopre", desc: "L'audio geolocalizzato si attiva solo nei punti di interesse. Magia pura." }
     ],
-    compat: "Funziona in background con:",
-    highlight: "Massima Resa.<br/>Minimo Sforzo."
+    compat: "Ideale per:",
+    highlight: "Il tocco di classe<br/>che mancava."
   },
   difference: {
     title: "DISTINGUITI DALLA MASSA",
     sub: "La professionalità che i clienti notano subito.",
     bestChoice: "La scelta migliore",
-    caseStudy: "CASO DI STUDIO",
+    caseStudy: "CASO REALE",
     traditional: {
-      title: "Viaggio Tradizionale",
-      items: ["Silenzio imbarazzante", "Radio generica o disturbante", "Chiacchiere di circostanza", "Il passeggero si annoia"]
+      title: "Il Solito Transfer",
+      items: ["Silenzio imbarazzante o radio generica", "Il cliente guarda il telefono annoiato", "Nessun valore aggiunto al servizio", "Mancia standard o assente"]
     },
     tuggi: {
-      title: "Con Tuggi",
-      items: ["Intrattenimento premium automatico", "Mance più alte e recensioni 5 stelle", "Privacy e relax per il passeggero", "Storie geolocalizzate in 8 lingue"]
+      title: "Con Tuggi Drive",
+      items: ["Intrattenimento VIP automatico", "Il cliente si sente un ospite speciale", "Conversazioni di qualità (se richieste)", "Mance più alte e Recensioni Top"]
     },
     exampleBox: {
-      title: "IL VALORE AGGIUNTO",
-      p1: "Immagina un transfer verso Malpensa o il Centro.",
-      p2: "Invece del silenzio, offri una narrazione esclusiva.",
-      bullets: ["La storia del Palazzo che stanno guardando", "Curiosità sulla moda e design", "Aneddoti storici su Milano"],
-      footer: "TUGGI TRASFORMA IL TRASPORTO IN ESPERIENZA.",
+      title: "IL ROI DEL SERVIZIO",
+      p1: "Immagina un transfer Linate-Centro nel traffico.",
+      p2: "Invece di sbuffare, il cliente ascolta la storia di Milano.",
+      bullets: ["Clienti Business rilassati", "Turisti affascinati", "Percezione di lusso immediata"],
+      footer: "INVESTIMENTO MINIMO, RITORNO MASSIMO.",
       cta: "Prova l'Eccellenza"
     }
   },
@@ -594,19 +594,19 @@ const itContent: ContentStructure = {
     }
   },
   pricing: {
-    title: "PIANI PROFESSIONALI", sub: "Investimento minimo, ritorno immediato.", trust: "Deducibile al 100% · Fatturabile",
+    title: "INVESTIMENTO INTELLIGENTE", sub: "Deducibile al 100%. Meno di un caffè al giorno.", trust: "Fatturabile · Nessun vincolo",
     mostPopular: "Best Seller", allPlansInclude: "Tutto incluso", background: "Background", maps: "Compatibile Maps/Waze", curation: "Contenuti Premium",
-    free: { name: "BASIC", price: "0 €", features: ["Testa il servizio", "Modalità background", "Audio limitati", "Online"], cta: "Inizia Gratis" },
-    travel: { name: "SETTIMANALE", price: "6,99 €", features: ["Ideale per alta stagione", "Tutte le lingue", "Offline", "No rinnovo automatico", "Audio illimitati"], cta: "Attiva 7 Giorni" },
-    monthly: { name: "PRO (MENSILE)", price: "19,99 €", features: ["Meno di 1€ al giorno", "Audio illimitati", "Tutte le lingue", "Offline totale", "Massima priorità"], cta: "Diventa PRO" }
+    free: { name: "BASIC", price: "0 €", features: ["Testa il servizio oggi", "Modalità background", "Audio limitati", "Online"], cta: "Inizia Gratis" },
+    travel: { name: "SETTIMANALE", price: "6,99 €", features: ["Perfetto per alta stagione", "Tutte le lingue", "Offline", "No rinnovo automatico", "Audio illimitati"], cta: "Attiva 7 Giorni" },
+    monthly: { name: "PRO (MENSILE)", price: "19,99 €", features: ["Solo 0,66€ al giorno", "Audio illimitati", "Tutte le lingue", "Offline totale", "Recuperi con 2 mance"], cta: "Diventa PRO" }
   },
   testimonials: {
-    title: "DICONO I COLLEGHI", sub: "Già scelto dai migliori driver di Milano.",
+    title: "DICONO I COLLEGHI", sub: "Già scelto dai migliori driver di Milano e Roma.",
     avgRating: "Media Recensioni", storeDownloads: "Download", nativeVoices: "8 Lingue", nativeVoicesLabel: "Doppiaggio Pro",
     items: [
-      { name: "Marco Valli", role: "Driver NCC", location: "Milano, Italia", text: "I clienti americani impazziscono. Spesso mi chiedono di allungare il giro per finire la storia. Mance raddoppiate.", img: "/testimonials/giulia.png" },
-      { name: "Giuseppe Rossi", role: "Tassista", location: "Roma, Italia", text: "Finalmente qualcosa di utile. Lo accendo, il cliente ascolta, io guido tranquillo. Servizio top.", img: "/testimonials/giuseppe.png" },
-      { name: "Luca B.", role: "Uber Black", location: "Milano", text: "Fa la differenza tra un passaggio e un'esperienza. I turisti lasciano sempre 5 stelle.", img: "/testimonials/joao.png" }
+      { name: "Marco Valli", role: "Driver NCC", location: "Milano", text: "I clienti americani impazziscono. Spesso mi chiedono il nome dell'app appena scendono. Mance raddoppiate.", img: "/testimonials/giulia.png" },
+      { name: "Giuseppe Rossi", role: "Tassista", location: "Roma", text: "Finalmente. Lo accendo, il cliente indossa le cuffie o ascolta in auto, e io guido tranquillo. Servizio top.", img: "/testimonials/giuseppe.png" },
+      { name: "Luca B.", role: "Uber Black", location: "Milano", text: "Fa la differenza tra un semplice passaggio e un'esperienza di lusso. 5 stelle fisse.", img: "/testimonials/joao.png" }
     ]
   },
   faq: { 
@@ -616,7 +616,7 @@ const itContent: ContentStructure = {
       { q: "Devo interagire con l'app mentre guido?", a: "Assolutamente no. Una volta avviato, fa tutto da solo basandosi sul GPS. Guida in sicurezza." },
       { q: "Le storie sono in altre lingue?", a: "Sì, copriamo 8 lingue (Inglese, Francese, Spagnolo, Tedesco...). Rileva la lingua del telefono o la imposti tu." },
       { q: "Posso scaricarlo sul tablet dell'auto?", a: "Sì, se è Android o iPad. Oppure usi il tuo telefono via Bluetooth dell'auto." },
-      { q: "È un costo deducibile?", a: "Per i professionisti sì, è un software di servizio." },
+      { q: "È un costo deducibile?", a: "Per i professionisti sì, è un software di servizio deducibile al 100%." },
       { q: "Come gestisco la musica?", a: "Tuggi abbassa automaticamente la tua musica (Spotify/Radio) quando parla, e la rialza dopo." }
     ] 
   },
