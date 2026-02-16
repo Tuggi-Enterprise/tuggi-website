@@ -807,6 +807,9 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
   const [isStickyVisible, setIsStickyVisible] = useState(false);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
+  const APPLE_STORE_URL = 'https://apps.apple.com/us/app/tuggi-drive/id6744379818?l=pt-BR';
+  const GOOGLE_PLAY_URL = 'https://play.google.com/store/apps/details?id=com.tuggidrive.app&pcampaignid=web_share';
+
   const getMobileOS = () => {
     if (typeof window === 'undefined') return 'other';
     const ua = navigator.userAgent || navigator.vendor || (window as any).opera;
@@ -815,21 +818,22 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
     return 'other';
   };
 
-  const handleDownloadSheet = (e?: React.MouseEvent) => {
-    e?.preventDefault();
-    const os = getMobileOS();
-    
-    // Direct redirect for mobile to reduce friction
-    if (os === 'ios') {
-      handleStoreClick('apple', 'direct_mobile');
-      return;
-    }
-    if (os === 'android') {
-      handleStoreClick('google', 'direct_mobile');
+  const currentOS = getMobileOS();
+  const isMobile = currentOS === 'ios' || currentOS === 'android';
+  const directStoreUrl = currentOS === 'ios' ? APPLE_STORE_URL : GOOGLE_PLAY_URL;
+
+  const handleDownloadClick = (e: React.MouseEvent, position: string) => {
+    // On desktop, we show the selection modal
+    if (!isMobile) {
+      e.preventDefault();
+      setShowDownloadSheet(true);
+      onCTAClick?.('show_download_modal', position);
       return;
     }
 
-    setShowDownloadSheet(true);
+    // On mobile, the anchor tag will handle the direct redirect to store via href.
+    // We just track the intent here with a separate event name to avoid redundant JS redirection in App.tsx
+    onCTAClick?.('download_cta_click', position);
   };
 
   useEffect(() => {
@@ -865,22 +869,13 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
   }, []);
 
   const handleStoreClick = (store: 'apple' | 'google', position: string) => {
-    // onCTAClick in App.tsx now handles the redirection safely for all devices
+    // For mobile, redirect is handled by href, we only track here.
+    // For modal clicks, we can use the specific store events if needed, but KISS is better.
     onCTAClick?.(store === 'apple' ? 'app_store_download' : 'google_play_download', position);
   };
 
 
 
-  const handleCTA = (type: string, position: string) => {
-    // If it's a general download intent, use the smart handler
-    if (type.includes('download') || type.includes('free_plan')) {
-      handleDownloadSheet();
-      return;
-    }
-    
-    onCTAClick?.(type, position);
-    setShowDownloadSheet(true);
-  };
 
   return (
     <div className="page-c-wrapper font-sans text-gray-900">
@@ -906,13 +901,14 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
           </p>
 
           <div className="flex flex-col items-center gap-8">
-            <button 
-              onClick={handleDownloadSheet}
+            <a 
+              href={isMobile ? directStoreUrl : '#'}
+              onClick={(e) => handleDownloadClick(e, 'hero')}
               className="bg-white text-gray-900 px-10 py-4 rounded-2xl font-black text-lg hover:bg-gray-100 transition-all shadow-2xl active:scale-95 flex items-center gap-3 group"
             >
               {t.hero.cta}
               <ChevronDown size={20} className="group-hover:translate-y-1 transition-transform" />
-            </button>
+            </a>
 
             <div className="flex flex-col gap-3 w-full max-w-sm mx-auto">
               {t.hero.trust.map((item: any, i: number) => (
@@ -933,18 +929,28 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
 
             {/* Desktop Authority Badges */}
             <div className="hidden md:flex items-center gap-4 mt-8 opacity-70 hover:opacity-100 transition-opacity">
-               <img 
-                  src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1314144000&h=70" 
-                  alt={t.hero.appleAlt} 
-                  className="h-10 cursor-pointer"
+               <a 
+                  href={APPLE_STORE_URL}
                   onClick={() => handleStoreClick('apple', 'hero_badge')}
-               />
-               <img 
-                  src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" 
-                  alt={t.hero.googleAlt} 
-                  className="h-10 cursor-pointer"
+                  className="h-10"
+               >
+                 <img 
+                    src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1314144000&h=70" 
+                    alt={t.hero.appleAlt} 
+                    className="h-full"
+                 />
+               </a>
+               <a 
+                  href={GOOGLE_PLAY_URL}
                   onClick={() => handleStoreClick('google', 'hero_badge')}
-               />
+                  className="h-10"
+               >
+                 <img 
+                    src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" 
+                    alt={t.hero.googleAlt} 
+                    className="h-full"
+                 />
+               </a>
             </div>
 
             <a 
@@ -1062,13 +1068,14 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
 
           {/* TRANSITION CTA BUTTON */}
           <div className="flex justify-center -mt-8 relative z-20">
-            <button 
-              onClick={handleDownloadSheet}
+            <a 
+              href={isMobile ? directStoreUrl : '#'}
+              onClick={(e) => handleDownloadClick(e, 'how_it_works')}
               className="bg-blue-600 text-white px-10 py-5 rounded-2xl font-black text-xl hover:bg-blue-500 transition-all shadow-2xl shadow-blue-600/40 active:scale-95 flex items-center gap-3 group whitespace-nowrap"
             >
               {t.hero.cta}
               <ChevronDown className="group-hover:translate-y-1 transition-transform" />
-            </button>
+            </a>
           </div>
 
         </div>
@@ -1138,14 +1145,15 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
                       ))}
                    </ul>
 
-                   <div className="flex flex-col sm:flex-row items-center gap-8">
-                      <button 
-                        onClick={() => handleCTA('explore_freely', 'difference')} 
-                        className="bg-neutral-900 text-white hover:bg-black px-12 py-5 rounded-2xl shadow-xl font-black text-lg transition-all active:scale-95 flex items-center gap-3 w-full sm:w-auto justify-center"
-                      >
-                       {t.difference.exampleBox.cta}
-                       <ChevronDown size={20} className="-rotate-90" />
-                      </button>
+                    <div className="flex flex-col sm:flex-row items-center gap-8">
+                       <a 
+                         href={isMobile ? directStoreUrl : '#'}
+                         onClick={(e) => handleDownloadClick(e, 'difference_example')} 
+                         className="bg-neutral-900 text-white hover:bg-black px-12 py-5 rounded-2xl shadow-xl font-black text-lg transition-all active:scale-95 flex items-center gap-3 w-full sm:w-auto justify-center"
+                       >
+                        {t.difference.exampleBox.cta}
+                        <ChevronDown size={20} className="-rotate-90" />
+                       </a>
                       <p className="text-xs font-black text-gray-400 uppercase tracking-widest max-w-[200px] text-center sm:text-left leading-tight">
                          {t.difference.exampleBox.footer}
                       </p>
@@ -1341,12 +1349,13 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
                                </li>
                              ))}
                           </ul>
-                          <button 
-                            onClick={() => handleCTA(`${key}_tab`, 'tabs')} 
-                            className="c-btn bg-[#1D1DFF] text-white px-8 py-3 rounded-lg hover:bg-blue-700 shadow-lg font-bold"
-                          >
-                            {item.cta}
-                          </button>
+                           <a 
+                             href={isMobile ? directStoreUrl : '#'}
+                             onClick={(e) => handleDownloadClick(e, `tabs_${key}`)} 
+                             className="c-btn bg-[#1D1DFF] text-white px-8 py-3 rounded-lg hover:bg-blue-700 shadow-lg font-bold"
+                           >
+                             {item.cta}
+                           </a>
                        </div>
                     </div>
                   )
@@ -1395,12 +1404,13 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
                      </li>
                   ))}
                </ul>
-               <button 
-                  onClick={() => handleCTA('pro_driver_select', 'pricing_section')}
-                  className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-blue-900/50 flex items-center justify-center gap-2"
-               >
-                  {t.driverTypes.pro.cta}
-               </button>
+                <a 
+                   href={isMobile ? directStoreUrl : '#'}
+                   onClick={(e) => handleDownloadClick(e, 'driver_types_pro')}
+                   className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-blue-900/50 flex items-center justify-center gap-2"
+                >
+                   {t.driverTypes.pro.cta}
+                </a>
             </div>
           </div>
         </div>
@@ -1424,7 +1434,13 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
                         </li>
                      ))}
                   </ul>
-                  <button onClick={() => handleCTA('free_plan', 'pricing')} className="border-2 border-gray-200 text-gray-900 hover:border-gray-900 w-full py-3 rounded-xl font-bold transition-all">{t.pricing.free.cta}</button>
+                   <a 
+                     href={isMobile ? directStoreUrl : '#'} 
+                     onClick={(e) => handleDownloadClick(e, 'pricing_free')} 
+                     className="border-2 border-gray-200 text-gray-900 hover:border-gray-900 w-full py-3 rounded-xl font-bold transition-all flex items-center justify-center"
+                   >
+                     {t.pricing.free.cta}
+                   </a>
                </div>
 
                {/* Travel - Highlight */}
@@ -1439,7 +1455,13 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
                         </li>
                      ))}
                   </ul>
-                  <button onClick={() => handleCTA('travel_plan', 'pricing')} className="bg-[#1D1DFF] text-white hover:bg-blue-700 w-full py-4 rounded-xl shadow-lg font-bold">{t.pricing.travel.cta}</button>
+                   <a 
+                     href={isMobile ? directStoreUrl : '#'} 
+                     onClick={(e) => handleDownloadClick(e, 'pricing_travel')} 
+                     className="bg-[#1D1DFF] text-white hover:bg-blue-700 w-full py-4 rounded-xl shadow-lg font-bold flex items-center justify-center"
+                   >
+                     {t.pricing.travel.cta}
+                   </a>
                </div>
 
                {/* Premium */}
@@ -1453,7 +1475,13 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
                         </li>
                      ))}
                   </ul>
-                  <button onClick={() => handleCTA('monthly_plan', 'pricing')} className="bg-gradient-to-r from-[#1D1DFF] to-[#0000CA] text-white w-full py-3 rounded-xl font-bold shadow-md">{t.pricing.monthly.cta}</button>
+                   <a 
+                     href={isMobile ? directStoreUrl : '#'} 
+                     onClick={(e) => handleDownloadClick(e, 'pricing_monthly')} 
+                     className="bg-gradient-to-r from-[#1D1DFF] to-[#0000CA] text-white w-full py-3 rounded-xl font-bold shadow-md flex items-center justify-center"
+                   >
+                     {t.pricing.monthly.cta}
+                   </a>
                </div>
             </div>
             
@@ -1598,27 +1626,28 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
                {t.final.p}
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                <button 
-                  onClick={() => handleStoreClick('apple', 'footer')} 
-                  className="bg-white text-[#1D1DFF] h-14 min-w-[240px] rounded-xl shadow-xl hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-3 px-6 font-bold"
-               >
-                 <Apple fill="currentColor" size={24}/>
-                 <div className="text-left leading-none">
-                    <div className="text-[10px] font-bold uppercase  opacity-60 mb-0.5">{t.final.downloadOn}</div>
-                    <div className="text-lg">App Store</div>
-                 </div>
-               </button>
-               
-               <button 
-                  onClick={() => handleStoreClick('google', 'footer')} 
-                   className="bg-white text-[#1D1DFF] h-14 min-w-[240px] rounded-xl shadow-xl hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-3 px-6 font-bold"
-               >
-                 <Smartphone size={24}/>
-                 <div className="text-left leading-none">
-                    <div className="text-[10px] font-bold uppercase  opacity-60 mb-0.5">{t.final.getItOn}</div>
-                    <div className="text-lg">Google Play</div>
-                 </div>
-               </button>
+                <a 
+                    href={APPLE_STORE_URL}
+                    onClick={() => handleStoreClick('apple', 'final')}
+                    className="bg-gray-900 text-white h-14 min-w-[240px] rounded-xl shadow-xl hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-3 px-6 font-bold"
+                >
+                  <Apple size={24} fill="currentColor" />
+                  <div className="text-left leading-none">
+                     <div className="text-[10px] font-bold uppercase opacity-60 mb-0.5">{t.final.downloadOn}</div>
+                     <div className="text-lg">App Store</div>
+                  </div>
+                </a>
+                <a 
+                    href={GOOGLE_PLAY_URL}
+                    onClick={() => handleStoreClick('google', 'final')}
+                    className="bg-white text-[#1D1DFF] h-14 min-w-[240px] rounded-xl shadow-xl hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-3 px-6 font-bold"
+                >
+                  <Smartphone size={24}/>
+                  <div className="text-left leading-none">
+                     <div className="text-[10px] font-bold uppercase  opacity-60 mb-0.5">{t.final.getItOn}</div>
+                     <div className="text-lg">Google Play</div>
+                  </div>
+                </a>
             </div>
             
              <div className="mt-12 flex justify-center gap-6 text-sm font-bold flex-wrap">
@@ -1629,15 +1658,16 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
                  ))}
               </div>
 
-             <div className="mt-16 flex justify-center">
-                <button 
-                  onClick={handleDownloadSheet}
-                  className="bg-white text-[#1D1DFF] px-14 py-5 rounded-2xl font-black text-2xl hover:bg-gray-100 transition-all shadow-[0_20px_40px_-15px_rgba(29,29,255,0.4)] active:scale-95 flex items-center gap-3 group animate-bounce-subtle"
-                >
-                  {t.hero.cta}
-                  <Download size={24} className="group-hover:translate-y-1 transition-transform" />
-                </button>
-             </div>
+              <div className="mt-16 flex justify-center">
+                 <a 
+                   href={isMobile ? directStoreUrl : '#'}
+                   onClick={(e) => handleDownloadClick(e, 'final_cta')}
+                   className="bg-white text-[#1D1DFF] px-14 py-5 rounded-2xl font-black text-2xl hover:bg-gray-100 transition-all shadow-[0_20px_40px_-15px_rgba(29,29,255,0.4)] active:scale-95 flex items-center gap-3 group animate-bounce-subtle"
+                 >
+                   {t.hero.cta}
+                   <Download size={24} className="group-hover:translate-y-1 transition-transform" />
+                 </a>
+              </div>
          </div>
       </section>
 
@@ -1659,22 +1689,16 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
                
                <div className="flex flex-col gap-4">
                   <a 
-                    href="https://apps.apple.com/br/app/tuggi-explore-ao-dirigir/id6744379818"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleStoreClick('apple', 'modal');
-                    }}
+                    href={APPLE_STORE_URL}
+                    onClick={() => handleStoreClick('apple', 'modal')}
                     className="w-full bg-gray-900 text-white hover:bg-black py-5 px-6 rounded-2xl font-black text-lg flex items-center justify-center gap-4 transition-all active:scale-95 shadow-lg"
                   >
                      <Apple className="w-7 h-7" fill="currentColor" />
                      <span>{t.hero.appleLabel}</span>
                   </a>
                   <a 
-                    href="https://play.google.com/store/apps/details?id=com.tuggidrive.app"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleStoreClick('google', 'modal');
-                    }}
+                    href={GOOGLE_PLAY_URL}
+                    onClick={() => handleStoreClick('google', 'modal')}
                     className="w-full bg-white text-gray-900 border-2 border-gray-100 hover:border-gray-200 py-5 px-6 rounded-2xl font-black text-lg flex items-center justify-center gap-4 transition-all active:scale-95 shadow-sm"
                   >
                      <Smartphone className="w-7 h-7" />
@@ -1691,26 +1715,35 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
 
       {/* STICKY MOBILE CTA */}
       <div className={`c-sticky-cta md:hidden ${isStickyVisible ? 'visible' : ''}`}>
-         <button 
-           onClick={handleDownloadSheet}
-           className="w-full bg-[#1D1DFF] text-white py-4 rounded-xl font-black text-lg shadow-xl shadow-blue-600/20 active:scale-95 transition-all flex items-center justify-center gap-3"
-         >
-            {t.hero.cta}
-            <ChevronDown size={18} className="-rotate-90" />
-         </button>
+          <a 
+            href={isMobile ? directStoreUrl : '#'}
+            onClick={(e) => handleDownloadClick(e, 'sticky_footer')}
+            className="w-full bg-[#1D1DFF] text-white py-4 rounded-xl font-black text-lg shadow-xl shadow-blue-600/20 active:scale-95 transition-all flex items-center justify-center gap-3"
+          >
+             {t.hero.cta}
+             <ChevronDown size={18} className="-rotate-90" />
+          </a>
       </div>
 
       {/* MINIMALIST FOOTER */}
       <footer className="bg-gray-50 border-t border-gray-100 py-12 pb-24 md:pb-12 text-center text-sm text-gray-500">
         <div className="c-container flex flex-col items-center gap-6">
-          <div className="flex flex-wrap justify-center gap-6 font-medium">
-             <button onClick={() => onCTAClick?.('driver_terms')} className="hover:text-blue-600 transition-colors">
-                {t.footer.terms}
-             </button>
-             <button onClick={() => onCTAClick?.('privacy_policy')} className="hover:text-blue-600 transition-colors">
-                {t.footer.privacy}
-             </button>
-          </div>
+           <div className="flex flex-wrap justify-center gap-6 font-medium">
+              <a 
+                href="#" 
+                onClick={(e) => { e.preventDefault(); onCTAClick?.('driver_terms'); }} 
+                className="hover:text-blue-600 transition-colors"
+              >
+                 {t.footer.terms}
+              </a>
+              <a 
+                href="#" 
+                onClick={(e) => { e.preventDefault(); onCTAClick?.('privacy_policy'); }} 
+                className="hover:text-blue-600 transition-colors"
+              >
+                 {t.footer.privacy}
+              </a>
+           </div>
           <p className="opacity-60">{t.footer.copyright}</p>
         </div>
       </footer>
