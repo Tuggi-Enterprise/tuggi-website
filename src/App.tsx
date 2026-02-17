@@ -604,7 +604,7 @@ function App() {
       minimalHeader={currentPage.includes('motoristas') || currentPage.includes('drivers')}
     >
       {renderPage()}
-      <CookieConsent currentLanguage={currentLanguage} />
+      {/* <CookieConsent currentLanguage={currentLanguage} /> */}
     </Layout>
   );
 }
