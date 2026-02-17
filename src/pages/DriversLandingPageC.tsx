@@ -807,8 +807,8 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
   const [isStickyVisible, setIsStickyVisible] = useState(false);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
-  const APPLE_STORE_URL = 'https://apps.apple.com/us/app/tuggi-drive/id6744379818?l=pt-BR';
-  const GOOGLE_PLAY_URL = 'https://play.google.com/store/apps/details?id=com.tuggidrive.app&pcampaignid=web_share';
+  const APPLE_STORE_URL = 'https://apps.apple.com/app/tuggi-drive/id6744379818';
+  const GOOGLE_PLAY_URL = 'https://play.google.com/store/apps/details?id=com.tuggidrive.app';
 
   const getMobileOS = () => {
     if (typeof window === 'undefined') return 'other';
@@ -823,24 +823,34 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
   const directStoreUrl = currentOS === 'ios' ? APPLE_STORE_URL : GOOGLE_PLAY_URL;
 
   const handleDownloadClick = (e: React.MouseEvent, position: string) => {
+    // Tracking call with safety
+    const trackEvent = () => {
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-17947921261/r66NCJzUkvkbEO2Wnu5C'
+        });
+      }
+      onCTAClick?.('download_cta_click', position);
+    };
+
     // On desktop, we show the selection modal
     if (!isMobile) {
       e.preventDefault();
+      trackEvent();
       setShowDownloadSheet(true);
-      onCTAClick?.('show_download_modal', position);
       return;
     }
 
-    // On mobile, the anchor tag will handle the direct redirect to store via href.
-    // Google Ads Conversion
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', 'conversion', {
-        'send_to': 'AW-17947921261/r66NCJzUkvkbEO2Wnu5C'
-      });
-    }
+    // On mobile, we want to ensure the browser takes the user to the store.
+    // In some WebViews (Instagram/Ads), purely relying on <a> href can fail 
+    // if there's JS execution overhead or event propagation issues.
+    trackEvent();
 
-    // We just track the intent here with a separate event name to avoid redundant JS redirection in App.tsx
-    onCTAClick?.('download_cta_click', position);
+    // Force redirection after a tiny delay for tracking to fire, 
+    // but without blocking the main thread significantly.
+    setTimeout(() => {
+      window.location.href = directStoreUrl;
+    }, 50);
   };
 
   useEffect(() => {
@@ -883,9 +893,14 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
       });
     }
 
-    // For mobile, redirect is handled by href, we only track here.
-    // For modal clicks, we can use the specific store events if needed, but KISS is better.
     onCTAClick?.(store === 'apple' ? 'app_store_download' : 'google_play_download', position);
+    
+    // Fallback for some mobile browsers where the href might be interrupted by the JS event
+    if (isMobile) {
+      setTimeout(() => {
+        window.location.href = store === 'apple' ? APPLE_STORE_URL : GOOGLE_PLAY_URL;
+      }, 50);
+    }
   };
 
 
