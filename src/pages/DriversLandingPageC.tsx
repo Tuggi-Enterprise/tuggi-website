@@ -832,6 +832,13 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
     }
 
     // On mobile, the anchor tag will handle the direct redirect to store via href.
+    // Google Ads Conversion
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'conversion', {
+        'send_to': 'AW-17947921261/r66NCJzUkvkbEO2Wnu5C'
+      });
+    }
+
     // We just track the intent here with a separate event name to avoid redundant JS redirection in App.tsx
     onCTAClick?.('download_cta_click', position);
   };
@@ -869,6 +876,13 @@ const DriversLandingPageC: React.FC<DriversLandingPageCProps> = ({
   }, []);
 
   const handleStoreClick = (store: 'apple' | 'google', position: string) => {
+    // Google Ads Conversion
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'conversion', {
+        'send_to': 'AW-17947921261/r66NCJzUkvkbEO2Wnu5C'
+      });
+    }
+
     // For mobile, redirect is handled by href, we only track here.
     // For modal clicks, we can use the specific store events if needed, but KISS is better.
     onCTAClick?.(store === 'apple' ? 'app_store_download' : 'google_play_download', position);
