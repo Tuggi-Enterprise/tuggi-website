@@ -101,10 +101,10 @@ const ptContent: ContentStructure = {
       { icon: Car, text: "Para Motoristas de Aplicativo, Táxi e Transfer." }
     ],
     trustLine: "No app, selecione o perfil Motorista Profissional para liberar sua licença",
-    cta: "Ativar Minha Licença Grátis",
+    cta: "Fazer Download",
     appleLabel: "iPhone / iPad",
     androidLabel: "Android",
-    modalTitle: "Ative sua conta Pro",
+    modalTitle: "Instale o Tuggi ",
     modalSub: "Baixe o App para começar",
     videoAlt: "Assista ao vídeo demonstrativo",
     appleAlt: "Baixar na App Store",
@@ -115,7 +115,7 @@ const ptContent: ContentStructure = {
     steps: [
       { title: "Dê o Play", desc: "Ligue o app no começo da corrida. Não precisa configurar nada." },
       { title: "Dirija Tranquilo", desc: "Concentre-se no trânsito. O Tuggi fala nos momentos certos." },
-      { title: "Encante o Passageiro", desc: "Histórias curiosas quebram o gelo e criam uma experiência única." }
+      { title: "Encante o Passageiro", desc: "Histórias curiosas quebram o gelo e criam uma experiênia única." }
     ],
     compat: "100% COMPATÍVEL COM SEUS APPS FAVORITOS",
     highlight: "Zero esforço.<br/>Muitas estrelas."
@@ -139,7 +139,7 @@ const ptContent: ContentStructure = {
       p2: "Em vez do silêncio, ele ouve do Tuggi: 'À sua direita, este prédio histórico foi...'",
       bullets: ["Passageiro tira os fones", "Começa a prestar atenção", "Te agradece pela viagem diferenciada"],
       footer: "VOCÊ VIRA O GUIA VIP, SEM ESFORÇO.",
-      cta: "Quero testar"
+      cta: "Baixar agora"
     }
   },
   audio: { title: "OUÇA UM EXEMPLO", sub: "Qualidade de rádio, sincronia de GPS.", demo: "Ouvir demonstração" },
@@ -150,18 +150,18 @@ const ptContent: ContentStructure = {
   tabs: {
     title: "ENCANTE CADA TIPO DE PASSAGEIRO",
     items: {
-      turistas: { label: "Turistas", title: "TURISTAS", desc: "Eles querem saber tudo sobre a cidade.", bullets: ["Não precisa explicar nada", "8 idiomas disponíveis", "Histórias curtas e interessantes"], cta: "Ver Planos" },
-      exploradores: { label: "Locais", title: "LOCAIS", desc: "Surpreenda até quem mora aqui.", bullets: ["Curiosidades que ninguém sabe", "Redescobrem o próprio bairro", "Valorizam seu conhecimento"], cta: "Baixar Grátis" },
-      motoristas: { label: "Executivos", title: "EXECUTIVOS", desc: "Sofisticação sem ser intrusivo.", bullets: ["Conteúdo cultural de alto nível", "Respeita o silêncio quando preciso", "Impressiona clientes VIP"], cta: "Ver Planos" },
-      familias: { label: "Famílias", title: "FAMÍLIAS", desc: "Paz no banco de trás.", bullets: ["Crianças aprendem se divertindo", "Menos barulho e confusão", "Pais agradecem a viagem tranquila"], cta: "Testar Grátis" }
+      turistas: { label: "Turistas", title: "TURISTAS", desc: "Eles querem saber tudo sobre a cidade.", bullets: ["Não precisa explicar nada", "8 idiomas disponíveis", "Histórias curtas e interessantes"], cta: "Baixar o App" },
+      exploradores: { label: "Locais", title: "LOCAIS", desc: "Surpreenda até quem mora aqui.", bullets: ["Curiosidades que ninguém sabe", "Redescobrem o próprio bairro", "Valorizam seu conhecimento"], cta: "Baixar agora" },
+      motoristas: { label: "Executivos", title: "EXECUTIVOS", desc: "Sofisticação sem ser intrusivo.", bullets: ["Conteúdo cultural de alto nível", "Respeita o silêncio quando preciso", "Impressiona clientes VIP"], cta: "Baixar o App" },
+      familias: { label: "Famílias", title: "FAMÍLIAS", desc: "Paz no banco de trás.", bullets: ["Crianças aprendem se divertindo", "Menos barulho e confusão", "Pais agradecem a viagem tranquila"], cta: "Baixar Grátis" }
     }
   },
   pricing: {
     title: "INVISTA EM VOCÊ", sub: "Custa menos que uma bala por dia. Se paga na primeira gorjeta.", trust: "Cancele quando quiser",
     mostPopular: "O preferido", allPlansInclude: "Tudo liberado", background: "Modo Background", maps: "Roda com Waze", curation: "Histórias Curadas",
-    free: { name: "GRÁTIS", price: "R$ 0", features: ["Histórias limitadas por dia", "Teste o impacto no passageiro", "Funciona com tela bloqueada"], cta: "Começar Agora" },
-    travel: { name: "SEMANAL", price: "R$ 14,90", features: ["Ideal para testar", "Tudo liberado", "Baixe offline para não gastar dados", "Áudio ilimitado"], cta: "Testar 7 Dias" },
-    monthly: { name: "PRO MENSAL", price: "R$ 39,90", features: ["O melhor custo-benefício", "R$ 1,33 por dia", "Economia de dados (Offline)", "Acesso total a 8 idiomas"], cta: "Assinar PRO" }
+    free: { name: "GRÁTIS", price: "R$ 0", features: ["Histórias limitadas por dia", "Teste o impacto no passageiro", "Funciona com tela bloqueada"], cta: "Baixar agora" },
+    travel: { name: "SEMANAL", price: "R$ 14,90", features: ["Ideal para testar", "Tudo liberado", "Baixe offline para não gastar dados", "Áudio ilimitado"], cta: "Fazer Download" },
+    monthly: { name: "PRO MENSAL", price: "R$ 39,90", features: ["O melhor custo-benefício", "R$ 1,33 por dia", "Economia de dados (Offline)", "Acesso total a 8 idiomas"], cta: "Baixar App" }
   },
   testimonials: {
     title: "QUEM USA APROVA", sub: "Milhares de motoristas já estão faturando mais.",
@@ -184,7 +184,7 @@ const ptContent: ContentStructure = {
     ] 
   },
   driverTypes: {
-    title: "COMO ATIVAR SUA LICENÇA",
+    title: "BAIXE E COMECE AGORA",
     sub: "O Tuggi é pago para turistas, mas gratuito para você que é nossa infraestrutura.",
     usual: {
       title: "Turista (Cliente)",
@@ -195,10 +195,10 @@ const ptContent: ContentStructure = {
       title: "Motorista (Parceiro)",
       price: "100% Subsidiado",
       features: ["Licença Corporativa", "Painel de Ganhos/Gorjetas", "Material de Divulgação", "Suporte Prioritário"],
-      cta: "SOU PARCEIRO"
+      cta: "BAIXAR PARA MOTORISTAS"
     }
   },
-  final: { h2: "QUER GANHAR MAIS ESTRELAS?", p: "Baixe o Tuggi e faça o teste na sua próxima corrida.", benefits: ["Grátis para testar", "Aumente seus ganhos", "Cancele fácil"], downloadOn: "Baixar na", getItOn: "Disponível no", trustLine: "Teste grátis agora mesmo" },
+  final: { h2: "QUER GANHAR MAIS ESTRELAS?", p: "Baixe o Tuggi e faça o teste na sua próxima corrida.", benefits: ["Grátis para testar", "Aumente seus ganhos", "Cancele fácil"], downloadOn: "Baixar na", getItOn: "Disponível no", trustLine: "Baixe agora e comece" },
   footer: {
     terms: "Termos de Uso (Motoristas)",
     privacy: "Política de Privacidade",
@@ -216,10 +216,10 @@ const enContent: ContentStructure = {
       { icon: Car, text: "For Rideshare & Taxi Professionals." }
     ],
     trustLine: "Select the Professional Driver profile in the app to activate your license",
-    cta: "Get Free Driver License",
+    cta: "Download App",
     appleLabel: "iPhone / iPad",
     androidLabel: "Android",
-    modalTitle: "Activate Pro Account",
+    modalTitle: "Install Tuggi",
     modalSub: "Download App to start",
     videoAlt: "Watch demo video",
     appleAlt: "Download on the App Store",
@@ -254,7 +254,7 @@ const enContent: ContentStructure = {
       p2: "Instead of silence, they hear: 'On your left, this historic building was...'",
       bullets: ["Rider removes headphones", "Starts engaging with you", "Thanks you for the 'tour'"],
       footer: "YOU BECOME A PRIVATE GUIDE, EFFORTLESSLY.",
-      cta: "Try it Free"
+      cta: "Download now"
     }
   },
   audio: { title: "HEAR THE QUALITY", sub: "Studio-recorded professional narration.", demo: "Listen to demo" },
@@ -265,18 +265,18 @@ const enContent: ContentStructure = {
   tabs: {
     title: "DELIGHT EVERY PASSENGER",
     items: {
-      turistas: { label: "Tourists", title: "TOURISTS", desc: "They want to know everything.", bullets: ["No need to be a tour guide", "Available in 8 languages", "Short, engaging stories"], cta: "View Plans" },
-      exploradores: { label: "Locals", title: "LOCALS", desc: "Surprise even those who live here.", bullets: ["Hidden gems they didn't know", "Rediscover their own city", "They appreciate the insight"], cta: "Download Free" },
-      motoristas: { label: "Business", title: "BUSINESS", desc: "Sophisticated, non-intrusive.", bullets: ["High-level cultural content", "Respects silence when needed", "Impresses VIP clients"], cta: "View Plans" },
-      familias: { label: "Families", title: "FAMILIES", desc: "Peace in the back seat.", bullets: ["Kids learn while having fun", "Less noise and chaos", "Parents thank you for the smooth ride"], cta: "Try Free" }
+      turistas: { label: "Tourists", title: "TOURISTS", desc: "They want to know everything.", bullets: ["No need to be a tour guide", "Available in 8 languages", "Short, engaging stories"], cta: "Download App" },
+      exploradores: { label: "Locals", title: "LOCALS", desc: "Surprise even those who live here.", bullets: ["Hidden gems they didn't know", "Rediscover their own city", "They appreciate the insight"], cta: "Get it now" },
+      motoristas: { label: "Business", title: "BUSINESS", desc: "Sophisticated, non-intrusive.", bullets: ["High-level cultural content", "Respects silence when needed", "Impresses VIP clients"], cta: "Download App" },
+      familias: { label: "Families", title: "FAMILIES", desc: "Peace in the back seat.", bullets: ["Kids learn while having fun", "Less noise and chaos", "Parents thank you for the smooth ride"], cta: "Download now" }
     }
   },
   pricing: {
     title: "SMART INVESTMENT", sub: "Costs less than a gum. Pays for itself with one good tip.", trust: "Cancel anytime",
     mostPopular: "Best Value", allPlansInclude: "All features included", background: "Background Mode", maps: "Waze Compatible", curation: "Premium Content",
-    free: { name: "FREE", price: "$ 0", features: ["Limited daily stories", "Test passenger reaction", "Works in background"], cta: "Start Free" },
-    travel: { name: "WEEKLY", price: "$ 9.99", features: ["Great for testing", "Unlimited access", "Offline mode (save data)", "All 8 languages"], cta: "Try 7 Days" },
-    monthly: { name: "PRO MONTHLY", price: "$ 24.99", features: ["Best value for pros", "$0.83 per day", "Offline mode", "Tax deductible expense"], cta: "Go PRO" }
+    free: { name: "FREE", price: "$ 0", features: ["Limited daily stories", "Test passenger reaction", "Works in background"], cta: "Download now" },
+    travel: { name: "WEEKLY", price: "$ 9.99", features: ["Great for testing", "Unlimited access", "Offline mode (save data)", "All 8 languages"], cta: "Download now" },
+    monthly: { name: "PRO MONTHLY", price: "$ 24.99", features: ["Best value for pros", "$0.83 per day", "Offline mode", "Tax deductible expense"], cta: "Download now" }
   },
   testimonials: {
     title: "DRIVER SAYS", sub: "Thousands of drivers are upgrading their service.",
@@ -299,7 +299,7 @@ const enContent: ContentStructure = {
     ] 
   },
   driverTypes: {
-    title: "HOW TO ACTIVATE YOUR LICENSE",
+    title: "DOWNLOAD AND START NOW",
     sub: "Tuggi is paid for tourists, but free for you as our infrastructure partner.",
     usual: {
       title: "Tourist (Customer)",
@@ -310,10 +310,10 @@ const enContent: ContentStructure = {
       title: "Driver (Partner)",
       price: "Waived (Sponsored)",
       features: ["Corporate License", "Earnings Dashboard", "Marketing Kit", "Priority Support"],
-      cta: "I AM A PARTNER"
+      cta: "DOWNLOAD FOR DRIVERS"
     }
   },
-  final: { h2: "Ready to Upgrade Your Ride?", p: "Download Tuggi and try it on your next trip.", benefits: ["Free to test", "Boost your tips", "Easy to cancel"], downloadOn: "Download on", getItOn: "Get it on", trustLine: "Start your free trial today" },
+  final: { h2: "Ready to Upgrade Your Ride?", p: "Download Tuggi and try it on your next trip.", benefits: ["Free to test", "Boost your tips", "Easy to cancel"], downloadOn: "Download on", getItOn: "Get it on", trustLine: "Download now and start today" },
   footer: {
     terms: "Terms of Use (Drivers)",
     privacy: "Privacy Policy",
@@ -331,10 +331,10 @@ const esContent: ContentStructure = {
       { icon: Car, text: "Para Taxi y conductores VTC (Apps)." }
     ],
     trustLine: "En la app, selecciona el perfil Conductor Profesional para activar tu cuenta",
-    cta: "Quiero mi Licencia PRO Gratis",
+    cta: "Descargar App ",
     appleLabel: "iPhone / iPad",
     androidLabel: "Android",
-    modalTitle: "Activa tu cuenta Pro",
+    modalTitle: "Instala Tuggi ",
     modalSub: "Descarga la App para empezar",
     videoAlt: "Ver vídeo demo",
     appleAlt: "Descargar en App Store",
@@ -369,7 +369,7 @@ const esContent: ContentStructure = {
       p2: "En lugar de silencio, escuchan: 'A tu derecha, este edificio fue...'",
       bullets: ["El cliente se quita los auriculares", "Muestra interés", "Te agradece el tour"],
       footer: "TE CONVIERTES EN EL MEJOR ANFITRIÓN.",
-      cta: "Probar Gratis"
+      cta: "Descargar ahora"
     }
   },
   audio: { title: "ESCUCHA LA CALIDAD", sub: "Narración profesional de estudio.", demo: "Demo en tiempo real" },
@@ -380,18 +380,18 @@ const esContent: ContentStructure = {
   tabs: {
     title: "ENCANTA A CADA PASAJERO",
     items: {
-      turistas: { label: "Turistas", title: "TURISTAS", desc: "Quieren saberlo todo.", bullets: ["No necesitas explicar nada", "Disponible en 8 idiomas", "Historias cortas e interesantes"], cta: "Ver Planes" },
-      exploradores: { label: "Locales", title: "LOCALES", desc: "Sorprende incluso a los locales.", bullets: ["Curiosidades que no sabían", "Redescubren su propio barrio", "Valoran tu conocimiento"], cta: "Descargar" },
-      motoristas: { label: "Ejecutivos", title: "EJECUTIVOS", desc: "Sofisticado y no intrusivo.", bullets: ["Contenido cultural de nivel", "Respeta el silencio si es necesario", "Impresiona a clientes VIP"], cta: "Ver Planes" },
-      familias: { label: "Familias", title: "FAMILIAS", desc: "Paz en el asiento trasero.", bullets: ["Los niños aprenden divirtiéndose", "Menos ruido y caos", "Los padres agradecen el viaje tranquilo"], cta: "Probar" }
+      turistas: { label: "Turistas", title: "TURISTAS", desc: "Quieren saberlo todo.", bullets: ["No necesitas explicar nada", "Disponible en 8 idiomas", "Historias cortas e interesantes"], cta: "Descargar App" },
+      exploradores: { label: "Locales", title: "LOCALES", desc: "Sorprende incluso a los locales.", bullets: ["Curiosidades que no sabían", "Redescobren su propio barrio", "Valoran tu conocimiento"], cta: "Descargar ahora" },
+      motoristas: { label: "Ejecutivos", title: "EJECUTIVOS", desc: "Sofisticado y no intrusivo.", bullets: ["Contenido cultural de nivel", "Respecta el silencio si es necesario", "Impresiona a clientes VIP"], cta: "Descargar App" },
+      familias: { label: "Familias", title: "FAMILIAS", desc: "Paz en el asiento trasero.", bullets: ["Los niños aprenden divirtiéndose", "Menos ruido y caos", "Los padres agradecen el viaje tranquilo"], cta: "Descargar gratis" }
     }
   },
   pricing: {
     title: "INVERSIÓN INTELIGENTE", sub: "Cuesta menos que un café. Se paga con una sola propina.", trust: "Deducible · Cancela cuando quieras",
     mostPopular: "Más Popular", allPlansInclude: "Todo incluido", background: "Modo Segundo Plano", maps: "Compatible GPS", curation: "Contenido Premium",
-    free: { name: "GRATIS", price: "0 €", features: ["Prueba el impacto hoy", "Modo fondo", "Historias limitadas", "Online"], cta: "Empezar Gratis" },
-    travel: { name: "SEMANAL", price: "6,99 €", features: ["Ideal para probar", "Acceso ilimitado", "Modo Offline (ahorra datos)", "Todos los idiomas"], cta: "Probar 7 Días" },
-    monthly: { name: "PRO MENSUAL", price: "24,99 €", features: ["El favorito de los pros", "0,83 € al día", "Offline total", "Gasto deducible"], cta: "Ser PRO" }
+    free: { name: "GRATIS", price: "0 €", features: ["Prueba el impacto hoy", "Modo fondo", "Historias limitadas", "Online"], cta: "Descargar ahora" },
+    travel: { name: "SEMANAL", price: "6,99 €", features: ["Ideal para probar", "Acceso ilimitado", "Modo Offline (ahorra datos)", "Todos los idiomas"], cta: "Descargar ahora" },
+    monthly: { name: "PRO MENSUAL", price: "24,99 €", features: ["El favorito de los pros", "0,83 € al día", "Offline total", "Gasto deducible"], cta: "Descargar ahora" }
   },
   testimonials: {
     title: "OPINIÓN DE COMPAÑEROS", sub: "Miles de conductores ya lo usan.",
@@ -407,14 +407,14 @@ const esContent: ContentStructure = {
     items: [
       { q: "¿Es realmente gratis?", a: "Sí. Si conduces profesionalmente, Tuggi es tu herramienta de trabajo y no cobramos por ello." },
       { q: "¿Como empiezo?", a: "Descarga y selecciona 'Conductor Profesional'. Tu licencia se activará automáticamente." },
-      { q: "¿Gasta muchos datos?", a: "Con el plan PRO, descargas todo con Wi-Fi y no gastas nada de datos móviles trabajando." },
+      { q: "¿Gasta muchos datos?", a: "Con el plan PRO, descargas todo con Wi-Fi e no gastas nada de datos móviles trabajando." },
       { q: "¿Tapa las instrucciones del Waze?", a: "¡No! Tuggi baja el volumen suavemente al hablar, así nunca pierdes un giro." },
       { q: "¿Le gustará al pasajero?", a: "¡Sí! Son historias cortas y curiosas. No es una audioguía aburrida de museo." },
       { q: "¿Tengo que tocar el móvil?", a: "No. Déjalo en el soporte. Funciona solo por GPS." }
     ] 
   },
   driverTypes: {
-    title: "CÓMO ACTIVAR TU LICENCIA",
+    title: "DESCARGA Y EMPIEZA AHORA",
     sub: "Tuggi es de pago para turistas, pero gratuito para ti que eres nuestra infraestructura.",
     usual: {
       title: "Turista (Cliente)",
@@ -425,13 +425,13 @@ const esContent: ContentStructure = {
       title: "Conductor (Socio)",
       price: "100% Bonificado",
       features: ["Licencia Corporativa", "Panel de Ingresos", "Kit de Marketing", "Soporte Prioritario"],
-      cta: "SOY SOCIO"
+      cta: "DESCARGAR E INTEGRARSE"
     }
   },
-  final: { h2: "¿Listo para mejorar tu servicio?", p: "Descarga Tuggi y pruébalo en tu próximo viaje.", benefits: ["Prueba gratis", "Mejores propinas", "Cancela fácil"], downloadOn: "Descargar en", getItOn: "Disponible en", trustLine: "Pruébalo gratis hoy mismo" },
+  final: { h2: "¿Listo para mejorar tu servicio?", p: "Descarga Tuggi y pruébalo en tu próximo viaje.", benefits: ["Prueba gratis", "Mejores propinas", "Cancela fácil"], downloadOn: "Descargar en", getItOn: "Disponible en", trustLine: "Descarga ahora y empieza hoy" },
   footer: {
     terms: "Términos de Uso (Conductores)",
-    privacy: "Política de Privacidad",
+    privacy: "Política de Privacidade",
     copyright: "© 2026 Tuggi Drive. Todos los derechos reservados."
   }
 };
@@ -442,14 +442,14 @@ const frContent: ContentStructure = {
     sub: "Le copilote culturel audio qui raconte la ville. Obtenez votre Licence Professionnelle Gratuite et valorisez votre service.",
     trust: [
       { icon: Star, text: "Augmentez vos chances de pourboire." },
-      { icon: Check, text: "Visez de meilleures notes." },
+      { icon: Check, text: "Visiez de meilleures notes." },
       { icon: Car, text: "Pour Taxi et chauffeurs VTC (Apps)." }
     ],
     trustLine: "Dans l'app, sélectionnez le profil Chauffeur Professionnel pour activer votre licence",
-    cta: "Activer ma Licence Gratuite",
+    cta: "Télécharger l'App Gratuite",
     appleLabel: "iPhone / iPad",
     androidLabel: "Android",
-    modalTitle: "Activer compte Pro",
+    modalTitle: "Installez Tuggi Drive",
     modalSub: "Télécharger l'App pour commencer",
     videoAlt: "Regarder la vidéo de démonstration",
     appleAlt: "Télécharger sur l'App Store",
@@ -484,7 +484,7 @@ const frContent: ContentStructure = {
       p2: "Au lieu du silence, il entend : 'Sur votre gauche, ce palais a été construit...'",
       bullets: ["Le client est captivé", "Il retire ses écouteurs", "Il vous remercie pour la découverte"],
       footer: "VOUS DEVENEZ SON GUIDE PRIVÉ.",
-      cta: "Essayer l'Excellence"
+      cta: "Télécharger maintenant"
     }
   },
   audio: { title: "ÉCOUTEZ LA QUALITÉ", sub: "Narration studio professionnelle.", demo: "Démo temps réel" },
@@ -495,18 +495,18 @@ const frContent: ContentStructure = {
   tabs: {
     title: "RAVISSEZ CHAQUE PASSAGER",
     items: {
-      turistas: { label: "Touristes", title: "TOURISTES", desc: "Ils veulent tout savoir.", bullets: ["Pas besoin de guide", "Disponible en 8 langues", "Histoires courtes et captivantes"], cta: "Voir les Plans" },
-      exploradores: { label: "Locaux", title: "LOCAUX", desc: "Surprenez même les habitants.", bullets: ["Pépites méconnues", "Redécouverte du quartier", "Ils apprécient l'info"], cta: "Gratuit" },
-      motoristas: { label: "Affaires", title: "AFFAIRES", desc: "Sophistiqué et discret.", bullets: ["Contenu culturel de haut niveau", "Respecte le silence si besoin", "Impressionne les clients VIP"], cta: "Voir les Plans" },
-      familias: { label: "Familles", title: "FAMILLES", desc: "La paix à l'arrière.", bullets: ["Les enfants apprennent en s'amusant", "Moins de bruit, plus de calme", "Les parents vous remercieront"], cta: "Essayer" }
+      turistas: { label: "Touristes", title: "TOURISTES", desc: "Ils veulent tout savoir.", bullets: ["Pas besoin de guide", "Disponible en 8 langues", "Histoires courtes et captivantes"], cta: "Télécharger l'App" },
+      exploradores: { label: "Locaux", title: "LOCAUX", desc: "Surprenez même les habitants.", bullets: ["Pépites méconnues", "Redécouverte du quartier", "Ils apprécient l'info"], cta: "Télécharger" },
+      motoristas: { label: "Affaires", title: "AFFAIRES", desc: "Sophistiqué et discret.", bullets: ["Contenu culturel de haut niveau", "Respecte le silence si besoin", "Impressionne les clients VIP"], cta: "Télécharger l'App" },
+      familias: { label: "Familles", title: "FAMILIES", desc: "La paix à l'arrière.", bullets: ["Les enfants apprennent en s'amusant", "Moins de bruit, plus de calme", "Les parents vous remercieront"], cta: "Télécharger gratuitement" }
     }
   },
   pricing: {
     title: "INVESTISSEMENT RENTABLE", sub: "Moins cher qu'un café. Remboursé dès le premier pourboire.", trust: "Déductible · Sans engagement",
     mostPopular: "Best Seller", allPlansInclude: "Tout inclus", background: "Mode Arrière-plan", maps: "Compatible GPS", curation: "Contenu Premium",
-    free: { name: "GRATUIT", price: "0 €", features: ["Testez l'impact ajourd'hui", "Mode arrière-plan", "Histoires limitées", "En ligne"], cta: "Commencer" },
-    travel: { name: "SEMAINE", price: "9,99 €", features: ["Idéal pour tester", "Accès illimité", "Mode Hors Ligne (économisez la data)", "Toutes les langues"], cta: "Essai 7 Jours" },
-    monthly: { name: "PRO MENSUEL", price: "24,99 €", features: ["Le choix des pros", "0,83 € par jour", "Hors ligne total", "Frais déductibles"], cta: "Devenir PRO" }
+    free: { name: "GRATUIT", price: "0 €", features: ["Testez l'impact ajourd'hui", "Mode arrière-plan", "Histoires limitées", "En ligne"], cta: "Télécharger" },
+    travel: { name: "SEMAINE", price: "9,99 €", features: ["Idéal pour tester", "Accès illimité", "Mode Hors Ligne (économisez la data)", "Toutes les langues"], cta: "Télécharger" },
+    monthly: { name: "PRO MENSUEL", price: "24,99 €", features: ["Le choix des pros", "0,83 € par jour", "Hors ligne total", "Frais déductibles"], cta: "Télécharger" }
   },
   testimonials: {
     title: "L'AVIS DES PROS", sub: "Déjà adopté par l'élite des VTC.",
@@ -529,7 +529,7 @@ const frContent: ContentStructure = {
     ] 
   },
   driverTypes: {
-    title: "COMMENT ACTIVER VOTRE LICENCE",
+    title: "TÉLÉCHARGEZ ET COMMENCEZ MAINTENANT",
     sub: "Tuggi est payant pour les touristes, mais gratuit pour vous qui êtes notre infrastructure.",
     usual: {
       title: "Touriste (Client)",
@@ -540,10 +540,10 @@ const frContent: ContentStructure = {
       title: "Chauffeur (Partenaire)",
       price: "100% Pris en Charge",
       features: ["Licence Corporate", "Tableau de Bord Gains", "Kit Marketing", "Support Prioritaire"],
-      cta: "JE SUIS PARTENAIRE"
+      cta: "TÉLÉCHARGER POUR CHAUFFEURS"
     }
   },
-  final: { h2: "Prêt à transformer vos trajets ?", p: "Téléchargez Tuggi e testez-le lors de votre prochaine course.", benefits: ["Essai gratuit", "Plus de pourboires", "Annulation facile"], downloadOn: "Télécharger sur", getItOn: "Disponible sur", trustLine: "Essai gratuit sans carte de crédit" },
+  final: { h2: "Prêt à transformer vos trajets ?", p: "Téléchargez Tuggi e testez-le lors de votre prochaine course.", benefits: ["Essai gratuit", "Plus de pourboires", "Annulation facile"], downloadOn: "Télécharger sur", getItOn: "Disponible sur", trustLine: "Téléchargez maintenant et commencez" },
   footer: {
     terms: "Conditions d'Utilisation (Chauffeurs)",
     privacy: "Politique de Confidentialité",
@@ -561,10 +561,10 @@ const deContent: ContentStructure = {
       { icon: Car, text: "Für Taxi- und Mietwagen-Fahrer." }
     ],
     trustLine: "Wählen Sie in der App das Profil Berufskraftfahrer, um Ihre Lizenz zu aktivieren",
-    cta: "Kostenlose Lizenz Aktivieren",
+    cta: "App kostenlos laden",
     appleLabel: "iPhone / iPad",
     androidLabel: "Android",
-    modalTitle: "Pro-Konto aktivieren",
+    modalTitle: "Installiere Tuggi Drive",
     modalSub: "App laden zum Starten",
     videoAlt: "Demo-Video ansehen",
     appleAlt: "Laden im App Store",
@@ -577,7 +577,7 @@ const deContent: ContentStructure = {
       { title: "Fahren", desc: "Konzentrieren Sie sich auf den Verkehr. Tuggi erzählt automatisch." },
       { title: "Begeistern", desc: "Gäste genießen hochwertige Audio-Inhalte statt Stille." }
     ],
-    compat: "100% KOMPATIBEL MIT DEINEN LIEBLINGS-APPS",
+    compat: "100% COMPATIBEL MIT DEINEN LIEBLINGS-APPS",
     highlight: "Null Aufwand.<br/>Maximaler Service."
   },
   difference: {
@@ -599,7 +599,7 @@ const deContent: ContentStructure = {
       p2: "Statt Schweigen hören sie: 'Rechts sehen Sie das historische Rathaus...'",
       bullets: ["Gast nimmt Kopfhörer ab", "Hört interessiert zu", "Bedankt sich für die Tour"],
       footer: "SIE WERDEN ZUM PRIVAT-GUIDE.",
-      cta: "Jetzt Testen"
+      cta: "Jetzt laden"
     }
   },
   audio: { title: "QUALITÄT HÖREN", sub: "Professionelle Studio-Aufnahmen.", demo: "Live-Demo hören" },
@@ -610,18 +610,18 @@ const deContent: ContentStructure = {
   tabs: {
     title: "BEGEISTERN SIE JEDEN FAHRGAST",
     items: {
-      turistas: { label: "Touristen", title: "TOURISTEN", desc: "Sie wollen alles wissen.", bullets: ["Kein Reiseleiter nötig", "In 8 Sprachen verfügbar", "Kurze, spannende Stories"], cta: "Pläne ansehen" },
-      exploradores: { label: "Einheimische", title: "EINHEIMISCHE", desc: "Überraschen Sie sogar Locals.", bullets: ["Unbekannte Fakten", "Die eigene Stadt neu entdecken", "Wertschätzung für Ihr Wissen"], cta: "Gratis laden" },
-      motoristas: { label: "Business", title: "BUSINESS", desc: "Anspruchsvoll und dezent.", bullets: ["Kultureller Inhalt auf hohem Niveau", "Respektiert Ruhephasen", "Beeindruckt VIP-Gäste"], cta: "Pläne ansehen" },
-      familias: { label: "Familien", title: "FAMILIEN", desc: "Ruhe auf der Rückbank.", bullets: ["Kinder lernen spielerisch", "Weniger Lärm und Chaos", "Eltern danken Ihnen"], cta: "Testen" }
+      turistas: { label: "Touristen", title: "TOURISTEN", desc: "Sie wollen alles wissen.", bullets: ["Kein Reiseleiter nötig", "In 8 Sprachen verfügbar", "Kurze, spannende Stories"], cta: "App laden" },
+      exploradores: { label: "Einheimische", title: "EINHEIMISCHE", desc: "Überraschen Sie sogar Locals.", bullets: ["Unbekannte Fakten", "Die eigene Stadt neu entdecken", "Wertschätzung für Ihr Wissen"], cta: "Jetzt laden" },
+      motoristas: { label: "Business", title: "BUSINESS", desc: "Anspruchsvoll und dezent.", bullets: ["Kultureller Inhalt auf hohem Niveau", "Respektiert Ruhephasen", "Beeindruckt VIP-Gäste"], cta: "App laden" },
+      familias: { label: "Familien", title: "FAMILIEN", desc: "Ruhe auf der Rückbank.", bullets: ["Kinder lernen spielerisch", "Weniger Lärm und Chaos", "Eltern danken Ihnen"], cta: "Gratis laden" }
     }
   },
   pricing: {
     title: "SMARTE INVESTITION", sub: "Kostet weniger als ein Kaffee. Zahlt sich mit einem Trinkgeld aus.", trust: "Steuerlich absetzbar · Jederzeit kündbar",
     mostPopular: "Bestseller", allPlansInclude: "Alles inklusive", background: "Hintergrund-Modus", maps: "Navi-Kompatibel", curation: "Premium Inhalt",
-    free: { name: "GRATIS", price: "0 €", features: ["Wirkung testen", "Hintergrund-Modus", "Limitierte Stories", "Online"], cta: "Gratis Starten" },
-    travel: { name: "WOCHE", price: "9,99 €", features: ["Ideal zum Testen", "Unbegrenzter Zugang", "Offline-Modus (Daten sparen)", "Alle Sprachen"], cta: "7 Tage Testen" },
-    monthly: { name: "PRO MONAT", price: "24,99 €", features: ["Profi-Wahl", "0,83 € pro Tag", "Voll Offline", "Absetzbare Kosten"], cta: "PRO werden" }
+    free: { name: "GRATIS", price: "0 €", features: ["Wirkung testen", "Hintergrund-Modus", "Limitierte Stories", "Online"], cta: "Jetzt laden" },
+    travel: { name: "WOCHE", price: "9,99 €", features: ["Ideal zum Testen", "Unbegrenzter Zugang", "Offline-Modus (Daten sparen)", "Alle Sprachen"], cta: "Jetzt laden" },
+    monthly: { name: "PRO MONAT", price: "24,99 €", features: ["Profi-Wahl", "0,83 € pro Tag", "Voll Offline", "Absetzbare Kosten"], cta: "Jetzt laden" }
   },
   testimonials: {
     title: "DAS SAGEN KOLLEGEN", sub: "Tausende Fahrer nutzen es bereits.",
@@ -639,12 +639,12 @@ const deContent: ContentStructure = {
       { q: "Wie fange ich an?", a: "Laden Sie die App und wählen Sie 'Berufsfahrer'. Ihre Lizenz wird automatisch aktiviert." },
       { q: "Datenverbrauch?", a: "Mit PRO laden Sie alles im WLAN. Unterwegs 0 Datenverbrauch." },
       { q: "Stört das Navi?", a: "Nein! Tuggi wird leiser, wenn es spricht. Sie hören jede Abbiegehinweise." },
-      { q: "Mögen Gäste das?", a: "Ja! Die Stories sind kurz und spannend. Kein langweiliger Vortrag." },
+      { q: "Mögen Gäste das?", a: "Ja! Die Stories sind kurz e spannend. Kein langweiliger Vortrag." },
       { q: "Muss ich das Handy bedienen?", a: "Nein. In die Halterung stecken. GPS macht den Rest automatisch." }
     ] 
   },
   driverTypes: {
-    title: "LIZENZ AKTIVIEREN",
+    title: "JETZT LADEN UND STARTEN",
     sub: "Tuggi kostet für Touristen Geld, ist aber für Sie als Partner kostenlos.",
     usual: {
       title: "Tourist (Kunde)",
@@ -655,10 +655,10 @@ const deContent: ContentStructure = {
       title: "Fahrer (Partner)",
       price: "Lizenz Gesponsert",
       features: ["Firmenlizenz", "Einnahmen-Dashboard", "Marketing-Kit", "Priorisierter Support"],
-      cta: "ICH BIN PARTNER"
+      cta: "FÜR FAHRER LADEN"
     }
   },
-  final: { h2: "Bereit für mehr 5-Sterne-Fahrten?", p: "Laden Sie Tuggi herunter und testen Sie es bei Ihrer nächsten Fahrt.", benefits: ["Kostenlos testen", "Mehr Trinkgeld", "Einfach kündigen"], downloadOn: "Laden im", getItOn: "Erhältlich bei", trustLine: "Kostenlos testen. Sofort startklar." },
+  final: { h2: "Bereit für mehr 5-Sterne-Fahrten?", p: "Laden Sie Tuggi herunter und testen Sie es bei Ihrer nächsten Fahrt.", benefits: ["Kostenlos testen", "Mehr Trinkgeld", "Einfach kündigen"], downloadOn: "Laden im", getItOn: "Erhältlich bei", trustLine: "Jetzt laden und starten" },
   footer: {
     terms: "Nutzungsbedingungen (Fahrer)",
     privacy: "Datenschutzrichtlinie",
@@ -676,17 +676,17 @@ const itContent: ContentStructure = {
       { icon: Car, text: "Per Taxi, NCC e autisti di app." }
     ],
     trustLine: "Nell'app, seleziona il profilo Autista Professionista per attivare la licenza",
-    cta: "Attiva Licenza Host Gratuita",
+    cta: "Scarica l'App Gratis",
     appleLabel: "iPhone / iPad",
     androidLabel: "Android",
-    modalTitle: "Attiva account Pro",
+    modalTitle: "Installa Tuggi Drive",
     modalSub: "Scarica l'App per iniziare",
     videoAlt: "Guarda video demo",
     appleAlt: "Scarica su App Store",
     googleAlt: "Disponibile su Google Play"
   },
   howItWorks: {
-    title: "L'ESPERIENZA", slogan: "Elogianza. Semplicità.", seeHow: "Vedi come funziona",
+    title: "L'ESPERIENZA", slogan: "Eleganza. Semplicità.", seeHow: "Vedi come funziona",
     steps: [
       { title: "Attiva in 1 Click", desc: "Prima di partire, apri l'app. Nessuna configurazione complessa." },
       { title: "Guida in Silenzio", desc: "Evita le chiacchiere forzate. Offri un ambiente rilassato e professionale." },
@@ -714,7 +714,7 @@ const itContent: ContentStructure = {
       p2: "Invece di sbuffare, il cliente ascolta la storia di Milano.",
       bullets: ["Clienti Business rilassati", "Turisti affascinati", "Percezione di lusso immediata"],
       footer: "INVESTIMENTO MINIMO, RITORNO MASSIMO.",
-      cta: "Prova l'Eccellenza"
+      cta: "Scarica ora"
     }
   },
   audio: { title: "ASCOLTA LA DIFFERENZA", sub: "Narrazione professionale da studio.", demo: "Demo in tempo reale" },
@@ -725,18 +725,18 @@ const itContent: ContentStructure = {
   tabs: {
     title: "INCANTA OGNI PASSEGGERO",
     items: {
-      turistas: { label: "Turisti", title: "TURISTI", desc: "Vogliono sapere tutto.", bullets: ["Non devi spiegare nulla", "Disponibile in 8 lingue", "Storie brevi e coinvolgenti"], cta: "Vedi Piani" },
-      exploradores: { label: "Locali", title: "LOCALI", desc: "Sorprendi anche chi vive qui.", bullets: ["Curiosità che nessuno sa", "Riscoprono il loro quartiere", "Apprezzano la professionalità"], cta: "Gratis" },
-      motoristas: { label: "Business", title: "BUSINESS", desc: "Sofisticato e non invadente.", bullets: ["Contenuti culturali di livello", "Rispetta il silenzio se serve", "Colpisce i clienti VIP"], cta: "Vedi Piani" },
-      familias: { label: "Famiglie", title: "FAMIGLIE", desc: "Pace sui sedili posteriori.", bullets: ["I bambini imparano divertendosi", "Meno caos in auto", "I genitori ti ringrazieranno"], cta: "Prova Gratis" }
+      turistas: { label: "Turisti", title: "TURISTAS", desc: "Vogliono sapere tutto.", bullets: ["Non devi spiegare nulla", "Disponibile in 8 lingue", "Storie brevi e coinvolgenti"], cta: "Scarica l'App" },
+      exploradores: { label: "Locali", title: "LOCALI", desc: "Sorprendi anche chi vive qui.", bullets: ["Curiosità che nessuno sa", "Riscoprono il loro quartiere", "Apprezzano la professionalità"], cta: "Scarica ora" },
+      motoristas: { label: "Business", title: "BUSINESS", desc: "Sofisticato e non invadente.", bullets: ["Contenuti culturali di livello", "Rispetta il silenzio se serve", "Colpisce i clienti VIP"], cta: "Scarica l'App" },
+      familias: { label: "Famiglie", title: "FAMIGLIE", desc: "Pace sui sedili posteriori.", bullets: ["I bambini imparano divertendosi", "Meno caos in auto", "I genitori ti ringrazieranno"], cta: "Scarica gratis" }
     }
   },
   pricing: {
     title: "INVESTIMENTO INTELLIGENTE", sub: "Deducibile al 100%. Meno di un caffè al giorno.", trust: "Fatturabile · Nessun vincolo",
     mostPopular: "Best Seller", allPlansInclude: "Tutto incluso", background: "Background", maps: "Compatibile Maps/Waze", curation: "Contenuti Premium",
-    free: { name: "BASIC", price: "0 €", features: ["Testa il servizio oggi", "Modalità background", "Audio limitati", "Online"], cta: "Inizia Gratis" },
-    travel: { name: "SETTIMANALE", price: "6,99 €", features: ["Perfetto per alta stagione", "Tutte le lingue", "Offline", "No rinnovo automatico", "Audio illimitati"], cta: "Attiva 7 Giorni" },
-    monthly: { name: "PRO (MENSILE)", price: "19,99 €", features: ["Solo 0,66€ al giorno", "Audio illimitati", "Tutte le lingue", "Offline totale", "Recuperi con 2 mance"], cta: "Diventa PRO" }
+    free: { name: "BASIC", price: "0 €", features: ["Testa il servizio oggi", "Modalità background", "Audio limitati", "Online"], cta: "Scarica ora" },
+    travel: { name: "SETTIMANALE", price: "6,99 €", features: ["Perfetto per alta stagione", "Tutte le lingue", "Offline", "No rinnovo automatico", "Audio illimitati"], cta: "Scarica ora" },
+    monthly: { name: "PRO (MENSILE)", price: "19,99 €", features: ["Solo 0,66€ al giorno", "Audio illimitati", "Tutte le lingue", "Offline totale", "Recuperi con 2 mance"], cta: "Scarica ora" }
   },
   testimonials: {
     title: "DICONO I COLLEGHI", sub: "Già scelto dai migliori driver di Milano e Roma.",
@@ -759,7 +759,7 @@ const itContent: ContentStructure = {
     ] 
   },
   driverTypes: {
-    title: "COME ATTIVARE LA LICENZA",
+    title: "SCARICA E INIZIA ORA",
     sub: "Tuggi si paga per i turisti, ma è gratis per te che sei la nostra infrastruttura.",
     usual: {
       title: "Turista (Cliente)",
@@ -770,10 +770,10 @@ const itContent: ContentStructure = {
       title: "Driver (Partner)",
       price: "100% Sponsorizzata",
       features: ["Licenza Corporate", "Dashboard Guadagni", "Kit Marketing", "Supporto Prioritario"],
-      cta: "SONO UN PARTNER"
+      cta: "SCARICA PER I DRIVER"
     }
   },
-  final: { h2: "Vuoi più recensioni a 5 stelle?", p: "Scarica Tuggi e provalo durante la tua prossima corsa.", benefits: ["Prova gratuita", "Guadagni extra", "Cancella quando vuoi"], downloadOn: "Scarica su", getItOn: "Disponibile su", trustLine: "Prova gratuita illimitata. Nessuna carta richiesta." },
+  final: { h2: "Vuoi più recensioni a 5 stelle?", p: "Scarica Tuggi e provalo durante la tua prossima corsa.", benefits: ["Prova gratuita", "Guadagni extra", "Cancella quando vuoi"], downloadOn: "Scarica su", getItOn: "Disponibile su", trustLine: "Scarica gratis e inizia subito" },
   footer: {
     terms: "Termini di Utilizzo (Driver)",
     privacy: "Privacy Policy",
