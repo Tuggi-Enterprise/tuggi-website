@@ -33,7 +33,7 @@ import { layout } from '../utils/designSystem';
 import { betaDriversContent, type BetaDriversContent } from '../data/betaDriversContent';
 
 interface BetaDriversProps {
-  currentLanguage?: 'PT' | 'IT';
+  currentLanguage?: 'PT' | 'IT' | 'EN' | 'ES' | 'FR' | 'DE';
   onCTAClick?: (ctaType: string, position?: string) => void;
 }
 
@@ -56,8 +56,9 @@ const BetaDrivers: React.FC<BetaDriversProps> = ({
   onCTAClick
 }) => {
   // Ensure we have valid content for the current language, otherwise fallback to PT
-  const validLanguage = (currentLanguage === 'IT') ? 'IT' : 'PT';
-  const content: BetaDriversContent = betaDriversContent[validLanguage];
+  const supportedLanguages = ['PT', 'IT', 'EN', 'ES', 'FR', 'DE'];
+  const validLanguage = supportedLanguages.includes(currentLanguage) ? currentLanguage : 'PT';
+  const content: BetaDriversContent = betaDriversContent[validLanguage as keyof typeof betaDriversContent];
 
   // Form state
   const [formData, setFormData] = useState<FormData>({
@@ -119,6 +120,15 @@ const BetaDrivers: React.FC<BetaDriversProps> = ({
       behavior: 'smooth',
       block: 'start'
     });
+    
+    // Track micro-conversion: Intent to sign up
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'beta_hero_cta_click', {
+        'event_category': 'engagement',
+        'event_label': 'scroll_to_form'
+      });
+    }
+
     onCTAClick?.('scroll_to_form', 'hero');
   };
 
@@ -143,6 +153,14 @@ const BetaDrivers: React.FC<BetaDriversProps> = ({
     } else {
       // Pause any currently playing audio
       Object.values(audioRefs.current).forEach(a => a.pause());
+      
+      // Track micro-conversion: Audio engagement (High Interest)
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'beta_audio_play', {
+           'event_category': 'engagement',
+           'event_label': sampleId
+        });
+      }
       
       // Reset track index for the new sample
       setCurrentTrackIndex(0);
@@ -246,9 +264,19 @@ const BetaDrivers: React.FC<BetaDriversProps> = ({
       const cleaned = phone.replace(/[^\d+]/g, '');
       if (cleaned.startsWith('+')) return cleaned;
       if (!cleaned) return '';
+      
       // Default DDI based on language
+      const ddiMap: Record<string, string> = {
+        'IT': '39',
+        'ES': '34',
+        'FR': '33',
+        'DE': '49',
+        'EN': '1',
+        'PT': '55'
+      };
+      
       const digits = cleaned.replace(/^0+/, '');
-      const ddi = (validLanguage === 'IT') ? '39' : '55';
+      const ddi = ddiMap[validLanguage] || '55';
       return `+${ddi}${digits}`;
     };
 
