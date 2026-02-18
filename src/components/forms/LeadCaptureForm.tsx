@@ -56,7 +56,7 @@ export const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({
         // Form fields
         email_label: 'Endereço de e-mail',
         email_placeholder: 'seu@email.com',
-        phone_label: 'Número do WhatsApp',
+        phone_label: 'WhatsApp (opcional)',
         phone_placeholder: '+55 (11) 9____-____',
         
         // Consent
@@ -99,7 +99,7 @@ export const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({
         // Form fields
         email_label: 'Email address',
         email_placeholder: 'your@email.com',
-        phone_label: 'WhatsApp number',
+        phone_label: 'WhatsApp (optional)',
         phone_placeholder: '+1 (555) ___-____',
         
         // Consent
@@ -142,7 +142,7 @@ export const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({
         // Form fields
         email_label: 'Dirección de email',
         email_placeholder: 'tu@email.com',
-        phone_label: 'Número de WhatsApp',
+        phone_label: 'WhatsApp (opzionale)',
         phone_placeholder: '+34 6__ __ __ __',
         
         // Consent
@@ -288,8 +288,8 @@ export const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({
       }
     }
     
-    // Validate phone only if WhatsApp is selected
-    if (formData.bestContact === 'whatsapp') {
+    // Validate phone only if WhatsApp is selected and filled
+    if (formData.bestContact === 'whatsapp' && formData.phone.trim()) {
       const phoneError = validatePhone(formData.phone);
       if (phoneError) {
         newErrors.phone = phoneError;
@@ -389,7 +389,7 @@ export const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({
         source: 'lp_form',
         best_contact: formData.bestContact,
         email: formData.bestContact === 'email' ? formData.email : '',
-        phone_e164: formData.bestContact === 'whatsapp' ? convertToE164(formData.phone) : '',
+        phone_e164: formData.phone.trim() ? convertToE164(formData.phone) : '',
         consent: formData.consent,
         timestamp: new Date().toISOString(),
         ...utmData,
@@ -398,10 +398,12 @@ export const LeadCaptureForm: React.FC<LeadCaptureFormProps> = ({
         page: '/motorista'
       };
 
-      const response = await fetch('/api/leads', {
+      const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/lead-capture`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'apikey': import.meta.env.VITE_SUPABASE_ANON_KEY,
+          'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`
         },
         body: JSON.stringify(payload)
       });

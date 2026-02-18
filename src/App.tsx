@@ -19,6 +19,7 @@ import GovPrivacyPolicyPage from './pages/legal/GovPrivacyPolicyPage';
 import GovTermsOfUsePage from './pages/legal/GovTermsOfUsePage';
 import TermsOfUseDriversPage from './pages/legal/TermsOfUseDriversPage';
 import HomeV2 from './pages/HomeV2';
+import BetaDrivers from './pages/BetaDrivers';
 
 // Extend Window interface for gtag
 declare global {
@@ -552,6 +553,10 @@ function App() {
         return <DriversLandingPageC currentLanguage={currentLanguage as 'PT' | 'EN' | 'ES' | 'FR' | 'DE' | 'IT'} onCTAClick={handleCTAClick} />;
       case 'motoristas-e': // Variant E (Free Interpretation / Dark Mode)
         return <DriversLandingPageE currentLanguage={currentLanguage as 'PT' | 'EN' | 'ES' | 'FR' | 'DE' | 'IT'} onCTAClick={handleCTAClick} />;
+      case 'beta-drivers': // Beta Drivers - Intention Landing Page
+      case 'beta-motoristas':
+      case 'beta-autisti':
+        return <BetaDrivers currentLanguage={currentLanguage as 'PT' | 'IT'} onCTAClick={handleCTAClick} />;
       case 'govPrivacy':
         return <GovPrivacyPolicyPage currentLanguage={currentLanguage} onBack={() => handlePageChange('gov')} />;
       case 'govTerms':
@@ -584,15 +589,16 @@ function App() {
       currentPage={currentPage}
       onPageChange={handlePageChange}
       hideFooter={
-        currentPage === 'gov' || 
-        currentPage === 'govPrivacy' || 
-        currentPage === 'govTerms' || 
-        currentPage.includes('motoristas') || 
-        currentPage.includes('drivers') || 
-        currentPage.includes('conductores') || 
-        currentPage.includes('chauffeurs') || 
-        currentPage.includes('fahrer') || 
-        currentPage.includes('autisti') || 
+        currentPage === 'gov' ||
+        currentPage === 'govPrivacy' ||
+        currentPage === 'govTerms' ||
+        currentPage.includes('motoristas') ||
+        currentPage.includes('drivers') ||
+        currentPage.includes('conductores') ||
+        currentPage.includes('chauffeurs') ||
+        currentPage.includes('fahrer') ||
+        currentPage.includes('autisti') ||
+        currentPage.includes('beta-') ||
         currentPage === 'drivers-terms' ||
         currentPage === 'termos-motoristas' ||
         currentPage === 'terminos-conductores' ||
@@ -601,7 +607,7 @@ function App() {
         currentPage === 'termini-driver'
       }
       hideHeader={['govPrivacy', 'govTerms'].includes(currentPage)}
-      minimalHeader={currentPage.includes('motoristas') || currentPage.includes('drivers')}
+      minimalHeader={currentPage.includes('motoristas') || currentPage.includes('drivers') || currentPage.includes('beta-')}
     >
       {renderPage()}
       {/* <CookieConsent currentLanguage={currentLanguage} /> */}

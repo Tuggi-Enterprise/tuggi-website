@@ -46,6 +46,8 @@ export const VALID_PAGES = [
   'drivers-c', 'motoristas-c', 'conductores-c', 'chauffeurs-c', 'fahrer-c', 'autisti-c',
   'drivers-d', 'motoristas-d', 'conductores-d', 'chauffeurs-d', 'fahrer-d', 'autisti-d',
   'drivers-e', 'motoristas-e', 'conductores-e', 'chauffeurs-e', 'fahrer-e', 'autisti-e',
+  // Beta drivers routes
+  'beta-drivers', 'beta-motoristas', 'beta-autisti',
   // Legal and policy pages
   'privacy',
   'privacy-policy',
@@ -292,8 +294,12 @@ export const URL_TO_PAGE_MAPPINGS: Record<string, string> = {
   'chauffeurs-e': 'motoristas-e',
   'fahrer-e': 'motoristas-e',
   'autisti-e': 'motoristas-e',
-  
-  
+
+  // Beta drivers reverse mappings
+  'beta-drivers': 'beta-drivers',
+  'beta-motoristas': 'beta-motoristas',
+  'beta-autisti': 'beta-autisti',
+
   'privacy-policy': 'privacy',
   'politica-de-privacidade': 'privacy',
   'politica-de-privacidad': 'privacy',

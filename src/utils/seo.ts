@@ -857,6 +857,47 @@ export const generateSEOConfig = (
         ogTitle: 'Termini di Utilizzo per la Pubblica Amministrazione | Tuggi City OS',
         ogDescription: 'Termini di utilizzo e licenza SaaS per l\'infrastruttura governativa Tuggi City OS.'
       }
+    },
+    'beta-drivers': {
+      PT: {
+        title: 'Programa Embaixadores Beta - Motoristas | Tuggi',
+        description: 'Seja um Motorista Embaixador do Tuggi. Transforme suas corridas em experiências culturais e aumente seus ganhos. Junte-se ao programa exclusivo beta.',
+        keywords: 'tuggi motorista, beta motorista, embaixador tuggi, programa beta, app motorista, ganhar mais dirigindo, experiências culturais, motorista de app',
+        ogTitle: 'Seja um Motorista Embaixador - Programa Beta | Tuggi',
+        ogDescription: 'Transforme suas corridas em experiências culturais enquanto aumenta seus ganhos. Programa exclusivo para motoristas embaixadores.'
+      },
+      IT: {
+        title: 'Programma Ambasciatori Beta - Autisti | Tuggi',
+        description: 'Diventa un Autista Ambasciatore Tuggi. Trasforma le tue corse in esperienze culturali e aumenta i tuoi guadagni. Unisciti al programma beta esclusivo.',
+        keywords: 'tuggi autista, beta autista, ambasciatore tuggi, programma beta, app autista, guadagnare guidando, esperienze culturali, autista app',
+        ogTitle: 'Diventa un Autista Ambasciatore - Programma Beta | Tuggi',
+        ogDescription: 'Trasforma le tue corse in esperienze culturali mentre aumenti i tuoi guadagni. Programma esclusivo per autisti ambasciatori.'
+      },
+      EN: {
+        title: 'Beta Ambassador Program - Drivers | Tuggi',
+        description: 'Become a Tuggi Driver Ambassador. Transform your rides into cultural experiences and increase your earnings. Join the exclusive beta program.',
+        keywords: 'tuggi driver, beta driver, tuggi ambassador, beta program, driver app, earn more driving, cultural experiences, rideshare driver',
+        ogTitle: 'Become a Driver Ambassador - Beta Program | Tuggi',
+        ogDescription: 'Transform your rides into cultural experiences while increasing your earnings. Exclusive program for driver ambassadors.'
+      }
+    },
+    'beta-motoristas': {
+      PT: {
+        title: 'Programa Embaixadores Beta - Motoristas | Tuggi',
+        description: 'Seja um Motorista Embaixador do Tuggi. Transforme suas corridas em experiências culturais e aumente seus ganhos. Junte-se ao programa exclusivo beta.',
+        keywords: 'tuggi motorista, beta motorista, embaixador tuggi, programa beta, app motorista, ganhar mais dirigindo, experiências culturais, motorista de app',
+        ogTitle: 'Seja um Motorista Embaixador - Programa Beta | Tuggi',
+        ogDescription: 'Transforme suas corridas em experiências culturais enquanto aumenta seus ganhos. Programa exclusivo para motoristas embaixadores.'
+      }
+    },
+    'beta-autisti': {
+      IT: {
+        title: 'Programma Ambasciatori Beta - Autisti | Tuggi',
+        description: 'Diventa un Autista Ambasciatore Tuggi. Trasforma le tue corse in esperienze culturali e aumenta i tuoi guadagni. Unisciti al programma beta esclusivo.',
+        keywords: 'tuggi autista, beta autista, ambasciatore tuggi, programma beta, app autista, guadagnare guidando, esperienze culturali, autista app',
+        ogTitle: 'Diventa un Autista Ambasciatore - Programma Beta | Tuggi',
+        ogDescription: 'Trasforma le tue corse in esperienze culturali mentre aumenti i tuoi guadagni. Programma esclusivo per autisti ambasciatori.'
+      }
     }
   };
 

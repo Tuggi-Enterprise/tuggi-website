@@ -1,0 +1,275 @@
+DOCUMENTAÇÃO DE ELEMENTOS VISUAIS - TUGGI DRIVE B2B
+
+================================================================================
+PÁGINA: HOME (V2)
+URL: / (e variantes localizadas /pt, /en, etc.)
+OBJETIVO: Apresentar a proposta de valor geral do Tuggi para passageiros e motoristas, focando na experiência de viagem e benefícios.
+
+ELEMENTOS VISUAIS E CONTEÚDO (PT):
+
+1. Seção Hero (HeroV2)
+   - Posição: Topo da página, altura total (100vh).
+   - Elementos: Título principal, subtítulo, botões de download (App Store/Google Play), imagem/vídeo de fundo ou lateral.
+   - Texto (PT):
+     - Título: "Seu Copiloto de Viagem Inteligente" (ou similar, baseado no código visto)
+     - Subtítulo: "Histórias, cultura e descobertas em tempo real enquanto você viaja."
+     - Botões: "Baixar na App Store", "Disponível no Google Play"
+
+2. Seção de Confiança (TrustSectionV2)
+   - Posição: Logo abaixo do Hero.
+   - Elementos: Logotipos de parceiros ou mídia, ícones de "Featured in".
+   - Texto (PT): "Destaque em", "Parceiros"
+
+3. Seção de Benefícios (BenefitsV2)
+   - Posição: Corpo principal.
+   - Elementos: Cards ou lista com ícones (Lucide) e descrições curtas.
+   - Texto (PT):
+     - "Narração Automática": "O áudio começa automaticamente quando você se aproxima de um ponto de interesse."
+     - "Funciona em Segundo Plano": "Continue usando seu GPS favorito ou ouça música."
+     - "Conteúdo Curado": "Histórias verificadas e produzidas por especialistas locais."
+
+4. Seção de Vídeo (VideoV2)
+   - Posição: Meio da página.
+   - Elementos: Player de vídeo com capa personalizada, botão de play.
+   - Texto (PT): "Veja o Tuggi em ação", "Experimente a magia".
+
+5. Depoimentos (TestimonialsV2)
+   - Posição: Abaixo do vídeo.
+   - Elementos: Carrossel ou grid de cards com avatares, estrelas de avaliação e texto.
+   - Texto (PT): "O que nossos usuários dizem", avaliações variadas de usuários reais.
+
+6. FAQ (FAQV2)
+   - Posição: Próximo ao rodapé.
+   - Elementos: Lista acordeão (expansível).
+   - Texto (PT):
+     - Título: "Perguntas Frequentes"
+     - Perguntas: "É gratuito?", "Preciso de internet?", "Como funciona para motoristas?"
+
+7. CTA Final (CTAFinalV2)
+   - Posição: Antes do rodapé.
+   - Elementos: Chamada grande para ação, fundo colorido/gradiente.
+   - Texto (PT): "Pronto para transformar suas viagens?", "Baixe o Tuggi agora".
+
+================================================================================
+PÁGINA: DRIVERS LANDING PAGE (Versão C)
+URL: /motoristas, /drivers
+OBJETIVO: Converter motoristas de aplicativo (Uber/99) para usar o Tuggi como ferramenta de entretenimento e renda extra.
+
+ELEMENTOS VISUAIS E CONTEÚDO (PT):
+
+1. Hero Section
+   - Posição: Topo.
+   - Elementos: Título focado em ganhos, imagem de motorista feliz, botão de CTA principal.
+   - Texto (PT):
+     - Título: "Aumente seus ganhos e melhore a experiência do passageiro" (Inferido do contexto 't.hero.title')
+     - Subtítulo: "O Tuggi diverte seus passageiros enquanto você dirige."
+     - CTA: "Começar Agora", "Baixar App de Motorista"
+
+2. Como Funciona
+   - Posição: Abaixo do Hero.
+   - Elementos: Passo a passo (1-2-3).
+   - Texto (PT): "Baixe o App", "Conecte ao som do carro", "Receba elogios e gorjetas".
+
+3. Casos de Uso / Benefícios
+   - Posição: Corpo.
+   - Elementos: Ícones e textos explicativos.
+   - Texto (PT): "Melhores Avaliações", "Mais Gorjetas", "Ambiente Agradável".
+
+4. Depoimentos de Motoristas
+   - Posição: Meio/Fim.
+   - Elementos: Cards com fotos de motoristas.
+   - Texto (PT): "Vozes Nativas" (Título), depoimentos sobre aumento de nota e gorjetas.
+
+5. FAQ Específico para Motoristas
+   - Posição: Fim da página.
+   - Texto (PT):
+     - Título: "Dúvidas Comuns"
+     - Perguntas: "O Tuggi gasta muita bateria?", "Preciso falar com o passageiro?", "É compatível com Uber/99?"
+
+6. CTA Sticky (Mobile)
+   - Posição: Fixo no fundo da tela em mobile.
+   - Elementos: Botão "Baixar Agora".
+   - Texto (PT): "Baixar Grátis"
+
+7. Modal de Download
+   - Posição: Overlay (Popup).
+   - Elementos: Opções para Android e iOS.
+   - Texto (PT): "Escolha sua loja", "App Store", "Google Play".
+
+================================================================================
+PÁGINA: DRIVERS LANDING PAGE (Versão E - Minimalista)
+URL: /motoristas-e
+OBJETIVO: Uma versão simplificada e direta para conversão rápida de motoristas.
+
+ELEMENTOS VISUAIS E CONTEÚDO (PT):
+
+1. Hero Minimalista
+   - Posição: Topo.
+   - Elementos: Foco tipográfico, botão de ação imediata.
+   - Texto (PT): Foco em "Liberdade" e "Privacidade".
+
+2. Amostras de Áudio
+   - Posição: Corpo.
+   - Elementos: Players de áudio para demonstrar o conteúdo.
+   - Texto (PT): "Ouça um exemplo do que seus passageiros vão ouvir".
+
+3. Seção de Privacidade/Liberdade
+   - Posição: Destaque no corpo.
+   - Elementos: Ícones de cadeado/escudo.
+   - Texto (PT): "Seus dados estão seguros", "Você no controle".
+
+4. Bottom Sheet (Mobile)
+   - Posição: Desliza de baixo para cima.
+   - Elementos: Links de download.
+   - Texto (PT): "Baixar Tuggi Driver".
+
+================================================================================
+PÁGINA: PROPÓSITO (PURPOSE)
+URL: /purpose
+OBJETIVO: Comunicar a missão, visão e valores da empresa.
+
+ELEMENTOS VISUAIS E CONTEÚDO (PT):
+
+1. Declaração de Missão
+   - Posição: Topo.
+   - Texto (PT): "Nossa missão é transformar cada deslocamento em uma jornada de descoberta.", "Conectar pessoas e lugares."
+
+2. Valores
+   - Posição: Corpo.
+   - Elementos: Lista de valores com ícones.
+   - Texto (PT): "Curiosidade", "Conexão Local", "Qualidade".
+
+3. CTA para Públicos
+   - Posição: Rodapé.
+   - Texto (PT): "Ver para motoristas", "Ver para empresas".
+
+================================================================================
+PÁGINA: CONTATO
+URL: /contact
+OBJETIVO: Centralizar canais de comunicação para suporte, parcerias e imprensa.
+
+ELEMENTOS VISUAIS E CONTEÚDO (PT):
+
+1. Cabeçalho
+   - Texto (PT): "Fale Conosco", "Estamos aqui para ajudar."
+
+2. Links de Contato
+   - Posição: Grade/Lista.
+   - Elementos: Cards para diferentes departamentos.
+   - Texto (PT):
+     - "Suporte ao Usuário": "Precisa de ajuda com o app?"
+     - "Imprensa": "Para jornalistas e mídia."
+     - "Parcerias/Empresas": "Falar com nosso time de vendas."
+     - "Investidores": "Relações com investidores."
+
+================================================================================
+PÁGINA: INVESTIDORES
+URL: /investors
+OBJETIVO: Atrair investidores apresentando métricas e tese de investimento.
+
+ELEMENTOS VISUAIS E CONTEÚDO (PT):
+
+1. Tese de Investimento
+   - Texto (PT): "O futuro da mobilidade e entretenimento", "Market Size", "Oportunidade".
+
+2. Métricas
+   - Elementos: Números grandes (Big Numbers).
+   - Texto (PT): "Usuários Ativos", "Cidades Cobertas", "Retenção".
+
+3. CTA de Contato
+   - Texto (PT): "Falar com RI", "Solicitar Pitch Deck".
+
+================================================================================
+PÁGINA: BUSINESS (EMPRESAS)
+URL: /business, /empresas
+OBJETIVO: Venda B2B para frotas e empresas de turismo.
+
+ELEMENTOS VISUAIS E CONTEÚDO (PT):
+
+1. Oferta de Valor B2B
+   - Texto (PT): "Tuggi para sua Frota", "Diferencie seu serviço de transporte".
+
+2. Integração e API
+   - Texto (PT): "Integração simples", "API robusta", "White-label disponível".
+
+3. Modelos de Licenciamento
+   - Texto (PT): "Planos corporativos", "Preços sob medida".
+
+4. Formulário/CTA de Vendas
+   - Texto (PT): "Agendar Demo", "Falar com Consultor".
+
+================================================================================
+PÁGINA: GOVERNO (GOV / CITY OS)
+URL: /gov
+OBJETIVO: Venda para setor público (Smart Cities / Turismo).
+
+ELEMENTOS VISUAIS E CONTEÚDO (PT):
+
+1. Conceito City OS
+   - Texto (PT): "Sistema Operacional para Cidades", "Turismo Inteligente".
+
+2. Funcionalidades
+   - Texto (PT): "Gestão de Fluxo", "Promoção de Pontos Turísticos", "Dados em Tempo Real".
+
+3. Ciclo de Implementação
+   - Elementos: Gráfico ou lista de etapas.
+   - Texto (PT): "Diagnóstico", "Implementação", "Treinamento", "Lançamento".
+
+4. Segurança
+   - Texto (PT): "Dados Criptografados", "Compliance LGPD".
+
+5. CTA
+   - Texto (PT): "Agendar Apresentação", "Ver Demo".
+
+================================================================================
+PÁGINA: TERMOS DE USO
+URL: /terms
+OBJETIVO: Documento legal aceito pelo usuário.
+
+ELEMENTOS VISUAIS E CONTEÚDO (PT):
+- Título: "Termos de Uso"
+- Atualização: "Última atualização: Janeiro 2025"
+- Seções (Texto corrido e listas):
+  1. Aceitação dos Termos
+  2. Finalidade do Aplicativo
+  3. Responsabilidades do Usuário (Segurança, Conta, Uso Apropriado)
+  4. Permissões e Coleta de Dados (Localização, Áudio)
+  5. Limitações do Serviço
+  6. Uso Apropriado e Restrições
+  7. Propriedade Intelectual
+  8. Limitação de Responsabilidade
+  9. Limitações de Garantias
+  10. Suspensão e Encerramento
+  11. Modificações
+  12. Resolução de Disputas
+  13. Disposições Gerais
+  14. Contato
+
+================================================================================
+PÁGINA: EXCLUSÃO DE DADOS (DATA DELETION)
+URL: /data-deletion
+OBJETIVO: Permitir que usuários solicitem a exclusão de seus dados (Compliance App Store/Play Store).
+
+ELEMENTOS VISUAIS E CONTEÚDO (PT):
+
+1. Cabeçalho
+   - Título: "Solicitação de Exclusão de Conta e Dados"
+   - Subtítulo: "Solicite a exclusão permanente da sua conta TuggiDrive e todos os dados associados"
+
+2. Aviso do que será excluído
+   - Título: "O que será excluído"
+   - Lista: "Perfil de usuário", "Rotas salvas", "Preferências", "Histórico de viagens", "Arquivos em cache", "Dados de analytics".
+
+3. Aviso de Irreversibilidade (Box Vermelho)
+   - Título: "Aviso Importante"
+   - Texto: "A exclusão da conta é permanente e irreversível..."
+
+4. Formulário
+   - Campos:
+     - "Endereço de Email Associado à Sua Conta *" (Input Email)
+     - "Motivo da Exclusão (Opcional)" (Textarea)
+     - Checkbox: "Entendo que esta ação é permanente e irreversível..."
+   - Botões: "Cancelar", "Solicitar Exclusão de Conta"
+
+5. Rodapé de Suporte
+   - Texto: "Precisa de Ajuda?", "Email: support@tuggi.com", "Tempo de resposta: 24-48 horas".
