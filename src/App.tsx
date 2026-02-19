@@ -555,8 +555,11 @@ function App() {
         return <DriversLandingPageE currentLanguage={currentLanguage as 'PT' | 'EN' | 'ES' | 'FR' | 'DE' | 'IT'} onCTAClick={handleCTAClick} />;
       case 'beta-drivers': // Beta Drivers - Intention Landing Page
       case 'beta-motoristas':
+      case 'beta-conductores':
+      case 'beta-chauffeurs':
+      case 'beta-fahrer':
       case 'beta-autisti':
-        return <BetaDrivers currentLanguage={currentLanguage as 'PT' | 'IT'} onCTAClick={handleCTAClick} />;
+        return <BetaDrivers currentLanguage={currentLanguage as 'PT' | 'IT' | 'EN' | 'ES' | 'FR' | 'DE'} onCTAClick={handleCTAClick} />;
       case 'govPrivacy':
         return <GovPrivacyPolicyPage currentLanguage={currentLanguage} onBack={() => handlePageChange('gov')} />;
       case 'govTerms':

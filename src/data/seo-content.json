@@ -24,6 +24,7 @@
     "terms": { "en": "terms-of-use", "pt": "termos-de-uso", "es": "terminos-de-uso", "fr": "conditions-d-utilisation", "de": "nutzungsbedingungen", "it": "termini-di-utilizzo" },
     "cookies": { "en": "cookie-policy", "pt": "politica-de-cookies", "es": "politica-de-cookies", "fr": "politique-cookies", "de": "cookie-richtlinie", "it": "informativa-cookie" },
     "drivers-terms": { "en": "drivers-terms", "pt": "termos-motoristas", "es": "terminos-conductores", "fr": "conditions-chauffeurs", "de": "fahrer-bedingungen", "it": "termini-driver" },
+    "beta-drivers": { "en": "beta-drivers", "pt": "beta-motoristas", "es": "beta-conductores", "fr": "beta-chauffeurs", "de": "beta-fahrer", "it": "beta-autisti" },
     "data-deletion": { "en": "data-deletion", "pt": "exclusao-de-dados", "es": "eliminacion-de-datos", "fr": "suppression-donnees", "de": "datenloeschung", "it": "cancellazione-dati" }
   },
   "pages": {
@@ -774,6 +775,56 @@
         "keywords": "termini licenza host, termini driver, licenza professionale driver, termini tuggi driver",
         "ogTitle": "Termini Licenza Host (Driver) | Tuggi",
         "ogDescription": "Termini di Utilizzo Specifici per la Licenza Professionale Host per autisti.",
+        "ogImage": "/og/drivers.jpg"
+      }
+    },
+    "beta-drivers": {
+      "en": {
+        "title": "Become a Founding Driver | Tuggi Beta",
+        "description": "Join the Beta program. Earn more tips and 5-star ratings with automated cultural narration. Limited spots.",
+        "keywords": "beta driver, founding driver, tuggi driver program, rideshare tools",
+        "ogTitle": "Become a Founding Driver | Tuggi Beta",
+        "ogDescription": "Join the Beta program. Earn more tips and 5-star ratings with automated cultural narration.",
+        "ogImage": "/og/drivers.jpg"
+      },
+      "pt": {
+        "title": "Seja um Motorista Fundador | Tuggi Beta",
+        "description": "Participe do programa Beta. Aumente suas gorjetas e avaliações com narração cultural automática. Vagas limitadas.",
+        "keywords": "motorista beta, motorista fundador, programa tuggi, ferramentas uber 99",
+        "ogTitle": "Seja um Motorista Fundador | Tuggi Beta",
+        "ogDescription": "Participe do programa Beta. Aumente suas gorjetas e avaliações com narração cultural automática.",
+        "ogImage": "/og/drivers.jpg"
+      },
+      "es": {
+        "title": "Sé un Conductor Fundador | Tuggi Beta",
+        "description": "Únete al programa Beta. Aumenta tus propinas y calificaciones con narración cultural automática. Plazas limitadas.",
+        "keywords": "conductor beta, conductor fundador, programa tuggi, herramientas conductor app",
+        "ogTitle": "Sé un Conductor Fundador | Tuggi Beta",
+        "ogDescription": "Únete al programa Beta. Aumenta tus propinas y calificaciones con narración cultural automática.",
+        "ogImage": "/og/drivers.jpg"
+      },
+      "fr": {
+        "title": "Devenez Chauffeur Fondateur | Tuggi Beta",
+        "description": "Rejoignez le programme Bêta. Augmentez vos pourboires et notes avec la narration culturelle automatique. Places limitées.",
+        "keywords": "chauffeur beta, chauffeur fondateur, programme tuggi, outils vtc",
+        "ogTitle": "Devenez Chauffeur Fondateur | Tuggi Beta",
+        "ogDescription": "Rejoignez le programme Bêta. Augmentez vos pourboires et notes avec la narration culturelle automatique.",
+        "ogImage": "/og/drivers.jpg"
+      },
+      "de": {
+        "title": "Werde Gründer-Fahrer | Tuggi Beta",
+        "description": "Treten Sie dem Beta-Programm bei. Steigern Sie Trinkgeld und Bewertungen mit automatischer kultureller Narration. Begrenzte Plätze.",
+        "keywords": "beta fahrer, gründer fahrer, tuggi programm, rideshare tools",
+        "ogTitle": "Werde Gründer-Fahrer | Tuggi Beta",
+        "ogDescription": "Treten Sie dem Beta-Programm bei. Steigern Sie Trinkgeld und Bewertungen mit automatischer kultureller Narration.",
+        "ogImage": "/og/drivers.jpg"
+      },
+      "it": {
+        "title": "Diventa Autista Fondatore | Tuggi Beta",
+        "description": "Unisciti al programma Beta. Aumenta le mance e le valutazioni con la narrazione culturale automatica. Posti limitati.",
+        "keywords": "autista beta, autista fondatore, programma tuggi, strumenti ncc",
+        "ogTitle": "Diventa Autista Fondatore | Tuggi Beta",
+        "ogDescription": "Unisciti al programma Beta. Aumenta le mance e le valutazioni con la narrazione culturale automatica.",
         "ogImage": "/og/drivers.jpg"
       }
     }

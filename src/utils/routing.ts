@@ -47,7 +47,12 @@ export const VALID_PAGES = [
   'drivers-d', 'motoristas-d', 'conductores-d', 'chauffeurs-d', 'fahrer-d', 'autisti-d',
   'drivers-e', 'motoristas-e', 'conductores-e', 'chauffeurs-e', 'fahrer-e', 'autisti-e',
   // Beta drivers routes
-  'beta-drivers', 'beta-motoristas', 'beta-autisti',
+  'beta-drivers', 
+  'beta-motoristas', 
+  'beta-autisti',
+  'beta-conductores',
+  'beta-chauffeurs',
+  'beta-fahrer',
   // Legal and policy pages
   'privacy',
   'privacy-policy',
@@ -127,6 +132,14 @@ export const PAGE_URL_MAPPINGS: Record<string, Record<string, string>> = {
     'FR': 'chauffeurs',
     'DE': 'fahrer',
     'IT': 'autisti'
+  },
+  'beta-drivers': {
+    'EN': 'beta-drivers',
+    'PT': 'beta-motoristas',
+    'ES': 'beta-conductores',
+    'FR': 'beta-chauffeurs',
+    'DE': 'beta-fahrer',
+    'IT': 'beta-autisti'
   },
   'motoristas-a': {
     'EN': 'drivers-a',
@@ -297,8 +310,11 @@ export const URL_TO_PAGE_MAPPINGS: Record<string, string> = {
 
   // Beta drivers reverse mappings
   'beta-drivers': 'beta-drivers',
-  'beta-motoristas': 'beta-motoristas',
-  'beta-autisti': 'beta-autisti',
+  'beta-motoristas': 'beta-drivers',
+  'beta-autisti': 'beta-drivers',
+  'beta-conductores': 'beta-drivers',
+  'beta-chauffeurs': 'beta-drivers',
+  'beta-fahrer': 'beta-drivers',
 
   'privacy-policy': 'privacy',
   'politica-de-privacidade': 'privacy',
