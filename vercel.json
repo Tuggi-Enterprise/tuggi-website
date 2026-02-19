@@ -15,6 +15,30 @@
       "destination": "/api/:path*"
     },
     {
+      "source": "/pt/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/en/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/es/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/fr/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/de/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/it/:path*",
+      "destination": "/index.html"
+    },
+    {
       "source": "/((?!api/).*)",
       "destination": "/index.html"
     }

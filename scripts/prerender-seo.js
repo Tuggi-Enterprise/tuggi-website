@@ -188,7 +188,9 @@ async function prerender() {
       }
       
       // Create directory if it doesn't exist
-      fs.mkdirSync(outputDir, { recursive: true });
+      if (!fs.existsSync(outputDir)) {
+        fs.mkdirSync(outputDir, { recursive: true });
+      }
       
       // Generate modified HTML
       const modifiedHtml = replaceMetaTags(baseHtml, seoData, lang, page, url);
@@ -199,6 +201,23 @@ async function prerender() {
       
       generatedCount++;
       console.log(`✅ Generated: ${lang}/${page === 'home' ? '' : pageSlug}`);
+
+      // If the page slug is different from the canonical name, generate the canonical version too
+      // for better fallback support (e.g., both /pt/proposito AND /pt/purpose will have static files)
+      if (page !== 'home' && pageSlug !== page) {
+        const canonicalOutputDir = path.join(DIST_DIR, lang, page);
+        if (!fs.existsSync(canonicalOutputDir)) {
+          fs.mkdirSync(canonicalOutputDir, { recursive: true });
+        }
+        
+        const canonicalUrl = `${BASE_URL}/${lang}/${page}`;
+        const canonicalHtml = replaceMetaTags(baseHtml, seoData, lang, page, canonicalUrl);
+        const canonicalOutputPath = path.join(canonicalOutputDir, 'index.html');
+        fs.writeFileSync(canonicalOutputPath, canonicalHtml, 'utf-8');
+        
+        generatedCount++;
+        console.log(`✅ Generated (Canonical Fallback): ${lang}/${page}`);
+      }
     }
   }
   
