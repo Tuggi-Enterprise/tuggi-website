@@ -108,6 +108,22 @@ export const VALID_PAGES = [
 
 // Page URL mappings for different languages
 export const PAGE_URL_MAPPINGS: Record<string, Record<string, string>> = {
+  'purpose': {
+    'EN': 'purpose',
+    'PT': 'proposito',
+    'ES': 'proposito',
+    'FR': 'mission',
+    'DE': 'zweck',
+    'IT': 'scopo'
+  },
+  'contact': {
+    'EN': 'contact',
+    'PT': 'contact', // In seo-content.json it is 'contact' for all
+    'ES': 'contact',
+    'FR': 'contact',
+    'DE': 'contact',
+    'IT': 'contact'
+  },
   'investors': {
     'EN': 'investors',
     'PT': 'investidores',
@@ -263,6 +279,20 @@ export const URL_TO_PAGE_MAPPINGS: Record<string, string> = {
   'entreprises': 'business',
   'unternehmen': 'business',
   'aziende': 'business',
+
+  // Purpose page reverse mappings
+  'purpose': 'purpose',
+  'proposito': 'purpose',
+  'mission': 'purpose',
+  'zweck': 'purpose',
+  'scopo': 'purpose',
+  
+  // Contact page reverse mappings
+  'contact': 'contact',
+  'contato': 'contact',
+  'contacto': 'contact',
+  'kontakt': 'contact',
+  'contatto': 'contact',
   
   // New drivers reverse mappings
   'drivers': 'drivers',
