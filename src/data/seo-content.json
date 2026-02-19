@@ -728,6 +728,106 @@
         "ogImage": "/og/home.jpg"
       }
     },
+    "govPrivacy": {
+      "en": {
+        "title": "Public Data Privacy Policy | Tuggi City OS",
+        "description": "Information on how Tuggi City OS handles public data, citizen privacy, and compliance with GDPR/LGPD.",
+        "keywords": "government privacy, public data, LGPD compliance, GDPR compliance, citizen privacy, data sovereignty",
+        "ogTitle": "Public Data Privacy Policy | Tuggi City OS",
+        "ogDescription": "Privacy by Design for Public Administration. Learn how we protect citizen data.",
+        "ogImage": "https://tuggi.app/images/og-gov-privacy.jpg"
+      },
+      "pt": {
+        "title": "Política de Privacidade de Dados Públicos | Tuggi City OS",
+        "description": "Informações sobre como o Tuggi City OS trata dados públicos, privacidade do cidadão e conformidade com LGPD/GDPR.",
+        "keywords": "privacidade governo, dados públicos, compliance LGPD, conformidade GDPR, privacidade cidadão, soberania de dados",
+        "ogTitle": "Política de Privacidade de Dados Públicos | Tuggi City OS",
+        "ogDescription": "Privacy by Design para Administração Pública. Saiba como protegemos os dados dos cidadãos.",
+        "ogImage": "https://tuggi.app/images/og-gov-privacy.jpg"
+      },
+      "es": {
+        "title": "Política de Privacidad de Datos Públicos | Tuggi City OS",
+        "description": "Información sobre cómo Tuggi City OS maneja datos públicos, privacidad ciudadana y cumplimiento con GDPR/LGPD.",
+        "keywords": "privacidad gobierno, datos públicos, cumplimiento LGPD, cumplimiento GDPR, privacidad ciudadano, soberanía de datos",
+        "ogTitle": "Política de Privacidad de Datos Públicos | Tuggi City OS",
+        "ogDescription": "Privacy by Design para Administración Pública. Sepa cómo protegemos los datos de los ciudadanos.",
+        "ogImage": "https://tuggi.app/images/og-gov-privacy.jpg"
+      },
+      "fr": {
+        "title": "Politique de Confidentialité des Données Publiques | Tuggi City OS",
+        "description": "Informations sur la manière dont Tuggi City OS traite les données publiques, la confidentialité des citoyens et la conformité au RGPD/LGPD.",
+        "keywords": "confidentialité gouvernement, données publiques, conformité LGPD, conformité RGPD, confidentialité citoyen, souveraineté des données",
+        "ogTitle": "Politique de Confidentialité des Données Publiques | Tuggi City OS",
+        "ogDescription": "Privacy by Design pour l'Administration Publique. Découvrez comment nous protégeons les données des citoyens.",
+        "ogImage": "https://tuggi.app/images/og-gov-privacy.jpg"
+      },
+      "de": {
+        "title": "Datenschutzrichtlinie für Öffentliche Daten | Tuggi City OS",
+        "description": "Informationen darüber, wie Tuggi City OS öffentliche Daten, den Datenschutz der Bürger und die Einhaltung von DSGVO/LGPD behandelt.",
+        "keywords": "datenschutz regierung, öffentliche daten, LGPD compliance, DSGVO compliance, bürgerdatenschutz, datensouveränität",
+        "ogTitle": "Datenschutzrichtlinie für Öffentliche Daten | Tuggi City OS",
+        "ogDescription": "Privacy by Design für die öffentliche Verwaltung. Erfahren Sie, wie wir Bürgerdaten schützen.",
+        "ogImage": "https://tuggi.app/images/og-gov-privacy.jpg"
+      },
+      "it": {
+        "title": "Politica sulla Privacy dei Dati Pubblici | Tuggi City OS",
+        "description": "Informazioni su come Tuggi City OS gestisce i dati pubblici, la privacy dei cittadini e la conformità al GDPR/LGPD.",
+        "keywords": "privacy governo, dati pubblici, conformità LGPD, conformità GDPR, privacy cittadino, sovranità dei dati",
+        "ogTitle": "Politica sulla Privacy dei Dati Pubblici | Tuggi City OS",
+        "ogDescription": "Privacy by Design per la Pubblica Amministrazione. Scopri come proteggiamo i dati dei cittadini.",
+        "ogImage": "https://tuggi.app/images/og-gov-privacy.jpg"
+      }
+    },
+    "govTerms": {
+      "en": {
+        "title": "Terms of Use | Tuggi City OS",
+        "description": "Terms and conditions for Municipalities using Tuggi City OS platform.",
+        "keywords": "government terms, SaaS license, public administration, legal terms",
+        "ogTitle": "Terms of Use | Tuggi City OS",
+        "ogDescription": "License Agreement for Public Administration.",
+        "ogImage": "https://tuggi.app/images/og-gov-terms.jpg"
+      },
+      "pt": {
+        "title": "Termos de Uso | Tuggi City OS",
+        "description": "Termos e condições para Municípios utilizando a plataforma Tuggi City OS.",
+        "keywords": "termos governo, licença SaaS, administração pública, termos legais",
+        "ogTitle": "Termos de Uso | Tuggi City OS",
+        "ogDescription": "Contrato de Licença para Administração Pública.",
+        "ogImage": "https://tuggi.app/images/og-gov-terms.jpg"
+      },
+      "es": {
+        "title": "Términos de Uso | Tuggi City OS",
+        "description": "Términos y condiciones para Municipios que utilizan la plataforma Tuggi City OS.",
+        "keywords": "términos gobierno, licencia SaaS, administración pública, términos legales",
+        "ogTitle": "Términos de Uso | Tuggi City OS",
+        "ogDescription": "Acuerdo de Licencia para Administración Pública.",
+        "ogImage": "https://tuggi.app/images/og-gov-terms.jpg"
+      },
+      "fr": {
+        "title": "Conditions d'Utilisation | Tuggi City OS",
+        "description": "Termes et conditions pour les Municipalités utilisant la plateforme Tuggi City OS.",
+        "keywords": "conditions gouvernement, licence SaaS, administration publique, termes légaux",
+        "ogTitle": "Conditions d'Utilisation | Tuggi City OS",
+        "ogDescription": "Contrat de Licence pour l'Administration Publique.",
+        "ogImage": "https://tuggi.app/images/og-gov-terms.jpg"
+      },
+      "de": {
+        "title": "Nutzungsbedingungen | Tuggi City OS",
+        "description": "Allgemeine Geschäftsbedingungen für Kommunen, die die Tuggi City OS-Plattform nutzen.",
+        "keywords": "nutzungsbedingungen regierung, SaaS lizenz, öffentliche verwaltung, rechtliche bedingungen",
+        "ogTitle": "Nutzungsbedingungen | Tuggi City OS",
+        "ogDescription": "Lizenzvertrag für die öffentliche Verwaltung.",
+        "ogImage": "https://tuggi.app/images/og-gov-terms.jpg"
+      },
+      "it": {
+        "title": "Termini di Utilizzo | Tuggi City OS",
+        "description": "Termini e condizioni per i Comuni che utilizzano la piattaforma Tuggi City OS.",
+        "keywords": "termini governo, licenza SaaS, pubblica amministrazione, termini legali",
+        "ogTitle": "Termini di Utilizzo | Tuggi City OS",
+        "ogDescription": "Contratto di Licenza per la Pubblica Amministrazione.",
+        "ogImage": "https://tuggi.app/images/og-gov-terms.jpg"
+      }
+    },
     "drivers-terms": {
       "en": {
         "title": "Host License Terms (Drivers) | Tuggi",
