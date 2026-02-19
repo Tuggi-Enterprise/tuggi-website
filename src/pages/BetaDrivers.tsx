@@ -298,7 +298,8 @@ const BetaDrivers: React.FC<BetaDriversProps> = ({
         ...utmData
       };
 
-      const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/lead-capture`, {
+      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || 'https://tysnkzmljlmmqpbotkxv.supabase.co';
+      const response = await fetch(`${supabaseUrl}/functions/v1/lead-capture`, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',
