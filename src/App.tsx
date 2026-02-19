@@ -492,12 +492,23 @@ function App() {
   const renderPage = () => {
     switch (currentPage) {
       case 'purpose':
+      case 'proposito':
+      case 'mission':
+      case 'zweck':
+      case 'scopo':
         return <PurposePage currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />;
       case 'contact':
+      case 'contato':
+      case 'contacto':
+      case 'kontakt':
+      case 'contatto':
         return <ContactPage currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />;
       case 'investors':
       case 'investidores':
       case 'inversores':
+      case 'investisseurs':
+      case 'investoren':
+      case 'investitori':
         return <InvestorsPage currentLanguage={currentLanguage} onCTAClick={handleCTAClick} />;
       case 'privacy':
       case 'privacy-policy':
